@@ -1,0 +1,21 @@
+{
+	"name": "sassquatch2",
+	"version": "2.0.0",
+	"description": "CSS foundation and framework for Meetup",
+	"main": [
+		"./dist"
+	],
+	"ignore": [
+		"Gemfile",
+		"Rakefile",
+		".ruby-version",
+		".bowerrc",
+		"**/*.sh",
+		"**/*.txt",
+		"**/*.lock"
+	],
+	"dependencies": {
+		"bourbon": "4.0.2"
+	},
+	"license": "MIT"
+}
