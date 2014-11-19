@@ -5,4 +5,5 @@
 *.swo
 *.css.map
 node_modules/
+bower_components/
 !README*
