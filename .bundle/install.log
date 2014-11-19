@@ -1,0 +1,6 @@
+# Logfile created on 2014-11-19 17:04:23 -0500 by logger.rb/36483
+I, [2014-11-19T17:04:23.486071 #15558]  INFO -- : 0:  redcarpet (3.2.0) from /Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/redcarpet-3.2.0.gemspec
+I, [2014-11-19T17:04:24.925325 #15558]  INFO -- : 0:  rouge (1.7.3) from /Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/rouge-1.7.3.gemspec
+I, [2014-11-19T17:04:24.925907 #15558]  INFO -- : 0:  hologram (1.2.0) from /Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/hologram-1.2.0.gemspec
+I, [2014-11-19T17:04:24.926307 #15558]  INFO -- : 0:  sass (3.4.4) from /Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/sass-3.4.4.gemspec
+I, [2014-11-19T17:04:24.926691 #15558]  INFO -- : 0:  bundler (1.5.1) from /Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/specifications/bundler-1.5.1.gemspec
