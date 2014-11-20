@@ -1,5 +1,39 @@
 /**
-* Sassquatch
+* SASSQUATCH BASE
 */
 
-@import "globals.scss";
+
+// ---------------------------------------
+// Bower Components
+// ---------------------------------------
+//
+	@import "../components/bourbon/dist/bourbon";
+
+
+// ---------------------------------------
+// Vars, Mixins, Placeholders, and Functions
+// ---------------------------------------
+//
+	@import "globals";
+	//@import "util";
+
+
+// ---------------------------------------
+// Sassquatch Core
+// ---------------------------------------
+//
+	//@import "core/layout";
+
+
+// ---------------------------------------
+// UI Components
+// ---------------------------------------
+//
+	//@import "components/tabView";
+
+
+// ---------------------------------------
+// Modifiers (from Core)
+// ---------------------------------------
+//
+	//@import "core/modifiers";
