@@ -1,0 +1,32 @@
+/**
+* Sassquatch
+*/
+/**
+* GLOBALS
+*
+* Sass vars in global scope
+*/
+/*
+ *  // Misc colors
+ *  $C_red                   : rgb(226,55,60);
+ *  $C_accent                : $C_red;
+ *  $C_accentDark            : darken($C_red, 8%);
+ *
+ *  $C_blue                  : rgb(57, 135, 203);
+ *  $C_link                  : $C_blue;
+ *
+ *  $C_border                : rgba(0,0,0,.12);
+ *  $C_borderInverted        : rgba(255,255,255,.2);
+ *
+ *  $C_textProtection        : rgba(0,0,0,.2);
+ *
+ *  $C_overlayPressed        : rgba(0,0,0,.1); //rgba(64, 197, 255, 0.2)
+ *
+ *  // Plane colors
+ *  $C_contentBG             : #FFFFFF;
+ *  $C_contentBGInverted     : #353E48;
+ *  $C_collectionBGLight     : #F3F6F9;
+ *  $C_collectionBGDark      : #E6E9EC;
+ */
+
+/*# sourceMappingURL=sassquatch.css.map */
