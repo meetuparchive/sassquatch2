@@ -138,18 +138,3 @@
     $measure      : 35em;
     $docBounds    : 1100px;
     $narrowBounds : ($measure / 1em) * $font-size; // for things like forms
-
-
-
-// ---------------------------------------
-// Z-Index
-// ---------------------------------------
-//
-  $indexes: (
-    main: 0,
-    main-header: 1,
-    shade: 2,
-    modal: 3,
-    modal-header: 4,
-    momentary: 5
-  );
