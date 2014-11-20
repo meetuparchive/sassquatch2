@@ -4,8 +4,6 @@ Ssassquatch 2
 Nothing to see here (yet).
 
 ### TODO
-- npm package.json
-- set up grunt build
 - stub dir structure for sass
 - set up contribution guidelines
   - mv sassquatch 1 PCV convention wiki page
