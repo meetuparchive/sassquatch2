@@ -1,17 +1,25 @@
 module.exports = function(grunt) {
 
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-hologram');
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		sass: {
 			dist: {
 				files: {
-					"dist/sassquatch.css": "sass/base.scss"
+				"dist/sassquatch.css": "sass/base.scss"
+				}
+			}
+		},
+		hologram: {
+			generate: {
+				options: {
+					config: 'docs/config.yml'
 				}
 			}
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
-
-	grunt.registerTask('default', ['sass']);
+	grunt.registerTask('default', ['sass', 'hologram']);
 };
