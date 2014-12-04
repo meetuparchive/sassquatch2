@@ -20,12 +20,5 @@ File or [Directory]        | Description
 [`components/`]            | Contains UI component partials (ie. `_tabView.scss`)
 
 #### TODO
-1. pull `core/` partials from foundation scratch
-2. holodoc foundation scratch
-3. rm dist dir and compiled CSS
-	- compile sass directly to hologram docs
-	- enable CSS compile as a separate grunt task as an option
-4. set up contribution guidelines
-  - mv sassquatch 1 PCV convention wiki page
-  - http://editorconfig.org/#download
-  - http://codeguide.co/#css
+1. pull `master` branch into the foundation-scratch repo via bower
+2. refactor, refactor, refactor
