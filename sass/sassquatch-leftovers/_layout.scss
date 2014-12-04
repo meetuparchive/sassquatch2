@@ -1,0 +1,231 @@
+// Clearfix taken from utils/_layout.scss
+%clearfix {
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	/**
+	 * For IE 6/7 only
+	 * Include this rule to trigger hasLayout and contain floats.
+	 */
+	*zoom: 1;
+}
+
+/**
+* LAYOUT
+* oocss grids, modifier classes for layout
+*/
+
+/* {{{ Doc Stripe */
+
+/*doc
+---
+title: Stripe Layout
+name: docstar
+category: Layout
+---
+
+Used for newer and more responsive layouts, where content lives on top of
+a full-width background instead of `docBox` modules. The `docStripe` container
+sets a full width background.
+
+The `docBounds` class is used as a padding helper and content wrapper; it uses
+a max-width and min-width, but will otherwise flex to fit the width of the parent
+container.
+
+```html_example
+
+	<!-- default stripe and color stripe -->
+	<div class="docStripe">
+		<div class="docBounds">
+			<h3>I'm in a docBounds within a stripe</h3>
+			<p>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.</p>
+		</div>
+	</div>
+	<div class="docStripe--red inverted">
+		<div class="docBounds">
+			<h3>I'm in a red stripe</h3>
+			<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
+		</div>
+	</div>
+
+	<!-- "collections" -->
+	<div class="docStripe--collection">
+		<div class="docBounds">
+			<h3>I contain a collection (of docBoxes)</h3>
+			<div class="docBox">
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+			</div>
+			<div class="docBox">
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+				<div class="docSection">
+					<p>I'm a section in a box</p>
+				</div>
+			</div>
+		</div>
+	</div>
+```
+
+*/
+
+// default
+.docStripe {
+	border-top: 1px solid $C_border;
+	background-color: #fff;
+}
+
+/*doc
+---
+title: Stripe variants
+name: docStripe
+parent: docstar
+---
+
+/* {{{ Doc bounds */
+// max-width constraint with media queries
+// has padding that adjusts down with smaller screens
+.docBounds {
+	@extend %clearfix;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 720px; // TODO: decide what this should be?
+	padding: $space*2 $space*2 $space $space*2;
+}
+/* }}} */
+
+.docBox,   // NEW SELECTOR
+.doc-box { // DEPRECATED SELECTOR
+	border-radius: $defaultRadius;
+	background-color: #fff;
+	margin-bottom: $space;
+	border: 1px solid $C_border !important; /* !important to support .doc-box.doc-content multiple classes */
+ 	@include background-clip(padding);
+
+
+	/**
+	* round any first or last .doc-content elements inside of .doc-box
+	* allows the doc-content to be shaded without conflicting with .doc-box rounding
+	*/
+
+	> .docSection:first-child,
+	> .doc-content:first-child{
+		border-top-left-radius: $defaultRadius;
+		border-top-right-radius: $defaultRadius;
+	}
+	> .docSection:last-child,
+	> .doc-content:last-child{
+		border-bottom-left-radius: $defaultRadius;
+		border-bottom-right-radius: $defaultRadius;
+	}
+
+	/**
+	* doc-content elemenmts inside doc-box get a dividing border by default
+	* (override with .border-none if you need to)
+	*/
+	& .doc-content {
+		border-top: 1px solid $C_border;
+		&:first-child{
+			border-top: none;
+		}
+	}
+
+	/**
+	 * Let a first-child doc-content have a border too.
+	 */
+
+	& .doc-content.doc-content-border {
+		border-top: 1px solid $C_border;
+	}
+
+	/**
+	* Vertical box divisions (when direct child is an OOCSS "line")
+	* allows the borders to span the full height of the .doc-box
+	*
+	* DEPRECATED BEHAVIOR: better to use modifiers and page-specific CSS for this
+	* This will now only work with deprecated selectors
+	*/
+	> .line,
+	> .line-gutters{
+		> .unit{
+			float: none;
+			border-right: 1px solid #ddd;
+			display: table-cell;
+			vertical-align: top;
+		}
+		> .lastUnit{
+			border-right: 0;
+			vertical-align: top;
+		}
+
+		// magically correct rounded corners when in full-height columns
+		.doc-content{
+			border-radius: 0;
+		}
+		.unit:first-child .doc-content{
+			&:first-child{
+				border-top-left-radius: $defaultRadius;
+			}
+			&:last-child{
+				border-bottom-left-radius: $defaultRadius;
+			}
+		}
+		.unit:last-child .doc-content,
+		.lastUnit .doc-content{
+			&:first-child{
+				border-top-right-radius: $defaultRadius;
+			}
+			&:last-child{
+				border-bottom-right-radius: $defaultRadius;
+			}
+		}
+	}
+
+	/* see bug: 31893 */
+	&.D_box {
+		border: 0;
+	}
+}
+
+.docSection {
+	border-top: 1px solid $C_border;
+	border-bottom: 1px solid transparent; /* avoids margin collapse, hence this border... (takashi is a genius) */
+	padding: $space $space 0 $space;
+	&:first-child{
+		border-top: none;
+	}
+	.inverted & {
+		border-top-color: $C_borderInverted;
+	}
+	.docBounds > & { // don't pad sides when directly inside a docBounds
+		padding: $space 0 0 0;
+	}
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* {
+  html .clearfix, &:first-child+html .clearfix {
+    zoom: 1; } }
+
+.clear-both {
+	clear: both;
+}

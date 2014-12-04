@@ -1,0 +1,55 @@
+.ios {
+
+	.momentary-popover {
+		background: transparent;
+		border: none;
+		text-align: center;
+		&.top-left{
+			.momentary-btn-list{
+				border-radius: 0 6px 6px 6px;
+			}
+		}
+		&.top-right{
+			.momentary-btn-list{
+				border-radius: 6px 0 6px 6px;
+			}
+		}
+	}
+
+	@include atMediaDown(medium) {
+
+		.momentary-popover {
+			margin: 0!important; // no shifting for left and right sides. this is in the middle
+			background: transparent;
+			bottom: $space;
+			top: auto !important;
+			
+			.momentary-btn-list{
+				border-radius: 6px!important;
+			}
+			
+			&.off {
+				@include transform(translateY(100px));
+			}
+
+			&:after, &:before{
+				display: none;
+			}
+
+			.ios-cancel {
+				background: white;
+				border-radius: 6px!important;
+				color: $C_blue;
+				display: block;
+				height: $block;
+				line-height: $block;
+				margin-top: $space;
+				text-align: center;
+				font-weight: bold;
+			}
+
+		}
+
+	}
+
+}

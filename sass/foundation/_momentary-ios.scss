@@ -1,0 +1,44 @@
+.ios {
+
+  .momentary {
+    @include atMediaDown(medium) {
+      @include transform(translateY(0));
+      border: none;
+      box-shadow: none;
+      left: $space !important;
+      position: fixed !important;
+      right: $space !important;
+      width: auto;
+
+      li {
+        border-top: 1px solid $C_border;
+
+        &:first-child {
+          border-top: none;
+        }
+
+        a {
+          border-top: 0;
+          display: block;
+          height: $block;
+          line-height: $block;
+          text-align: center;
+        }
+      }
+
+    } // end atMediaDown(medium)
+
+  }
+
+  .overlayScreen {
+    background: $C_textProtection;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: map-get($indexes, "shade");
+  }
+
+}

@@ -1,0 +1,227 @@
+.android{
+	#{$all-text-inputs}, textarea, select, .launcher {
+	  padding:0 10px 5px 5px;
+	  display:block;
+	  border:none;
+	  border-bottom:1px solid #757575;
+	  border-radius: 0;
+	  background-color: transparent;
+      min-height: 30px;
+	  height: 30px;
+	  @include appearance(none);
+	  	&:focus 		{
+	  		outline:none;
+	  		border-bottom: 2px solid $C_blue;
+	  	}
+	}
+
+	label{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+
+	select{
+		background: url(/style/img/android/dropdown.svg) center right no-repeat;
+	}
+
+  //
+  // FLOAT LABEL
+  //
+  // .floatlabel-container {
+  //   margin: 0;
+  //   position: relative;
+
+  //   label, input {
+  //     @include transition(all 200ms);
+  //   }
+
+  //   label {
+  //     color: $C_textTertiary;
+  //     cursor: text;
+  //     font-size: $font-size;
+  //     position: absolute;
+  //     top: 16px;
+  //   }
+
+  //   input {
+  //     font-size: $font-size;
+  //     width: 100%;
+  //   }
+
+  //   input:focus, input.filled,
+  //   textarea:focus, textarea.filled {
+  //     height: 40px;
+  //     padding-top: $font-size;
+  //   }
+
+  //   label.float {
+  //     color: $C_textPrimary;
+  //     font-size: $font-size-small;
+  //     line-height: 2;
+  //     top: -4px;
+  //   }
+
+  // }
+
+  .floatlabel-container {
+      position: relative;
+      overflow: hidden;
+    label {
+      position: absolute;
+      top: 26px;
+      color: $C_textTertiary;
+	  font-size: $font-size;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      transition: all 0.1s ease;
+    }
+    input, textarea {
+	  box-sizing: content-box;
+      &:valid,
+      &:focus {
+        padding: $font-size 0 0 5px;
+      }
+      &:focus {
+        background: rgba(255,255,255,1);
+      }
+    }
+	
+    .float {
+	  color: $C_textSecondary;
+      font-size: $font-size-small;
+      -webkit-transform: translate3d(0, -20px, 0);
+      transform: translate3d(0, -20px, 0);
+    }
+  }
+
+  // Added this as a band-aid fix for weird layout
+  // caused by float label styles
+  .inline-form {
+    .select-container {
+      line-height: 1;
+      padding: 0 $space-half $space-half $space-half;
+      select {
+        line-height: 1;
+        height: 38px;
+        padding: 0 5px;
+      }
+    }
+  }
+
+	//
+	// SLIDE TOGGLE
+  // ---------------------------------------
+  // Styles taken from Material Design docs
+  .native-switch-container {
+    display: inline-block;
+    margin-right: $space;
+    position: relative;
+    width: auto;
+
+    input[type="checkbox"].native-switch {
+      -webkit-appearance: none;
+      background-color: $C_collectionBGDark;
+      border-bottom: none;
+      height: 16px;
+      margin-right: 0;
+      outline: 0;
+      padding: 0;
+      width: 32px;
+
+      border-radius: 50px !important; //override other input styles
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+
+      &:before,
+      &:after {
+        display: none;
+      }
+
+      &:checked {
+        background: lighten($C_green,20%);
+        & + label {
+          background: $C_green;
+          border: 1px solid transparent;
+          left: auto;
+          right: -12px;
+        }
+      }
+
+      & + label {
+        box-shadow: -1px 1px 2px $C_border;
+        border: 1px solid $C_border;
+        height: 24px;
+        left: -2px;
+        top: 5px;
+        width: 24px;
+
+        @include transition(right 1000ms $ease-in-quart);
+        background: $C_contentBG;
+        border-radius: 50%;
+        box-sizing: border-box;
+        cursor: pointer;
+        position: absolute;
+      }
+
+    }
+
+  }
+
+	//
+	// INKDROP EFFECT (on radios and checkboxes)
+	//
+
+  .label--switch .android-inkdrop {
+    background: $C_overlayPressed;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: $font-size;
+    opacity: 0;
+    position: absolute;
+    top: em(3);
+    left: em(1);
+    width: $font-size;
+    z-index: 0;
+  }
+  .label--switch input:active + .android-inkdrop {
+    @include animation(android-inkdrop 200ms $ease-out-quint);
+  }
+
+	@include keyframes(android-inkdrop) {
+	  0% {
+	    @include transform(scale(1));
+	    opacity: 0;
+	  }
+	  50% {
+	    opacity: 1;
+	  }
+	  85% {
+	    opacity: 1;
+	  }
+	  100% {
+	    @include transform(scale(4));
+	    opacity: 0;
+	  }
+	}
+
+  //
+  /* Validation */
+  // ------------------------- //
+  .has-error {
+    #{$all-text-inputs}, textarea, select {
+      border-bottom: 2px solid $C_red;
+    }
+  }
+
+}
+
+.inverted{
+    .android & {
+      .label--switch .android-inkdrop {
+        background: $C_borderInverted;
+		}
+    }
+}

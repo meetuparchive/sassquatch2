@@ -1,0 +1,112 @@
+//
+/* ALERTS */
+//
+
+//
+/* AVATAR */
+//
+.avatar {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 42%;
+  display: block;
+  font-size: $media-m * 2/3;
+  height: $media-m;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+  width: $media-m;
+}
+
+.avatar--person {
+  @include transition(all 100ms $ease-in-out-quad);
+  box-sizing: border-box;
+  border-radius: 999px;
+  vertical-align: middle;
+  /*
+  &:hover {
+    @include transform(scale(.9));
+    box-shadow: 0 0 0 1px rgba(0,0,0,0);
+    opacity: .8;
+  }
+  */
+}
+
+.avatar--small {
+  width: $media-s;
+  height: $media-s;
+  font-size: $media-s;
+}
+.avatar--big {
+  width: $media-xl;
+  height: $media-xl;
+  font-size: $media-l * 2/3;
+}
+
+.avatar--fb-friend { // layout is broken
+  position: relative;
+  overflow: visible;
+  &:after {
+    background: $C_facebook;
+    border-radius: 999px;
+    bottom: 0;
+    color: $C_textPrimaryInverted;
+    content: "f";
+    display: block;
+    font-size: 10px;
+    font-weight: $W_bold;
+    height: $space;
+    line-height: $space;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-indent: 0%;
+    width: $space;
+  }
+}
+
+//
+/* TEXT OVER A PHOTO - card size */
+//
+.photo-card--photo {
+  position: relative;
+  @include textProtectionScrim;
+}
+
+.photo-card--text {
+  bottom: 0;
+  padding: $space;
+  position: absolute;
+}
+
+//
+/* TEARSHEET WITH A DATE */
+//
+.tearsheet-with-date {
+  .tearsheet, .date {
+    display: inline-block;
+  }
+  .tearsheet {
+    border: 1px solid $C_border;
+    box-sizing: border-box;
+    font-size: $font-size-small;
+    font-weight: $W_bold;
+    height: $space-2;
+    margin-right: $space-half;
+    padding-top: $space-quarter;
+    position: relative;
+    text-align: center;
+    width: $space-2;
+    &:before {
+      background: $C_accent;
+      content: '';
+      display: block;
+      height: 6px;
+      left: -1px;
+      position: absolute;
+      right: -1px;
+      top: -1px;
+    }
+  }
+}

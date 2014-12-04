@@ -1,0 +1,54 @@
+.ios {
+	.collection-header {
+		margin: 0 #{-$space};
+		padding-left: $space;
+		.section-heading {
+			//text-transform: none;
+			//font-weight: normal;
+			font-size: $font-size-small;
+
+		}
+	}
+	.chunkList {
+		background: $C-contentBG;
+		border: 1px solid $C-border;
+		// +1px for border
+		margin: 0 #{-($space + 1px)};
+		padding-left: $space;
+		border-radius: $defaultRadius;
+		& > li {
+			border-top: none;
+			&:first-child {
+				.chunkList-chunk {
+					border-top: none;
+				}
+			}
+			.chunkList-chunk {
+				border-top: 1px solid $C-border;
+				height: $block-2;
+				&:last-child {
+					padding-right: $space-half;
+				}
+			}
+			.chunkList-chunk--graphic {
+				border-top: none;
+			}
+		}
+	}
+	.chunkList--small {
+		.chunkList-chunk {
+			height: $block;
+		}
+	}
+	.inverted {
+		.chunkList {
+			background: $C-shadeInverted;
+			border-color: $C-borderInverted;
+			& > li {
+				.chunkList-chunk {
+					border-color: $C-borderInverted;
+				}
+			}
+		}
+	}
+}

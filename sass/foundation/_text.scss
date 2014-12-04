@@ -1,0 +1,80 @@
+body {
+  color: $C_textPrimary;
+  font-family: $font;
+  font-size: $font-size;
+  font-weight: $W_normal;
+  line-height: $line-height;
+}
+
+.inverted {
+  color: $C_textPrimaryInverted;
+}
+
+p {
+  max-width: $measure; // keep a nice measure
+}
+
+.hint-text {
+  color: $C_textTertiary;
+  .inverted & {
+    color: $C_textTertiaryInverted;
+  }
+}
+
+.text-secondary {
+  color: $C_textSecondary;
+  .inverted & {
+    color: $C_textSecondaryInverted;
+  }
+}
+
+.text-small {
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+}
+
+.caption-text {
+  @extend .text-small;
+  color: $C_textSecondary;
+  .inverted & {
+    color: $C_textSecondaryInverted;
+  }
+}
+
+//
+// Running text styles
+//
+.running-text-container p {
+  margin-bottom: $space;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+//
+// Link styles
+// ------------------------------ //
+// :active and :focus states for accessibility http://meyerweb.com/eric/css/tests/css2/sec05-11-03.htm
+a {
+  color: $C_link;
+  text-decoration: none;
+}
+.unlink, a.unlink{
+	color: $C_textPrimary;
+	.inverted &{
+		color: $C_textPrimaryInverted;
+	}
+}
+
+a:focus,
+a:active,
+a:hover {
+    text-decoration: underline;
+}
+
+/*
+// seems to be fighting some icon styles
+a:active {
+    color: darken($C_blue, 15%);
+}
+*/

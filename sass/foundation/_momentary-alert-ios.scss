@@ -1,0 +1,32 @@
+.ios {
+
+  .momentary-alert {
+    .momentary-btn-list {
+      border-top: 1px solid $C_border;
+      display: flex;
+      padding: 0;
+      li {
+        border-top: none;
+        border-right: 1px solid $C_border;
+        flex: 1 0 auto;
+        text-align: center;
+        &:last-child {
+          border-right: none;
+        }
+        a {
+          display: block;
+          line-height: $block;
+          text-align: center;
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  .momentary-alert-copy {
+    padding: $space;
+  }
+
+}

@@ -1,0 +1,211 @@
+// Configuration
+$btn-name          : 'button' !default; // base class for all buttons
+$btn-hover         : lighten 10% !default;
+$btn-hover-opacity : opacify .1 !default;
+$btn-border        : 1px solid !default;
+$btn-schemes : (
+  default: transparent,
+  primary: $C_link,
+  contrast: $C_textSecondaryInverted
+) !default; // used like modifiers on buttons. e.g.: <button class="button button--primary"></button>
+
+// Button color helper
+@mixin button-color($color, $btn-border: false) {
+  background-color: $color;
+
+  &:focus {
+    outline: 0;
+  }
+
+  @if opacity($color) < 1 {
+    // if the button color has opacity
+    &:hover,
+    &:active,
+    &:focus {
+      background: call(nth($btn-hover-opacity, 1), $color, nth($btn-hover-opacity, 2));
+    }
+  } @else {
+    // if the button color is a solid (non-transparent) color
+    color: $C_textPrimaryInverted;
+    &:hover,
+    &:active,
+    &:focus {
+      background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+    }
+  }
+
+  @if $btn-border != false { // 3
+    border: $btn-border $color;
+    background: transparentize($color, 1);
+    color: $color;
+  }
+
+  &.#{$btn-name}--disabled {
+    opacity: .4;
+    color: $C_textPrimary;
+    cursor: default;
+    &:hover,
+    &:active,
+    &:focus {
+      background: $color;
+    }
+
+    //too much class chaining?
+    &.button--primary {
+      background: $C_textTertiary;
+    }
+
+  }
+
+}
+
+//
+// Classes get spit out here
+//
+.#{$btn-name} {
+  // Default styles
+  @include button-color(rgba(0,0,0,0));
+  border-radius: 50px;
+  border: none;
+  color: map-get($btn-schemes, "primary");
+  cursor: pointer;
+  font-size: $font-size;
+  font-weight: $W_bold;
+  margin: $space-half $space-quarter $space-half $space-quarter;
+  padding: $space-half $space;
+  transition: background .15s;
+
+  i {
+    margin-right: $space-half;
+  }
+
+  //
+  // Kinds of buttons
+  //
+  &--bordered {
+    @include button-color(map-get($btn-schemes, "primary"), $btn-border);
+    font-weight: $W_normal;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparentize(map-get($btn-schemes, "primary"), .8);
+    }
+
+  }
+
+  &--contrast {
+    color: $C_textPrimary;
+    font-weight: $W_bold;
+  }
+
+  //
+  // Button size modifiers
+  //
+  &--small {
+    font-size: $font-size-small;
+    padding: $space-quarter $space-half;
+  }
+
+  //
+  // Not sure we'll need this, but keeping it just incase
+  //
+  // &--large {
+  //   padding: $space $space-2;
+  // }
+
+  &--full-width {
+    display: block;
+    width: 100%;
+  }
+
+
+  @each $key, $value in $btn-schemes { // 5
+    &--#{$key} {
+      @include button-color($value);
+    }
+  }
+}
+
+// Toggle button behavior - try and find a way to bring this into regular button style area
+.toggle-button-wrapper {
+  display: inline-block;
+  margin: $space-quarter 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  label {
+    margin: 0;
+  }
+  input {
+    display: none;
+    &:checked + label {
+      background: $C_blue;
+      border: none;
+      color: $C_textPrimaryInverted;
+    }
+  }
+
+}
+
+.toggle-on {
+  -webkit-animation: bounce-in-subtle 750ms linear both;
+  animation: bounce-in-subtle 750ms linear both;
+  label {
+    font-weight: $W_bold;
+  }
+}
+
+/* Generated with Bounce.js. Edit at http://goo.gl/tT4jnp */
+/* Is this too big? */
+@-webkit-keyframes bounce-in-subtle {
+  0% { -webkit-transform: matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.347826% { -webkit-transform: matrix3d(1.12578, 0, 0, 0, 0, 1.12578, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.12578, 0, 0, 0, 0, 1.12578, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  8.695652% { -webkit-transform: matrix3d(1.03988, 0, 0, 0, 0, 1.03988, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.03988, 0, 0, 0, 0, 1.03988, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  13.043478% { -webkit-transform: matrix3d(0.99652, 0, 0, 0, 0, 0.99652, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99652, 0, 0, 0, 0, 0.99652, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  17.391304% { -webkit-transform: matrix3d(0.98266, 0, 0, 0, 0, 0.98266, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.98266, 0, 0, 0, 0, 0.98266, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  21.73913% { -webkit-transform: matrix3d(0.98376, 0, 0, 0, 0, 0.98376, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.98376, 0, 0, 0, 0, 0.98376, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  26.086957% { -webkit-transform: matrix3d(0.98967, 0, 0, 0, 0, 0.98967, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.98967, 0, 0, 0, 0, 0.98967, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  30.434783% { -webkit-transform: matrix3d(0.99524, 0, 0, 0, 0, 0.99524, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99524, 0, 0, 0, 0, 0.99524, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  34.782609% { -webkit-transform: matrix3d(0.99879, 0, 0, 0, 0, 0.99879, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99879, 0, 0, 0, 0, 0.99879, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  39.130435% { -webkit-transform: matrix3d(1.00043, 0, 0, 0, 0, 1.00043, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00043, 0, 0, 0, 0, 1.00043, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  43.478261% { -webkit-transform: matrix3d(1.00086, 0, 0, 0, 0, 1.00086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00086, 0, 0, 0, 0, 1.00086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  47.826087% { -webkit-transform: matrix3d(1.00071, 0, 0, 0, 0, 1.00071, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00071, 0, 0, 0, 0, 1.00071, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  52.173913% { -webkit-transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  56.521739% { -webkit-transform: matrix3d(1.00017, 0, 0, 0, 0, 1.00017, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00017, 0, 0, 0, 0, 1.00017, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  60.869565% { -webkit-transform: matrix3d(1.00003, 0, 0, 0, 0, 1.00003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00003, 0, 0, 0, 0, 1.00003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  65.217391% { -webkit-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  69.565217% { -webkit-transform: matrix3d(0.99996, 0, 0, 0, 0, 0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99996, 0, 0, 0, 0, 0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  73.913043% { -webkit-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  78.26087% { -webkit-transform: matrix3d(0.99998, 0, 0, 0, 0, 0.99998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99998, 0, 0, 0, 0, 0.99998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  82.608696% { -webkit-transform: matrix3d(0.99999, 0, 0, 0, 0, 0.99999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99999, 0, 0, 0, 0, 0.99999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  86.956522% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  91.304348% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  95.652174% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+@keyframes bounce-in-subtle {
+  0% { -webkit-transform: matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.347826% { -webkit-transform: matrix3d(1.12578, 0, 0, 0, 0, 1.12578, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.12578, 0, 0, 0, 0, 1.12578, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  8.695652% { -webkit-transform: matrix3d(1.03988, 0, 0, 0, 0, 1.03988, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.03988, 0, 0, 0, 0, 1.03988, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  13.043478% { -webkit-transform: matrix3d(0.99652, 0, 0, 0, 0, 0.99652, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99652, 0, 0, 0, 0, 0.99652, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  17.391304% { -webkit-transform: matrix3d(0.98266, 0, 0, 0, 0, 0.98266, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.98266, 0, 0, 0, 0, 0.98266, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  21.73913% { -webkit-transform: matrix3d(0.98376, 0, 0, 0, 0, 0.98376, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.98376, 0, 0, 0, 0, 0.98376, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  26.086957% { -webkit-transform: matrix3d(0.98967, 0, 0, 0, 0, 0.98967, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.98967, 0, 0, 0, 0, 0.98967, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  30.434783% { -webkit-transform: matrix3d(0.99524, 0, 0, 0, 0, 0.99524, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99524, 0, 0, 0, 0, 0.99524, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  34.782609% { -webkit-transform: matrix3d(0.99879, 0, 0, 0, 0, 0.99879, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99879, 0, 0, 0, 0, 0.99879, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  39.130435% { -webkit-transform: matrix3d(1.00043, 0, 0, 0, 0, 1.00043, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00043, 0, 0, 0, 0, 1.00043, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  43.478261% { -webkit-transform: matrix3d(1.00086, 0, 0, 0, 0, 1.00086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00086, 0, 0, 0, 0, 1.00086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  47.826087% { -webkit-transform: matrix3d(1.00071, 0, 0, 0, 0, 1.00071, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00071, 0, 0, 0, 0, 1.00071, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  52.173913% { -webkit-transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  56.521739% { -webkit-transform: matrix3d(1.00017, 0, 0, 0, 0, 1.00017, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00017, 0, 0, 0, 0, 1.00017, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  60.869565% { -webkit-transform: matrix3d(1.00003, 0, 0, 0, 0, 1.00003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.00003, 0, 0, 0, 0, 1.00003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  65.217391% { -webkit-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  69.565217% { -webkit-transform: matrix3d(0.99996, 0, 0, 0, 0, 0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99996, 0, 0, 0, 0, 0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  73.913043% { -webkit-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  78.26087% { -webkit-transform: matrix3d(0.99998, 0, 0, 0, 0, 0.99998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99998, 0, 0, 0, 0, 0.99998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  82.608696% { -webkit-transform: matrix3d(0.99999, 0, 0, 0, 0, 0.99999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99999, 0, 0, 0, 0, 0.99999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  86.956522% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  91.304348% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  95.652174% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}

@@ -1,0 +1,31 @@
+.android {
+  .momentary-popover {
+    @include transition(none);
+    box-shadow: -2px 1px 2px $C_border;
+    margin-top: 0;
+    width: auto;
+
+    .momentary-btn-list {
+      @include transition(max-height 50ms $ease-in-quart, opacity 100ms $ease-in-quart);
+      max-height: 100vh;
+      opacity: 1;
+    }
+
+    .momentary-btn-list > li {
+      border-top: none;
+    }
+
+    &:after, &:before {
+      display: none;
+    }
+
+    &.off {
+      @include transform(translateY(0));
+      .momentary-btn-list {
+        max-height: 0;
+        opacity: 0;
+      }
+    }
+  }
+
+}

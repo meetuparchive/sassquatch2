@@ -1,0 +1,60 @@
+.media--xs {
+  height: auto;
+  width: $media-xs;
+}
+
+.media--s {
+  height: auto;
+  width: $media-s;
+}
+
+.media--m {
+  height: auto;
+  width: $media-m;
+}
+
+.media--l {
+  height: auto;
+  width: $media-l;
+}
+
+.media--xl {
+  height: auto;
+  width: $media-xl;
+}
+
+.thumb {
+  background-position: center;
+  background-size: cover;
+  display: block;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.keepAspect {
+  margin-bottom: 0;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(1/1);
+  }
+}
+
+.keepAspect--16-9 {
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(9/16);
+  }
+}
+
+.keepAspect--2-1 {
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(1/2);
+  }
+}

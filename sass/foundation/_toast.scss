@@ -1,0 +1,21 @@
+.toast {
+  @include transition(transform 100ms $ease-in-quart);
+  @include transform(translateY(0));
+  position: fixed;
+  top: $space-quarter;
+  width: 100%;
+  z-index: map-get($indexes, "momentary");
+
+  &.off {
+    @include transform(translateY(-$block));
+  }
+}
+
+.toast-content {
+  background: $C_contentBGInverted;
+  border-radius: $defaultRadius;
+  color: $C_textPrimaryInverted;
+  margin: 0 auto;
+  padding: $space-half;
+  max-width: $breakpoint-s;
+}

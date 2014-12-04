@@ -1,0 +1,20 @@
+.momentary-popover {
+  @include pointers-for-box($pointer_size, $C_contentBG, $C_border);
+  margin-top: $pointer_size;
+  .momentary-btn-list {
+    border: none;
+    border-radius: $defaultRadius;
+  }
+
+  li {
+    border-top: 1px solid $C_border;
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  &.off {
+    @include transform(translateY(-10px));
+  }
+
+}

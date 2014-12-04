@@ -1,0 +1,68 @@
+$C_contentBG             : #FFFFFF;
+$C_collectionBGLight     : #F3F6F9;
+$C_collectionBGDark      : #E6E9EC;
+
+$space                   : 16px;
+$space-half              : $space/2;
+
+.extended-header,
+.navBar {
+  background: $C_collectionBGLight;
+  margin-bottom: 0;
+}
+
+.navBar {
+  height: 48px;
+  overflow: hidden;
+}
+
+.navBar-heading {
+  margin-bottom: 0;
+}
+
+.running-text-container {
+  padding-bottom: $space !important;
+}
+
+.event-info {
+  background: $C_contentBG;
+}
+  .member-listing {
+    margin-bottom: $space;
+  }
+
+  .member-listing--count {
+    padding-right: $space-half;
+  }
+
+  .info-wrapper {
+    margin-bottom: $space;
+    .avatar {
+      margin-right: $space-half;
+    }
+  }
+
+.discussions-container {
+  background: $C_collectionBGDark;
+}
+  .comment {
+    &>div {
+      padding: $space;
+    }
+
+    .avatar {
+      margin-right: $space-half;
+    }
+  }
+
+  .comment-action-container {
+    background: $C_collectionBGLight;
+  }
+
+  .comment-action {
+    margin-right: $space-half;
+  }
+
+.comment > div {
+  padding: $space-half;
+}
