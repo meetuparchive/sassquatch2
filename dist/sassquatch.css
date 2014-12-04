@@ -1,32 +1,80 @@
-/**
-* SASSQUATCH BASE
-*/
-/**
-* GLOBALS
-*
-* Sass vars in global scope
-*/
 /*
- *  // Misc colors
- *  $C_red                   : rgb(226,55,60);
- *  $C_accent                : $C_red;
- *  $C_accentDark            : darken($C_red, 8%);
- *
- *  $C_blue                  : rgb(57, 135, 203);
- *  $C_link                  : $C_blue;
- *
- *  $C_border                : rgba(0,0,0,.12);
- *  $C_borderInverted        : rgba(255,255,255,.2);
- *
- *  $C_textProtection        : rgba(0,0,0,.2);
- *
- *  $C_overlayPressed        : rgba(0,0,0,.1); //rgba(64, 197, 255, 0.2)
- *
- *  // Plane colors
- *  $C_contentBG             : #FFFFFF;
- *  $C_contentBGInverted     : #353E48;
- *  $C_collectionBGLight     : #F3F6F9;
- *  $C_collectionBGDark      : #E6E9EC;
- */
+Error: Undefined variable: "$C_accent".
+        on line 20 of sass/core/_headings.scss
+        from line 26 of sass/base.scss
 
-/*# sourceMappingURL=sassquatch.css.map */
+15: // ---------------------------------------
+16: //
+17: 	@import "globals";
+18: 	//@import "util";
+19: 
+20: 
+21: // ---------------------------------------
+22: // Sassquatch Core
+23: // ---------------------------------------
+24: //
+25: 	@import "core/type-reset";
+
+Backtrace:
+sass/core/_headings.scss:20
+sass/base.scss:26
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:384:in `visit_prop'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:420:in `map'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `map'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:88:in `block in with_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:88:in `with_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `block in with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:115:in `with_frame'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/stack.rb:79:in `with_base'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/exec/sass_scss.rb:375:in `run'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/exec/base.rb:40:in `parse'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/lib/sass/exec/base.rb:19:in `parse!'
+/Users/adamd/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.4.4/bin/sass:13:in `<top (required)>'
+/Users/adamd/.rbenv/versions/2.0.0-p247/bin/sass:23:in `load'
+/Users/adamd/.rbenv/versions/2.0.0-p247/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$C_accent\".\A         on line 20 of sass/core/_headings.scss\A         from line 26 of sass/base.scss\A \A 15: // ---------------------------------------\A 16: //\A 17: 	@import \"globals\";\A 18: 	//@import \"util\";\A 19: \A 20: \A 21: // ---------------------------------------\A 22: // Sassquatch Core\A 23: // ---------------------------------------\A 24: //\A 25: 	@import \"core/type-reset\";"; }
