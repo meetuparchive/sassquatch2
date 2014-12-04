@@ -1,6 +1,6 @@
 {
 	"name": "sassquatch2",
-	"version": "2.0.0",
+	"version": "0.0.1",
 	"description": "CSS foundation and framework for Meetup",
 	"main": [
 		"./dist"
