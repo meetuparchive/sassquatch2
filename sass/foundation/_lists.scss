@@ -24,9 +24,9 @@
 // CHUNKLISTS
 //
 .chunkList {
-	padding: 0;
-	margin: 0;
-	list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 
     a { // move to .unlink
         text-decoration: none;
@@ -42,15 +42,15 @@
         display: inline-block;
     }
 
-	& > li {
-		margin: 0;
-		border-top: 1px solid $C_border;
-		// overflow: hidden;
+  & > li {
+    margin: 0;
+    border-top: 1px solid $C_border;
+    // overflow: hidden;
 
-		&:first-child{
-			border-top: none;
-		};
-	}
+    &:first-child{
+      border-top: none;
+    };
+  }
 }
 
 
@@ -112,20 +112,20 @@
 // Gives you an <li> that is in the *neighborhood* of 100px across all breakpoints
 //
 .gridList{
-	margin: 0 #{-($space-half)} 0 0;
-	padding: 0;
-	list-style: none;
-	font-size: 0;
-	> li{
-	font-size: 1rem;
+  margin: 0 #{-($space-half)} 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+  > li{
+  font-size: 1rem;
     display: inline-block;
     //line-height: 0;
     margin: 0;
     padding: 0 $space-half $space-half 0;
     vertical-align: top;
     width: 50%;
-		@include box-sizing(border-box);
-	}
+    @include box-sizing(border-box);
+  }
 
     $target_widths: 20px,30px,40px,60px,80px,100px,200px,300px,400px;
 
@@ -186,6 +186,7 @@
     box-sizing: content-box;
     padding-left: $space;
     padding-right: $space;
+    white-space: nowrap;
   }
 }
 .hscroll-wrap-wrap{

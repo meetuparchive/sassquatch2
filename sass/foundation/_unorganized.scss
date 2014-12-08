@@ -40,51 +40,51 @@
 
 
 .tabs{
-	line-style: none;
-	margin: 0;
-	padding: 0;
-	display: block;
-	li{
-		$lineh: 4px;
+  line-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  li{
+    $lineh: 4px;
     color : $C_textTertiary;
-		padding: 0;
-		margin: 0 0 0 $space;
-		cursor: pointer;
-		display: inline-block;
-		border-bottom: $lineh solid transparent;
-		&:first-child{
-			margin-left: 0;
-		}
+    padding: 0;
+    margin: 0 0 0 $space;
+    cursor: pointer;
+    display: inline-block;
+    border-bottom: $lineh solid transparent;
+    &:first-child{
+      margin-left: 0;
+    }
     &:hover {
       color: $C_textSecondary;
     }
-		&.selected{
-			color: $C_red;
-			border-bottom: $lineh solid $C_red;
-		}
+    &.selected{
+      color: $C_red;
+      border-bottom: $lineh solid $C_red;
+    }
 
-		.inverted & {
-			color : $C_textTertiaryInverted;
+    .inverted & {
+      color : $C_textTertiaryInverted;
       &:hover {
         color: $C_textSecondaryInverted;
       }
-			&.selected{
-				color: $C_textPrimaryInverted;
-				border-bottom-color: $C_textPrimaryInverted;
-			}
-		}
+      &.selected{
+        color: $C_textPrimaryInverted;
+        border-bottom-color: $C_textPrimaryInverted;
+      }
+    }
 
-	}
-	&.full{
-		display: table;
+  }
+  &.full{
+    display: table;
     table-layout: fixed;
-		width: 100%;
-		li{
-			display: table-cell;
-			margin: 0;
-			text-align: center;
-		}
-	}
+    width: 100%;
+    li{
+      display: table-cell;
+      margin: 0;
+      text-align: center;
+    }
+  }
 }
 
 .ios {
@@ -148,105 +148,105 @@ $ios: fixed position bottom EASY
 
 // body.has-nav
 .has-nav{
-	.view{
-		margin-top: $block;
-	}
-	.viewHead{
-		top: $block;
-	}
+  .view{
+    margin-top: $block;
+  }
+  .viewHead{
+    top: $block;
+  }
 }
 
 #nav{
     // try to align without this
-	// @extend %v-align-children--bottom;
+  // @extend %v-align-children--bottom;
 
     background: $C_accentDark;
-	top: 0;
-	height: $block;
-	left: 0;
-	position: fixed;
-	width: 100%;
-	z-index: map-get($indexes, "main-header");
-	.docBounds {
-		padding: 0 $space;
-		//max-width: none;
-	}
+  top: 0;
+  height: $block;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: map-get($indexes, "main-header");
+  .docBounds {
+    padding: 0 $space;
+    //max-width: none;
+  }
 
-	li{
-		color : $C_textSecondaryInverted;
-		&.selected{
-			color: $C_textPrimaryInverted;
-			border-bottom-color: $C_textPrimaryInverted;
-		}
-	}
+  li{
+    color : $C_textSecondaryInverted;
+    &.selected{
+      color: $C_textPrimaryInverted;
+      border-bottom-color: $C_textPrimaryInverted;
+    }
+  }
 
-	.ios &{
-		background: white;
-		li{
-			color : $C_textTertiary;
-			&.selected{
-				color: $C_accent;
-				border-bottom-color: $C_accent;
-			}
-		}
-	}
+  .ios &{
+    background: white;
+    li{
+      color : $C_textTertiary;
+      &.selected{
+        color: $C_accent;
+        border-bottom-color: $C_accent;
+      }
+    }
+  }
 }
 
 
 
 // ------------ CHAT ------------
 @mixin chatBubbleOptions($color, $direction, $tail){
-	margin-#{$direction}: 0;
-	text-align: #{$direction};
-	.content{
-		float: #{$direction};
-		background: $color;
-		&:last-child{
-			border-bottom-#{$direction}-radius: 0;
-			&:after{
-				#{$direction}: -($tail);
-				border-bottom-color: $color;
-			}
-		}
-	}
+  margin-#{$direction}: 0;
+  text-align: #{$direction};
+  .content{
+    float: #{$direction};
+    background: $color;
+    &:last-child{
+      border-bottom-#{$direction}-radius: 0;
+      &:after{
+        #{$direction}: -($tail);
+        border-bottom-color: $color;
+      }
+    }
+  }
 }
 
 .chatList{
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	& > li{
-		max-width: 70%;
-		margin: 0 auto $space;
-		.content{
-			clear: both;
-			border-radius: 10px;
-			padding: $space-half;
-			position: relative;
-			margin-bottom: $space-half;
-			&:last-child{
-				&:after{
-					content: '';
-					display: block;
-					width: 0;
-					height: 0;
-					border: 5px solid transparent;
-					position: absolute;
-					bottom: 0;
-				}
-			}
-		}
-		&.you{
-			@include chatBubbleOptions(#eee, 'left', 5px);
-			.ffbox-fix{
-				padding-right: $space-half;
-				vertical-align: bottom;
-			}
-		}
-		&.me{
-			@include chatBubbleOptions($C_blue, 'right', 5px);
-		}
-	}
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  & > li{
+    max-width: 70%;
+    margin: 0 auto $space;
+    .content{
+      clear: both;
+      border-radius: 10px;
+      padding: $space-half;
+      position: relative;
+      margin-bottom: $space-half;
+      &:last-child{
+        &:after{
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border: 5px solid transparent;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+    &.you{
+      @include chatBubbleOptions(#eee, 'left', 5px);
+      .ffbox-fix{
+        padding-right: $space-half;
+        vertical-align: bottom;
+      }
+    }
+    &.me{
+      @include chatBubbleOptions($C_blue, 'right', 5px);
+    }
+  }
 }
 
 // ------------ toggle pills ------------
@@ -343,29 +343,29 @@ $colorsList : (
 // ------------ portrait header ------
 // terribly named
 .portrait-blur {
-	background-size: cover;
-	-webkit-filter: blur(100px) saturate(200%);
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-position: center;
-	clip: rect(0, 100%, 100%, 0);
-	transform: translate3d(0,0,0);
+  background-size: cover;
+  -webkit-filter: blur(100px) saturate(200%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  clip: rect(0, 100%, 100%, 0);
+  transform: translate3d(0,0,0);
 }
 
 @include atMediaDown(small) {
-	.portrait-blur {
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		-webkit-filter: none;
-	}
-	.hide--at-small{
-		display: none!important;
-	}
+  .portrait-blur {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: none;
+  }
+  .hide--at-small{
+    display: none!important;
+  }
 }
 
 
@@ -378,4 +378,9 @@ $colorsList : (
 // ------------ iOS centered header text ------
 .ios .viewHead .viewHead-heading {
   text-align: center;
+}
+
+// ------------ make anchor tags 'display: block' ------
+.blockLink {
+  display: block;
 }

@@ -67,12 +67,15 @@ $btn-schemes : (
   @include button-color(rgba(0,0,0,0));
   border-radius: 50px;
   border: none;
+  box-sizing: border-box;
   color: map-get($btn-schemes, "primary");
   cursor: pointer;
+  display: inline-block;
   font-size: $font-size;
   font-weight: $W_bold;
-  margin: $space-half $space-quarter $space-half $space-quarter;
+  margin: $space-half $space-quarter;
   padding: $space-half $space;
+  text-align: center;
   transition: background .15s;
 
   i {
@@ -116,6 +119,7 @@ $btn-schemes : (
 
   &--full-width {
     display: block;
+    margin: $space-half 0;
     width: 100%;
   }
 
