@@ -1,4 +1,102 @@
-// STUFF THAT NEEDS TO GET ORGANIZED
+// STUFF THAT NEEDS TO GET / ------------- avtars ---------
+
+.avatar{
+	display: inline-block!important
+}
+
+
+// ------------  paragraphs should be set by bounds, otherwise it gets weird ------------
+
+p{
+	max-width: none!important;
+}
+
+
+// ------------  borderless buttons have a hard time setting space sometimes ------------
+
+.button.button--slight{
+	//background-color: rgba(0,0,0,.02);
+}
+.button{
+	display: block;
+}
+
+// ------------  RESPONSIVE GRID ------------
+
+.columnGroup{
+	display: flex;
+	margin-right: -($space);
+	.column{
+		box-sizing: border-box;
+		padding-right: $space;
+		overflow: hidden;
+	}
+	$sizes: ( 2, 3, 4, 5, 6, 7 );
+	@each $s in $sizes {
+		@for $i from 1 through $s {
+			.size#{$i}of#{$s}{
+				width: percentage($i/$s);
+			}
+		}
+	}
+}
+
+.align-center{
+	text-align: center;
+}
+.none{
+	display: none;
+}
+.block{
+	display: block;
+}
+.inline{
+	display: inline;
+}
+.inlineblock{
+	display: inline-block;
+}
+
+// redo to use mediaup
+$breakpoints: ( large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s );
+@each $bname, $bp in $breakpoints {
+	@include atMediaDown($bname){
+		.linear--at-#{$bname}{
+			display: block;
+			margin-right: 0;
+			.column{
+				width: auto;
+			}
+		}
+		.none--at-#{$bname}{
+			display: none;
+		}
+		.block--at-#{$bname}{
+			display: block;
+		}
+		.inline--at-#{$bname}{
+			display: inline;
+		}
+		.inlineblock--at-#{$bname}{
+			display: inline-block;
+		}
+	}
+}
+
+
+@include atMediaUp(large) {
+	.chunkList.chunkList--grid{
+		display: flex;
+		flex-direction: row;		
+		& > li{
+			width: 33.33%;
+			border-top: none;
+			padding-right: $space;
+			box-sizing: border-box;
+		}
+	}
+}
+
 // ------------ NEW FFBOX with fallbacks to display:table ------------
 
 
@@ -380,7 +478,3 @@ $colorsList : (
   text-align: center;
 }
 
-// ------------ make anchor tags 'display: block' ------
-.blockLink {
-  display: block;
-}

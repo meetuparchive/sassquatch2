@@ -187,6 +187,9 @@
     padding-left: $space;
     padding-right: $space;
     white-space: nowrap;
+	li{
+		white-space: normal;
+	}
   }
 }
 .hscroll-wrap-wrap{

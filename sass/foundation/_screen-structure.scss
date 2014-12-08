@@ -5,6 +5,13 @@ body{
 .docStripe {
 	overflow: hidden;
 }
+.docStripe--collection{
+	background: $C_collectionBGLight;
+}
+
+.docStripe--inverted{
+	background: $C_contentBGInverted;
+}
 
 .docBounds {
   box-sizing: border-box;
@@ -13,6 +20,15 @@ body{
   max-width: $docBounds;
   padding: $space;
   width: 100%;
+}
+
+.docBox{
+	// currently in sassquatch leftovers
+	margin-bottom: 0;
+}
+
+.docContent{
+	padding: $space;
 }
 
 //

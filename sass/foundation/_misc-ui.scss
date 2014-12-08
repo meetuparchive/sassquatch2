@@ -9,7 +9,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 42%;
-  background-color: $C_shade;
   display: block;
   font-size: $media-m * 2/3;
   height: $media-m;
@@ -73,6 +72,9 @@
 .photo-card--photo {
   position: relative;
   @include textProtectionScrim;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
 
 .photo-card--text {
