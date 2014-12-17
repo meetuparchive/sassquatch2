@@ -23,7 +23,12 @@
 .inlineblock {
     display: inline-block;
 }
-
+.border-top{
+	border-top: 1px solid $C_border;
+}
+.border-none{
+	border: none;
+}
 
 // redo to use mediaup
 $breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s);
@@ -51,5 +56,11 @@ $breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s
         .inlineblock#{$bpmodifier} {
             display: inline-block;
         }
+		.border-top#{$bpmodifier}{
+			border-top: 1px solid $C_border;
+		}
+		.border-none#{$bpmodifier}{
+			border: none;
+		}
 	}
 }
