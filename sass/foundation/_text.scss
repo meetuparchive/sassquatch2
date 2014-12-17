@@ -10,10 +10,6 @@ body {
   color: $C_textPrimaryInverted;
 }
 
-p {
-  max-width: $measure; // keep a nice measure
-}
-
 .hint-text {
   color: $C_textTertiary;
   .inverted & {

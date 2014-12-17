@@ -1,20 +1,24 @@
 //
-/* ALERTS */
+/* BASIC IMAGE FILL */
 //
+.imgFill{
+	background-repeat: no-repeat;
+  	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+}
 
 //
 /* AVATAR */
 //
 .avatar {
-  background-repeat: no-repeat;
-  background-size: cover;
+  @extend .imgFill
   background-position: center 42%;
-  display: block;
+  display: inline-block;
   font-size: $media-m * 2/3;
   height: $media-m;
   text-indent: 100%;
   white-space: nowrap;
-  overflow: hidden;
   vertical-align: top;
   width: $media-m;
 }
@@ -33,6 +37,12 @@
   */
 }
 
+.avatar--xsmall {
+	font-size: $media-xs;
+	height: $media-xs;
+	width: $media-xs;
+}
+
 .avatar--small {
   width: $media-s;
   height: $media-s;
@@ -44,37 +54,55 @@
   font-size: $media-l * 2/3;
 }
 
-.avatar--fb-friend { // layout is broken
-  position: relative;
-  overflow: visible;
-  &:after {
-    background: $C_facebook;
-    border-radius: 999px;
-    bottom: 0;
-    color: $C_textPrimaryInverted;
-    content: "f";
-    display: block;
-    font-size: 10px;
-    font-weight: $W_bold;
-    height: $space;
-    line-height: $space;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    text-indent: 0%;
-    width: $space;
-  }
+// charms
+.avatar--fb-friend, .avatar--org{
+    position: relative;
+    overflow: visible;
+	&:after {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 10px;
+	    border-radius: 999px;
+	    bottom: 0;
+		content: "";
+	    display: block;
+	    font-size: 10px;
+	    font-weight: $W_bold;
+	    height: $space;
+	    line-height: $space;
+	    position: absolute;
+	    right: 0;
+	    text-align: center;
+	    text-indent: 0%;
+	    width: $space;
+	}
 }
+.avatar--fb-friend{
+	&:after {
+		background-color: $C_facebook;
+		color: $C_textPrimaryInverted;
+		content: "f";
+	}
+}
+.avatar--org{
+	&:after {
+        background-color: $C_accent;
+        background-image: url('img/org-badge.svg');
+		color: $C_textPrimaryInverted;
+	}
+}
+
+
 
 //
 /* TEXT OVER A PHOTO - card size */
 //
 .photo-card--photo {
+  @extend .imgFill;
   position: relative;
   @include textProtectionScrim;
   width: 100%;
   height: 100%;
-  background-size: cover;
 }
 
 .photo-card--text {

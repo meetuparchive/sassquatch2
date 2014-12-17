@@ -37,8 +37,6 @@
     @import "foundation/lists";
     @import "foundation/lists-ios";
 
-/// Scratch --------------------------------
-    @import "foundation/unorganized";
 
 /// Screen Structure -----------------------
     @import "foundation/screen-structure";
@@ -72,3 +70,7 @@
 
 /// Toast ----------------------------------
     @import "foundation/toast";
+
+
+/// Helpers ----------------------------------
+    @import "foundation/helpers";

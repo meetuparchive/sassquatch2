@@ -82,9 +82,10 @@
 .chunkList-chunk--graphic {
     // setting weird width on here because I'm using ffbox to do vertical alignment
     line-height: 100%;
-    min-width: $block;
-    max-width: $block;
+    min-width: $media-s;
+    max-width: $media-s;
 }
+
 
 .chunkList-chunk--action {
   text-align: right;
@@ -213,8 +214,29 @@
     @include background-image(linear-gradient(to left, #fff, transparentize(#ffffff, 1) ));
   }
 
+  // docstripe--collection
+  .docStripe--collection .hscroll-wrap-wrap {
+    &:before{
+      @include background-image(linear-gradient(to right, $C_collectionBGLight, transparentize($C_collectionBGLight, 1) ));
+    }
+    &:after{
+      @include background-image(linear-gradient(to left, $C_collectionBGLight, transparentize($C_collectionBGLight, 1) ));
+    }
+  }
+
+  // docstripe--inverted
+  .docStripe--inverted .hscroll-wrap-wrap {
+    &:before{
+      @include background-image(linear-gradient(to right, $C_contentBGInverted, transparentize($C_contentBGInverted, 1) ));
+    }
+    &:after{
+      @include background-image(linear-gradient(to left, $C_contentBGInverted, transparentize($C_contentBGInverted, 1) ));
+    }
+  }
+
 }
 
+// hmm?
 .hscroll .tileGrid-tile {
   box-sizing: content-box;
 }
