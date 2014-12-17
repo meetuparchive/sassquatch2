@@ -5,6 +5,12 @@
 .align-center{
     text-align: center;
 }
+.align-right{
+    text-align: right;
+}
+.align-left{
+    text-align: left;
+}
 .none {
     display: none;
 }
@@ -26,6 +32,12 @@ $breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s
 	@include atMediaDown($bname){
 		.align-center#{$bpmodifier}{
 		    text-align: center;
+		}
+		.align-right#{$bpmodifier}{
+		    text-align: right;
+		}
+		.align-left#{$bpmodifier}{
+		    text-align: right;
 		}
         .none#{$bpmodifier} {
             display: none;
