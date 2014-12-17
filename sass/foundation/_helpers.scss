@@ -37,7 +37,7 @@ $breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s
 		    text-align: right;
 		}
 		.align-left#{$bpmodifier}{
-		    text-align: right;
+		    text-align: left;
 		}
         .none#{$bpmodifier} {
             display: none;
