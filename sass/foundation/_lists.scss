@@ -28,19 +28,24 @@
   margin: 0;
   list-style: none;
 
-    .timestamp {
-      float: right;
-    }
+  .timestamp {
+    float: right;
+  }
 
-    .item-label {
-        font-weight: 700;
-        display: inline-block;
-    }
+  .item-label {
+      font-weight: 700;
+      display: inline-block;
+  }
 
   & > li {
     margin: 0;
     border-top: 1px solid $C_border;
     // overflow: hidden;
+
+    .chunkList--borderless & {
+      border-top: 0;
+      margin-top: $space-2;
+    }
 
     & > a {
       color: $C_textPrimary;
@@ -53,7 +58,10 @@
   }
 }
 
-
+.chunkList--borderless > li {
+  border-top: 0;
+  margin-top: $space-2;
+}
 
 .chunkList-chunk {
   height: $block-2;
