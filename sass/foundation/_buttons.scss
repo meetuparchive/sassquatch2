@@ -109,9 +109,9 @@ $btn-schemes : (
     font-weight: $W_normal;
     padding: 0;
     i {
-      border: 1px solid $C_link;
+      border: 1px solid map-get($btn-schemes, "primary");
       border-radius: 999px;
-      color: $C_link;
+      color: map-get($btn-schemes, "primary");
       display: block;
       font-size: $media-xs;
       height: $media-xs;
