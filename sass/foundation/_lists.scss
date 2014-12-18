@@ -28,11 +28,6 @@
   margin: 0;
   list-style: none;
 
-    a { // move to .unlink
-        text-decoration: none;
-        color: $C_textSecondary;
-    }
-
     .timestamp {
       float: right;
     }
@@ -46,6 +41,11 @@
     margin: 0;
     border-top: 1px solid $C_border;
     // overflow: hidden;
+
+    & > a {
+      color: $C_textPrimary;
+      text-decoration: none;
+    }
 
     &:first-child{
       border-top: none;
@@ -169,6 +169,7 @@
 // INLINE BLOCK LIST
 //
 .inlineblockList {
+  margin: $space-half 0;
   padding: 0;
   & > li {
     display: inline-block;

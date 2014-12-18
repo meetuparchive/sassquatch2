@@ -213,3 +213,23 @@ $btn-schemes : (
   95.652174% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
 }
+
+.button.button--iconButton {
+  font-weight: $W_normal;
+  padding: 0;
+  i {
+    border: 1px solid $C_link;
+    border-radius: 999px;
+    color: $C_link;
+    display: block;
+    font-size: $media-xs;
+    height: $media-xs;
+    margin: 0 auto;
+    padding: $space-half;
+    width: $media-xs;
+  }
+  &:hover, &:focus, &:active {
+    background: transparent;
+    text-decoration: none;
+  }
+}

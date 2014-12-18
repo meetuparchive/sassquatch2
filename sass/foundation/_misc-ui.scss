@@ -2,10 +2,10 @@
 /* BASIC IMAGE FILL */
 //
 .imgFill{
-	background-repeat: no-repeat;
-  	background-position: center;
-	background-size: cover;
-	overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
 }
 
 //
@@ -13,6 +13,7 @@
 //
 .avatar {
   @extend .imgFill;
+  background-color: $C_collectionBGLight;
   background-position: center 42%;
   display: inline-block;
   font-size: $media-m * 2/3;
@@ -122,10 +123,11 @@
   font-size: $font-size-small;
   font-weight: $W_bold;
   height: $space-2;
-  padding-top: 5px;
+  padding-top: $space-quarter;
   position: relative;
   text-align: center;
   width: $space-2;
+
   &:before {
     background: $C_accent;
     content: '';
@@ -136,6 +138,7 @@
     right: -1px;
     top: -1px;
   }
+
 }
 
 .tearsheet-with-date {
@@ -145,4 +148,35 @@
   .tearsheet {
     margin-right: $space-half;
   }
+}
+
+//
+/* TOGGLE PILL */
+//
+.toggle-pill-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+  }
+
+}
+
+input.toggle-pill {
+  display: none;
+
+  & + label {
+    border: 1px solid $C-blue;
+    border-radius: 999px;
+    color: $C-blue;
+    margin-right: $space-half;
+    padding: $space-half;
+  }
+
+  &:checked + label {
+    background: $C-blue;
+    color: $C-textPrimaryInverted;
+  }
+
 }

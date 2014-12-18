@@ -64,3 +64,9 @@ $breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s
 		}
 	}
 }
+
+.single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
