@@ -50,27 +50,18 @@ body {
 //
 // Link styles
 // ------------------------------ //
-// :active and :focus states for accessibility http://meyerweb.com/eric/css/tests/css2/sec05-11-03.htm
-a {
-  color: $C_link;
-  text-decoration: none;
-}
-.unlink, a.unlink{
-	color: $C_textPrimary;
-	.inverted &{
-		color: $C_textPrimaryInverted;
+// in the bold new internet, links are more often normal color
+// if you want to specify a hypertext-y link, use the .link class
+// links inside running text are assumed to be hypertext-y
+
+
+a{
+	color: inherit;
+	text-decoration: none;
+	&.link, .running-text-container &{
+		color: $C_link;
+		&:hover, &:focus, &:active{
+			text-decoration: underline;
+		}
 	}
 }
-
-a:focus,
-a:active,
-a:hover {
-    text-decoration: underline;
-}
-
-/*
-// seems to be fighting some icon styles
-a:active {
-    color: darken($C_blue, 15%);
-}
-*/
