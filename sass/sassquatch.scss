@@ -35,17 +35,13 @@
 
 /// Lists ----------------------------------
     @import "foundation/lists";
-    @import "foundation/lists-ios";
 
 
 /// Screen Structure -----------------------
     @import "foundation/screen-structure";
-	@import "foundation/screen-structure-ios";
 
 /// Forms ----------------------------------
     @import "foundation/forms";
-    @import "foundation/forms-android";
-    @import "foundation/forms-ios";
     @import "foundation/buttons";
 
 
@@ -57,16 +53,8 @@
 
 /// Momentaries ----------------------------
     @import "foundation/momentary";
-    @import "foundation/momentary-android";
-    @import "foundation/momentary-ios";
-
     @import "foundation/momentary-alert";
-    @import "foundation/momentary-alert-android";
-    @import "foundation/momentary-alert-ios";
-
     @import "foundation/momentary-popover";
-    @import "foundation/momentary-popover-android";
-    @import "foundation/momentary-popover-ios";
 
 /// Toast ----------------------------------
     @import "foundation/toast";
