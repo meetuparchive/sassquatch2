@@ -1,0 +1,8 @@
+@mixin background-clip($value:padding){
+  -moz-background-clip: $value;
+  -webkit-background-clip: $value;
+  -o-background-clip: #{$value}-box;
+  -ms-background-clip: #{$value}-box;
+  -khtml-background-clip: #{$value}-box;
+  background-clip: #{$value}-box;
+}

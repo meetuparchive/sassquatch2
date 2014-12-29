@@ -1,0 +1,15 @@
+// try to avoid using for essential, non-decorative things
+%v-align-children {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+}
+
+// try to avoid using for essential, non-decorative things
+%v-align-children--bottom {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(flex-end);
+}
+
+

@@ -1,0 +1,82 @@
+%unstyle-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+@mixin pseudoblock{
+    content: '';
+    display: block;
+}
+
+@mixin triangle($direction: 'n', $color: black, $size: 6px){
+	width: 0;
+	height: 0;
+	@if $direction == 'n'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+	@else if $direction == 'e'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+	@else if $direction == 's'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	}
+	@else if $direction == 'w'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
+}
+
+// add pointers to any box
+// use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
+@mixin pointers-for-box($size, $background, $border){
+    &:before, &:after{
+        position: absolute;
+    }
+    $vertical: 'top', 'bottom';
+    $horizontal: 'left', 'right';
+    $directions: (top: 'n', bottom: 's');
+    @each $v in $vertical{
+        @each $h in $horizontal{
+            &.#{$v}-#{$h}{
+                @if $border{
+                    &:before{
+                        #{$v}: -($size + 1px);
+                        #{$h}: -1px;
+                        @include triangle( map-get($directions, $v), $border, $size+1);
+                        @include pseudoblock;
+                    }
+                    &:after{
+                        #{$v}: -($size);
+                        #{$h}: 0;
+                        @include triangle(map-get($directions, $v), $background, $size);
+                        @include pseudoblock;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@mixin textProtectionScrim {
+
+  &:before {
+	$C_scrimGradient: #0F141F;
+    @include linear-gradient(transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 50%, transparentize($C_scrimGradient, .2) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
