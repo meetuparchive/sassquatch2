@@ -1,13 +1,11 @@
-//
-// USE BOURBON
-//
+// LIB
 @import "../components/bourbon/dist/bourbon.scss";
 
-//
-// NEW SASS VARIABLES
-//
-@import "vars";
-@import "mixins";
+// GLOBAL VARS
+@import "globals";
+
+// SASS UTILS
+@import "util";
 
 //
 // HELP FROM SASSQUATCH
