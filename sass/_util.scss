@@ -1,5 +1,11 @@
 //
-// Custom Sass Utilities
+// Functions
+//
+@import "util/functions/_string";
+@import "util/functions/_brightness";
+
+//
+// Mixins & Placeholders
 //
 @import "util/_align";
 @import "util/_background";
