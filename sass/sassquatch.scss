@@ -17,15 +17,6 @@
 
 
 
-//
-// PIECES OF FOUNDATION
-//
-@import "core/type-reset";
-@import "core/text";
-@import "core/headings";
-
-
-
 /// Typography -----------------------------
     @import "core/type-reset";
     @import "core/text";
@@ -50,12 +41,12 @@
     @import "core/misc-ui";
 
 /// Momentaries ----------------------------
-    @import "core/momentary";
-    @import "core/momentary-alert";
-    @import "core/momentary-popover";
+    @import "components/momentary";
+    @import "components/momentary-alert";
+    @import "components/momentary-popover";
 
 /// Toast ----------------------------------
-    @import "core/toast";
+    @import "components/toast";
 
 
 /// Helpers ----------------------------------
