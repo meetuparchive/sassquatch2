@@ -20,43 +20,43 @@
 //
 // PIECES OF FOUNDATION
 //
-@import "foundation/type-reset";
-@import "foundation/text";
-@import "foundation/headings";
+@import "core/type-reset";
+@import "core/text";
+@import "core/headings";
 
 
 
 /// Typography -----------------------------
-    @import "foundation/type-reset";
-    @import "foundation/text";
-    @import "foundation/headings";
+    @import "core/type-reset";
+    @import "core/text";
+    @import "core/headings";
 
 /// Lists ----------------------------------
-    @import "foundation/lists";
+    @import "core/lists";
 
 
 /// Screen Structure -----------------------
-    @import "foundation/screen-structure";
+    @import "core/screen-structure";
 
 /// Forms ----------------------------------
-    @import "foundation/forms";
-    @import "foundation/buttons";
+    @import "core/forms";
+    @import "core/buttons";
 
 
 /// Media ----------------------------------
-    @import "foundation/media";
+    @import "core/media";
 
 /// Misc -----------------------------------
-    @import "foundation/misc-ui";
+    @import "core/misc-ui";
 
 /// Momentaries ----------------------------
-    @import "foundation/momentary";
-    @import "foundation/momentary-alert";
-    @import "foundation/momentary-popover";
+    @import "core/momentary";
+    @import "core/momentary-alert";
+    @import "core/momentary-popover";
 
 /// Toast ----------------------------------
-    @import "foundation/toast";
+    @import "core/toast";
 
 
 /// Helpers ----------------------------------
-    @import "foundation/helpers";
+    @import "core/helpers";
