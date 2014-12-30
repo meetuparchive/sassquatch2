@@ -16,7 +16,7 @@ parent: shadow
 ---
 Applies standard box-shadow
 ```
-@extend %box-shadow;
+@extend %shadow;
 ```
 */
 %shadow {
