@@ -11,42 +11,41 @@
 // HELP FROM SASSQUATCH
 //
 // @import "sassquatch-leftovers/avatar";
-@import "sassquatch-leftovers/element_defaults";
 @import "sassquatch-leftovers/layout";
 
 
-
 /// Typography -----------------------------
-    @import "core/type-reset";
-    @import "core/text";
-    @import "core/headings";
+@import "core/element_defaults";
+@import "core/type-reset";
+@import "core/text";
+@import "core/headings";
 
 /// Lists ----------------------------------
-    @import "core/lists";
+@import "core/lists";
 
 
 /// Screen Structure -----------------------
-    @import "core/screen-structure";
+@import "core/screen-structure";
 
 /// Forms ----------------------------------
-    @import "core/forms";
-    @import "core/buttons";
+@import "core/forms";
+@import "core/buttons";
 
 
 /// Media ----------------------------------
-    @import "core/media";
+@import "core/media";
 
 /// Misc -----------------------------------
-    @import "core/misc-ui";
+@import "core/misc-ui";
 
 /// Momentaries ----------------------------
-    @import "components/momentary";
-    @import "components/momentary-alert";
-    @import "components/momentary-popover";
+@import "components/momentary";
+@import "components/momentary-alert";
+@import "components/momentary-popover";
 
 /// Toast ----------------------------------
-    @import "components/toast";
+@import "components/toast";
 
 
 /// Helpers ----------------------------------
-    @import "core/helpers";
+@import "core/helpers";
