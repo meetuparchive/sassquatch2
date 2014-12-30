@@ -7,6 +7,77 @@ category: Sass Utilities
 */
 /*doc
 ---
+title: String utils
+name: string
+parent: functions
+---
+*/
+/*doc
+---
+title: capitalizeFirstLetter
+name: capitalizeFirstLetter
+parent: string
+---
+Capitalizes first letter of a given string. Useful as a camelCase converter.
+__returns string__
+
+```
+capitalizeFirstLetter('snowflake') // -> 'Snowflake'
+
+.specialcapitalizeFirstLetter("snowflake") // -> .specialSnowflake
+```
+*/
+/*doc
+---
+title: Contrast/brightness utils
+name: brightness
+parent: functions
+---
+*/
+/*doc
+---
+title: Perceived brightness value
+name: getPerceivedBrightness
+parent: functions
+---
+Gets brightness of a color on a scale of 0-255 based on a yiq color space.
+_Calculates green-weighted sum of RGB channels (green is perceived as brighter 
+on additive color screens)._
+__returns int__
+```
+getPerceivedBrightness(#000) // -> 0
+```
+*/
+/*doc
+---
+title: isDark/isLight
+name: isDarkisLight
+parent: functions
+---
+Checks a given color for brightness and returns a boolean.
+Our default dark/light threshold is 160 on a scale of 0-255
+__returns boolean__
+```
+isDark(#000) // -> true
+isLight(#000) // -> false
+```
+*/
+/*doc
+---
+title: Programmatic contrast text
+name: getPrimaryTextColor
+parent: functions
+---
+For a given background color, this function returns
+a text color value with appropriate contrast.
+__returns value__
+```
+color: getPrimaryTextColor(#000); // -> color: $C_textPrimaryInverted; (white text on dark)
+color: getPrimaryTextColor(#FFF); // -> color: $C_textPrimary; (dark text on white)
+```
+*/
+/*doc
+---
 title: Sass Mixins & Placeholders
 name: mixinsPlaceholders
 category: Sass Utilities
@@ -243,7 +314,7 @@ Makes selected element a circle with border-radius
 */
 /*doc
 ---
-title: Float Utilities
+title: Float utils
 name: float
 parent: mixinsPlaceholders
 ---
@@ -254,7 +325,6 @@ title: Clearfix placeholder
 name: clearfix
 parent: float
 ---
-### Clearfix Placeholder
 Clears floated children.
 ```
 @extend %clearfix;

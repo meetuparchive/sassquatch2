@@ -16,6 +16,7 @@ parent: string
 ---
 Capitalizes first letter of a given string. Useful as a camelCase converter.
 __returns string__
+
 ```
 capitalizeFirstLetter('snowflake') // -> 'Snowflake'
 

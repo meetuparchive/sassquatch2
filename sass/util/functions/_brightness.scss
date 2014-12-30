@@ -10,13 +10,13 @@ parent: functions
 
 /*doc
 ---
-title: "Perceived brightness" value
+title: Perceived brightness value
 name: getPerceivedBrightness
 parent: functions
 ---
 Gets brightness of a color on a scale of 0-255 based on a yiq color space.
-Calculates green-weighted sum of RGB channels (green is perceived as brighter 
-on additive color screens).
+_Calculates green-weighted sum of RGB channels (green is perceived as brighter 
+on additive color screens)._
 __returns int__
 ```
 getPerceivedBrightness(#000) // -> 0
@@ -60,7 +60,7 @@ $brightness_threshold: 160;
 
 /*doc
 ---
-title: Programatic contrast text
+title: Programmatic contrast text
 name: getPrimaryTextColor
 parent: functions
 ---
