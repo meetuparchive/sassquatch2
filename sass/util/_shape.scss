@@ -1,3 +1,23 @@
+/*doc
+---
+title: Shapes
+name: shape
+parent: mixinsPlaceholders
+---
+*/
+
+
+/*doc
+---
+title: Triangle mixin
+name: triangleMixin
+parent: shape
+---
+Includes rules to create a css border triangle
+```
+@mixin triangle($direction: 'n', $color: black, $size: 6px)
+```
+*/
 @mixin triangle($direction: 'n', $color: black, $size: 6px){
 	width: 0;
 	height: 0;
@@ -23,6 +43,17 @@
 	}
 }
 
+/*doc
+---
+title: Circle mixin
+name: circleMixin
+parent: shape
+---
+Makes selected element a circle with border-radius
+```
+@mixin circle($color: black, $size: 12px)
+```
+*/
 @mixin circle($color: black, $size: 12px){
 	width: $size;
 	height: $size;

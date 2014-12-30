@@ -54,7 +54,41 @@
               <div class="boxBody pan">
                 <ul class="componentList listBorderedHover">
                    
+                    <li><a href="#functions">Sass Functions</a></li>
+                   
+                    <li><a href="#mixinsPlaceholders">Sass Mixins & Placeholders</a></li>
+                   
+                    <li><a href="#align">Vertical-align children</a></li>
+                   
+                    <li><a href="#background">Background Utilities</a></li>
+                   
                     <li><a href="#breakpoints">Media Query Breakpoints</a></li>
+                   
+                    <li><a href="#button">Button utilities</a></li>
+                   
+                    <li><a href="#buttonPersonality">Button "personality" placeholder</a></li>
+                   
+                    <li><a href="#display">Display utils</a></li>
+                   
+                    <li><a href="#pseudoDisplay">Pseudo-element display mixin</a></li>
+                   
+                    <li><a href="#float">Float Utilities</a></li>
+                   
+                    <li><a href="#clearfix">Clearfix placeholder</a></li>
+                   
+                    <li><a href="#shadow">Shadow utilities</a></li>
+                   
+                    <li><a href="#shadowPlaceholder">Shadow placeholder</a></li>
+                   
+                    <li><a href="#shape">Shapes</a></li>
+                   
+                    <li><a href="#circleMixin">Circle mixin</a></li>
+                   
+                    <li><a href="#triangleMixin">Triangle mixin</a></li>
+                   
+                    <li><a href="#text">Text utils</a></li>
+                   
+                    <li><a href="#textProtection">Text protection shim</a></li>
                   
                 </ul>
               </div>
@@ -65,7 +99,30 @@
 
 
 
-<h1 id="breakpoints">Media Query Breakpoints</h1>
+<h1 id="functions">Sass Functions</h1>
+
+<h1 id="mixinsPlaceholders">Sass Mixins & Placeholders</h1>
+
+<h2 id="align">Vertical-align children</h2>
+
+<p><strong>Try to avoid using for essential, non-decorative things</strong>
+Aligns children of selected element using flexbox.
+<code>
+@include %valignChildren;
+@include %valignChildren--bottom;
+</code></p>
+
+<h2 id="background">Background Utilities</h2>
+
+<h3>background-clip mixin</h3>
+
+<p>Sets background-clip property
+<code>
+@include background-clip(); // defaults to &#39;padding&#39;
+@include background-clip(&#39;border&#39;);
+</code></p>
+
+<h2 id="breakpoints">Media Query Breakpoints</h2>
 
 <h3>Mobile first mixin</h3>
 
@@ -135,6 +192,68 @@ use the <code>atMediaDown</code> mixin.</p>
 <td>Huge screens and under</td>
 </tr>
 </tbody></table>
+
+<h2 id="button">Button utilities</h2>
+
+<h3 id="buttonPersonality">Button "personality" placeholder</h3>
+
+<p>Disables user-select, sets cursor, and resets text-decoration.
+<code>
+@extend %buttonPersonality;
+</code></p>
+
+<h2 id="display">Display utils</h2>
+
+<h3 id="pseudoDisplay">Pseudo-element display mixin</h3>
+
+<p>Sets display property for psuedo-elements
+<code>
+@include pseudoDisplay($value: block);
+</code></p>
+
+<h2 id="float">Float Utilities</h2>
+
+<h3 id="clearfix">Clearfix placeholder</h3>
+
+<h3>Clearfix Placeholder</h3>
+
+<p>Clears floated children.
+```
+@extend %clearfix;</p>
+
+<h2 id="shadow">Shadow utilities</h2>
+
+<h3 id="shadowPlaceholder">Shadow placeholder</h3>
+
+<p>Applies standard box-shadow
+<code>
+@extend %box-shadow;
+</code></p>
+
+<h2 id="shape">Shapes</h2>
+
+<h3 id="circleMixin">Circle mixin</h3>
+
+<p>Makes selected element a circle with border-radius
+<code>
+@mixin circle($color: black, $size: 12px)
+</code></p>
+
+<h3 id="triangleMixin">Triangle mixin</h3>
+
+<p>Includes rules to create a css border triangle
+<code>
+@mixin triangle($direction: &#39;n&#39;, $color: black, $size: 6px)
+</code></p>
+
+<h2 id="text">Text utils</h2>
+
+<h3 id="textProtection">Text protection shim</h3>
+
+<p>Adds a pseudo-element gradient 
+<code>
+@mixin textProtectionScrim($placement: &#39;top&#39;); // &#39;bottom&#39; will place gradent on bottom of el
+</code></p>
       </div>
     </div>
   </section>

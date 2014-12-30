@@ -1,11 +1,7 @@
+// TODO: move to modifiers
 %unstyle-list {
   list-style: none;
   padding-left: 0;
-}
-
-@mixin pseudoblock{
-    content: '';
-    display: block;
 }
 
 // add pointers to any box
@@ -25,13 +21,13 @@
                         #{$v}: -($size + 1px);
                         #{$h}: -1px;
                         @include triangle( map-get($directions, $v), $border, $size+1);
-                        @include pseudoblock;
+                        @include pseudoDisplay();
                     }
                     &:after{
                         #{$v}: -($size);
                         #{$h}: 0;
                         @include triangle(map-get($directions, $v), $background, $size);
-                        @include pseudoblock;
+                        @include pseudoDisplay();
                     }
                 }
             }
@@ -39,19 +35,3 @@
     }
 
 }
-
-@mixin textProtectionScrim {
-
-  &:before {
-	$C_scrimGradient: #0F141F;
-    @include linear-gradient(transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 50%, transparentize($C_scrimGradient, .2) 100%);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 0;
-  }
-}
-

@@ -1,8 +1,22 @@
 /*doc
 ---
+title: Sass Functions
+name: functions
+category: Sass Utilities
+---
+*/
+/*doc
+---
+title: Sass Mixins & Placeholders
+name: mixinsPlaceholders
+category: Sass Utilities
+---
+*/
+/*doc
+---
 title: Media Query Breakpoints
 name: breakpoints
-category: Sass Utilities
+parent: mixinsPlaceholders
 ---
 
 ### Mobile first mixin
@@ -45,7 +59,28 @@ Breakpoint name        | Description
 `atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
 `atMediaDown(huge)`    | Huge screens and under
 */
-.collection-header, .chunkList-chunk:only-child {
+/*doc
+---
+title: Alignment Utilities
+name: align
+parent: mixinsPlaceholders
+---
+*/
+/*doc
+---
+title: Vertical-align children
+name: align
+parent: mixinsPlaceholders
+---
+__Try to avoid using for essential, non-decorative things__
+Aligns children of selected element using flexbox.
+```
+@include %valignChildren;
+@include %valignChildren--bottom;
+```
+*/
+.collection-header,
+.chunkList-chunk:only-child {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -95,6 +130,24 @@ Breakpoint name        | Description
   justify-content: flex-end;
   -ms-flex-pack: end; }
 
+/*doc
+---
+title: Button utilities
+name: button
+parent: mixinsPlaceholders
+---
+*/
+/*doc
+---
+title: Button "personality" placeholder
+name: buttonPersonality
+parent: button
+---
+Disables user-select, sets cursor, and resets text-decoration.
+```
+@extend %buttonPersonality;
+```
+*/
 .momentary li a {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -103,9 +156,70 @@ Breakpoint name        | Description
   cursor: pointer;
   text-decoration: none !important; }
 
+/*doc
+---
+title: Background Utilities
+name: background
+parent: mixinsPlaceholders
+---
+
+### background-clip mixin
+Sets background-clip property
+```
+@include background-clip(); // defaults to 'padding'
+@include background-clip('border');
+```
+*/
+/*doc
+---
+title: Shadow utilities
+name: shadow
+parent: mixinsPlaceholders
+---
+*/
+/*doc
+---
+title: Shadow placeholder
+name: shadowPlaceholder
+parent: shadow
+---
+Applies standard box-shadow
+```
+@extend %box-shadow;
+```
+*/
 .momentary {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.12); }
 
+/*doc
+---
+title: Shapes
+name: shape
+parent: mixinsPlaceholders
+---
+*/
+/*doc
+---
+title: Triangle mixin
+name: triangleMixin
+parent: shape
+---
+Includes rules to create a css border triangle
+```
+@mixin triangle($direction: 'n', $color: black, $size: 6px)
+```
+*/
+/*doc
+---
+title: Circle mixin
+name: circleMixin
+parent: shape
+---
+Makes selected element a circle with border-radius
+```
+@mixin circle($color: black, $size: 12px)
+```
+*/
 /* Indicators
 	Author: MikeM, Nov 2012
 	-------------------------------------------------------------
@@ -127,20 +241,72 @@ Breakpoint name        | Description
 	$border-width
 	$border-color
 */
+/*doc
+---
+title: Float Utilities
+name: float
+parent: mixinsPlaceholders
+---
+*/
+/*doc
+---
+title: Clearfix placeholder
+name: clearfix
+parent: float
+---
+### Clearfix Placeholder
+Clears floated children.
+```
+@extend %clearfix;
+*/
 .docBounds {
   /**
-   * For IE 6/7 only
-   * Include this rule to trigger hasLayout and contain floats.
-   */
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
   *zoom: 1; }
   .docBounds:before, .docBounds:after {
     content: " ";
-    /* 1 */
-    display: table;
-    /* 2 */ }
+    display: table; }
   .docBounds:after {
     clear: both; }
 
+/*doc
+---
+title: Display utils
+name: display
+parent: mixinsPlaceholders
+---
+*/
+/*doc
+---
+title: Pseudo-element display mixin
+name: pseudoDisplay
+parent: display
+---
+Sets display property for psuedo-elements
+```
+@include pseudoDisplay($value: block);
+```
+*/
+/*doc
+---
+title: Text utils
+name: text
+parent: mixinsPlaceholders
+---
+*/
+/*doc
+---
+title: Text protection shim
+name: textProtection
+parent: text
+---
+Adds a pseudo-element gradient 
+```
+@mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
+```
+*/
 /**
 * LAYOUT
 * oocss grids, modifier classes for layout
@@ -228,12 +394,11 @@ parent: docstar
   margin-bottom: 16px;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
   /* !important to support .doc-box.doc-content multiple classes */
-  -moz-background-clip: padding;
   -webkit-background-clip: padding;
-  -o-background-clip: padding-box;
-  -ms-background-clip: padding-box;
-  -khtml-background-clip: padding-box;
-  background-clip: padding-box;
+  -moz-background-clip: padding;
+  -ms-background-clip: padding;
+  -o-background-clip: padding;
+  background-clip: padding;
   /**
   * round any first or last .doc-content elements inside of .doc-box
   * allows the doc-content to be shaded without conflicting with .doc-box rounding
@@ -833,9 +998,9 @@ body {
     display: block;
     height: 100%;
     position: absolute;
-    top: 0;
     width: 100%;
-    z-index: 0; }
+    z-index: 0;
+    top: 0; }
 
 .hero-content {
   min-height: 384px;
@@ -1940,9 +2105,9 @@ textarea::-webkit-input-placeholder {
     display: block;
     height: 100%;
     position: absolute;
-    top: 0;
     width: 100%;
-    z-index: 0; }
+    z-index: 0;
+    top: 0; }
 
 .photo-card--text {
   bottom: 0;
