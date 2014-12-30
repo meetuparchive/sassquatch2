@@ -1,0 +1,24 @@
+/*doc
+---
+title: Shadow utilities
+name: shadow
+parent: mixinsPlaceholders
+---
+*/
+
+
+
+/*doc
+---
+title: Shadow placeholder
+name: shadowPlaceholder
+parent: shadow
+---
+Applies standard box-shadow
+```
+@extend %box-shadow;
+```
+*/
+%shadow {
+    box-shadow: 0 0 20px $C_border;
+}

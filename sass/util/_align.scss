@@ -1,0 +1,41 @@
+/*doc
+---
+title: Alignment Utilities
+name: align
+parent: mixinsPlaceholders
+---
+*/
+
+//TODO: fix selectors
+//TODO: wtf is going on with flex-direction
+
+
+/*doc
+---
+title: Vertical-align children
+name: align
+parent: mixinsPlaceholders
+---
+__Try to avoid using for essential, non-decorative things__
+Aligns children of selected element using flexbox.
+```
+@include %valignChildren;
+@include %valignChildren--bottom;
+```
+*/
+
+%valignChildren,
+%v-align-children {
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+}
+
+%valignChildren--bottom,
+%v-align-children--bottom {
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(flex-end);
+}
+
+

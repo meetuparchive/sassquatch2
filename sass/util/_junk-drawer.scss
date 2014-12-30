@@ -1,0 +1,37 @@
+// TODO: move to modifiers
+%unstyle-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+// add pointers to any box
+// use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
+@mixin pointers-for-box($size, $background, $border){
+    &:before, &:after{
+        position: absolute;
+    }
+    $vertical: 'top', 'bottom';
+    $horizontal: 'left', 'right';
+    $directions: (top: 'n', bottom: 's');
+    @each $v in $vertical{
+        @each $h in $horizontal{
+            &.#{$v}-#{$h}{
+                @if $border{
+                    &:before{
+                        #{$v}: -($size + 1px);
+                        #{$h}: -1px;
+                        @include triangle( map-get($directions, $v), $border, $size+1);
+                        @include pseudoDisplay();
+                    }
+                    &:after{
+                        #{$v}: -($size);
+                        #{$h}: 0;
+                        @include triangle(map-get($directions, $v), $background, $size);
+                        @include pseudoDisplay();
+                    }
+                }
+            }
+        }
+    }
+
+}
