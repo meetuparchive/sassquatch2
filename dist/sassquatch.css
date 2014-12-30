@@ -1,3 +1,50 @@
+/*doc
+---
+title: Media Query Breakpoints
+name: breakpoints
+category: Sass Utilities
+---
+
+### Mobile first mixin
+This breakpoint mixin uses a **mobile first**
+strategy, meaning the `medium` breakpoint, for
+example, applies to _medium screens and larger_.
+
+```scss
+	@include atMediaUp(medium) {
+		body::after {
+			content: "medium screens and larger can see me";
+		}
+	}
+```
+
+Breakpoint name      | Description
+---------------------| ---------------------------------------------
+`atMediaUp(small)`   | Small sreens and up
+`atMediaUp(medium)`  | Landscape on most phones and up; portrait on some phablets
+`atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
+`atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
+
+
+### Breaking for smaller sizes and under
+In the event you need to target a **specific screen size and under**,
+use the `atMediaDown` mixin.
+
+```scss
+	@include atMediaDown(medium) {
+		body::after {
+			content: "medium screens and smaller can see me";
+		}
+	}
+```
+
+Breakpoint name        | Description
+-----------------------| ---------------------------------------------
+`atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
+`atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
+`atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
+`atMediaDown(huge)`    | Huge screens and under
+*/
 .collection-header, .chunkList-chunk:only-child {
   display: -webkit-box;
   display: -moz-box;
@@ -59,154 +106,27 @@
 .momentary {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.12); }
 
-/*doc
----
-title: Media Query Breakpoints
-name: breakpoints
-category: Sass Utilities
----
+/* Indicators
+	Author: MikeM, Nov 2012
+	-------------------------------------------------------------
+	the little arrow thingies that stick out of containers to point to something
+	else, or point to themselves (e.g. active nav item)
 
-### Mobile first mixin
-This breakpoint mixin uses a **mobile first**
-strategy, meaning the `medium` breakpoint, for
-example, applies to _medium screens and larger_.
-
-```scss
-	@include atMediaUp(medium) {
-		body::after {
-			content: "medium screens and larger can see me";
-		}
-	}
-```
-
-Breakpoint name      | Description
----------------------| ---------------------------------------------
-`atMediaUp(small)`   | Small sreens and up
-`atMediaUp(medium)`  | Landscape on most phones and up; portrait on some phablets
-`atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
-`atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
-
-
-### Breaking for smaller sizes and under
-In the event you need to target a **specific screen size and under**,
-use the `atMediaDown` mixin.
-
-```scss
-	@include atMediaDown(medium) {
-		body::after {
-			content: "medium screens and smaller can see me";
-		}
-	}
-```
-
-Breakpoint name        | Description
------------------------| ---------------------------------------------
-`atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
-`atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
-`atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
-`atMediaDown(huge)`    | Huge screens and under
+	@params
+	---
+	$direction
+	- which direction the indicator points
+	- default 'up'
+	$size
+	- in px, this will be half the width of the indicator's base
+	- default '10px'
+	$offset-type (required - no default)
+	- top, bottom, left, right
+	$offset-size
+	- distance
+	$border-width
+	$border-color
 */
-html {
-  overflow-y: scroll;
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility; }
-
-html, body {
-  margin: 0;
-  padding: 0; }
-
-/*doc
----
-title: Inverted Context
-name: inverted
-category: Base CSS
----
-
-The `inverted` class creates a context in which text colors and secondary
-buttons are inverted to light colors to work on dark backgrounds or photos.
-
-```html_example
-	<div class="docBox">
-		<div class="docSection inverted" style="background-color: #5D87B0;">
-			<h3>Yay, I'm inverted</h3>
-			<p>
-				All the text flips to light colors<br />
-				<span class="muted">We handle different shades of gray using opacity</span>
-			</p>
-			<button>Default (secondary) button</button>
-		</div>
-	</div>
-```
-
-*/
-/* {{{ Inline tag defaults */
-abbr, strong, acronym, span, small, time, strike, sub, sup, a {
-  display: inline; }
-
-abbr, acronym {
-  border-width: 0; }
-
-b, strong {
-  font-weight: 700; }
-
-sup, sub {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sup {
-  top: -0.5em; }
-
-sub {
-  bottom: -0.25em; }
-
-/* }}} */
-/* {{{ Block tag defaults */
-p, ul, ol, blockquote,
-form, fieldset, legend,
-table, dl, dd,
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 16px; }
-
-form, legend {
-  margin-bottom: 0; }
-
-img {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  line-height: 0; }
-  img.resample {
-    /* assuming we're sizing an img down on the client */
-    -ms-interpolation-mode: bicubic;
-    image-rendering: optimizeQuality; }
-
-ul, ol {
-  list-style-position: outside;
-  padding-left: 1.33em;
-  /* indent by default */ }
-
-li {
-  margin: 0;
-  padding: 0; }
-
-/* }}} */
-/* {{{ HTML5 element defaults (for when the time comes) */
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-  display: block; }
-
-audio, canvas, video {
-  display: inline-block;
-  display: inline-block;
-  zoom: 1;
-  *display: inline; }
-
-/* }}} */
 .docBounds {
   /**
    * For IE 6/7 only
@@ -431,6 +351,107 @@ parent: docstar
 .clear-both {
   clear: both; }
 
+html {
+  overflow-y: scroll;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+/*doc
+---
+title: Inverted Context
+name: inverted
+category: Base CSS
+---
+
+The `inverted` class creates a context in which text colors and secondary
+buttons are inverted to light colors to work on dark backgrounds or photos.
+
+```html_example
+	<div class="docBox">
+		<div class="docSection inverted" style="background-color: #5D87B0;">
+			<h3>Yay, I'm inverted</h3>
+			<p>
+				All the text flips to light colors<br />
+				<span class="muted">We handle different shades of gray using opacity</span>
+			</p>
+			<button>Default (secondary) button</button>
+		</div>
+	</div>
+```
+
+*/
+/* {{{ Inline tag defaults */
+abbr, strong, acronym, span, small, time, strike, sub, sup, a {
+  display: inline; }
+
+abbr, acronym {
+  border-width: 0; }
+
+b, strong {
+  font-weight: 700; }
+
+sup, sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* }}} */
+/* {{{ Block tag defaults */
+p, ul, ol, blockquote,
+form, fieldset, legend,
+table, dl, dd,
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 16px; }
+
+form, legend {
+  margin-bottom: 0; }
+
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 0; }
+  img.resample {
+    /* assuming we're sizing an img down on the client */
+    -ms-interpolation-mode: bicubic;
+    image-rendering: optimizeQuality; }
+
+ul, ol {
+  list-style-position: outside;
+  padding-left: 1.33em;
+  /* indent by default */ }
+
+li {
+  margin: 0;
+  padding: 0; }
+
+/* }}} */
+/* {{{ HTML5 element defaults (for when the time comes) */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block;
+  display: inline-block;
+  zoom: 1;
+  *display: inline; }
+
+/* }}} */
 body,
 input,
 button {
