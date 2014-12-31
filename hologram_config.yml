@@ -1,0 +1,22 @@
+source: ./dist
+destination: ./doc
+
+# Hologram theme
+documentation_assets: ./components/Cortana
+custom_markdown: ./components/Cortana/CortanaMarkdownRenderer.rb
+
+# To have a custom index page build with your README.md
+#index: README
+
+# List all css to include for the styleguide render examples (path from styleguide directory)
+css_include:
+   - '../assets/css/vendors.css'
+   - '../assets/css/styles.css'
+
+# List all js to include for the styleguide render examples (path from styleguide directory)
+js_include:
+   - 'http://code.jquery.com/jquery-1.10.2.min.js'
+   - '../assets/js/main.js'
+
+# String who is used to split the category name and create category wrapper
+name_scope: ' - '
