@@ -4,6 +4,7 @@ title: Shapes
 name: shape
 parent: mixinsPlaceholders
 ---
+Make shapes with CSS like it's 2007!
 */
 
 
@@ -14,7 +15,8 @@ name: triangleMixin
 parent: shape
 ---
 Includes rules to create a css border triangle
-```
+
+```sass
 @mixin triangle($direction: 'n', $color: black, $size: 6px)
 ```
 */
@@ -50,7 +52,8 @@ name: circleMixin
 parent: shape
 ---
 Makes selected element a circle with border-radius
-```
+
+```sass
 @mixin circle($color: black, $size: 12px)
 ```
 */
