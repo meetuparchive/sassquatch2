@@ -15,7 +15,8 @@
 		"**/*.lock"
 	],
 	"dependencies": {
-		"bourbon": "4.0.2"
+		"bourbon": "4.0.2",
+		"Cortana": "1.2.8"
 	},
 	"license": "MIT"
 }
