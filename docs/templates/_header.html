@@ -1,69 +1,51 @@
+<% isIndex = title.empty? %>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
 
-    <title>My Style Guide <%= title %></title>
-    <link rel="shortcut icon" href="static/brick.png" />
+	<title>Sassquatch 2 <%= (isIndex ? "" : ": #{title}") %></title>
 
-    <!-- Styleguide CSS -->
-    <link rel="stylesheet" href="css/doc.css">
-    <link rel="stylesheet" href="css/github.css">
+	<!-- Styleguide CSS -->
+	<link rel="stylesheet" href="css/doc.css">
+	<link rel="stylesheet" href="css/github.css">
 
-    <!-- CSS to be documented -->
-    <link rel="stylesheet" href="css/sassquatch.css">
-
-    <!-- Main libraries -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-	 <!--
-       -[> component js and init scripts <]
-       -<script src="build/script/components.js"></script>
-		 -->
-
+	<!-- CSS to be documented -->
+	<link rel="stylesheet" href="css/sassquatch.css">
 </head>
 
-  <body>
-    <header class="header pbn" role="banner">
-      <div class="backgroundHighlight typeReversed1">
-        <div class="container">
-          <h1 class="h2 mvs">My Style Guide</h1>
-        </div>
-      </div>
-      <div class="backgroundLowlight typeReversed1">
-        <div class="container">
-          <span>
-            <ul class="docNav listInline">
-              <!-- Add you pages here -->
-              <li><a href="index.html">Intro</a></li>
-              <li><a href="base_css.html">Base CSS</a></li>
-              <li><a href="components.html">Components</a></li>
-              <li><a href="javascript.html">Javascript</a></li>
-            </ul>
-          </span>
-        </div>
-      </div>
-      <!-- //header/container -->
-    </header>
+<body>
+	<header>
+		<h1>Sassquatch <span class="software-version"> </span></h1>
+	</header>
 
-    <div class="content">
-      <section>
-        <div class="line">
+	<h4>Categories</h4>
+	<nav>
+		<ul>
+			<% @categories.each do |category, file_name| %>
+				<li class="<%= title == category ? 'selected' : '' %>">
+					<a href="<%= file_name %>"><%= category %></a>
+				</li>
+			<% end %>
+		</ul>
+	</nav>
 
-          <div class="col cols4">
-            <div class="componentMenu box boxBasic backgroundBasic">
-              <div class="boxBody pan">
-                <ul class="componentList listBorderedHover">
-                  <% @blocks.each do |block| %>
-                    <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-          </div>
+	<h4>Components</h4>
+	<nav>
+		<ul>
+			<% @blocks.each do |b| %>
 
-          <div class="main col cols20 lastCol">
+				<%# Only put top-level blocks in this list %>
+				<% if b[:parent].nil? %>
+					<li>
+						<a href="#<%= b[:name] %>"><%= b[:title] %></a>
+					</li>
+				<% end %>
 
+			<% end %>
+		</ul>
+	</nav>
 
-
+	<section id="content">

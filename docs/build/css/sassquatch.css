@@ -38,10 +38,10 @@ parent: functions
 ---
 title: Perceived brightness value
 name: getPerceivedBrightness
-parent: functions
+parent: brightness
 ---
 Gets brightness of a color on a scale of 0-255 based on a yiq color space.
-_Calculates green-weighted sum of RGB channels (green is perceived as brighter 
+_Calculates green-weighted sum of RGB channels (green is perceived as brighter
 on additive color screens)._
 __returns int__
 ```
@@ -52,7 +52,7 @@ getPerceivedBrightness(#000) // -> 0
 ---
 title: isDark/isLight
 name: isDarkisLight
-parent: functions
+parent: brightness
 ---
 Checks a given color for brightness and returns a boolean.
 Our default dark/light threshold is 160 on a scale of 0-255
@@ -66,7 +66,7 @@ isLight(#000) // -> false
 ---
 title: Programmatic contrast text
 name: getPrimaryTextColor
-parent: functions
+parent: brightness
 ---
 For a given background color, this function returns
 a text color value with appropriate contrast.

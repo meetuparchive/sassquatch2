@@ -1,133 +1,200 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
 
-    <title>My Style Guide Sass Utilities</title>
-    <link rel="shortcut icon" href="static/brick.png" />
+	<title>Sassquatch 2 : Sass Utilities</title>
 
-    <!-- Styleguide CSS -->
-    <link rel="stylesheet" href="css/doc.css">
-    <link rel="stylesheet" href="css/github.css">
+	<!-- Styleguide CSS -->
+	<link rel="stylesheet" href="css/doc.css">
+	<link rel="stylesheet" href="css/github.css">
 
-    <!-- CSS to be documented -->
-    <link rel="stylesheet" href="css/sassquatch.css">
-
-    <!-- Main libraries -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-	 <!--
-       -[> component js and init scripts <]
-       -<script src="build/script/components.js"></script>
-		 -->
-
+	<!-- CSS to be documented -->
+	<link rel="stylesheet" href="css/sassquatch.css">
 </head>
 
-  <body>
-    <header class="header pbn" role="banner">
-      <div class="backgroundHighlight typeReversed1">
-        <div class="container">
-          <h1 class="h2 mvs">My Style Guide</h1>
-        </div>
-      </div>
-      <div class="backgroundLowlight typeReversed1">
-        <div class="container">
-          <span>
-            <ul class="docNav listInline">
-              <!-- Add you pages here -->
-              <li><a href="index.html">Intro</a></li>
-              <li><a href="base_css.html">Base CSS</a></li>
-              <li><a href="components.html">Components</a></li>
-              <li><a href="javascript.html">Javascript</a></li>
-            </ul>
-          </span>
-        </div>
-      </div>
-      <!-- //header/container -->
-    </header>
+<body>
+	<header>
+		<h1>Sassquatch <span class="software-version"> </span></h1>
+	</header>
 
-    <div class="content">
-      <section>
-        <div class="line">
+	<h4>Categories</h4>
+	<nav>
+		<ul>
+			
+				<li class="">
+					<a href="content_patterns.html">Content Patterns</a>
+				</li>
+			
+				<li class="">
+					<a href="layout.html">Layout</a>
+				</li>
+			
+				<li class="selected">
+					<a href="sass_utilities.html">Sass Utilities</a>
+				</li>
+			
+				<li class="">
+					<a href="base_css.html">Base CSS</a>
+				</li>
+			
+		</ul>
+	</nav>
 
-          <div class="col cols4">
-            <div class="componentMenu box boxBasic backgroundBasic">
-              <div class="boxBody pan">
-                <ul class="componentList listBorderedHover">
-                  
-                    <li><a href="#functions">Sass Functions</a></li>
-                  
-                    <li><a href="#brightness">Contrast/brightness utils</a></li>
-                  
-                    <li><a href="#getPerceivedBrightness">Perceived brightness value</a></li>
-                  
-                    <li><a href="#getPrimaryTextColor">Programmatic contrast text</a></li>
-                  
-                    <li><a href="#isDarkisLight">isDark/isLight</a></li>
-                  
-                    <li><a href="#string">String utils</a></li>
-                  
-                    <li><a href="#capitalizeFirstLetter">capitalizeFirstLetter</a></li>
-                  
-                    <li><a href="#mixinsPlaceholders">Sass Mixins & Placeholders</a></li>
-                  
-                    <li><a href="#align">Vertical-align children</a></li>
-                  
-                    <li><a href="#background">Background Utilities</a></li>
-                  
-                    <li><a href="#breakpoints">Media Query Breakpoints</a></li>
-                  
-                    <li><a href="#button">Button utilities</a></li>
-                  
-                    <li><a href="#buttonPersonality">Button "personality" placeholder</a></li>
-                  
-                    <li><a href="#display">Display utils</a></li>
-                  
-                    <li><a href="#pseudoDisplay">Pseudo-element display mixin</a></li>
-                  
-                    <li><a href="#float">Float utils</a></li>
-                  
-                    <li><a href="#clearfix">Clearfix placeholder</a></li>
-                  
-                    <li><a href="#shadow">Shadow utilities</a></li>
-                  
-                    <li><a href="#shadowPlaceholder">Shadow placeholder</a></li>
-                  
-                    <li><a href="#shape">Shapes</a></li>
-                  
-                    <li><a href="#circleMixin">Circle mixin</a></li>
-                  
-                    <li><a href="#triangleMixin">Triangle mixin</a></li>
-                  
-                    <li><a href="#text">Text utils</a></li>
-                  
-                    <li><a href="#textProtection">Text protection shim</a></li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
+	<h4>Components</h4>
+	<nav>
+		<ul>
+			
 
-          <div class="main col cols20 lastCol">
+				
+				
+					<li>
+						<a href="#functions">Sass Functions</a>
+					</li>
+				
 
+			
 
+				
+				
 
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+					<li>
+						<a href="#mixinsPlaceholders">Sass Mixins & Placeholders</a>
+					</li>
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
+		</ul>
+	</nav>
+
+	<section id="content">
 <h1 id="functions">Sass Functions</h1>
 
 <h2 id="brightness">Contrast/brightness utils</h2>
 
-<h2 id="getPerceivedBrightness">Perceived brightness value</h2>
+<h3 id="getPerceivedBrightness">Perceived brightness value</h3>
 
 <p>Gets brightness of a color on a scale of 0-255 based on a yiq color space.
-<em>Calculates green-weighted sum of RGB channels (green is perceived as brighter 
+<em>Calculates green-weighted sum of RGB channels (green is perceived as brighter
 on additive color screens).</em>
 <strong>returns int</strong>
 <code>
 getPerceivedBrightness(#000) // -&gt; 0
 </code></p>
 
-<h2 id="getPrimaryTextColor">Programmatic contrast text</h2>
+<h3 id="getPrimaryTextColor">Programmatic contrast text</h3>
 
 <p>For a given background color, this function returns
 a text color value with appropriate contrast.
@@ -137,7 +204,7 @@ color: getPrimaryTextColor(#000); // -&gt; color: $C_textPrimaryInverted; (white
 color: getPrimaryTextColor(#FFF); // -&gt; color: $C_textPrimary; (dark text on white)
 </code></p>
 
-<h2 id="isDarkisLight">isDark/isLight</h2>
+<h3 id="isDarkisLight">isDark/isLight</h3>
 
 <p>Checks a given color for brightness and returns a boolean.
 Our default dark/light threshold is 160 on a scale of 0-255
@@ -308,42 +375,6 @@ use the <code>atMediaDown</code> mixin.</p>
 <code>
 @mixin textProtectionScrim($placement: &#39;top&#39;); // &#39;bottom&#39; will place gradent on bottom of el
 </code></p>
-      </div>
-    </div>
-  </section>
-  <footer>
-    The source code for this style guide is licensed under the MIT license.
-  </footer>
-</div>
-<script>
-$(document).ready(function() {
-
-  // build simple sidebar navigation
-  var $headers = $('.main > h1');
-  var $componentList = $('.componentList');
-
-  $headers.each(function() {
-    var headerText = $(this).text();
-    $(this).attr('id', headerText);
-
-    $componentList.append(
-      '<li><a href="#' + headerText + '">' + headerText + '</a></li>'
-    );
-  });
-
-  // set the active tab
-  var currentHref = document.location.pathname.substr(1);
-  if (currentHref)
-  {
-    $('.docNav').find('a[href^="' + currentHref + '"]').addClass('activeNavElem typeEmphasize');
-  }
-  else
-  {
-    $('.docNav').find('a').eq(0).addClass('activeNavElem typeEmphasize');
-  }
-
-
-});
-</script>
+	</section>
 </body>
 </html>
