@@ -11,8 +11,16 @@ module.exports = function(grunt) {
 				"dist/sassquatch.css": "sass/sassquatch.scss"
 				}
 			}
-		}
+		},
+		shell: { // node hologram isn't up to snuff
+			options: {
+				stderr: false
+			},
+			target: {
+				command: 'bundle exec hologram'
+			}
+	   }
 	});
 
-	grunt.registerTask('default', ['sass']);
+	grunt.registerTask('default', ['sass', 'shell']);
 };

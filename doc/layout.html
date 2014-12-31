@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html ng-app="cortana">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Layout</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="./theme-build/css/vendors.css">
+    <link rel="stylesheet" href="./theme-build/css/cortana.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="../assets/css/vendors.css">
+      
+        <link rel="stylesheet" href="../assets/css/styles.css">
+      
+    
+
+    <!--[if lt IE 9]>
+      <script src="theme-build/polyfill/html5shiv.js"></script>
+      <script src="theme-build/polyfill/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+  <body class="cortana-body"  ng-controller="MainController">
+
+    <div class="sb-slidebar sb-left cortana-sidenav sb-style-push">
+
+      
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+
+      <nav class="cortana-nav">
+        <ul>
+          
+            <li><a href="index.html">Home</a></li>
+          
+        </ul>
+        
+          <h3>Sass Utilities</h3>
+          <ul>
+          
+            
+              
+              
+                <li><a href="sass_utilities.html">Sass Utilities</a></li>
+              
+            
+          
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Layout</h3>
+          <ul>
+          
+            
+          
+            
+              
+              
+                <li><a class="active" href="layout.html">Layout</a></li>
+              
+            
+          
+            
+          
+          </ul>
+        
+          <h3>Base CSS</h3>
+          <ul>
+          
+            
+          
+            
+          
+            
+              
+              
+                <li><a href="base_css.html">Base CSS</a></li>
+              
+            
+          
+          </ul>
+        
+      </nav>
+    </div>
+
+    <header class="cortana-header sb-slide">
+      
+        <h1>Layout</h1>
+      
+      <div id="open-left" class="cortana-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="cortana-search-wrapper" ng-controller="TypeaheadCtrl">
+        <input id="cortana-search" type="text" class="form-control cortana-search" ng-model="customSelected" placeholder="Search" typeahead="data as data.title for data in searchData | filter:{title:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-on-select="onSelect($item, $model, $label)">
+      </div>
+    </header>
+
+    <div id="sb-site">
+
+      <div class="cortana-container">
+
+        <nav id="cortana-inside-nav" class="cortana-inside-nav" bs-affix>
+          <ul bs-scrollspy-list data-offset="-30">
+            
+              
+                <li><a href="#docstar">Stripe Layout</a></li>
+              
+            
+              
+            
+          </ul>
+        </nav>
+
+        <div class="cortana-content-wrapper clearfix">
+          <div class="cortana-content">
+
+
+
+<h1 id="docstar">Stripe Layout</h1>
+
+<p>Used for newer and more responsive layouts, where content lives on top of
+a full-width background instead of <code>docBox</code> modules. The <code>docStripe</code> container
+sets a full width background.</p>
+
+<p>The <code>docBounds</code> class is used as a padding helper and content wrapper; it uses
+a max-width and min-width, but will otherwise flex to fit the width of the parent
+container.</p>
+</div><div class="codeExample"><div class="exampleOutput">
+    <!-- default stripe and color stripe -->
+    <div class="docStripe">
+        <div class="docBounds">
+            <h3>I'm in a docBounds within a stripe</h3>
+            <p>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.</p>
+        </div>
+    </div>
+    <div class="docStripe--red inverted">
+        <div class="docBounds">
+            <h3>I'm in a red stripe</h3>
+            <p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
+        </div>
+    </div>
+
+    <!-- "collections" -->
+    <div class="docStripe--collection">
+        <div class="docBounds">
+            <h3>I contain a collection (of docBoxes)</h3>
+            <div class="docBox">
+                <div class="docSection">
+                    <p>I'm a section in a box</p>
+                </div>
+                <div class="docSection">
+                    <p>I'm a section in a box</p>
+                </div>
+            </div>
+            <div class="docBox">
+                <div class="docSection">
+                    <p>I'm a section in a box</p>
+                </div>
+                <div class="docSection">
+                    <p>I'm a section in a box</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div class="codeBlock"><div class="highlight"><pre>
+    <span class="c">&lt;!-- default stripe and color stripe --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>I'm in a docBounds within a stripe<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe--red inverted"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>I'm in a red stripe<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This <span class="nt">&lt;code&gt;</span>docStripe<span class="nt">&lt;/code&gt;</span> also has a class of <span class="nt">&lt;code&gt;</span>inverted<span class="nt">&lt;/code&gt;</span> to style these child element text colors correctly<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="c">&lt;!-- "collections" --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe--collection"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h3&gt;</span>I contain a collection (of docBoxes)<span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="cortana-content">
+<h2 id="docStripe">Stripe variants</h2>
+
+<p>/* {{{ Doc bounds </p>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="cortana-footer">
+      Build with love using Trulia's <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/Yago/Cortana">Cortana</a> !
+    </footer>  
+  </div>
+
+  <script src="theme-build/js/vendors.min.js"></script>
+  <script type="text/javascript">
+    var jQuery_no_conflict = $.noConflict(true);
+  </script>
+  <script src="theme-build/js/main.js"></script>
+  <script type="text/javascript">
+    function TypeaheadCtrl($scope) {
+      $scope.selected = undefined;
+      $scope.searchData = 
+      [
+        
+          
+            
+              
+              
+              {
+              "title": "Media Query Breakpoints",
+              "breadcrumb": "Sass Utilities > Media Query Breakpoints",
+              "path": "sass_utilities.html#breakpoints"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Stripe Layout",
+              "breadcrumb": "Layout > Stripe Layout",
+              "path": "layout.html#docstar"
+              },
+            
+              
+              
+              {
+              "title": "Stripe variants",
+              "breadcrumb": "Layout > Stripe variants",
+              "path": "layout.html#docStripe"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Inverted Context",
+              "breadcrumb": "Base CSS > Inverted Context",
+              "path": "base_css.html#inverted"
+              },
+            
+          
+        
+      {}];
+      $scope.onSelect = function ($item, $model, $label) {
+        window.location.replace($item.path);
+      };
+    }
+  </script>
+  <script type="text/ng-template" id="customTemplate.html">
+    <a href="{{match.model.path}}">
+      <p class="cortana-search-title">{{match.model.title}}</p>
+      <p class="cortana-search-path">{{match.model.breadcrumb}}</p>
+    </a>
+  </script>
+  
+    
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    
+      <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+  
+  <!-- Source Components -->
+  
+</body>
+</html>
