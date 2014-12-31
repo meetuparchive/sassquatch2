@@ -1,0 +1,28 @@
+/*doc
+---
+title: String utils
+name: string
+parent: functions
+---
+*/
+
+
+
+/*doc
+---
+title: capitalizeFirstLetter
+name: capitalizeFirstLetter
+parent: string
+---
+Capitalizes first letter of a given string. Useful as a camelCase converter.
+__returns string__
+
+```
+capitalizeFirstLetter('snowflake') // -> 'Snowflake'
+
+.special#{capitalizeFirstLetter('snowflake')} // -> .specialSnowflake
+```
+*/
+@function capitalizeFirstLetter( $string ) {
+	@return #{to-upper-case(str-slice($string, 1, 1))}#{str-slice($string, 2, -1)};
+}

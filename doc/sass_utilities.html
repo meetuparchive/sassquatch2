@@ -54,13 +54,13 @@
           
         </ul>
         
-          <h3>Sass Utilities</h3>
+          <h3>Layout</h3>
           <ul>
           
             
               
               
-                <li><a class="active" href="sass_utilities.html">Sass Utilities</a></li>
+                <li><a href="layout.html">Layout</a></li>
               
             
           
@@ -70,7 +70,7 @@
           
           </ul>
         
-          <h3>Layout</h3>
+          <h3>Sass Utilities</h3>
           <ul>
           
             
@@ -78,7 +78,7 @@
             
               
               
-                <li><a href="layout.html">Layout</a></li>
+                <li><a class="active" href="sass_utilities.html">Sass Utilities</a></li>
               
             
           
@@ -127,7 +127,55 @@
           <ul bs-scrollspy-list data-offset="-30">
             
               
-                <li><a href="#breakpoints">Media Query Breakpoints</a></li>
+                <li><a href="#functions">Sass Functions</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <li><a href="#mixinsPlaceholders">Sass Mixins & Placeholders</a></li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
               
             
           </ul>
@@ -138,7 +186,72 @@
 
 
 
-<h1 id="breakpoints">Media Query Breakpoints</h1>
+<h1 id="functions">Sass Functions</h1>
+
+<h2 id="brightness">Contrast/brightness utils</h2>
+
+<h2 id="getPerceivedBrightness">Perceived brightness value</h2>
+
+<p>Gets brightness of a color on a scale of 0-255 based on a yiq color space.
+<em>Calculates green-weighted sum of RGB channels (green is perceived as brighter 
+on additive color screens).</em>
+<strong>returns int</strong>
+<code>
+getPerceivedBrightness(#000) // -&gt; 0
+</code></p>
+
+<h2 id="getPrimaryTextColor">Programmatic contrast text</h2>
+
+<p>For a given background color, this function returns
+a text color value with appropriate contrast.
+<strong>returns value</strong>
+<code>
+color: getPrimaryTextColor(#000); // -&gt; color: $C_textPrimaryInverted; (white text on dark)
+color: getPrimaryTextColor(#FFF); // -&gt; color: $C_textPrimary; (dark text on white)
+</code></p>
+
+<h2 id="isDarkisLight">isDark/isLight</h2>
+
+<p>Checks a given color for brightness and returns a boolean.
+Our default dark/light threshold is 160 on a scale of 0-255
+<strong>returns boolean</strong>
+<code>
+isDark(#000) // -&gt; true
+isLight(#000) // -&gt; false
+</code></p>
+
+<h2 id="string">String utils</h2>
+
+<h3 id="capitalizeFirstLetter">capitalizeFirstLetter</h3>
+
+<p>Capitalizes first letter of a given string. Useful as a camelCase converter.
+<strong>returns string</strong></p>
+</div><div class="codeBlock"><div class="highlight"><pre>capitalizeFirstLetter('snowflake') // -&gt; 'Snowflake'
+
+.specialcapitalizeFirstLetter("snowflake") // -&gt; .specialSnowflake
+</pre></div></div><div class="cortana-content">
+<h1 id="mixinsPlaceholders">Sass Mixins & Placeholders</h1>
+
+<h2 id="align">Vertical-align children</h2>
+
+<p><strong>Try to avoid using for essential, non-decorative things</strong>
+Aligns children of selected element using flexbox.
+<code>
+@include %valignChildren;
+@include %valignChildren--bottom;
+</code></p>
+
+<h2 id="background">Background Utilities</h2>
+
+<h3>background-clip mixin</h3>
+
+<p>Sets background-clip property
+<code>
+@include background-clip(); // defaults to &#39;padding&#39;
+@include background-clip(&#39;border&#39;);
+</code></p>
+
+<h2 id="breakpoints">Media Query Breakpoints</h2>
 
 <h3>Mobile first mixin</h3>
 
@@ -209,6 +322,66 @@ use the <code>atMediaDown</code> mixin.</p>
 </tr>
 </tbody></table>
 
+<h2 id="button">Button utilities</h2>
+
+<h3 id="buttonPersonality">Button "personality" placeholder</h3>
+
+<p>Disables user-select, sets cursor, and resets text-decoration.
+<code>
+@extend %buttonPersonality;
+</code></p>
+
+<h2 id="display">Display utils</h2>
+
+<h3 id="pseudoDisplay">Pseudo-element display mixin</h3>
+
+<p>Sets display property for psuedo-elements
+<code>
+@include pseudoDisplay($value: block);
+</code></p>
+
+<h2 id="float">Float utils</h2>
+
+<h3 id="clearfix">Clearfix placeholder</h3>
+
+<p>Clears floated children.
+```
+@extend %clearfix;</p>
+
+<h2 id="shadow">Shadow utilities</h2>
+
+<h3 id="shadowPlaceholder">Shadow placeholder</h3>
+
+<p>Applies standard box-shadow
+<code>
+@extend %shadow;
+</code></p>
+
+<h2 id="shape">Shapes</h2>
+
+<h3 id="circleMixin">Circle mixin</h3>
+
+<p>Makes selected element a circle with border-radius
+<code>
+@mixin circle($color: black, $size: 12px)
+</code></p>
+
+<h3 id="triangleMixin">Triangle mixin</h3>
+
+<p>Includes rules to create a css border triangle
+<code>
+@mixin triangle($direction: &#39;n&#39;, $color: black, $size: 6px)
+</code></p>
+
+<h2 id="text">Text utils</h2>
+
+<h3 id="textProtection">Text protection shim</h3>
+
+<p>Adds a pseudo-element gradient 
+<code>
+@mixin textProtectionScrim($placement: &#39;top&#39;); // &#39;bottom&#39; will place gradent on bottom of el
+</code></p>
+
         </div>
       </div>
     </div>
@@ -234,18 +407,6 @@ use the <code>atMediaDown</code> mixin.</p>
               
               
               {
-              "title": "Media Query Breakpoints",
-              "breadcrumb": "Sass Utilities > Media Query Breakpoints",
-              "path": "sass_utilities.html#breakpoints"
-              },
-            
-          
-        
-          
-            
-              
-              
-              {
               "title": "Stripe Layout",
               "breadcrumb": "Layout > Stripe Layout",
               "path": "layout.html#docstar"
@@ -257,6 +418,202 @@ use the <code>atMediaDown</code> mixin.</p>
               "title": "Stripe variants",
               "breadcrumb": "Layout > Stripe variants",
               "path": "layout.html#docStripe"
+              },
+            
+          
+        
+          
+            
+              
+              
+              {
+              "title": "Sass Functions",
+              "breadcrumb": "Sass Utilities > Sass Functions",
+              "path": "sass_utilities.html#functions"
+              },
+            
+              
+              
+              {
+              "title": "Contrast/brightness utils",
+              "breadcrumb": "Sass Utilities > Contrast/brightness utils",
+              "path": "sass_utilities.html#brightness"
+              },
+            
+              
+              
+              {
+              "title": "Perceived brightness value",
+              "breadcrumb": "Sass Utilities > Perceived brightness value",
+              "path": "sass_utilities.html#getPerceivedBrightness"
+              },
+            
+              
+              
+              {
+              "title": "Programmatic contrast text",
+              "breadcrumb": "Sass Utilities > Programmatic contrast text",
+              "path": "sass_utilities.html#getPrimaryTextColor"
+              },
+            
+              
+              
+              {
+              "title": "isDark/isLight",
+              "breadcrumb": "Sass Utilities > isDark/isLight",
+              "path": "sass_utilities.html#isDarkisLight"
+              },
+            
+              
+              
+              {
+              "title": "String utils",
+              "breadcrumb": "Sass Utilities > String utils",
+              "path": "sass_utilities.html#string"
+              },
+            
+              
+              
+              {
+              "title": "capitalizeFirstLetter",
+              "breadcrumb": "Sass Utilities > capitalizeFirstLetter",
+              "path": "sass_utilities.html#capitalizeFirstLetter"
+              },
+            
+              
+              
+              {
+              "title": "Sass Mixins & Placeholders",
+              "breadcrumb": "Sass Utilities > Sass Mixins & Placeholders",
+              "path": "sass_utilities.html#mixinsPlaceholders"
+              },
+            
+              
+              
+              {
+              "title": "Vertical-align children",
+              "breadcrumb": "Sass Utilities > Vertical-align children",
+              "path": "sass_utilities.html#align"
+              },
+            
+              
+              
+              {
+              "title": "Background Utilities",
+              "breadcrumb": "Sass Utilities > Background Utilities",
+              "path": "sass_utilities.html#background"
+              },
+            
+              
+              
+              {
+              "title": "Media Query Breakpoints",
+              "breadcrumb": "Sass Utilities > Media Query Breakpoints",
+              "path": "sass_utilities.html#breakpoints"
+              },
+            
+              
+              
+              {
+              "title": "Button utilities",
+              "breadcrumb": "Sass Utilities > Button utilities",
+              "path": "sass_utilities.html#button"
+              },
+            
+              
+              
+              {
+              "title": "Button "personality" placeholder",
+              "breadcrumb": "Sass Utilities > Button "personality" placeholder",
+              "path": "sass_utilities.html#buttonPersonality"
+              },
+            
+              
+              
+              {
+              "title": "Display utils",
+              "breadcrumb": "Sass Utilities > Display utils",
+              "path": "sass_utilities.html#display"
+              },
+            
+              
+              
+              {
+              "title": "Pseudo-element display mixin",
+              "breadcrumb": "Sass Utilities > Pseudo-element display mixin",
+              "path": "sass_utilities.html#pseudoDisplay"
+              },
+            
+              
+              
+              {
+              "title": "Float utils",
+              "breadcrumb": "Sass Utilities > Float utils",
+              "path": "sass_utilities.html#float"
+              },
+            
+              
+              
+              {
+              "title": "Clearfix placeholder",
+              "breadcrumb": "Sass Utilities > Clearfix placeholder",
+              "path": "sass_utilities.html#clearfix"
+              },
+            
+              
+              
+              {
+              "title": "Shadow utilities",
+              "breadcrumb": "Sass Utilities > Shadow utilities",
+              "path": "sass_utilities.html#shadow"
+              },
+            
+              
+              
+              {
+              "title": "Shadow placeholder",
+              "breadcrumb": "Sass Utilities > Shadow placeholder",
+              "path": "sass_utilities.html#shadowPlaceholder"
+              },
+            
+              
+              
+              {
+              "title": "Shapes",
+              "breadcrumb": "Sass Utilities > Shapes",
+              "path": "sass_utilities.html#shape"
+              },
+            
+              
+              
+              {
+              "title": "Circle mixin",
+              "breadcrumb": "Sass Utilities > Circle mixin",
+              "path": "sass_utilities.html#circleMixin"
+              },
+            
+              
+              
+              {
+              "title": "Triangle mixin",
+              "breadcrumb": "Sass Utilities > Triangle mixin",
+              "path": "sass_utilities.html#triangleMixin"
+              },
+            
+              
+              
+              {
+              "title": "Text utils",
+              "breadcrumb": "Sass Utilities > Text utils",
+              "path": "sass_utilities.html#text"
+              },
+            
+              
+              
+              {
+              "title": "Text protection shim",
+              "breadcrumb": "Sass Utilities > Text protection shim",
+              "path": "sass_utilities.html#textProtection"
               },
             
           

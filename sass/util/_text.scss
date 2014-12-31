@@ -1,0 +1,40 @@
+/*doc
+---
+title: Text utils
+name: text
+parent: mixinsPlaceholders
+---
+*/
+
+
+
+/*doc
+---
+title: Text protection shim
+name: textProtection
+parent: text
+---
+Adds a pseudo-element gradient 
+```
+@mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
+```
+*/
+//TODO: fix name
+@mixin textProtectionScrim($placement: 'top') {
+	&:before {
+		$C_scrimGradient: #0F141F;
+		@include linear-gradient(transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 50%, transparentize($C_scrimGradient, .2) 100%);
+		content: '';
+		display: block;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 0;
+
+		@if $placement == 'top' {
+			top: 0;
+		} @else {
+			bottom: 0;
+		}
+	}
+}

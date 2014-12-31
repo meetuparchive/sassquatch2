@@ -1,67 +1,4 @@
-//
-// STUFF AVATAR NEEDS
-//
-// standard media sizes
-// $media-xs: 	16px;
-// $media-s: 	32px;
-// $media-m: 	48px;
-// $media-l: 	64px;
-// $media-xl: 	80px;
-
-@mixin experimental($property,
-					$value,
-					$moz: true,
-					$webkit: true,
-					$o: false,
-					$ms: true,
-					$khtml: false,
-					$official: true) {
-	$value: unquote($value);
-	@if $moz {
-		-moz-#{$property}: $value; }
-	@if $webkit {
-		-webkit-#{$property}: $value; }
-	@if $o {
-		-o-#{$property}: $value; }
-	@if $ms {
-		-ms-#{$property}: $value; }
-	@if $khtml {
-		-khtml-#{$property}: $value; }
-	@if $official {
-		#{$property}: $value; } }
-
-@mixin background-size( $size) {
-	@include experimental(background-size, $size);
-}
-
-
-//
-// AVATAR UTIL
-//
-/**
- *	  @author John Cockrell <john@meetup.com>
- *	  @since  2013-05-14
- *
- *	  @description
- *	  Solely squared off figures that work in conjunction with an image
- *	  loaded using background-sizing.
- *
- *	  This style also separates the mechanical style attributes from each
- *	  photo's relation to other sizes, so that the names won't be misleading
- *	  in the future (unlike, say, a `.photo45` that changes to a different
- *	  number and we have to update all the classes everywhere).
- *
- *	  <div class="avatar-small">
- *		  <img src="...">
- *	  </div>
- */
-
 %avatar {
-	font-size: 16px;
-	// NOTE: This is so we can use em-based sizing. In the future, once
-	// we edit the meetup mobile resets to a $baseline: 16px, we can
-	// get rid of this declaration.
-
 	img {
 		// Inner image always fills width, and adjusts height accordingly
 		background-color: $C_collectionBGDark;
@@ -132,7 +69,7 @@ You know, for people.
 }
 .avatar {
 	@extend %avatar_base_size;
-	@include background-size(cover);
+	@include prefixer(background-size, $size);
 	display: block;
 	text-indent: 100%;
 	white-space: nowrap;

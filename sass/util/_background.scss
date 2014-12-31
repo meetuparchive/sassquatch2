@@ -1,0 +1,17 @@
+/*doc
+---
+title: Background Utilities
+name: background
+parent: mixinsPlaceholders
+---
+
+### background-clip mixin
+Sets background-clip property
+```
+@include background-clip(); // defaults to 'padding'
+@include background-clip('border');
+```
+*/
+@mixin background-clip($value:padding){
+	@include prefixer(background-clip, $value, $prefixes);
+}
