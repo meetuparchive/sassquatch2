@@ -8,17 +8,19 @@
     <link rel="shortcut icon" href="static/brick.png" />
 
     <!-- Styleguide CSS -->
-    <link rel="stylesheet" href="static/css/doc.css">
-    <link rel="stylesheet" href="static/css/github.css">
+    <link rel="stylesheet" href="css/doc.css">
+    <link rel="stylesheet" href="css/github.css">
 
     <!-- CSS to be documented -->
-    <link rel="stylesheet" href="build/css/screen.css">
+    <link rel="stylesheet" href="css/sassquatch.css">
 
     <!-- Main libraries -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-    <!-- component js and init scripts -->
-    <script src="build/script/components.js"></script>
+	 <!--
+       -[> component js and init scripts <]
+       -<script src="build/script/components.js"></script>
+		 -->
 
 </head>
 
@@ -53,53 +55,53 @@
             <div class="componentMenu box boxBasic backgroundBasic">
               <div class="boxBody pan">
                 <ul class="componentList listBorderedHover">
-                   
+                  
                     <li><a href="#functions">Sass Functions</a></li>
-                   
+                  
                     <li><a href="#brightness">Contrast/brightness utils</a></li>
-                   
+                  
                     <li><a href="#getPerceivedBrightness">Perceived brightness value</a></li>
-                   
+                  
                     <li><a href="#getPrimaryTextColor">Programmatic contrast text</a></li>
-                   
+                  
                     <li><a href="#isDarkisLight">isDark/isLight</a></li>
-                   
+                  
                     <li><a href="#string">String utils</a></li>
-                   
+                  
                     <li><a href="#capitalizeFirstLetter">capitalizeFirstLetter</a></li>
-                   
+                  
                     <li><a href="#mixinsPlaceholders">Sass Mixins & Placeholders</a></li>
-                   
+                  
                     <li><a href="#align">Vertical-align children</a></li>
-                   
+                  
                     <li><a href="#background">Background Utilities</a></li>
-                   
+                  
                     <li><a href="#breakpoints">Media Query Breakpoints</a></li>
-                   
+                  
                     <li><a href="#button">Button utilities</a></li>
-                   
+                  
                     <li><a href="#buttonPersonality">Button "personality" placeholder</a></li>
-                   
+                  
                     <li><a href="#display">Display utils</a></li>
-                   
+                  
                     <li><a href="#pseudoDisplay">Pseudo-element display mixin</a></li>
-                   
+                  
                     <li><a href="#float">Float utils</a></li>
-                   
+                  
                     <li><a href="#clearfix">Clearfix placeholder</a></li>
-                   
+                  
                     <li><a href="#shadow">Shadow utilities</a></li>
-                   
+                  
                     <li><a href="#shadowPlaceholder">Shadow placeholder</a></li>
-                   
+                  
                     <li><a href="#shape">Shapes</a></li>
-                   
+                  
                     <li><a href="#circleMixin">Circle mixin</a></li>
-                   
+                  
                     <li><a href="#triangleMixin">Triangle mixin</a></li>
-                   
+                  
                     <li><a href="#text">Text utils</a></li>
-                   
+                  
                     <li><a href="#textProtection">Text protection shim</a></li>
                   
                 </ul>
@@ -279,7 +281,7 @@ use the <code>atMediaDown</code> mixin.</p>
 
 <p>Applies standard box-shadow
 <code>
-@extend %box-shadow;
+@extend %shadow;
 </code></p>
 
 <h2 id="shape">Shapes</h2>

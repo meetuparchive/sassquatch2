@@ -8,17 +8,19 @@
     <link rel="shortcut icon" href="static/brick.png" />
 
     <!-- Styleguide CSS -->
-    <link rel="stylesheet" href="static/css/doc.css">
-    <link rel="stylesheet" href="static/css/github.css">
+    <link rel="stylesheet" href="css/doc.css">
+    <link rel="stylesheet" href="css/github.css">
 
     <!-- CSS to be documented -->
-    <link rel="stylesheet" href="build/css/screen.css">
+    <link rel="stylesheet" href="css/sassquatch.css">
 
     <!-- Main libraries -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-    <!-- component js and init scripts -->
-    <script src="build/script/components.js"></script>
+	 <!--
+       -[> component js and init scripts <]
+       -<script src="build/script/components.js"></script>
+		 -->
 
 </head>
 
@@ -53,7 +55,7 @@
             <div class="componentMenu box boxBasic backgroundBasic">
               <div class="boxBody pan">
                 <ul class="componentList listBorderedHover">
-                  <% @blocks.each do |block| %> 
+                  <% @blocks.each do |block| %>
                     <li><a href="#<%= block[:name] %>"><%= block[:title] %></a></li>
                   <% end %>
                 </ul>
