@@ -7,6 +7,24 @@ cateogry: Modifier classes
 */
 
 
+//
+// PRIVATE modifier factory
+//
+@mixin _modifier($base, $modification) {
+	.#{$base}--#{$modification} {
+		@content;
+	}
+}
+
+//
+// PRIVATE media query modifier factory
+//
+@mixin _bpModifier($breakpoint, $base) {
+	.#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)} {
+		@content;
+	}
+}
+
 
 /*doc
 ---
@@ -23,17 +41,10 @@ Class             | Description
 `.align--left`    | sets `text-align` to `left`
 
 */
-.align-center,
-.align--center {
-    text-align: center;
-}
-.align-right,
-.align--right {
-    text-align: right;
-}
-.align-left,
-.align--left {
-    text-align: left;
+@each $alignment in (left, right, center) {
+	@include _modifier(align, $alignment) {
+		text-align: $alignment;
+	}
 }
 
 
@@ -53,21 +64,13 @@ Class                   | Description
 `.display--inlineblock` | sets `display` to `inlineblock`
 
 */
-.none,
-.display--none {
-    display: none;
+@each $display in (none, block, inline) {
+	@include _modifier(display, $display) {
+		display: $display;
+	}
 }
-.block,
-.display--block {
-    display: block;
-}
-.inline,
-.display--inline {
-    display: inline;
-}
-.inlineblock,
 .display--inlineblock {
-    display: inline-block;
+	display: inline-block;
 }
 
 
@@ -85,11 +88,9 @@ Class                   | Description
 `.border--none`         | removes all borders from element
 
 */
-.border-top,
 .border--top {
 	border-top: $border-standard;
 }
-.border-none,
 .border--none {
 	border-width: 0;
 }
@@ -103,19 +104,16 @@ parent: modifiers
 ---
 Sets type wrapping, witespace, and overflow properties on element
 
-Class                   | Description
------------------------ | --------------------------------
-`.singleLine`           | forces text to a single line (nowrap)
-`.singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+Class                         | Description
+----------------------------- | --------------------------------
+`.wrap--singleLine`           | forces text to a single line (nowrap)
+`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
 
 */
-.single-line,
-.singleLine,
-.singleLine--truncate {
+.wrap--singleLine--truncate {
   white-space: nowrap;
 }
-.single-line,
-.singleLine--truncate {
+.wrap--singleLine--truncate {
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -134,21 +132,6 @@ Class                   | Description
 TK                      | TK
 
 */
-
-//
-// PRIVATE media query modifier factory
-//
-@mixin _bpModifier($breakpoint, $base, $modification: false) {
-	$_selector: if(
-		not $modification,
-		#{$base}--at#{capitalizeFirstLetter($breakpoint)},
-		#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)}
-	);
-	.#{$_selector} {
-		@content;
-	}
-}
-
 @each $breakpoint in (large, medium, small) {
 
 	// text align
