@@ -1,3 +1,28 @@
+/*doc
+---
+title: Unsorted
+name: unsorted
+category: Unsorted
+---
+*/
+
+
+/*doc
+---
+title: Media Sizing
+name: mediaSizing
+parent: unsorted
+---
+Classes for applying dimensions to an element.
+
+Class          | Description
+-------------- | ----------------------------
+`.media--xs`   | Sets `width` to `$media-xs` and height to `auto`
+`.media--s`    | Sets `width` to `$media-s` and height to `auto`
+`.media--m`    | Sets `width` to `$media-m` and height to `auto`
+`.media--l`    | Sets `width` to `$media-l` and height to `auto`
+`.media--xl`   | Sets `width` to `$media-xl` and height to `auto`
+*/
 .media--xs {
   height: auto;
   width: $media-xs;
@@ -23,6 +48,15 @@
   width: $media-xl;
 }
 
+
+/*doc
+---
+title: Thumbnails
+name: thumb
+parent: unsorted
+---
+TODO: doc this
+*/
 .thumb {
   background-position: center;
   background-size: cover;
@@ -34,6 +68,16 @@
   }
 }
 
+
+/*doc
+---
+title: Aspect ratio helper
+name: keepAspect
+parent: unsorted
+---
+TODO: doc this
+TODO: doc variants
+*/
 .keepAspect {
   margin-bottom: 0;
   &:before {
