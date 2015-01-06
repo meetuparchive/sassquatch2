@@ -2623,119 +2623,211 @@ input.toggle-pill {
   padding: 8px;
   max-width: 440px; }
 
-/* HELPERS */
-.align-center {
+/*doc
+---
+title: Modifier classes
+name: modifiers
+cateogry: Modifier classes
+---
+*/
+/*doc
+---
+title: Alignment
+name: alignMod
+parent: modifiers
+---
+Modifies text-align property of element
+
+Class             | Description
+----------------- | --------------------------------
+`.align--center`  | sets `text-align` to `center`
+`.align--right`   | sets `text-align` to `right`
+`.align--left`    | sets `text-align` to `left`
+
+*/
+.align-center,
+.align--center {
   text-align: center; }
 
-.align-right {
+.align-right,
+.align--right {
   text-align: right; }
 
-.align-left {
+.align-left,
+.align--left {
   text-align: left; }
 
-.none {
+/*doc
+---
+title: Display
+name: displayMod
+parent: modifiers
+---
+Modifies display property of element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.display--none`        | sets `display` to `none`
+`.display--block`       | sets `display` to `block`
+`.display--inline`      | sets `display` to `inline`
+`.display--inlineblock` | sets `display` to `inlineblock`
+
+*/
+.none,
+.display--none {
   display: none; }
 
-.block {
+.block,
+.display--block {
   display: block; }
 
-.inline {
+.inline,
+.display--inline {
   display: inline; }
 
-.inlineblock {
+.inlineblock,
+.display--inlineblock {
   display: inline-block; }
 
-.border-top {
+/*doc
+---
+title: Borders
+name: borderMod
+parent: modifiers
+---
+Sets border properties on element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.border--top`          | sets a standard top border on the element
+`.border--none`         | removes all borders from element
+
+*/
+.border-top,
+.border--top {
   border-top: 1px solid rgba(0, 0, 0, 0.12); }
 
-.border-none {
-  border: none; }
+.border-none,
+.border--none {
+  border-width: 0; }
 
-@media only screen and (max-width: 960px) {
-  .align-center--at-large {
-    text-align: center; }
+/*doc
+---
+title: Type wrap/whitespace
+name: typespaceMod
+parent: modifiers
+---
+Sets type wrapping, witespace, and overflow properties on element
 
-  .align-right--at-large {
-    text-align: right; }
+Class                   | Description
+----------------------- | --------------------------------
+`.singleLine`           | forces text to a single line (nowrap)
+`.singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
 
-  .align-left--at-large {
-    text-align: left; }
+*/
+.single-line,
+.singleLine,
+.singleLine--truncate {
+  white-space: nowrap; }
 
-  .none--at-large {
-    display: none; }
-
-  .block--at-large {
-    display: block; }
-
-  .inline--at-large {
-    display: inline; }
-
-  .inlineblock--at-large {
-    display: inline-block; }
-
-  .border-top--at-large {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-
-  .border-none--at-large {
-    border: none; } }
-@media only screen and (max-width: 640px) {
-  .align-center--at-medium {
-    text-align: center; }
-
-  .align-right--at-medium {
-    text-align: right; }
-
-  .align-left--at-medium {
-    text-align: left; }
-
-  .none--at-medium {
-    display: none; }
-
-  .block--at-medium {
-    display: block; }
-
-  .inline--at-medium {
-    display: inline; }
-
-  .inlineblock--at-medium {
-    display: inline-block; }
-
-  .border-top--at-medium {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-
-  .border-none--at-medium {
-    border: none; } }
-@media only screen and (max-width: 440px) {
-  .align-center--at-small {
-    text-align: center; }
-
-  .align-right--at-small {
-    text-align: right; }
-
-  .align-left--at-small {
-    text-align: left; }
-
-  .none--at-small {
-    display: none; }
-
-  .block--at-small {
-    display: block; }
-
-  .inline--at-small {
-    display: inline; }
-
-  .inlineblock--at-small {
-    display: inline-block; }
-
-  .border-top--at-small {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-
-  .border-none--at-small {
-    border: none; } }
-.single-line {
-  white-space: nowrap;
+.single-line,
+.singleLine--truncate {
   overflow: hidden;
   text-overflow: ellipsis; }
+
+/*doc
+---
+title: Media conditional modifiers
+name: mediaMod
+parent: modifiers
+---
+TK
+
+Class                   | Description
+----------------------- | --------------------------------
+TK                      | TK
+
+*/
+.align--center--atLarge {
+  text-align: center; }
+
+.align--right--atLarge {
+  text-align: right; }
+
+.align--left--atLarge {
+  text-align: left; }
+
+.display--none--atLarge {
+  display: none; }
+
+.display--inline--atLarge {
+  display: inline; }
+
+.display--block--atLarge {
+  display: block; }
+
+.display--inlineblock--atLarge {
+  display: inline-block; }
+
+.border--top--atLarge {
+  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+
+.border--none--atLarge {
+  border-width: 0; }
+
+.align--center--atMedium {
+  text-align: center; }
+
+.align--right--atMedium {
+  text-align: right; }
+
+.align--left--atMedium {
+  text-align: left; }
+
+.display--none--atMedium {
+  display: none; }
+
+.display--inline--atMedium {
+  display: inline; }
+
+.display--block--atMedium {
+  display: block; }
+
+.display--inlineblock--atMedium {
+  display: inline-block; }
+
+.border--top--atMedium {
+  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+
+.border--none--atMedium {
+  border-width: 0; }
+
+.align--center--atSmall {
+  text-align: center; }
+
+.align--right--atSmall {
+  text-align: right; }
+
+.align--left--atSmall {
+  text-align: left; }
+
+.display--none--atSmall {
+  display: none; }
+
+.display--inline--atSmall {
+  display: inline; }
+
+.display--block--atSmall {
+  display: block; }
+
+.display--inlineblock--atSmall {
+  display: inline-block; }
+
+.border--top--atSmall {
+  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+
+.border--none--atSmall {
+  border-width: 0; }
 
 /*doc
 ---

@@ -1,0 +1,187 @@
+/*doc
+---
+title: Modifier classes
+name: modifiers
+cateogry: Modifier classes
+---
+*/
+
+
+//
+// PRIVATE media query modifier factory
+//
+@mixin _bpModifier($breakpoint, $base, $modification: false) {
+	$_selector: if(
+		not $modification,
+		#{$base}--at#{capitalizeFirstLetter($breakpoint)},
+		#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)}
+	);
+	.#{$_selector} {
+		@content;
+	}
+}
+
+// TODO: rename all the classes to use PCV
+
+
+/*doc
+---
+title: Alignment
+name: alignMod
+parent: modifiers
+---
+Modifies text-align property of element
+
+Class             | Description
+----------------- | --------------------------------
+`.align--center`  | sets `text-align` to `center`
+`.align--right`   | sets `text-align` to `right`
+`.align--left`    | sets `text-align` to `left`
+
+*/
+.align-center,
+.align--center {
+    text-align: center;
+}
+.align-right,
+.align--right {
+    text-align: right;
+}
+.align-left,
+.align--left {
+    text-align: left;
+}
+
+
+/*doc
+---
+title: Display
+name: displayMod
+parent: modifiers
+---
+Modifies display property of element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.display--none`        | sets `display` to `none`
+`.display--block`       | sets `display` to `block`
+`.display--inline`      | sets `display` to `inline`
+`.display--inlineblock` | sets `display` to `inlineblock`
+
+*/
+.none,
+.display--none {
+    display: none;
+}
+.block,
+.display--block {
+    display: block;
+}
+.inline,
+.display--inline {
+    display: inline;
+}
+.inlineblock,
+.display--inlineblock {
+    display: inline-block;
+}
+
+
+/*doc
+---
+title: Borders
+name: borderMod
+parent: modifiers
+---
+Sets border properties on element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.border--top`          | sets a standard top border on the element
+`.border--none`         | removes all borders from element
+
+*/
+.border-top,
+.border--top {
+	border-top: $border-standard;
+}
+.border-none,
+.border--none {
+	border-width: 0;
+}
+
+
+/*doc
+---
+title: Type wrap/whitespace
+name: typespaceMod
+parent: modifiers
+---
+Sets type wrapping, witespace, and overflow properties on element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.singleLine`           | forces text to a single line (nowrap)
+`.singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+
+*/
+.single-line,
+.singleLine,
+.singleLine--truncate {
+  white-space: nowrap;
+}
+.single-line,
+.singleLine--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/*doc
+---
+title: Media conditional modifiers
+name: mediaMod
+parent: modifiers
+---
+TK
+
+Class                   | Description
+----------------------- | --------------------------------
+TK                      | TK
+
+*/
+@each $breakpoint in (large, medium, small) {
+
+	// text align
+	@include _bpModifier($breakpoint, 'align', 'center') {
+		text-align: center;
+	}
+	@include _bpModifier($breakpoint, 'align', 'right') {
+		text-align: right;
+	}
+	@include _bpModifier($breakpoint, 'align', 'left') {
+		text-align: left;
+	}
+
+	// display
+	@include _bpModifier($breakpoint, 'display', 'none') {
+		display: none;
+	}
+	@include _bpModifier($breakpoint, 'display', 'inline') {
+		display: inline;
+	}
+	@include _bpModifier($breakpoint, 'display', 'block') {
+		display: block;
+	}
+	@include _bpModifier($breakpoint, 'display', 'inlineblock') {
+		display: inline-block;
+	}
+
+	// border
+	@include _bpModifier($breakpoint, 'border', 'top') {
+		border-top: $border-standard;
+	}
+	@include _bpModifier($breakpoint, 'border', 'none') {
+		border-width: 0;
+	}
+}
