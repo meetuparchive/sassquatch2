@@ -19,6 +19,13 @@
 	$breakpoint-l  : 960px;
 	$breakpoint-xl : 1280px;
 
+	$breakpoint-map: (
+		s: $breakpoint-s,
+		m: $breakpoint-m,
+		l: $breakpoint-l,
+		xl: $breakpoint-xl,
+	);
+
 //
 // =========================================
 // TYPOGRAPHY ------------------------------
@@ -109,6 +116,14 @@
 	$media-l  : $block-2; // 72px
 	$media-xl : $block-4; // 160px
 
+	$media-map: (
+		xs: $media-xs,
+		s: $media-s,
+		m: $media-m,
+		l: $media-l,
+		xl: $media-xl
+	);
+
 //
 // =========================================
 // COLORS ----------------------------------
@@ -165,7 +180,7 @@
 // Z-INDEX ---------------------------------
 // =========================================
 //
-	$indexes: (
+	$zindex-map: (
 		main: 0,
 		main-header: 1,
 		shade: 2,

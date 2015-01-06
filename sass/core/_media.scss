@@ -7,47 +7,6 @@ category: Unsorted
 */
 
 
-/*doc
----
-title: Media Sizing
-name: mediaSizing
-parent: unsorted
----
-Classes for applying dimensions to an element.
-
-Class          | Description
--------------- | ----------------------------
-`.media--xs`   | Sets `width` to `$media-xs` and height to `auto`
-`.media--s`    | Sets `width` to `$media-s` and height to `auto`
-`.media--m`    | Sets `width` to `$media-m` and height to `auto`
-`.media--l`    | Sets `width` to `$media-l` and height to `auto`
-`.media--xl`   | Sets `width` to `$media-xl` and height to `auto`
-*/
-.media--xs {
-  height: auto;
-  width: $media-xs;
-}
-
-.media--s {
-  height: auto;
-  width: $media-s;
-}
-
-.media--m {
-  height: auto;
-  width: $media-m;
-}
-
-.media--l {
-  height: auto;
-  width: $media-l;
-}
-
-.media--xl {
-  height: auto;
-  width: $media-xl;
-}
-
 
 /*doc
 ---

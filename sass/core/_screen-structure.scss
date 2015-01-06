@@ -160,7 +160,7 @@ body{
   // full screen at all screen widths
   &.view--modal-full{
 		@include modal-full;
-	  z-index: map-get($indexes, "modal");
+	  z-index: map-get($zindex-map, "modal");
   }
 
   // MODAL VIEW SNAP
@@ -170,7 +170,7 @@ body{
 	@include atMediaDown(small){
 		@include modal-full;
 	}
-	z-index: map-get($indexes, "modal");
+	z-index: map-get($zindex-map, "modal");
   }
 
 
@@ -199,7 +199,7 @@ body{
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: map-get($indexes, "main-header");
+	z-index: map-get($zindex-map, "main-header");
 
 	// which search mode
 	.docBounds--standard{ display: block; }
@@ -294,7 +294,7 @@ body{
 	position: absolute;
 	top: 0;
 	width: 100%;
-	z-index: map-get($indexes, "shade");
+	z-index: map-get($zindex-map, "shade");
 	@include transition(all .15s);
 	background: $C_modalShade;
 	opacity: 1;

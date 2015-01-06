@@ -376,7 +376,7 @@ textarea::-webkit-input-placeholder {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  z-index: map-get($indexes, "modal");
+  z-index: map-get($zindex-map, "modal");
 }
 
 // The picker input element.

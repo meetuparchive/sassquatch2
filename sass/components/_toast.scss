@@ -4,7 +4,7 @@
   position: fixed;
   top: $space-quarter;
   width: 100%;
-  z-index: map-get($indexes, "momentary");
+  z-index: map-get($zindex-map, "momentary");
 
   &.off {
     @include transform(translateY(-$block));

@@ -90,6 +90,6 @@ buttons are inverted to light colors to work on dark backgrounds or photos.
 		display: block;
 	}
 	audio, canvas, video {
-		@include inline-block();
+		display: inline-block;
 	}
 	/* }}} */

@@ -2178,42 +2178,6 @@ category: Unsorted
 */
 /*doc
 ---
-title: Media Sizing
-name: mediaSizing
-parent: unsorted
----
-Classes for applying dimensions to an element.
-
-Class          | Description
--------------- | ----------------------------
-`.media--xs`   | Sets `width` to `$media-xs` and height to `auto`
-`.media--s`    | Sets `width` to `$media-s` and height to `auto`
-`.media--m`    | Sets `width` to `$media-m` and height to `auto`
-`.media--l`    | Sets `width` to `$media-l` and height to `auto`
-`.media--xl`   | Sets `width` to `$media-xl` and height to `auto`
-*/
-.media--xs {
-  height: auto;
-  width: 24px; }
-
-.media--s {
-  height: auto;
-  width: 36px; }
-
-.media--m {
-  height: auto;
-  width: 48px; }
-
-.media--l {
-  height: auto;
-  width: 72px; }
-
-.media--xl {
-  height: auto;
-  width: 160px; }
-
-/*doc
----
 title: Thumbnails
 name: thumb
 parent: unsorted
@@ -2824,6 +2788,42 @@ TK
   background-position: center;
   background-size: cover;
   overflow: hidden; }
+
+/*doc
+---
+title: Media Sizing
+name: mediaMod
+parent: modifiers
+---
+Classes for applying dimensions to an element.
+
+Class          | Description
+-------------- | ----------------------------
+`.media--xs`   | Sets `width` to `$media-xs` and height to `auto`
+`.media--s`    | Sets `width` to `$media-s` and height to `auto`
+`.media--m`    | Sets `width` to `$media-m` and height to `auto`
+`.media--l`    | Sets `width` to `$media-l` and height to `auto`
+`.media--xl`   | Sets `width` to `$media-xl` and height to `auto`
+*/
+.media--xs {
+  height: auto;
+  width: 24px; }
+
+.media--s {
+  height: auto;
+  width: 36px; }
+
+.media--m {
+  height: auto;
+  width: 48px; }
+
+.media--l {
+  height: auto;
+  width: 72px; }
+
+.media--xl {
+  height: auto;
+  width: 160px; }
 
 /*doc
 ---
