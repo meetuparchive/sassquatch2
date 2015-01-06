@@ -19,8 +19,8 @@ parent: mixinsPlaceholders
 __Try to avoid using for essential, non-decorative things__
 Aligns children of selected element using flexbox.
 ```
-@include %valignChildren;
-@include %valignChildren--bottom;
+@extend %valignChildren;
+@extend %valignChildren--bottom;
 ```
 */
 
