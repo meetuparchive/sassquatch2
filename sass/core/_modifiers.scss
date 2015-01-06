@@ -7,22 +7,6 @@ cateogry: Modifier classes
 */
 
 
-//
-// PRIVATE media query modifier factory
-//
-@mixin _bpModifier($breakpoint, $base, $modification: false) {
-	$_selector: if(
-		not $modification,
-		#{$base}--at#{capitalizeFirstLetter($breakpoint)},
-		#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)}
-	);
-	.#{$_selector} {
-		@content;
-	}
-}
-
-// TODO: rename all the classes to use PCV
-
 
 /*doc
 ---
@@ -150,6 +134,21 @@ Class                   | Description
 TK                      | TK
 
 */
+
+//
+// PRIVATE media query modifier factory
+//
+@mixin _bpModifier($breakpoint, $base, $modification: false) {
+	$_selector: if(
+		not $modification,
+		#{$base}--at#{capitalizeFirstLetter($breakpoint)},
+		#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)}
+	);
+	.#{$_selector} {
+		@content;
+	}
+}
+
 @each $breakpoint in (large, medium, small) {
 
 	// text align
