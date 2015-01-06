@@ -7,7 +7,6 @@ parent: mixinsPlaceholders
 */
 
 
-
 /*doc
 ---
 title: Button "personality" placeholder
@@ -25,4 +24,66 @@ Disables user-select, sets cursor, and resets text-decoration.
 	@include user-select(none) ;
 	cursor: pointer;
 	text-decoration: none!important;
+}
+
+
+/*doc
+---
+title: Button color mixin
+name: buttonColor
+parent: button
+---
+Sets color properties for buttons
+
+```
+@mixin buttonColor($color, $btn-border: false)
+```
+*/
+@mixin buttonColor($color, $btn-border: false) {
+  background-color: $color;
+
+  &:focus {
+    outline: 0;
+  }
+
+  @if opacity($color) < 1 {
+    // if the button color has opacity
+    &:hover,
+    &:active,
+    &:focus {
+      background: call(nth($btn-hover-opacity, 1), $color, nth($btn-hover-opacity, 2));
+    }
+  } @else {
+    // if the button color is a solid (non-transparent) color
+    color: $C_textPrimaryInverted;
+    &:hover,
+    &:active,
+    &:focus {
+      background: call(nth($btn-hover, 1), $color, nth($btn-hover, 2));
+    }
+  }
+
+  @if $btn-border != false { // 3
+    border: $btn-border $color;
+    background: transparentize($color, 1);
+    color: $color;
+  }
+
+  &.#{$btn-name}--disabled {
+    opacity: .4;
+    color: $C_textPrimary;
+    cursor: default;
+    &:hover,
+    &:active,
+    &:focus {
+      background: $color;
+    }
+
+    //too much class chaining?
+    &.button--primary {
+      background: $C_textTertiary;
+    }
+
+  }
+
 }

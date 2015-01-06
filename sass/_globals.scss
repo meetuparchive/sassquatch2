@@ -3,7 +3,11 @@
 // PREFIX SUPPORT --------------------------
 // =========================================
 //
+
+	// pass to bourbon prefixer
+	// @include prefixer(box-sizing, box, $prefixes);
 	$prefixes: webkit moz ms o spec;
+	$prefixes-edge: ms spec;
 
 //
 // =========================================
@@ -158,7 +162,7 @@
 
 //
 // =========================================
-// INDEXES ---------------------------------
+// Z-INDEX ---------------------------------
 // =========================================
 //
 	$indexes: (
@@ -172,7 +176,7 @@
 
 //
 // =========================================
-// USEFUL ----------------------------------
+// FORMS ----------------------------------
 // =========================================
 //
 
@@ -200,3 +204,21 @@ $unquoted-inputs-list: ();
 }
 
 $all-text-inputs: $unquoted-inputs-list;
+
+//
+// =========================================
+// BUTTONS ---------------------------------
+// =========================================
+//
+
+	$btn-name: 'button' !default; // base class for all buttons
+	$btn-hover: lighten 10% !default;
+	$btn-hover-opacity: opacify .1 !default;
+	$btn-border: 1px solid !default;
+
+	// button variants e.g.: <button class="button button--primary"></button>
+	$btn-variants: (
+		default: transparent,
+		primary: $C_link,
+		contrast: $C_textSecondaryInverted
+	) !default;

@@ -30,6 +30,10 @@
 				</li>
 			
 				<li class="">
+					<a href="buttons.html">Buttons</a>
+				</li>
+			
+				<li class="">
 					<a href="layout.html">Layout</a>
 				</li>
 			
@@ -180,6 +184,21 @@
 				
 
 			
+
+				
+				
+
+			
+
+				
+				
+
+			
+
+				
+				
+
+			
 		</ul>
 	</nav>
 
@@ -237,6 +256,23 @@ Aligns children of selected element using flexbox.
 <code>
 @include %valignChildren;
 @include %valignChildren--bottom;
+</code></p>
+
+<h2 id="animation">Animation</h2>
+
+<h3 id="bounce-in-subtle">Subtle bounce-in</h3>
+
+<p>Subtle bounce effect
+<em>original keyframes generated with <a href="http://goo.gl/tT4jnp">Bounce.js</a></em></p>
+
+<p><strong>Preferred</strong>
+<code>
+@include animate--bounce-in-subtle($time: 750ms);
+</code></p>
+
+<p><strong>Example with Bourbon mixin:</strong>
+<code>
+@include animation(bounce-in-subtle $time linear);
 </code></p>
 
 <h2 id="background">Background Utilities</h2>
@@ -322,6 +358,11 @@ use the <code>atMediaDown</code> mixin.</p>
 
 <h2 id="button">Button utilities</h2>
 
+<h3 id="buttonColor">Button color mixin</h3>
+
+<p>Sets color properties for buttons</p>
+<div class="codeBlock"><div class="highlight"><pre>@mixin buttonColor($color, $btn-border: false)
+</pre></div></div>
 <h3 id="buttonPersonality">Button "personality" placeholder</h3>
 
 <p>Disables user-select, sets cursor, and resets text-decoration.
