@@ -34,16 +34,19 @@
 /// Media ----------------------------------
 @import "core/media";
 
-/// Misc -----------------------------------
 @import "core/misc-ui";
 
+// TODO: rename these guys
 /// Momentaries ----------------------------
 @import "components/momentary";
 @import "components/momentary-alert";
 @import "components/momentary-popover";
 
-/// Toast ----------------------------------
+/// Components ----------------------------------
 @import "components/toast";
+@import "components/tearsheet";
+@import "components/text-protection";
+@import "components/toggle-pill";
 
 
 /// Modifiers  ----------------------------------

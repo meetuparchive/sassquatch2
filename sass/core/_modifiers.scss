@@ -19,7 +19,7 @@ cateogry: Modifier classes
 //
 // PRIVATE media query modifier factory
 //
-@mixin _bpModifier($breakpoint, $base) {
+@mixin _bpModifier($breakpoint, $base, $modification) {
 	.#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)} {
 		@content;
 	}
@@ -167,3 +167,20 @@ TK                      | TK
 		border-width: 0;
 	}
 }
+
+
+/*doc
+---
+title: Image modifiers
+name: imgMod
+parent: modifiers
+---
+TK
+*/
+.imgFill {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
