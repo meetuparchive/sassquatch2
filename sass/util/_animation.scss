@@ -14,17 +14,11 @@ title: Subtle bounce-in
 name: bounce-in-subtle
 parent: animation
 ---
-Subtle bounce effect
+Subtle bounce effect using keyframes, provided via simple mixin
 _original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
 
-__Preferred__
 ```
 @include animate--bounce-in-subtle($time: 750ms);
-```
-
-__Example with Bourbon mixin:__
-```
-@include animation(bounce-in-subtle $time linear);
 ```
 */
 
