@@ -1,57 +1,58 @@
+// ---------------------------
 // LIB
-@import "../components/bourbon/dist/bourbon.scss";
-
-// GLOBAL VARS
-@import "globals";
-
-// SASS UTILS
-@import "util";
+// ---------------------------
+	@import "../components/bourbon/dist/bourbon.scss";
 
 
-/// Typography -----------------------------
-@import "core/element_defaults";
-@import "core/type-reset";
-@import "core/text";
-@import "core/headings";
-
-/// Lists ----------------------------------
-@import "core/lists";
+// ---------------------------
+// Global vars
+// ---------------------------
+	@import "globals";
 
 
-/// Screen Structure -----------------------
-@import "core/screen-structure";
-
-/// Forms ----------------------------------
-@import "core/forms";
-@import "core/buttons";
+// ---------------------------
+// Sass utils
+// ---------------------------
+	@import "util";
 
 
-/// Media ----------------------------------
-@import "core/media";
+// ---------------------------
+// Core
+// ---------------------------
+	// Type/Reset
+	@import "core/element_defaults";
+	@import "core/type-reset";
+	@import "core/text";
+	@import "core/headings";
+
+	// Lists
+	@import "core/lists";
+
+	// Screen Structure
+	@import "core/screen-structure";
+
+	// Forms
+	@import "core/forms";
+	@import "core/buttons";
+
+	// Media
+	@import "core/media";
 
 
-/// Components ----------------------------------
-@import "ui-components/avatar";
-@import "ui-components/tearsheet";
-@import "ui-components/text-protection";
-@import "ui-components/toggle-pill";
-
-// TODO: rename these guys
-@import "ui-components/momentary";
-@import "ui-components/momentary-alert";
-@import "ui-components/momentary-popover";
-
-
-/// Modifiers  ----------------------------------
-@import "core/modifiers";
+// ---------------------------
+// UI Components
+// ---------------------------
+	@import "ui-components/avatar";
+	@import "ui-components/tearsheet";
+	@import "ui-components/text-protection";
+	@import "ui-components/toggle-pill";
+	// TODO: rename momentary
+	@import "ui-components/momentary";
+	@import "ui-components/momentary-alert";
+	@import "ui-components/momentary-popover";
 
 
-// TODO: remove this unsorted doc placeholder
-
-/*doc
----
-title: Unsorted
-name: unsorted
-category: Unsorted
----
-*/
+// ---------------------------
+// Modifiers
+// ---------------------------
+	@import "core/modifiers";

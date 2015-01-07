@@ -1,8 +1,6 @@
-//
-// =========================================
-// BREAKPOINTS -----------------------------
-// =========================================
-//
+// ---------------------------
+// BREAKPOINTS
+// ---------------------------
 	$breakpoint-s  : 440px;
 	$breakpoint-m  : 640px;
 	$breakpoint-l  : 960px;
@@ -15,11 +13,10 @@
 		xl: $breakpoint-xl,
 	);
 
-//
-// =========================================
-// TYPOGRAPHY ------------------------------
-// =========================================
-//
+
+// ---------------------------
+// TYPOGRAPHY
+// ---------------------------
 	$font : "Whitney", helvetica, arial, sans-serif;
 
 	// Sizes
@@ -48,12 +45,10 @@
 	$line-height       : 1.5;
 	$line-height-small : 1.25;
 
-//
-// =========================================
-// METRICS ---------------------------------
-// =========================================
-//
 
+// ---------------------------
+// METRICS
+// ---------------------------
 	// Spacing
 	// ---------------------------------------
 	// Double-stranded loosely based on a
@@ -113,11 +108,12 @@
 		xl: $media-xl
 	);
 
-//
-// =========================================
-// COLORS ----------------------------------
-// =========================================
-// TODO: replace with swatches.
+
+// ---------------------------
+// COLORS
+// ---------------------------
+	// TODO: replace with swatches.
+
 	// Misc colors
 	$C_red                   : rgb(213,87,65); // ORIGINAL - rgb(226,55,60)
 	//$C_red					: #D74936;
@@ -150,12 +146,10 @@
 	// Third party colors
 	$C_facebook              : rgb(59, 89, 152);
 
-//
-// =========================================
-// BOUNDS ----------------------------------
-// =========================================
-//
 
+// ---------------------------
+// BOUNDS
+// ---------------------------
 	$measure      : 35em;
 	$docBounds    : 1100px;
 	$narrowBounds : $measure/1em * 16px; // for things like forms
@@ -164,11 +158,10 @@
 	$docBounds    : 1100px;
 	$narrowBounds : ($measure / 1em) * $font-size; // for things like forms
 
-//
-// =========================================
-// Z-INDEX ---------------------------------
-// =========================================
-//
+
+// ---------------------------
+// Z-INDEX
+// ---------------------------
 	$zindex-map: (
 		main: 0,
 		main-header: 1,
@@ -178,43 +171,39 @@
 		momentary: 5
 	);
 
-//
-// =========================================
-// FORMS ----------------------------------
-// =========================================
-//
 
-$inputs-list: 'input[type="email"]',
-              'input[type="number"]',
-              'input[type="password"]',
-              'input[type="search"]',
-              'input[type="tel"]',
-              'input[type="text"]',
-              'input[type="url"]',
+// ---------------------------
+// FORMS
+// ---------------------------
+	$inputs-list: 'input[type="email"]',
+					  'input[type="number"]',
+					  'input[type="password"]',
+					  'input[type="search"]',
+					  'input[type="tel"]',
+					  'input[type="text"]',
+					  'input[type="url"]',
 
-              // Webkit & Gecko may change the display of these in the future
-              'input[type="color"]',
-              'input[type="date"]',
-              'input[type="datetime"]',
-              'input[type="datetime-local"]',
-              'input[type="month"]',
-              'input[type="time"]',
-              'input[type="week"]';
+					  // Webkit & Gecko may change the display of these in the future
+					  'input[type="color"]',
+					  'input[type="date"]',
+					  'input[type="datetime"]',
+					  'input[type="datetime-local"]',
+					  'input[type="month"]',
+					  'input[type="time"]',
+					  'input[type="week"]';
 
-$unquoted-inputs-list: ();
+	$unquoted-inputs-list: ();
 
-@each $input-type in $inputs-list {
-  $unquoted-inputs-list: append($unquoted-inputs-list, unquote($input-type), comma);
-}
+	@each $input-type in $inputs-list {
+	  $unquoted-inputs-list: append($unquoted-inputs-list, unquote($input-type), comma);
+	}
 
-$all-text-inputs: $unquoted-inputs-list;
+	$all-text-inputs: $unquoted-inputs-list;
 
-//
-// =========================================
-// BUTTONS ---------------------------------
-// =========================================
-//
 
+// ---------------------------
+// BUTTONS
+// ---------------------------
 	$btn-name: 'button' !default; // base class for all buttons
 	$btn-hover: lighten 10% !default;
 	$btn-hover-opacity: opacify .1 !default;
@@ -227,10 +216,8 @@ $all-text-inputs: $unquoted-inputs-list;
 		contrast: $C_textSecondaryInverted
 	) !default;
 
-//
-// =========================================
-// BORDER ---------------------------------
-// =========================================
-//
 
+// ---------------------------
+// BORDER
+// ---------------------------
 	$border-standard: 1px solid $C_border;
