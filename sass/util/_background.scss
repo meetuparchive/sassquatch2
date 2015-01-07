@@ -22,7 +22,7 @@ Sets background-clip property
 ```
 */
 @mixin background-clip($value:padding){
-	@include prefixer(background-clip, $value, webkit moz ms o spec);
+	@include prefixer(background-clip, $value, $prefixes);
 }
 
 

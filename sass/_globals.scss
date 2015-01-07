@@ -1,4 +1,11 @@
 // ---------------------------
+// PREFIXES
+// ---------------------------
+	// fore use in Bourbon prefixer() mixin
+	$prefixes: webkit moz ms o spec;
+	$prefixes-edge: ms spec;
+
+// ---------------------------
 // BREAKPOINTS
 // ---------------------------
 	$breakpoint-s  : 440px;

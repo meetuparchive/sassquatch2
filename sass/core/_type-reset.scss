@@ -37,12 +37,6 @@ h1,h2,h3,h4,h5,h6,p,label {
 //
 // Hyphens
 //
-$prefixes: -webkit-, -moz-, -ms-, '';
-@mixin hyphens($val) {
-  @each $prefix in $prefixes {
-    #{$prefix}hyphens: $val;
-  }
-}
 p {
   // Ala Trent Walton
   // http://trentwalton.com/2011/09/07/css-hyphenation
