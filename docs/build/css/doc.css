@@ -1,21 +1,90 @@
+/*
+ * HACK ALERT
+ * this is super hacky, and that's ok for now.
+ * it's enough to make generated documentation presentable.
+ */
+
+code, pre {
+  font-family: "Monaco", "Consolas", "OpenSans", monospace;
+  font-size: 13px;
+}
+
 code {
-	display: block;
-	padding: 0.5em;
-	margin: 0.5em;
-	background-color: rgba(255, 192, 203, 0.29);
+  padding: 3px 6px;
+  color: #63189E;
+  white-space: nowrap;
+  background-color: #f9f9f9;
+  border-radius: 2px;
 }
 
-h1 {
+pre {
+	white-space: pre;
+	word-wrap: normal !important;
+}
+
+main > h1 {
 	color: #000;
+	font-size: 32px;
+	font-weight: normal;
+	margin-bottom: 1.25em;
 }
 
-h2 {
-	margin-top: 2em; /* TEMP */
+main > h2 {
+	margin-top: 1.5em; /* TEMP */
 }
-h3 {
-	margin-top: 1em; /* TEMP */
+main > h3 {
+	margin-top: 0.75em; /* TEMP */
 }
 
-#content {
-	padding: 3em; /* TEMP */
+/* LAYOUT */
+#hologramBody {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+}
+#hologramBody > nav {
+	flex: 0 0 260px;
+	padding-right: 24px;
+}
+#hologramBody > main {
+	flex: 0 1 auto;
+}
+
+
+/* NAV */
+#hologramBody > nav h4 {
+	margin-bottom: 8px;
+}
+#hologramBody > nav ul {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 12px;
+}
+#hologramBody > nav li > a { /* all menu items */
+	display: block;
+	padding: 6px;
+	margin: 4px 0;
+}
+#hologramBody > nav li > a:hover {
+	background: #E6E9EC;
+}
+
+#hologramBody > nav > ul > li > a { /* categories */
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+#hologramBody > nav li ul a { /* components */
+	margin-left: 12px;
+	color: rgba(0,0,0,.54);
+}
+
+/* HEADER */
+body > header .docBounds {
+	position: relative;
+}
+.software-version {
+	position: absolute;
+	top: 24px;
+	right: 24px;
 }

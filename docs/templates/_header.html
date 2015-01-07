@@ -17,35 +17,36 @@
 </head>
 
 <body>
-	<header>
-		<h1>Sassquatch <span class="software-version"> </span></h1>
+	<header class="docStripe--inverted inverted">
+		<div class="docBounds">
+			<h1 class="display docBounds">Sassquatch 2</h1>
+			<h3 class="software-version">v0.0.1</h3>
+		</div>
 	</header>
 
-	<h4>Categories</h4>
-	<nav>
-		<ul>
-			<% @categories.each do |category, file_name| %>
-				<li class="<%= title == category ? 'selected' : '' %>">
-					<a href="<%= file_name %>"><%= category %></a>
-				</li>
-			<% end %>
-		</ul>
-	</nav>
-
-	<h4>Components</h4>
-	<nav>
-		<ul>
-			<% @blocks.each do |b| %>
-
-				<%# Only put top-level blocks in this list %>
-				<% if b[:parent].nil? %>
+	<section id="hologramBody" class="docBounds">
+		<nav>
+			<ul>
+				<% @categories.each do |category, file_name| %>
 					<li>
-						<a href="#<%= b[:name] %>"><%= b[:title] %></a>
+						<a href="<%= file_name %>"><%= category %></a>
+						<% if title == category %>
+							<ul>
+								<% @blocks.each do |b| %>
+
+									<%# Only put top-level blocks in this list %>
+									<% if b[:parent].nil? %>
+										<li>
+											<a href="#<%= b[:name] %>"><%= b[:title] %></a>
+										</li>
+									<% end %>
+
+								<% end %>
+							</ul>
+						<% end %>
 					</li>
 				<% end %>
+			</ul>
+		</nav>
 
-			<% end %>
-		</ul>
-	</nav>
-
-	<section id="content">
+		<main id="content">
