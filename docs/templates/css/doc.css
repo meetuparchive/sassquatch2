@@ -4,9 +4,9 @@
  * it's enough to make generated documentation presentable.
  */
 
+/* CODE EXAMPLES */
 code, pre {
-  font-family: "Monaco", "Consolas", "OpenSans", monospace;
-  font-size: 13px;
+  font-family: "Monaco", "Consolas", "OpenSans", monospace; font-size: 13px;
 }
 
 code {
@@ -22,19 +22,46 @@ pre {
 	word-wrap: normal !important;
 }
 
+/* TYPE OVERRIDES */
 main > h1 {
 	color: #000;
 	font-size: 32px;
 	font-weight: normal;
-	margin-bottom: 1.25em;
+	margin-bottom: 12px;
+	padding-top: 8px;
+	border-top: 1px solid rgba(0,0,0,.12);
+	margin-top: 32px;
+}
+main > h1:first-child {
+	margin-top: 0;
 }
 
 main > h2 {
-	margin-top: 1.5em; /* TEMP */
+	margin-bottom: 12px;
 }
 main > h3 {
-	margin-top: 0.75em; /* TEMP */
+	margin-bottom: 8px;
 }
+
+main > p,
+main > table {
+	margin-bottom: 18px;
+}
+
+/* TABLES */
+main > table td,
+main > table th {
+	padding: 8px;
+	text-align: left;
+}
+main > table td {
+	border-top: 1px solid rgba(0,0,0,.12);
+}
+main > table th:first-child,
+main > table td:first-child {
+	border-right: 1px solid rgba(0,0,0,.12);
+}
+
 
 /* LAYOUT */
 #hologramBody {
