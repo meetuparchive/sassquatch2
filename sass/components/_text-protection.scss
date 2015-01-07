@@ -4,9 +4,9 @@
 
 .photo-card--photo,
 .photoCard--photo {
-  @extend .imgFill;
-  position: relative;
+  @extend %imgFill;
   @include textProtectionScrim;
+  position: relative;
   width: 100%;
   height: 100%;
 }

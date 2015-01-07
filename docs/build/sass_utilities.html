@@ -26,10 +26,6 @@
 		<ul>
 			
 				<li class="">
-					<a href="content_patterns.html">Content Patterns</a>
-				</li>
-			
-				<li class="">
 					<a href="buttons.html">Buttons</a>
 				</li>
 			
@@ -97,6 +93,16 @@
 					<li>
 						<a href="#mixinsPlaceholders">Sass Mixins & Placeholders</a>
 					</li>
+				
+
+			
+
+				
+				
+
+			
+
+				
 				
 
 			
@@ -264,14 +270,21 @@ Aligns children of selected element using flexbox.
 </pre></div></div>
 <h2 id="background">Background Utilities</h2>
 
-<h3>background-clip mixin</h3>
+<h3 id="backgroundClip">Background clip mixin</h3>
 
-<p>Sets background-clip property
-<code>
-@include background-clip(); // defaults to &#39;padding&#39;
-@include background-clip(&#39;border&#39;);
-</code></p>
+<p>Sets background-clip property</p>
+<div class="codeBlock"><div class="highlight"><pre>@include background-clip(); // defaults to 'padding'
+@include background-clip('border');
+</pre></div></div>
+<h3 id="imgFill">Image fill placeholder</h3>
 
+<p>Sets background properties that center
+background image, set size to &#39;cover&#39;,
+and overflow hidden.</p>
+
+<p><em>[ie. avatars][avatar]</em></p>
+<div class="codeBlock"><div class="highlight"><pre>@extend %imgFill;
+</pre></div></div>
 <h2 id="breakpoints">Media Query Breakpoints</h2>
 
 <h3>Mobile first mixin</h3>

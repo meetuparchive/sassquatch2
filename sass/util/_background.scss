@@ -4,9 +4,18 @@ title: Background Utilities
 name: background
 parent: mixinsPlaceholders
 ---
+*/
 
-### background-clip mixin
+
+
+/*doc
+---
+title: Background clip mixin
+name: backgroundClip
+parent: background
+---
 Sets background-clip property
+
 ```
 @include background-clip(); // defaults to 'padding'
 @include background-clip('border');
@@ -14,4 +23,28 @@ Sets background-clip property
 */
 @mixin background-clip($value:padding){
 	@include prefixer(background-clip, $value, $prefixes);
+}
+
+
+/*doc
+---
+title: Image fill placeholder
+name: imgFill
+parent: background
+---
+Sets background properties that center
+background image, set size to 'cover',
+and overflow hidden.
+
+_[ie. avatars][avatar]_
+
+```
+@extend %imgFill;
+```
+*/
+%imgFill {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
 }

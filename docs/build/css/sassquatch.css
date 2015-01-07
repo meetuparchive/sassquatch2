@@ -508,14 +508,43 @@ title: Background Utilities
 name: background
 parent: mixinsPlaceholders
 ---
-
-### background-clip mixin
+*/
+/*doc
+---
+title: Background clip mixin
+name: backgroundClip
+parent: background
+---
 Sets background-clip property
+
 ```
 @include background-clip(); // defaults to 'padding'
 @include background-clip('border');
 ```
 */
+/*doc
+---
+title: Image fill placeholder
+name: imgFill
+parent: background
+---
+Sets background properties that center
+background image, set size to 'cover',
+and overflow hidden.
+
+_[ie. avatars][avatar]_
+
+```
+@extend %imgFill;
+```
+*/
+.avatar, .photo-card--photo,
+.photoCard--photo {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden; }
+
 /*doc
 ---
 title: Shadow utilities
@@ -2744,21 +2773,6 @@ TK                      | TK
 
 .border--none--atSmall {
   border-width: 0; }
-
-/*doc
----
-title: Image modifiers
-name: imgMod
-parent: modifiers
----
-TK
-*/
-.imgFill, .avatar, .photo-card--photo,
-.photoCard--photo {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  overflow: hidden; }
 
 /*doc
 ---

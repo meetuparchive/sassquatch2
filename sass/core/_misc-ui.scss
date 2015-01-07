@@ -4,7 +4,7 @@
 /* AVATAR */
 //
 .avatar {
-  @extend .imgFill;
+  @extend %imgFill;
   background-color: $C_collectionBGLight;
   background-position: center 42%;
   display: inline-block;
