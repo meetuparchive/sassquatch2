@@ -17,12 +17,12 @@ parent: background
 Sets background-clip property
 
 ```
-@include background-clip(); // defaults to 'padding'
+@include background-clip($value: padding);
 @include background-clip('border');
 ```
 */
 @mixin background-clip($value:padding){
-	@include prefixer(background-clip, $value, $prefixes);
+	@include prefixer(background-clip, $value, webkit moz ms o spec);
 }
 
 

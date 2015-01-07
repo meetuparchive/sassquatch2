@@ -85,51 +85,75 @@ category: Sass Utilities
 */
 /*doc
 ---
-title: Media Query Breakpoints
-name: breakpoints
+title: Alignment Utilities
+name: align
 parent: mixinsPlaceholders
 ---
-
-### Mobile first mixin
-This breakpoint mixin uses a **mobile first**
-strategy, meaning the `medium` breakpoint, for
-example, applies to _medium screens and larger_.
-
-```scss
-	@include atMediaUp(medium) {
-		body::after {
-			content: "medium screens and larger can see me";
-		}
-	}
-```
-
-Breakpoint name      | Description
----------------------| ---------------------------------------------
-`atMediaUp(small)`   | Small sreens and up
-`atMediaUp(medium)`  | Landscape on most phones and up; portrait on some phablets
-`atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
-`atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
-
-
-### Breaking for smaller sizes and under
-In the event you need to target a **specific screen size and under**,
-use the `atMediaDown` mixin.
-
-```scss
-	@include atMediaDown(medium) {
-		body::after {
-			content: "medium screens and smaller can see me";
-		}
-	}
-```
-
-Breakpoint name        | Description
------------------------| ---------------------------------------------
-`atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
-`atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
-`atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
-`atMediaDown(huge)`    | Huge screens and under
 */
+/*doc
+---
+title: Vertical-align children
+name: align
+parent: mixinsPlaceholders
+---
+__Try to avoid using for essential, non-decorative things__
+Aligns children of selected element using flexbox.
+```
+@extend %valignChildren;
+@extend %valignChildren--bottom;
+```
+*/
+.collection-header,
+.chunkList-chunk:only-child {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+
+.hero-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end; }
+
 /*doc
 ---
 title: Animation
@@ -395,75 +419,95 @@ _original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
 /*doc
 ---
-title: Alignment Utilities
-name: align
+title: Background Utilities
+name: background
 parent: mixinsPlaceholders
 ---
 */
 /*doc
 ---
-title: Vertical-align children
-name: align
-parent: mixinsPlaceholders
+title: Background clip mixin
+name: backgroundClip
+parent: background
 ---
-__Try to avoid using for essential, non-decorative things__
-Aligns children of selected element using flexbox.
+Sets background-clip property
+
 ```
-@extend %valignChildren;
-@extend %valignChildren--bottom;
+@include background-clip($value: padding);
+@include background-clip('border');
 ```
 */
-.collection-header,
-.chunkList-chunk:only-child {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center; }
+/*doc
+---
+title: Image fill placeholder
+name: imgFill
+parent: background
+---
+Sets background properties that center
+background image, set size to 'cover',
+and overflow hidden.
 
-.hero-content {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: end;
-  -moz-box-pack: end;
-  box-pack: end;
-  -webkit-justify-content: flex-end;
-  -moz-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  -o-justify-content: flex-end;
-  justify-content: flex-end;
-  -ms-flex-pack: end; }
+_[ie. avatars][avatar]_
 
+```
+@extend %imgFill;
+```
+*/
+.avatar--person,
+.avatar, .photo-card--photo,
+.photoCard--photo {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden; }
+
+/*doc
+---
+title: Media Query Breakpoints
+name: breakpoints
+parent: mixinsPlaceholders
+---
+
+### Mobile first mixin
+This breakpoint mixin uses a **mobile first**
+strategy, meaning the `medium` breakpoint, for
+example, applies to _medium screens and larger_.
+
+```scss
+	@include atMediaUp(medium) {
+		body::after {
+			content: "medium screens and larger can see me";
+		}
+	}
+```
+
+Breakpoint name      | Description
+---------------------| ---------------------------------------------
+`atMediaUp(small)`   | Small sreens and up
+`atMediaUp(medium)`  | Landscape on most phones and up; portrait on some phablets
+`atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
+`atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
+
+
+### Breaking for smaller sizes and under
+In the event you need to target a **specific screen size and under**,
+use the `atMediaDown` mixin.
+
+```scss
+	@include atMediaDown(medium) {
+		body::after {
+			content: "medium screens and smaller can see me";
+		}
+	}
+```
+
+Breakpoint name        | Description
+-----------------------| ---------------------------------------------
+`atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
+`atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
+`atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
+`atMediaDown(huge)`    | Huge screens and under
+*/
 /*doc
 ---
 title: Button utilities
@@ -504,46 +548,50 @@ Sets color properties for buttons
 */
 /*doc
 ---
-title: Background Utilities
-name: background
+title: Display utils
+name: display
 parent: mixinsPlaceholders
 ---
 */
 /*doc
 ---
-title: Background clip mixin
-name: backgroundClip
-parent: background
+title: Pseudo-element display mixin
+name: pseudoDisplay
+parent: display
 ---
-Sets background-clip property
-
+Sets display property for psuedo-elements
 ```
-@include background-clip(); // defaults to 'padding'
-@include background-clip('border');
+@include pseudoDisplay($value: block);
 ```
 */
 /*doc
 ---
-title: Image fill placeholder
-name: imgFill
-parent: background
+title: Float utils
+name: float
+parent: mixinsPlaceholders
 ---
-Sets background properties that center
-background image, set size to 'cover',
-and overflow hidden.
-
-_[ie. avatars][avatar]_
-
-```
-@extend %imgFill;
-```
 */
-.photo-card--photo,
-.photoCard--photo {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  overflow: hidden; }
+/*doc
+---
+title: Clearfix placeholder
+name: clearfix
+parent: float
+---
+Clears floated children.
+```
+@extend %clearfix;
+*/
+.docBounds {
+  /**
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
+  *zoom: 1; }
+  .docBounds:before, .docBounds:after {
+    content: " ";
+    display: table; }
+  .docBounds:after {
+    clear: both; }
 
 /*doc
 ---
@@ -611,53 +659,6 @@ _TODO: rewrite with args_
 */
 /*doc
 ---
-title: Float utils
-name: float
-parent: mixinsPlaceholders
----
-*/
-/*doc
----
-title: Clearfix placeholder
-name: clearfix
-parent: float
----
-Clears floated children.
-```
-@extend %clearfix;
-*/
-.docBounds {
-  /**
-  * For IE 6/7 only
-  * Include this rule to trigger hasLayout and contain floats.
-  */
-  *zoom: 1; }
-  .docBounds:before, .docBounds:after {
-    content: " ";
-    display: table; }
-  .docBounds:after {
-    clear: both; }
-
-/*doc
----
-title: Display utils
-name: display
-parent: mixinsPlaceholders
----
-*/
-/*doc
----
-title: Pseudo-element display mixin
-name: pseudoDisplay
-parent: display
----
-Sets display property for psuedo-elements
-```
-@include pseudoDisplay($value: block);
-```
-*/
-/*doc
----
 title: Text utils
 name: text
 parent: mixinsPlaceholders
@@ -674,215 +675,6 @@ Adds a pseudo-element gradient
 @mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
 ```
 */
-/**
-* LAYOUT
-* oocss grids, modifier classes for layout
-*/
-/* {{{ Doc Stripe */
-/*doc
----
-title: Stripe Layout
-name: docstar
-category: Unsorted
----
-
-Used for newer and more responsive layouts, where content lives on top of
-a full-width background instead of `docBox` modules. The `docStripe` container
-sets a full width background.
-
-The `docBounds` class is used as a padding helper and content wrapper; it uses
-a max-width and min-width, but will otherwise flex to fit the width of the parent
-container.
-
-```html_example
-
-	<!-- default stripe and color stripe -->
-	<div class="docStripe">
-		<div class="docBounds">
-			<h3>I'm in a docBounds within a stripe</h3>
-			<p>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.</p>
-		</div>
-	</div>
-	<div class="docStripe--red inverted">
-		<div class="docBounds">
-			<h3>I'm in a red stripe</h3>
-			<p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
-		</div>
-	</div>
-
-	<!-- "collections" -->
-	<div class="docStripe--collection">
-		<div class="docBounds">
-			<h3>I contain a collection (of docBoxes)</h3>
-			<div class="docBox">
-				<div class="docSection">
-					<p>I'm a section in a box</p>
-				</div>
-				<div class="docSection">
-					<p>I'm a section in a box</p>
-				</div>
-			</div>
-			<div class="docBox">
-				<div class="docSection">
-					<p>I'm a section in a box</p>
-				</div>
-				<div class="docSection">
-					<p>I'm a section in a box</p>
-				</div>
-			</div>
-		</div>
-	</div>
-```
-
-*/
-.docStripe {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #fff; }
-
-/*doc
----
-title: Stripe variants
-name: docStripe
-parent: docstar
----
-
-/* {{{ Doc bounds */
-.docBounds {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 720px;
-  padding: 32px 32px 16px 32px; }
-
-/* }}} */
-.docBox,
-.doc-box {
-  border-radius: 2px;
-  background-color: #fff;
-  margin-bottom: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
-  /* !important to support .doc-box.doc-content multiple classes */
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
-  -ms-background-clip: padding;
-  -o-background-clip: padding;
-  background-clip: padding;
-  /**
-  * round any first or last .doc-content elements inside of .doc-box
-  * allows the doc-content to be shaded without conflicting with .doc-box rounding
-  */
-  /**
-  * doc-content elemenmts inside doc-box get a dividing border by default
-  * (override with .border-none if you need to)
-  */
-  /**
-   * Let a first-child doc-content have a border too.
-   */
-  /**
-  * Vertical box divisions (when direct child is an OOCSS "line")
-  * allows the borders to span the full height of the .doc-box
-  *
-  * DEPRECATED BEHAVIOR: better to use modifiers and page-specific CSS for this
-  * This will now only work with deprecated selectors
-  */
-  /* see bug: 31893 */ }
-  .docBox > .docSection:first-child,
-  .docBox > .doc-content:first-child,
-  .doc-box > .docSection:first-child,
-  .doc-box > .doc-content:first-child {
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px; }
-  .docBox > .docSection:last-child,
-  .docBox > .doc-content:last-child,
-  .doc-box > .docSection:last-child,
-  .doc-box > .doc-content:last-child {
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px; }
-  .docBox .doc-content,
-  .doc-box .doc-content {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-    .docBox .doc-content:first-child,
-    .doc-box .doc-content:first-child {
-      border-top: none; }
-  .docBox .doc-content.doc-content-border,
-  .doc-box .doc-content.doc-content-border {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-  .docBox > .line > .unit,
-  .docBox > .line-gutters > .unit,
-  .doc-box > .line > .unit,
-  .doc-box > .line-gutters > .unit {
-    float: none;
-    border-right: 1px solid #ddd;
-    display: table-cell;
-    vertical-align: top; }
-  .docBox > .line > .lastUnit,
-  .docBox > .line-gutters > .lastUnit,
-  .doc-box > .line > .lastUnit,
-  .doc-box > .line-gutters > .lastUnit {
-    border-right: 0;
-    vertical-align: top; }
-  .docBox > .line .doc-content,
-  .docBox > .line-gutters .doc-content,
-  .doc-box > .line .doc-content,
-  .doc-box > .line-gutters .doc-content {
-    border-radius: 0; }
-  .docBox > .line .unit:first-child .doc-content:first-child,
-  .docBox > .line-gutters .unit:first-child .doc-content:first-child,
-  .doc-box > .line .unit:first-child .doc-content:first-child,
-  .doc-box > .line-gutters .unit:first-child .doc-content:first-child {
-    border-top-left-radius: 2px; }
-  .docBox > .line .unit:first-child .doc-content:last-child,
-  .docBox > .line-gutters .unit:first-child .doc-content:last-child,
-  .doc-box > .line .unit:first-child .doc-content:last-child,
-  .doc-box > .line-gutters .unit:first-child .doc-content:last-child {
-    border-bottom-left-radius: 2px; }
-  .docBox > .line .unit:last-child .doc-content:first-child,
-  .docBox > .line .lastUnit .doc-content:first-child,
-  .docBox > .line-gutters .unit:last-child .doc-content:first-child,
-  .docBox > .line-gutters .lastUnit .doc-content:first-child,
-  .doc-box > .line .unit:last-child .doc-content:first-child,
-  .doc-box > .line .lastUnit .doc-content:first-child,
-  .doc-box > .line-gutters .unit:last-child .doc-content:first-child,
-  .doc-box > .line-gutters .lastUnit .doc-content:first-child {
-    border-top-right-radius: 2px; }
-  .docBox > .line .unit:last-child .doc-content:last-child,
-  .docBox > .line .lastUnit .doc-content:last-child,
-  .docBox > .line-gutters .unit:last-child .doc-content:last-child,
-  .docBox > .line-gutters .lastUnit .doc-content:last-child,
-  .doc-box > .line .unit:last-child .doc-content:last-child,
-  .doc-box > .line .lastUnit .doc-content:last-child,
-  .doc-box > .line-gutters .unit:last-child .doc-content:last-child,
-  .doc-box > .line-gutters .lastUnit .doc-content:last-child {
-    border-bottom-right-radius: 2px; }
-  .docBox.D_box,
-  .doc-box.D_box {
-    border: 0; }
-
-.docSection {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid transparent;
-  /* avoids margin collapse, hence this border... (takashi is a genius) */
-  padding: 16px 16px 0 16px; }
-  .docSection:first-child {
-    border-top: none; }
-  .inverted .docSection {
-    border-top-color: rgba(255, 255, 255, 0.2); }
-  .docBounds > .docSection {
-    padding: 16px 0 0 0; }
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0; }
-
-* html .clearfix, *:first-child + html .clearfix {
-  zoom: 1; }
-
-.clear-both {
-  clear: both; }
-
 html {
   overflow-y: scroll;
   font-size: 100%;
@@ -1326,7 +1118,9 @@ body {
   position: relative; }
 
 .docStripe {
-  overflow: hidden; }
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #fff; }
 
 .docStripe--collection {
   background: #F3F6F9; }
@@ -1343,10 +1137,30 @@ body {
   width: 100%; }
 
 .docBox {
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  -ms-background-clip: padding;
+  -o-background-clip: padding;
+  background-clip: padding;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #fff;
   margin-bottom: 0; }
 
 .docContent {
   padding: 16px; }
+
+.docSection {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid transparent;
+  /* avoids margin collapse */
+  padding: 16px 16px 0 16px; }
+  .docSection:first-child {
+    border-top: none; }
+  .inverted .docSection {
+    border-top-color: rgba(255, 255, 255, 0.2); }
+  .docBounds > .docSection {
+    padding: 16px 0 0 0; }
 
 .hero,
 .docStripe.hero {
@@ -2247,6 +2061,146 @@ TODO: doc variants
   display: block;
   padding-top: 50%; }
 
+/*doc
+---
+title: Avatar
+name: avatar
+cateogry: UI Components
+---
+TODO: doc this
+*/
+.avatar--person,
+.avatar {
+  background-color: #F3F6F9;
+  background-position: center 42%;
+  display: inline-block;
+  font-size: 32px;
+  height: 48px;
+  text-indent: 100%;
+  white-space: nowrap;
+  vertical-align: top;
+  width: 48px; }
+
+.avatar--xsmall {
+  font-size: 24px;
+  height: 24px;
+  width: 24px; }
+
+.avatar--small {
+  width: 36px;
+  height: 36px;
+  font-size: 36px; }
+
+.avatar--big {
+  width: 160px;
+  height: 160px;
+  font-size: 48px; }
+
+.avatar--person {
+  vertical-align: middle;
+  border-radius: 999px;
+  box-sizing: border-box; }
+
+.avatar--fb-friend, .avatar--org {
+  position: relative;
+  overflow: visible; }
+  .avatar--fb-friend:after, .avatar--org:after {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    border-radius: 999px;
+    bottom: 0;
+    content: "";
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    height: 16px;
+    line-height: 16px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-indent: 0%;
+    width: 16px; }
+
+.avatar--fb-friend:after {
+  background-color: #3b5998;
+  color: white;
+  content: "f"; }
+
+.avatar--org:after {
+  background-color: #d55741;
+  background-image: url("img/org-badge.svg");
+  color: white; }
+
+.tearsheet {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 13px;
+  font-weight: 700;
+  height: 24px;
+  padding-top: 4px;
+  position: relative;
+  text-align: center;
+  width: 24px; }
+  .tearsheet:before {
+    background: #d55741;
+    content: '';
+    display: block;
+    height: 6px;
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: -1px; }
+
+.tearsheet-with-date .tearsheet, .tearsheet-with-date .date {
+  display: inline-block; }
+.tearsheet-with-date .tearsheet {
+  margin-right: 8px; }
+
+.photo-card--photo,
+.photoCard--photo {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  .photo-card--photo:before,
+  .photoCard--photo:before {
+    background-color: rgba(15, 20, 31, 0);
+    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: 0; }
+
+.photo-card--text,
+.photoCard--text {
+  bottom: 0;
+  padding: 16px;
+  position: absolute; }
+
+.toggle-pill-list {
+  list-style: none;
+  padding-left: 0; }
+  .toggle-pill-list li {
+    display: inline-block; }
+
+input.toggle-pill {
+  display: none; }
+  input.toggle-pill + label {
+    border: 1px solid #3987cb;
+    border-radius: 999px;
+    color: #3987cb;
+    margin-right: 8px;
+    padding: 8px; }
+  input.toggle-pill:checked + label {
+    background: #3987cb;
+    color: white; }
+
 .momentary {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
   -moz-transition: -moz-transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -2437,75 +2391,6 @@ TODO: doc variants
     -ms-transform: translateY(-10px);
     -o-transform: translateY(-10px);
     transform: translateY(-10px); }
-
-.tearsheet {
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 13px;
-  font-weight: 700;
-  height: 24px;
-  padding-top: 4px;
-  position: relative;
-  text-align: center;
-  width: 24px; }
-  .tearsheet:before {
-    background: #d55741;
-    content: '';
-    display: block;
-    height: 6px;
-    left: -1px;
-    position: absolute;
-    right: -1px;
-    top: -1px; }
-
-.tearsheet-with-date .tearsheet, .tearsheet-with-date .date {
-  display: inline-block; }
-.tearsheet-with-date .tearsheet {
-  margin-right: 8px; }
-
-.photo-card--photo,
-.photoCard--photo {
-  position: relative;
-  width: 100%;
-  height: 100%; }
-  .photo-card--photo:before,
-  .photoCard--photo:before {
-    background-color: rgba(15, 20, 31, 0);
-    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
-    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-    top: 0; }
-
-.photo-card--text,
-.photoCard--text {
-  bottom: 0;
-  padding: 16px;
-  position: absolute; }
-
-.toggle-pill-list {
-  list-style: none;
-  padding-left: 0; }
-  .toggle-pill-list li {
-    display: inline-block; }
-
-input.toggle-pill {
-  display: none; }
-  input.toggle-pill + label {
-    border: 1px solid #3987cb;
-    border-radius: 999px;
-    color: #3987cb;
-    margin-right: 8px;
-    padding: 8px; }
-  input.toggle-pill:checked + label {
-    background: #3987cb;
-    color: white; }
 
 /*doc
 ---
@@ -2736,6 +2621,24 @@ Class          | Description
 .media--xl {
   height: auto;
   width: 160px; }
+
+/*doc
+---
+title: Float
+name: floatMod
+parent: modifiers
+---
+TK `.clearfix`
+*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  height: 0; }
+
+.lt--IE9 .clearfix {
+  zoom: 1; }
 
 /*doc
 ---

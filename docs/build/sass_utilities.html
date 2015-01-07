@@ -29,16 +29,12 @@
 					<a href="buttons.html">Buttons</a>
 				</li>
 			
-				<li class="">
-					<a href="layout.html">Layout</a>
+				<li class="selected">
+					<a href="sass_utilities.html">Sass Utilities</a>
 				</li>
 			
 				<li class="">
 					<a href="unsorted.html">Unsorted</a>
-				</li>
-			
-				<li class="selected">
-					<a href="sass_utilities.html">Sass Utilities</a>
 				</li>
 			
 		</ul>
@@ -273,7 +269,7 @@ Aligns children of selected element using flexbox.
 <h3 id="backgroundClip">Background clip mixin</h3>
 
 <p>Sets background-clip property</p>
-<div class="codeBlock"><div class="highlight"><pre>@include background-clip(); // defaults to 'padding'
+<div class="codeBlock"><div class="highlight"><pre>@include background-clip($value: padding);
 @include background-clip('border');
 </pre></div></div>
 <h3 id="imgFill">Image fill placeholder</h3>

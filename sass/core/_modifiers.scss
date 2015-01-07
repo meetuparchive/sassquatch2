@@ -168,8 +168,6 @@ TK                      | TK
 	}
 }
 
-
-
 /*doc
 ---
 title: Media Sizing
@@ -191,4 +189,24 @@ Class          | Description
 		height: auto;
 		width: $size;
 	}
+}
+
+
+/*doc
+---
+title: Float
+name: floatMod
+parent: modifiers
+---
+TK `.clearfix`
+*/
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	height: 0;
+}
+.lt--IE9 .clearfix {
+	zoom: 1;
 }

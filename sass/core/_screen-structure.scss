@@ -1,43 +1,64 @@
-body{
+body { // TODO: reight place for this?
 	position: relative;
 }
 
 .docStripe {
 	overflow: hidden;
+	border-top: 1px solid $C_border;
+	background-color: #fff;
 }
 
-.docStripe--collection{
+.docStripe--collection {
 	background: $C_collectionBGLight;
 }
 
-.docStripe--inverted{
+.docStripe--inverted {
 	background: $C_contentBGInverted;
 }
 
 .docBounds {
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: $docBounds;
-  padding: $space;
-  width: 100%;
+	@extend %clearfix;
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $docBounds;
+	padding: $space;
+	width: 100%;
 }
 
-.docBox{
-	// currently in sassquatch leftovers
+.docBox {
+ 	@include background-clip(padding);
+	border-radius: $defaultRadius;
+	border: 1px solid $C_border;
+	background-color: #fff;
 	margin-bottom: 0;
 }
 
-.docContent{
+.docContent {
 	padding: $space;
+}
+
+.docSection {
+	border-top: 1px solid $C_border;
+	border-bottom: 1px solid transparent; /* avoids margin collapse */
+	padding: $space $space 0 $space;
+	&:first-child{
+		border-top: none;
+	}
+	.inverted & {
+		border-top-color: $C_borderInverted;
+	}
+	.docBounds > & { // don't pad sides when directly inside a docBounds
+		padding: $space 0 0 0;
+	}
 }
 
 //
 // HEADER IMAGE
 //
 .hero,
-.docStripe.hero{
-  background-color: $C_accent;
+.docStripe.hero {
+	background-color: $C_accent;
 }
 
 .hero-photo {
