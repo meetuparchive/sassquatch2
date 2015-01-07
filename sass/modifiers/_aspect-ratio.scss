@@ -1,0 +1,39 @@
+/*doc
+---
+title: Aspect ratio helper
+name: keepAspect
+category: Modifiers
+---
+TODO: doc this
+
+Class              | Description
+------------------ | ------------------------------
+`.keepAspect`      | TK
+`.keepAspect--16-9`| TK
+`.keepAspect--2-1` | TK
+
+*/
+.keepAspect {
+  margin-bottom: 0;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(1/1);
+  }
+}
+
+.keepAspect--16-9 {
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(9/16);
+  }
+}
+
+.keepAspect--2-1 {
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(1/2);
+  }
+}

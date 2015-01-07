@@ -1,0 +1,20 @@
+/*doc
+---
+title: Alignment
+name: alignMod
+category: Modifiers
+---
+Modifies text-align property of element
+
+Class             | Description
+----------------- | --------------------------------
+`.align--center`  | sets `text-align` to `center`
+`.align--right`   | sets `text-align` to `right`
+`.align--left`    | sets `text-align` to `left`
+
+*/
+@each $alignment in (left, right, center) {
+	@include _modifier(align, $alignment) {
+		text-align: $alignment;
+	}
+}

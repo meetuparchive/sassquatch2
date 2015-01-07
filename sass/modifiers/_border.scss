@@ -1,0 +1,20 @@
+/*doc
+---
+title: Borders
+name: borderMod
+category: Modifiers
+---
+Sets border properties on element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.border--top`          | sets a standard top border on the element
+`.border--none`         | removes all borders from element
+
+*/
+.border--top {
+	border-top: $border-standard;
+}
+.border--none {
+	border-width: 0;
+}

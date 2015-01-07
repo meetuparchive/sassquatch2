@@ -1,0 +1,24 @@
+/*doc
+---
+title: Display
+name: displayMod
+category: Modifiers
+---
+Modifies display property of element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.display--none`        | sets `display` to `none`
+`.display--block`       | sets `display` to `block`
+`.display--inline`      | sets `display` to `inline`
+`.display--inlineblock` | sets `display` to `inlineblock`
+
+*/
+@each $display in (none, block, inline) {
+	@include _modifier(display, $display) {
+		display: $display;
+	}
+}
+.display--inlineblock {
+	display: inline-block;
+}

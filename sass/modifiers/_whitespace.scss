@@ -1,0 +1,21 @@
+/*doc
+---
+title: Type wrap/whitespace
+name: typespaceMod
+category: Modifiers
+---
+Sets type wrapping, witespace, and overflow properties on element
+
+Class                         | Description
+----------------------------- | --------------------------------
+`.wrap--singleLine`           | forces text to a single line (nowrap)
+`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+
+*/
+.wrap--singleLine--truncate {
+  white-space: nowrap;
+}
+.wrap--singleLine--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

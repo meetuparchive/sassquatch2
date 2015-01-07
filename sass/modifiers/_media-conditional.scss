@@ -1,0 +1,48 @@
+/*doc
+---
+title: Media conditional modifiers
+name: mediaMod
+category: Modifiers
+---
+TK
+
+Class                   | Description
+----------------------- | --------------------------------
+TK                      | TK
+
+*/
+@each $breakpoint in (large, medium, small) {
+
+	// text align
+	@include _bpModifier($breakpoint, 'align', 'center') {
+		text-align: center;
+	}
+	@include _bpModifier($breakpoint, 'align', 'right') {
+		text-align: right;
+	}
+	@include _bpModifier($breakpoint, 'align', 'left') {
+		text-align: left;
+	}
+
+	// display
+	@include _bpModifier($breakpoint, 'display', 'none') {
+		display: none;
+	}
+	@include _bpModifier($breakpoint, 'display', 'inline') {
+		display: inline;
+	}
+	@include _bpModifier($breakpoint, 'display', 'block') {
+		display: block;
+	}
+	@include _bpModifier($breakpoint, 'display', 'inlineblock') {
+		display: inline-block;
+	}
+
+	// border
+	@include _bpModifier($breakpoint, 'border', 'top') {
+		border-top: $border-standard;
+	}
+	@include _bpModifier($breakpoint, 'border', 'none') {
+		border-width: 0;
+	}
+}
