@@ -566,26 +566,19 @@ Makes selected element a circle with border-radius
 @mixin circle($color: black, $size: 12px)
 ```
 */
-/* Indicators
-	Author: MikeM, Nov 2012
-	-------------------------------------------------------------
-	the little arrow thingies that stick out of containers to point to something
-	else, or point to themselves (e.g. active nav item)
+/*doc
+---
+title: Circle mixin
+name: circleMixin
+parent: shape
+---
+Adds pointers to any box.
 
-	@params
-	---
-	$direction
-	- which direction the indicator points
-	- default 'up'
-	$size
-	- in px, this will be half the width of the indicator's base
-	- default '10px'
-	$offset-type (required - no default)
-	- top, bottom, left, right
-	$offset-size
-	- distance
-	$border-width
-	$border-color
+Use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
+_TODO: rewrite with args_
+```
+@mixin pointers-for-box($size, $background, $border)
+```
 */
 /*doc
 ---
@@ -1076,6 +1069,10 @@ h3, h4, h5, h6,
 @media only screen and (max-width: 440px) {
   .display {
     font-size: 32px; } }
+.list--reset {
+  list-style: none;
+  padding-left: 0; }
+
 .collection-header {
   height: 48px;
   margin-bottom: 0; }
