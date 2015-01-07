@@ -210,3 +210,64 @@ TK `.clearfix`
 .lt--IE9 .clearfix {
 	zoom: 1;
 }
+
+
+/*doc
+---
+title: Aspect ratio helper
+name: keepAspect
+parent: unsorted
+---
+TODO: doc this
+
+Class              | Description
+------------------ | ------------------------------
+`.keepAspect`      | TK
+`.keepAspect--16-9`| TK
+`.keepAspect--2-1` | TK
+
+*/
+.keepAspect {
+  margin-bottom: 0;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(1/1);
+  }
+}
+
+.keepAspect--16-9 {
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(9/16);
+  }
+}
+
+.keepAspect--2-1 {
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(1/2);
+  }
+}
+
+
+/*doc
+---
+title: Thumbnails
+name: thumb
+parent: unsorted
+---
+TODO: doc this
+*/
+.thumb {
+  background-position: center;
+  background-size: cover;
+  display: block;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
