@@ -1,3 +1,4 @@
+// TODO: what the .... organize and doc this
 	html {
 		overflow-y: scroll;
 		font-size: 100%;
@@ -9,31 +10,6 @@
 		margin: 0;
 		padding: 0;
 	}
-
-/*doc
----
-title: Inverted Context
-name: inverted
-category: Unsorted
----
-
-The `inverted` class creates a context in which text colors and secondary
-buttons are inverted to light colors to work on dark backgrounds or photos.
-
-```html_example
-	<div class="docBox">
-		<div class="docSection inverted" style="background-color: #5D87B0;">
-			<h3>Yay, I'm inverted</h3>
-			<p>
-				All the text flips to light colors<br />
-				<span class="muted">We handle different shades of gray using opacity</span>
-			</p>
-			<button>Default (secondary) button</button>
-		</div>
-	</div>
-```
-
-*/
 
 	/* {{{ Inline tag defaults */
 	abbr, strong, acronym, span, small, time, strike, sub, sup, a {
