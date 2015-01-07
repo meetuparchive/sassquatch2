@@ -4,11 +4,100 @@ title: Avatar
 name: avatar
 cateogry: UI Components
 ---
+TODO: doc this
 */
 
+//
+// Avatar base
+//
 %avatar,
 .avatar {
-
+	@extend %imgFill;
+	background-color: $C_collectionBGLight;
+	background-position: center 42%;
+	display: inline-block;
+	font-size: $media-m * 2/3;
+	height: $media-m;
+	text-indent: 100%;
+	white-space: nowrap;
+	vertical-align: top;
+	width: $media-m;
 }
 
 
+//
+// Size variants
+//
+.avatar--xsmall {
+	font-size: $media-xs;
+	height: $media-xs;
+	width: $media-xs;
+}
+.avatar--small {
+	width: $media-s;
+	height: $media-s;
+	font-size: $media-s;
+}
+.avatar--big {
+	width: $media-xl;
+	height: $media-xl;
+	font-size: $media-l * 2/3;
+}
+
+
+//
+// Type variants
+//
+.avatar--person {
+	@extend %avatar;
+	vertical-align: middle;
+	border-radius: 999px;
+	box-sizing: border-box;
+}
+
+
+//
+// Extras
+//
+// TODO: fix selectors
+%avatarCharm {
+	position: relative;
+	overflow: visible;
+
+	&:after {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 10px;
+		border-radius: 999px;
+		bottom: 0;
+		content: "";
+		display: block;
+		font-size: 10px;
+		font-weight: $W_bold;
+		height: $space;
+		line-height: $space;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		text-indent: 0%;
+		width: $space;
+	}
+}
+
+.avatar--fb-friend {
+	@extend %avatarCharm;
+	&:after {
+		background-color: $C_facebook;
+		color: $C_textPrimaryInverted;
+		content: "f";
+	}
+}
+
+.avatar--org {
+	@extend %avatarCharm;
+	&:after {
+		background-color: $C_accent;
+		background-image: url('img/org-badge.svg'); // TODO: no imgs in sassquatch... what do we do with this...
+		color: $C_textPrimaryInverted;
+	}
+}
