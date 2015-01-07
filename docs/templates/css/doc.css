@@ -5,6 +5,10 @@ code {
 	background-color: rgba(255, 192, 203, 0.29);
 }
 
+h1 {
+	color: #000;
+}
+
 h2 {
 	margin-top: 2em; /* TEMP */
 }
