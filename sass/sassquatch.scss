@@ -35,16 +35,16 @@
 @import "core/media";
 
 
-// TODO: rename these guys
-/// Momentaries ----------------------------
-@import "components/momentary";
-@import "components/momentary-alert";
-@import "components/momentary-popover";
-
 /// Components ----------------------------------
-@import "components/tearsheet";
-@import "components/text-protection";
-@import "components/toggle-pill";
+@import "ui-components/avatar";
+@import "ui-components/tearsheet";
+@import "ui-components/text-protection";
+@import "ui-components/toggle-pill";
+
+// TODO: rename these guys
+@import "ui-components/momentary";
+@import "ui-components/momentary-alert";
+@import "ui-components/momentary-popover";
 
 
 /// Modifiers  ----------------------------------
