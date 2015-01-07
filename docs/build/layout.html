@@ -38,15 +38,11 @@
 				</li>
 			
 				<li class="">
-					<a href="sass_utilities.html">Sass Utilities</a>
-				</li>
-			
-				<li class="">
-					<a href="base_css.html">Base CSS</a>
-				</li>
-			
-				<li class="">
 					<a href="unsorted.html">Unsorted</a>
+				</li>
+			
+				<li class="">
+					<a href="sass_utilities.html">Sass Utilities</a>
 				</li>
 			
 		</ul>
@@ -62,20 +58,6 @@
 					<li>
 						<a href="#chunkList">Chunk List</a>
 					</li>
-				
-
-			
-
-				
-				
-					<li>
-						<a href="#docstar">Stripe Layout</a>
-					</li>
-				
-
-			
-
-				
 				
 
 			
@@ -212,94 +194,6 @@ multiple chunks within a row.</p>
             <span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;/ul&gt;</span>
-</pre></div></div></div>
-<h1 id="docstar">Stripe Layout</h1>
-
-<p>Used for newer and more responsive layouts, where content lives on top of
-a full-width background instead of <code>docBox</code> modules. The <code>docStripe</code> container
-sets a full width background.</p>
-
-<p>The <code>docBounds</code> class is used as a padding helper and content wrapper; it uses
-a max-width and min-width, but will otherwise flex to fit the width of the parent
-container.</p>
-<div class="codeExample"><div class="exampleOutput">
-    <!-- default stripe and color stripe -->
-    <div class="docStripe">
-        <div class="docBounds">
-            <h3>I'm in a docBounds within a stripe</h3>
-            <p>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.</p>
-        </div>
-    </div>
-    <div class="docStripe--red inverted">
-        <div class="docBounds">
-            <h3>I'm in a red stripe</h3>
-            <p>This <code>docStripe</code> also has a class of <code>inverted</code> to style these child element text colors correctly</p>
-        </div>
-    </div>
-
-    <!-- "collections" -->
-    <div class="docStripe--collection">
-        <div class="docBounds">
-            <h3>I contain a collection (of docBoxes)</h3>
-            <div class="docBox">
-                <div class="docSection">
-                    <p>I'm a section in a box</p>
-                </div>
-                <div class="docSection">
-                    <p>I'm a section in a box</p>
-                </div>
-            </div>
-            <div class="docBox">
-                <div class="docSection">
-                    <p>I'm a section in a box</p>
-                </div>
-                <div class="docSection">
-                    <p>I'm a section in a box</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><div class="codeBlock"><div class="highlight"><pre>
-    <span class="c">&lt;!-- default stripe and color stripe --&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;h3&gt;</span>I'm in a docBounds within a stripe<span class="nt">&lt;/h3&gt;</span>
-            <span class="nt">&lt;p&gt;</span>Any arbitrary content can go here. The docBounds sets the margins and max with. The stripe behind it sets the color.<span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe--red inverted"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;h3&gt;</span>I'm in a red stripe<span class="nt">&lt;/h3&gt;</span>
-            <span class="nt">&lt;p&gt;</span>This <span class="nt">&lt;code&gt;</span>docStripe<span class="nt">&lt;/code&gt;</span> also has a class of <span class="nt">&lt;code&gt;</span>inverted<span class="nt">&lt;/code&gt;</span> to style these child element text colors correctly<span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="c">&lt;!-- "collections" --&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docStripe--collection"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBounds"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;h3&gt;</span>I contain a collection (of docBoxes)<span class="nt">&lt;/h3&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docBox"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"docSection"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;p&gt;</span>I'm a section in a box<span class="nt">&lt;/p&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h2 id="docStripe">Stripe variants</h2>
-
-<p>/* {{{ Doc bounds </p>
-	</section>
+</pre></div></div></div>	</section>
 </body>
 </html>
