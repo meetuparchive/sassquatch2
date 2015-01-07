@@ -1,3 +1,11 @@
+/*doc
+---
+title: Toast
+name: toast
+category: UI Components
+---
+*/
+
 .toast {
   @include transition(transform 100ms $ease-in-quart);
   @include transform(translateY(0));

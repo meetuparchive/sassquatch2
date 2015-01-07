@@ -6,7 +6,7 @@
 
 // H1
 // Main header, in the header bar
-h1{
+h1 {
   color: $C_textPrimaryInverted;
   font-size: $font-size;
   font-weight: 700;
@@ -25,9 +25,9 @@ h2 {
 }
 
 // H3 - H6
-// Probably shouldn't be using these
-// We're sticking to limited hierarchy
-h3, h4, h5, h6, .heading   {
+// We're sticking to limited visual hierarchy
+h3, h4, h5, h6,
+.heading {
 // ----------------------------------------- //
   color: $C_textPrimary;
   font-size: $font-size;
@@ -44,7 +44,7 @@ h3, h4, h5, h6, .heading   {
 // header in the hero element
 // this isn't the "real" header
 // usually a repitition of the H1
-.display   {
+.display {
   color: $C_textPrimary;
   font-size: $font-size-display1;
   font-weight: normal;
