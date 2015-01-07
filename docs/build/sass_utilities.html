@@ -227,12 +227,13 @@ getPerceivedBrightness(#000) // -&gt; 0
 
 <p>For a given background color, this function returns
 a text color value with appropriate contrast.
-<strong>returns value</strong>
-<code>
-color: getPrimaryTextColor(#000); // -&gt; color: $C_textPrimaryInverted; (white text on dark)
-color: getPrimaryTextColor(#FFF); // -&gt; color: $C_textPrimary; (dark text on white)
-</code></p>
+<strong>returns value</strong></p>
+<div class="codeBlock"><div class="highlight"><pre>// -&gt; color: $C_textPrimaryInverted; (white text on dark)
+color: getPrimaryTextColor(#000);
 
+// -&gt; color: $C_textPrimary; (dark text on white)
+color: getPrimaryTextColor(#FFF);
+</pre></div></div>
 <h3 id="isDarkisLight">isDark/isLight</h3>
 
 <p>Checks a given color for brightness and returns a boolean.

@@ -67,9 +67,13 @@ parent: brightness
 For a given background color, this function returns
 a text color value with appropriate contrast.
 __returns value__
+
 ```
-color: getPrimaryTextColor(#000); // -> color: $C_textPrimaryInverted; (white text on dark)
-color: getPrimaryTextColor(#FFF); // -> color: $C_textPrimary; (dark text on white)
+// -> color: $C_textPrimaryInverted; (white text on dark)
+color: getPrimaryTextColor(#000);
+
+// -> color: $C_textPrimary; (dark text on white)
+color: getPrimaryTextColor(#FFF);
 ```
 */
 @function getPrimaryTextColor( $color ) {
