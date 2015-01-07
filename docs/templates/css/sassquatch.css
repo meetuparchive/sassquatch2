@@ -2013,56 +2013,6 @@ TK
 
 /*doc
 ---
-title: Unsorted
-name: unsorted
-category: Unsorted
----
-*/
-/*doc
----
-title: Thumbnails
-name: thumb
-parent: unsorted
----
-TODO: doc this
-*/
-.thumb {
-  background-position: center;
-  background-size: cover;
-  display: block; }
-  .thumb:before {
-    content: '';
-    display: block;
-    padding-top: 100%; }
-
-/*doc
----
-title: Aspect ratio helper
-name: keepAspect
-parent: unsorted
----
-TODO: doc this
-TODO: doc variants
-*/
-.keepAspect {
-  margin-bottom: 0; }
-  .keepAspect:before {
-    content: '';
-    display: block;
-    padding-top: 100%; }
-
-.keepAspect--16-9:before {
-  content: '';
-  display: block;
-  padding-top: 56.25%; }
-
-.keepAspect--2-1:before {
-  content: '';
-  display: block;
-  padding-top: 50%; }
-
-/*doc
----
 title: Avatar
 name: avatar
 cateogry: UI Components
@@ -2394,16 +2344,9 @@ input.toggle-pill {
 
 /*doc
 ---
-title: Modifier classes
-name: modifiers
-cateogry: Modifier classes
----
-*/
-/*doc
----
 title: Alignment
 name: alignMod
-parent: modifiers
+category: Modifiers
 ---
 Modifies text-align property of element
 
@@ -2425,9 +2368,61 @@ Class             | Description
 
 /*doc
 ---
+title: Aspect ratio helper
+name: keepAspect
+category: Modifiers
+---
+TODO: doc this
+
+Class              | Description
+------------------ | ------------------------------
+`.keepAspect`      | TK
+`.keepAspect--16-9`| TK
+`.keepAspect--2-1` | TK
+
+*/
+.keepAspect {
+  margin-bottom: 0; }
+  .keepAspect:before {
+    content: '';
+    display: block;
+    padding-top: 100%; }
+
+.keepAspect--16-9:before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; }
+
+.keepAspect--2-1:before {
+  content: '';
+  display: block;
+  padding-top: 50%; }
+
+/*doc
+---
+title: Borders
+name: borderMod
+category: Modifiers
+---
+Sets border properties on element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.border--top`          | sets a standard top border on the element
+`.border--none`         | removes all borders from element
+
+*/
+.border--top {
+  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+
+.border--none {
+  border-width: 0; }
+
+/*doc
+---
 title: Display
 name: displayMod
-parent: modifiers
+category: Modifiers
 ---
 Modifies display property of element
 
@@ -2453,50 +2448,27 @@ Class                   | Description
 
 /*doc
 ---
-title: Borders
-name: borderMod
-parent: modifiers
+title: Float
+name: floatMod
+parent: Modifiers
 ---
-Sets border properties on element
-
-Class                   | Description
------------------------ | --------------------------------
-`.border--top`          | sets a standard top border on the element
-`.border--none`         | removes all borders from element
-
+TK `.clearfix`
 */
-.border--top {
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  height: 0; }
 
-.border--none {
-  border-width: 0; }
-
-/*doc
----
-title: Type wrap/whitespace
-name: typespaceMod
-parent: modifiers
----
-Sets type wrapping, witespace, and overflow properties on element
-
-Class                         | Description
------------------------------ | --------------------------------
-`.wrap--singleLine`           | forces text to a single line (nowrap)
-`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
-
-*/
-.wrap--singleLine--truncate {
-  white-space: nowrap; }
-
-.wrap--singleLine--truncate {
-  overflow: hidden;
-  text-overflow: ellipsis; }
+.lt--IE9 .clearfix {
+  zoom: 1; }
 
 /*doc
 ---
 title: Media conditional modifiers
 name: mediaMod
-parent: modifiers
+category: Modifiers
 ---
 TK
 
@@ -2589,8 +2561,8 @@ TK                      | TK
 /*doc
 ---
 title: Media Sizing
-name: mediaMod
-parent: modifiers
+name: sizeMod
+category: Modifiers
 ---
 Classes for applying dimensions to an element.
 
@@ -2624,28 +2596,40 @@ Class          | Description
 
 /*doc
 ---
-title: Float
-name: floatMod
-parent: modifiers
+title: Thumbnails
+name: thumb
+category: Modifiers
 ---
-TK `.clearfix`
+TODO: doc this
 */
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  height: 0; }
-
-.lt--IE9 .clearfix {
-  zoom: 1; }
+.thumb {
+  background-position: center;
+  background-size: cover;
+  display: block; }
+  .thumb:before {
+    content: '';
+    display: block;
+    padding-top: 100%; }
 
 /*doc
 ---
-title: Unsorted
-name: unsorted
-category: Unsorted
+title: Type wrap/whitespace
+name: typespaceMod
+category: Modifiers
 ---
+Sets type wrapping, witespace, and overflow properties on element
+
+Class                         | Description
+----------------------------- | --------------------------------
+`.wrap--singleLine`           | forces text to a single line (nowrap)
+`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+
 */
+.wrap--singleLine--truncate {
+  white-space: nowrap; }
+
+.wrap--singleLine--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 /*# sourceMappingURL=sassquatch.css.map */

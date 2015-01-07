@@ -52,4 +52,12 @@
 // ---------------------------
 // Modifiers
 // ---------------------------
-	@import "core/modifiers";
+	@import "modifiers/align";
+	@import "modifiers/aspect-ratio";
+	@import "modifiers/border";
+	@import "modifiers/display";
+	@import "modifiers/float";
+	@import "modifiers/media-conditional";
+	@import "modifiers/size";
+	@import "modifiers/thumb";
+	@import "modifiers/whitespace";
