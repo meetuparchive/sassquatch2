@@ -1,0 +1,68 @@
+/*doc
+---
+title: Layout
+name: layout
+category: Core
+---
+TK
+*/
+
+
+
+/*doc
+---
+title: Doc stripe
+name: docStripe
+parent: layout
+---
+TK
+*/
+.docStripe {
+	overflow: hidden;
+	border-top: 1px solid $C_border;
+	background-color: #fff;
+}
+
+.docStripe--collection {
+	background: $C_collectionBGLight;
+}
+
+.docStripe--inverted {
+	background: $C_contentBGInverted;
+}
+
+
+/*doc
+---
+title: Doc bounds
+name: docBounds
+parent: layout
+---
+TK
+*/
+.docBounds {
+	@extend %clearfix;
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $docBounds;
+	padding: $space;
+	width: 100%;
+}
+
+
+/*doc
+---
+title: Doc box
+name: docBox
+parent: layout
+---
+TK
+*/
+.docBox {
+ 	@include background-clip(padding);
+	border-radius: $defaultRadius;
+	border: 1px solid $C_border;
+	background-color: #fff;
+	margin-bottom: 0;
+}

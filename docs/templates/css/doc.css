@@ -75,7 +75,7 @@ main > table td:first-child {
 	padding-right: 24px;
 }
 #hologramBody > main {
-	flex: 0 1 auto;
+	flex: 1 1 auto;
 }
 
 

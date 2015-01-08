@@ -1097,36 +1097,6 @@ h3, h4, h5, h6,
 body {
   position: relative; }
 
-.docStripe {
-  overflow: hidden;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #fff; }
-
-.docStripe--collection {
-  background: #F3F6F9; }
-
-.docStripe--inverted {
-  background: #353E48; }
-
-.docBounds {
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1100px;
-  padding: 16px;
-  width: 100%; }
-
-.docBox {
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
-  -ms-background-clip: padding;
-  -o-background-clip: padding;
-  background-clip: padding;
-  border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #fff;
-  margin-bottom: 0; }
-
 .docContent {
   padding: 16px; }
 
@@ -1990,6 +1960,68 @@ TK
   animation: bounce-in-subtle 750ms linear; }
   .toggle-on label {
     font-weight: 700; }
+
+/*doc
+---
+title: Layout
+name: layout
+category: Core
+---
+TK
+*/
+/*doc
+---
+title: Doc stripe
+name: docStripe
+parent: layout
+---
+TK
+*/
+.docStripe {
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #fff; }
+
+.docStripe--collection {
+  background: #F3F6F9; }
+
+.docStripe--inverted {
+  background: #353E48; }
+
+/*doc
+---
+title: Doc bounds
+name: docBounds
+parent: layout
+---
+TK
+*/
+.docBounds {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+  padding: 16px;
+  width: 100%; }
+
+/*doc
+---
+title: Doc box
+name: docBox
+parent: layout
+---
+TK
+*/
+.docBox {
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  -ms-background-clip: padding;
+  -o-background-clip: padding;
+  background-clip: padding;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  margin-bottom: 0; }
 
 /*doc
 ---
