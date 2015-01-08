@@ -11,15 +11,30 @@ code, pre {
 
 code {
   padding: 3px 6px;
-  color: #63189E;
+  color: #d01040;
   white-space: nowrap;
-  background-color: #f9f9f9;
+  background-color: rgb(243, 246, 249);
   border-radius: 2px;
 }
 
 pre {
 	white-space: pre;
 	word-wrap: normal !important;
+}
+
+/* CODE EXAMPLES */
+.codeExample {
+	border: 1px solid rgba(0,0,0,.12);
+	box-shadow: 0 0 20px rgba(0,0,0,.12);
+}
+.exampleOutput {
+	padding: 12px;
+}
+.codeBlock {
+	padding: 12px 12px 4px 12px;
+	background-color: rgb(243, 246, 249);
+	overflow: scroll;
+	max-height: 500px;
 }
 
 /* TYPE OVERRIDES */
@@ -53,6 +68,9 @@ main > table td,
 main > table th {
 	padding: 8px;
 	text-align: left;
+}
+main > table td:first-child {
+  background-color: rgb(243, 246, 249);
 }
 main > table td {
 	border-top: 1px solid rgba(0,0,0,.12);
