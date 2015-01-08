@@ -753,6 +753,13 @@ audio, canvas, video {
   display: inline-block; }
 
 /* }}} */
+/*doc
+---
+title: Typesetting
+name: typesetting
+category: Core
+---
+*/
 body,
 input,
 button {
@@ -789,6 +796,18 @@ var {
   -ms-hyphens: none;
   hyphens: none; }
 
+/*doc
+---
+title: Body text
+name: bodyText
+parent: typesetting
+---
+
+```html_example
+<p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
+```
+
+*/
 body {
   color: rgba(0, 0, 0, 0.87);
   font-family: "Whitney", helvetica, arial, sans-serif;
@@ -799,23 +818,32 @@ body {
 .inverted {
   color: white; }
 
+.text--hint,
 .hint-text {
   color: rgba(0, 0, 0, 0.26); }
-  .inverted .hint-text {
+  .inverted .text--hint, .inverted
+  .hint-text {
     color: rgba(255, 255, 255, 0.3); }
 
+.text--secondary,
 .text-secondary {
   color: rgba(0, 0, 0, 0.54); }
-  .inverted .text-secondary {
+  .inverted .text--secondary, .inverted
+  .text-secondary {
     color: rgba(255, 255, 255, 0.7); }
 
-.text-small, .caption-text {
+.text--caption,
+.caption-text,
+.text--small,
+.text-small {
   font-size: 13px;
   line-height: 1.25; }
 
+.text--caption,
 .caption-text {
   color: rgba(0, 0, 0, 0.54); }
-  .inverted .caption-text {
+  .inverted .text--caption, .inverted
+  .caption-text {
     color: rgba(255, 255, 255, 0.7); }
 
 .running-text-container p {
@@ -850,24 +878,29 @@ h2 {
   text-transform: uppercase; }
 
 h3, h4, h5, h6,
+.text--heading,
 .heading {
   color: rgba(0, 0, 0, 0.87);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5; }
   .inverted h3, .inverted h4, .inverted h5, .inverted h6, .inverted
+  .text--heading, .inverted
   .heading {
     color: white; }
 
+.text--display,
 .display {
   color: rgba(0, 0, 0, 0.87);
   font-size: 56px;
   font-weight: normal;
   line-height: 1.25; }
-  .inverted .display {
+  .inverted .text--display, .inverted
+  .display {
     color: white; }
 
 @media only screen and (max-width: 440px) {
+  .text--display,
   .display {
     font-size: 32px; } }
 .list--reset {

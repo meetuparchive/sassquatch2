@@ -4,38 +4,41 @@
   http://alistapart.com/article/more-meaningful-typography
 */
 
+// TODO: PCV classes; delete non-pcv names
+
 // H1
 // Main header, in the header bar
 h1 {
-  color: $C_textPrimaryInverted;
-  font-size: $font-size;
-  font-weight: 700;
-  line-height: 1.25;
+	color: $C_textPrimaryInverted;
+	font-size: $font-size;
+	font-weight: 700;
+	line-height: 1.25;
 }
 
 
 // H2
 // Used to divide sections
 h2 {
-  color: $C_accent;
-  font-size: $font-size;
-  font-weight: 700;
-  line-height: 1.5;
-  text-transform: uppercase;
+	color: $C_accent;
+	font-size: $font-size;
+	font-weight: 700;
+	line-height: 1.5;
+	text-transform: uppercase;
 }
 
 // H3 - H6
 // We're sticking to limited visual hierarchy
 h3, h4, h5, h6,
+.text--heading,
 .heading {
 // ----------------------------------------- //
-  color: $C_textPrimary;
-  font-size: $font-size;
-  font-weight: 700;
-  line-height: 1.5;
-  .inverted &{
-      color: $C_textPrimaryInverted;
-  }
+	color: $C_textPrimary;
+	font-size: $font-size;
+	font-weight: 700;
+	line-height: 1.5;
+	.inverted &{
+		color: $C_textPrimaryInverted;
+	}
 }
 
 
@@ -44,18 +47,20 @@ h3, h4, h5, h6,
 // header in the hero element
 // this isn't the "real" header
 // usually a repitition of the H1
+.text--display,
 .display {
-  color: $C_textPrimary;
-  font-size: $font-size-display1;
-  font-weight: normal;
-  line-height: 1.25;
-  .inverted &{
-      color: $C_textPrimaryInverted;
-  }
+	color: $C_textPrimary;
+	font-size: $font-size-display1;
+	font-weight: normal;
+	line-height: 1.25;
+	.inverted &{
+		color: $C_textPrimaryInverted;
+	}
 }
 
 @include atMediaDown(small) {
-  .display   {
-    font-size: $font-size-display2;
-  }
+	.text--display,
+	.display {
+		font-size: $font-size-display2;
+	}
 }

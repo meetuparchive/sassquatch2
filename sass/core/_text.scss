@@ -1,50 +1,69 @@
+/*doc
+---
+title: Body text
+name: bodyText
+parent: typesetting
+---
+
+```html_example
+<p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
+```
+
+*/
 body {
-  color: $C_textPrimary;
-  font-family: $font;
-  font-size: $font-size;
-  font-weight: $W_normal;
-  line-height: $line-height;
+	color: $C_textPrimary;
+	font-family: $font;
+	font-size: $font-size;
+	font-weight: $W_normal;
+	line-height: $line-height;
 }
+
+// TODO: rework a lot of this to use PCV classes
 
 .inverted {
-  color: $C_textPrimaryInverted;
+	color: $C_textPrimaryInverted;
 }
 
+.text--hint,
 .hint-text {
-  color: $C_textTertiary;
-  .inverted & {
-    color: $C_textTertiaryInverted;
-  }
+	color: $C_textTertiary;
+	.inverted & {
+		color: $C_textTertiaryInverted;
+	}
 }
 
+.text--secondary,
 .text-secondary {
-  color: $C_textSecondary;
-  .inverted & {
-    color: $C_textSecondaryInverted;
-  }
+	color: $C_textSecondary;
+	.inverted & {
+		color: $C_textSecondaryInverted;
+	}
 }
 
+%text--small,
+.text--small,
 .text-small {
-  font-size: $font-size-small;
-  line-height: $line-height-small;
+	font-size: $font-size-small;
+	line-height: $line-height-small;
 }
 
+.text--caption,
 .caption-text {
-  @extend .text-small;
-  color: $C_textSecondary;
-  .inverted & {
-    color: $C_textSecondaryInverted;
-  }
+	@extend %text--small;
+	color: $C_textSecondary;
+	.inverted & {
+		color: $C_textSecondaryInverted;
+	}
 }
 
 //
 // Running text styles
 //
 .running-text-container p {
-  margin-bottom: $space;
-  &:last-child {
-    margin-bottom: 0;
-  }
+	margin-bottom: $space;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 //
@@ -55,10 +74,11 @@ body {
 // links inside running text are assumed to be hypertext-y
 
 
-a{
+// TODO: rename running-text-container to use PCV
+a {
 	color: inherit;
 	text-decoration: none;
-	&.link, .running-text-container &{
+	&.link, .running-text-container & {
 		color: $C_link;
 		&:hover, &:focus, &:active{
 			text-decoration: underline;

@@ -1,3 +1,11 @@
+/*doc
+---
+title: Typesetting
+name: typesetting
+category: Core
+---
+*/
+
 //
 // Text rendering
 // ------------------------------ //
@@ -9,27 +17,27 @@
 body,
 input,
 button  {
-  -webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 
 body  {
-  text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
 }
 
 //
 // Word breaking
 //
 body {
-  word-wrap: normal;
+	word-wrap: normal;
 }
 
 //
 // Remove extraneous spacing
 //
 h1,h2,h3,h4,h5,h6,p,label {
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 
@@ -38,9 +46,9 @@ h1,h2,h3,h4,h5,h6,p,label {
 // Hyphens
 //
 p {
-  // Ala Trent Walton
-  // http://trentwalton.com/2011/09/07/css-hyphenation
-  @include hyphens(auto);
+	// Ala Trent Walton
+	// http://trentwalton.com/2011/09/07/css-hyphenation
+	@include hyphens(auto);
 }
 
 
@@ -54,7 +62,7 @@ kbd,
 q,
 samp,
 var {
-// Eric Meyer
-// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
-  @include hyphens(none);
+	// Eric Meyer
+	// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+	@include hyphens(none);
 }
