@@ -4,7 +4,16 @@ title: Buttons
 name: buttons
 category: Core
 ---
-TK
+
+Full docs TK
+
+```html_example
+<a class="button" href="#">Button</a>
+<a class="button button--primary" href="#">Primary Button</a>
+<a class="button button--bordered" href="#">Bordered Button</a>
+<a class="button button--contrast" href="#">Contrast Button</a>
+```
+
 */
 
 // TODO: rewrite with less nesting
