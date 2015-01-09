@@ -23,8 +23,8 @@ _original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
 */
 
 // TODO: experiment with taking out some identical keyframe values
-// because we'll animation this linear, we don't need all the tween numbers
-@include keyframes(bounce-in-subtle) {
+// because we'll animation this linear, we probably don't need all the tween numbers
+@include keyframes('bounce-in-subtle') {
 	0% {
 		@include transform( matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) );
 	}
@@ -100,4 +100,30 @@ _original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
 }
 @mixin animate--bounceInSubtle($time: 750ms) {
 	@include animation(bounce-in-subtle $time linear);
+}
+
+
+/*doc
+---
+title: Infinite spin
+name: spin
+parent: animation
+---
+Infinite 2d rotation; 0-360deg.
+
+```
+@include animate--spin($time: 0.8s);
+```
+*/
+@include keyframes(spin) {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(360deg));
+	}
+}
+@mixin animate--spin($time: 0.8s) {
+	@include animation(spin $time linear);
+	@include animation-iteration-count(infinite);
 }
