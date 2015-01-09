@@ -2685,87 +2685,87 @@ Class                   | Description
 TK                      | TK
 
 */
-.align--center--atLarge {
-  text-align: center; }
-
-.align--right--atLarge {
-  text-align: right; }
-
-.align--left--atLarge {
-  text-align: left; }
-
-.display--none--atLarge {
-  display: none; }
-
-.display--inline--atLarge {
-  display: inline; }
-
-.display--block--atLarge {
-  display: block; }
-
-.display--inlineblock--atLarge {
-  display: inline-block; }
-
-.border--top--atLarge {
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
-
-.border--none--atLarge {
-  border-width: 0; }
-
-.align--center--atMedium {
-  text-align: center; }
-
-.align--right--atMedium {
-  text-align: right; }
-
-.align--left--atMedium {
-  text-align: left; }
-
-.display--none--atMedium {
-  display: none; }
-
-.display--inline--atMedium {
-  display: inline; }
-
-.display--block--atMedium {
-  display: block; }
-
-.display--inlineblock--atMedium {
-  display: inline-block; }
-
-.border--top--atMedium {
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
-
-.border--none--atMedium {
-  border-width: 0; }
-
-.align--center--atSmall {
-  text-align: center; }
-
-.align--right--atSmall {
-  text-align: right; }
-
-.align--left--atSmall {
-  text-align: left; }
-
-.display--none--atSmall {
-  display: none; }
-
-.display--inline--atSmall {
-  display: inline; }
-
-.display--block--atSmall {
-  display: block; }
-
-.display--inlineblock--atSmall {
-  display: inline-block; }
-
-.border--top--atSmall {
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
-
-.border--none--atSmall {
-  border-width: 0; }
-
+@media only screen and (min-width: 960px) {
+  .align--center--atLarge {
+    text-align: center; } }
+@media only screen and (min-width: 960px) {
+  .align--right--atLarge {
+    text-align: right; } }
+@media only screen and (min-width: 960px) {
+  .align--left--atLarge {
+    text-align: left; } }
+@media only screen and (min-width: 960px) {
+  .display--none--atLarge {
+    display: none; } }
+@media only screen and (min-width: 960px) {
+  .display--inline--atLarge {
+    display: inline; } }
+@media only screen and (min-width: 960px) {
+  .display--block--atLarge {
+    display: block; } }
+@media only screen and (min-width: 960px) {
+  .display--inlineblock--atLarge {
+    display: inline-block; } }
+@media only screen and (min-width: 960px) {
+  .border--top--atLarge {
+    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
+@media only screen and (min-width: 960px) {
+  .border--none--atLarge {
+    border-width: 0; } }
+@media only screen and (min-width: 640px) {
+  .align--center--atMedium {
+    text-align: center; } }
+@media only screen and (min-width: 640px) {
+  .align--right--atMedium {
+    text-align: right; } }
+@media only screen and (min-width: 640px) {
+  .align--left--atMedium {
+    text-align: left; } }
+@media only screen and (min-width: 640px) {
+  .display--none--atMedium {
+    display: none; } }
+@media only screen and (min-width: 640px) {
+  .display--inline--atMedium {
+    display: inline; } }
+@media only screen and (min-width: 640px) {
+  .display--block--atMedium {
+    display: block; } }
+@media only screen and (min-width: 640px) {
+  .display--inlineblock--atMedium {
+    display: inline-block; } }
+@media only screen and (min-width: 640px) {
+  .border--top--atMedium {
+    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
+@media only screen and (min-width: 640px) {
+  .border--none--atMedium {
+    border-width: 0; } }
+@media only screen and (min-width: 440px) {
+  .align--center--atSmall {
+    text-align: center; } }
+@media only screen and (min-width: 440px) {
+  .align--right--atSmall {
+    text-align: right; } }
+@media only screen and (min-width: 440px) {
+  .align--left--atSmall {
+    text-align: left; } }
+@media only screen and (min-width: 440px) {
+  .display--none--atSmall {
+    display: none; } }
+@media only screen and (min-width: 440px) {
+  .display--inline--atSmall {
+    display: inline; } }
+@media only screen and (min-width: 440px) {
+  .display--block--atSmall {
+    display: block; } }
+@media only screen and (min-width: 440px) {
+  .display--inlineblock--atSmall {
+    display: inline-block; } }
+@media only screen and (min-width: 440px) {
+  .border--top--atSmall {
+    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
+@media only screen and (min-width: 440px) {
+  .border--none--atSmall {
+    border-width: 0; } }
 /*doc
 ---
 title: Media Sizing

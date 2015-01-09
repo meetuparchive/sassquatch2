@@ -11,7 +11,9 @@
 // PRIVATE media query modifier factory
 //
 @mixin _bpModifier($breakpoint, $base, $modification) {
-	.#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)} {
-		@content;
+	@include atMediaUp($breakpoint) {
+		.#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)} {
+			@content;
+		}
 	}
 }
