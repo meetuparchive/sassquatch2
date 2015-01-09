@@ -33,7 +33,6 @@
 
 	// Forms
 	@import "core/forms";
-	@import "core/buttons";
 
 	// Layout
 	@import "core/layout";
@@ -46,6 +45,7 @@
 	@import "ui-components/tearsheet";
 	@import "ui-components/text-protection";
 	@import "ui-components/toggle-pill";
+	@import "ui-components/buttons";
 	// TODO: rename momentary
 	@import "ui-components/momentary";
 	@import "ui-components/momentary-alert";

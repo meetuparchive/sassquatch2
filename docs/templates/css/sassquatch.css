@@ -753,28 +753,6 @@ audio, canvas, video {
   display: inline-block; }
 
 /* }}} */
-/*doc
----
-title: Typesetting
-name: typesetting
-category: Core
----
-TK - notes about UI text vs. body text
-
-```html_example
-<h1 class="text--display">Heading 1 Display</h1>
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
-<p>Body text</p>
-<p class="text--hint">Hint text</p>
-<p class="text--small">Small text</p>
-<p class="text--caption">Caption text</p>
-```
-*/
 body,
 input,
 button {
@@ -973,6 +951,29 @@ a {
     a.link:hover, a.link:focus, a.link:active, .runningText a:hover, .runningText a:focus, .runningText a:active, .running-text-container a:hover, .running-text-container a:focus, .running-text-container a:active {
       text-decoration: underline; }
 
+/*doc
+---
+title: Typesetting
+name: typesetting
+category: Core
+---
+TK - notes about UI text vs. body text
+
+```html_example
+<h1 class="text--display">Heading 1 Display</h1>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<p>Body text</p>
+<p class="text--heading">Fake heading</p>
+<p class="text--hint">Hint text</p>
+<p class="text--small">Small text</p>
+<p class="text--caption">Caption text</p>
+```
+*/
 /*
   Further Reading:
   http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
@@ -991,6 +992,17 @@ h2 {
   line-height: 1.5;
   text-transform: uppercase; }
 
+/*doc
+---
+title: Heading class
+---
+Apply a `.text--heading` class to any element
+to give it the appearance of an h3-h6 element.
+
+```html_example
+<p class="text--heading">It's usually better to use the real heading tag</p>
+```
+*/
 h3, h4, h5, h6,
 .text--heading,
 .heading {
@@ -1003,6 +1015,18 @@ h3, h4, h5, h6,
   .heading {
     color: white; }
 
+/*doc
+---
+title: Display text
+name: displayText
+parent: typesetting
+---
+Display text for header hero elements.
+
+```html_example
+<h1 class="text--display">The hero gotham deserves</h1>
+```
+*/
 .text--display,
 .display {
   color: rgba(0, 0, 0, 0.87);
@@ -1963,162 +1987,6 @@ textarea::-webkit-input-placeholder {
 
 /*doc
 ---
-title: Buttons
-name: buttons
-category: Core
----
-
-Full docs TK
-
-```html_example
-<a class="button" href="#">Button</a>
-<a class="button button--primary" href="#">Primary Button</a>
-<a class="button button--bordered" href="#">Bordered Button</a>
-<a class="button button--contrast" href="#">Contrast Button</a>
-```
-
-*/
-.button {
-  background-color: transparent;
-  border-radius: 50px;
-  border: none;
-  box-sizing: border-box;
-  color: #3987cb;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 8px 4px;
-  padding: 8px 16px;
-  text-align: center;
-  transition: background .15s; }
-  .button:focus {
-    outline: 0; }
-  .button:hover, .button:active, .button:focus {
-    background: rgba(0, 0, 0, 0.1); }
-  .button.button--disabled {
-    opacity: .4;
-    color: rgba(0, 0, 0, 0.87);
-    cursor: default; }
-    .button.button--disabled:hover, .button.button--disabled:active, .button.button--disabled:focus {
-      background: transparent; }
-    .button.button--disabled.button--primary {
-      background: rgba(0, 0, 0, 0.26); }
-  .button i {
-    margin-right: 8px; }
-  .button--bordered {
-    background-color: #3987cb;
-    color: white;
-    border: 1px solid #3987cb;
-    background: rgba(57, 135, 203, 0);
-    color: #3987cb;
-    font-weight: 400; }
-    .button--bordered:focus {
-      outline: 0; }
-    .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
-      background: #619fd6; }
-    .button--bordered.button--disabled {
-      opacity: .4;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: default; }
-      .button--bordered.button--disabled:hover, .button--bordered.button--disabled:active, .button--bordered.button--disabled:focus {
-        background: #3987cb; }
-      .button--bordered.button--disabled.button--primary {
-        background: rgba(0, 0, 0, 0.26); }
-    .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
-      background: rgba(57, 135, 203, 0.2); }
-  .button--contrast {
-    color: rgba(0, 0, 0, 0.87);
-    font-weight: 700; }
-  .button--iconButton {
-    font-weight: 400;
-    padding: 0; }
-    .button--iconButton i {
-      border: 1px solid #3987cb;
-      border-radius: 999px;
-      color: #3987cb;
-      display: block;
-      font-size: 24px;
-      height: 24px;
-      margin: 0 auto;
-      padding: 8px;
-      width: 24px; }
-    .button--iconButton:hover, .button--iconButton:focus, .button--iconButton:active {
-      background: transparent;
-      text-decoration: none; }
-  .button--small {
-    font-size: 13px;
-    padding: 4px 8px; }
-  .button--full-width {
-    display: block;
-    margin: 8px 0;
-    width: 100%; }
-  .button--default {
-    background-color: transparent; }
-    .button--default:focus {
-      outline: 0; }
-    .button--default:hover, .button--default:active, .button--default:focus {
-      background: rgba(0, 0, 0, 0.1); }
-    .button--default.button--disabled {
-      opacity: .4;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: default; }
-      .button--default.button--disabled:hover, .button--default.button--disabled:active, .button--default.button--disabled:focus {
-        background: transparent; }
-      .button--default.button--disabled.button--primary {
-        background: rgba(0, 0, 0, 0.26); }
-  .button--primary {
-    background-color: #3987cb;
-    color: white; }
-    .button--primary:focus {
-      outline: 0; }
-    .button--primary:hover, .button--primary:active, .button--primary:focus {
-      background: #619fd6; }
-    .button--primary.button--disabled {
-      opacity: .4;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: default; }
-      .button--primary.button--disabled:hover, .button--primary.button--disabled:active, .button--primary.button--disabled:focus {
-        background: #3987cb; }
-      .button--primary.button--disabled.button--primary {
-        background: rgba(0, 0, 0, 0.26); }
-  .button--contrast {
-    background-color: rgba(255, 255, 255, 0.7); }
-    .button--contrast:focus {
-      outline: 0; }
-    .button--contrast:hover, .button--contrast:active, .button--contrast:focus {
-      background: rgba(255, 255, 255, 0.8); }
-    .button--contrast.button--disabled {
-      opacity: .4;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: default; }
-      .button--contrast.button--disabled:hover, .button--contrast.button--disabled:active, .button--contrast.button--disabled:focus {
-        background: rgba(255, 255, 255, 0.7); }
-      .button--contrast.button--disabled.button--primary {
-        background: rgba(0, 0, 0, 0.26); }
-
-.toggle-button-wrapper {
-  display: inline-block;
-  margin: 4px 0;
-  -webkit-tap-highlight-color: transparent; }
-  .toggle-button-wrapper label {
-    margin: 0; }
-  .toggle-button-wrapper input {
-    display: none; }
-    .toggle-button-wrapper input:checked + label {
-      background: #3987cb;
-      border: none;
-      color: white; }
-
-.toggle-on {
-  -webkit-animation: bounce-in-subtle 750ms linear;
-  -moz-animation: bounce-in-subtle 750ms linear;
-  animation: bounce-in-subtle 750ms linear; }
-  .toggle-on label {
-    font-weight: 700; }
-
-/*doc
----
 title: Layout
 name: layout
 category: Core
@@ -2334,6 +2202,162 @@ input.toggle-pill {
   input.toggle-pill:checked + label {
     background: #3987cb;
     color: white; }
+
+/*doc
+---
+title: Buttons
+name: buttons
+category: UI Components
+---
+
+Full docs TK
+
+```html_example
+<a class="button" href="#">Button</a>
+<a class="button button--primary" href="#">Primary Button</a>
+<a class="button button--bordered" href="#">Bordered Button</a>
+<a class="button button--contrast" href="#">Contrast Button</a>
+```
+
+*/
+.button {
+  background-color: transparent;
+  border-radius: 50px;
+  border: none;
+  box-sizing: border-box;
+  color: #3987cb;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 8px 4px;
+  padding: 8px 16px;
+  text-align: center;
+  transition: background .15s; }
+  .button:focus {
+    outline: 0; }
+  .button:hover, .button:active, .button:focus {
+    background: rgba(0, 0, 0, 0.1); }
+  .button.button--disabled {
+    opacity: .4;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default; }
+    .button.button--disabled:hover, .button.button--disabled:active, .button.button--disabled:focus {
+      background: transparent; }
+    .button.button--disabled.button--primary {
+      background: rgba(0, 0, 0, 0.26); }
+  .button i {
+    margin-right: 8px; }
+  .button--bordered {
+    background-color: #3987cb;
+    color: white;
+    border: 1px solid #3987cb;
+    background: rgba(57, 135, 203, 0);
+    color: #3987cb;
+    font-weight: 400; }
+    .button--bordered:focus {
+      outline: 0; }
+    .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
+      background: #619fd6; }
+    .button--bordered.button--disabled {
+      opacity: .4;
+      color: rgba(0, 0, 0, 0.87);
+      cursor: default; }
+      .button--bordered.button--disabled:hover, .button--bordered.button--disabled:active, .button--bordered.button--disabled:focus {
+        background: #3987cb; }
+      .button--bordered.button--disabled.button--primary {
+        background: rgba(0, 0, 0, 0.26); }
+    .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
+      background: rgba(57, 135, 203, 0.2); }
+  .button--contrast {
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 700; }
+  .button--iconButton {
+    font-weight: 400;
+    padding: 0; }
+    .button--iconButton i {
+      border: 1px solid #3987cb;
+      border-radius: 999px;
+      color: #3987cb;
+      display: block;
+      font-size: 24px;
+      height: 24px;
+      margin: 0 auto;
+      padding: 8px;
+      width: 24px; }
+    .button--iconButton:hover, .button--iconButton:focus, .button--iconButton:active {
+      background: transparent;
+      text-decoration: none; }
+  .button--small {
+    font-size: 13px;
+    padding: 4px 8px; }
+  .button--full-width {
+    display: block;
+    margin: 8px 0;
+    width: 100%; }
+  .button--default {
+    background-color: transparent; }
+    .button--default:focus {
+      outline: 0; }
+    .button--default:hover, .button--default:active, .button--default:focus {
+      background: rgba(0, 0, 0, 0.1); }
+    .button--default.button--disabled {
+      opacity: .4;
+      color: rgba(0, 0, 0, 0.87);
+      cursor: default; }
+      .button--default.button--disabled:hover, .button--default.button--disabled:active, .button--default.button--disabled:focus {
+        background: transparent; }
+      .button--default.button--disabled.button--primary {
+        background: rgba(0, 0, 0, 0.26); }
+  .button--primary {
+    background-color: #3987cb;
+    color: white; }
+    .button--primary:focus {
+      outline: 0; }
+    .button--primary:hover, .button--primary:active, .button--primary:focus {
+      background: #619fd6; }
+    .button--primary.button--disabled {
+      opacity: .4;
+      color: rgba(0, 0, 0, 0.87);
+      cursor: default; }
+      .button--primary.button--disabled:hover, .button--primary.button--disabled:active, .button--primary.button--disabled:focus {
+        background: #3987cb; }
+      .button--primary.button--disabled.button--primary {
+        background: rgba(0, 0, 0, 0.26); }
+  .button--contrast {
+    background-color: rgba(255, 255, 255, 0.7); }
+    .button--contrast:focus {
+      outline: 0; }
+    .button--contrast:hover, .button--contrast:active, .button--contrast:focus {
+      background: rgba(255, 255, 255, 0.8); }
+    .button--contrast.button--disabled {
+      opacity: .4;
+      color: rgba(0, 0, 0, 0.87);
+      cursor: default; }
+      .button--contrast.button--disabled:hover, .button--contrast.button--disabled:active, .button--contrast.button--disabled:focus {
+        background: rgba(255, 255, 255, 0.7); }
+      .button--contrast.button--disabled.button--primary {
+        background: rgba(0, 0, 0, 0.26); }
+
+.toggle-button-wrapper {
+  display: inline-block;
+  margin: 4px 0;
+  -webkit-tap-highlight-color: transparent; }
+  .toggle-button-wrapper label {
+    margin: 0; }
+  .toggle-button-wrapper input {
+    display: none; }
+    .toggle-button-wrapper input:checked + label {
+      background: #3987cb;
+      border: none;
+      color: white; }
+
+.toggle-on {
+  -webkit-animation: bounce-in-subtle 750ms linear;
+  -moz-animation: bounce-in-subtle 750ms linear;
+  animation: bounce-in-subtle 750ms linear; }
+  .toggle-on label {
+    font-weight: 700; }
 
 .momentary {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);

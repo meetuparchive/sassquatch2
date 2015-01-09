@@ -1,3 +1,28 @@
+/*doc
+---
+title: Typesetting
+name: typesetting
+category: Core
+---
+TK - notes about UI text vs. body text
+
+```html_example
+<h1 class="text--display">Heading 1 Display</h1>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<p>Body text</p>
+<p class="text--heading">Fake heading</p>
+<p class="text--hint">Hint text</p>
+<p class="text--small">Small text</p>
+<p class="text--caption">Caption text</p>
+```
+*/
+
+
 /*
   Further Reading:
   http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
@@ -26,6 +51,18 @@ h2 {
 	text-transform: uppercase;
 }
 
+
+/*doc
+---
+title: Heading class
+---
+Apply a `.text--heading` class to any element
+to give it the appearance of an h3-h6 element.
+
+```html_example
+<p class="text--heading">It's usually better to use the real heading tag</p>
+```
+*/
 // H3 - H6
 // We're sticking to limited visual hierarchy
 h3, h4, h5, h6,
@@ -42,11 +79,18 @@ h3, h4, h5, h6,
 }
 
 
+/*doc
+---
+title: Display text
+name: displayText
+parent: typesetting
+---
+Display text for header hero elements.
 
-// FANCY DISPLAY TEXT
-// header in the hero element
-// this isn't the "real" header
-// usually a repitition of the H1
+```html_example
+<h1 class="text--display">The hero gotham deserves</h1>
+```
+*/
 .text--display,
 .display {
 	color: $C_textPrimary;
