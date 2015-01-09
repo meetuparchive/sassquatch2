@@ -6,6 +6,9 @@ parent: mixinsPlaceholders
 ---
 */
 
+%_origin--center {
+	@include transform-origin(center center);
+}
 
 
 /*doc
@@ -99,6 +102,7 @@ _original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
 	}
 }
 @mixin animate--bounceInSubtle($time: 750ms) {
+	@extend %_origin--center;
 	@include animation(bounce-in-subtle $time linear);
 }
 
@@ -124,6 +128,7 @@ Infinite 2d rotation; 0-360deg.
 	}
 }
 @mixin animate--spin($time: 0.8s) {
+	@extend %_origin--center;
 	@include animation(spin $time linear);
 	@include animation-iteration-count(infinite);
 }
