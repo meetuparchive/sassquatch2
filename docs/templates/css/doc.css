@@ -37,6 +37,10 @@ pre {
 	overflow: scroll;
 	max-height: 500px;
 }
+main > .codeBlock {
+	padding-bottom: 12px;
+	margin-bottom: 24px;
+}
 
 /* TYPE OVERRIDES */
 main > h1 {
