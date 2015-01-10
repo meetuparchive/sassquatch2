@@ -233,8 +233,7 @@
 // ---------------------------
 // FLEXBOX
 // ---------------------------
-	$flexJustifyMap: (
-		"flexStart": flex-start,
+	$flexJustifyMap: ( // omits flex-start (default prop)
 		"flexEnd": flex-end,
 		"center": center,
 		"spaceBetween": space-between,

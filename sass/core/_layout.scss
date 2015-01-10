@@ -56,17 +56,54 @@ title: Flex row
 name: flexRow
 parent: layout
 ---
+Arranges content in rows using `display: flex`.
+
+The `.flexrow` class is applied to a wrapping element.
+
+Direct children of `.flexrow` are flex children, and require
+either a `.flexrow-item--grow` or `.flexrow-item--shirnk` class.
+
+The flex children in flexrow do not have a `flex-basis` set; a
+basis is not required for most common layout tasks.
+
+_Includes `table-cell` fallback for IE8._
+
+#### Examples:
 
 ```html_example
 <div class="flexrow">
-	<div class="flexrow-item--shrink">Item 1</div>
-	<div class="flexrow-item--grow">Item 2</div>
-	<div class="flexrow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexrow-item--grow flexrow-item--gutterLeft">Item 1</div>
+	<div class="_DOC-SHADE flexrow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexrow-item--grow">Item 4</div>
+</div>
+```
+
+```html_example
+<div class="flexrow">
+	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexrow-item--grow">Item 2</div>
+	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
+</div>
+```
+
+```html_example
+<div class="flexrow flexrow--flexEnd">
+	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 2</div>
+	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 3</div>
+</div>
+```
+
+```html_example
+<div class="flexrow flexrow--spaceBetween flexrow--reverse">
+	<div class="_DOC-SHADE flexrow-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE flexrow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexrow-item--shrink">Item 4</div>
 </div>
 ```
 */
-
-// flexrow parent
 .flexrow {
 	@include display(flex);
 	@include flex-wrap(nowrap);
@@ -75,7 +112,25 @@ parent: layout
 	@include align-items(flex);
 }
 
-// flexrow parent variants
+
+/*doc
+---
+title: flexrow variants
+name: flexrowParent
+parent: flexRow
+---
+
+A class of `.flexrow` is __required__ on the flexrow parent. The
+following classes are optional variants:
+
+Class                       | Description
+--------------------------- | -------------------------------
+`.flexrow--reverse`         | reverses row order
+`.flexrow--flexEnd`         | justifies content to `flex-end`
+`.flexrow--center`          | justifies content to `center`
+`.flexrow--spaceBetween`    | justifies content to `spaceBetween`
+`.flexrow--spaceAround`     | justifies content to `spaceAround`
+*/
 .flexrow--reverse {
 	@include flex-direction(row-reverse);
 }
@@ -85,14 +140,29 @@ parent: layout
 	}
 }
 
-// flexrow item gutter variants
-.flexrow-item--rGutter {
+/*doc
+---
+title: flexrow-item variants
+name: flexrowChild
+parent: flexRow
+---
+
+A class of `.flexrow-item--shirnk` or `.flexrow-item--grow` on
+flexrow children is __required__. The following classes are optional variants:
+
+Class                         | Description
+----------------------------- | -------------------------------
+`.flexrow-item--gutterRight`  | adds `padding-right` to item
+`.flexrow-item--gutterLeft`   | adds `padding-left` to item
+`.flexrow-item--gutterBoth`   | adds `padding-both` sides of item
+*/
+.flexrow-item--gutterRight {
 	padding-right: $space;
 }
-.flexrow-item--lGutter {
+.flexrow-item--gutterLeft {
 	padding-left: $space;
 }
-.flexrow-item--gutters {
+.flexrow-item--gutterBoth {
 	padding: 0 $space;
 }
 
@@ -111,7 +181,8 @@ parent: layout
 	table-layout: auto;
 	width: 100%;
 }
-.lt--IE9 .flexrow-item {
+.lt--IE9 .flexrow-item--shrink,
+.lt--IE9 .flexrow-item--grow {
 	display: table-cell;
 }
 .lt--IE9 .flexrow-item--grow {

@@ -45,6 +45,7 @@ main > .codeBlock {
 /* RENDERED EXAMPLES */
 ._DOC-SHADE {
 	background-color: rgba(220, 192, 255, 0.45);
+	background-clip: content-box;
 	outline: 1px dotted red;
 }
 
