@@ -109,7 +109,7 @@ _Includes `table-cell` fallback for IE8._
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
 	@include justify-content(flex-start);
-	@include align-items(flex);
+	@include align-items(center);
 }
 
 
@@ -130,13 +130,21 @@ Class                       | Description
 `.flexrow--center`          | justifies content to `center`
 `.flexrow--spaceBetween`    | justifies content to `spaceBetween`
 `.flexrow--spaceAround`     | justifies content to `spaceAround`
+`.flexrow--wrapAt[breakpoint]`| allows wrapping at a given breakpoint (Small, Medium, Large)
 */
 .flexrow--reverse {
 	@include flex-direction(row-reverse);
 }
-@each $jName, $jprop in $flexJustifyMap {
+@each $jName, $jprop in $flexJustify-map {
 	.flexrow--#{$jName} {
 		@include justify-content($jprop);
+	}
+}
+@each $bp in (large, medium, small) {
+	@include atMediaDown($bp) {
+		.flexrow--wrapAt#{capitalizeFirstLetter($bp)} {
+			@include flex-wrap(wrap);
+		}
 	}
 }
 

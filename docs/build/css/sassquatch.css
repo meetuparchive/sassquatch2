@@ -2460,15 +2460,15 @@ _Includes `table-cell` fallback for IE8._
   -o-justify-content: flex-start;
   justify-content: flex-start;
   -ms-flex-pack: start;
-  -webkit-box-align: flex;
-  -moz-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -moz-align-items: flex;
-  -ms-align-items: flex;
-  -o-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex; }
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center; }
 
 /*doc
 ---
@@ -2487,6 +2487,7 @@ Class                       | Description
 `.flexrow--center`          | justifies content to `center`
 `.flexrow--spaceBetween`    | justifies content to `spaceBetween`
 `.flexrow--spaceAround`     | justifies content to `spaceAround`
+`.flexrow--wrapAt[breakpoint]`| allows wrapping at a given breakpoint (Small, Medium, Large)
 */
 .flexrow--reverse {
   -webkit-box-orient: horizontal;
@@ -2544,6 +2545,33 @@ Class                       | Description
   justify-content: space-around;
   -ms-flex-pack: center; }
 
+@media only screen and (max-width: 960px) {
+  .flexrow--wrapAtLarge {
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; } }
+@media only screen and (max-width: 640px) {
+  .flexrow--wrapAtMedium {
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; } }
+@media only screen and (max-width: 440px) {
+  .flexrow--wrapAtSmall {
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; } }
 /*doc
 ---
 title: flexrow-item variants

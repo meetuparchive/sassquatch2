@@ -13,6 +13,7 @@
 	$breakpoint-l  : 960px;
 	$breakpoint-xl : 1280px;
 
+	// TODO: normalize
 	$breakpoint-map: (
 		s: $breakpoint-s,
 		m: $breakpoint-m,
@@ -233,7 +234,7 @@
 // ---------------------------
 // FLEXBOX
 // ---------------------------
-	$flexJustifyMap: ( // omits flex-start (default prop)
+	$flexJustify-map: ( // omits flex-start (default prop)
 		"flexEnd": flex-end,
 		"center": center,
 		"spaceBetween": space-between,

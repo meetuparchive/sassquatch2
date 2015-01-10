@@ -21,9 +21,11 @@
 
 <body>
 	<header class="docStripe--inverted inverted">
-		<div class="docBounds">
-			<h1 class="display docBounds">Sassquatch 2</h1>
-			<p class="software-version">v0.0.1</p>
+		<div class="docBounds flexrow flexrow--wrapAtMedium">
+			<h1 class="flexrow-item--grow display">Sassquatch 2</h1>
+			<div class="flexrow-item--shrink">
+				<input style="width: 300px;" class="flexrow-item--shirnk" id="search" type="text" name="searchterm" placeholder="Search" />
+			</div>
 		</div>
 	</header>
 
@@ -446,13 +448,14 @@ use the <code>atMediaDown</code> mixin.</p>
 <!-- lunr.js search index -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/lunr.min.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
 <script type="text/javascript">
 $(function() {
-	var index = lunr(function() {
-		this.field('title', {boost: 10});
-		this.field('breadcrumb');
-		this.ref('path');
-	});
+	window._searchIndex = lunr(function() {
+			this.field('title', {boost: 10});
+			this.field('breadcrumb');
+			this.ref('path');
+		});
 
 	
 		
@@ -460,7 +463,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Alignment",
 					"breadcrumb": "Modifiers > Alignment",
 					"path": "modifiers.html#alignMod"
@@ -470,7 +473,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Animation",
 					"breadcrumb": "Modifiers > Animation",
 					"path": "modifiers.html#animMod"
@@ -480,7 +483,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Borders",
 					"breadcrumb": "Modifiers > Borders",
 					"path": "modifiers.html#borderMod"
@@ -490,7 +493,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Display",
 					"breadcrumb": "Modifiers > Display",
 					"path": "modifiers.html#displayMod"
@@ -500,7 +503,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Float",
 					"breadcrumb": "Modifiers > Float",
 					"path": "modifiers.html#floatMod"
@@ -510,7 +513,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Aspect ratio helper",
 					"breadcrumb": "Modifiers > Aspect ratio helper",
 					"path": "modifiers.html#keepAspect"
@@ -520,7 +523,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Media conditional modifiers",
 					"breadcrumb": "Modifiers > Media conditional modifiers",
 					"path": "modifiers.html#mediaMod"
@@ -530,7 +533,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Media Sizing",
 					"breadcrumb": "Modifiers > Media Sizing",
 					"path": "modifiers.html#sizeMod"
@@ -540,7 +543,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Thumbnails",
 					"breadcrumb": "Modifiers > Thumbnails",
 					"path": "modifiers.html#thumb"
@@ -550,7 +553,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Type wrap/whitespace",
 					"breadcrumb": "Modifiers > Type wrap/whitespace",
 					"path": "modifiers.html#typespaceMod"
@@ -564,7 +567,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Avatar",
 					"breadcrumb": "UI Components > Avatar",
 					"path": "ui_components.html#avatar"
@@ -574,7 +577,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Buttons",
 					"breadcrumb": "UI Components > Buttons",
 					"path": "ui_components.html#buttons"
@@ -584,7 +587,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Toggle Pills",
 					"breadcrumb": "UI Components > Toggle Pills",
 					"path": "ui_components.html#togglePills"
@@ -598,7 +601,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Sass Functions",
 					"breadcrumb": "Sass Utilities > Sass Functions",
 					"path": "sass_utilities.html#functions"
@@ -608,7 +611,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Contrast/brightness utils",
 					"breadcrumb": "Sass Utilities > Contrast/brightness utils",
 					"path": "sass_utilities.html#brightness"
@@ -618,7 +621,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Perceived brightness value",
 					"breadcrumb": "Sass Utilities > Perceived brightness value",
 					"path": "sass_utilities.html#getPerceivedBrightness"
@@ -628,7 +631,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Programmatic contrast text",
 					"breadcrumb": "Sass Utilities > Programmatic contrast text",
 					"path": "sass_utilities.html#getPrimaryTextColor"
@@ -638,7 +641,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "isDark/isLight",
 					"breadcrumb": "Sass Utilities > isDark/isLight",
 					"path": "sass_utilities.html#isDarkisLight"
@@ -648,7 +651,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "String utils",
 					"breadcrumb": "Sass Utilities > String utils",
 					"path": "sass_utilities.html#string"
@@ -658,7 +661,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "capitalizeFirstLetter",
 					"breadcrumb": "Sass Utilities > capitalizeFirstLetter",
 					"path": "sass_utilities.html#capitalizeFirstLetter"
@@ -668,7 +671,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Sass Mixins & Placeholders",
 					"breadcrumb": "Sass Utilities > Sass Mixins & Placeholders",
 					"path": "sass_utilities.html#mixinsPlaceholders"
@@ -678,7 +681,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Vertical-align children",
 					"breadcrumb": "Sass Utilities > Vertical-align children",
 					"path": "sass_utilities.html#align"
@@ -688,7 +691,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Animation",
 					"breadcrumb": "Sass Utilities > Animation",
 					"path": "sass_utilities.html#animation"
@@ -698,7 +701,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Subtle bounce-in",
 					"breadcrumb": "Sass Utilities > Subtle bounce-in",
 					"path": "sass_utilities.html#bounce-in-subtle"
@@ -708,7 +711,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Infinite spin",
 					"breadcrumb": "Sass Utilities > Infinite spin",
 					"path": "sass_utilities.html#spin"
@@ -718,7 +721,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Background Utilities",
 					"breadcrumb": "Sass Utilities > Background Utilities",
 					"path": "sass_utilities.html#background"
@@ -728,7 +731,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Background clip mixin",
 					"breadcrumb": "Sass Utilities > Background clip mixin",
 					"path": "sass_utilities.html#backgroundClip"
@@ -738,7 +741,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Image fill placeholder",
 					"breadcrumb": "Sass Utilities > Image fill placeholder",
 					"path": "sass_utilities.html#imgFill"
@@ -748,7 +751,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Media Query Breakpoints",
 					"breadcrumb": "Sass Utilities > Media Query Breakpoints",
 					"path": "sass_utilities.html#breakpoints"
@@ -758,7 +761,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Button utilities",
 					"breadcrumb": "Sass Utilities > Button utilities",
 					"path": "sass_utilities.html#button"
@@ -768,7 +771,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Button color mixin",
 					"breadcrumb": "Sass Utilities > Button color mixin",
 					"path": "sass_utilities.html#buttonColor"
@@ -778,7 +781,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Button personality placeholder",
 					"breadcrumb": "Sass Utilities > Button personality placeholder",
 					"path": "sass_utilities.html#buttonPersonality"
@@ -788,7 +791,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Display utils",
 					"breadcrumb": "Sass Utilities > Display utils",
 					"path": "sass_utilities.html#display"
@@ -798,7 +801,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Pseudo-element display mixin",
 					"breadcrumb": "Sass Utilities > Pseudo-element display mixin",
 					"path": "sass_utilities.html#pseudoDisplay"
@@ -808,7 +811,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Float utils",
 					"breadcrumb": "Sass Utilities > Float utils",
 					"path": "sass_utilities.html#float"
@@ -818,7 +821,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Clearfix placeholder",
 					"breadcrumb": "Sass Utilities > Clearfix placeholder",
 					"path": "sass_utilities.html#clearfix"
@@ -828,7 +831,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Shadow utilities",
 					"breadcrumb": "Sass Utilities > Shadow utilities",
 					"path": "sass_utilities.html#shadow"
@@ -838,7 +841,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Shadow placeholder",
 					"breadcrumb": "Sass Utilities > Shadow placeholder",
 					"path": "sass_utilities.html#shadowPlaceholder"
@@ -848,7 +851,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Shapes",
 					"breadcrumb": "Sass Utilities > Shapes",
 					"path": "sass_utilities.html#shape"
@@ -858,7 +861,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Circle mixin",
 					"breadcrumb": "Sass Utilities > Circle mixin",
 					"path": "sass_utilities.html#circleMixin"
@@ -868,7 +871,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Triangle mixin",
 					"breadcrumb": "Sass Utilities > Triangle mixin",
 					"path": "sass_utilities.html#triangleMixin"
@@ -878,7 +881,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Text utils",
 					"breadcrumb": "Sass Utilities > Text utils",
 					"path": "sass_utilities.html#text"
@@ -888,7 +891,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Text protection shim",
 					"breadcrumb": "Sass Utilities > Text protection shim",
 					"path": "sass_utilities.html#textProtection"
@@ -902,7 +905,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Layout",
 					"breadcrumb": "Core > Layout",
 					"path": "core.html#layout"
@@ -912,7 +915,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Doc bounds",
 					"breadcrumb": "Core > Doc bounds",
 					"path": "core.html#docBounds"
@@ -922,7 +925,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Doc stripe",
 					"breadcrumb": "Core > Doc stripe",
 					"path": "core.html#docStripe"
@@ -932,7 +935,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Flex row",
 					"breadcrumb": "Core > Flex row",
 					"path": "core.html#flexRow"
@@ -942,7 +945,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "flexrow-item variants",
 					"breadcrumb": "Core > flexrow-item variants",
 					"path": "core.html#flexrowChild"
@@ -952,7 +955,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "flexrow variants",
 					"breadcrumb": "Core > flexrow variants",
 					"path": "core.html#flexrowParent"
@@ -962,7 +965,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Typesetting",
 					"breadcrumb": "Core > Typesetting",
 					"path": "core.html#typesetting"
@@ -972,7 +975,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Body/primary text",
 					"breadcrumb": "Core > Body/primary text",
 					"path": "core.html#bodyText"
@@ -982,7 +985,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Caption text",
 					"breadcrumb": "Core > Caption text",
 					"path": "core.html#captionText"
@@ -992,7 +995,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Display text",
 					"breadcrumb": "Core > Display text",
 					"path": "core.html#displayText"
@@ -1002,7 +1005,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Hint text",
 					"breadcrumb": "Core > Hint text",
 					"path": "core.html#hintText"
@@ -1012,7 +1015,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Inverted text",
 					"breadcrumb": "Core > Inverted text",
 					"path": "core.html#invertedText"
@@ -1022,7 +1025,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Running text",
 					"breadcrumb": "Core > Running text",
 					"path": "core.html#runningText"
@@ -1032,7 +1035,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Link color",
 					"breadcrumb": "Core > Link color",
 					"path": "core.html#linkColor"
@@ -1042,7 +1045,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Secondary text",
 					"breadcrumb": "Core > Secondary text",
 					"path": "core.html#secondaryText"
@@ -1052,7 +1055,7 @@ $(function() {
 				
 				
 
-				index.add({
+				_searchIndex.add({
 					"title": "Small text",
 					"breadcrumb": "Core > Small text",
 					"path": "core.html#smallText"
@@ -1062,7 +1065,6 @@ $(function() {
 		
 	
 
-	window.HOTDOG = index;
 });
 </script>
 
