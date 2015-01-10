@@ -228,3 +228,15 @@
 // BORDER
 // ---------------------------
 	$border-standard: 1px solid $C_border;
+
+
+// ---------------------------
+// FLEXBOX
+// ---------------------------
+	$flexJustifyMap: (
+		"flexStart": flex-start,
+		"flexEnd": flex-end,
+		"center": center,
+		"spaceBetween": space-between,
+		"spaceAround": space-around
+	);

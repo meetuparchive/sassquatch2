@@ -50,19 +50,68 @@ TK
 	width: 100%;
 }
 
-
 /*doc
 ---
-title: Doc box
-name: docBox
+title: Flex row
+name: flexRow
 parent: layout
 ---
-TK
+
+```html_example
+<div class="flexrow">
+	<div class="flexrow-item--shrink">Flex row item</div>
+	<div class="flexrow-item--grow">Flex row item</div>
+	<div class="flexrow-item--shrink">Flex row item</div>
+</div>
+```
+
 */
-.docBox {
- 	@include background-clip(padding);
-	border-radius: $defaultRadius;
-	border: 1px solid $C_border;
-	background-color: #fff;
-	margin-bottom: 0;
+
+// flexrow parent
+@include addPlaceholder('flexrow') {
+	@include display(flex);
+	@include flex-wrap(nowrap);
+	@include flex-direction(row);
+	@include justify-content(flex-start);
+	@include align-items(flex);
+}
+
+// flexrow parent variants
+@each $jName, $jprop in $_flexJustifyMap {
+	@include addPlaceholder('flexrow--'#{$jName}) {
+		@include justify-content($jprop);
+	}
+}
+
+// flexrow item gutter variants
+@include addPlaceholder('flexrow-item--rGutter') {
+	padding-left: $space;
+}
+@include addPlaceholder('flexrow-item--lGutter') {
+	padding-left: $space;
+}
+@include addPlaceholder('flexrow-item--gutters') {
+	padding: 0 $space;
+}
+
+// flexrow item shirnk/grow variants
+@include addPlaceholder('flexrow-item--shrink') {
+	@include flex-shrink(1);
+}
+@include addPlaceholder('flexrow-item--grow') {
+	@include flex-grow(1);
+}
+
+// LT IE9 fallback
+.lt--IE9 .flexrow {
+	@include box-sizing(border-box);
+	display: table;
+	table-layout: auto;
+	width: 100%;
+}
+.lt--IE9 .flexrow-item {
+	display: table-cell;
+}
+.lt--IE9 .flexrow-item--grow {
+	width: 100%;
 }

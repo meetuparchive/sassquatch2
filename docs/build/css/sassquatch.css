@@ -2377,23 +2377,20 @@ TK
 
 /*doc
 ---
-title: Doc box
-name: docBox
+title: Flex row
+name: flexRow
 parent: layout
 ---
-TK
-*/
-.docBox {
-  -webkit-background-clip: padding;
-  -moz-background-clip: padding;
-  -ms-background-clip: padding;
-  -o-background-clip: padding;
-  background-clip: padding;
-  border-radius: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #fff;
-  margin-bottom: 0; }
 
+```html_example
+<div class="fr">
+	<div style="background-color: pink; outline: 1px dotted red;" class="fr-item--shrink">Flex row item</div>
+	<div style="background-color: pink; outline: 1px dotted red;" class="fr-item--grow">Flex row item</div>
+	<div style="background-color: pink; outline: 1px dotted red;" class="fr-item--shrink">Flex row item</div>
+</div>
+```
+
+*/
 /*doc
 ---
 title: Avatar
