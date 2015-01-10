@@ -2383,14 +2383,145 @@ parent: layout
 ---
 
 ```html_example
-<div class="fr">
-	<div style="background-color: pink; outline: 1px dotted red;" class="fr-item--shrink">Flex row item</div>
-	<div style="background-color: pink; outline: 1px dotted red;" class="fr-item--grow">Flex row item</div>
-	<div style="background-color: pink; outline: 1px dotted red;" class="fr-item--shrink">Flex row item</div>
+<div class="flexrow">
+	<div class="flexrow-item--shrink">Flex row item</div>
+	<div class="flexrow-item--grow">Flex row item</div>
+	<div class="flexrow-item--shrink">Flex row item</div>
 </div>
 ```
 
 */
+.flexrow {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  -moz-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -moz-align-items: flex;
+  -ms-align-items: flex;
+  -o-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex; }
+
+.flexrow--flexStart {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start; }
+
+.flexrow--flexEnd {
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  -o-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end; }
+
+.flexrow--center {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
+
+.flexrow--spaceBetween {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify; }
+
+.flexrow--spaceAround {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: center; }
+
+.flexrow-item--rGutter {
+  padding-right: 16px; }
+
+.flexrow-item--lGutter {
+  padding-left: 16px; }
+
+.flexrow-item--gutters {
+  padding: 0 16px; }
+
+.flexrow-item--shrink {
+  -webkit-flex-shrink: 1;
+  -moz-flex-shrink: 1;
+  flex-shrink: 1;
+  -ms-flex-negative: 1; }
+
+.flexrow-item--grow {
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1; }
+
+.lt--IE9 .flexrow {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: table;
+  table-layout: auto;
+  width: 100%; }
+
+.lt--IE9 .flexrow-item {
+  display: table-cell; }
+
+.lt--IE9 .flexrow-item--grow {
+  width: 100%; }
+
 /*doc
 ---
 title: Avatar

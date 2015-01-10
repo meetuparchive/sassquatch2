@@ -68,7 +68,7 @@ parent: layout
 */
 
 // flexrow parent
-@include addPlaceholder('flexrow') {
+.flexrow {
 	@include display(flex);
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
@@ -77,28 +77,28 @@ parent: layout
 }
 
 // flexrow parent variants
-@each $jName, $jprop in $_flexJustifyMap {
-	@include addPlaceholder('flexrow--'#{$jName}) {
+@each $jName, $jprop in $flexJustifyMap {
+	.flexrow--#{$jName} {
 		@include justify-content($jprop);
 	}
 }
 
 // flexrow item gutter variants
-@include addPlaceholder('flexrow-item--rGutter') {
+.flexrow-item--rGutter {
+	padding-right: $space;
+}
+.flexrow-item--lGutter {
 	padding-left: $space;
 }
-@include addPlaceholder('flexrow-item--lGutter') {
-	padding-left: $space;
-}
-@include addPlaceholder('flexrow-item--gutters') {
+.flexrow-item--gutters {
 	padding: 0 $space;
 }
 
 // flexrow item shirnk/grow variants
-@include addPlaceholder('flexrow-item--shrink') {
+.flexrow-item--shrink {
 	@include flex-shrink(1);
 }
-@include addPlaceholder('flexrow-item--grow') {
+.flexrow-item--grow {
 	@include flex-grow(1);
 }
 
