@@ -2384,12 +2384,11 @@ parent: layout
 
 ```html_example
 <div class="flexrow">
-	<div class="flexrow-item--shrink">Flex row item</div>
-	<div class="flexrow-item--grow">Flex row item</div>
-	<div class="flexrow-item--shrink">Flex row item</div>
+	<div class="flexrow-item--shrink">Item 1</div>
+	<div class="flexrow-item--grow">Item 2</div>
+	<div class="flexrow-item--shrink">Item 3</div>
 </div>
 ```
-
 */
 .flexrow {
   display: -webkit-box;
@@ -2431,6 +2430,18 @@ parent: layout
   -o-align-items: flex;
   align-items: flex;
   -ms-flex-align: flex; }
+
+.flexrow--reverse {
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -moz-box-direction: reverse;
+  box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -moz-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse; }
 
 .flexrow--flexStart {
   -webkit-box-pack: start;

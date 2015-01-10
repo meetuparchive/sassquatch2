@@ -59,12 +59,11 @@ parent: layout
 
 ```html_example
 <div class="flexrow">
-	<div class="flexrow-item--shrink">Flex row item</div>
-	<div class="flexrow-item--grow">Flex row item</div>
-	<div class="flexrow-item--shrink">Flex row item</div>
+	<div class="flexrow-item--shrink">Item 1</div>
+	<div class="flexrow-item--grow">Item 2</div>
+	<div class="flexrow-item--shrink">Item 3</div>
 </div>
 ```
-
 */
 
 // flexrow parent
@@ -77,6 +76,9 @@ parent: layout
 }
 
 // flexrow parent variants
+.flexrow--reverse {
+	@include flex-direction(row-reverse);
+}
 @each $jName, $jprop in $flexJustifyMap {
 	.flexrow--#{$jName} {
 		@include justify-content($jprop);
