@@ -1627,7 +1627,7 @@ body {
     border-top: none; }
   .inverted .docSection {
     border-top-color: rgba(255, 255, 255, 0.2); }
-  .docBounds > .docSection {
+  .contentBounds > .docSection {
     padding: 16px 0 0 0; }
 
 .hero,
@@ -1782,17 +1782,17 @@ body {
   top: 0;
   width: 100%;
   z-index: 1; }
-  .viewHead .docBounds--standard {
+  .viewHead .contentBounds--standard {
     display: block; }
-  .viewHead .docBounds--search {
+  .viewHead .contentBounds--search {
     display: none; }
-  .viewHead.viewHead--search .docBounds--standard {
+  .viewHead.viewHead--search .contentBounds--standard {
     display: none; }
-  .viewHead.viewHead--search .docBounds--search {
+  .viewHead.viewHead--search .contentBounds--search {
     display: block; }
-  .viewHead .docBounds {
+  .viewHead .contentBounds {
     padding: 0 16px; }
-  .viewHead .docBounds, .viewHead .ffbox {
+  .viewHead .contentBounds, .viewHead .ffbox {
     height: 100%; }
   .viewHead h1 {
     white-space: nowrap;
@@ -1866,7 +1866,7 @@ body {
       opacity: 0; }
 
 /* Items around forms */
-.docBounds--form {
+.contentBounds--form {
   max-width: 550px; }
 
 .chunkList--form > li {

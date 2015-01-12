@@ -17,7 +17,7 @@ body { // TODO: reight place for this?
 	.inverted & {
 		border-top-color: $C_borderInverted;
 	}
-	.docBounds > & { // don't pad sides when directly inside a docBounds
+	.contentBounds > & { // don't pad sides when directly inside a contentBounds
 		padding: $space 0 0 0;
 	}
 }
@@ -192,18 +192,18 @@ body { // TODO: reight place for this?
 	z-index: map-get($zindex-map, "main-header");
 
 	// which search mode
-	.docBounds--standard{ display: block; }
-	.docBounds--search{ display: none; }
+	.contentBounds--standard{ display: block; }
+	.contentBounds--search{ display: none; }
 	&.viewHead--search{
-		.docBounds--standard{ display: none; }
-		.docBounds--search{ display: block; }
+		.contentBounds--standard{ display: none; }
+		.contentBounds--search{ display: block; }
 	}
 
-	.docBounds{
+	.contentBounds{
 		padding: 0 $space;
 	}
 
-	.docBounds, .ffbox{
+	.contentBounds, .ffbox{
 		height: 100%; // for vertical-alignment
 	}
 

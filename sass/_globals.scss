@@ -158,11 +158,7 @@
 // BOUNDS
 // ---------------------------
 	$measure      : 35em;
-	$docBounds    : 1100px;
-	$narrowBounds : $measure/1em * 16px; // for things like forms
-
-	$measure      : 35em;
-	$docBounds    : 1100px;
+	$contentBounds    : 1100px;
 	$narrowBounds : ($measure / 1em) * $font-size; // for things like forms
 
 

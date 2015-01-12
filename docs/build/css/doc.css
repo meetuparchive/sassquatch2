@@ -139,7 +139,7 @@ main > table td:first-child {
 }
 
 /* HEADER */
-body > header .docBounds {
+body > header .contentBounds {
 	position: relative;
 }
 .software-version {
