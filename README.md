@@ -17,8 +17,5 @@ File or [Directory]        | Description
 [`util/`]                  | Contains helper paritals organized by function (ie. `_breakpoints.scss`)
 [`util/functions/`]        | Contains only sass function partials, organized by function (ie. `_stringUtils.scss`)
 [`core/`]                  | Contains core low level styling partials (ie. `_layout.scss`, `_tables.scss`, etc)
-[`components/`]            | Contains UI component partials (ie. `_tabView.scss`)
-
-#### TODO
-1. pull `master` branch into the foundation-scratch repo via bower
-2. refactor, refactor, refactor
+[`ui-components/`]         | Contains UI component partials (ie. `_tabView.scss`)
+[`modifiers/`]             | Contains modifier classes (ie. `_align.scss`)
