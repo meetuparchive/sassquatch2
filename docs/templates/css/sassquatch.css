@@ -806,7 +806,7 @@ _[ie. avatars][avatar]_
 */
 .avatar--person,
 .avatar, .photo-card--photo,
-.photoCard--photo {
+.photoCard--photo, .imgFill {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1614,21 +1614,6 @@ Display text for header hero elements.
 
 body {
   position: relative; }
-
-.docContent {
-  padding: 16px; }
-
-.docSection {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid transparent;
-  /* avoids margin collapse */
-  padding: 16px 16px 0 16px; }
-  .docSection:first-child {
-    border-top: none; }
-  .inverted .docSection {
-    border-top-color: rgba(255, 255, 255, 0.2); }
-  .contentBounds > .docSection {
-    padding: 16px 0 0 0; }
 
 .hero,
 .docStripe.hero {
@@ -3230,6 +3215,27 @@ Class              | Description
   display: block;
   padding-top: 50%; }
 
+/*doc
+---
+title: Background
+name: backgroundMod
+category: Modifiers
+---
+*/
+/*doc
+---
+title: Image Fill
+name: imgFillMod
+parent: backgroundMod
+---
+Sets background properties that center
+background image, set size to 'cover',
+and overflow hidden.
+
+Extends %imgFill.
+
+EXAMPLE TK
+*/
 /*doc
 ---
 title: Borders
