@@ -212,7 +212,7 @@
 	$btn-border: 1px solid !default;
 
 	// button variants e.g.: <button class="button button--primary"></button>
-	$btn-variants: (
+	$btn-color-map: (
 		default: transparent,
 		primary: $C_link,
 		contrast: $C_textSecondaryInverted

@@ -24,7 +24,7 @@ Full docs TK
   border-radius: 50px;
   border: none;
   box-sizing: border-box;
-  color: map-get($btn-variants, "primary");
+  color: map-get($btn-color-map, "primary");
   cursor: pointer;
   display: inline-block;
   font-size: $font-size;
@@ -33,71 +33,64 @@ Full docs TK
   padding: $space-half $space;
   text-align: center;
   transition: background .15s;
+}
 
-  i {
-    margin-right: $space-half;
-  }
+.button--bordered {
+	@include buttonColor(map-get($btn-color-map, "primary"), $btn-border);
+	font-weight: $W_normal;
 
-  //
-  // Kinds of buttons
-  // TODO: could we just use the $btn-variants list to generate this?
-  &--bordered {
-    @include buttonColor(map-get($btn-variants, "primary"), $btn-border);
-    font-weight: $W_normal;
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparentize(map-get($btn-color-map, "primary"), .8);
+	}
 
-    &:hover,
-    &:active,
-    &:focus {
-      background: transparentize(map-get($btn-variants, "primary"), .8);
-    }
+}
 
-  }
+.button--contrast {
+	color: $C_textPrimary;
+	font-weight: $W_bold;
+}
 
-  &--contrast {
-    color: $C_textPrimary;
-    font-weight: $W_bold;
-  }
+.button--iconButton {
+	font-weight: $W_normal;
+	padding: 0;
+	&:hover,
+	&:focus,
+	&:active {
+		background: transparent;
+		text-decoration: none;
+	}
+}
+.button-icon {
+	margin-right: $space-half;
+	border: 1px solid map-get($btn-color-map, "primary");
+	border-radius: 999px;
+	color: map-get($btn-color-map, "primary");
+	display: block;
+	font-size: $media-xs;
+	height: $media-xs;
+	margin: 0 auto;
+	padding: $space-half;
+	width: $media-xs;
+}
 
-  //
-  // Icon button - icon in a circle with label below
-  //
-  &--iconButton {
-    font-weight: $W_normal;
-    padding: 0;
-    i {
-      border: 1px solid map-get($btn-variants, "primary");
-      border-radius: 999px;
-      color: map-get($btn-variants, "primary");
-      display: block;
-      font-size: $media-xs;
-      height: $media-xs;
-      margin: 0 auto;
-      padding: $space-half;
-      width: $media-xs;
-    }
-    &:hover, &:focus, &:active {
-      background: transparent;
-      text-decoration: none;
-    }
-  }
+//
+// Button size modifiers
+//
+.button--small {
+	font-size: $font-size-small;
+	padding: $space-quarter $space-half;
+}
 
-  //
-  // Button size modifiers
-  //
-  &--small {
-    font-size: $font-size-small;
-    padding: $space-quarter $space-half;
-  }
+.button--fullWidth {
+	display: block;
+	margin: $space-half 0;
+	width: 100%;
+}
 
-  &--full-width {
-    display: block;
-    margin: $space-half 0;
-    width: 100%;
-  }
-
-  @each $key, $value in $btn-variants {
-    &--#{$key} {
-      @include buttonColor($value);
-    }
-  }
+@each $modName, $color in $btn-color-map {
+	@include _modifier('button', $modName) {
+		@include buttonColor($color);
+	}
 }
