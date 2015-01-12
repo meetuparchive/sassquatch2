@@ -2,25 +2,6 @@ body { // TODO: reight place for this?
 	position: relative;
 }
 
-// TODO: docContent or docSection?
-.docContent {
-	padding: $space;
-}
-
-.docSection {
-	border-top: 1px solid $C_border;
-	border-bottom: 1px solid transparent; /* avoids margin collapse */
-	padding: $space $space 0 $space;
-	&:first-child{
-		border-top: none;
-	}
-	.inverted & {
-		border-top-color: $C_borderInverted;
-	}
-	.contentBounds > & { // don't pad sides when directly inside a contentBounds
-		padding: $space 0 0 0;
-	}
-}
 
 //
 // HEADER IMAGE
