@@ -2641,7 +2641,23 @@ title: Avatar
 name: avatar
 category: UI Components
 ---
-TODO: doc this
+
+```html_example
+<ul class="inlineblockList">
+	<li>
+		<a href="#" class="avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--big" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);"></a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--fb-friend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);"></a>
+	</li>
+</ul>
+```
 */
 .avatar--person,
 .avatar {
@@ -2779,6 +2795,19 @@ category: UI Components
 </div>
 ```
 */
+.toggle-button-wrapper {
+  display: inline-block;
+  margin: 4px 0;
+  -webkit-tap-highlight-color: transparent; }
+  .toggle-button-wrapper label {
+    margin: 0; }
+  .toggle-button-wrapper input {
+    display: none; }
+    .toggle-button-wrapper input:checked + label {
+      background: #3987cb;
+      border: none;
+      color: white; }
+
 input.toggle-pill {
   display: none; }
   input.toggle-pill + label {
@@ -2790,6 +2819,13 @@ input.toggle-pill {
   input.toggle-pill:checked + label {
     background: #3987cb;
     color: white; }
+
+.toggle-on {
+  -webkit-animation: bounce-in-subtle 750ms linear;
+  -moz-animation: bounce-in-subtle 750ms linear;
+  animation: bounce-in-subtle 750ms linear; }
+  .toggle-on label {
+    font-weight: 700; }
 
 /*doc
 ---
@@ -2926,26 +2962,6 @@ Full docs TK
         background: rgba(255, 255, 255, 0.7); }
       .button--contrast.button--disabled.button--primary {
         background: rgba(0, 0, 0, 0.26); }
-
-.toggle-button-wrapper {
-  display: inline-block;
-  margin: 4px 0;
-  -webkit-tap-highlight-color: transparent; }
-  .toggle-button-wrapper label {
-    margin: 0; }
-  .toggle-button-wrapper input {
-    display: none; }
-    .toggle-button-wrapper input:checked + label {
-      background: #3987cb;
-      border: none;
-      color: white; }
-
-.toggle-on {
-  -webkit-animation: bounce-in-subtle 750ms linear;
-  -moz-animation: bounce-in-subtle 750ms linear;
-  animation: bounce-in-subtle 750ms linear; }
-  .toggle-on label {
-    font-weight: 700; }
 
 .momentary {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
