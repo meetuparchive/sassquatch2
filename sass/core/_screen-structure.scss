@@ -173,18 +173,18 @@ body { // TODO: reight place for this?
 	z-index: map-get($zindex-map, "main-header");
 
 	// which search mode
-	.contentBounds--standard{ display: block; }
-	.contentBounds--search{ display: none; }
+	.bounds--standard{ display: block; }
+	.bounds--search{ display: none; }
 	&.viewHead--search{
-		.contentBounds--standard{ display: none; }
-		.contentBounds--search{ display: block; }
+		.bounds--standard{ display: none; }
+		.bounds--search{ display: block; }
 	}
 
-	.contentBounds{
+	.bounds{
 		padding: 0 $space;
 	}
 
-	.contentBounds, .ffbox{
+	.bounds, .ffbox{
 		height: 100%; // for vertical-alignment
 	}
 

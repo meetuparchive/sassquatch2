@@ -19,23 +19,23 @@ parent: layout
 A `.stipe` class should be applied to `<section>` elements
 to visually divide the page with stripes of color.
 
-To align content within a stripe, use [`.contentBounds`](contentBounds).
+To align content within a stripe, use `.bounds`.
 
 ```html_example
 <section class="stripe">
-	<div class="contentBounds">
+	<div class="bounds">
 		<p>... default stripe ...</p>
 	</div>
 </section>
 
 <section class="stripe--inverted inverted">
-	<div class="contentBounds">
+	<div class="bounds">
 		<p>... inverted stripe, using `inverted` class to set text colors  ...</p>
 	</div>
 </section>
 
 <section class="stripe--collection">
-	<div class="contentBounds">
+	<div class="bounds">
 		<p>... collection variant of stripe, used to contain collections of cards </p>
 	</div>
 </section>
@@ -61,8 +61,8 @@ To align content within a stripe, use [`.contentBounds`](contentBounds).
 
 /*doc
 ---
-title: Content bounds
-name: contentBounds
+title: Bounds
+name: bounds
 parent: layout
 ---
 Used as a non-visual content container that manages content measure,
@@ -73,29 +73,29 @@ padding, and sets a max-width.
 
 ```html_example
 <section class="stripe">
-	<p>This is just a paragraph inside a stripe. There's no contentBounds element to center and set the measure of this text.</p>
+	<p>This is just a paragraph inside a stripe. There's no bounds element to center and set the measure of this text.</p>
 </section>
 
 <section class="stripe">
-	<div class="contentBounds">
-		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
+	<div class="bounds">
+		<p>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
 	</div>
 </section>
 
 <section class="stripe">
-	<div class="contentBounds _DOC-SHADE">
+	<div class="bounds _DOC-SHADE">
 		<p><strong>Previous example, shaded to show detail</strong></p>
-		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
+		<p>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
 	</div>
 </section>
 ```
 */
-.contentBounds {
+.bounds {
 	@extend %clearfix;
 	box-sizing: border-box;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: $contentBounds;
+	max-width: $bounds;
 	padding: $space;
 	width: 100%;
 }

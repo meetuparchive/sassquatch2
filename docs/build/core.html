@@ -20,14 +20,14 @@
 </head>
 
 <body>
-	<header class="docStripe--inverted inverted">
-		<div class="contentBounds">
-			<h1 class="display contentBounds">Sassquatch 2</h1>
+	<header class="stripe--inverted inverted">
+		<div class="bounds">
+			<h1 class="display">Sassquatch 2</h1>
 			<p class="software-version">v0.0.1</p>
 		</div>
 	</header>
 
-	<section id="hologramBody" class="contentBounds">
+	<section id="hologramBody" class="bounds">
 		<nav>
 			<ul>
 				
@@ -152,7 +152,7 @@
 <p>TK
 TODO: link to separate layout visual example page</p>
 
-<h2 id="contentBounds">Content bounds</h2>
+<h2 id="bounds">Bounds</h2>
 
 <p>Used as a non-visual content container that manages content measure,
  Similar to <a href="http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar">sassquatch 1 <code>docBounds</code></a>.</p>
@@ -160,35 +160,35 @@ TODO: link to separate layout visual example page</p>
 <p>Centers children with auto margin, clears floats, applies
 padding, and sets a max-width.</p>
 <div class="codeExample"><div class="exampleOutput"><section class="stripe">
-    <p>This is just a paragraph inside a stripe. There's no contentBounds element to center and set the measure of this text.</p>
+    <p>This is just a paragraph inside a stripe. There's no bounds element to center and set the measure of this text.</p>
 </section>
 
 <section class="stripe">
-    <div class="contentBounds">
-        <p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
+    <div class="bounds">
+        <p>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
     </div>
 </section>
 
 <section class="stripe">
-    <div class="contentBounds _DOC-SHADE">
+    <div class="bounds _DOC-SHADE">
         <p><strong>Previous example, shaded to show detail</strong></p>
-        <p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
+        <p>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
     </div>
 </section>
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>This is just a paragraph inside a stripe. There's no contentBounds element to center and set the measure of this text.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is just a paragraph inside a stripe. There's no bounds element to center and set the measure of this text.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 
 <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 
 <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds _DOC-SHADE"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds _DOC-SHADE"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;&lt;strong&gt;</span>Previous example, shaded to show detail<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
-        <span class="nt">&lt;p&gt;</span>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </pre></div></div></div>
@@ -315,38 +315,38 @@ following classes are optional variants:</p>
 <p>A <code>.stipe</code> class should be applied to <code>&lt;section&gt;</code> elements
 to visually divide the page with stripes of color.</p>
 
-<p>To align content within a stripe, use <a href="contentBounds"><code>.contentBounds</code></a>.</p>
+<p>To align content within a stripe, use <code>.bounds</code>.</p>
 <div class="codeExample"><div class="exampleOutput"><section class="stripe">
-    <div class="contentBounds">
+    <div class="bounds">
         <p>... default stripe ...</p>
     </div>
 </section>
 
 <section class="stripe--inverted inverted">
-    <div class="contentBounds">
+    <div class="bounds">
         <p>... inverted stripe, using `inverted` class to set text colors  ...</p>
     </div>
 </section>
 
 <section class="stripe--collection">
-    <div class="contentBounds">
+    <div class="bounds">
         <p>... collection variant of stripe, used to contain collections of cards </p>
     </div>
 </section>
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>... default stripe ...<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 
 <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--inverted inverted"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>... inverted stripe, using `inverted` class to set text colors  ...<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 
 <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--collection"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>... collection variant of stripe, used to contain collections of cards <span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
@@ -944,9 +944,9 @@ $(function() {
 				
 
 				index.add({
-					"title": "Content bounds",
-					"breadcrumb": "Core > Content bounds",
-					"path": "core.html#contentBounds"
+					"title": "Bounds",
+					"breadcrumb": "Core > Bounds",
+					"path": "core.html#bounds"
 				});
 
 			
