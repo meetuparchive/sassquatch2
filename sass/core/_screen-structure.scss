@@ -7,7 +7,7 @@ body { // TODO: reight place for this?
 // HEADER IMAGE
 //
 .hero,
-.docStripe.hero {
+.stripe.hero {
 	background-color: $C_accent;
 }
 
@@ -149,7 +149,7 @@ body { // TODO: reight place for this?
 }
 
 .viewBody {
-  .docStripe:first-child {
+  .stripe:first-child {
 	padding-top: $block;
   }
 }

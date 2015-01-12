@@ -1595,17 +1595,17 @@ Display text for header hero elements.
     background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
     background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
 
-.docStripe--collection .hscroll-wrap-wrap:before {
+.stripe--collection .hscroll-wrap-wrap:before {
   background-image: -webkit-linear-gradient( left , #F3F6F9, rgba(243, 246, 249, 0));
   background-image: linear-gradient(to right, #F3F6F9, rgba(243, 246, 249, 0)); }
-.docStripe--collection .hscroll-wrap-wrap:after {
+.stripe--collection .hscroll-wrap-wrap:after {
   background-image: -webkit-linear-gradient( right , #F3F6F9, rgba(243, 246, 249, 0));
   background-image: linear-gradient(to left, #F3F6F9, rgba(243, 246, 249, 0)); }
 
-.docStripe--inverted .hscroll-wrap-wrap:before {
+.stripe--inverted .hscroll-wrap-wrap:before {
   background-image: -webkit-linear-gradient( left , #353E48, rgba(53, 62, 72, 0));
   background-image: linear-gradient(to right, #353E48, rgba(53, 62, 72, 0)); }
-.docStripe--inverted .hscroll-wrap-wrap:after {
+.stripe--inverted .hscroll-wrap-wrap:after {
   background-image: -webkit-linear-gradient( right , #353E48, rgba(53, 62, 72, 0));
   background-image: linear-gradient(to left, #353E48, rgba(53, 62, 72, 0)); }
 
@@ -1616,7 +1616,7 @@ body {
   position: relative; }
 
 .hero,
-.docStripe.hero {
+.stripe.hero {
   background-color: #d55741; }
 
 .hero-photo {
@@ -1752,7 +1752,7 @@ body {
           -o-transform: translateY(100vh);
           transform: translateY(100vh); } }
 
-.viewBody .docStripe:first-child {
+.viewBody .stripe:first-child {
   padding-top: 48px; }
 
 .viewHead {
@@ -2328,45 +2328,45 @@ TODO: link to separate layout visual example page
 */
 /*doc
 ---
-title: Doc stripe
-name: docStripe
+title: Stripe
+name: stripe
 parent: layout
 ---
-A `.docStripe` class should be applied to `<section>` elements
+A `.stipe` class should be applied to `<section>` elements
 to visually divide the page with stripes of color.
 
 To align content within a stripe, use [`.contentBounds`](contentBounds).
 
 ```html_example
-<section class="docStripe">
+<section class="stripe">
 	<div class="contentBounds">
 		<p>... default stripe ...</p>
 	</div>
 </section>
 
-<section class="docStripe--inverted inverted">
+<section class="stripe--inverted inverted">
 	<div class="contentBounds">
 		<p>... inverted stripe, using `inverted` class to set text colors  ...</p>
 	</div>
 </section>
 
-<section class="docStripe--collection">
+<section class="stripe--collection">
 	<div class="contentBounds">
-		<p>... collection variant of docStripe, used to contain collections of cards </p>
+		<p>... collection variant of stripe, used to contain collections of cards </p>
 	</div>
 </section>
 ```
 
 */
-.docStripe {
+.stripe {
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   background-color: #fff; }
 
-.docStripe--collection {
+.stripe--collection {
   background: #F3F6F9; }
 
-.docStripe--inverted {
+.stripe--inverted {
   background: #353E48; }
 
 /*doc
@@ -2382,17 +2382,17 @@ Centers children with auto margin, clears floats, applies
 padding, and sets a max-width.
 
 ```html_example
-<section class="docStripe">
-	<p>This is just a paragraph inside a docStripe. There's no contentBounds element to center and set the measure of this text.</p>
+<section class="stripe">
+	<p>This is just a paragraph inside a stripe. There's no contentBounds element to center and set the measure of this text.</p>
 </section>
 
-<section class="docStripe">
+<section class="stripe">
 	<div class="contentBounds">
 		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
 	</div>
 </section>
 
-<section class="docStripe">
+<section class="stripe">
 	<div class="contentBounds _DOC-SHADE">
 		<p><strong>Previous example, shaded to show detail</strong></p>
 		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>

@@ -12,52 +12,52 @@ TODO: link to separate layout visual example page
 
 /*doc
 ---
-title: Doc stripe
-name: docStripe
+title: Stripe
+name: stripe
 parent: layout
 ---
-A `.docStripe` class should be applied to `<section>` elements
+A `.stipe` class should be applied to `<section>` elements
 to visually divide the page with stripes of color.
 
 To align content within a stripe, use [`.contentBounds`](contentBounds).
 
 ```html_example
-<section class="docStripe">
+<section class="stripe">
 	<div class="contentBounds">
 		<p>... default stripe ...</p>
 	</div>
 </section>
 
-<section class="docStripe--inverted inverted">
+<section class="stripe--inverted inverted">
 	<div class="contentBounds">
 		<p>... inverted stripe, using `inverted` class to set text colors  ...</p>
 	</div>
 </section>
 
-<section class="docStripe--collection">
+<section class="stripe--collection">
 	<div class="contentBounds">
-		<p>... collection variant of docStripe, used to contain collections of cards </p>
+		<p>... collection variant of stripe, used to contain collections of cards </p>
 	</div>
 </section>
 ```
 
 */
-.docStripe {
+.stripe {
 	overflow: hidden;
 	border-top: 1px solid $C_border;
 	background-color: #fff;
 }
 
-.docStripe--collection {
+.stripe--collection {
 	background: $C_collectionBGLight;
 }
 
-.docStripe--inverted {
+.stripe--inverted {
 	background: $C_contentBGInverted;
 }
 
 
-// TODO: find out what's up with the bottom spacing within a docStripe
+// TODO: find out what's up with the bottom spacing within a stripe
 
 /*doc
 ---
@@ -72,17 +72,17 @@ Centers children with auto margin, clears floats, applies
 padding, and sets a max-width.
 
 ```html_example
-<section class="docStripe">
-	<p>This is just a paragraph inside a docStripe. There's no contentBounds element to center and set the measure of this text.</p>
+<section class="stripe">
+	<p>This is just a paragraph inside a stripe. There's no contentBounds element to center and set the measure of this text.</p>
 </section>
 
-<section class="docStripe">
+<section class="stripe">
 	<div class="contentBounds">
 		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
 	</div>
 </section>
 
-<section class="docStripe">
+<section class="stripe">
 	<div class="contentBounds _DOC-SHADE">
 		<p><strong>Previous example, shaded to show detail</strong></p>
 		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
