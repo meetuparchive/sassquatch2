@@ -34,13 +34,23 @@ TK
 
 /*doc
 ---
-title: Doc bounds
-name: docBounds
+title: Flexible Measure
+name: flexMeasure
 parent: layout
 ---
-TK
+Non visual content container that manages content measure,
+ Similar to [sassquatch 1 `docBounds`](http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar).
+
+Centers children with auto margin, clears floats, applies
+padding, and sets a max-width.
+
+```html_example
+<section class="docStripe">
+	<p></p>
+</section>
+```
 */
-.docBounds {
+.flexMeasure {
 	@extend %clearfix;
 	box-sizing: border-box;
 	margin-left: auto;
