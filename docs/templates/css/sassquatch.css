@@ -932,16 +932,16 @@ Clears floated children.
 ```
 @extend %clearfix;
 */
-.bounds {
+.bounds, .group {
   /**
   * For IE 6/7 only
   * Include this rule to trigger hasLayout and contain floats.
   */
   *zoom: 1; }
-  .bounds:before, .bounds:after {
+  .bounds:before, .group:before, .bounds:after, .group:after {
     content: " ";
     display: table; }
-  .bounds:after {
+  .bounds:after, .group:after {
     clear: both; }
 
 /*doc
@@ -2407,6 +2407,32 @@ padding, and sets a max-width.
   max-width: 1100px;
   padding: 16px;
   width: 100%; }
+
+/*doc
+---
+title: Group
+name: group
+parent: layout
+---
+Groups sections of content, adding
+a margin-bottom.
+
+```html_example
+<div class="_DOC-SHADE group">
+	<h2>Some heading</h2>
+	<p>Some text</p>
+	<p class="text--caption">Some kind of caption</p>
+</div>
+
+<div class="_DOC-SHADE group">
+	<h2>Some heading</h2>
+	<p>Some text</p>
+	<p class="text--caption">Some kind of caption</p>
+</div>
+```
+*/
+.group {
+  margin-bottom: 16px; }
 
 /*doc
 ---
