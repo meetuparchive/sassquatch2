@@ -5,6 +5,7 @@ name: layout
 category: Core
 ---
 TK
+TODO: link to separate layout visual example page
 */
 
 
@@ -38,7 +39,7 @@ title: Flexible Measure
 name: flexMeasure
 parent: layout
 ---
-Non visual content container that manages content measure,
+Used as a non-visual content container that manages content measure,
  Similar to [sassquatch 1 `docBounds`](http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar).
 
 Centers children with auto margin, clears floats, applies
@@ -46,7 +47,13 @@ padding, and sets a max-width.
 
 ```html_example
 <section class="docStripe">
-	<p></p>
+	<p>This is just a paragraph inside a docStripe. There's no flexMeasure element to center and set the measure of this text.</p>
+</section>
+
+<section class="docStripe">
+	<div class="flexMeasure _DOC-SHADE">
+		<p>This paragraph is inside a flexMeasure</p>
+	</div>
 </section>
 ```
 */
@@ -68,12 +75,12 @@ parent: layout
 ---
 Arranges content in rows using `display: flex`.
 
-The `.flexrow` class is applied to a wrapping element.
+The `.flexRow` class is applied to a wrapping element.
 
-Direct children of `.flexrow` are flex children, and require
-either a `.flexrow-item--grow` or `.flexrow-item--shirnk` class.
+Direct children of `.flexRow` are flex children, and require
+either a `.flexRow-item--grow` or `.flexRow-item--shirnk` class.
 
-The flex children in flexrow do not have a `flex-basis` set; a
+The flex children in flexRow do not have a `flex-basis` set; a
 basis is not required for most common layout tasks.
 
 _Includes `table-cell` fallback for IE8._
@@ -81,40 +88,40 @@ _Includes `table-cell` fallback for IE8._
 #### Examples:
 
 ```html_example
-<div class="flexrow">
-	<div class="_DOC-SHADE flexrow-item--grow flexrow-item--gutterLeft">Item 1</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
-	<div class="_DOC-SHADE flexrow-item--grow">Item 4</div>
+<div class="flexRow">
+	<div class="_DOC-SHADE flexRow-item--grow flexRow-item--gutterLeft">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexRow-item--grow">Item 4</div>
 </div>
 ```
 
 ```html_example
-<div class="flexrow">
-	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 1</div>
-	<div class="_DOC-SHADE flexrow-item--grow">Item 2</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
+<div class="flexRow">
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--grow">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
 </div>
 ```
 
 ```html_example
-<div class="flexrow flexrow--flexEnd">
-	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 1</div>
-	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 2</div>
-	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 3</div>
+<div class="flexRow flexRow--flexEnd">
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 3</div>
 </div>
 ```
 
 ```html_example
-<div class="flexrow flexrow--spaceBetween flexrow--reverse">
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 4</div>
+<div class="flexRow flexRow--spaceBetween flexRow--reverse">
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 4</div>
 </div>
 ```
 */
-.flexrow {
+.flexRow {
 	@include display(flex);
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
@@ -125,76 +132,76 @@ _Includes `table-cell` fallback for IE8._
 
 /*doc
 ---
-title: flexrow variants
+title: flexRow variants
 name: flexrowParent
 parent: flexRow
 ---
 
-A class of `.flexrow` is __required__ on the flexrow parent. The
+A class of `.flexRow` is __required__ on the flexRow parent. The
 following classes are optional variants:
 
 Class                       | Description
 --------------------------- | -------------------------------
-`.flexrow--reverse`         | reverses row order
-`.flexrow--flexEnd`         | justifies content to `flex-end`
-`.flexrow--center`          | justifies content to `center`
-`.flexrow--spaceBetween`    | justifies content to `spaceBetween`
-`.flexrow--spaceAround`     | justifies content to `spaceAround`
+`.flexRow--reverse`         | reverses row order
+`.flexRow--flexEnd`         | justifies content to `flex-end`
+`.flexRow--center`          | justifies content to `center`
+`.flexRow--spaceBetween`    | justifies content to `spaceBetween`
+`.flexRow--spaceAround`     | justifies content to `spaceAround`
 */
-.flexrow--reverse {
+.flexRow--reverse {
 	@include flex-direction(row-reverse);
 }
 @each $jName, $jprop in $flexJustifyMap {
-	.flexrow--#{$jName} {
+	.flexRow--#{$jName} {
 		@include justify-content($jprop);
 	}
 }
 
 /*doc
 ---
-title: flexrow-item variants
+title: flexRow-item variants
 name: flexrowChild
 parent: flexRow
 ---
 
-A class of `.flexrow-item--shirnk` or `.flexrow-item--grow` on
-flexrow children is __required__. The following classes are optional variants:
+A class of `.flexRow-item--shirnk` or `.flexRow-item--grow` on
+flexRow children is __required__. The following classes are optional variants:
 
 Class                         | Description
 ----------------------------- | -------------------------------
-`.flexrow-item--gutterRight`  | adds `padding-right` to item
-`.flexrow-item--gutterLeft`   | adds `padding-left` to item
-`.flexrow-item--gutterBoth`   | adds `padding-both` sides of item
+`.flexRow-item--gutterRight`  | adds `padding-right` to item
+`.flexRow-item--gutterLeft`   | adds `padding-left` to item
+`.flexRow-item--gutterBoth`   | adds `padding-both` sides of item
 */
-.flexrow-item--gutterRight {
+.flexRow-item--gutterRight {
 	padding-right: $space;
 }
-.flexrow-item--gutterLeft {
+.flexRow-item--gutterLeft {
 	padding-left: $space;
 }
-.flexrow-item--gutterBoth {
+.flexRow-item--gutterBoth {
 	padding: 0 $space;
 }
 
-// flexrow item shirnk/grow variants
-.flexrow-item--shrink {
+// flexRow item shirnk/grow variants
+.flexRow-item--shrink {
 	@include flex-shrink(1);
 }
-.flexrow-item--grow {
+.flexRow-item--grow {
 	@include flex-grow(1);
 }
 
 // LT IE9 fallback
-.lt--IE9 .flexrow {
+.lt--IE9 .flexRow {
 	@include box-sizing(border-box);
 	display: table;
 	table-layout: auto;
 	width: 100%;
 }
-.lt--IE9 .flexrow-item--shrink,
-.lt--IE9 .flexrow-item--grow {
+.lt--IE9 .flexRow-item--shrink,
+.lt--IE9 .flexRow-item--grow {
 	display: table-cell;
 }
-.lt--IE9 .flexrow-item--grow {
+.lt--IE9 .flexRow-item--grow {
 	width: 100%;
 }

@@ -932,16 +932,16 @@ Clears floated children.
 ```
 @extend %clearfix;
 */
-.docBounds {
+.flexMeasure {
   /**
   * For IE 6/7 only
   * Include this rule to trigger hasLayout and contain floats.
   */
   *zoom: 1; }
-  .docBounds:before, .docBounds:after {
+  .flexMeasure:before, .flexMeasure:after {
     content: " ";
     display: table; }
-  .docBounds:after {
+  .flexMeasure:after {
     clear: both; }
 
 /*doc
@@ -2361,13 +2361,29 @@ TK
 
 /*doc
 ---
-title: Doc bounds
-name: docBounds
+title: Flexible Measure
+name: flexMeasure
 parent: layout
 ---
-TK
+Used as a non-visual content container that manages content measure,
+ Similar to [sassquatch 1 `docBounds`](http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar).
+
+Centers children with auto margin, clears floats, applies
+padding, and sets a max-width.
+
+```html_example
+<section class="docStripe">
+	<p>This is just a paragraph inside a docStripe. There's no flexMeasure element to center and set the measure of this text.</p>
+</section>
+
+<section class="docStripe">
+	<div class="flexMeasure _DOC-SHADE">
+		<p>This paragraph is inside a flexMeasure</p>
+	</div>
+</section>
+```
 */
-.docBounds {
+.flexMeasure {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
@@ -2383,12 +2399,12 @@ parent: layout
 ---
 Arranges content in rows using `display: flex`.
 
-The `.flexrow` class is applied to a wrapping element.
+The `.flexRow` class is applied to a wrapping element.
 
-Direct children of `.flexrow` are flex children, and require
-either a `.flexrow-item--grow` or `.flexrow-item--shirnk` class.
+Direct children of `.flexRow` are flex children, and require
+either a `.flexRow-item--grow` or `.flexRow-item--shirnk` class.
 
-The flex children in flexrow do not have a `flex-basis` set; a
+The flex children in flexRow do not have a `flex-basis` set; a
 basis is not required for most common layout tasks.
 
 _Includes `table-cell` fallback for IE8._
@@ -2396,40 +2412,40 @@ _Includes `table-cell` fallback for IE8._
 #### Examples:
 
 ```html_example
-<div class="flexrow">
-	<div class="_DOC-SHADE flexrow-item--grow flexrow-item--gutterLeft">Item 1</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
-	<div class="_DOC-SHADE flexrow-item--grow">Item 4</div>
+<div class="flexRow">
+	<div class="_DOC-SHADE flexRow-item--grow flexRow-item--gutterLeft">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexRow-item--grow">Item 4</div>
 </div>
 ```
 
 ```html_example
-<div class="flexrow">
-	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 1</div>
-	<div class="_DOC-SHADE flexrow-item--grow">Item 2</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
+<div class="flexRow">
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--grow">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
 </div>
 ```
 
 ```html_example
-<div class="flexrow flexrow--flexEnd">
-	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 1</div>
-	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 2</div>
-	<div class="_DOC-SHADE flexrow-item--shrink flexrow-item--gutterBoth">Item 3</div>
+<div class="flexRow flexRow--flexEnd">
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 3</div>
 </div>
 ```
 
 ```html_example
-<div class="flexrow flexrow--spaceBetween flexrow--reverse">
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 3</div>
-	<div class="_DOC-SHADE flexrow-item--shrink">Item 4</div>
+<div class="flexRow flexRow--spaceBetween flexRow--reverse">
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 4</div>
 </div>
 ```
 */
-.flexrow {
+.flexRow {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -2472,23 +2488,23 @@ _Includes `table-cell` fallback for IE8._
 
 /*doc
 ---
-title: flexrow variants
+title: flexRow variants
 name: flexrowParent
 parent: flexRow
 ---
 
-A class of `.flexrow` is __required__ on the flexrow parent. The
+A class of `.flexRow` is __required__ on the flexRow parent. The
 following classes are optional variants:
 
 Class                       | Description
 --------------------------- | -------------------------------
-`.flexrow--reverse`         | reverses row order
-`.flexrow--flexEnd`         | justifies content to `flex-end`
-`.flexrow--center`          | justifies content to `center`
-`.flexrow--spaceBetween`    | justifies content to `spaceBetween`
-`.flexrow--spaceAround`     | justifies content to `spaceAround`
+`.flexRow--reverse`         | reverses row order
+`.flexRow--flexEnd`         | justifies content to `flex-end`
+`.flexRow--center`          | justifies content to `center`
+`.flexRow--spaceBetween`    | justifies content to `spaceBetween`
+`.flexRow--spaceAround`     | justifies content to `spaceAround`
 */
-.flexrow--reverse {
+.flexRow--reverse {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   box-orient: horizontal;
@@ -2500,7 +2516,7 @@ Class                       | Description
   flex-direction: row-reverse;
   -ms-flex-direction: row-reverse; }
 
-.flexrow--flexEnd {
+.flexRow--flexEnd {
   -webkit-box-pack: end;
   -moz-box-pack: end;
   box-pack: end;
@@ -2511,7 +2527,7 @@ Class                       | Description
   justify-content: flex-end;
   -ms-flex-pack: end; }
 
-.flexrow--center {
+.flexRow--center {
   -webkit-box-pack: center;
   -moz-box-pack: center;
   box-pack: center;
@@ -2522,7 +2538,7 @@ Class                       | Description
   justify-content: center;
   -ms-flex-pack: center; }
 
-.flexrow--spaceBetween {
+.flexRow--spaceBetween {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   box-pack: justify;
@@ -2533,7 +2549,7 @@ Class                       | Description
   justify-content: space-between;
   -ms-flex-pack: justify; }
 
-.flexrow--spaceAround {
+.flexRow--spaceAround {
   -webkit-box-pack: center;
   -moz-box-pack: center;
   box-pack: center;
@@ -2546,42 +2562,42 @@ Class                       | Description
 
 /*doc
 ---
-title: flexrow-item variants
+title: flexRow-item variants
 name: flexrowChild
 parent: flexRow
 ---
 
-A class of `.flexrow-item--shirnk` or `.flexrow-item--grow` on
-flexrow children is __required__. The following classes are optional variants:
+A class of `.flexRow-item--shirnk` or `.flexRow-item--grow` on
+flexRow children is __required__. The following classes are optional variants:
 
 Class                         | Description
 ----------------------------- | -------------------------------
-`.flexrow-item--gutterRight`  | adds `padding-right` to item
-`.flexrow-item--gutterLeft`   | adds `padding-left` to item
-`.flexrow-item--gutterBoth`   | adds `padding-both` sides of item
+`.flexRow-item--gutterRight`  | adds `padding-right` to item
+`.flexRow-item--gutterLeft`   | adds `padding-left` to item
+`.flexRow-item--gutterBoth`   | adds `padding-both` sides of item
 */
-.flexrow-item--gutterRight {
+.flexRow-item--gutterRight {
   padding-right: 16px; }
 
-.flexrow-item--gutterLeft {
+.flexRow-item--gutterLeft {
   padding-left: 16px; }
 
-.flexrow-item--gutterBoth {
+.flexRow-item--gutterBoth {
   padding: 0 16px; }
 
-.flexrow-item--shrink {
+.flexRow-item--shrink {
   -webkit-flex-shrink: 1;
   -moz-flex-shrink: 1;
   flex-shrink: 1;
   -ms-flex-negative: 1; }
 
-.flexrow-item--grow {
+.flexRow-item--grow {
   -webkit-flex-grow: 1;
   -moz-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1; }
 
-.lt--IE9 .flexrow {
+.lt--IE9 .flexRow {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -2589,11 +2605,11 @@ Class                         | Description
   table-layout: auto;
   width: 100%; }
 
-.lt--IE9 .flexrow-item--shrink,
-.lt--IE9 .flexrow-item--grow {
+.lt--IE9 .flexRow-item--shrink,
+.lt--IE9 .flexRow-item--grow {
   display: table-cell; }
 
-.lt--IE9 .flexrow-item--grow {
+.lt--IE9 .flexRow-item--grow {
   width: 100%; }
 
 /*doc
