@@ -2,6 +2,7 @@
 // PRIVATE modifier factory
 //
 @mixin _modifier($base, $modification) {
+	%#{$base}--#{$modification},
 	.#{$base}--#{$modification} {
 		@content;
 	}

@@ -2840,15 +2840,27 @@ Full docs TK
 <a class="button" href="#">Button</a>
 <a class="button button--primary" href="#">Primary Button</a>
 <a class="button button--bordered" href="#">Bordered Button</a>
+<br />
 <a class="button button--contrast" href="#">Contrast Button</a>
+<a class="button button--iconButton" href="#">
+	<i class="button-icon">:D</i>
+	<span class="text--caption">Icon Button</span>
+</a>
+<a class="button button--small" href="#">Small Button</a>
+<a class="button button--bordered button--fullWidth" href="#">Full width button</a>
 ```
 
 */
 .button {
   background-color: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background 0.15s;
+  -moz-transition: background 0.15s;
+  transition: background 0.15s;
   border-radius: 50px;
   border: none;
-  box-sizing: border-box;
   color: #3987cb;
   cursor: pointer;
   display: inline-block;
@@ -2856,8 +2868,7 @@ Full docs TK
   font-weight: 700;
   margin: 8px 4px;
   padding: 8px 16px;
-  text-align: center;
-  transition: background .15s; }
+  text-align: center; }
   .button:focus {
     outline: 0; }
   .button:hover, .button:active, .button:focus {
@@ -2871,6 +2882,7 @@ Full docs TK
     .button.button--disabled.button--primary {
       background: rgba(0, 0, 0, 0.26); }
 
+.button--fullWidth,
 .button--bordered {
   background-color: #3987cb;
   color: white;
@@ -2878,19 +2890,37 @@ Full docs TK
   background: rgba(57, 135, 203, 0);
   color: #3987cb;
   font-weight: 400; }
+  .button--fullWidth:focus,
   .button--bordered:focus {
     outline: 0; }
-  .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
+  .button--fullWidth:hover,
+  .button--fullWidth:active,
+  .button--fullWidth:focus,
+  .button--bordered:hover,
+  .button--bordered:active,
+  .button--bordered:focus {
     background: #619fd6; }
+  .button--disabled.button--fullWidth,
   .button--bordered.button--disabled {
     opacity: .4;
     color: rgba(0, 0, 0, 0.87);
     cursor: default; }
-    .button--bordered.button--disabled:hover, .button--bordered.button--disabled:active, .button--bordered.button--disabled:focus {
+    .button--disabled.button--fullWidth:hover,
+    .button--disabled.button--fullWidth:active,
+    .button--disabled.button--fullWidth:focus,
+    .button--bordered.button--disabled:hover,
+    .button--bordered.button--disabled:active,
+    .button--bordered.button--disabled:focus {
       background: #3987cb; }
+    .button--disabled.button--primary.button--fullWidth,
     .button--bordered.button--disabled.button--primary {
       background: rgba(0, 0, 0, 0.26); }
-  .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
+  .button--fullWidth:hover,
+  .button--fullWidth:active,
+  .button--fullWidth:focus,
+  .button--bordered:hover,
+  .button--bordered:active,
+  .button--bordered:focus {
     background: rgba(57, 135, 203, 0.2); }
 
 .button--contrast {
@@ -2929,13 +2959,17 @@ Full docs TK
   background-color: transparent; }
   .button--default:focus {
     outline: 0; }
-  .button--default:hover, .button--default:active, .button--default:focus {
+  .button--default:hover,
+  .button--default:active,
+  .button--default:focus {
     background: rgba(0, 0, 0, 0.1); }
   .button--default.button--disabled {
     opacity: .4;
     color: rgba(0, 0, 0, 0.87);
     cursor: default; }
-    .button--default.button--disabled:hover, .button--default.button--disabled:active, .button--default.button--disabled:focus {
+    .button--default.button--disabled:hover,
+    .button--default.button--disabled:active,
+    .button--default.button--disabled:focus {
       background: transparent; }
     .button--default.button--disabled.button--primary {
       background: rgba(0, 0, 0, 0.26); }
@@ -2945,13 +2979,17 @@ Full docs TK
   color: white; }
   .button--primary:focus {
     outline: 0; }
-  .button--primary:hover, .button--primary:active, .button--primary:focus {
+  .button--primary:hover,
+  .button--primary:active,
+  .button--primary:focus {
     background: #619fd6; }
   .button--primary.button--disabled {
     opacity: .4;
     color: rgba(0, 0, 0, 0.87);
     cursor: default; }
-    .button--primary.button--disabled:hover, .button--primary.button--disabled:active, .button--primary.button--disabled:focus {
+    .button--primary.button--disabled:hover,
+    .button--primary.button--disabled:active,
+    .button--primary.button--disabled:focus {
       background: #3987cb; }
     .button--primary.button--disabled.button--primary {
       background: rgba(0, 0, 0, 0.26); }
@@ -2960,13 +2998,17 @@ Full docs TK
   background-color: rgba(255, 255, 255, 0.7); }
   .button--contrast:focus {
     outline: 0; }
-  .button--contrast:hover, .button--contrast:active, .button--contrast:focus {
+  .button--contrast:hover,
+  .button--contrast:active,
+  .button--contrast:focus {
     background: rgba(255, 255, 255, 0.8); }
   .button--contrast.button--disabled {
     opacity: .4;
     color: rgba(0, 0, 0, 0.87);
     cursor: default; }
-    .button--contrast.button--disabled:hover, .button--contrast.button--disabled:active, .button--contrast.button--disabled:focus {
+    .button--contrast.button--disabled:hover,
+    .button--contrast.button--disabled:active,
+    .button--contrast.button--disabled:focus {
       background: rgba(255, 255, 255, 0.7); }
     .button--contrast.button--disabled.button--primary {
       background: rgba(0, 0, 0, 0.26); }
