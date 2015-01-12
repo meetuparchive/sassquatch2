@@ -932,16 +932,16 @@ Clears floated children.
 ```
 @extend %clearfix;
 */
-.flexMeasure {
+.contentBounds {
   /**
   * For IE 6/7 only
   * Include this rule to trigger hasLayout and contain floats.
   */
   *zoom: 1; }
-  .flexMeasure:before, .flexMeasure:after {
+  .contentBounds:before, .contentBounds:after {
     content: " ";
     display: table; }
-  .flexMeasure:after {
+  .contentBounds:after {
     clear: both; }
 
 /*doc
@@ -2339,6 +2339,7 @@ name: layout
 category: Core
 ---
 TK
+TODO: link to separate layout visual example page
 */
 /*doc
 ---
@@ -2346,7 +2347,31 @@ title: Doc stripe
 name: docStripe
 parent: layout
 ---
-TK
+A `.docStripe` class should be applied to `<section>` elements
+to visually divide the page with stripes of color.
+
+To align content within a stripe, use [`.contentBounds`](contentBounds).
+
+```html_example
+<section class="docStripe">
+	<div class="contentBounds">
+		<p>... default stripe ...</p>
+	</div>
+</section>
+
+<section class="docStripe--inverted inverted">
+	<div class="contentBounds">
+		<p>... inverted stripe, using `inverted` class to set text colors  ...</p>
+	</div>
+</section>
+
+<section class="docStripe--collection">
+	<div class="contentBounds">
+		<p>... collection variant of docStripe, used to contain collections of cards </p>
+	</div>
+</section>
+```
+
 */
 .docStripe {
   overflow: hidden;
@@ -2361,8 +2386,8 @@ TK
 
 /*doc
 ---
-title: Flexible Measure
-name: flexMeasure
+title: Content bounds
+name: contentBounds
 parent: layout
 ---
 Used as a non-visual content container that manages content measure,
@@ -2373,17 +2398,24 @@ padding, and sets a max-width.
 
 ```html_example
 <section class="docStripe">
-	<p>This is just a paragraph inside a docStripe. There's no flexMeasure element to center and set the measure of this text.</p>
+	<p>This is just a paragraph inside a docStripe. There's no contentBounds element to center and set the measure of this text.</p>
 </section>
 
 <section class="docStripe">
-	<div class="flexMeasure _DOC-SHADE">
-		<p>This paragraph is inside a flexMeasure</p>
+	<div class="contentBounds">
+		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
+	</div>
+</section>
+
+<section class="docStripe">
+	<div class="contentBounds _DOC-SHADE">
+		<p><strong>Previous example, shaded to show detail</strong></p>
+		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
 	</div>
 </section>
 ```
 */
-.flexMeasure {
+.contentBounds {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
