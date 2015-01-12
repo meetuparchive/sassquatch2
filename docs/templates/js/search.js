@@ -1,4 +1,5 @@
 $(function() {
+	// yes, this is hacky, but it works for now
 	var $input = $('#search'),
 		TIME_DEBOUNCE = 100,
 		MIN_QUERY = 2;

@@ -7,7 +7,8 @@
 <script type="text/javascript">
 $(function() {
 	window._searchIndex = lunr(function() {
-			this.field('title', {boost: 10});
+			this.field('title', {boost: 5});
+			this.field('name', {boost: 10});
 			this.field('breadcrumb');
 			this.ref('path');
 		});
@@ -20,6 +21,7 @@ $(function() {
 
 				<%= "_searchIndex.add({" %>
 					<%= "\"title\": \""+block[:title].to_s+"\"," %>
+					<%= "\"name\": \""+block[:name].to_s+"\"," %>
 					<%= "\"breadcrumb\": \""+block[:categories][0].to_s+" > "+block[:title]+"\"," %>
 					<%= "\"path\": \""+file_path+file_id+"\"" %>
 				<%= "});" %>
