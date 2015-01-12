@@ -18,7 +18,7 @@ Full docs TK
 
 // TODO: rewrite with less nesting
 // variant classes shouldn't be selected as .base.base--variant
-.#{$btn-name} {
+.button {
   // Default styles
   @include buttonColor(rgba(0,0,0,0));
   border-radius: 50px;
@@ -100,32 +100,4 @@ Full docs TK
       @include buttonColor($value);
     }
   }
-}
-
-// Toggle button behavior - try and find a way to bring this into regular button style area
-.toggle-button-wrapper {
-  display: inline-block;
-  margin: $space-quarter 0;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  label {
-    margin: 0;
-  }
-  input {
-    display: none;
-    &:checked + label {
-      background: $C_blue;
-      border: none;
-      color: $C_textPrimaryInverted;
-    }
-  }
-
-}
-
-//TODO: parameterize animation times in _globals
-//TODO: use mixin
-.toggle-on {
-	@include animate--bounceInSubtle();
-	label {
-		font-weight: $W_bold;
-	}
 }

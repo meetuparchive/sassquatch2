@@ -4,22 +4,35 @@ title: Toggle Pills
 name: togglePills
 category: UI Components
 ---
-TODO: doc this
+
+```html_example
+<div class="toggle-button-wrapper">
+	<input type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn">
+	<label for="topic-pill" class="button button--small button--bordered">Dining Out</label>
+</div>
+```
 */
 
-
-// TODO: rewrite with P-C pcv classes
-
-.toggle-pill-list {
-  list-style: none;
-  padding-left: 0;
-
-  li {
-    display: inline-block;
+// Toggle button behavior - try and find a way to bring this into regular button style area
+.toggle-button-wrapper {
+  display: inline-block;
+  margin: $space-quarter 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  label {
+    margin: 0;
+  }
+  input {
+    display: none;
+    &:checked + label {
+      background: $C_blue;
+      border: none;
+      color: $C_textPrimaryInverted;
+    }
   }
 
 }
 
+// TODO: rewrite with P-C pcv classes
 input.toggle-pill {
   display: none;
 
@@ -36,4 +49,13 @@ input.toggle-pill {
     color: $C-textPrimaryInverted;
   }
 
+}
+
+//TODO: parameterize animation times in _globals
+//TODO: use mixin
+.toggle-on {
+	@include animate--bounceInSubtle();
+	label {
+		font-weight: $W_bold;
+	}
 }

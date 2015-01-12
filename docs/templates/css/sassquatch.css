@@ -1612,6 +1612,12 @@ Display text for header hero elements.
 .hscroll .tileGrid-tile {
   box-sizing: content-box; }
 
+.toggle-pill-list {
+  list-style: none;
+  padding-left: 0; }
+  .toggle-pill-list li {
+    display: inline-block; }
+
 body {
   position: relative; }
 
@@ -2765,14 +2771,14 @@ title: Toggle Pills
 name: togglePills
 category: UI Components
 ---
-TODO: doc this
-*/
-.toggle-pill-list {
-  list-style: none;
-  padding-left: 0; }
-  .toggle-pill-list li {
-    display: inline-block; }
 
+```html_example
+<div class="toggle-button-wrapper">
+	<input type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn">
+	<label for="topic-pill" class="button button--small button--bordered">Dining Out</label>
+</div>
+```
+*/
 input.toggle-pill {
   display: none; }
   input.toggle-pill + label {
