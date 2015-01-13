@@ -7,6 +7,11 @@ Sassquatch is a CSS foundation and framework for [Meetup](http://www.meetup.com)
 
 ---
 
+## Documentation
+Documentation is built to [github pages](http://meetup.github.io/sassquatch2/core.html)
+
+---
+
 ## Source plan
 
 File or [Directory]        | Description
