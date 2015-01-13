@@ -3429,111 +3429,261 @@ TODO: consider `atMediaOnly`
 
 #### Signature
 
-`.[property]--[modification]--at[Breakpoint]`
+`.[property]--[modification]--[breakpoint][Up|Down|Small]`
 
+ie. `.align--center--mOnly` applies center text alignment at the small breakpoint only
 
-#### Example
+#### Supported media and modifications
+_Better documentation for this TK_
 
-```html_example
-<p class="display--none display--block--atLarge">You can only see this in large viewports</p>
-<p class="display--none--atMedium">This is hidden in medium viewports and up</p>
-```
+- `.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]`
 
-
-#### Available media conditional modifiers
-
-Class                        | Description
----------------------------- | --------------------------------
-`.align--center--at[Size]`   | sets `text-align` to `center` at given size (atSmall, atMedium, atLarge)
-`.align--right--at[Size]`    | sets `text-align` to `right` at given size (atSmall, atMedium, atLarge)
-`.align--left--at[Size]`     | sets `text-align` to `left` at given size (atSmall, atMedium, atLarge)
-`.display--none--at[Size]`   | sets `display` to `none` at given size (atSmall, atMedium, atLarge)
-`.display--block--at[Size]`  | sets `display` to `block` at given size (atSmall, atMedium, atLarge)
-`.display--inline--at[Size]` | sets `display` to `inline` at given size (atSmall, atMedium, atLarge)
-`.display--inlineBlock--at[Size]` | sets `display` to `inline-block` at given size (atSmall, atMedium, atLarge)
-`.border--top--at[Size]`     | adds top border to element at given size (atSmall, atMedium, atLarge)
-`.border--none--at[Size]`    | removes borders of element at given size (atSmall, atMedium, atLarge)
+Example TK
 */
-@media only screen and (min-width: 960px) {
-  .align--center--atLarge {
+@media only screen and (min-width: 440px) {
+  .align--center--smallUp {
+    text-align: center !important; } }
+@media only screen and (max-width: 440px) {
+  .align--center--smallDown {
+    text-align: center !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .align--center--smallOnly {
+    text-align: center !important; } }
+@media only screen and (min-width: 640px) {
+  .align--center--mediumUp {
+    text-align: center !important; } }
+@media only screen and (max-width: 640px) {
+  .align--center--mediumDown {
+    text-align: center !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .align--center--mediumOnly {
     text-align: center !important; } }
 @media only screen and (min-width: 960px) {
-  .align--right--atLarge {
+  .align--center--largeUp {
+    text-align: center !important; } }
+@media only screen and (max-width: 960px) {
+  .align--center--largeDown {
+    text-align: center !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .align--center--largeOnly {
+    text-align: center !important; } }
+@media only screen and (min-width: 440px) {
+  .align--right--smallUp {
+    text-align: right !important; } }
+@media only screen and (max-width: 440px) {
+  .align--right--smallDown {
+    text-align: right !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .align--right--smallOnly {
+    text-align: right !important; } }
+@media only screen and (min-width: 640px) {
+  .align--right--mediumUp {
+    text-align: right !important; } }
+@media only screen and (max-width: 640px) {
+  .align--right--mediumDown {
+    text-align: right !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .align--right--mediumOnly {
     text-align: right !important; } }
 @media only screen and (min-width: 960px) {
-  .align--left--atLarge {
+  .align--right--largeUp {
+    text-align: right !important; } }
+@media only screen and (max-width: 960px) {
+  .align--right--largeDown {
+    text-align: right !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .align--right--largeOnly {
+    text-align: right !important; } }
+@media only screen and (min-width: 440px) {
+  .align--left--smallUp {
+    text-align: left !important; } }
+@media only screen and (max-width: 440px) {
+  .align--left--smallDown {
+    text-align: left !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .align--left--smallOnly {
+    text-align: left !important; } }
+@media only screen and (min-width: 640px) {
+  .align--left--mediumUp {
+    text-align: left !important; } }
+@media only screen and (max-width: 640px) {
+  .align--left--mediumDown {
+    text-align: left !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .align--left--mediumOnly {
     text-align: left !important; } }
 @media only screen and (min-width: 960px) {
-  .display--none--atLarge {
+  .align--left--largeUp {
+    text-align: left !important; } }
+@media only screen and (max-width: 960px) {
+  .align--left--largeDown {
+    text-align: left !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .align--left--largeOnly {
+    text-align: left !important; } }
+@media only screen and (min-width: 440px) {
+  .display--none--smallUp {
+    display: none !important; } }
+@media only screen and (max-width: 440px) {
+  .display--none--smallDown {
+    display: none !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .display--none--smallOnly {
+    display: none !important; } }
+@media only screen and (min-width: 640px) {
+  .display--none--mediumUp {
+    display: none !important; } }
+@media only screen and (max-width: 640px) {
+  .display--none--mediumDown {
+    display: none !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .display--none--mediumOnly {
     display: none !important; } }
 @media only screen and (min-width: 960px) {
-  .display--block--atLarge {
+  .display--none--largeUp {
+    display: none !important; } }
+@media only screen and (max-width: 960px) {
+  .display--none--largeDown {
+    display: none !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .display--none--largeOnly {
+    display: none !important; } }
+@media only screen and (min-width: 440px) {
+  .display--block--smallUp {
+    display: block !important; } }
+@media only screen and (max-width: 440px) {
+  .display--block--smallDown {
+    display: block !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .display--block--smallOnly {
+    display: block !important; } }
+@media only screen and (min-width: 640px) {
+  .display--block--mediumUp {
+    display: block !important; } }
+@media only screen and (max-width: 640px) {
+  .display--block--mediumDown {
+    display: block !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .display--block--mediumOnly {
     display: block !important; } }
 @media only screen and (min-width: 960px) {
-  .display--inline--atLarge {
+  .display--block--largeUp {
+    display: block !important; } }
+@media only screen and (max-width: 960px) {
+  .display--block--largeDown {
+    display: block !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .display--block--largeOnly {
+    display: block !important; } }
+@media only screen and (min-width: 440px) {
+  .display--inline--smallUp {
+    display: inline !important; } }
+@media only screen and (max-width: 440px) {
+  .display--inline--smallDown {
+    display: inline !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .display--inline--smallOnly {
+    display: inline !important; } }
+@media only screen and (min-width: 640px) {
+  .display--inline--mediumUp {
+    display: inline !important; } }
+@media only screen and (max-width: 640px) {
+  .display--inline--mediumDown {
+    display: inline !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .display--inline--mediumOnly {
     display: inline !important; } }
 @media only screen and (min-width: 960px) {
-  .display--inlineBlock--atLarge {
+  .display--inline--largeUp {
+    display: inline !important; } }
+@media only screen and (max-width: 960px) {
+  .display--inline--largeDown {
+    display: inline !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .display--inline--largeOnly {
+    display: inline !important; } }
+@media only screen and (min-width: 440px) {
+  .display--inlineBlock--smallUp {
+    display: inline-block !important; } }
+@media only screen and (max-width: 440px) {
+  .display--inlineBlock--smallDown {
+    display: inline-block !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .display--inlineBlock--smallOnly {
+    display: inline-block !important; } }
+@media only screen and (min-width: 640px) {
+  .display--inlineBlock--mediumUp {
+    display: inline-block !important; } }
+@media only screen and (max-width: 640px) {
+  .display--inlineBlock--mediumDown {
+    display: inline-block !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .display--inlineBlock--mediumOnly {
     display: inline-block !important; } }
 @media only screen and (min-width: 960px) {
-  .border--top--atLarge {
+  .display--inlineBlock--largeUp {
+    display: inline-block !important; } }
+@media only screen and (max-width: 960px) {
+  .display--inlineBlock--largeDown {
+    display: inline-block !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .display--inlineBlock--largeOnly {
+    display: inline-block !important; } }
+@media only screen and (min-width: 440px) {
+  .border--top--smallUp {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (max-width: 440px) {
+  .border--top--smallDown {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .border--top--smallOnly {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 640px) {
+  .border--top--mediumUp {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (max-width: 640px) {
+  .border--top--mediumDown {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .border--top--mediumOnly {
     border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 960px) {
-  .border--none--atLarge {
+  .border--top--largeUp {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (max-width: 960px) {
+  .border--top--largeDown {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .border--top--largeOnly {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 440px) {
+  .border--none--smallUp {
+    border-width: 0 !important; } }
+@media only screen and (max-width: 440px) {
+  .border--none--smallDown {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .border--none--smallOnly {
     border-width: 0 !important; } }
 @media only screen and (min-width: 640px) {
-  .align--center--atMedium {
-    text-align: center !important; } }
-@media only screen and (min-width: 640px) {
-  .align--right--atMedium {
-    text-align: right !important; } }
-@media only screen and (min-width: 640px) {
-  .align--left--atMedium {
-    text-align: left !important; } }
-@media only screen and (min-width: 640px) {
-  .display--none--atMedium {
-    display: none !important; } }
-@media only screen and (min-width: 640px) {
-  .display--block--atMedium {
-    display: block !important; } }
-@media only screen and (min-width: 640px) {
-  .display--inline--atMedium {
-    display: inline !important; } }
-@media only screen and (min-width: 640px) {
-  .display--inlineBlock--atMedium {
-    display: inline-block !important; } }
-@media only screen and (min-width: 640px) {
-  .border--top--atMedium {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 640px) {
-  .border--none--atMedium {
+  .border--none--mediumUp {
     border-width: 0 !important; } }
-@media only screen and (min-width: 440px) {
-  .align--center--atSmall {
-    text-align: center !important; } }
-@media only screen and (min-width: 440px) {
-  .align--right--atSmall {
-    text-align: right !important; } }
-@media only screen and (min-width: 440px) {
-  .align--left--atSmall {
-    text-align: left !important; } }
-@media only screen and (min-width: 440px) {
-  .display--none--atSmall {
-    display: none !important; } }
-@media only screen and (min-width: 440px) {
-  .display--block--atSmall {
-    display: block !important; } }
-@media only screen and (min-width: 440px) {
-  .display--inline--atSmall {
-    display: inline !important; } }
-@media only screen and (min-width: 440px) {
-  .display--inlineBlock--atSmall {
-    display: inline-block !important; } }
-@media only screen and (min-width: 440px) {
-  .border--top--atSmall {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 440px) {
-  .border--none--atSmall {
+@media only screen and (max-width: 640px) {
+  .border--none--mediumDown {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .border--none--mediumOnly {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 960px) {
+  .border--none--largeUp {
+    border-width: 0 !important; } }
+@media only screen and (max-width: 960px) {
+  .border--none--largeDown {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .border--none--largeOnly {
     border-width: 0 !important; } }
 /*doc
 ---

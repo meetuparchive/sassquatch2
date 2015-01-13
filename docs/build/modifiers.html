@@ -306,59 +306,21 @@ a modification at a specific breakpoint.</p>
 
 <h4>Signature</h4>
 
-<p><code>.[property]--[modification]--at[Breakpoint]</code></p>
+<p><code>.[property]--[modification]--[breakpoint][Up|Down|Small]</code></p>
 
-<h4>Example</h4>
-<div class="codeExample"><div class="exampleOutput"><p class="display--none display--block--atLarge">You can only see this in large viewports</p>
-<p class="display--none--atMedium">This is hidden in medium viewports and up</p>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"display--none display--block--atLarge"</span><span class="nt">&gt;</span>You can only see this in large viewports<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"display--none--atMedium"</span><span class="nt">&gt;</span>This is hidden in medium viewports and up<span class="nt">&lt;/p&gt;</span>
-</pre></div></div></div>
-<h4>Available media conditional modifiers</h4>
+<p>ie. <code>.align--center--mOnly</code> applies center text alignment at the small breakpoint only</p>
 
-<table><thead>
-<tr>
-<th>Class</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>.align--center--at[Size]</code></td>
-<td>sets <code>text-align</code> to <code>center</code> at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-<tr>
-<td><code>.align--right--at[Size]</code></td>
-<td>sets <code>text-align</code> to <code>right</code> at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-<tr>
-<td><code>.align--left--at[Size]</code></td>
-<td>sets <code>text-align</code> to <code>left</code> at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-<tr>
-<td><code>.display--none--at[Size]</code></td>
-<td>sets <code>display</code> to <code>none</code> at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-<tr>
-<td><code>.display--block--at[Size]</code></td>
-<td>sets <code>display</code> to <code>block</code> at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-<tr>
-<td><code>.display--inline--at[Size]</code></td>
-<td>sets <code>display</code> to <code>inline</code> at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-<tr>
-<td><code>.display--inlineBlock--at[Size]</code></td>
-<td>sets <code>display</code> to <code>inline-block</code> at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-<tr>
-<td><code>.border--top--at[Size]</code></td>
-<td>adds top border to element at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-<tr>
-<td><code>.border--none--at[Size]</code></td>
-<td>removes borders of element at given size (atSmall, atMedium, atLarge)</td>
-</tr>
-</tbody></table>
+<h4>Supported media and modifications</h4>
+
+<p><em>Better documentation for this TK</em></p>
+
+<ul>
+<li><code>.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
+<li><code>.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
+<li><code>.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
+</ul>
+
+<p>Example TK</p>
 
 <h1 id="sizeMod">Media Sizing</h1>
 

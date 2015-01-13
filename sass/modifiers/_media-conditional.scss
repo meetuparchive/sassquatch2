@@ -14,53 +14,38 @@ TODO: consider `atMediaOnly`
 
 #### Signature
 
-`.[property]--[modification]--at[Breakpoint]`
+`.[property]--[modification]--[breakpoint][Up|Down|Small]`
 
+ie. `.align--center--mOnly` applies center text alignment at the small breakpoint only
 
-#### Example
+#### Supported media and modifications
+_Better documentation for this TK_
 
-```html_example
-<p class="display--none display--block--atLarge">You can only see this in large viewports</p>
-<p class="display--none--atMedium">This is hidden in medium viewports and up</p>
-```
+- `.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]`
 
-
-#### Available media conditional modifiers
-
-Class                        | Description
----------------------------- | --------------------------------
-`.align--center--at[Size]`   | sets `text-align` to `center` at given size (atSmall, atMedium, atLarge)
-`.align--right--at[Size]`    | sets `text-align` to `right` at given size (atSmall, atMedium, atLarge)
-`.align--left--at[Size]`     | sets `text-align` to `left` at given size (atSmall, atMedium, atLarge)
-`.display--none--at[Size]`   | sets `display` to `none` at given size (atSmall, atMedium, atLarge)
-`.display--block--at[Size]`  | sets `display` to `block` at given size (atSmall, atMedium, atLarge)
-`.display--inline--at[Size]` | sets `display` to `inline` at given size (atSmall, atMedium, atLarge)
-`.display--inlineBlock--at[Size]` | sets `display` to `inline-block` at given size (atSmall, atMedium, atLarge)
-`.border--top--at[Size]`     | adds top border to element at given size (atSmall, atMedium, atLarge)
-`.border--none--at[Size]`    | removes borders of element at given size (atSmall, atMedium, atLarge)
+Example TK
 */
-@each $breakpoint in (large, medium, small) {
 
-	// text align
-	@each $alignment in (center, right, left) {
-		@include _bpModifier($breakpoint, 'align', $alignment) {
-			text-align: $alignment !important;
-		}
+// text align
+@each $alignment in (center, right, left) {
+	@include _bpModifier('align', $alignment) {
+		text-align: $alignment !important;
 	}
+}
 
-	// display
-	@each $display in $display-values {
-		$modifierVariant: str-replace($display, '-block', 'Block');
-		@include _bpModifier($breakpoint, 'display', $modifierVariant) {
-			display: $display !important;
-		}
+// display
+@each $display in $display-values {
+	@include _bpModifier('display', str-replace($display, '-block', 'Block')) {
+		display: $display !important;
 	}
+}
 
-	// border
-	@include _bpModifier($breakpoint, 'border', 'top') {
-		border-top: $border-standard !important;
-	}
-	@include _bpModifier($breakpoint, 'border', 'none') {
-		border-width: 0 !important;
-	}
+// border
+@include _bpModifier('border', 'top') {
+	border-top: $border-standard !important;
+}
+@include _bpModifier('border', 'none') {
+	border-width: 0 !important;
 }
