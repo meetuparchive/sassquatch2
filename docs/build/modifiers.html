@@ -108,7 +108,7 @@
 									
 									
 										<li>
-											<a href="#mediaMod">Media conditional modifiers</a>
+											<a href="#mediaMod">Media-conditional modifiers</a>
 										</li>
 									
 
@@ -295,9 +295,26 @@ and overflow hidden.</p>
 </tr>
 </tbody></table>
 
-<h1 id="mediaMod">Media conditional modifiers</h1>
+<h1 id="mediaMod">Media-conditional modifiers</h1>
 
-<p>TK</p>
+<p>Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.</p>
+
+<p>Uses <code>atMediaUp</code></p>
+
+<p>TODO: consider <code>atMediaOnly</code></p>
+
+<h4>Signature</h4>
+
+<p><code>.[property]--[modification]--at[Breakpoint]</code></p>
+
+<h4>Example</h4>
+<div class="codeExample"><div class="exampleOutput"><p class="display--none display--block--atLarge">You can only see this in large viewports</p>
+<p class="display--none--atMedium">This is hidden in medium viewports and up</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"display--none display--block--atLarge"</span><span class="nt">&gt;</span>You can only see this in large viewports<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"display--none--atMedium"</span><span class="nt">&gt;</span>This is hidden in medium viewports and up<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h4>Available media conditional modifiers</h4>
 
 <table><thead>
 <tr>
@@ -306,8 +323,40 @@ and overflow hidden.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>TK</td>
-<td>TK</td>
+<td><code>.align--center--at[Size]</code></td>
+<td>sets <code>text-align</code> to <code>center</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.align--right--at[Size]</code></td>
+<td>sets <code>text-align</code> to <code>right</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.align--left--at[Size]</code></td>
+<td>sets <code>text-align</code> to <code>left</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.display--none--at[Size]</code></td>
+<td>sets <code>display</code> to <code>none</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.display--block--at[Size]</code></td>
+<td>sets <code>display</code> to <code>block</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.display--inline--at[Size]</code></td>
+<td>sets <code>display</code> to <code>inline</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.display--inlineBlock--at[Size]</code></td>
+<td>sets <code>display</code> to <code>inline-block</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.border--top--at[Size]</code></td>
+<td>adds top border to element at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.border--none--at[Size]</code></td>
+<td>removes borders of element at given size (atSmall, atMedium, atLarge)</td>
 </tr>
 </tbody></table>
 
@@ -466,8 +515,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Media conditional modifiers",
-					"breadcrumb": "Modifiers > Media conditional modifiers",
+					"title": "Media-conditional modifiers",
+					"breadcrumb": "Modifiers > Media-conditional modifiers",
 					"path": "modifiers.html#mediaMod"
 				});
 
@@ -604,9 +653,9 @@ $(function() {
 				
 
 				index.add({
-					"title": "capitalizeFirstLetter",
-					"breadcrumb": "Sass Utilities > capitalizeFirstLetter",
-					"path": "sass_utilities.html#capitalizeFirstLetter"
+					"title": "str-capitalizeFirstLetter",
+					"breadcrumb": "Sass Utilities > str-capitalizeFirstLetter",
+					"path": "sass_utilities.html#str-capitalizeFirstLetter"
 				});
 
 			

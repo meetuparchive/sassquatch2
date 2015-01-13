@@ -15,7 +15,7 @@ Class                   | Description
 
 */
 @each $display in $display-values {
-	$modifierVariant: str-replace($display, '-', '');
+	$modifierVariant: str-replace($display, '-block', 'Block');
 	@include _modifier(display, $modifierVariant) {
 		display: $display !important;
 	}

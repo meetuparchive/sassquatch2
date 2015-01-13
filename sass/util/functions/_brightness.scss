@@ -17,7 +17,9 @@ parent: brightness
 Gets brightness of a color on a scale of 0-255 based on a yiq color space.
 _Calculates green-weighted sum of RGB channels (green is perceived as brighter
 on additive color screens)._
-__returns int__
+
+_returns int_
+
 ```
 getPerceivedBrightness(#000) // -> 0
 ```
@@ -40,7 +42,9 @@ parent: brightness
 ---
 Checks a given color for brightness and returns a boolean.
 Our default dark/light threshold is 160 on a scale of 0-255
-__returns boolean__
+
+_returns boolean_
+
 ```
 isDark(#000) // -> true
 isLight(#000) // -> false
@@ -66,7 +70,8 @@ parent: brightness
 ---
 For a given background color, this function returns
 a text color value with appropriate contrast.
-__returns value__
+
+_returns `color` value_
 
 ```
 // -> color: $C_textPrimaryInverted; (white text on dark)

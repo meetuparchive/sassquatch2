@@ -1,15 +1,43 @@
 /*doc
 ---
-title: Media conditional modifiers
+title: Media-conditional modifiers
 name: mediaMod
 category: Modifiers
 ---
-TK
 
-Class                   | Description
------------------------ | --------------------------------
-TK                      | TK
+Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.
 
+Uses `atMediaUp`
+
+TODO: consider `atMediaOnly`
+
+#### Signature
+
+`.[property]--[modification]--at[Breakpoint]`
+
+
+#### Example
+
+```html_example
+<p class="display--none display--block--atLarge">You can only see this in large viewports</p>
+<p class="display--none--atMedium">This is hidden in medium viewports and up</p>
+```
+
+
+#### Available media conditional modifiers
+
+Class                        | Description
+---------------------------- | --------------------------------
+`.align--center--at[Size]`   | sets `text-align` to `center` at given size (atSmall, atMedium, atLarge)
+`.align--right--at[Size]`    | sets `text-align` to `right` at given size (atSmall, atMedium, atLarge)
+`.align--left--at[Size]`     | sets `text-align` to `left` at given size (atSmall, atMedium, atLarge)
+`.display--none--at[Size]`   | sets `display` to `none` at given size (atSmall, atMedium, atLarge)
+`.display--block--at[Size]`  | sets `display` to `block` at given size (atSmall, atMedium, atLarge)
+`.display--inline--at[Size]` | sets `display` to `inline` at given size (atSmall, atMedium, atLarge)
+`.display--inlineBlock--at[Size]` | sets `display` to `inline-block` at given size (atSmall, atMedium, atLarge)
+`.border--top--at[Size]`     | adds top border to element at given size (atSmall, atMedium, atLarge)
+`.border--none--at[Size]`    | removes borders of element at given size (atSmall, atMedium, atLarge)
 */
 @each $breakpoint in (large, medium, small) {
 
@@ -22,7 +50,7 @@ TK                      | TK
 
 	// display
 	@each $display in $display-values {
-		$modifierVariant: str-replace($display, '-', '');
+		$modifierVariant: str-replace($display, '-block', 'Block');
 		@include _bpModifier($breakpoint, 'display', $modifierVariant) {
 			display: $display !important;
 		}

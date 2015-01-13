@@ -230,17 +230,17 @@
 
 <p>Gets brightness of a color on a scale of 0-255 based on a yiq color space.
 <em>Calculates green-weighted sum of RGB channels (green is perceived as brighter
-on additive color screens).</em>
-<strong>returns int</strong>
-<code>
-getPerceivedBrightness(#000) // -&gt; 0
-</code></p>
+on additive color screens).</em></p>
 
+<p><em>returns int</em></p>
+<div class="codeBlock"><div class="highlight"><pre>getPerceivedBrightness(#000) // -&gt; 0
+</pre></div></div>
 <h3 id="getPrimaryTextColor">Programmatic contrast text</h3>
 
 <p>For a given background color, this function returns
-a text color value with appropriate contrast.
-<strong>returns value</strong></p>
+a text color value with appropriate contrast.</p>
+
+<p><em>returns <code>color</code> value</em></p>
 <div class="codeBlock"><div class="highlight"><pre>// -&gt; color: $C_textPrimaryInverted; (white text on dark)
 color: getPrimaryTextColor(#000);
 
@@ -250,27 +250,31 @@ color: getPrimaryTextColor(#FFF);
 <h3 id="isDarkisLight">isDark/isLight</h3>
 
 <p>Checks a given color for brightness and returns a boolean.
-Our default dark/light threshold is 160 on a scale of 0-255
-<strong>returns boolean</strong>
-<code>
-isDark(#000) // -&gt; true
-isLight(#000) // -&gt; false
-</code></p>
+Our default dark/light threshold is 160 on a scale of 0-255</p>
 
+<p><em>returns boolean</em></p>
+<div class="codeBlock"><div class="highlight"><pre>isDark(#000) // -&gt; true
+isLight(#000) // -&gt; false
+</pre></div></div>
 <h2 id="string">String utils</h2>
 
-<h3 id="capitalizeFirstLetter">capitalizeFirstLetter</h3>
+<h3 id="str-capitalizeFirstLetter">str-capitalizeFirstLetter</h3>
 
-<p>Capitalizes first letter of a given string. Useful as a camelCase converter.
-<strong>returns string</strong></p>
-<div class="codeBlock"><div class="highlight"><pre>capitalizeFirstLetter('snowflake') // -&gt; 'Snowflake'
+<p>Capitalizes first letter of a given string. Useful as a camelCase converter.</p>
 
-.special#{capitalizeFirstLetter('snowflake')} // -&gt; .specialSnowflake
+<p><em>returns string</em></p>
+<div class="codeBlock"><div class="highlight"><pre>str-capitalizeFirstLetter('snowflake') // -&gt; 'Snowflake'
+
+.special#{str-capitalizeFirstLetter('snowflake')} // -&gt; .specialSnowflake
 </pre></div></div>
 <h3 id="str-replace">str-replace</h3>
 
-<p><strong>returns string</strong></p>
-<div class="codeBlock"><div class="highlight"><pre>str-replace('snow_flake', '_', '-') // -&gt; 'snow-flake'
+<p>Search and replace on strings.</p>
+
+<p><em>returns string</em></p>
+<div class="codeBlock"><div class="highlight"><pre>str-replace('inline-block', '-', '') // -&gt; 'inlineblock'
+
+.display--#{str-replace('inline-block', '-block', 'Block')} -&gt; .display--inlineBlock
 </pre></div></div>
 <h1 id="mixinsPlaceholders">Sass Mixins & Placeholders</h1>
 
@@ -381,6 +385,40 @@ use the <code>atMediaDown</code> mixin.</p>
 <tr>
 <td><code>atMediaDown(huge)</code></td>
 <td>Huge screens and under</td>
+</tr>
+</tbody></table>
+
+<h3>Targeting a specific breakpoint</h3>
+
+<p>It will be rare that we target a specific breakpoint, but
+the <code>atMediaOnly</code> mixin will do this.</p>
+<div class="codeBlock"><div class="highlight"><pre>    @include atMediaOnly(medium) {
+        body::after {
+            content: "only medium screens will see this";
+        }
+    }
+</pre></div></div>
+<table><thead>
+<tr>
+<th>Breakpoint name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>atMediaOnly(small)</code></td>
+<td>Small screens only</td>
+</tr>
+<tr>
+<td><code>atMediaOnly(medium)</code></td>
+<td>Landscape on most phones only</td>
+</tr>
+<tr>
+<td><code>atMediaOnly(large)</code></td>
+<td>Landscape on phabelts only</td>
+</tr>
+<tr>
+<td><code>atMediaOnly(huge)</code></td>
+<td>Huge screens only</td>
 </tr>
 </tbody></table>
 
@@ -551,8 +589,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Media conditional modifiers",
-					"breadcrumb": "Modifiers > Media conditional modifiers",
+					"title": "Media-conditional modifiers",
+					"breadcrumb": "Modifiers > Media-conditional modifiers",
 					"path": "modifiers.html#mediaMod"
 				});
 
@@ -689,9 +727,9 @@ $(function() {
 				
 
 				index.add({
-					"title": "capitalizeFirstLetter",
-					"breadcrumb": "Sass Utilities > capitalizeFirstLetter",
-					"path": "sass_utilities.html#capitalizeFirstLetter"
+					"title": "str-capitalizeFirstLetter",
+					"breadcrumb": "Sass Utilities > str-capitalizeFirstLetter",
+					"path": "sass_utilities.html#str-capitalizeFirstLetter"
 				});
 
 			

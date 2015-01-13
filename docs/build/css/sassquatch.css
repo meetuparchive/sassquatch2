@@ -14,17 +14,18 @@ parent: functions
 */
 /*doc
 ---
-title: capitalizeFirstLetter
-name: capitalizeFirstLetter
+title: str-capitalizeFirstLetter
+name: str-capitalizeFirstLetter
 parent: string
 ---
 Capitalizes first letter of a given string. Useful as a camelCase converter.
-__returns string__
+
+_returns string_
 
 ```
-capitalizeFirstLetter('snowflake') // -> 'Snowflake'
+str-capitalizeFirstLetter('snowflake') // -> 'Snowflake'
 
-.specialcapitalizeFirstLetter("snowflake") // -> .specialSnowflake
+.specialstr-capitalizeFirstLetter("snowflake") // -> .specialSnowflake
 ```
 */
 /*doc
@@ -33,12 +34,14 @@ title: str-replace
 name: str-replace
 parent: string
 ---
+Search and replace on strings.
 
-__returns string__
-
+_returns string_
 
 ```
-str-replace('snow_flake', '_', '-') // -> 'snow-flake'
+str-replace('inline-block', '-', '') // -> 'inlineblock'
+
+.display--str-replace("inline-block", "-block", "Block") -> .display--inlineBlock
 ```
 */
 /*doc
@@ -57,7 +60,9 @@ parent: brightness
 Gets brightness of a color on a scale of 0-255 based on a yiq color space.
 _Calculates green-weighted sum of RGB channels (green is perceived as brighter
 on additive color screens)._
-__returns int__
+
+_returns int_
+
 ```
 getPerceivedBrightness(#000) // -> 0
 ```
@@ -70,7 +75,9 @@ parent: brightness
 ---
 Checks a given color for brightness and returns a boolean.
 Our default dark/light threshold is 160 on a scale of 0-255
-__returns boolean__
+
+_returns boolean_
+
 ```
 isDark(#000) // -> true
 isLight(#000) // -> false
@@ -84,7 +91,8 @@ parent: brightness
 ---
 For a given background color, this function returns
 a text color value with appropriate contrast.
-__returns value__
+
+_returns `color` value_
 
 ```
 // -> color: $C_textPrimaryInverted; (white text on dark)
@@ -872,6 +880,26 @@ Breakpoint name        | Description
 `atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
 `atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
 `atMediaDown(huge)`    | Huge screens and under
+
+
+### Targeting a specific breakpoint
+It will be rare that we target a specific breakpoint, but
+the `atMediaOnly` mixin will do this.
+
+```scss
+	@include atMediaOnly(medium) {
+		body::after {
+			content: "only medium screens will see this";
+		}
+	}
+```
+
+Breakpoint name        | Description
+-----------------------| ---------------------------------------------
+`atMediaOnly(small)`   | Small screens only
+`atMediaOnly(medium)`  | Landscape on most phones only
+`atMediaOnly(large)`   | Landscape on phabelts only
+`atMediaOnly(huge)`    | Huge screens only
 */
 /*doc
 ---
@@ -3364,7 +3392,7 @@ Class                   | Description
 .display--inline {
   display: inline !important; }
 
-.display--inlineblock {
+.display--inlineBlock {
   display: inline-block !important; }
 
 /*doc
@@ -3387,16 +3415,44 @@ TK `.clearfix`
 
 /*doc
 ---
-title: Media conditional modifiers
+title: Media-conditional modifiers
 name: mediaMod
 category: Modifiers
 ---
-TK
 
-Class                   | Description
------------------------ | --------------------------------
-TK                      | TK
+Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.
 
+Uses `atMediaUp`
+
+TODO: consider `atMediaOnly`
+
+#### Signature
+
+`.[property]--[modification]--at[Breakpoint]`
+
+
+#### Example
+
+```html_example
+<p class="display--none display--block--atLarge">You can only see this in large viewports</p>
+<p class="display--none--atMedium">This is hidden in medium viewports and up</p>
+```
+
+
+#### Available media conditional modifiers
+
+Class                        | Description
+---------------------------- | --------------------------------
+`.align--center--at[Size]`   | sets `text-align` to `center` at given size (atSmall, atMedium, atLarge)
+`.align--right--at[Size]`    | sets `text-align` to `right` at given size (atSmall, atMedium, atLarge)
+`.align--left--at[Size]`     | sets `text-align` to `left` at given size (atSmall, atMedium, atLarge)
+`.display--none--at[Size]`   | sets `display` to `none` at given size (atSmall, atMedium, atLarge)
+`.display--block--at[Size]`  | sets `display` to `block` at given size (atSmall, atMedium, atLarge)
+`.display--inline--at[Size]` | sets `display` to `inline` at given size (atSmall, atMedium, atLarge)
+`.display--inlineBlock--at[Size]` | sets `display` to `inline-block` at given size (atSmall, atMedium, atLarge)
+`.border--top--at[Size]`     | adds top border to element at given size (atSmall, atMedium, atLarge)
+`.border--none--at[Size]`    | removes borders of element at given size (atSmall, atMedium, atLarge)
 */
 @media only screen and (min-width: 960px) {
   .align--center--atLarge {
@@ -3417,7 +3473,7 @@ TK                      | TK
   .display--inline--atLarge {
     display: inline !important; } }
 @media only screen and (min-width: 960px) {
-  .display--inlineblock--atLarge {
+  .display--inlineBlock--atLarge {
     display: inline-block !important; } }
 @media only screen and (min-width: 960px) {
   .border--top--atLarge {
@@ -3444,7 +3500,7 @@ TK                      | TK
   .display--inline--atMedium {
     display: inline !important; } }
 @media only screen and (min-width: 640px) {
-  .display--inlineblock--atMedium {
+  .display--inlineBlock--atMedium {
     display: inline-block !important; } }
 @media only screen and (min-width: 640px) {
   .border--top--atMedium {
@@ -3471,7 +3527,7 @@ TK                      | TK
   .display--inline--atSmall {
     display: inline !important; } }
 @media only screen and (min-width: 440px) {
-  .display--inlineblock--atSmall {
+  .display--inlineBlock--atSmall {
     display: inline-block !important; } }
 @media only screen and (min-width: 440px) {
   .border--top--atSmall {
