@@ -10,7 +10,7 @@
 
 // move to page structure?
 .collection-header {
-	@extend %vAlignChildren;
+	@extend %valignChildren;
 	height: $block;
 	margin-bottom: 0;
 	.collection-header-actions {
