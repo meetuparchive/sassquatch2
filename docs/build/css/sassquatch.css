@@ -3382,10 +3382,6 @@ category: Modifiers
 Media-conditional modifiers allow us to apply
 a modification at a specific breakpoint.
 
-Uses `atMediaUp`
-
-TODO: consider `atMediaOnly`
-
 #### Signature
 
 `.[property]--[modification]--[breakpoint][Up|Down|Small]`
