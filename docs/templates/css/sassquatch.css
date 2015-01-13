@@ -2529,6 +2529,23 @@ _Includes `table-cell` fallback for IE8._
   align-items: flex;
   -ms-flex-align: flex; }
 
+.flexRow-item--shrink, .flexRow-item--grow {
+  padding-left: 16px; }
+  .flexRow-item--shrink:first-child, .flexRow-item--grow:first-child {
+    padding-left: 0; }
+
+.flexRow-item--shrink {
+  -webkit-flex-shrink: 1;
+  -moz-flex-shrink: 1;
+  flex-shrink: 1;
+  -ms-flex-negative: 1; }
+
+.flexRow-item--grow {
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1; }
+
 /*doc
 ---
 title: flexRow variants
@@ -2541,12 +2558,17 @@ following classes are optional variants:
 
 Class                       | Description
 --------------------------- | -------------------------------
+`.flexRow--noGutters`       | removes padding from all `.flexRow-item` children
 `.flexRow--reverse`         | reverses row order
 `.flexRow--flexEnd`         | justifies content to `flex-end`
 `.flexRow--center`          | justifies content to `center`
 `.flexRow--spaceBetween`    | justifies content to `spaceBetween`
 `.flexRow--spaceAround`     | justifies content to `spaceAround`
 */
+.flexRow--noGutters .flexrow-item--grow,
+.flexRow--noGutters .flexrow-item--shrink {
+  padding: 0; }
+
 .flexRow--reverse {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
@@ -2602,43 +2624,6 @@ Class                       | Description
   -o-justify-content: space-around;
   justify-content: space-around;
   -ms-flex-pack: center; }
-
-/*doc
----
-title: flexRow-item variants
-name: flexrowChild
-parent: flexRow
----
-
-A class of `.flexRow-item--shirnk` or `.flexRow-item--grow` on
-flexRow children is __required__. The following classes are optional variants:
-
-Class                         | Description
------------------------------ | -------------------------------
-`.flexRow-item--gutterRight`  | adds `padding-right` to item
-`.flexRow-item--gutterLeft`   | adds `padding-left` to item
-`.flexRow-item--gutterBoth`   | adds `padding-both` sides of item
-*/
-.flexRow-item--gutterRight {
-  padding-right: 16px; }
-
-.flexRow-item--gutterLeft {
-  padding-left: 16px; }
-
-.flexRow-item--gutterBoth {
-  padding: 0 16px; }
-
-.flexRow-item--shrink {
-  -webkit-flex-shrink: 1;
-  -moz-flex-shrink: 1;
-  flex-shrink: 1;
-  -ms-flex-negative: 1; }
-
-.flexRow-item--grow {
-  -webkit-flex-grow: 1;
-  -moz-flex-grow: 1;
-  flex-grow: 1;
-  -ms-flex-positive: 1; }
 
 .lt--IE9 .flexRow {
   -webkit-box-sizing: border-box;

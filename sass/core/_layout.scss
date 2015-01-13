@@ -191,6 +191,20 @@ _Includes `table-cell` fallback for IE8._
 	@include justify-content(flex-start);
 	@include align-items(flex);
 }
+%_flexRow-item {
+	padding-left: $space;
+	&:first-child {
+		padding-left: 0;
+	}
+}
+.flexRow-item--shrink {
+	@extend %_flexRow-item;
+	@include flex-shrink(1);
+}
+.flexRow-item--grow {
+	@extend %_flexRow-item;
+	@include flex-grow(1);
+}
 
 
 /*doc
@@ -205,12 +219,17 @@ following classes are optional variants:
 
 Class                       | Description
 --------------------------- | -------------------------------
+`.flexRow--noGutters`       | removes padding from all `.flexRow-item` children
 `.flexRow--reverse`         | reverses row order
 `.flexRow--flexEnd`         | justifies content to `flex-end`
 `.flexRow--center`          | justifies content to `center`
 `.flexRow--spaceBetween`    | justifies content to `spaceBetween`
 `.flexRow--spaceAround`     | justifies content to `spaceAround`
 */
+.flexRow--noGutters .flexrow-item--grow,
+.flexRow--noGutters .flexrow-item--shrink {
+	padding: 0;
+}
 .flexRow--reverse {
 	@include flex-direction(row-reverse);
 }
@@ -218,40 +237,6 @@ Class                       | Description
 	.flexRow--#{$jName} {
 		@include justify-content($jprop);
 	}
-}
-
-/*doc
----
-title: flexRow-item variants
-name: flexrowChild
-parent: flexRow
----
-
-A class of `.flexRow-item--shirnk` or `.flexRow-item--grow` on
-flexRow children is __required__. The following classes are optional variants:
-
-Class                         | Description
------------------------------ | -------------------------------
-`.flexRow-item--gutterRight`  | adds `padding-right` to item
-`.flexRow-item--gutterLeft`   | adds `padding-left` to item
-`.flexRow-item--gutterBoth`   | adds `padding-both` sides of item
-*/
-.flexRow-item--gutterRight {
-	padding-right: $space;
-}
-.flexRow-item--gutterLeft {
-	padding-left: $space;
-}
-.flexRow-item--gutterBoth {
-	padding: 0 $space;
-}
-
-// flexRow item shirnk/grow variants
-.flexRow-item--shrink {
-	@include flex-shrink(1);
-}
-.flexRow-item--grow {
-	@include flex-grow(1);
 }
 
 // LT IE9 fallback
