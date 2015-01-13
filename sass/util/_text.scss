@@ -14,12 +14,11 @@ title: Text protection shim
 name: textProtection
 parent: text
 ---
-Adds a pseudo-element gradient 
+Adds a pseudo-element gradient
 ```
 @mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
 ```
 */
-//TODO: fix name
 @mixin textProtectionScrim($placement: 'top') {
 	&:before {
 		$C_scrimGradient: #0F141F;

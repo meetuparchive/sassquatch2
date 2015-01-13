@@ -6,9 +6,6 @@ parent: mixinsPlaceholders
 ---
 */
 
-//TODO: fix selectors
-//TODO: wtf is going on with flex-direction
-
 
 /*doc
 ---
@@ -24,15 +21,13 @@ Aligns children of selected element using flexbox.
 ```
 */
 
-%valignChildren,
-%v-align-children {
+%valignChildren {
 	@include display(flex);
 	@include flex-direction(column);
 	@include justify-content(center);
 }
 
-%valignChildren--bottom,
-%v-align-children--bottom {
+%valignChildren--bottom {
 	@include display(flex);
 	@include flex-direction(column);
 	@include justify-content(flex-end);
