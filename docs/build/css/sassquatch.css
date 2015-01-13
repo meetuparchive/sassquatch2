@@ -434,8 +434,7 @@ Aligns children of selected element using flexbox.
 @extend %valignChildren--bottom;
 ```
 */
-.collection-header,
-.chunkList-chunk:only-child {
+.collection-header {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -1446,57 +1445,17 @@ Display text for header hero elements.
       .collection-header .collection-header-actions a:last-child {
         padding-right: 0; }
 
-.chunkList {
+.list {
   padding: 0;
   margin: 0;
   list-style: none; }
-  .chunkList .timestamp {
-    float: right; }
-  .chunkList .item-label {
-    font-weight: 700;
-    display: inline-block; }
-  .chunkList > li {
+  .list > li {
     margin: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-    .chunkList--borderless .chunkList > li {
-      border-top: 0;
-      margin-top: 24px; }
-    .chunkList > li:first-child {
-      border-top: none; }
-
-.chunkList--borderless > li {
-  border-top: 0;
-  margin-top: 24px; }
-
-.chunkList-chunk {
-  height: 72px;
-  vertical-align: middle;
-  padding: 8px 0 8px 8px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-  .chunkList-chunk:first-child {
-    padding-left: 0; }
-  .chunkList--small .chunkList-chunk {
-    height: 48px; }
-  .chunkList--large .chunkList-chunk, .chunkList-row--large .chunkList-chunk {
-    vertical-align: top !important; }
-
-.chunkList-chunk--graphic {
-  line-height: 100%;
-  min-width: 36px;
-  max-width: 36px; }
-
-.chunkList-chunk--action {
-  text-align: right;
-  white-space: nowrap; }
-  .chunkList-chunk--action input.checkbox,
-  .chunkList-chunk--action input.radio {
-    margin-right: 2px; }
-  .chunkList-chunk--action a {
-    padding: 0 8px; }
-    .chunkList-chunk--action a:last-child {
-      padding-right: 0; }
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    padding-top: 16px; }
+    .list > li:first-child {
+      border-top: none;
+      padding-top: 0; }
 
 .gridList {
   margin: 0 -8px 0 0;
@@ -1600,7 +1559,7 @@ Display text for header hero elements.
   .tileGrid--photos .tileGrid-tile {
     padding: 0 8px 8px 0; } }
 .inlineblockList {
-  margin: 8px 0;
+  margin: 0;
   padding: 0; }
   .inlineblockList > li {
     display: inline-block;
