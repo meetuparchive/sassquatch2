@@ -32,32 +32,34 @@ category: UI Components
 	background-color: $C_collectionBGLight;
 	background-position: center 42%;
 	display: inline-block;
-	font-size: $media-m * 2/3;
-	height: $media-m;
+	font-size: $media-s * 2/3;
+	height: $media-s;
 	text-indent: 100%;
 	white-space: nowrap;
 	vertical-align: top;
-	width: $media-m;
+	width: $media-s;
+
+	@include atMediaUp(small) {
+		font-size: $media-m;
+		height: $media-m;
+		width: $media-m;
+	}
+
 }
 
 
 //
 // Size variants
 //
-.avatar--xsmall {
+.avatar--small {
 	font-size: $media-xs;
 	height: $media-xs;
 	width: $media-xs;
 }
-.avatar--small {
-	width: $media-s;
-	height: $media-s;
-	font-size: $media-s;
-}
 .avatar--big {
-	width: $media-xl;
-	height: $media-xl;
 	font-size: $media-l * 2/3;
+	height: $media-xl;
+	width: $media-xl;
 }
 
 
