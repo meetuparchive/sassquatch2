@@ -72,8 +72,7 @@ parent: typesetting
 <p class="text--secondary">Secondary text is secondary</p>
 ```
 */
-.text--secondary,
-.text-secondary {
+.text--secondary {
 	color: $C_textSecondary;
 	.inverted & {
 		color: $C_textSecondaryInverted;
@@ -92,8 +91,7 @@ parent: typesetting
 ```
 */
 %text--small,
-.text--small,
-.text-small {
+.text--small {
 	font-size: $font-size-small;
 	line-height: $line-height-small;
 }
@@ -145,8 +143,7 @@ event descriptions).
 </div>
 ```
 */
-.runningText p,
-.running-text-container p {
+.runningText p {
 	margin-bottom: $space;
 	&:last-child {
 		margin-bottom: 0;
