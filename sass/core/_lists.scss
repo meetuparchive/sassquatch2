@@ -37,86 +37,15 @@
 	& > li {
 		margin: 0;
 		border-top: 1px solid $C-border;
-	}
-}
-
-
-/*
-//
-// CHUNKLISTS
-//
-.chunkList {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	.timestamp {
-		float: right;
-	}
-	.item-label {
-		font-weight: 700;
-		display: inline-block;
-	}
-	& > li {
-		margin: 0;
-		border-top: 1px solid $C-border;
-		// overflow: hidden;
-		.chunkList--borderless & {
-			border-top: 0;
-			margin-top: $space-2;
-		}
-		&:first-child {
+		padding-top: $space;
+		&:first-child{
 			border-top: none;
+			padding-top: 0;
 		}
 	}
 }
 
-.chunkList-chunk {
-	height: $block-2;
-	vertical-align: middle;
-	padding: $space-half 0 $space-half $space-half;
-	@include box-sizing(border-box);
-	&:first-child {
-		padding-left: 0;
-	}
-	&:only-child {
-		// must not be using ffbox
-		@extend %v-align-children;
-	}
-	.chunkList--small & {
-		height: $block;
-	}
-	.chunkList--large &,
-	.chunkList-row--large & {
-		vertical-align: top !important;
-		//sorry, had to fight the power
- 
-	}
-}
 
-.chunkList-chunk--graphic {
-	// setting weird width on here because I'm using ffbox to do vertical alignment
-	line-height: 100%;
-	min-width: $media-s;
-	max-width: $media-s;
-}
-
-.chunkList-chunk--action {
-	text-align: right;
-	white-space: nowrap;
-	input.checkbox,
-	input.radio {
-		margin-right: 2px;
-		//make up for border
- 
-	}
-	a {
-		padding: 0 8px;
-		&:last-child {
-			padding-right: 0;
-		}
-	}
-}
-*/
 
 //
 // GRID LIST
@@ -188,7 +117,7 @@
 // INLINE BLOCK LIST
 //
 .inlineblockList {
-	margin: $space-half 0;
+	margin: 0;
 	padding: 0;
 	& > li {
 		display: inline-block;
