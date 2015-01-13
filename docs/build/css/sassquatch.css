@@ -2834,8 +2834,6 @@ name: buttons
 category: UI Components
 ---
 
-Full docs TK
-
 ```html_example
 <a class="button" href="#">Button</a>
 <a class="button button--primary" href="#">Primary Button</a>
@@ -2849,7 +2847,6 @@ Full docs TK
 <a class="button button--small" href="#">Small Button</a>
 <a class="button button--bordered button--fullWidth" href="#">Full width button</a>
 ```
-
 */
 .button {
   background-color: transparent;
