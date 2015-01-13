@@ -13,8 +13,8 @@ Class                   | Description
 
 */
 .border--top {
-	border-top: $border-standard;
+	border-top: $border-standard !important;
 }
 .border--none {
-	border-width: 0;
+	border-width: 0 !important;
 }

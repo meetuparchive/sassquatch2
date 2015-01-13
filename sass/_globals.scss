@@ -226,6 +226,17 @@
 
 
 // ---------------------------
+// DISPLAY
+// ---------------------------
+	$display-values: (
+		none,
+		block,
+		inline,
+		inline-block
+	);
+
+
+// ---------------------------
 // FLEXBOX
 // ---------------------------
 	$flexJustifyMap: ( // omits flex-start (default prop)

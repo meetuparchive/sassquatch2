@@ -12,10 +12,12 @@ Class                         | Description
 `.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
 
 */
-.wrap--singleLine--truncate {
-  white-space: nowrap;
+%wrap--singleLine,
+.wrap--singleLine {
+	white-space: nowrap !important;
 }
 .wrap--singleLine--truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
+	@extend %wrap--singleLine;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
 }

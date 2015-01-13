@@ -13,7 +13,7 @@
 //
 @mixin _bpModifier($breakpoint, $base, $modification) {
 	@include atMediaUp($breakpoint) {
-		.#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)} {
+		.#{$base}--#{$modification}--at#{str-capitalizeFirstLetter($breakpoint)} {
 			@content;
 		}
 	}

@@ -29,6 +29,20 @@ capitalizeFirstLetter('snowflake') // -> 'Snowflake'
 */
 /*doc
 ---
+title: str-replace
+name: str-replace
+parent: string
+---
+
+__returns string__
+
+
+```
+str-replace('snow_flake', '_', '-') // -> 'snow-flake'
+```
+*/
+/*doc
+---
 title: Contrast/brightness utils
 name: brightness
 parent: functions
@@ -3244,13 +3258,13 @@ Class             | Description
 
 */
 .align--left {
-  text-align: left; }
+  text-align: left !important; }
 
 .align--right {
-  text-align: right; }
+  text-align: right !important; }
 
 .align--center {
-  text-align: center; }
+  text-align: center !important; }
 
 /*doc
 ---
@@ -3320,10 +3334,10 @@ Class                   | Description
 
 */
 .border--top {
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+  border-top: 1px solid rgba(0, 0, 0, 0.12) !important; }
 
 .border--none {
-  border-width: 0; }
+  border-width: 0 !important; }
 
 /*doc
 ---
@@ -3342,16 +3356,16 @@ Class                   | Description
 
 */
 .display--none {
-  display: none; }
+  display: none !important; }
 
 .display--block {
-  display: block; }
+  display: block !important; }
 
 .display--inline {
-  display: inline; }
+  display: inline !important; }
 
 .display--inlineblock {
-  display: inline-block; }
+  display: inline-block !important; }
 
 /*doc
 ---
@@ -3386,85 +3400,85 @@ TK                      | TK
 */
 @media only screen and (min-width: 960px) {
   .align--center--atLarge {
-    text-align: center; } }
+    text-align: center !important; } }
 @media only screen and (min-width: 960px) {
   .align--right--atLarge {
-    text-align: right; } }
+    text-align: right !important; } }
 @media only screen and (min-width: 960px) {
   .align--left--atLarge {
-    text-align: left; } }
+    text-align: left !important; } }
 @media only screen and (min-width: 960px) {
   .display--none--atLarge {
-    display: none; } }
-@media only screen and (min-width: 960px) {
-  .display--inline--atLarge {
-    display: inline; } }
+    display: none !important; } }
 @media only screen and (min-width: 960px) {
   .display--block--atLarge {
-    display: block; } }
+    display: block !important; } }
+@media only screen and (min-width: 960px) {
+  .display--inline--atLarge {
+    display: inline !important; } }
 @media only screen and (min-width: 960px) {
   .display--inlineblock--atLarge {
-    display: inline-block; } }
+    display: inline-block !important; } }
 @media only screen and (min-width: 960px) {
   .border--top--atLarge {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 960px) {
   .border--none--atLarge {
-    border-width: 0; } }
+    border-width: 0 !important; } }
 @media only screen and (min-width: 640px) {
   .align--center--atMedium {
-    text-align: center; } }
+    text-align: center !important; } }
 @media only screen and (min-width: 640px) {
   .align--right--atMedium {
-    text-align: right; } }
+    text-align: right !important; } }
 @media only screen and (min-width: 640px) {
   .align--left--atMedium {
-    text-align: left; } }
+    text-align: left !important; } }
 @media only screen and (min-width: 640px) {
   .display--none--atMedium {
-    display: none; } }
-@media only screen and (min-width: 640px) {
-  .display--inline--atMedium {
-    display: inline; } }
+    display: none !important; } }
 @media only screen and (min-width: 640px) {
   .display--block--atMedium {
-    display: block; } }
+    display: block !important; } }
+@media only screen and (min-width: 640px) {
+  .display--inline--atMedium {
+    display: inline !important; } }
 @media only screen and (min-width: 640px) {
   .display--inlineblock--atMedium {
-    display: inline-block; } }
+    display: inline-block !important; } }
 @media only screen and (min-width: 640px) {
   .border--top--atMedium {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 640px) {
   .border--none--atMedium {
-    border-width: 0; } }
+    border-width: 0 !important; } }
 @media only screen and (min-width: 440px) {
   .align--center--atSmall {
-    text-align: center; } }
+    text-align: center !important; } }
 @media only screen and (min-width: 440px) {
   .align--right--atSmall {
-    text-align: right; } }
+    text-align: right !important; } }
 @media only screen and (min-width: 440px) {
   .align--left--atSmall {
-    text-align: left; } }
+    text-align: left !important; } }
 @media only screen and (min-width: 440px) {
   .display--none--atSmall {
-    display: none; } }
-@media only screen and (min-width: 440px) {
-  .display--inline--atSmall {
-    display: inline; } }
+    display: none !important; } }
 @media only screen and (min-width: 440px) {
   .display--block--atSmall {
-    display: block; } }
+    display: block !important; } }
+@media only screen and (min-width: 440px) {
+  .display--inline--atSmall {
+    display: inline !important; } }
 @media only screen and (min-width: 440px) {
   .display--inlineblock--atSmall {
-    display: inline-block; } }
+    display: inline-block !important; } }
 @media only screen and (min-width: 440px) {
   .border--top--atSmall {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 440px) {
   .border--none--atSmall {
-    border-width: 0; } }
+    border-width: 0 !important; } }
 /*doc
 ---
 title: Media Sizing
@@ -3532,11 +3546,12 @@ Class                         | Description
 `.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
 
 */
-.wrap--singleLine--truncate {
-  white-space: nowrap; }
+.wrap--singleLine--truncate,
+.wrap--singleLine {
+  white-space: nowrap !important; }
 
 .wrap--singleLine--truncate {
-  overflow: hidden;
-  text-overflow: ellipsis; }
+  overflow: hidden !important;
+  text-overflow: ellipsis !important; }
 
 /*# sourceMappingURL=sassquatch.css.map */
