@@ -1,0 +1,1111 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Sassquatch 2 : Core</title>
+
+	<!-- Whitney -->
+	<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
+
+	<!-- Styleguide CSS -->
+	<link rel="stylesheet" href="css/doc.css">
+	<link rel="stylesheet" href="css/github.css">
+
+	<!-- CSS to be documented -->
+	<link rel="stylesheet" href="css/sassquatch.css">
+</head>
+
+<body>
+	<header class="docStripe--inverted inverted">
+		<div class="contentBounds">
+			<h1 class="display contentBounds">Sassquatch 2</h1>
+			<p class="software-version">v0.0.1</p>
+		</div>
+	</header>
+
+	<section id="hologramBody" class="contentBounds">
+		<nav>
+			<ul>
+				
+					<li>
+						<a href="modifiers.html">Modifiers</a>
+						
+					</li>
+				
+					<li>
+						<a href="ui_components.html">UI Components</a>
+						
+					</li>
+				
+					<li>
+						<a href="sass_utilities.html">Sass Utilities</a>
+						
+					</li>
+				
+					<li>
+						<a href="core.html">Core</a>
+						
+							<ul>
+								
+
+									
+									
+										<li>
+											<a href="#layout">Layout</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#typesetting">Typesetting</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+							</ul>
+						
+					</li>
+				
+			</ul>
+		</nav>
+
+		<main id="content">
+<h1 id="layout">Layout</h1>
+
+<p>TK
+TODO: link to separate layout visual example page</p>
+
+<h2 id="contentBounds">Content bounds</h2>
+
+<p>Used as a non-visual content container that manages content measure,
+ Similar to <a href="http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar">sassquatch 1 <code>docBounds</code></a>.</p>
+
+<p>Centers children with auto margin, clears floats, applies
+padding, and sets a max-width.</p>
+<div class="codeExample"><div class="exampleOutput"><section class="docStripe">
+    <p>This is just a paragraph inside a docStripe. There's no contentBounds element to center and set the measure of this text.</p>
+</section>
+
+<section class="docStripe">
+    <div class="contentBounds">
+        <p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
+    </div>
+</section>
+
+<section class="docStripe">
+    <div class="contentBounds _DOC-SHADE">
+        <p><strong>Previous example, shaded to show detail</strong></p>
+        <p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
+    </div>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"docStripe"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is just a paragraph inside a docStripe. There's no contentBounds element to center and set the measure of this text.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"docStripe"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"docStripe"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds _DOC-SHADE"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;strong&gt;</span>Previous example, shaded to show detail<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div></div></div>
+<h2 id="docStripe">Doc stripe</h2>
+
+<p>A <code>.docStripe</code> class should be applied to <code>&lt;section&gt;</code> elements
+to visually divide the page with stripes of color.</p>
+
+<p>To align content within a stripe, use <a href="contentBounds"><code>.contentBounds</code></a>.</p>
+<div class="codeExample"><div class="exampleOutput"><section class="docStripe">
+    <div class="contentBounds">
+        <p>... default stripe ...</p>
+    </div>
+</section>
+
+<section class="docStripe--inverted inverted">
+    <div class="contentBounds">
+        <p>... inverted stripe, using `inverted` class to set text colors  ...</p>
+    </div>
+</section>
+
+<section class="docStripe--collection">
+    <div class="contentBounds">
+        <p>... collection variant of docStripe, used to contain collections of cards </p>
+    </div>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"docStripe"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>... default stripe ...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"docStripe--inverted inverted"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>... inverted stripe, using `inverted` class to set text colors  ...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"docStripe--collection"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contentBounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>... collection variant of docStripe, used to contain collections of cards <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div></div></div>
+<h2 id="flexRow">Flex row</h2>
+
+<p>Arranges content in rows using <code>display: flex</code>.</p>
+
+<p>The <code>.flexRow</code> class is applied to a wrapping element.</p>
+
+<p>Direct children of <code>.flexRow</code> are flex children, and require
+either a <code>.flexRow-item--grow</code> or <code>.flexRow-item--shirnk</code> class.</p>
+
+<p>The flex children in flexRow do not have a <code>flex-basis</code> set; a
+basis is not required for most common layout tasks.</p>
+
+<p><em>Includes <code>table-cell</code> fallback for IE8.</em></p>
+
+<h4>Examples:</h4>
+<div class="codeExample"><div class="exampleOutput"><div class="flexRow">
+    <div class="_DOC-SHADE flexRow-item--grow flexRow-item--gutterLeft">Item 1</div>
+    <div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+    <div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+    <div class="_DOC-SHADE flexRow-item--grow">Item 4</div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flexRow"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--grow flexRow-item--gutterLeft"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--grow"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="flexRow">
+    <div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+    <div class="_DOC-SHADE flexRow-item--grow">Item 2</div>
+    <div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flexRow"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--grow"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="flexRow flexRow--flexEnd">
+    <div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+    <div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 2</div>
+    <div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 3</div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flexRow flexRow--flexEnd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="flexRow flexRow--spaceBetween flexRow--reverse">
+    <div class="_DOC-SHADE flexRow-item--shrink">Item 1</div>
+    <div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+    <div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+    <div class="_DOC-SHADE flexRow-item--shrink">Item 4</div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flexRow flexRow--spaceBetween flexRow--reverse"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE flexRow-item--shrink"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h3 id="flexrowChild">flexRow-item variants</h3>
+
+<p>A class of <code>.flexRow-item--shirnk</code> or <code>.flexRow-item--grow</code> on
+flexRow children is <strong>required</strong>. The following classes are optional variants:</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.flexRow-item--gutterRight</code></td>
+<td>adds <code>padding-right</code> to item</td>
+</tr>
+<tr>
+<td><code>.flexRow-item--gutterLeft</code></td>
+<td>adds <code>padding-left</code> to item</td>
+</tr>
+<tr>
+<td><code>.flexRow-item--gutterBoth</code></td>
+<td>adds <code>padding-both</code> sides of item</td>
+</tr>
+</tbody></table>
+
+<h3 id="flexrowParent">flexRow variants</h3>
+
+<p>A class of <code>.flexRow</code> is <strong>required</strong> on the flexRow parent. The
+following classes are optional variants:</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.flexRow--reverse</code></td>
+<td>reverses row order</td>
+</tr>
+<tr>
+<td><code>.flexRow--flexEnd</code></td>
+<td>justifies content to <code>flex-end</code></td>
+</tr>
+<tr>
+<td><code>.flexRow--center</code></td>
+<td>justifies content to <code>center</code></td>
+</tr>
+<tr>
+<td><code>.flexRow--spaceBetween</code></td>
+<td>justifies content to <code>spaceBetween</code></td>
+</tr>
+<tr>
+<td><code>.flexRow--spaceAround</code></td>
+<td>justifies content to <code>spaceAround</code></td>
+</tr>
+</tbody></table>
+
+<h1 id="typesetting">Typesetting</h1>
+
+<p>TK - notes about UI text vs. body text</p>
+<div class="codeExample"><div class="exampleOutput"><h1 class="text--display">Heading 1 Display</h1>
+<h1>Heading 1 (white by default for use in navbar)</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<p>Body text</p>
+<p class="text--heading">Fake heading</p>
+<p class="text--hint">Hint text</p>
+<p class="text--small">Small text</p>
+<p class="text--caption">Caption text</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>Heading 1 Display<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Heading 1 (white by default for use in navbar)<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>Heading 2<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>Heading 3<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;</span>Heading 4<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;</span>Heading 5<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;</span>Heading 6<span class="nt">&lt;/h6&gt;</span>
+<span class="nt">&lt;p&gt;</span>Body text<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--heading"</span><span class="nt">&gt;</span>Fake heading<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>Hint text<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Caption text<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="bodyText">Body/primary text</h2>
+<div class="codeExample"><div class="exampleOutput"><p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="captionText">Caption text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--caption">I'm captioning all the things</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>I'm captioning all the things<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="displayText">Display text</h2>
+
+<p>Display text for header hero elements.</p>
+<div class="codeExample"><div class="exampleOutput"><h1 class="text--display">The hero gotham deserves</h1>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>The hero gotham deserves<span class="nt">&lt;/h1&gt;</span>
+</pre></div></div></div>
+<h2 id="hintText">Hint text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--hint">This is hint text</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>This is hint text<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="invertedText">Inverted text</h2>
+
+<p>Apply the <code>inverted</code> class to a container with
+a dark background color or photo to flip all text
+elements to inveted colors.</p>
+<div class="codeExample"><div class="exampleOutput"><div style="background: #353E48;" class="inverted">
+    <p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background: #353E48;"</span> <span class="na">class=</span><span class="s">"inverted"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h2 id="runningText">Running text</h2>
+
+<p>By default, paragraphs and headings are not styled
+with any bottom spacing. Links are not blue by default,
+as the most common case on Meetup will be block-level
+anchors with large touch targets.</p>
+
+<p>However, there will be instaces where you want the blue
+links and properly spaced paragraphs of running text (ie.
+event descriptions).</p>
+<div class="codeExample"><div class="exampleOutput"><p>The robot is partially dressed in waterproof surgical garb.</p>
+<p>"Bruce Springsteen" is a terrible name for a <a href="#">cat</a>.</p>
+
+<hr style="margin: 8px;" /> <!-- lol, hr -->
+
+<div class="runningText">
+    <p>The robot is partially dressed in waterproof surgical garb.</p>
+    <p>"Bruce Springsteen" is a terrible name for a <a href="#">cat</a>.</p>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>"Bruce Springsteen" is a terrible name for a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>cat<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;hr</span> <span class="na">style=</span><span class="s">"margin: 8px;"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- lol, hr --&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"runningText"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>"Bruce Springsteen" is a terrible name for a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>cat<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h3 id="linkColor">Link color</h3>
+
+<p>You can always force an anchor to apply a
+linky blue color by applying the <code>.link</code> class.</p>
+<div class="codeExample"><div class="exampleOutput"><p>Let's force this <a class="link" href="#">link</a> to be blue</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Let's force this <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>link<span class="nt">&lt;/a&gt;</span> to be blue<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="secondaryText">Secondary text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--secondary">Secondary text is secondary</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--secondary"</span><span class="nt">&gt;</span>Secondary text is secondary<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="smallText">Small text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--small">Small text is small</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text is small<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>	</main>
+
+<!-- lunr.js search index -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/lunr.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	var index = lunr(function() {
+		this.field('title', {boost: 10});
+		this.field('breadcrumb');
+		this.ref('path');
+	});
+
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Alignment",
+					"breadcrumb": "Modifiers > Alignment",
+					"path": "modifiers.html#alignMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Animation",
+					"breadcrumb": "Modifiers > Animation",
+					"path": "modifiers.html#animMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Background",
+					"breadcrumb": "Modifiers > Background",
+					"path": "modifiers.html#backgroundMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Image Fill",
+					"breadcrumb": "Modifiers > Image Fill",
+					"path": "modifiers.html#imgFillMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Borders",
+					"breadcrumb": "Modifiers > Borders",
+					"path": "modifiers.html#borderMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Display",
+					"breadcrumb": "Modifiers > Display",
+					"path": "modifiers.html#displayMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Float",
+					"breadcrumb": "Modifiers > Float",
+					"path": "modifiers.html#floatMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Aspect ratio helper",
+					"breadcrumb": "Modifiers > Aspect ratio helper",
+					"path": "modifiers.html#keepAspect"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Media-conditional modifiers",
+					"breadcrumb": "Modifiers > Media-conditional modifiers",
+					"path": "modifiers.html#mediaMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Media Sizing",
+					"breadcrumb": "Modifiers > Media Sizing",
+					"path": "modifiers.html#sizeMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Thumbnails",
+					"breadcrumb": "Modifiers > Thumbnails",
+					"path": "modifiers.html#thumb"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Type wrap/whitespace",
+					"breadcrumb": "Modifiers > Type wrap/whitespace",
+					"path": "modifiers.html#typespaceMod"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Avatar",
+					"breadcrumb": "UI Components > Avatar",
+					"path": "ui_components.html#avatar"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Buttons",
+					"breadcrumb": "UI Components > Buttons",
+					"path": "ui_components.html#buttons"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Toggle Pills",
+					"breadcrumb": "UI Components > Toggle Pills",
+					"path": "ui_components.html#togglePills"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Sass Functions",
+					"breadcrumb": "Sass Utilities > Sass Functions",
+					"path": "sass_utilities.html#functions"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Contrast/brightness utils",
+					"breadcrumb": "Sass Utilities > Contrast/brightness utils",
+					"path": "sass_utilities.html#brightness"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Perceived brightness value",
+					"breadcrumb": "Sass Utilities > Perceived brightness value",
+					"path": "sass_utilities.html#getPerceivedBrightness"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Programmatic contrast text",
+					"breadcrumb": "Sass Utilities > Programmatic contrast text",
+					"path": "sass_utilities.html#getPrimaryTextColor"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "isDark/isLight",
+					"breadcrumb": "Sass Utilities > isDark/isLight",
+					"path": "sass_utilities.html#isDarkisLight"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "String utils",
+					"breadcrumb": "Sass Utilities > String utils",
+					"path": "sass_utilities.html#string"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "str-capitalizeFirstLetter",
+					"breadcrumb": "Sass Utilities > str-capitalizeFirstLetter",
+					"path": "sass_utilities.html#str-capitalizeFirstLetter"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "str-replace",
+					"breadcrumb": "Sass Utilities > str-replace",
+					"path": "sass_utilities.html#str-replace"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Sass Mixins & Placeholders",
+					"breadcrumb": "Sass Utilities > Sass Mixins & Placeholders",
+					"path": "sass_utilities.html#mixinsPlaceholders"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Vertical-align children",
+					"breadcrumb": "Sass Utilities > Vertical-align children",
+					"path": "sass_utilities.html#align"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Animation",
+					"breadcrumb": "Sass Utilities > Animation",
+					"path": "sass_utilities.html#animation"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Subtle bounce-in",
+					"breadcrumb": "Sass Utilities > Subtle bounce-in",
+					"path": "sass_utilities.html#bounce-in-subtle"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Infinite spin",
+					"breadcrumb": "Sass Utilities > Infinite spin",
+					"path": "sass_utilities.html#spin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Background Utilities",
+					"breadcrumb": "Sass Utilities > Background Utilities",
+					"path": "sass_utilities.html#background"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Background clip mixin",
+					"breadcrumb": "Sass Utilities > Background clip mixin",
+					"path": "sass_utilities.html#backgroundClip"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Image fill placeholder",
+					"breadcrumb": "Sass Utilities > Image fill placeholder",
+					"path": "sass_utilities.html#imgFill"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Media Query Breakpoints",
+					"breadcrumb": "Sass Utilities > Media Query Breakpoints",
+					"path": "sass_utilities.html#breakpoints"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button utilities",
+					"breadcrumb": "Sass Utilities > Button utilities",
+					"path": "sass_utilities.html#button"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button color mixin",
+					"breadcrumb": "Sass Utilities > Button color mixin",
+					"path": "sass_utilities.html#buttonColor"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button personality placeholder",
+					"breadcrumb": "Sass Utilities > Button personality placeholder",
+					"path": "sass_utilities.html#buttonPersonality"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Display utils",
+					"breadcrumb": "Sass Utilities > Display utils",
+					"path": "sass_utilities.html#display"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Pseudo-element display mixin",
+					"breadcrumb": "Sass Utilities > Pseudo-element display mixin",
+					"path": "sass_utilities.html#pseudoDisplay"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Float utils",
+					"breadcrumb": "Sass Utilities > Float utils",
+					"path": "sass_utilities.html#float"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Clearfix placeholder",
+					"breadcrumb": "Sass Utilities > Clearfix placeholder",
+					"path": "sass_utilities.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Shadow utilities",
+					"breadcrumb": "Sass Utilities > Shadow utilities",
+					"path": "sass_utilities.html#shadow"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Shadow placeholder",
+					"breadcrumb": "Sass Utilities > Shadow placeholder",
+					"path": "sass_utilities.html#shadowPlaceholder"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Shapes",
+					"breadcrumb": "Sass Utilities > Shapes",
+					"path": "sass_utilities.html#shape"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Circle mixin",
+					"breadcrumb": "Sass Utilities > Circle mixin",
+					"path": "sass_utilities.html#circleMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Triangle mixin",
+					"breadcrumb": "Sass Utilities > Triangle mixin",
+					"path": "sass_utilities.html#triangleMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text utils",
+					"breadcrumb": "Sass Utilities > Text utils",
+					"path": "sass_utilities.html#text"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text protection shim",
+					"breadcrumb": "Sass Utilities > Text protection shim",
+					"path": "sass_utilities.html#textProtection"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Layout",
+					"breadcrumb": "Core > Layout",
+					"path": "core.html#layout"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Content bounds",
+					"breadcrumb": "Core > Content bounds",
+					"path": "core.html#contentBounds"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Doc stripe",
+					"breadcrumb": "Core > Doc stripe",
+					"path": "core.html#docStripe"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flex row",
+					"breadcrumb": "Core > Flex row",
+					"path": "core.html#flexRow"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "flexRow-item variants",
+					"breadcrumb": "Core > flexRow-item variants",
+					"path": "core.html#flexrowChild"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "flexRow variants",
+					"breadcrumb": "Core > flexRow variants",
+					"path": "core.html#flexrowParent"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Typesetting",
+					"breadcrumb": "Core > Typesetting",
+					"path": "core.html#typesetting"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Body/primary text",
+					"breadcrumb": "Core > Body/primary text",
+					"path": "core.html#bodyText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Caption text",
+					"breadcrumb": "Core > Caption text",
+					"path": "core.html#captionText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Display text",
+					"breadcrumb": "Core > Display text",
+					"path": "core.html#displayText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Hint text",
+					"breadcrumb": "Core > Hint text",
+					"path": "core.html#hintText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Inverted text",
+					"breadcrumb": "Core > Inverted text",
+					"path": "core.html#invertedText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Running text",
+					"breadcrumb": "Core > Running text",
+					"path": "core.html#runningText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Link color",
+					"breadcrumb": "Core > Link color",
+					"path": "core.html#linkColor"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Secondary text",
+					"breadcrumb": "Core > Secondary text",
+					"path": "core.html#secondaryText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Small text",
+					"breadcrumb": "Core > Small text",
+					"path": "core.html#smallText"
+				});
+
+			
+		
+	
+
+	window.HOTDOG = index;
+});
+</script>
+
+</body>
+</html>

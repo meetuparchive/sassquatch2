@@ -1,0 +1,274 @@
+//
+// COLLECTION HEADINGS
+//
+
+%list--reset,
+.list--reset {
+  list-style: none;
+  padding-left: 0;
+}
+
+// move to page structure?
+.collection-header {
+	@extend %v-align-children;
+	height: $block;
+	margin-bottom: 0;
+	.collection-header-actions {
+		white-space: nowrap;
+		a {
+			box-sizing: border-box;
+			display: inline-block;
+			padding: 0 $space-half;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+//
+// LIST (standard)
+//
+
+.list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	& > li {
+		margin: 0;
+		border-top: 1px solid $C-border;
+	}
+}
+
+
+/*
+//
+// CHUNKLISTS
+//
+.chunkList {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	.timestamp {
+		float: right;
+	}
+	.item-label {
+		font-weight: 700;
+		display: inline-block;
+	}
+	& > li {
+		margin: 0;
+		border-top: 1px solid $C-border;
+		// overflow: hidden;
+		.chunkList--borderless & {
+			border-top: 0;
+			margin-top: $space-2;
+		}
+		&:first-child {
+			border-top: none;
+		}
+	}
+}
+
+.chunkList-chunk {
+	height: $block-2;
+	vertical-align: middle;
+	padding: $space-half 0 $space-half $space-half;
+	@include box-sizing(border-box);
+	&:first-child {
+		padding-left: 0;
+	}
+	&:only-child {
+		// must not be using ffbox
+		@extend %v-align-children;
+	}
+	.chunkList--small & {
+		height: $block;
+	}
+	.chunkList--large &,
+	.chunkList-row--large & {
+		vertical-align: top !important;
+		//sorry, had to fight the power
+ 
+	}
+}
+
+.chunkList-chunk--graphic {
+	// setting weird width on here because I'm using ffbox to do vertical alignment
+	line-height: 100%;
+	min-width: $media-s;
+	max-width: $media-s;
+}
+
+.chunkList-chunk--action {
+	text-align: right;
+	white-space: nowrap;
+	input.checkbox,
+	input.radio {
+		margin-right: 2px;
+		//make up for border
+ 
+	}
+	a {
+		padding: 0 8px;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+*/
+
+//
+// GRID LIST
+//
+// example:
+// <ul class="gridList gridList--100px">
+// <li></li>
+// </ul>
+//
+// Gives you an <li> that is in the *neighborhood* of 100px across all breakpoints
+//
+.gridList {
+	margin: 0 #{-$space-half} 0 0;
+	padding: 0;
+	list-style: none;
+	font-size: 0;
+	> li {
+		font-size: 1rem;
+		display: inline-block;
+		//line-height: 0;
+		margin: 0;
+		padding: 0 $space-half $space-half 0;
+		vertical-align: top;
+		width: 50%;
+		@include box-sizing(border-box);
+	}
+	$target-widths: 20px, 30px, 40px, 60px, 80px, 100px, 200px, 300px, 400px;
+	// huge + larger
+	@each $tw in $target-widths {
+		$percentage-width: percentage(1 / round($breakpoint-xl / $tw));
+		&.gridList--#{$tw} > li {
+			width: $percentage-width;
+		}
+	}
+	// other breakpoints
+	$breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s);
+	@each $bname, $bp in $breakpoints {
+		@include atMediaDown($bname) {
+			@each $tw in $target-widths {
+				$percentage-width: percentage(1 / round($bp / $tw));
+				&.gridList--#{$tw} > li {
+					width: $percentage-width;
+				}
+			}
+		}
+	}
+}
+
+.gridList--photo-grid > li {
+	padding: 0 $space-quarter $space-quarter 0;
+}
+
+@include atMediaDown(medium) {
+	.gridList--photo-grid {
+		margin: 0 #{-($space + $space-half)} 0 #{-$space};
+		padding: 0;
+	}
+}
+
+
+@include atMediaUp(medium) {
+	.tileGrid--photos .tileGrid-tile {
+		padding: 0 $space-half $space-half 0;
+	}
+}
+
+
+//
+// INLINE BLOCK LIST
+//
+.inlineblockList {
+	margin: $space-half 0;
+	padding: 0;
+	& > li {
+		display: inline-block;
+		padding-right: $space-half;
+	}
+}
+
+//
+// HORIZONTAL SCROLLING LISTS
+//
+// ------------ HSCROLL ------------
+.hscroll-wrap {
+	-webkit-overflow-scrolling: touch;
+	overflow: scroll;
+	.hscroll {
+		box-sizing: content-box;
+		padding-left: $space;
+		padding-right: $space;
+		white-space: nowrap;
+		li {
+			white-space: normal;
+		}
+	}
+}
+
+.hscroll-wrap-wrap {
+	position: relative;
+	margin-left: -$space;
+	margin-right: -$space;
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: $space;
+		top: 0;
+	}
+	&:before {
+		left: 0;
+		@include background-image(linear-gradient(to right, #fff, transparentize(#ffffff, 1)));
+	}
+	&:after {
+		right: 0;
+		@include background-image(linear-gradient(to left, #fff, transparentize(#ffffff, 1)));
+	}
+}
+
+// docstripe--collection
+.docStripe--collection .hscroll-wrap-wrap {
+	&:before {
+		@include background-image(linear-gradient(to right, $C-collectionBGLight, transparentize($C-collectionBGLight, 1)));
+	}
+	&:after {
+		@include background-image(linear-gradient(to left, $C-collectionBGLight, transparentize($C-collectionBGLight, 1)));
+	}
+}
+
+// docstripe--inverted
+.docStripe--inverted .hscroll-wrap-wrap {
+	&:before {
+		@include background-image(linear-gradient(to right, $C-contentBGInverted, transparentize($C-contentBGInverted, 1)));
+	}
+	&:after {
+		@include background-image(linear-gradient(to left, $C-contentBGInverted, transparentize($C-contentBGInverted, 1)));
+	}
+}
+
+// hmm?
+.hscroll .tileGrid-tile {
+	box-sizing: content-box;
+}
+
+// toggle pill list
+// TODO: fix this
+.toggle-pill-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+  }
+
+}

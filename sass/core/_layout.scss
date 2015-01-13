@@ -1,0 +1,240 @@
+/*doc
+---
+title: Layout
+name: layout
+category: Core
+---
+TK
+TODO: link to separate layout visual example page
+*/
+
+
+
+/*doc
+---
+title: Doc stripe
+name: docStripe
+parent: layout
+---
+A `.docStripe` class should be applied to `<section>` elements
+to visually divide the page with stripes of color.
+
+To align content within a stripe, use [`.contentBounds`](contentBounds).
+
+```html_example
+<section class="docStripe">
+	<div class="contentBounds">
+		<p>... default stripe ...</p>
+	</div>
+</section>
+
+<section class="docStripe--inverted inverted">
+	<div class="contentBounds">
+		<p>... inverted stripe, using `inverted` class to set text colors  ...</p>
+	</div>
+</section>
+
+<section class="docStripe--collection">
+	<div class="contentBounds">
+		<p>... collection variant of docStripe, used to contain collections of cards </p>
+	</div>
+</section>
+```
+
+*/
+.docStripe {
+	overflow: hidden;
+	border-top: 1px solid $C_border;
+	background-color: #fff;
+}
+
+.docStripe--collection {
+	background: $C_collectionBGLight;
+}
+
+.docStripe--inverted {
+	background: $C_contentBGInverted;
+}
+
+
+// TODO: find out what's up with the bottom spacing within a docStripe
+
+/*doc
+---
+title: Content bounds
+name: contentBounds
+parent: layout
+---
+Used as a non-visual content container that manages content measure,
+ Similar to [sassquatch 1 `docBounds`](http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar).
+
+Centers children with auto margin, clears floats, applies
+padding, and sets a max-width.
+
+```html_example
+<section class="docStripe">
+	<p>This is just a paragraph inside a docStripe. There's no contentBounds element to center and set the measure of this text.</p>
+</section>
+
+<section class="docStripe">
+	<div class="contentBounds">
+		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
+	</div>
+</section>
+
+<section class="docStripe">
+	<div class="contentBounds _DOC-SHADE">
+		<p><strong>Previous example, shaded to show detail</strong></p>
+		<p>This paragraph is inside a contentBounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
+	</div>
+</section>
+```
+*/
+.contentBounds {
+	@extend %clearfix;
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $contentBounds;
+	padding: $space;
+	width: 100%;
+}
+
+/*doc
+---
+title: Flex row
+name: flexRow
+parent: layout
+---
+Arranges content in rows using `display: flex`.
+
+The `.flexRow` class is applied to a wrapping element.
+
+Direct children of `.flexRow` are flex children, and require
+either a `.flexRow-item--grow` or `.flexRow-item--shirnk` class.
+
+The flex children in flexRow do not have a `flex-basis` set; a
+basis is not required for most common layout tasks.
+
+_Includes `table-cell` fallback for IE8._
+
+#### Examples:
+
+```html_example
+<div class="flexRow">
+	<div class="_DOC-SHADE flexRow-item--grow flexRow-item--gutterLeft">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexRow-item--grow">Item 4</div>
+</div>
+```
+
+```html_example
+<div class="flexRow">
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--grow">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+</div>
+```
+
+```html_example
+<div class="flexRow flexRow--flexEnd">
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 3</div>
+</div>
+```
+
+```html_example
+<div class="flexRow flexRow--spaceBetween flexRow--reverse">
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 4</div>
+</div>
+```
+*/
+.flexRow {
+	@include display(flex);
+	@include flex-wrap(nowrap);
+	@include flex-direction(row);
+	@include justify-content(flex-start);
+	@include align-items(flex);
+}
+
+
+/*doc
+---
+title: flexRow variants
+name: flexrowParent
+parent: flexRow
+---
+
+A class of `.flexRow` is __required__ on the flexRow parent. The
+following classes are optional variants:
+
+Class                       | Description
+--------------------------- | -------------------------------
+`.flexRow--reverse`         | reverses row order
+`.flexRow--flexEnd`         | justifies content to `flex-end`
+`.flexRow--center`          | justifies content to `center`
+`.flexRow--spaceBetween`    | justifies content to `spaceBetween`
+`.flexRow--spaceAround`     | justifies content to `spaceAround`
+*/
+.flexRow--reverse {
+	@include flex-direction(row-reverse);
+}
+@each $jName, $jprop in $flexJustifyMap {
+	.flexRow--#{$jName} {
+		@include justify-content($jprop);
+	}
+}
+
+/*doc
+---
+title: flexRow-item variants
+name: flexrowChild
+parent: flexRow
+---
+
+A class of `.flexRow-item--shirnk` or `.flexRow-item--grow` on
+flexRow children is __required__. The following classes are optional variants:
+
+Class                         | Description
+----------------------------- | -------------------------------
+`.flexRow-item--gutterRight`  | adds `padding-right` to item
+`.flexRow-item--gutterLeft`   | adds `padding-left` to item
+`.flexRow-item--gutterBoth`   | adds `padding-both` sides of item
+*/
+.flexRow-item--gutterRight {
+	padding-right: $space;
+}
+.flexRow-item--gutterLeft {
+	padding-left: $space;
+}
+.flexRow-item--gutterBoth {
+	padding: 0 $space;
+}
+
+// flexRow item shirnk/grow variants
+.flexRow-item--shrink {
+	@include flex-shrink(1);
+}
+.flexRow-item--grow {
+	@include flex-grow(1);
+}
+
+// LT IE9 fallback
+.lt--IE9 .flexRow {
+	@include box-sizing(border-box);
+	display: table;
+	table-layout: auto;
+	width: 100%;
+}
+.lt--IE9 .flexRow-item--shrink,
+.lt--IE9 .flexRow-item--grow {
+	display: table-cell;
+}
+.lt--IE9 .flexRow-item--grow {
+	width: 100%;
+}

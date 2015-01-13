@@ -1,0 +1,107 @@
+/*doc
+---
+title: Shapes
+name: shape
+parent: mixinsPlaceholders
+---
+*/
+
+
+/*doc
+---
+title: Triangle mixin
+name: triangleMixin
+parent: shape
+---
+Includes rules to create a css border triangle
+```
+@mixin triangle($direction: 'n', $color: black, $size: 6px)
+```
+*/
+@mixin triangle($direction: 'n', $color: black, $size: 6px){
+	width: 0;
+	height: 0;
+	@if $direction == 'n'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+	@else if $direction == 'e'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+	@else if $direction == 's'{
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	}
+	@else if $direction == 'w'{
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
+}
+
+/*doc
+---
+title: Circle mixin
+name: circleMixin
+parent: shape
+---
+Makes selected element a circle with border-radius
+```
+@mixin circle($color: black, $size: 12px)
+```
+*/
+@mixin circle($color: black, $size: 12px){
+	width: $size;
+	height: $size;
+	border-radius: $size/2;
+	background: $color;
+}
+
+
+/*doc
+---
+title: Circle mixin
+name: circleMixin
+parent: shape
+---
+Adds pointers to any box.
+
+Use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
+_TODO: rewrite with args_
+```
+@mixin pointers-for-box($size, $background, $border)
+```
+*/
+@mixin pointers-for-box($size, $background, $border){
+    &:before, &:after{
+        position: absolute;
+    }
+    $vertical: 'top', 'bottom';
+    $horizontal: 'left', 'right';
+    $directions: (top: 'n', bottom: 's');
+    @each $v in $vertical{
+        @each $h in $horizontal{
+            &.#{$v}-#{$h}{
+                @if $border{
+                    &:before{
+                        #{$v}: -($size + 1px);
+                        #{$h}: -1px;
+                        @include triangle( map-get($directions, $v), $border, $size+1);
+                        @include pseudoDisplay();
+                    }
+                    &:after{
+                        #{$v}: -($size);
+                        #{$h}: 0;
+                        @include triangle(map-get($directions, $v), $background, $size);
+                        @include pseudoDisplay();
+                    }
+                }
+            }
+        }
+    }
+
+}

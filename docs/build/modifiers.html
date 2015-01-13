@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Sassquatch 2 : Sass Utilities</title>
+	<title>Sassquatch 2 : Modifiers</title>
 
 	<!-- Whitney -->
 	<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
@@ -34,6 +34,114 @@
 					<li>
 						<a href="modifiers.html">Modifiers</a>
 						
+							<ul>
+								
+
+									
+									
+										<li>
+											<a href="#alignMod">Alignment</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#animMod">Animation</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#backgroundMod">Background</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#borderMod">Borders</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#displayMod">Display</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#floatMod">Float</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#keepAspect">Aspect ratio helper</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#mediaMod">Media-conditional modifiers</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#sizeMod">Media Sizing</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#thumb">Thumbnails</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
+											<a href="#typespaceMod">Type wrap/whitespace</a>
+										</li>
+									
+
+								
+							</ul>
+						
 					</li>
 				
 					<li>
@@ -43,173 +151,6 @@
 				
 					<li>
 						<a href="sass_utilities.html">Sass Utilities</a>
-						
-							<ul>
-								
-
-									
-									
-										<li>
-											<a href="#functions">Sass Functions</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li>
-											<a href="#mixinsPlaceholders">Sass Mixins & Placeholders</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-							</ul>
 						
 					</li>
 				
@@ -222,273 +163,258 @@
 		</nav>
 
 		<main id="content">
-<h1 id="functions">Sass Functions</h1>
+<h1 id="alignMod">Alignment</h1>
 
-<h2 id="brightness">Contrast/brightness utils</h2>
+<p>Modifies text-align property of element</p>
 
-<h3 id="getPerceivedBrightness">Perceived brightness value</h3>
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.align--center</code></td>
+<td>sets <code>text-align</code> to <code>center</code></td>
+</tr>
+<tr>
+<td><code>.align--right</code></td>
+<td>sets <code>text-align</code> to <code>right</code></td>
+</tr>
+<tr>
+<td><code>.align--left</code></td>
+<td>sets <code>text-align</code> to <code>left</code></td>
+</tr>
+</tbody></table>
 
-<p>Gets brightness of a color on a scale of 0-255 based on a yiq color space.
-<em>Calculates green-weighted sum of RGB channels (green is perceived as brighter
-on additive color screens).</em></p>
+<h1 id="animMod">Animation</h1>
 
-<p><em>returns int</em></p>
-<div class="codeBlock"><div class="highlight"><pre>getPerceivedBrightness(#000) // -&gt; 0
-</pre></div></div>
-<h3 id="getPrimaryTextColor">Programmatic contrast text</h3>
+<p>Applies keyframes animation to element</p>
 
-<p>For a given background color, this function returns
-a text color value with appropriate contrast.</p>
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.animate--bounceInSubtle</code></td>
+<td>Applies bounce-in keyframes animation (plays once)</td>
+</tr>
+<tr>
+<td><code>.animate--spin</code></td>
+<td>Applies 360deg rotation keyframes (infinite)</td>
+</tr>
+</tbody></table>
 
-<p><em>returns <code>color</code> value</em></p>
-<div class="codeBlock"><div class="highlight"><pre>// -&gt; color: $C_textPrimaryInverted; (white text on dark)
-color: getPrimaryTextColor(#000);
+<h1 id="backgroundMod">Background</h1>
 
-// -&gt; color: $C_textPrimary; (dark text on white)
-color: getPrimaryTextColor(#FFF);
-</pre></div></div>
-<h3 id="isDarkisLight">isDark/isLight</h3>
-
-<p>Checks a given color for brightness and returns a boolean.
-Our default dark/light threshold is 160 on a scale of 0-255</p>
-
-<p><em>returns boolean</em></p>
-<div class="codeBlock"><div class="highlight"><pre>isDark(#000) // -&gt; true
-isLight(#000) // -&gt; false
-</pre></div></div>
-<h2 id="string">String utils</h2>
-
-<h3 id="str-capitalizeFirstLetter">str-capitalizeFirstLetter</h3>
-
-<p>Capitalizes first letter of a given string. Useful as a camelCase converter.</p>
-
-<p><em>returns string</em></p>
-<div class="codeBlock"><div class="highlight"><pre>str-capitalizeFirstLetter('snowflake') // -&gt; 'Snowflake'
-
-.special#{str-capitalizeFirstLetter('snowflake')} // -&gt; .specialSnowflake
-</pre></div></div>
-<h3 id="str-replace">str-replace</h3>
-
-<p>Search and replace on strings.</p>
-
-<p><em>returns string</em></p>
-<div class="codeBlock"><div class="highlight"><pre>str-replace('inline-block', '-', '') // -&gt; 'inlineblock'
-
-.display--#{str-replace('inline-block', '-block', 'Block')} -&gt; .display--inlineBlock
-</pre></div></div>
-<h1 id="mixinsPlaceholders">Sass Mixins & Placeholders</h1>
-
-<h2 id="align">Vertical-align children</h2>
-
-<p><strong>Try to avoid using for essential, non-decorative things</strong>
-Aligns children of selected element using flexbox.
-<code>
-@extend %valignChildren;
-@extend %valignChildren--bottom;
-</code></p>
-
-<h2 id="animation">Animation</h2>
-
-<h3 id="bounce-in-subtle">Subtle bounce-in</h3>
-
-<p>Subtle bounce effect using keyframes, provided via simple mixin
-<em>original keyframes generated with <a href="http://goo.gl/tT4jnp">Bounce.js</a></em></p>
-<div class="codeBlock"><div class="highlight"><pre>@include animate--bounce-in-subtle($time: 750ms);
-</pre></div></div>
-<h3 id="spin">Infinite spin</h3>
-
-<p>Infinite 2d rotation; 0-360deg.</p>
-<div class="codeBlock"><div class="highlight"><pre>@include animate--spin($time: 0.8s);
-</pre></div></div>
-<h2 id="background">Background Utilities</h2>
-
-<h3 id="backgroundClip">Background clip mixin</h3>
-
-<p>Sets background-clip property</p>
-<div class="codeBlock"><div class="highlight"><pre>@include background-clip($value: padding);
-@include background-clip('border');
-</pre></div></div>
-<h3 id="imgFill">Image fill placeholder</h3>
+<h2 id="imgFillMod">Image Fill</h2>
 
 <p>Sets background properties that center
 background image, set size to &#39;cover&#39;,
 and overflow hidden.</p>
 
-<p><em>[ie. avatars][avatar]</em></p>
-<div class="codeBlock"><div class="highlight"><pre>@extend %imgFill;
-</pre></div></div>
-<h2 id="breakpoints">Media Query Breakpoints</h2>
+<p>Extends <code>%imgFill</code>.</p>
 
-<h3>Mobile first mixin</h3>
+<p>EXAMPLE TK</p>
 
-<p>This breakpoint mixin uses a <strong>mobile first</strong>
-strategy, meaning the <code>medium</code> breakpoint, for
-example, applies to <em>medium screens and larger</em>.</p>
-<div class="codeBlock"><div class="highlight"><pre>    @include atMediaUp(medium) {
-        body::after {
-            content: "medium screens and larger can see me";
-        }
-    }
-</pre></div></div>
+<h1 id="borderMod">Borders</h1>
+
+<p>Sets border properties on element</p>
+
 <table><thead>
 <tr>
-<th>Breakpoint name</th>
+<th>Class</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td><code>atMediaUp(small)</code></td>
-<td>Small sreens and up</td>
+<td><code>.border--top</code></td>
+<td>sets a standard top border on the element</td>
 </tr>
 <tr>
-<td><code>atMediaUp(medium)</code></td>
-<td>Landscape on most phones and up; portrait on some phablets</td>
-</tr>
-<tr>
-<td><code>atMediaUp(large)</code></td>
-<td>Landscape on phabelts and up; portrait on most tablets or old desktops</td>
-</tr>
-<tr>
-<td><code>atMediaUp(huge)</code></td>
-<td>Modern desktop viewports and up or <a href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a></td>
+<td><code>.border--none</code></td>
+<td>removes all borders from element</td>
 </tr>
 </tbody></table>
 
-<h3>Breaking for smaller sizes and under</h3>
+<h1 id="displayMod">Display</h1>
 
-<p>In the event you need to target a <strong>specific screen size and under</strong>,
-use the <code>atMediaDown</code> mixin.</p>
-<div class="codeBlock"><div class="highlight"><pre>    @include atMediaDown(medium) {
-        body::after {
-            content: "medium screens and smaller can see me";
-        }
-    }
-</pre></div></div>
+<p>Modifies display property of element</p>
+
 <table><thead>
 <tr>
-<th>Breakpoint name</th>
+<th>Class</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td><code>atMediaDown(small)</code></td>
-<td>Small screens and under; portrait on most mobile devices</td>
+<td><code>.display--none</code></td>
+<td>sets <code>display</code> to <code>none</code></td>
 </tr>
 <tr>
-<td><code>atMediaDown(medium)</code></td>
-<td>Landscape on most phones and under; portrait on some phablets</td>
+<td><code>.display--block</code></td>
+<td>sets <code>display</code> to <code>block</code></td>
 </tr>
 <tr>
-<td><code>atMediaDown(large)</code></td>
-<td>Landscape on phabelts and under; portrait on most tablets or old desktops</td>
+<td><code>.display--inline</code></td>
+<td>sets <code>display</code> to <code>inline</code></td>
 </tr>
 <tr>
-<td><code>atMediaDown(huge)</code></td>
-<td>Huge screens and under</td>
+<td><code>.display--inlineblock</code></td>
+<td>sets <code>display</code> to <code>inlineblock</code></td>
 </tr>
 </tbody></table>
 
-<h3>Targeting a specific breakpoint</h3>
+<h1 id="floatMod">Float</h1>
 
-<p>It will be rare that we target a specific breakpoint, but
-the <code>atMediaOnly</code> mixin will do this.</p>
-<div class="codeBlock"><div class="highlight"><pre>    @include atMediaOnly(medium) {
-        body::after {
-            content: "only medium screens will see this";
-        }
-    }
-</pre></div></div>
+<p>TK <code>.clearfix</code></p>
+
+<h1 id="keepAspect">Aspect ratio helper</h1>
+
+<p>TODO: doc this</p>
+
 <table><thead>
 <tr>
-<th>Breakpoint name</th>
+<th>Class</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td><code>atMediaOnly(small)</code></td>
-<td>Small screens only</td>
+<td><code>.keepAspect</code></td>
+<td>TK</td>
 </tr>
 <tr>
-<td><code>atMediaOnly(medium)</code></td>
-<td>Landscape on most phones only</td>
+<td><code>.keepAspect--16-9</code></td>
+<td>TK</td>
 </tr>
 <tr>
-<td><code>atMediaOnly(large)</code></td>
-<td>Landscape on phabelts only</td>
-</tr>
-<tr>
-<td><code>atMediaOnly(huge)</code></td>
-<td>Huge screens only</td>
+<td><code>.keepAspect--2-1</code></td>
+<td>TK</td>
 </tr>
 </tbody></table>
 
-<h2 id="button">Button utilities</h2>
+<h1 id="mediaMod">Media-conditional modifiers</h1>
 
-<h3 id="buttonColor">Button color mixin</h3>
+<p>Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.</p>
 
-<p>Sets color properties for buttons</p>
-<div class="codeBlock"><div class="highlight"><pre>@mixin buttonColor($color, $btn-border: false)
-</pre></div></div>
-<h3 id="buttonPersonality">Button personality placeholder</h3>
+<p>Uses <code>atMediaUp</code></p>
 
-<p>Disables user-select, sets cursor, and resets text-decoration.
-<code>
-@extend %buttonPersonality;
-</code></p>
+<p>TODO: consider <code>atMediaOnly</code></p>
 
-<h2 id="display">Display utils</h2>
+<h4>Signature</h4>
 
-<h3 id="pseudoDisplay">Pseudo-element display mixin</h3>
+<p><code>.[property]--[modification]--at[Breakpoint]</code></p>
 
-<p>Sets display property for psuedo-elements
-<code>
-@include pseudoDisplay($value: block);
-</code></p>
+<h4>Example</h4>
+<div class="codeExample"><div class="exampleOutput"><p class="display--none display--block--atLarge">You can only see this in large viewports</p>
+<p class="display--none--atMedium">This is hidden in medium viewports and up</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"display--none display--block--atLarge"</span><span class="nt">&gt;</span>You can only see this in large viewports<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"display--none--atMedium"</span><span class="nt">&gt;</span>This is hidden in medium viewports and up<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h4>Available media conditional modifiers</h4>
 
-<h2 id="float">Float utils</h2>
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.align--center--at[Size]</code></td>
+<td>sets <code>text-align</code> to <code>center</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.align--right--at[Size]</code></td>
+<td>sets <code>text-align</code> to <code>right</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.align--left--at[Size]</code></td>
+<td>sets <code>text-align</code> to <code>left</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.display--none--at[Size]</code></td>
+<td>sets <code>display</code> to <code>none</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.display--block--at[Size]</code></td>
+<td>sets <code>display</code> to <code>block</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.display--inline--at[Size]</code></td>
+<td>sets <code>display</code> to <code>inline</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.display--inlineBlock--at[Size]</code></td>
+<td>sets <code>display</code> to <code>inline-block</code> at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.border--top--at[Size]</code></td>
+<td>adds top border to element at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+<tr>
+<td><code>.border--none--at[Size]</code></td>
+<td>removes borders of element at given size (atSmall, atMedium, atLarge)</td>
+</tr>
+</tbody></table>
 
-<h3 id="clearfix">Clearfix placeholder</h3>
+<h1 id="sizeMod">Media Sizing</h1>
 
-<p>Clears floated children.
-```
-@extend %clearfix;</p>
+<p>Classes for applying dimensions to an element.</p>
 
-<h2 id="shadow">Shadow utilities</h2>
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.media--xs</code></td>
+<td>Sets <code>width</code> to <code>$media-xs</code> and height to <code>auto</code></td>
+</tr>
+<tr>
+<td><code>.media--s</code></td>
+<td>Sets <code>width</code> to <code>$media-s</code> and height to <code>auto</code></td>
+</tr>
+<tr>
+<td><code>.media--m</code></td>
+<td>Sets <code>width</code> to <code>$media-m</code> and height to <code>auto</code></td>
+</tr>
+<tr>
+<td><code>.media--l</code></td>
+<td>Sets <code>width</code> to <code>$media-l</code> and height to <code>auto</code></td>
+</tr>
+<tr>
+<td><code>.media--xl</code></td>
+<td>Sets <code>width</code> to <code>$media-xl</code> and height to <code>auto</code></td>
+</tr>
+</tbody></table>
 
-<h3 id="shadowPlaceholder">Shadow placeholder</h3>
+<h1 id="thumb">Thumbnails</h1>
 
-<p>Applies standard box-shadow
-<code>
-@extend %shadow;
-</code></p>
+<p>TODO: doc this</p>
 
-<h2 id="shape">Shapes</h2>
+<h1 id="typespaceMod">Type wrap/whitespace</h1>
 
-<h3 id="circleMixin">Circle mixin</h3>
+<p>Sets type wrapping, witespace, and overflow properties on element</p>
 
-<p>Adds pointers to any box.</p>
-
-<p>Use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
-<em>TODO: rewrite with args</em>
-<code>
-@mixin pointers-for-box($size, $background, $border)
-</code></p>
-
-<h3 id="triangleMixin">Triangle mixin</h3>
-
-<p>Includes rules to create a css border triangle
-<code>
-@mixin triangle($direction: &#39;n&#39;, $color: black, $size: 6px)
-</code></p>
-
-<h2 id="text">Text utils</h2>
-
-<h3 id="textProtection">Text protection shim</h3>
-
-<p>Adds a pseudo-element gradient 
-<code>
-@mixin textProtectionScrim($placement: &#39;top&#39;); // &#39;bottom&#39; will place gradent on bottom of el
-</code></p>
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.wrap--singleLine</code></td>
+<td>forces text to a single line (nowrap)</td>
+</tr>
+<tr>
+<td><code>.wrap--singleLine--truncate</code></td>
+<td>forces text to a single line (nowrap) and truncates with &hellip;</td>
+</tr>
+</tbody></table>
 	</main>
 
 <!-- lunr.js search index -->

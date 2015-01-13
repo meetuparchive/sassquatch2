@@ -1,0 +1,22 @@
+/*doc
+---
+title: Display
+name: displayMod
+category: Modifiers
+---
+Modifies display property of element
+
+Class                   | Description
+----------------------- | --------------------------------
+`.display--none`        | sets `display` to `none`
+`.display--block`       | sets `display` to `block`
+`.display--inline`      | sets `display` to `inline`
+`.display--inlineblock` | sets `display` to `inlineblock`
+
+*/
+@each $display in $display-values {
+	$modifierVariant: str-replace($display, '-block', 'Block');
+	@include _modifier(display, $modifierVariant) {
+		display: $display !important;
+	}
+}

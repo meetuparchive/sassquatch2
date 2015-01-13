@@ -1,0 +1,20 @@
+/*doc
+---
+title: Animation
+name: animMod
+category: Modifiers
+---
+Applies keyframes animation to element
+
+Class							  | Description
+------------------------- | --------------------------------
+`.animate--bounceInSubtle`| Applies bounce-in keyframes animation (plays once)
+`.animate--spin`          | Applies 360deg rotation keyframes (infinite)
+
+*/
+.animate--bounceInSubtle {
+	@include animate--bounceInSubtle();
+}
+.animate--spin {
+	@include animate--spin();
+}

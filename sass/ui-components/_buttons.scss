@@ -1,0 +1,103 @@
+/*doc
+---
+title: Buttons
+name: buttons
+category: UI Components
+---
+
+```html_example
+<a class="button" href="#">Button</a>
+<a class="button button--primary" href="#">Primary Button</a>
+<a class="button button--bordered" href="#">Bordered Button</a>
+<br />
+<a class="button button--contrast" href="#">Contrast Button</a>
+<a class="button button--iconButton" href="#">
+	<i class="button-icon">:D</i>
+	<span class="text--caption">Icon Button</span>
+</a>
+<a class="button button--small" href="#">Small Button</a>
+<a class="button button--bordered button--fullWidth" href="#">Full width button</a>
+```
+*/
+
+.button {
+  // Default styles
+  @include buttonColor(rgba(0,0,0,0));
+  @include box-sizing(border-box);
+  @include transition(background .15s);
+  border-radius: 50px;
+  border: none;
+  color: map-get($btn-color-map, "primary");
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size;
+  font-weight: $W_bold;
+  margin: $space-half $space-quarter;
+  padding: $space-half $space;
+  text-align: center;
+}
+
+%button--bordered,
+.button--bordered {
+	@include buttonColor(map-get($btn-color-map, "primary"), $btn-border);
+	font-weight: $W_normal;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparentize(map-get($btn-color-map, "primary"), .8);
+	}
+
+}
+
+%button--contrast,
+.button--contrast {
+	color: $C_textPrimary;
+	font-weight: $W_bold;
+}
+
+.button--iconButton {
+	font-weight: $W_normal;
+	padding: 0;
+	&:hover,
+	&:focus,
+	&:active {
+		background: transparent;
+		text-decoration: none;
+	}
+}
+.button-icon {
+	margin-right: $space-half;
+	border: 1px solid map-get($btn-color-map, "primary");
+	border-radius: 999px;
+	color: map-get($btn-color-map, "primary");
+	display: block;
+	font-size: $media-xs;
+	height: $media-xs;
+	margin: 0 auto;
+	padding: $space-half;
+	width: $media-xs;
+}
+
+//
+// Button size modifiers
+//
+%button--small,
+.button--small {
+	font-size: $font-size-small;
+	padding: $space-quarter $space-half;
+}
+
+%button--fullWidth,
+.button--fullWidth {
+	@extend %button--bordered;
+	display: block;
+	margin: $space-half 0;
+	width: 100%;
+}
+
+@each $modName, $color in $btn-color-map {
+	@include _modifier('button', $modName) {
+		@include buttonColor($color);
+	}
+}
