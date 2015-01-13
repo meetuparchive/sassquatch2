@@ -23,7 +23,7 @@ body { // TODO: reight place for this?
 }
 
 .hero-content {
-  @extend %v-align-children--bottom; // maybe try to align without this?
+  @extend %valignChildren--bottom; // maybe try to align without this?
   min-height: $block-6;
   position: relative;
 
