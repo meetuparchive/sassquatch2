@@ -2,6 +2,7 @@
 // PRIVATE modifier factory
 //
 @mixin _modifier($base, $modification) {
+	%#{$base}--#{$modification},
 	.#{$base}--#{$modification} {
 		@content;
 	}
@@ -10,10 +11,28 @@
 //
 // PRIVATE media query modifier factory
 //
-@mixin _bpModifier($breakpoint, $base, $modification) {
-	@include atMediaUp($breakpoint) {
-		.#{$base}--#{$modification}--at#{capitalizeFirstLetter($breakpoint)} {
-			@content;
+@mixin _bpModifier($base, $modification) {
+
+	@each $breakpoint in (small, medium, large) {
+
+		@include atMediaUp($breakpoint) {
+			.#{$base}--#{$modification}--#{$breakpoint}Up {
+				@content;
+			}
 		}
+
+		@include atMediaDown($breakpoint) {
+			.#{$base}--#{$modification}--#{$breakpoint}Down {
+				@content;
+			}
+		}
+
+		@include atMediaOnly($breakpoint) {
+			.#{$base}--#{$modification}--#{$breakpoint}Only {
+				@content;
+			}
+		}
+
 	}
+
 }

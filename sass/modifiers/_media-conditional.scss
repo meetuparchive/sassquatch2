@@ -1,48 +1,47 @@
 /*doc
 ---
-title: Media conditional modifiers
+title: Media-conditional modifiers
 name: mediaMod
 category: Modifiers
 ---
-TK
 
-Class                   | Description
------------------------ | --------------------------------
-TK                      | TK
+Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.
 
+#### Signature
+
+`.[property]--[modification]--[breakpoint][Up|Down|Small]`
+
+ie. `.align--center--mOnly` applies center text alignment at the small breakpoint only
+
+#### Supported media and modifications
+_Better documentation for this TK_
+
+- `.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]`
+
+Example TK
 */
-@each $breakpoint in (large, medium, small) {
 
-	// text align
-	@include _bpModifier($breakpoint, 'align', 'center') {
-		text-align: center;
+// text align
+@each $alignment in (center, right, left) {
+	@include _bpModifier('align', $alignment) {
+		text-align: $alignment !important;
 	}
-	@include _bpModifier($breakpoint, 'align', 'right') {
-		text-align: right;
-	}
-	@include _bpModifier($breakpoint, 'align', 'left') {
-		text-align: left;
-	}
+}
 
-	// display
-	@include _bpModifier($breakpoint, 'display', 'none') {
-		display: none;
+// display
+@each $display in $display-values {
+	@include _bpModifier('display', str-replace($display, '-block', 'Block')) {
+		display: $display !important;
 	}
-	@include _bpModifier($breakpoint, 'display', 'inline') {
-		display: inline;
-	}
-	@include _bpModifier($breakpoint, 'display', 'block') {
-		display: block;
-	}
-	@include _bpModifier($breakpoint, 'display', 'inlineblock') {
-		display: inline-block;
-	}
+}
 
-	// border
-	@include _bpModifier($breakpoint, 'border', 'top') {
-		border-top: $border-standard;
-	}
-	@include _bpModifier($breakpoint, 'border', 'none') {
-		border-width: 0;
-	}
+// border
+@include _bpModifier('border', 'top') {
+	border-top: $border-standard !important;
+}
+@include _bpModifier('border', 'none') {
+	border-width: 0 !important;
 }

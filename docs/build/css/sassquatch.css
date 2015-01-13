@@ -14,17 +14,34 @@ parent: functions
 */
 /*doc
 ---
-title: capitalizeFirstLetter
-name: capitalizeFirstLetter
+title: str-capitalizeFirstLetter
+name: str-capitalizeFirstLetter
 parent: string
 ---
 Capitalizes first letter of a given string. Useful as a camelCase converter.
-__returns string__
+
+_returns string_
 
 ```
-capitalizeFirstLetter('snowflake') // -> 'Snowflake'
+str-capitalizeFirstLetter('snowflake') // -> 'Snowflake'
 
-.specialcapitalizeFirstLetter("snowflake") // -> .specialSnowflake
+.specialstr-capitalizeFirstLetter("snowflake") // -> .specialSnowflake
+```
+*/
+/*doc
+---
+title: str-replace
+name: str-replace
+parent: string
+---
+Search and replace on strings.
+
+_returns string_
+
+```
+str-replace('inline-block', '-', '') // -> 'inlineblock'
+
+.display--str-replace("inline-block", "-block", "Block") -> .display--inlineBlock
 ```
 */
 /*doc
@@ -43,7 +60,9 @@ parent: brightness
 Gets brightness of a color on a scale of 0-255 based on a yiq color space.
 _Calculates green-weighted sum of RGB channels (green is perceived as brighter
 on additive color screens)._
-__returns int__
+
+_returns int_
+
 ```
 getPerceivedBrightness(#000) // -> 0
 ```
@@ -56,7 +75,9 @@ parent: brightness
 ---
 Checks a given color for brightness and returns a boolean.
 Our default dark/light threshold is 160 on a scale of 0-255
-__returns boolean__
+
+_returns boolean_
+
 ```
 isDark(#000) // -> true
 isLight(#000) // -> false
@@ -70,7 +91,8 @@ parent: brightness
 ---
 For a given background color, this function returns
 a text color value with appropriate contrast.
-__returns value__
+
+_returns `color` value_
 
 ```
 // -> color: $C_textPrimaryInverted; (white text on dark)
@@ -412,8 +434,7 @@ Aligns children of selected element using flexbox.
 @extend %valignChildren--bottom;
 ```
 */
-.collection-header,
-.chunkList-chunk:only-child {
+.collection-header {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -858,6 +879,26 @@ Breakpoint name        | Description
 `atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
 `atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
 `atMediaDown(huge)`    | Huge screens and under
+
+
+### Targeting a specific breakpoint
+It will be rare that we target a specific breakpoint, but
+the `atMediaOnly` mixin will do this.
+
+```scss
+	@include atMediaOnly(medium) {
+		body::after {
+			content: "only medium screens will see this";
+		}
+	}
+```
+
+Breakpoint name        | Description
+-----------------------| ---------------------------------------------
+`atMediaOnly(small)`   | Small screens only
+`atMediaOnly(medium)`  | Landscape on most phones only
+`atMediaOnly(large)`   | Landscape on phabelts only
+`atMediaOnly(huge)`    | Huge screens only
 */
 /*doc
 ---
@@ -1404,57 +1445,17 @@ Display text for header hero elements.
       .collection-header .collection-header-actions a:last-child {
         padding-right: 0; }
 
-.chunkList {
+.list {
   padding: 0;
   margin: 0;
   list-style: none; }
-  .chunkList .timestamp {
-    float: right; }
-  .chunkList .item-label {
-    font-weight: 700;
-    display: inline-block; }
-  .chunkList > li {
+  .list > li {
     margin: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-    .chunkList--borderless .chunkList > li {
-      border-top: 0;
-      margin-top: 24px; }
-    .chunkList > li:first-child {
-      border-top: none; }
-
-.chunkList--borderless > li {
-  border-top: 0;
-  margin-top: 24px; }
-
-.chunkList-chunk {
-  height: 72px;
-  vertical-align: middle;
-  padding: 8px 0 8px 8px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-  .chunkList-chunk:first-child {
-    padding-left: 0; }
-  .chunkList--small .chunkList-chunk {
-    height: 48px; }
-  .chunkList--large .chunkList-chunk, .chunkList-row--large .chunkList-chunk {
-    vertical-align: top !important; }
-
-.chunkList-chunk--graphic {
-  line-height: 100%;
-  min-width: 36px;
-  max-width: 36px; }
-
-.chunkList-chunk--action {
-  text-align: right;
-  white-space: nowrap; }
-  .chunkList-chunk--action input.checkbox,
-  .chunkList-chunk--action input.radio {
-    margin-right: 2px; }
-  .chunkList-chunk--action a {
-    padding: 0 8px; }
-    .chunkList-chunk--action a:last-child {
-      padding-right: 0; }
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    padding-top: 16px; }
+    .list > li:first-child {
+      border-top: none;
+      padding-top: 0; }
 
 .gridList {
   margin: 0 -8px 0 0;
@@ -1558,7 +1559,7 @@ Display text for header hero elements.
   .tileGrid--photos .tileGrid-tile {
     padding: 0 8px 8px 0; } }
 .inlineblockList {
-  margin: 8px 0;
+  margin: 0;
   padding: 0; }
   .inlineblockList > li {
     display: inline-block;
@@ -1611,6 +1612,12 @@ Display text for header hero elements.
 
 .hscroll .tileGrid-tile {
   box-sizing: content-box; }
+
+.toggle-pill-list {
+  list-style: none;
+  padding-left: 0; }
+  .toggle-pill-list li {
+    display: inline-block; }
 
 body {
   position: relative; }
@@ -2646,7 +2653,23 @@ title: Avatar
 name: avatar
 category: UI Components
 ---
-TODO: doc this
+
+```html_example
+<ul class="inlineblockList">
+	<li>
+		<a href="#" class="avatar avatar--person" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--big" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);"></a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--fb-friend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);"></a>
+	</li>
+</ul>
+```
 */
 .avatar--person,
 .avatar {
@@ -2776,162 +2799,14 @@ title: Toggle Pills
 name: togglePills
 category: UI Components
 ---
-TODO: doc this
-*/
-.toggle-pill-list {
-  list-style: none;
-  padding-left: 0; }
-  .toggle-pill-list li {
-    display: inline-block; }
-
-input.toggle-pill {
-  display: none; }
-  input.toggle-pill + label {
-    border: 1px solid #3987cb;
-    border-radius: 999px;
-    color: #3987cb;
-    margin-right: 8px;
-    padding: 8px; }
-  input.toggle-pill:checked + label {
-    background: #3987cb;
-    color: white; }
-
-/*doc
----
-title: Buttons
-name: buttons
-category: UI Components
----
-
-Full docs TK
 
 ```html_example
-<a class="button" href="#">Button</a>
-<a class="button button--primary" href="#">Primary Button</a>
-<a class="button button--bordered" href="#">Bordered Button</a>
-<a class="button button--contrast" href="#">Contrast Button</a>
+<div class="toggle-button-wrapper">
+	<input type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn">
+	<label for="topic-pill" class="button button--small button--bordered">Dining Out</label>
+</div>
 ```
-
 */
-.button {
-  background-color: transparent;
-  border-radius: 50px;
-  border: none;
-  box-sizing: border-box;
-  color: #3987cb;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 8px 4px;
-  padding: 8px 16px;
-  text-align: center;
-  transition: background .15s; }
-  .button:focus {
-    outline: 0; }
-  .button:hover, .button:active, .button:focus {
-    background: rgba(0, 0, 0, 0.1); }
-  .button.button--disabled {
-    opacity: .4;
-    color: rgba(0, 0, 0, 0.87);
-    cursor: default; }
-    .button.button--disabled:hover, .button.button--disabled:active, .button.button--disabled:focus {
-      background: transparent; }
-    .button.button--disabled.button--primary {
-      background: rgba(0, 0, 0, 0.26); }
-  .button i {
-    margin-right: 8px; }
-  .button--bordered {
-    background-color: #3987cb;
-    color: white;
-    border: 1px solid #3987cb;
-    background: rgba(57, 135, 203, 0);
-    color: #3987cb;
-    font-weight: 400; }
-    .button--bordered:focus {
-      outline: 0; }
-    .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
-      background: #619fd6; }
-    .button--bordered.button--disabled {
-      opacity: .4;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: default; }
-      .button--bordered.button--disabled:hover, .button--bordered.button--disabled:active, .button--bordered.button--disabled:focus {
-        background: #3987cb; }
-      .button--bordered.button--disabled.button--primary {
-        background: rgba(0, 0, 0, 0.26); }
-    .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
-      background: rgba(57, 135, 203, 0.2); }
-  .button--contrast {
-    color: rgba(0, 0, 0, 0.87);
-    font-weight: 700; }
-  .button--iconButton {
-    font-weight: 400;
-    padding: 0; }
-    .button--iconButton i {
-      border: 1px solid #3987cb;
-      border-radius: 999px;
-      color: #3987cb;
-      display: block;
-      font-size: 24px;
-      height: 24px;
-      margin: 0 auto;
-      padding: 8px;
-      width: 24px; }
-    .button--iconButton:hover, .button--iconButton:focus, .button--iconButton:active {
-      background: transparent;
-      text-decoration: none; }
-  .button--small {
-    font-size: 13px;
-    padding: 4px 8px; }
-  .button--full-width {
-    display: block;
-    margin: 8px 0;
-    width: 100%; }
-  .button--default {
-    background-color: transparent; }
-    .button--default:focus {
-      outline: 0; }
-    .button--default:hover, .button--default:active, .button--default:focus {
-      background: rgba(0, 0, 0, 0.1); }
-    .button--default.button--disabled {
-      opacity: .4;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: default; }
-      .button--default.button--disabled:hover, .button--default.button--disabled:active, .button--default.button--disabled:focus {
-        background: transparent; }
-      .button--default.button--disabled.button--primary {
-        background: rgba(0, 0, 0, 0.26); }
-  .button--primary {
-    background-color: #3987cb;
-    color: white; }
-    .button--primary:focus {
-      outline: 0; }
-    .button--primary:hover, .button--primary:active, .button--primary:focus {
-      background: #619fd6; }
-    .button--primary.button--disabled {
-      opacity: .4;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: default; }
-      .button--primary.button--disabled:hover, .button--primary.button--disabled:active, .button--primary.button--disabled:focus {
-        background: #3987cb; }
-      .button--primary.button--disabled.button--primary {
-        background: rgba(0, 0, 0, 0.26); }
-  .button--contrast {
-    background-color: rgba(255, 255, 255, 0.7); }
-    .button--contrast:focus {
-      outline: 0; }
-    .button--contrast:hover, .button--contrast:active, .button--contrast:focus {
-      background: rgba(255, 255, 255, 0.8); }
-    .button--contrast.button--disabled {
-      opacity: .4;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: default; }
-      .button--contrast.button--disabled:hover, .button--contrast.button--disabled:active, .button--contrast.button--disabled:focus {
-        background: rgba(255, 255, 255, 0.7); }
-      .button--contrast.button--disabled.button--primary {
-        background: rgba(0, 0, 0, 0.26); }
-
 .toggle-button-wrapper {
   display: inline-block;
   margin: 4px 0;
@@ -2945,12 +2820,207 @@ Full docs TK
       border: none;
       color: white; }
 
+input.toggle-pill {
+  display: none; }
+  input.toggle-pill + label {
+    border: 1px solid #3987cb;
+    border-radius: 999px;
+    color: #3987cb;
+    margin-right: 8px;
+    padding: 8px; }
+  input.toggle-pill:checked + label {
+    background: #3987cb;
+    color: white; }
+
 .toggle-on {
   -webkit-animation: bounce-in-subtle 750ms linear;
   -moz-animation: bounce-in-subtle 750ms linear;
   animation: bounce-in-subtle 750ms linear; }
   .toggle-on label {
     font-weight: 700; }
+
+/*doc
+---
+title: Buttons
+name: buttons
+category: UI Components
+---
+
+```html_example
+<a class="button" href="#">Button</a>
+<a class="button button--primary" href="#">Primary Button</a>
+<a class="button button--bordered" href="#">Bordered Button</a>
+<br />
+<a class="button button--contrast" href="#">Contrast Button</a>
+<a class="button button--iconButton" href="#">
+	<i class="button-icon">:D</i>
+	<span class="text--caption">Icon Button</span>
+</a>
+<a class="button button--small" href="#">Small Button</a>
+<a class="button button--bordered button--fullWidth" href="#">Full width button</a>
+```
+*/
+.button {
+  background-color: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background 0.15s;
+  -moz-transition: background 0.15s;
+  transition: background 0.15s;
+  border-radius: 50px;
+  border: none;
+  color: #3987cb;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 8px 4px;
+  padding: 8px 16px;
+  text-align: center; }
+  .button:focus {
+    outline: 0; }
+  .button:hover, .button:active, .button:focus {
+    background: rgba(0, 0, 0, 0.1); }
+  .button.button--disabled {
+    opacity: .4;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default; }
+    .button.button--disabled:hover, .button.button--disabled:active, .button.button--disabled:focus {
+      background: transparent; }
+    .button.button--disabled.button--primary {
+      background: rgba(0, 0, 0, 0.26); }
+
+.button--fullWidth,
+.button--bordered {
+  background-color: #3987cb;
+  color: white;
+  border: 1px solid #3987cb;
+  background: rgba(57, 135, 203, 0);
+  color: #3987cb;
+  font-weight: 400; }
+  .button--fullWidth:focus,
+  .button--bordered:focus {
+    outline: 0; }
+  .button--fullWidth:hover,
+  .button--fullWidth:active,
+  .button--fullWidth:focus,
+  .button--bordered:hover,
+  .button--bordered:active,
+  .button--bordered:focus {
+    background: #619fd6; }
+  .button--disabled.button--fullWidth,
+  .button--bordered.button--disabled {
+    opacity: .4;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default; }
+    .button--disabled.button--fullWidth:hover,
+    .button--disabled.button--fullWidth:active,
+    .button--disabled.button--fullWidth:focus,
+    .button--bordered.button--disabled:hover,
+    .button--bordered.button--disabled:active,
+    .button--bordered.button--disabled:focus {
+      background: #3987cb; }
+    .button--disabled.button--primary.button--fullWidth,
+    .button--bordered.button--disabled.button--primary {
+      background: rgba(0, 0, 0, 0.26); }
+  .button--fullWidth:hover,
+  .button--fullWidth:active,
+  .button--fullWidth:focus,
+  .button--bordered:hover,
+  .button--bordered:active,
+  .button--bordered:focus {
+    background: rgba(57, 135, 203, 0.2); }
+
+.button--contrast {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 700; }
+
+.button--iconButton {
+  font-weight: 400;
+  padding: 0; }
+  .button--iconButton:hover, .button--iconButton:focus, .button--iconButton:active {
+    background: transparent;
+    text-decoration: none; }
+
+.button-icon {
+  margin-right: 8px;
+  border: 1px solid #3987cb;
+  border-radius: 999px;
+  color: #3987cb;
+  display: block;
+  font-size: 24px;
+  height: 24px;
+  margin: 0 auto;
+  padding: 8px;
+  width: 24px; }
+
+.button--small {
+  font-size: 13px;
+  padding: 4px 8px; }
+
+.button--fullWidth {
+  display: block;
+  margin: 8px 0;
+  width: 100%; }
+
+.button--default {
+  background-color: transparent; }
+  .button--default:focus {
+    outline: 0; }
+  .button--default:hover,
+  .button--default:active,
+  .button--default:focus {
+    background: rgba(0, 0, 0, 0.1); }
+  .button--default.button--disabled {
+    opacity: .4;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default; }
+    .button--default.button--disabled:hover,
+    .button--default.button--disabled:active,
+    .button--default.button--disabled:focus {
+      background: transparent; }
+    .button--default.button--disabled.button--primary {
+      background: rgba(0, 0, 0, 0.26); }
+
+.button--primary {
+  background-color: #3987cb;
+  color: white; }
+  .button--primary:focus {
+    outline: 0; }
+  .button--primary:hover,
+  .button--primary:active,
+  .button--primary:focus {
+    background: #619fd6; }
+  .button--primary.button--disabled {
+    opacity: .4;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default; }
+    .button--primary.button--disabled:hover,
+    .button--primary.button--disabled:active,
+    .button--primary.button--disabled:focus {
+      background: #3987cb; }
+    .button--primary.button--disabled.button--primary {
+      background: rgba(0, 0, 0, 0.26); }
+
+.button--contrast {
+  background-color: rgba(255, 255, 255, 0.7); }
+  .button--contrast:focus {
+    outline: 0; }
+  .button--contrast:hover,
+  .button--contrast:active,
+  .button--contrast:focus {
+    background: rgba(255, 255, 255, 0.8); }
+  .button--contrast.button--disabled {
+    opacity: .4;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: default; }
+    .button--contrast.button--disabled:hover,
+    .button--contrast.button--disabled:active,
+    .button--contrast.button--disabled:focus {
+      background: rgba(255, 255, 255, 0.7); }
+    .button--contrast.button--disabled.button--primary {
+      background: rgba(0, 0, 0, 0.26); }
 
 .momentary {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -3186,13 +3256,13 @@ Class             | Description
 
 */
 .align--left {
-  text-align: left; }
+  text-align: left !important; }
 
 .align--right {
-  text-align: right; }
+  text-align: right !important; }
 
 .align--center {
-  text-align: center; }
+  text-align: center !important; }
 
 /*doc
 ---
@@ -3262,10 +3332,10 @@ Class                   | Description
 
 */
 .border--top {
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+  border-top: 1px solid rgba(0, 0, 0, 0.12) !important; }
 
 .border--none {
-  border-width: 0; }
+  border-width: 0 !important; }
 
 /*doc
 ---
@@ -3284,16 +3354,16 @@ Class                   | Description
 
 */
 .display--none {
-  display: none; }
+  display: none !important; }
 
 .display--block {
-  display: block; }
+  display: block !important; }
 
 .display--inline {
-  display: inline; }
+  display: inline !important; }
 
-.display--inlineblock {
-  display: inline-block; }
+.display--inlineBlock {
+  display: inline-block !important; }
 
 /*doc
 ---
@@ -3315,98 +3385,272 @@ TK `.clearfix`
 
 /*doc
 ---
-title: Media conditional modifiers
+title: Media-conditional modifiers
 name: mediaMod
 category: Modifiers
 ---
-TK
 
-Class                   | Description
------------------------ | --------------------------------
-TK                      | TK
+Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.
 
+#### Signature
+
+`.[property]--[modification]--[breakpoint][Up|Down|Small]`
+
+ie. `.align--center--mOnly` applies center text alignment at the small breakpoint only
+
+#### Supported media and modifications
+_Better documentation for this TK_
+
+- `.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]`
+
+Example TK
 */
-@media only screen and (min-width: 960px) {
-  .align--center--atLarge {
-    text-align: center; } }
-@media only screen and (min-width: 960px) {
-  .align--right--atLarge {
-    text-align: right; } }
-@media only screen and (min-width: 960px) {
-  .align--left--atLarge {
-    text-align: left; } }
-@media only screen and (min-width: 960px) {
-  .display--none--atLarge {
-    display: none; } }
-@media only screen and (min-width: 960px) {
-  .display--inline--atLarge {
-    display: inline; } }
-@media only screen and (min-width: 960px) {
-  .display--block--atLarge {
-    display: block; } }
-@media only screen and (min-width: 960px) {
-  .display--inlineblock--atLarge {
-    display: inline-block; } }
-@media only screen and (min-width: 960px) {
-  .border--top--atLarge {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
-@media only screen and (min-width: 960px) {
-  .border--none--atLarge {
-    border-width: 0; } }
-@media only screen and (min-width: 640px) {
-  .align--center--atMedium {
-    text-align: center; } }
-@media only screen and (min-width: 640px) {
-  .align--right--atMedium {
-    text-align: right; } }
-@media only screen and (min-width: 640px) {
-  .align--left--atMedium {
-    text-align: left; } }
-@media only screen and (min-width: 640px) {
-  .display--none--atMedium {
-    display: none; } }
-@media only screen and (min-width: 640px) {
-  .display--inline--atMedium {
-    display: inline; } }
-@media only screen and (min-width: 640px) {
-  .display--block--atMedium {
-    display: block; } }
-@media only screen and (min-width: 640px) {
-  .display--inlineblock--atMedium {
-    display: inline-block; } }
-@media only screen and (min-width: 640px) {
-  .border--top--atMedium {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
-@media only screen and (min-width: 640px) {
-  .border--none--atMedium {
-    border-width: 0; } }
 @media only screen and (min-width: 440px) {
-  .align--center--atSmall {
-    text-align: center; } }
+  .align--center--smallUp {
+    text-align: center !important; } }
+@media only screen and (max-width: 440px) {
+  .align--center--smallDown {
+    text-align: center !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .align--center--smallOnly {
+    text-align: center !important; } }
+@media only screen and (min-width: 640px) {
+  .align--center--mediumUp {
+    text-align: center !important; } }
+@media only screen and (max-width: 640px) {
+  .align--center--mediumDown {
+    text-align: center !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .align--center--mediumOnly {
+    text-align: center !important; } }
+@media only screen and (min-width: 960px) {
+  .align--center--largeUp {
+    text-align: center !important; } }
+@media only screen and (max-width: 960px) {
+  .align--center--largeDown {
+    text-align: center !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .align--center--largeOnly {
+    text-align: center !important; } }
 @media only screen and (min-width: 440px) {
-  .align--right--atSmall {
-    text-align: right; } }
+  .align--right--smallUp {
+    text-align: right !important; } }
+@media only screen and (max-width: 440px) {
+  .align--right--smallDown {
+    text-align: right !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .align--right--smallOnly {
+    text-align: right !important; } }
+@media only screen and (min-width: 640px) {
+  .align--right--mediumUp {
+    text-align: right !important; } }
+@media only screen and (max-width: 640px) {
+  .align--right--mediumDown {
+    text-align: right !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .align--right--mediumOnly {
+    text-align: right !important; } }
+@media only screen and (min-width: 960px) {
+  .align--right--largeUp {
+    text-align: right !important; } }
+@media only screen and (max-width: 960px) {
+  .align--right--largeDown {
+    text-align: right !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .align--right--largeOnly {
+    text-align: right !important; } }
 @media only screen and (min-width: 440px) {
-  .align--left--atSmall {
-    text-align: left; } }
+  .align--left--smallUp {
+    text-align: left !important; } }
+@media only screen and (max-width: 440px) {
+  .align--left--smallDown {
+    text-align: left !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .align--left--smallOnly {
+    text-align: left !important; } }
+@media only screen and (min-width: 640px) {
+  .align--left--mediumUp {
+    text-align: left !important; } }
+@media only screen and (max-width: 640px) {
+  .align--left--mediumDown {
+    text-align: left !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .align--left--mediumOnly {
+    text-align: left !important; } }
+@media only screen and (min-width: 960px) {
+  .align--left--largeUp {
+    text-align: left !important; } }
+@media only screen and (max-width: 960px) {
+  .align--left--largeDown {
+    text-align: left !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .align--left--largeOnly {
+    text-align: left !important; } }
 @media only screen and (min-width: 440px) {
-  .display--none--atSmall {
-    display: none; } }
+  .display--none--smallUp {
+    display: none !important; } }
+@media only screen and (max-width: 440px) {
+  .display--none--smallDown {
+    display: none !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .display--none--smallOnly {
+    display: none !important; } }
+@media only screen and (min-width: 640px) {
+  .display--none--mediumUp {
+    display: none !important; } }
+@media only screen and (max-width: 640px) {
+  .display--none--mediumDown {
+    display: none !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .display--none--mediumOnly {
+    display: none !important; } }
+@media only screen and (min-width: 960px) {
+  .display--none--largeUp {
+    display: none !important; } }
+@media only screen and (max-width: 960px) {
+  .display--none--largeDown {
+    display: none !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .display--none--largeOnly {
+    display: none !important; } }
 @media only screen and (min-width: 440px) {
-  .display--inline--atSmall {
-    display: inline; } }
+  .display--block--smallUp {
+    display: block !important; } }
+@media only screen and (max-width: 440px) {
+  .display--block--smallDown {
+    display: block !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .display--block--smallOnly {
+    display: block !important; } }
+@media only screen and (min-width: 640px) {
+  .display--block--mediumUp {
+    display: block !important; } }
+@media only screen and (max-width: 640px) {
+  .display--block--mediumDown {
+    display: block !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .display--block--mediumOnly {
+    display: block !important; } }
+@media only screen and (min-width: 960px) {
+  .display--block--largeUp {
+    display: block !important; } }
+@media only screen and (max-width: 960px) {
+  .display--block--largeDown {
+    display: block !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .display--block--largeOnly {
+    display: block !important; } }
 @media only screen and (min-width: 440px) {
-  .display--block--atSmall {
-    display: block; } }
+  .display--inline--smallUp {
+    display: inline !important; } }
+@media only screen and (max-width: 440px) {
+  .display--inline--smallDown {
+    display: inline !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .display--inline--smallOnly {
+    display: inline !important; } }
+@media only screen and (min-width: 640px) {
+  .display--inline--mediumUp {
+    display: inline !important; } }
+@media only screen and (max-width: 640px) {
+  .display--inline--mediumDown {
+    display: inline !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .display--inline--mediumOnly {
+    display: inline !important; } }
+@media only screen and (min-width: 960px) {
+  .display--inline--largeUp {
+    display: inline !important; } }
+@media only screen and (max-width: 960px) {
+  .display--inline--largeDown {
+    display: inline !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .display--inline--largeOnly {
+    display: inline !important; } }
 @media only screen and (min-width: 440px) {
-  .display--inlineblock--atSmall {
-    display: inline-block; } }
+  .display--inlineBlock--smallUp {
+    display: inline-block !important; } }
+@media only screen and (max-width: 440px) {
+  .display--inlineBlock--smallDown {
+    display: inline-block !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .display--inlineBlock--smallOnly {
+    display: inline-block !important; } }
+@media only screen and (min-width: 640px) {
+  .display--inlineBlock--mediumUp {
+    display: inline-block !important; } }
+@media only screen and (max-width: 640px) {
+  .display--inlineBlock--mediumDown {
+    display: inline-block !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .display--inlineBlock--mediumOnly {
+    display: inline-block !important; } }
+@media only screen and (min-width: 960px) {
+  .display--inlineBlock--largeUp {
+    display: inline-block !important; } }
+@media only screen and (max-width: 960px) {
+  .display--inlineBlock--largeDown {
+    display: inline-block !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .display--inlineBlock--largeOnly {
+    display: inline-block !important; } }
 @media only screen and (min-width: 440px) {
-  .border--top--atSmall {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); } }
+  .border--top--smallUp {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (max-width: 440px) {
+  .border--top--smallDown {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .border--top--smallOnly {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 640px) {
+  .border--top--mediumUp {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (max-width: 640px) {
+  .border--top--mediumDown {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .border--top--mediumOnly {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 960px) {
+  .border--top--largeUp {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (max-width: 960px) {
+  .border--top--largeDown {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .border--top--largeOnly {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 440px) {
-  .border--none--atSmall {
-    border-width: 0; } }
+  .border--none--smallUp {
+    border-width: 0 !important; } }
+@media only screen and (max-width: 440px) {
+  .border--none--smallDown {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .border--none--smallOnly {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 640px) {
+  .border--none--mediumUp {
+    border-width: 0 !important; } }
+@media only screen and (max-width: 640px) {
+  .border--none--mediumDown {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .border--none--mediumOnly {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 960px) {
+  .border--none--largeUp {
+    border-width: 0 !important; } }
+@media only screen and (max-width: 960px) {
+  .border--none--largeDown {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .border--none--largeOnly {
+    border-width: 0 !important; } }
 /*doc
 ---
 title: Media Sizing
@@ -3474,11 +3718,12 @@ Class                         | Description
 `.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
 
 */
-.wrap--singleLine--truncate {
-  white-space: nowrap; }
+.wrap--singleLine--truncate,
+.wrap--singleLine {
+  white-space: nowrap !important; }
 
 .wrap--singleLine--truncate {
-  overflow: hidden;
-  text-overflow: ellipsis; }
+  overflow: hidden !important;
+  text-overflow: ellipsis !important; }
 
 /*# sourceMappingURL=sassquatch.css.map */

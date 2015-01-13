@@ -69,7 +69,7 @@ Sets color properties for buttons
     color: $color;
   }
 
-  &.#{$btn-name}--disabled {
+  &.button--disabled {
     opacity: .4;
     color: $C_textPrimary;
     cursor: default;

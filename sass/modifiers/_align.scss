@@ -15,6 +15,6 @@ Class             | Description
 */
 @each $alignment in (left, right, center) {
 	@include _modifier(align, $alignment) {
-		text-align: $alignment;
+		text-align: $alignment !important;
 	}
 }

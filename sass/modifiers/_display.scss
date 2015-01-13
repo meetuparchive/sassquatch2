@@ -14,11 +14,9 @@ Class                   | Description
 `.display--inlineblock` | sets `display` to `inlineblock`
 
 */
-@each $display in (none, block, inline) {
-	@include _modifier(display, $display) {
-		display: $display;
+@each $display in $display-values {
+	$modifierVariant: str-replace($display, '-block', 'Block');
+	@include _modifier(display, $modifierVariant) {
+		display: $display !important;
 	}
-}
-.display--inlineblock {
-	display: inline-block;
 }

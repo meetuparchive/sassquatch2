@@ -10,19 +10,46 @@ parent: functions
 
 /*doc
 ---
-title: capitalizeFirstLetter
-name: capitalizeFirstLetter
+title: str-capitalizeFirstLetter
+name: str-capitalizeFirstLetter
 parent: string
 ---
 Capitalizes first letter of a given string. Useful as a camelCase converter.
-__returns string__
+
+_returns string_
 
 ```
-capitalizeFirstLetter('snowflake') // -> 'Snowflake'
+str-capitalizeFirstLetter('snowflake') // -> 'Snowflake'
 
-.special#{capitalizeFirstLetter('snowflake')} // -> .specialSnowflake
+.special#{str-capitalizeFirstLetter('snowflake')} // -> .specialSnowflake
 ```
 */
-@function capitalizeFirstLetter( $string ) {
+@function str-capitalizeFirstLetter( $string ) {
 	@return #{to-upper-case(str-slice($string, 1, 1))}#{str-slice($string, 2, -1)};
 }
+
+
+/*doc
+---
+title: str-replace
+name: str-replace
+parent: string
+---
+Search and replace on strings.
+
+_returns string_
+
+```
+str-replace('inline-block', '-', '') // -> 'inlineblock'
+
+.display--#{str-replace('inline-block', '-block', 'Block')} -> .display--inlineBlock
+```
+*/
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+	@if str-index($string, $search) {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	@return $string;
+}
+

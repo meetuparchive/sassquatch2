@@ -207,13 +207,12 @@
 // ---------------------------
 // BUTTONS
 // ---------------------------
-	$btn-name: 'button' !default; // base class for all buttons
 	$btn-hover: lighten 10% !default;
 	$btn-hover-opacity: opacify .1 !default;
 	$btn-border: 1px solid !default;
 
 	// button variants e.g.: <button class="button button--primary"></button>
-	$btn-variants: (
+	$btn-color-map: (
 		default: transparent,
 		primary: $C_link,
 		contrast: $C_textSecondaryInverted
@@ -224,6 +223,17 @@
 // BORDER
 // ---------------------------
 	$border-standard: 1px solid $C_border;
+
+
+// ---------------------------
+// DISPLAY
+// ---------------------------
+	$display-values: (
+		none,
+		block,
+		inline,
+		inline-block
+	);
 
 
 // ---------------------------

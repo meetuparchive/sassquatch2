@@ -108,7 +108,7 @@
 									
 									
 										<li>
-											<a href="#mediaMod">Media conditional modifiers</a>
+											<a href="#mediaMod">Media-conditional modifiers</a>
 										</li>
 									
 
@@ -295,21 +295,28 @@ and overflow hidden.</p>
 </tr>
 </tbody></table>
 
-<h1 id="mediaMod">Media conditional modifiers</h1>
+<h1 id="mediaMod">Media-conditional modifiers</h1>
 
-<p>TK</p>
+<p>Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.</p>
 
-<table><thead>
-<tr>
-<th>Class</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>TK</td>
-<td>TK</td>
-</tr>
-</tbody></table>
+<h4>Signature</h4>
+
+<p><code>.[property]--[modification]--[breakpoint][Up|Down|Small]</code></p>
+
+<p>ie. <code>.align--center--mOnly</code> applies center text alignment at the small breakpoint only</p>
+
+<h4>Supported media and modifications</h4>
+
+<p><em>Better documentation for this TK</em></p>
+
+<ul>
+<li><code>.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
+<li><code>.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
+<li><code>.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
+</ul>
+
+<p>Example TK</p>
 
 <h1 id="sizeMod">Media Sizing</h1>
 
@@ -466,8 +473,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Media conditional modifiers",
-					"breadcrumb": "Modifiers > Media conditional modifiers",
+					"title": "Media-conditional modifiers",
+					"breadcrumb": "Modifiers > Media-conditional modifiers",
 					"path": "modifiers.html#mediaMod"
 				});
 
@@ -604,9 +611,19 @@ $(function() {
 				
 
 				index.add({
-					"title": "capitalizeFirstLetter",
-					"breadcrumb": "Sass Utilities > capitalizeFirstLetter",
-					"path": "sass_utilities.html#capitalizeFirstLetter"
+					"title": "str-capitalizeFirstLetter",
+					"breadcrumb": "Sass Utilities > str-capitalizeFirstLetter",
+					"path": "sass_utilities.html#str-capitalizeFirstLetter"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "str-replace",
+					"breadcrumb": "Sass Utilities > str-replace",
+					"path": "sass_utilities.html#str-replace"
 				});
 
 			
