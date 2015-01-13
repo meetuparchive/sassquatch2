@@ -18,8 +18,6 @@ body {
 	line-height: $line-height;
 }
 
-// TODO: rework a lot of this to use PCV classes
-
 
 /*doc
 ---
@@ -53,8 +51,7 @@ parent: typesetting
 <p class="text--hint">This is hint text</p>
 ```
 */
-.text--hint,
-.hint-text {
+.text--hint {
 	color: $C_textTertiary;
 	.inverted & {
 		color: $C_textTertiaryInverted;
@@ -107,8 +104,7 @@ parent: typesetting
 <p class="text--caption">I'm captioning all the things</p>
 ```
 */
-.text--caption,
-.caption-text {
+.text--caption {
 	@extend %text--small;
 	color: $C_textSecondary;
 	.inverted & {

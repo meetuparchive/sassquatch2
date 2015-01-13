@@ -66,8 +66,7 @@ to give it the appearance of an h3-h6 element.
 // H3 - H6
 // We're sticking to limited visual hierarchy
 h3, h4, h5, h6,
-.text--heading,
-.heading {
+.text--heading {
 // ----------------------------------------- //
 	color: $C_textPrimary;
 	font-size: $font-size;
@@ -91,8 +90,7 @@ Display text for header hero elements.
 <h1 class="text--display">The hero gotham deserves</h1>
 ```
 */
-.text--display,
-.display {
+.text--display {
 	color: $C_textPrimary;
 	font-size: $font-size-display1;
 	font-weight: normal;
@@ -103,8 +101,7 @@ Display text for header hero elements.
 }
 
 @include atMediaDown(small) {
-	.text--display,
-	.display {
+	.text--display {
 		font-size: $font-size-display2;
 	}
 }
