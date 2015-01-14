@@ -2448,7 +2448,7 @@ _Includes `table-cell` fallback for IE8._
 
 ```html_example
 <div class="flexRow">
-	<div class="_DOC-SHADE flexRow-item--grow flexRow-item--gutterLeft">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--grow">Item 1</div>
 	<div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
 	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
 	<div class="_DOC-SHADE flexRow-item--grow">Item 4</div>
@@ -2457,7 +2457,7 @@ _Includes `table-cell` fallback for IE8._
 
 ```html_example
 <div class="flexRow">
-	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 1</div>
 	<div class="_DOC-SHADE flexRow-item--grow">Item 2</div>
 	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
 </div>
@@ -2465,9 +2465,9 @@ _Includes `table-cell` fallback for IE8._
 
 ```html_example
 <div class="flexRow flexRow--flexEnd">
-	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 1</div>
-	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 2</div>
-	<div class="_DOC-SHADE flexRow-item--shrink flexRow-item--gutterBoth">Item 3</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE flexRow-item--shrink">Item 3</div>
 </div>
 ```
 
