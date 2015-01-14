@@ -1948,27 +1948,28 @@ category: UI Components
   background-color: #F3F6F9;
   background-position: center 42%;
   display: inline-block;
-  font-size: 32px;
-  height: 48px;
+  font-size: 24px;
+  height: 36px;
   text-indent: 100%;
   white-space: nowrap;
   vertical-align: top;
-  width: 48px; }
+  width: 36px; }
+  @media only screen and (min-width: 440px) {
+    .avatar--person,
+    .avatar {
+      font-size: 48px;
+      height: 48px;
+      width: 48px; } }
 
-.avatar--xsmall {
+.avatar--small {
   font-size: 24px;
   height: 24px;
   width: 24px; }
 
-.avatar--small {
-  width: 36px;
-  height: 36px;
-  font-size: 36px; }
-
 .avatar--big {
-  width: 160px;
+  font-size: 48px;
   height: 160px;
-  font-size: 48px; }
+  width: 160px; }
 
 .avatar--person {
   vertical-align: middle;
