@@ -5,6 +5,8 @@ name: buttons
 category: UI Components
 ---
 
+#### Example
+
 ```html_example
 <a class="button" href="#">Button</a>
 <a class="button button--primary" href="#">Primary Button</a>
@@ -18,6 +20,18 @@ category: UI Components
 <a class="button button--small" href="#">Small Button</a>
 <a class="button button--bordered button--fullWidth" href="#">Full width button</a>
 ```
+
+#### Button variants
+A class of `.button` is __required__ for buttons. The following
+classes are optional variants:
+
+Class                   | Description
+----------------------- | ----------------------------------------
+`.button--primary`      | rounded button with dark background; for primary actions
+`.button--contrast`     | bold, dark text; use on dark backgrounds (ie. top nav bar)
+`.button--bordered`     | rounded bordered button
+`.button--icon`         | cirular icon above caption text (see example above)
+`.button--small`        | decreases size of button
 */
 
 .button {
