@@ -89,6 +89,13 @@ padding, and sets a max-width.
 	</div>
 </section>
 ```
+
+#### Bounds variants
+
+Class             | Description
+----------------- | -------------------------------------
+`.bounds`         | standard bounds for any type of content
+`.bounds--form`   | bounds for wrapping forms; applies narrower measure
 */
 .bounds {
 	@extend %clearfix;
@@ -98,6 +105,9 @@ padding, and sets a max-width.
 	max-width: $bounds;
 	padding: $space;
 	width: 100%;
+}
+.bounds--form {
+	max-width: $form-max-width;
 }
 
 

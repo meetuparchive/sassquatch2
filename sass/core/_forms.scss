@@ -1,12 +1,18 @@
-//
-/* Items around forms */
-//
+/*doc
+---
+title: Forms
+name: forms
+cateogry: Core
+---
 
-.bounds--form{
-	max-width: $form-max-width;
-}
+```html_example
+<em>example TK</em>
+```
+*/
 
-label{
+// TODO: needs some PCV standardization
+
+label {
 	font-size: $font-size-small;
 }
 
@@ -20,13 +26,20 @@ fieldset {
 //
 // BASIC INPUTS
 //
-button, input, select, textarea, .launcher {
+button,
+input,
+select,
+textarea,
+.launcher {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.5;
 }
 
-#{$all-text-inputs}, textarea, select, .launcher {
+#{$all-text-inputs},
+textarea,
+select,
+.launcher {
 	background-color: $C_shade;
 	border-radius: $defaultRadius;
 	border: 1px solid $C_border;
@@ -43,7 +56,7 @@ button, input, select, textarea, .launcher {
 		outline: none;
 	}
 
-	.inverted &{
+	.inverted & {
 		background-color: $C_shadeInverted;
 		border-color: $C_borderInverted;
 		color: $C_textPrimaryInverted;
@@ -53,20 +66,33 @@ button, input, select, textarea, .launcher {
 	}
 }
 
-#{$all-text-inputs}, select{
+#{$all-text-inputs},
+select {
 	height: ($font-size * $line-height) + $space;
 }
 
-textarea{
+textarea {
 	min-height: (3 * $font-size * $line-height) + $space;
 }
 
-.launcher{
+/*doc
+---
+title: Input launcher
+name: launcher
+parent Forms
+---
+For forms that launch an external
+interface for input (ie. date picker)
+
+```html_example
+<em>example TK</em>
+```
+*/
+.launcher {
 	background-image: url(/style/img/web/launch.svg);
 	background-position: center right #{$space-quarter};
 	background-repeat: no-repeat;
 }
-
 .launcher-placeholder{
 	font-style: normal;
 	color: $C_textTertiary;
@@ -96,227 +122,220 @@ textarea::-webkit-input-placeholder {
 //
 /* CHECKBOXES */
 //
+
+// TODO: doc label-switch
 .label--switch {
   font-size: $font-size;
   position: relative;
 }
 
 .checkbox[type=checkbox] {
-  -webkit-appearance: none;
-  cursor: pointer;
-  display: inline-block;
-  height: $font-size;
-  margin: 0 $space 0 0;
-  position: relative;
-  top: em(1);
-  width: $font-size;
-  z-index: 0;
-  &:before {
-    @include transition (transform, 100ms, $ease-out-quad);
-    @include transform(rotate(-45deg) scale(0, 0));
+	-webkit-appearance: none;
+	cursor: pointer;
+	display: inline-block;
+	height: $font-size;
+	margin: 0 $space 0 0;
+	position: relative;
+	top: em(1);
+	width: $font-size;
+	z-index: 0;
+	&:before {
+		@include transition (transform, 100ms, $ease-out-quad);
+		@include transform(rotate(-45deg) scale(0, 0));
 
-    content: "";
+		content: "";
 
-    position: absolute;
-    left: em(4);
-    top: em(3);
-    z-index: 1;
+		position: absolute;
+		left: em(4);
+		top: em(3);
+		z-index: 1;
 
-    width: em(8);
-    height: em(4);
+		width: em(8);
+		height: em(4);
 
-    border: 2px solid $C_textPrimaryInverted;
-    border-top-style: none;
-    border-right-style: none;
-  }
+		border: 2px solid $C_textPrimaryInverted;
+		border-top-style: none;
+		border-right-style: none;
+	}
 
-  &:checked {
-    &:before {
-       @include transform(rotate(-45deg) scale(1, 1));
-      }
-  }
+	&:checked {
+		&:before {
+			@include transform(rotate(-45deg) scale(1, 1));
+		}
+	}
 
-  &:after {
-    content: "";
+	&:after {
+		content: "";
 
-    position: absolute;
-    top: em(-2);
-    left: 0;
+		position: absolute;
+		top: em(-2);
+		left: 0;
 
-    width: 100%;
-    height: 100%;
+		width: 100%;
+		height: 100%;
 
-    background: $C_contentBG;
+		background: $C_contentBG;
 
-    border: 1px solid $C_textTertiary;
-    border-radius: $defaultRadius;
+		border: 1px solid $C_textTertiary;
+		border-radius: $defaultRadius;
 
-    cursor: pointer;
-  }
+		cursor: pointer;
+	}
 
-  &:checked, &:active {
-    &:after {
-      background: $C_link;
-    }
-  }
+	&:checked, &:active {
+		&:after {
+			background: $C_link;
+		}
+	}
 
-  &:hover, &:focus {
-    outline: none;
-    &:after {
-      box-shadow: inset 2px 2px 4px $C_border;
-      border: 1px solid $C_textSecondary;
-    }
-  }
-
+	&:hover, &:focus {
+		outline: none;
+		&:after {
+			box-shadow: inset 2px 2px 4px $C_border;
+			border: 1px solid $C_textSecondary;
+		}
+	}
 }
 
 //
 /* RADIOS */
 //
 .radio[type=radio] {
-  -webkit-appearance: none;
-  cursor: pointer;
-  display: inline-block;
-  height: $font-size;
-  margin: 0 $space 0 0;
-  position: relative;
-  top: 0;
-  width: $font-size;
-  z-index: 0;
+	-webkit-appearance: none;
+	cursor: pointer;
+	display: inline-block;
+	height: $font-size;
+	margin: 0 $space 0 0;
+	position: relative;
+	top: 0;
+	width: $font-size;
+	z-index: 0;
 
-  &:before {
-    @include transition (transform, 100ms, $ease-out-quad);
-    @include transform(scale(0,0));
+	&:before {
+		@include transition (transform, 100ms, $ease-out-quad);
+		@include transform(scale(0,0));
 
-    content: "";
+		content: "";
 
-    position: absolute;
-    top: em(3);
-    left: em(2);
-    z-index: 1;
+		position: absolute;
+		top: em(3);
+		left: em(2);
+		z-index: 1;
 
-    width: em(12);
-    height: em(12);
+		width: em(12);
+		height: em(12);
 
-    background: $C_link;
+		background: $C_link;
 
-    border-radius: 999px;
-  }
+		border-radius: 999px;
+	}
 
-  &:checked, &:active {
-    &:before {
-     @include transform(scale(1,1));
-    }
-  }
+	&:checked, &:active {
+		&:before {
+			@include transform(scale(1,1));
+		}
+	}
 
-  &:after {
-    content: "";
+	&:after {
+		content: "";
 
-    position: absolute;
-    top: 0;
-    left: em(-1);
+		position: absolute;
+		top: 0;
+		left: em(-1);
 
-    width: 100%;
-    height: 100%;
+		width: 100%;
+		height: 100%;
 
-    background: $C_contentBG;
+		background: $C_contentBG;
 
-    border: 1px solid $C_textTertiary;
-    border-radius: 999px;
-  }
+		border: 1px solid $C_textTertiary;
+		border-radius: 999px;
+	}
 
-  &:checked, &:hover, &:focus {
-    outline: none;
-    &:after {
-      border: 1px solid $C_link;
-    }
-  }
-
+	&:checked, &:hover, &:focus {
+		outline: none;
+		&:after {
+			border: 1px solid $C_link;
+		}
+	}
 }
 
 .inverted {
-  // INVERTED RADIO INPUT
-  .radio[type=radio] {
+	// INVERTED RADIO INPUT
+	.radio[type=radio] {
+		&:after {
+			background: $C_contentBGInverted;
+			border: 1px solid $C_textSecondaryInverted;
+		}
+		&:hover, &:focus {
+			&:after {
+				border: 1px solid $C_textPrimaryInverted;
+			}
+		}
+	}
 
-    &:after {
-      background: $C_contentBGInverted;
-      border: 1px solid $C_textSecondaryInverted;
-    }
+	// INVERTED CHECKBOX INPUT
+	.checkbox[type=checkbox] {
+		&:after {
+			background: $C_contentBGInverted;
+			border: 1px solid $C_textSecondaryInverted;
+		}
 
-    &:hover, &:focus {
-      &:after {
-        border: 1px solid $C_textPrimaryInverted;
-      }
-    }
+		&:hover, &:focus {
+			&:after {
+				box-shadow: inset 2px 2px 4px $C_border;
+				border: 1px solid $C_textPrimaryInverted;
+			}
+		}
 
-  }
-
-  // INVERTED CHECKBOX INPUT
-  .checkbox[type=checkbox] {
-
-    &:after {
-      background: $C_contentBGInverted;
-      border: 1px solid $C_textSecondaryInverted;
-    }
-
-    &:hover, &:focus {
-      &:after {
-        box-shadow: inset 2px 2px 4px $C_border;
-        border: 1px solid $C_textPrimaryInverted;
-      }
-    }
-
-    &:checked, &:active {
-      &:after {
-        background: $C_link;
-      }
-    }
-
-  }
-
-
+		&:checked, &:active {
+			&:after {
+				background: $C_link;
+			}
+		}
+	}
 }
 
 //
 /* SEGMENTED SELECTION */
 //
 .segmented-toggle {
-  input {
-    display: none;
-    &:checked + label {
-      background: $C_shade;
-      border: 1px solid $C_link;
-      .segmented-toggle-title, p {
-        color: $C_link;
-      }
-    }
-  }
+	input {
+		display: none;
+		&:checked + label {
+			background: $C_shade;
+			border: 1px solid $C_link;
+			.segmented-toggle-title, p {
+				color: $C_link;
+			}
+		}
+	}
 
-  label {
-    box-sizing: border-box;
-    cursor: pointer;
-    display: inline-block;
-    line-height: $line-height;
-    padding: $space-half;
-    width: 100%;
-    &:hover {
-      border: 1px solid $C_link;
-      .segmented-toggle-title, p {
-        color: $C_textPrimary;
-      }
-    }
-  }
-  .segmented-toggle-title, p {
-    color: $C_textSecondary;
-  }
+	label {
+		box-sizing: border-box;
+		cursor: pointer;
+		display: inline-block;
+		line-height: $line-height;
+		padding: $space-half;
+		width: 100%;
+		&:hover {
+			border: 1px solid $C_link;
+			.segmented-toggle-title, p {
+				color: $C_textPrimary;
+			}
+		}
+	}
+	.segmented-toggle-title, p {
+		color: $C_textSecondary;
+	}
 }
 
 //
 /* INLINE FORM */
 //
 .inline-form {
-  margin-left: -$space-quarter;
-  margin-right: -$space-quarter;
+	margin-left: -$space-quarter;
+	margin-right: -$space-quarter;
 }
 
 // Meant for use in inline forms
@@ -349,306 +368,4 @@ textarea::-webkit-input-placeholder {
     color: $C_red;
     margin-top: $space-quarter;
  }
-}
-
-
-
-//
-/* DATE PICKER */
-//
-
-// Note: the root picker element should *NOT* be styled more than what’s here.
-.picker {
-  position: absolute;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  z-index: map-get($zindex-map, "modal");
-}
-
-// The picker input element.
-.picker__input {
-  background-image: url(/style/img/web/calendar.svg); // change this to a calendar icon
-  background-position: center right #{$space-quarter};
-  background-repeat: no-repeat;
-  cursor: pointer;
-
-  &.picker__input--active {
-    border-color: $C_blue;
-  }
-}
-
-
-// The holder is the only “scrollable” top-level container element.
-.picker__holder {
-  width: 100%;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-// Make the holder and frame fullscreen.
-.picker__holder,
-.picker__frame {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 100%;
-}
-
-.picker__holder {
-  position: fixed;
-  -webkit-transition: background 0.15s ease-out, top 0s 0.15s;
-  -moz-transition: background 0.15s ease-out, top 0s 0.15s;
-  transition: background 0.15s ease-out, top 0s 0.15s;
-  -webkit-backface-visibility: hidden;
-}
-
-// The frame that bounds the box contents of the picker.
-.picker__frame {
-  opacity: 0;
-  position: absolute;
-  margin: 0 auto;
-  max-width: $form-max-width;
-  width: 100%;
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
-
-  @include atMediaUp(small) {
-    overflow: visible;
-    top: auto;
-    bottom: -100%;
-    max-height: 80%;
-  }
-
-  @include atMediaUp(medium) {
-    margin-bottom: 10%;
-  }
-}
-
-// The wrapper sets the stage to vertically align the box contents.
-.picker__wrap {
-  display: table;
-  height: 100%;
-  margin: 0 auto;
-  max-width: $form-max-width;
-  width: 100%;
-}
-
-// The box contains all the picker contents.
-.picker__box {
-  background: $C_contentBG;
-  border-radius: $defaultRadius;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-
-// When the picker opens...
-.picker--opened .picker__holder {
-  top: 0;
-  zoom: 1;
-  background: $C_modalShade;
-  -webkit-transition: background 0.15s ease-out;
-  -moz-transition: background 0.15s ease-out;
-  transition: background 0.15s ease-out;
-
-  .picker__frame {
-    top: 0;
-    opacity: 1;
-
-    @include atMediaUp(small) {
-      top: auto;
-      bottom: 0;
-    }
-  }
-
-}
-
-
-//
-/* DATE PICKER - CALENDAR */
-//
-
-// The header containing the month and year stuff.
-.picker__header {
-  padding: $space;
-  position: relative;
-  text-align: center;
-  @include atMediaUp(small) {
-    background: $C_collectionBGLight;
-  }
-}
-
-// The month and year labels.
-.picker__month,
-.picker__year {
-  display: inline-block;
-  margin: 0 $space-quarter;
-}
-.picker__month {
-  color: $C_accent;
-  font-weight: $W_bold;
-}
-.picker__year {
-  color: $C_textSecondary;
-  font-weight: $W_normal;
-}
-
-// The month navigation buttons.
-.picker__nav--prev,
-.picker__nav--next {
-  cursor: pointer;
-  position: absolute;
-  padding: $space;
-  height: $space;
-  box-sizing: content-box;
-  top: 0;
-  width: $space;
-  &:hover {
-    background: $C_overlayPressed;
-  }
-
-  &:before {
-    content: " ";
-    border-top: .5em solid transparent;
-    border-bottom: .5em solid transparent;
-    border-right: 0.75em solid $C_textSecondary; // using prev (left arrow) as default
-    width: 0;
-    height: 0;
-    display: block;
-    margin: 0 auto;
-  }
-
-}
-
-.picker__nav--prev {
-  left: 0;
-}
-
-.picker__nav--next {
-  right: 0;
-
-  &:before {
-    border-right: 0;
-    border-left: 0.75em solid $C_textSecondary;
-  }
-}
-
-.picker__nav--disabled,
-.picker__nav--disabled:hover,
-.picker__nav--disabled:before,
-.picker__nav--disabled:before:hover {
-  cursor: default;
-  background: none;
-  border-right-color: $C_textTertiary;
-  border-left-color: $C_textTertiary;
-}
-
-// The calendar table of dates
-.picker__table {
-  text-align: center;
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed;
-  font-size: inherit;
-  width: 100%;
-  td {
-    margin: 0;
-    padding: 0;
-  }
-
-  @include atMediaUp(small) {
-    thead {
-      background: $C_collectionBGLight;
-    }
-  }
-
-}
-
-// The weekday labels
-.picker__weekday {
-  color: $C_textSecondary;
-  font-weight: $W_bold;
-  font-size: $font-size-small;
-  padding-bottom: $space-half;
-  width: percentage(100/7);
-}
-
-// The days on the calendar
-.picker__day {
-  border: 1px solid transparent;
-  border-radius: 999px;
-  //
-  // subtracting $space-half to account for
-  // the $space-quarter top and bottom margin
-  height: ($block - $space-half);
-  width: ($block - $space-half);
-  line-height: ($block - $space-half);
-  margin: $space-quarter auto;
-
-  &:hover {
-    color: $C_textPrimary;
-    background: $C_overlayPressed;
-  }
-
-  &--today {
-    background: $C_overlayPressed;
-    font-weight: $W_bold;
-    position: relative;
-  }
-
-  &--outfocus {
-    color: $C_textTertiary;
-  }
-
-  &--selected,
-  &--selected:hover {
-    background: $C_accent;
-    color: $C_textPrimaryInverted;
-    font-weight: $W_bold;
-  }
-
-  &--disabled,
-  &--disabled:hover{
-    color: $C_textTertiary;
-    cursor: default;
-  }
-
-}
-
-// The footer containing any buttons for the calendar.
-// By default, we get "Today", "Close", and "Clear"
-.picker__footer {
-  text-align: center;
-  button {
-    border: none;
-    background: $C_contentBG;
-    cursor: pointer;
-    color: $C_textSecondary;
-    display: inline-block;
-    font-size: $font-size-small;
-    font-weight: $W_bold;
-    padding: $space-half;
-    vertical-align: bottom;
-    &:hover, &:focus {
-      background: $C_overlayPressed;
-      color: $C_textPrimary;
-    }
-    &:focus {
-      outline: none;
-    }
-  }
-}
-
-.picker__button--close:before {
-  content: "\D7";
-  color: $C_textTertiary;
-  display: inline-block;
-  height: 0;
-  margin-top: -1px;
-  margin-right: $space-quarter;
-  position: relative;
-  vertical-align: top;
 }
