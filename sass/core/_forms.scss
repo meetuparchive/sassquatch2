@@ -4,10 +4,7 @@ title: Forms
 name: forms
 cateogry: Core
 ---
-
-```html_example
-<em>example TK</em>
-```
+TK
 */
 
 // TODO: needs some PCV standardization
@@ -75,19 +72,7 @@ textarea {
 	min-height: (3 * $font-size * $line-height) + $space;
 }
 
-/*doc
----
-title: Input launcher
-name: launcher
-parent Forms
----
-For forms that launch an external
-interface for input (ie. date picker)
-
-```html_example
-<em>example TK</em>
-```
-*/
+// TODO: doc and/or move to chapstick?
 .launcher {
 	background-image: url(/style/img/web/launch.svg);
 	background-position: center right #{$space-quarter};
