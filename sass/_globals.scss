@@ -2,8 +2,15 @@
 // PREFIXES
 // ---------------------------
 	// fore use in Bourbon prefixer() mixin
-	$prefixes: webkit moz ms o spec;
+	$prefixes: webkit ms spec;
 	$prefixes-edge: ms spec;
+
+	// bourbon global prefixer
+	$prefix-for-webkit:    true;
+	$prefix-for-mozilla:   false;
+	$prefix-for-microsoft: true;
+	$prefix-for-opera:     false;
+	$prefix-for-spec:      true;
 
 // ---------------------------
 // BREAKPOINTS
