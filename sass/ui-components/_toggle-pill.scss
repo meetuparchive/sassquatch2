@@ -13,6 +13,11 @@ category: UI Components
 ```
 */
 
+// TODO: can we simplify this?
+// 1) pcv it: .toggleButton - .toggleButton-input - .toggleButton-label
+// 2) just extend button classes
+// 3) yeah
+
 // Toggle button behavior - try and find a way to bring this into regular button style area
 .toggle-button-wrapper {
   display: inline-block;
