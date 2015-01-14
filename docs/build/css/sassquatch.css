@@ -863,6 +863,7 @@ p, ul, ol, blockquote,
 form, fieldset, legend,
 table, dl, dd,
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
   margin: 0;
   padding: 0;
   margin-bottom: 16px; }
@@ -871,6 +872,7 @@ form, legend {
   margin-bottom: 0; }
 
 img {
+  display: block;
   margin: 0;
   padding: 0;
   border: 0;
