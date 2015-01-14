@@ -1062,7 +1062,7 @@ title: Text protection shim
 name: textProtection
 parent: text
 ---
-Adds a pseudo-element gradient 
+Adds a pseudo-element gradient
 ```
 @mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
 ```
@@ -1226,11 +1226,9 @@ parent: typesetting
 <p class="text--hint">This is hint text</p>
 ```
 */
-.text--hint,
-.hint-text {
+.text--hint {
   color: rgba(0, 0, 0, 0.26); }
-  .inverted .text--hint, .inverted
-  .hint-text {
+  .inverted .text--hint {
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -1243,11 +1241,9 @@ parent: typesetting
 <p class="text--secondary">Secondary text is secondary</p>
 ```
 */
-.text--secondary,
-.text-secondary {
+.text--secondary {
   color: rgba(0, 0, 0, 0.54); }
-  .inverted .text--secondary, .inverted
-  .text-secondary {
+  .inverted .text--secondary {
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -1261,9 +1257,7 @@ parent: typesetting
 ```
 */
 .text--caption,
-.caption-text,
-.text--small,
-.text-small {
+.text--small {
   font-size: 13px;
   line-height: 1.25; }
 
@@ -1277,11 +1271,9 @@ parent: typesetting
 <p class="text--caption">I'm captioning all the things</p>
 ```
 */
-.text--caption,
-.caption-text {
+.text--caption {
   color: rgba(0, 0, 0, 0.54); }
-  .inverted .text--caption, .inverted
-  .caption-text {
+  .inverted .text--caption {
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -1311,11 +1303,9 @@ event descriptions).
 </div>
 ```
 */
-.runningText p,
-.running-text-container p {
+.runningText p {
   margin-bottom: 16px; }
-  .runningText p:last-child,
-  .running-text-container p:last-child {
+  .runningText p:last-child {
     margin-bottom: 0; }
 
 /*doc
@@ -1392,15 +1382,13 @@ to give it the appearance of an h3-h6 element.
 ```
 */
 h3, h4, h5, h6,
-.text--heading,
-.heading {
+.text--heading {
   color: rgba(0, 0, 0, 0.87);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5; }
   .inverted h3, .inverted h4, .inverted h5, .inverted h6, .inverted
-  .text--heading, .inverted
-  .heading {
+  .text--heading {
     color: white; }
 
 /*doc
@@ -1415,19 +1403,16 @@ Display text for header hero elements.
 <h1 class="text--display">The hero gotham deserves</h1>
 ```
 */
-.text--display,
-.display {
+.text--display {
   color: rgba(0, 0, 0, 0.87);
   font-size: 56px;
   font-weight: normal;
   line-height: 1.25; }
-  .inverted .text--display, .inverted
-  .display {
+  .inverted .text--display {
     color: white; }
 
 @media only screen and (max-width: 440px) {
-  .text--display,
-  .display {
+  .text--display {
     font-size: 32px; } }
 .list--reset {
   list-style: none;
