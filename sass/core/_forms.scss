@@ -6,18 +6,6 @@
 	max-width: $form-max-width;
 }
 
-.chunkList--form{
-	& > li{
-		border-top: none;
-		.chunkList-chunk{
-			height: auto;
-		}
-	}
-  & + .caption-text {
-    margin-top: $space-half;
-  }
-}
-
 label{
 	font-size: $font-size-small;
 }
