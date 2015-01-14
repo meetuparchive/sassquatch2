@@ -686,13 +686,6 @@ Disables user-select, sets cursor, and resets text-decoration.
 @extend %buttonPersonality;
 ```
 */
-.momentary li a {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  text-decoration: none !important; }
-
 /*doc
 ---
 title: Button color mixin
@@ -770,9 +763,6 @@ Applies standard box-shadow
 @extend %shadow;
 ```
 */
-.momentary {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.12); }
-
 /*doc
 ---
 title: Shapes
@@ -1368,10 +1358,14 @@ Display text for header hero elements.
   .toggle-pill-list li {
     display: inline-block; }
 
-/* Items around forms */
-.bounds--form {
-  max-width: 550px; }
-
+/*doc
+---
+title: Forms
+name: forms
+cateogry: Core
+---
+TK
+*/
 label {
   font-size: 13px; }
 
@@ -1380,12 +1374,19 @@ fieldset {
   padding: 0;
   margin: 0; }
 
-button, input, select, textarea, .launcher {
+button,
+input,
+select,
+textarea,
+.launcher {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.5; }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], textarea, select, .launcher {
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+textarea,
+select,
+.launcher {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -1396,18 +1397,28 @@ input[type="email"], input[type="number"], input[type="password"], input[type="s
   max-width: 100%;
   padding: 8px;
   width: 100%; }
-  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, textarea:focus, select:focus, .launcher:focus {
+  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+  textarea:focus,
+  select:focus,
+  .launcher:focus {
     border-color: #3987cb;
     box-shadow: none;
     outline: none; }
-  .inverted input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted textarea, .inverted select, .inverted .launcher {
+  .inverted input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
+  textarea, .inverted
+  select, .inverted
+  .launcher {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
     color: white; }
-    .inverted input[type="email"]:focus, .inverted input[type="number"]:focus, .inverted input[type="password"]:focus, .inverted input[type="search"]:focus, .inverted input[type="tel"]:focus, .inverted input[type="text"]:focus, .inverted input[type="url"]:focus, .inverted input[type="color"]:focus, .inverted input[type="date"]:focus, .inverted input[type="datetime"]:focus, .inverted input[type="datetime-local"]:focus, .inverted input[type="month"]:focus, .inverted input[type="time"]:focus, .inverted input[type="week"]:focus, .inverted textarea:focus, .inverted select:focus, .inverted .launcher:focus {
+    .inverted input[type="email"]:focus, .inverted input[type="number"]:focus, .inverted input[type="password"]:focus, .inverted input[type="search"]:focus, .inverted input[type="tel"]:focus, .inverted input[type="text"]:focus, .inverted input[type="url"]:focus, .inverted input[type="color"]:focus, .inverted input[type="date"]:focus, .inverted input[type="datetime"]:focus, .inverted input[type="datetime-local"]:focus, .inverted input[type="month"]:focus, .inverted input[type="time"]:focus, .inverted input[type="week"]:focus, .inverted
+    textarea:focus, .inverted
+    select:focus, .inverted
+    .launcher:focus {
       border-color: none; }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], select {
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+select {
   height: 40px; }
 
 textarea {
@@ -1601,225 +1612,6 @@ textarea::-webkit-input-placeholder {
   color: #d55741;
   margin-top: 4px; }
 
-/* DATE PICKER */
-.picker {
-  position: absolute;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  z-index: 3; }
-
-.picker__input {
-  background-image: url(/style/img/web/calendar.svg);
-  background-position: center right 4px;
-  background-repeat: no-repeat;
-  cursor: pointer; }
-  .picker__input.picker__input--active {
-    border-color: #3987cb; }
-
-.picker__holder {
-  width: 100%;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; }
-
-.picker__holder,
-.picker__frame {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 100%; }
-
-.picker__holder {
-  position: fixed;
-  -webkit-transition: background 0.15s ease-out, top 0s 0.15s;
-  -moz-transition: background 0.15s ease-out, top 0s 0.15s;
-  transition: background 0.15s ease-out, top 0s 0.15s;
-  -webkit-backface-visibility: hidden; }
-
-.picker__frame {
-  opacity: 0;
-  position: absolute;
-  margin: 0 auto;
-  max-width: 550px;
-  width: 100%;
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out; }
-  @media only screen and (min-width: 440px) {
-    .picker__frame {
-      overflow: visible;
-      top: auto;
-      bottom: -100%;
-      max-height: 80%; } }
-  @media only screen and (min-width: 640px) {
-    .picker__frame {
-      margin-bottom: 10%; } }
-
-.picker__wrap {
-  display: table;
-  height: 100%;
-  margin: 0 auto;
-  max-width: 550px;
-  width: 100%; }
-
-.picker__box {
-  background: #FFFFFF;
-  border-radius: 2px;
-  display: table-cell;
-  vertical-align: middle; }
-
-.picker--opened .picker__holder {
-  top: 0;
-  zoom: 1;
-  background: rgba(0, 0, 0, 0.75);
-  -webkit-transition: background 0.15s ease-out;
-  -moz-transition: background 0.15s ease-out;
-  transition: background 0.15s ease-out; }
-  .picker--opened .picker__holder .picker__frame {
-    top: 0;
-    opacity: 1; }
-    @media only screen and (min-width: 440px) {
-      .picker--opened .picker__holder .picker__frame {
-        top: auto;
-        bottom: 0; } }
-
-/* DATE PICKER - CALENDAR */
-.picker__header {
-  padding: 16px;
-  position: relative;
-  text-align: center; }
-  @media only screen and (min-width: 440px) {
-    .picker__header {
-      background: #F3F6F9; } }
-
-.picker__month,
-.picker__year {
-  display: inline-block;
-  margin: 0 4px; }
-
-.picker__month {
-  color: #d55741;
-  font-weight: 700; }
-
-.picker__year {
-  color: rgba(0, 0, 0, 0.54);
-  font-weight: 400; }
-
-.picker__nav--prev,
-.picker__nav--next {
-  cursor: pointer;
-  position: absolute;
-  padding: 16px;
-  height: 16px;
-  box-sizing: content-box;
-  top: 0;
-  width: 16px; }
-  .picker__nav--prev:hover,
-  .picker__nav--next:hover {
-    background: rgba(0, 0, 0, 0.1); }
-  .picker__nav--prev:before,
-  .picker__nav--next:before {
-    content: " ";
-    border-top: .5em solid transparent;
-    border-bottom: .5em solid transparent;
-    border-right: 0.75em solid rgba(0, 0, 0, 0.54);
-    width: 0;
-    height: 0;
-    display: block;
-    margin: 0 auto; }
-
-.picker__nav--prev {
-  left: 0; }
-
-.picker__nav--next {
-  right: 0; }
-  .picker__nav--next:before {
-    border-right: 0;
-    border-left: 0.75em solid rgba(0, 0, 0, 0.54); }
-
-.picker__nav--disabled,
-.picker__nav--disabled:hover,
-.picker__nav--disabled:before,
-.picker__nav--disabled:before:hover {
-  cursor: default;
-  background: none;
-  border-right-color: rgba(0, 0, 0, 0.26);
-  border-left-color: rgba(0, 0, 0, 0.26); }
-
-.picker__table {
-  text-align: center;
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed;
-  font-size: inherit;
-  width: 100%; }
-  .picker__table td {
-    margin: 0;
-    padding: 0; }
-  @media only screen and (min-width: 440px) {
-    .picker__table thead {
-      background: #F3F6F9; } }
-
-.picker__weekday {
-  color: rgba(0, 0, 0, 0.54);
-  font-weight: 700;
-  font-size: 13px;
-  padding-bottom: 8px;
-  width: 1428.57143%; }
-
-.picker__day {
-  border: 1px solid transparent;
-  border-radius: 999px;
-  height: 40px;
-  width: 40px;
-  line-height: 40px;
-  margin: 4px auto; }
-  .picker__day:hover {
-    color: rgba(0, 0, 0, 0.87);
-    background: rgba(0, 0, 0, 0.1); }
-  .picker__day--today {
-    background: rgba(0, 0, 0, 0.1);
-    font-weight: 700;
-    position: relative; }
-  .picker__day--outfocus {
-    color: rgba(0, 0, 0, 0.26); }
-  .picker__day--selected, .picker__day--selected:hover {
-    background: #d55741;
-    color: white;
-    font-weight: 700; }
-  .picker__day--disabled, .picker__day--disabled:hover {
-    color: rgba(0, 0, 0, 0.26);
-    cursor: default; }
-
-.picker__footer {
-  text-align: center; }
-  .picker__footer button {
-    border: none;
-    background: #FFFFFF;
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.54);
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 8px;
-    vertical-align: bottom; }
-    .picker__footer button:hover, .picker__footer button:focus {
-      background: rgba(0, 0, 0, 0.1);
-      color: rgba(0, 0, 0, 0.87); }
-    .picker__footer button:focus {
-      outline: none; }
-
-.picker__button--close:before {
-  content: "\D7";
-  color: rgba(0, 0, 0, 0.26);
-  display: inline-block;
-  height: 0;
-  margin-top: -1px;
-  margin-right: 4px;
-  position: relative;
-  vertical-align: top; }
-
 /*doc
 ---
 title: Layout
@@ -1902,6 +1694,13 @@ padding, and sets a max-width.
 	</div>
 </section>
 ```
+
+#### Bounds variants
+
+Class             | Description
+----------------- | -------------------------------------
+`.bounds`         | standard bounds for any type of content
+`.bounds--form`   | bounds for wrapping forms; applies narrower measure
 */
 .bounds {
   box-sizing: border-box;
@@ -1910,6 +1709,9 @@ padding, and sets a max-width.
   max-width: 1100px;
   padding: 16px;
   width: 100%; }
+
+.bounds--form {
+  max-width: 550px; }
 
 /*doc
 ---
@@ -2204,114 +2006,12 @@ category: UI Components
 
 /*doc
 ---
-title: Tearsheet
-name: tearsheet
-cateogry: UI Components
----
-TODO: doc this
-*/
-.tearsheet {
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 13px;
-  font-weight: 700;
-  height: 24px;
-  padding-top: 4px;
-  position: relative;
-  text-align: center;
-  width: 24px; }
-  .tearsheet:before {
-    background: #d55741;
-    content: '';
-    display: block;
-    height: 6px;
-    left: -1px;
-    position: absolute;
-    right: -1px;
-    top: -1px; }
-
-.tearsheet-with-date .tearsheet, .tearsheet-with-date .date {
-  display: inline-block; }
-.tearsheet-with-date .tearsheet {
-  margin-right: 8px; }
-
-.photo-card--photo,
-.photoCard--photo {
-  position: relative;
-  width: 100%;
-  height: 100%; }
-  .photo-card--photo:before,
-  .photoCard--photo:before {
-    background-color: rgba(15, 20, 31, 0);
-    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
-    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-    top: 0; }
-
-.photo-card--text,
-.photoCard--text {
-  bottom: 0;
-  padding: 16px;
-  position: absolute; }
-
-/*doc
----
-title: Toggle Pills
-name: togglePills
-category: UI Components
----
-
-```html_example
-<div class="toggle-button-wrapper">
-	<input type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn">
-	<label for="topic-pill" class="button button--small button--bordered">Dining Out</label>
-</div>
-```
-*/
-.toggle-button-wrapper {
-  display: inline-block;
-  margin: 4px 0;
-  -webkit-tap-highlight-color: transparent; }
-  .toggle-button-wrapper label {
-    margin: 0; }
-  .toggle-button-wrapper input {
-    display: none; }
-    .toggle-button-wrapper input:checked + label {
-      background: #3987cb;
-      border: none;
-      color: white; }
-
-input.toggle-pill {
-  display: none; }
-  input.toggle-pill + label {
-    border: 1px solid #3987cb;
-    border-radius: 999px;
-    color: #3987cb;
-    margin-right: 8px;
-    padding: 8px; }
-  input.toggle-pill:checked + label {
-    background: #3987cb;
-    color: white; }
-
-.toggle-on {
-  -webkit-animation: bounce-in-subtle 750ms linear;
-  animation: bounce-in-subtle 750ms linear; }
-  .toggle-on label {
-    font-weight: 700; }
-
-/*doc
----
 title: Buttons
 name: buttons
 category: UI Components
 ---
+
+#### Example
 
 ```html_example
 <a class="button" href="#">Button</a>
@@ -2326,6 +2026,18 @@ category: UI Components
 <a class="button button--small" href="#">Small Button</a>
 <a class="button button--bordered button--fullWidth" href="#">Full width button</a>
 ```
+
+#### Button variants
+A class of `.button` is __required__ for buttons. The following
+classes are optional variants:
+
+Class                   | Description
+----------------------- | ----------------------------------------
+`.button--primary`      | rounded button with dark background; for primary actions
+`.button--contrast`     | bold, dark text; use on dark backgrounds (ie. top nav bar)
+`.button--bordered`     | rounded bordered button
+`.button--icon`         | cirular icon above caption text (see example above)
+`.button--small`        | decreases size of button
 */
 .button {
   background-color: transparent;
@@ -2487,184 +2199,328 @@ category: UI Components
     .button--contrast.button--disabled.button--primary {
       background: rgba(0, 0, 0, 0.26); }
 
-.momentary {
-  -webkit-transition: -webkit-transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -moz-transition: -moz-transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: transform 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22), opacity 150ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
+/* DATE PICKER */
+.picker {
+  position: absolute;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 3; }
+
+.picker__input {
+  background-image: url(/style/img/web/calendar.svg);
+  background-position: center right 4px;
+  background-repeat: no-repeat;
+  cursor: pointer; }
+  .picker__input.picker__input--active {
+    border-color: #3987cb; }
+
+.picker__holder {
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.picker__holder,
+.picker__frame {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%; }
+
+.picker__holder {
+  position: fixed;
+  -webkit-transition: background 0.15s ease-out, top 0s 0.15s;
+  -moz-transition: background 0.15s ease-out, top 0s 0.15s;
+  transition: background 0.15s ease-out, top 0s 0.15s;
+  -webkit-backface-visibility: hidden; }
+
+.picker__frame {
+  opacity: 0;
+  position: absolute;
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out; }
+  @media only screen and (min-width: 440px) {
+    .picker__frame {
+      overflow: visible;
+      top: auto;
+      bottom: -100%;
+      max-height: 80%; } }
+  @media only screen and (min-width: 640px) {
+    .picker__frame {
+      margin-bottom: 10%; } }
+
+.picker__wrap {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%; }
+
+.picker__box {
+  background: #FFFFFF;
+  border-radius: 2px;
+  display: table-cell;
+  vertical-align: middle; }
+
+.picker--opened .picker__holder {
+  top: 0;
+  zoom: 1;
+  background: rgba(0, 0, 0, 0.75);
+  -webkit-transition: background 0.15s ease-out;
+  -moz-transition: background 0.15s ease-out;
+  transition: background 0.15s ease-out; }
+  .picker--opened .picker__holder .picker__frame {
+    top: 0;
+    opacity: 1; }
+    @media only screen and (min-width: 440px) {
+      .picker--opened .picker__holder .picker__frame {
+        top: auto;
+        bottom: 0; } }
+
+/* DATE PICKER - CALENDAR */
+.picker__header {
+  padding: 16px;
+  position: relative;
+  text-align: center; }
+  @media only screen and (min-width: 440px) {
+    .picker__header {
+      background: #F3F6F9; } }
+
+.picker__month,
+.picker__year {
+  display: inline-block;
+  margin: 0 4px; }
+
+.picker__month {
+  color: #d55741;
+  font-weight: 700; }
+
+.picker__year {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 400; }
+
+.picker__nav--prev,
+.picker__nav--next {
+  cursor: pointer;
+  position: absolute;
+  padding: 16px;
+  height: 16px;
+  box-sizing: content-box;
+  top: 0;
+  width: 16px; }
+  .picker__nav--prev:hover,
+  .picker__nav--next:hover {
+    background: rgba(0, 0, 0, 0.1); }
+  .picker__nav--prev:before,
+  .picker__nav--next:before {
+    content: " ";
+    border-top: .5em solid transparent;
+    border-bottom: .5em solid transparent;
+    border-right: 0.75em solid rgba(0, 0, 0, 0.54);
+    width: 0;
+    height: 0;
+    display: block;
+    margin: 0 auto; }
+
+.picker__nav--prev {
+  left: 0; }
+
+.picker__nav--next {
+  right: 0; }
+  .picker__nav--next:before {
+    border-right: 0;
+    border-left: 0.75em solid rgba(0, 0, 0, 0.54); }
+
+.picker__nav--disabled,
+.picker__nav--disabled:hover,
+.picker__nav--disabled:before,
+.picker__nav--disabled:before:hover {
+  cursor: default;
+  background: none;
+  border-right-color: rgba(0, 0, 0, 0.26);
+  border-left-color: rgba(0, 0, 0, 0.26); }
+
+.picker__table {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: inherit;
+  width: 100%; }
+  .picker__table td {
+    margin: 0;
+    padding: 0; }
+  @media only screen and (min-width: 440px) {
+    .picker__table thead {
+      background: #F3F6F9; } }
+
+.picker__weekday {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 700;
+  font-size: 13px;
+  padding-bottom: 8px;
+  width: 1428.57143%; }
+
+.picker__day {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  margin: 4px auto; }
+  .picker__day:hover {
+    color: rgba(0, 0, 0, 0.87);
+    background: rgba(0, 0, 0, 0.1); }
+  .picker__day--today {
+    background: rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    position: relative; }
+  .picker__day--outfocus {
+    color: rgba(0, 0, 0, 0.26); }
+  .picker__day--selected, .picker__day--selected:hover {
+    background: #d55741;
+    color: white;
+    font-weight: 700; }
+  .picker__day--disabled, .picker__day--disabled:hover {
+    color: rgba(0, 0, 0, 0.26);
+    cursor: default; }
+
+.picker__footer {
+  text-align: center; }
+  .picker__footer button {
+    border: none;
+    background: #FFFFFF;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.54);
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px;
+    vertical-align: bottom; }
+    .picker__footer button:hover, .picker__footer button:focus {
+      background: rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, 0.87); }
+    .picker__footer button:focus {
+      outline: none; }
+
+.picker__button--close:before {
+  content: "\D7";
+  color: rgba(0, 0, 0, 0.26);
+  display: inline-block;
+  height: 0;
+  margin-top: -1px;
+  margin-right: 4px;
+  position: relative;
+  vertical-align: top; }
+
+/*doc
+---
+title: Tearsheet
+name: tearsheet
+cateogry: UI Components
+---
+TODO: doc this
+*/
+.tearsheet {
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 2px;
-  opacity: 1;
-  position: absolute;
-  min-width: 100px;
-  z-index: 5; }
-  .momentary.off {
-    opacity: 0; }
-  .momentary.top-left {
-    margin-left: -12px; }
-  .momentary.top-right {
-    margin-left: 12px; }
-  .momentary .momentary-btn-list {
-    background: #FFFFFF;
-    list-style: none;
-    margin: 0;
-    padding-left: 0; }
-  .momentary li a {
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 13px;
+  font-weight: 700;
+  height: 24px;
+  padding-top: 4px;
+  position: relative;
+  text-align: center;
+  width: 24px; }
+  .tearsheet:before {
+    background: #d55741;
+    content: '';
     display: block;
-    height: 48px;
-    line-height: 48px;
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 0 8px; }
-  .momentary .ios-cancel {
-    display: none; }
+    height: 6px;
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: -1px; }
 
-.momentary-alert {
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  left: 50%;
-  opacity: 1;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  width: 320px; }
-  .momentary-alert.off {
-    -webkit-transform: translate(-50%, -40%);
-    -ms-transform: translate(-50%, -40%);
-    transform: translate(-50%, -40%); }
-  @media only screen and (max-width: 440px) {
-    .momentary-alert {
-      -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-      transform: translate(0, 0);
-      left: 16px;
-      right: 16px;
-      top: 25%;
-      width: auto; }
-      .momentary-alert.off {
-        -webkit-transform: translate(0, 10px);
-        -ms-transform: translate(0, 10px);
-        transform: translate(0, 10px); } }
-  .momentary-alert .momentary-btn-list {
-    padding: 0 16px;
-    text-align: right; }
-    .momentary-alert .momentary-btn-list li {
-      display: inline-block; }
-  .momentary-alert:after, .momentary-alert:before {
-    display: none; }
+.tearsheet-with-date .tearsheet, .tearsheet-with-date .date {
+  display: inline-block; }
+.tearsheet-with-date .tearsheet {
+  margin-right: 8px; }
 
-.momentary-alert-copy {
-  padding: 16px; }
-
-.overlayScreen-alert {
-  background: rgba(0, 0, 0, 0.2);
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
+.photo-card--photo,
+.photoCard--photo {
+  position: relative;
   width: 100%;
-  z-index: 2; }
+  height: 100%; }
+  .photo-card--photo:before,
+  .photoCard--photo:before {
+    background-color: rgba(15, 20, 31, 0);
+    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: 0; }
 
-.momentary-popover {
-  margin-top: 12px; }
-  .momentary-popover:before, .momentary-popover:after {
-    position: absolute; }
-  .momentary-popover.top-left:before {
-    top: -13px;
-    left: -1px;
-    width: 0;
-    height: 0;
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
-    border-bottom: 13px solid rgba(0, 0, 0, 0.12);
-    content: '';
-    display: block; }
-  .momentary-popover.top-left:after {
-    top: -12px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #FFFFFF;
-    content: '';
-    display: block; }
-  .momentary-popover.top-right:before {
-    top: -13px;
-    right: -1px;
-    width: 0;
-    height: 0;
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
-    border-bottom: 13px solid rgba(0, 0, 0, 0.12);
-    content: '';
-    display: block; }
-  .momentary-popover.top-right:after {
-    top: -12px;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #FFFFFF;
-    content: '';
-    display: block; }
-  .momentary-popover.bottom-left:before {
-    bottom: -13px;
-    left: -1px;
-    width: 0;
-    height: 0;
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
-    border-top: 13px solid rgba(0, 0, 0, 0.12);
-    content: '';
-    display: block; }
-  .momentary-popover.bottom-left:after {
-    bottom: -12px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 12px solid #FFFFFF;
-    content: '';
-    display: block; }
-  .momentary-popover.bottom-right:before {
-    bottom: -13px;
-    right: -1px;
-    width: 0;
-    height: 0;
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
-    border-top: 13px solid rgba(0, 0, 0, 0.12);
-    content: '';
-    display: block; }
-  .momentary-popover.bottom-right:after {
-    bottom: -12px;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-top: 12px solid #FFFFFF;
-    content: '';
-    display: block; }
-  .momentary-popover .momentary-btn-list {
-    border: none;
-    border-radius: 2px; }
-  .momentary-popover li {
-    border-top: 1px solid rgba(0, 0, 0, 0.12); }
-    .momentary-popover li:first-child {
-      border-top: none; }
-  .momentary-popover.off {
-    -webkit-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px); }
+.photo-card--text,
+.photoCard--text {
+  bottom: 0;
+  padding: 16px;
+  position: absolute; }
+
+/*doc
+---
+title: Toggle Pills
+name: togglePills
+category: UI Components
+---
+
+```html_example
+<div class="toggle-button-wrapper">
+	<input type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn">
+	<label for="topic-pill" class="button button--small button--bordered">Dining Out</label>
+</div>
+```
+*/
+.toggle-button-wrapper {
+  display: inline-block;
+  margin: 4px 0;
+  -webkit-tap-highlight-color: transparent; }
+  .toggle-button-wrapper label {
+    margin: 0; }
+  .toggle-button-wrapper input {
+    display: none; }
+    .toggle-button-wrapper input:checked + label {
+      background: #3987cb;
+      border: none;
+      color: white; }
+
+input.toggle-pill {
+  display: none; }
+  input.toggle-pill + label {
+    border: 1px solid #3987cb;
+    border-radius: 999px;
+    color: #3987cb;
+    margin-right: 8px;
+    padding: 8px; }
+  input.toggle-pill:checked + label {
+    background: #3987cb;
+    color: white; }
+
+.toggle-on {
+  -webkit-animation: bounce-in-subtle 750ms linear;
+  animation: bounce-in-subtle 750ms linear; }
+  .toggle-on label {
+    font-weight: 700; }
 
 /*doc
 ---
