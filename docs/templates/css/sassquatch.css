@@ -2422,11 +2422,27 @@ Class                   | Description
 ---
 title: Tearsheet
 name: tearsheet
-cateogry: UI Components
+category: UI Components
 ---
-TODO: doc this
+Standard display for dates via the
+`<time>` element.
+
+#### Tearsheet example
+```html_example
+<time class="tearsheet" datetime="2015-01-13">13</time>
+```
+
+#### Tearsheet with date detail
+```html_example
+<time class="dateTime" datetime="2015-01-13">
+	<div class="dateTime-tearsheet">13</div>
+	<p class="dateTime-detail">Tomorrow at 7:00 PM</p>
+</time>
+```
 */
+.dateTime-tearsheet,
 .tearsheet {
+  display: block;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -2438,6 +2454,7 @@ TODO: doc this
   position: relative;
   text-align: center;
   width: 24px; }
+  .dateTime-tearsheet:before,
   .tearsheet:before {
     background: #d55741;
     content: '';
@@ -2448,9 +2465,11 @@ TODO: doc this
     right: -1px;
     top: -1px; }
 
-.tearsheet-with-date .tearsheet, .tearsheet-with-date .date {
+.dateTime-tearsheet,
+.dateTime-detail {
   display: inline-block; }
-.tearsheet-with-date .tearsheet {
+
+.dateTime-tearsheet {
   margin-right: 8px; }
 
 .photo-card--photo,

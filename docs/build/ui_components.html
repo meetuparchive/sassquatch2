@@ -63,6 +63,15 @@
 									
 									
 										<li>
+											<a href="#tearsheet">Tearsheet</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li>
 											<a href="#togglePills">Toggle Pills</a>
 										</li>
 									
@@ -175,6 +184,25 @@ classes are optional variants:</p>
 </tr>
 </tbody></table>
 
+<h1 id="tearsheet">Tearsheet</h1>
+
+<p>Standard display for dates via the
+<code>&lt;time&gt;</code> element.</p>
+
+<h4>Tearsheet example</h4>
+<div class="codeExample"><div class="exampleOutput"><time class="tearsheet" datetime="2015-01-13">13</time>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"tearsheet"</span> <span class="na">datetime=</span><span class="s">"2015-01-13"</span><span class="nt">&gt;</span>13<span class="nt">&lt;/time&gt;</span>
+</pre></div></div></div>
+<h4>Tearsheet with date detail</h4>
+<div class="codeExample"><div class="exampleOutput"><time class="dateTime" datetime="2015-01-13">
+    <div class="dateTime-tearsheet">13</div>
+    <p class="dateTime-detail">Tomorrow at 7:00 PM</p>
+</time>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"dateTime"</span> <span class="na">datetime=</span><span class="s">"2015-01-13"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dateTime-tearsheet"</span><span class="nt">&gt;</span>13<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"dateTime-detail"</span><span class="nt">&gt;</span>Tomorrow at 7:00 PM<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/time&gt;</span>
+</pre></div></div></div>
 <h1 id="togglePills">Toggle Pills</h1>
 <div class="codeExample"><div class="exampleOutput"><div class="toggle-button-wrapper">
     <input type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn">
@@ -341,6 +369,16 @@ $(function() {
 					"title": "Buttons",
 					"breadcrumb": "UI Components > Buttons",
 					"path": "ui_components.html#buttons"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Tearsheet",
+					"breadcrumb": "UI Components > Tearsheet",
+					"path": "ui_components.html#tearsheet"
 				});
 
 			

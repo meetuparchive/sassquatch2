@@ -2,42 +2,58 @@
 ---
 title: Tearsheet
 name: tearsheet
-cateogry: UI Components
+category: UI Components
 ---
-TODO: doc this
+Standard display for dates via the
+`<time>` element.
+
+#### Tearsheet example
+```html_example
+<time class="tearsheet" datetime="2015-01-13">13</time>
+```
+
+#### Tearsheet with date detail
+```html_example
+<time class="dateTime" datetime="2015-01-13">
+	<div class="dateTime-tearsheet">13</div>
+	<p class="dateTime-detail">Tomorrow at 7:00 PM</p>
+</time>
+```
 */
 
+%tearsheet,
 .tearsheet {
-  background: $C_contentBG;
-  border: 1px solid $C_border;
-  box-sizing: border-box;
-  color: $C_textPrimary;
-  font-size: $font-size-small;
-  font-weight: $W_bold;
-  height: $space-2;
-  padding-top: $space-quarter;
-  position: relative;
-  text-align: center;
-  width: $space-2;
+	display: block;
+	background: $C_contentBG;
+	border: 1px solid $C_border;
+	box-sizing: border-box;
+	color: $C_textPrimary;
+	font-size: $font-size-small;
+	font-weight: $W_bold;
+	height: $space-2;
+	padding-top: $space-quarter;
+	position: relative;
+	text-align: center;
+	width: $space-2;
 
-  &:before {
-    background: $C_accent;
-    content: '';
-    display: block;
-    height: 6px;
-    left: -1px;
-    position: absolute;
-    right: -1px;
-    top: -1px;
-  }
-
+	&:before {
+	 background: $C_accent;
+	 content: '';
+	 display: block;
+	 height: 6px;
+	 left: -1px;
+	 position: absolute;
+	 right: -1px;
+	 top: -1px;
+	}
 }
 
-.tearsheet-with-date {
-  .tearsheet, .date {
-    display: inline-block;
-  }
-  .tearsheet {
-    margin-right: $space-half;
-  }
+// dateTime
+.dateTime-tearsheet,
+.dateTime-detail {
+	display: inline-block;
+}
+.dateTime-tearsheet {
+	@extend %tearsheet;
+	margin-right: $space-half;
 }
