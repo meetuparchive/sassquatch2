@@ -77,7 +77,7 @@ on additive color screens)._
 
 _returns int_
 
-```Sass
+```
 getPerceivedBrightness(#000) // -> 0
 ```
 */
@@ -92,7 +92,7 @@ Our default dark/light threshold is 160 on a scale of 0-255
 
 _returns boolean_
 
-```Sass
+```
 isDark(#000) // -> true
 isLight(#000) // -> false
 ```
@@ -108,7 +108,7 @@ a text color value with appropriate contrast.
 
 _returns `color` value_
 
-```Sass
+```
 // -> color: $C_textPrimaryInverted; (white text on dark)
 color: getPrimaryTextColor(#000);
 
