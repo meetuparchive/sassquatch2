@@ -15,11 +15,11 @@ name: shadowPlaceholder
 parent: shadow
 ---
 Applies standard box-shadow
+
 ```
 @extend %shadow;
 ```
 */
-//TODO: clarify name?
 %shadow {
 	box-shadow: 0 0 20px $C_border;
 }

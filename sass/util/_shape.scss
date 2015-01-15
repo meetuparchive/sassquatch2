@@ -14,6 +14,7 @@ name: triangleMixin
 parent: shape
 ---
 Includes rules to create a css border triangle
+
 ```
 @mixin triangle($direction: 'n', $color: black, $size: 6px)
 ```
@@ -50,6 +51,7 @@ name: circleMixin
 parent: shape
 ---
 Makes selected element a circle with border-radius
+
 ```
 @mixin circle($color: black, $size: 12px)
 ```
@@ -72,6 +74,7 @@ Adds pointers to any box.
 
 Use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
 _TODO: rewrite with args_
+
 ```
 @mixin pointers-for-box($size, $background, $border)
 ```

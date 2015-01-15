@@ -15,6 +15,7 @@ name: pseudoDisplay
 parent: display
 ---
 Sets display property for psuedo-elements
+
 ```
 @include pseudoDisplay($value: block);
 ```
