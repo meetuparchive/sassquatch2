@@ -22,16 +22,16 @@
 <body>
 	<header class="stripe--inverted inverted">
 		<div class="bounds">
-			<h1 class="display">Sassquatch 2</h1>
+			<h1 class="text--display">Sassquatch 2</h1>
 			<p class="software-version">v0.0.1</p>
 		</div>
 	</header>
 
-	<section id="hologramBody" class="bounds">
-		<nav>
+	<section id="hologramBody" class="bounds flexRow display--block--mediumDown">
+		<nav class="flexrow-item--shrink display--block--mediumDown">
 			<ul>
 				<% @categories.each do |category, file_name| %>
-					<li>
+					<li class="display--inlineBlock--mediumDown">
 						<a href="<%= file_name %>"><%= category %></a>
 						<% if title == category %>
 							<ul>
@@ -39,7 +39,7 @@
 
 									<%# Only put top-level blocks in this list %>
 									<% if b[:parent].nil? %>
-										<li>
+										<li class="display--inline--mediumDown">
 											<a href="#<%= b[:name] %>"><%= b[:title] %></a>
 										</li>
 									<% end %>
@@ -52,4 +52,4 @@
 			</ul>
 		</nav>
 
-		<main id="content">
+		<main id="content" class="flexRow-item--grow display--block--mediumDown">
