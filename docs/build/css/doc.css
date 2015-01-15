@@ -96,7 +96,7 @@ main > table td:first-child {
 
 /* LAYOUT */
 #hologramBody > nav {
-	flex-basis: 240px;
+	flex-basis: 280px;
 }
 
 /* NAV */
