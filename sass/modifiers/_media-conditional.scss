@@ -41,7 +41,7 @@ Example TK
 
 // padding
 @include _bpModifier('padding', 'none') {
-	padding: 0;
+	padding: 0 !important;
 };
 
 // border
