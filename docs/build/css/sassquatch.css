@@ -595,8 +595,7 @@ _[ie. avatars][avatar]_
 ```
 */
 .avatar--person,
-.avatar, .photo-card--photo,
-.photoCard--photo, .imgFill {
+.avatar, .photoCard, .imgFill {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -2485,13 +2484,36 @@ Standard display for dates via the
 .dateTime-tearsheet {
   margin-right: 8px; }
 
-.photo-card--photo,
-.photoCard--photo {
+/*doc
+---
+title: Photo Card
+name: photoCard
+category: UI Components
+---
+Cards for groups.
+
+```html_example
+<ul class="flexRow">
+	<li class="flexRow-item--grow">
+		<a href="#" class="photoCard inverted" style="background-image: url(http://photos3.meetupstatic.com/photos/event/1/9/8/7/600_432486535.jpeg);">
+			<h3 class="photoCard--text">20 and 30 somethings in Portland - AWESOME Stuff</h3>
+		</a>
+	</li>
+	<li class="flexRow-item--grow">
+		<a href="#!/groups/57" class="photoCard inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/5/a/0/9/600_431723049.jpeg);">
+			<h3 class="photoCard--text">Mazama Trail Trips</h3>
+		</a>
+	</li>
+</ul>
+```
+*/
+.photoCard {
+  display: block;
   position: relative;
   width: 100%;
-  height: 100%; }
-  .photo-card--photo:before,
-  .photoCard--photo:before {
+  height: 100%;
+  min-height: 160px; }
+  .photoCard:before {
     background-color: rgba(15, 20, 31, 0);
     background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
     background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
@@ -2503,7 +2525,6 @@ Standard display for dates via the
     z-index: 0;
     top: 0; }
 
-.photo-card--text,
 .photoCard--text {
   bottom: 0;
   padding: 16px;
