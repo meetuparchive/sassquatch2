@@ -144,16 +144,17 @@ a margin-bottom.
 
 /*doc
 ---
-title: Flex row
+title: Flex Row
 name: flexRow
 parent: layout
 ---
 Arranges content in rows using `display: flex`.
 
-The `.fRow` class is applied to a wrapping element.
+The `.row` class is applied to a wrapping element.
 
-Direct children of `.fRow` are flex children, and require
-either a `.fRow-item--grow` or `.fRow-item--shirnk` class.
+Direct children of `.row` are flex children, and require
+a class of `.row-item` with an optional `.row-item--shirnk`
+for a flex-shrink item.
 
 The flex children in flex row do not have a `flex-basis` set; a
 basis is not required for most common layout tasks.
@@ -163,105 +164,101 @@ _Includes `table-cell` fallback for IE8._
 #### Examples:
 
 ```html_example
-<div class="fRow">
-	<div class="_DOC-SHADE fRow-item--grow">Item 1</div>
-	<div class="_DOC-SHADE fRow-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE fRow-item--shrink">Item 3</div>
-	<div class="_DOC-SHADE fRow-item--grow">Item 4</div>
+<div class="row">
+	<div class="_DOC-SHADE row-item">Item 1</div>
+	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item">Item 4</div>
 </div>
 ```
 
 ```html_example
-<div class="fRow">
-	<div class="_DOC-SHADE fRow-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE fRow-item--grow">Item 2</div>
-	<div class="_DOC-SHADE fRow-item--shrink">Item 3</div>
+<div class="row">
+	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item">Item 2</div>
+	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
 </div>
 ```
 
 ```html_example
-<div class="fRow fRow--flexEnd">
-	<div class="_DOC-SHADE fRow-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE fRow-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE fRow-item--shrink">Item 3</div>
+<div class="row row--flexEnd">
+	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
 </div>
 ```
 
 ```html_example
-<div class="fRow fRow--spaceBetween fRow--reverse">
-	<div class="_DOC-SHADE fRow-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE fRow-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE fRow-item--shrink">Item 3</div>
-	<div class="_DOC-SHADE fRow-item--shrink">Item 4</div>
+<div class="row row--spaceBetween row--reverse">
+	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item--shrink">Item 4</div>
 </div>
 ```
 */
-.fRow {
+.row {
 	@include display(flex);
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
 	@include justify-content(flex-start);
 	@include align-items(flex);
 }
-%_fRow-item {
+.row-item {
 	padding-left: $space;
+	@include flex-grow(1);
 	&:first-child {
 		padding-left: 0;
 	}
 }
-.fRow-item--shrink {
-	@extend %_fRow-item;
+.row-item--shirnk {
+	@include flex-grow(0);
 	@include flex-shrink(1);
-}
-.fRow-item--grow {
-	@extend %_fRow-item;
-	@include flex-grow(1);
 }
 
 
 /*doc
 ---
-title: fRow variants
+title: Row variants
 name: flexrowParent
 parent: flexRow
 ---
 
-A class of `.fRow` is __required__ on the flex row parent. The
+A class of `.row` is __required__ on the flex row parent. The
 following classes are optional variants:
 
-Class                       | Description
---------------------------- | -------------------------------
-`.fRow--noGutters`       | removes padding from all `.fRow-item` children
-`.fRow--reverse`         | reverses row order
-`.fRow--flexEnd`         | justifies content to `flex-end`
-`.fRow--center`          | justifies content to `center`
-`.fRow--spaceBetween`    | justifies content to `spaceBetween`
-`.fRow--spaceAround`     | justifies content to `spaceAround`
+Class                   | Description
+----------------------- | -------------------------------
+`.row--noGutters`       | removes padding from all `.row-item` children
+`.row--reverse`         | reverses row order
+`.row--flexEnd`         | justifies content to `flex-end`
+`.row--center`          | justifies content to `center`
+`.row--spaceBetween`    | justifies content to `spaceBetween`
+`.row--spaceAround`     | justifies content to `spaceAround`
 */
-.fRow--noGutters .fRow-item--grow,
-.fRow--noGutters .fRow-item--shrink {
+.row--noGutters .row-item {
 	padding: 0;
 }
-.fRow--reverse {
+.row--reverse {
 	@include flex-direction(row-reverse);
 }
 @each $jName, $jprop in $flexJustifyMap {
-	.fRow--#{$jName} {
+	.row--#{$jName} {
 		@include justify-content($jprop);
 	}
 }
 
 // LT IE9 fallback
-.lt--IE9 .fRow {
+.lt--IE9 .row {
 	@include box-sizing(border-box);
 	display: table;
 	table-layout: auto;
 	width: 100%;
 }
-.lt--IE9 .fRow-item--shrink,
-.lt--IE9 .fRow-item--grow {
+.lt--IE9 .row-item {
 	display: table-cell;
-}
-.lt--IE9 .fRow-item--grow {
 	width: 100%;
+}
+.lt--IE9 .row-item--shrink {
+	width: auto;
 }

@@ -7,13 +7,13 @@ category: UI Components
 Cards for groups.
 
 ```html_example
-<ul class="fRow">
-	<li class="fRow-item--grow">
+<ul class="row">
+	<li class="row-item">
 		<a href="#" class="photoCard inverted" style="background-image: url(http://photos3.meetupstatic.com/photos/event/1/9/8/7/600_432486535.jpeg);">
 			<h3 class="photoCard--text">20 and 30 somethings in Portland - AWESOME Stuff</h3>
 		</a>
 	</li>
-	<li class="fRow-item--grow">
+	<li class="row-item">
 		<a href="#!/groups/57" class="photoCard inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/5/a/0/9/600_431723049.jpeg);">
 			<h3 class="photoCard--text">Mazama Trail Trips</h3>
 		</a>
