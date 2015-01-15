@@ -281,12 +281,10 @@ isLight(#000) // -&gt; false
 <h2 id="align">Vertical-align children</h2>
 
 <p><strong>Try to avoid using for essential, non-decorative things</strong>
-Aligns children of selected element using flexbox.
-<code>
-@extend %valignChildren;
+Aligns children of selected element using flexbox.</p>
+<div class="codeBlock"><div class="highlight"><pre>@extend %valignChildren;
 @extend %valignChildren--bottom;
-</code></p>
-
+</pre></div></div>
 <h2 id="animation">Animation</h2>
 
 <h3 id="bounce-in-subtle">Subtle bounce-in</h3>
@@ -431,37 +429,30 @@ the <code>atMediaOnly</code> mixin will do this.</p>
 </pre></div></div>
 <h3 id="buttonPersonality">Button personality placeholder</h3>
 
-<p>Disables user-select, sets cursor, and resets text-decoration.
-<code>
-@extend %buttonPersonality;
-</code></p>
-
+<p>Disables user-select, sets cursor, and resets text-decoration.</p>
+<div class="codeBlock"><div class="highlight"><pre>@extend %buttonPersonality;
+</pre></div></div>
 <h2 id="display">Display utils</h2>
 
 <h3 id="pseudoDisplay">Pseudo-element display mixin</h3>
 
-<p>Sets display property for psuedo-elements
-<code>
-@include pseudoDisplay($value: block);
-</code></p>
-
+<p>Sets display property for psuedo-elements</p>
+<div class="codeBlock"><div class="highlight"><pre>@include pseudoDisplay($value: block);
+</pre></div></div>
 <h2 id="float">Float utils</h2>
 
 <h3 id="clearfix">Clearfix placeholder</h3>
 
-<p>Clears floated children.
-```
-@extend %clearfix;</p>
-
+<p>Clears floated children.</p>
+<div class="codeBlock"><div class="highlight"><pre>@extend %clearfix;
+</pre></div></div>
 <h2 id="shadow">Shadow utilities</h2>
 
 <h3 id="shadowPlaceholder">Shadow placeholder</h3>
 
-<p>Applies standard box-shadow
-<code>
-@extend %shadow;
-</code></p>
-
+<p>Applies standard box-shadow</p>
+<div class="codeBlock"><div class="highlight"><pre>@extend %shadow;
+</pre></div></div>
 <h2 id="shape">Shapes</h2>
 
 <h3 id="circleMixin">Circle mixin</h3>
@@ -469,27 +460,21 @@ the <code>atMediaOnly</code> mixin will do this.</p>
 <p>Adds pointers to any box.</p>
 
 <p>Use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
-<em>TODO: rewrite with args</em>
-<code>
-@mixin pointers-for-box($size, $background, $border)
-</code></p>
-
+<em>TODO: rewrite with args</em></p>
+<div class="codeBlock"><div class="highlight"><pre>@mixin pointers-for-box($size, $background, $border)
+</pre></div></div>
 <h3 id="triangleMixin">Triangle mixin</h3>
 
-<p>Includes rules to create a css border triangle
-<code>
-@mixin triangle($direction: &#39;n&#39;, $color: black, $size: 6px)
-</code></p>
-
+<p>Includes rules to create a css border triangle</p>
+<div class="codeBlock"><div class="highlight"><pre>@mixin triangle($direction: 'n', $color: black, $size: 6px)
+</pre></div></div>
 <h2 id="text">Text utils</h2>
 
 <h3 id="textProtection">Text protection shim</h3>
 
-<p>Adds a pseudo-element gradient
-<code>
-@mixin textProtectionScrim($placement: &#39;top&#39;); // &#39;bottom&#39; will place gradent on bottom of el
-</code></p>
-	</main>
+<p>Adds a pseudo-element gradient</p>
+<div class="codeBlock"><div class="highlight"><pre>@mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
+</pre></div></div>	</main>
 
 <!-- lunr.js search index -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>

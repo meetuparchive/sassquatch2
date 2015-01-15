@@ -335,6 +335,7 @@ parent: mixinsPlaceholders
 ---
 __Try to avoid using for essential, non-decorative things__
 Aligns children of selected element using flexbox.
+
 ```
 @extend %valignChildren;
 @extend %valignChildren--bottom;
@@ -682,6 +683,7 @@ name: buttonPersonality
 parent: button
 ---
 Disables user-select, sets cursor, and resets text-decoration.
+
 ```
 @extend %buttonPersonality;
 ```
@@ -712,6 +714,7 @@ name: pseudoDisplay
 parent: display
 ---
 Sets display property for psuedo-elements
+
 ```
 @include pseudoDisplay($value: block);
 ```
@@ -730,8 +733,10 @@ name: clearfix
 parent: float
 ---
 Clears floated children.
+
 ```
 @extend %clearfix;
+```
 */
 .bounds, .group {
   /**
@@ -759,6 +764,7 @@ name: shadowPlaceholder
 parent: shadow
 ---
 Applies standard box-shadow
+
 ```
 @extend %shadow;
 ```
@@ -777,6 +783,7 @@ name: triangleMixin
 parent: shape
 ---
 Includes rules to create a css border triangle
+
 ```
 @mixin triangle($direction: 'n', $color: black, $size: 6px)
 ```
@@ -788,6 +795,7 @@ name: circleMixin
 parent: shape
 ---
 Makes selected element a circle with border-radius
+
 ```
 @mixin circle($color: black, $size: 12px)
 ```
@@ -802,6 +810,7 @@ Adds pointers to any box.
 
 Use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
 _TODO: rewrite with args_
+
 ```
 @mixin pointers-for-box($size, $background, $border)
 ```
@@ -820,6 +829,7 @@ name: textProtection
 parent: text
 ---
 Adds a pseudo-element gradient
+
 ```
 @mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
 ```

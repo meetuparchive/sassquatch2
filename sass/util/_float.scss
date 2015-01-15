@@ -15,8 +15,10 @@ name: clearfix
 parent: float
 ---
 Clears floated children.
+
 ```
 @extend %clearfix;
+```
 */
 %clearfix {
 	&:before,
