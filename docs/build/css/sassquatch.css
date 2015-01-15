@@ -2743,6 +2743,7 @@ _Better documentation for this TK_
 - `.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]`
 - `.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]`
 - `.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.padding--none--[ small | medium | large ][ Up | Down | Only ]`
 
 Example TK
 */
@@ -2935,6 +2936,33 @@ Example TK
 @media only screen and (min-width: 960px) and (max-width: 960px) {
   .display--inlineBlock--largeOnly {
     display: inline-block !important; } }
+@media only screen and (min-width: 440px) {
+  .padding--none--smallUp {
+    padding: 0 !important; } }
+@media only screen and (max-width: 440px) {
+  .padding--none--smallDown {
+    padding: 0 !important; } }
+@media only screen and (min-width: 440px) and (max-width: 440px) {
+  .padding--none--smallOnly {
+    padding: 0 !important; } }
+@media only screen and (min-width: 640px) {
+  .padding--none--mediumUp {
+    padding: 0 !important; } }
+@media only screen and (max-width: 640px) {
+  .padding--none--mediumDown {
+    padding: 0 !important; } }
+@media only screen and (min-width: 640px) and (max-width: 640px) {
+  .padding--none--mediumOnly {
+    padding: 0 !important; } }
+@media only screen and (min-width: 960px) {
+  .padding--none--largeUp {
+    padding: 0 !important; } }
+@media only screen and (max-width: 960px) {
+  .padding--none--largeDown {
+    padding: 0 !important; } }
+@media only screen and (min-width: 960px) and (max-width: 960px) {
+  .padding--none--largeOnly {
+    padding: 0 !important; } }
 @media only screen and (min-width: 440px) {
   .border--top--smallUp {
     border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }

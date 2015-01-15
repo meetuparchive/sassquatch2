@@ -33,13 +33,14 @@ module.exports = function(grunt) {
 				overwrite: true,
 				replacements: [{
 					from: '__VERSION__',
-					to: 'nope'
+					to: '<%= pkg.json %>'
 				}]
 			}
 		},
 		pkg: grunt.file.readJSON('bower.json')
 	});
 
+	grunt.loadTasks('tasks');
 	grunt.registerTask('default', ['sass', 'hologram', 'replace:version']);
 	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };

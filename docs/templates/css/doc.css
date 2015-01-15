@@ -94,22 +94,10 @@ main > table td:first-child {
 	border-right: 1px solid rgba(0,0,0,.12);
 }
 
-
 /* LAYOUT */
-#hologramBody {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-}
 #hologramBody > nav {
-	flex: 0 0 260px;
-	padding-right: 24px;
+	flex-basis: 240px;
 }
-#hologramBody > main {
-	flex: 1 1 auto;
-}
-
 
 /* NAV */
 #hologramBody > nav h4 {

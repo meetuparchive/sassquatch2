@@ -20,6 +20,7 @@ _Better documentation for this TK_
 - `.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]`
 - `.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]`
 - `.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]`
+- `.padding--none--[ small | medium | large ][ Up | Down | Only ]`
 
 Example TK
 */
@@ -37,6 +38,11 @@ Example TK
 		display: $display !important;
 	}
 }
+
+// padding
+@include _bpModifier('padding', 'none') {
+	padding: 0 !important;
+};
 
 // border
 @include _bpModifier('border', 'top') {
