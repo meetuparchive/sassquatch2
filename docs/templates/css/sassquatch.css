@@ -2052,15 +2052,12 @@ Class                   | Description
 `.button--icon`         | cirular icon above caption text (see example above)
 `.button--small`        | decreases size of button
 */
-.button {
-  background-color: transparent;
+.button, .toggleButton-label {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
   border-radius: 50px;
-  border: none;
-  color: #3987cb;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
@@ -2068,6 +2065,11 @@ Class                   | Description
   margin: 8px 4px;
   padding: 8px 16px;
   text-align: center; }
+
+.button {
+  background-color: transparent;
+  border: none;
+  color: #3987cb; }
   .button:focus {
     outline: 0; }
   .button:hover, .button:active, .button:focus {
@@ -2081,7 +2083,7 @@ Class                   | Description
     .button.button--disabled.button--primary {
       background: rgba(0, 0, 0, 0.26); }
 
-.button--fullWidth,
+.button--fullWidth, .toggleButton-label,
 .button--bordered {
   background-color: #3987cb;
   color: white;
@@ -2089,34 +2091,34 @@ Class                   | Description
   background: rgba(57, 135, 203, 0);
   color: #3987cb;
   font-weight: 400; }
-  .button--fullWidth:focus,
+  .button--fullWidth:focus, .toggleButton-label:focus,
   .button--bordered:focus {
     outline: 0; }
-  .button--fullWidth:hover,
-  .button--fullWidth:active,
-  .button--fullWidth:focus,
+  .button--fullWidth:hover, .toggleButton-label:hover,
+  .button--fullWidth:active, .toggleButton-label:active,
+  .button--fullWidth:focus, .toggleButton-label:focus,
   .button--bordered:hover,
   .button--bordered:active,
   .button--bordered:focus {
     background: #619fd6; }
-  .button--disabled.button--fullWidth,
+  .button--disabled.button--fullWidth, .button--disabled.toggleButton-label,
   .button--bordered.button--disabled {
     opacity: .4;
     color: rgba(0, 0, 0, 0.87);
     cursor: default; }
-    .button--disabled.button--fullWidth:hover,
-    .button--disabled.button--fullWidth:active,
-    .button--disabled.button--fullWidth:focus,
+    .button--disabled.button--fullWidth:hover, .button--disabled.toggleButton-label:hover,
+    .button--disabled.button--fullWidth:active, .button--disabled.toggleButton-label:active,
+    .button--disabled.button--fullWidth:focus, .button--disabled.toggleButton-label:focus,
     .button--bordered.button--disabled:hover,
     .button--bordered.button--disabled:active,
     .button--bordered.button--disabled:focus {
       background: #3987cb; }
-    .button--disabled.button--primary.button--fullWidth,
+    .button--disabled.button--primary.button--fullWidth, .button--disabled.button--primary.toggleButton-label,
     .button--bordered.button--disabled.button--primary {
       background: rgba(0, 0, 0, 0.26); }
-  .button--fullWidth:hover,
-  .button--fullWidth:active,
-  .button--fullWidth:focus,
+  .button--fullWidth:hover, .toggleButton-label:hover,
+  .button--fullWidth:active, .toggleButton-label:active,
+  .button--fullWidth:focus, .toggleButton-label:focus,
   .button--bordered:hover,
   .button--bordered:active,
   .button--bordered:focus {
@@ -2145,6 +2147,7 @@ Class                   | Description
   padding: 8px;
   width: 24px; }
 
+.toggleButton-label,
 .button--small {
   font-size: 13px;
   padding: 4px 8px; }
@@ -2539,24 +2542,26 @@ category: UI Components
 ---
 
 ```html_example
-<div class="toggle-button-wrapper">
-	<input type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn">
-	<label for="topic-pill" class="button button--small button--bordered">Dining Out</label>
+<div class="toggleButton">
+	<input class="toggleButton-input" type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn" />
+	<label class="toggleButton-label" for="topic-pill">Dining Out</label>
 </div>
 ```
 */
-.toggle-button-wrapper {
+.toggleButton {
   display: inline-block;
   margin: 4px 0;
   -webkit-tap-highlight-color: transparent; }
-  .toggle-button-wrapper label {
-    margin: 0; }
-  .toggle-button-wrapper input {
-    display: none; }
-    .toggle-button-wrapper input:checked + label {
-      background: #3987cb;
-      border: none;
-      color: white; }
+
+.toggleButton-label {
+  margin: 0; }
+
+.toggleButton-input {
+  display: none; }
+  .toggleButton-input:checked + .toggleButton-label {
+    background: #3987cb;
+    border: none;
+    color: white; }
 
 input.toggle-pill {
   display: none; }
