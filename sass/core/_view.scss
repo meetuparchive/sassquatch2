@@ -30,8 +30,7 @@ parent: views
 </header>
 ```
 */
-.heroPhoto,
-.hero-photo {
+.heroPhoto {
 	@include textProtectionScrim();
 	background-size: cover;
 	background-position: center 20%;
@@ -41,8 +40,7 @@ parent: views
 	overflow: hidden;
 	position: relative;
 }
-.heroPhoto-content,
-.hero-content {
+.heroPhoto-content {
 	@extend %valignChildren--bottom; // maybe try to align without this?
 	min-height: $block-6;
 	position: relative;
