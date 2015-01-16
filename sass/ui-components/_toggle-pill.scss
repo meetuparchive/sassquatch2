@@ -53,9 +53,7 @@ input.toggle-pill {
 
 }
 
-//TODO: parameterize animation times in _globals
-//TODO: use mixin
-.toggle-on {
+.toggle--on {
 	@include animate--bounceInSubtle();
 	label {
 		font-weight: $W_bold;
