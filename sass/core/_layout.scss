@@ -68,7 +68,15 @@ Class                | Description
 }
 
 .stripe--hero {
+	@include textProtectionScrim();
 	background-color: $C_accent;
+	background-size: cover;
+	background-position: center 20%;
+	background-repeat: no-repeat;
+	border-top: none;
+	margin-bottom: 0;
+	overflow: hidden;
+	position: relative;
 }
 
 
