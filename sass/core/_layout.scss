@@ -43,6 +43,15 @@ To align content within a stripe, use `.bounds`.
 </section>
 ```
 
+#### Stripe variants
+A class of `.stripe` is required; the following classes are
+optional variants:
+
+Class                | Description
+-------------------- | ------------------------------------------------------------
+`.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
+`.stripe--collection`|  applies a light gray background; for use with card collections
+`.stripe--hero`      |  for hero header stripes
 */
 .stripe {
 	overflow: hidden;
@@ -56,6 +65,10 @@ To align content within a stripe, use `.bounds`.
 
 .stripe--inverted {
 	background: $C_contentBGInverted;
+}
+
+.stripe--hero {
+	background-color: $C_accent;
 }
 
 

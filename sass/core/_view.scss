@@ -14,33 +14,42 @@ category: Core
 ---
 */
 
-//
-// HEADER IMAGE
-//
-.hero,
-.stripe.hero {
-	background-color: $C_accent;
-}
 
+/*doc
+---
+title: View hero
+name: hero
+parent: views
+---
+
+```html_example
+<header class="stripe--hero heroPhoto" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
+	<div class="bounds heroPhoto-content inverted">
+		<h1 class="text--display">Hero header heading</h1>
+	</div>
+</header>
+```
+*/
+.heroPhoto,
 .hero-photo {
-  background-size: cover;
-  background-position: center 20%;
-  background-repeat: no-repeat;
-  border-top: none;
-  margin-bottom: 0;
-  overflow: hidden;
-  position: relative;
-  @include textProtectionScrim;
+	@include textProtectionScrim();
+	background-size: cover;
+	background-position: center 20%;
+	background-repeat: no-repeat;
+	border-top: none;
+	margin-bottom: 0;
+	overflow: hidden;
+	position: relative;
 }
-
+.heroPhoto-content,
 .hero-content {
-  @extend %valignChildren--bottom; // maybe try to align without this?
-  min-height: $block-6;
-  position: relative;
+	@extend %valignChildren--bottom; // maybe try to align without this?
+	min-height: $block-6;
+	position: relative;
 
-  @include atMediaDown(medium) {
-	min-height: $block-5;
-  }
+	@include atMediaDown(medium) {
+		min-height: $block-5;
+	}
 }
 
 
