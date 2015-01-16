@@ -1685,7 +1685,25 @@ Class                | Description
   background: #353E48; }
 
 .stripe--hero {
-  background-color: #d55741; }
+  background-color: #d55741;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  border-top: none;
+  margin-bottom: 0;
+  overflow: hidden;
+  position: relative; }
+  .stripe--hero:before {
+    background-color: rgba(15, 20, 31, 0);
+    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: 0; }
 
 /*doc
 ---
@@ -1940,6 +1958,21 @@ Class                   | Description
 
 .lt--IE9 .row-item--shrink {
   width: auto; }
+
+.view--split {
+  display: none; }
+  .focus.view--split {
+    display: block; }
+  @media only screen and (min-width: 640px) {
+    .view--split {
+      width: 320px; } }
+
+.view {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: white;
+  width: 100%;
+  min-height: 100vh; }
 
 /*doc
 ---

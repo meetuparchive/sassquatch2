@@ -1,7 +1,20 @@
-.view {
+%_splitViewBase {
+	display: none;
+	&.focus {
+		display: block;
+	}
+	@include atMediaUp(medium) {
+		width: $view-minWidth;
+	}
+}
 
+.view {
+	@include box-sizing(border-box);
+	background: white;
+	width: 100%;
+	min-height: 100vh;
 }
 
 .view--split {
-
+	@extend %_splitViewBase;
 }
