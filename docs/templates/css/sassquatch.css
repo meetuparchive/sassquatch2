@@ -361,6 +361,26 @@ Aligns children of selected element using flexbox.
   justify-content: center;
   -ms-flex-pack: center; }
 
+.stripe--hero-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end; }
+
 /*doc
 ---
 title: Animation
@@ -1685,7 +1705,25 @@ Class                | Description
   background: #353E48; }
 
 .stripe--hero {
-  background-color: #d55741; }
+  background-color: #d55741;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  border-top: none;
+  margin-bottom: 0;
+  overflow: hidden;
+  position: relative; }
+  .stripe--hero:before {
+    background-color: rgba(15, 20, 31, 0);
+    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: 0; }
 
 /*doc
 ---
@@ -1940,6 +1978,228 @@ Class                   | Description
 
 .lt--IE9 .row-item--shrink {
   width: auto; }
+
+body {
+  position: relative; }
+
+/*doc
+---
+title: Views
+name: views
+category: Core
+---
+*/
+/*doc
+---
+title: View hero
+name: hero
+parent: views
+---
+
+```html_example
+<header class="stripe--hero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
+	<div class="bounds stripe--hero-content inverted">
+		<h1 class="text--display">Hero header heading</h1>
+	</div>
+</header>
+```
+*/
+.stripe--hero-content {
+  min-height: 384px;
+  position: relative; }
+  @media only screen and (max-width: 640px) {
+    .stripe--hero-content {
+      min-height: 240px; } }
+
+.view {
+  background: white;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .view.has-hero {
+    padding-top: 0; }
+  .view.view--split, .view.view--detail {
+    display: none; }
+    .view.view--split.focus, .view.view--detail.focus {
+      display: block; }
+  @media only screen and (min-width: 640px) {
+    .view.view--split, .view.view--detail {
+      display: block; }
+      .view.view--split.off, .view.view--detail.off {
+        display: none; }
+    .view.view--split {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 320px;
+      border-right: 1px solid rgba(0, 0, 0, 0.12); }
+      .view.view--split .viewHead {
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+        width: 320px; }
+      .view.view--split .viewBody {
+        height: 100vh;
+        overflow: auto; }
+    .view.view--detail {
+      padding-left: 320px; }
+      .view.view--detail .viewHead {
+        left: 320px;
+        right: 0;
+        width: auto; }
+        .view.view--detail .viewHead .viewHead-back {
+          display: none; } }
+
+.view--modal-full {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  left: 0;
+  margin: 0;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3; }
+  .view--modal-full.off {
+    -webkit-transform: translateY(100vh);
+    -ms-transform: translateY(100vh);
+    transform: translateY(100vh); }
+
+.view--modal-snap {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  -moz-transition: -moz-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  left: 50%;
+  margin-left: -220px;
+  margin-top: 10vh;
+  min-height: 440px;
+  position: absolute;
+  width: 440px;
+  z-index: 3; }
+  .view--modal-snap.off {
+    -webkit-transform: translateY(100vh);
+    -ms-transform: translateY(100vh);
+    transform: translateY(100vh); }
+  @media only screen and (max-width: 440px) {
+    .view--modal-snap {
+      -webkit-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-transition: -webkit-transform 0.3s;
+      -moz-transition: -moz-transform 0.3s;
+      transition: transform 0.3s;
+      left: 0;
+      margin: 0;
+      min-height: 100vh;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      .view--modal-snap.off {
+        -webkit-transform: translateY(100vh);
+        -ms-transform: translateY(100vh);
+        transform: translateY(100vh); } }
+
+.viewBody .stripe:first-child {
+  padding-top: 48px; }
+
+.viewHead {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #d55741;
+  color: white;
+  height: 48px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+  .viewHead .bounds--standard {
+    display: block; }
+  .viewHead .bounds--search {
+    display: none; }
+  .viewHead.viewHead--search .bounds--standard {
+    display: none; }
+  .viewHead.viewHead--search .bounds--search {
+    display: block; }
+  .viewHead .bounds {
+    padding: 0 16px; }
+  .viewHead .bounds, .viewHead .ffbox {
+    height: 100%; }
+  .viewHead h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .viewHead .viewHead-back {
+    width: 24px; }
+  .viewHead .viewHead-heading {
+    padding-left: 8px; }
+  .viewHead .viewHead-actions {
+    padding: 0 !important;
+    white-space: nowrap; }
+    .viewHead .viewHead-actions a {
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 0 8px; }
+      .viewHead .viewHead-actions a:last-child {
+        padding-right: 0; }
+  .viewHead.has-hero {
+    background: transparent;
+    border-bottom: none;
+    color: white; }
+    .viewHead.has-hero h1 {
+      opacity: 0; }
+  .viewHead.has-hero.has-hero-photo {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), transparent);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), transparent); }
+
+.viewHead--search {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #d55741; }
+
+.view--searchMode .viewHead--search {
+  display: block; }
+.view--searchMode .viewBody {
+  display: none; }
+
+.shade {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 1; }
+  .shade .x {
+    -webkit-transition: all 0.15s 0.15s;
+    transition: all 0.15s 0.15s;
+    display: block;
+    height: 100vh;
+    left: 0;
+    line-height: 100vh;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    vertical-align: middle;
+    width: 100%; }
+  .shade.off {
+    opacity: 0; }
+    .shade.off .x {
+      opacity: 0; }
 
 /*doc
 ---
