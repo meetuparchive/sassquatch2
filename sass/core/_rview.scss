@@ -5,6 +5,10 @@
 	}
 	@include atMediaUp(medium) {
 		width: $view-minWidth;
+		display: block;
+		&.off {
+			display: none;
+		}
 	}
 }
 
@@ -17,4 +21,73 @@
 
 .view--split {
 	@extend %_splitViewBase;
+	// NOTE: uses fixed position
+	// try not to put forms in the split part
+	// usually the split view will be a list
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: $view-minWidth;
+	border-right: 1px solid $C_border;
+	.view-head {
+		border-right: 1px solid $C_border;
+		width: $view-minWidth;
+	}
+	.view-body {
+		height: 100vh;
+		overflow: auto;
+	}
+}
+
+.view--detail {
+	@extend %_splitViewBase;
+	padding-left: $view-minWidth;
+	.viewHead{
+		left: $view-minWidth;
+		right: 0;
+		width: auto;
+		.viewHead-back{
+			display: none;
+		}
+	}
+}
+
+.view-body {
+	.stripe:first-child {
+		padding-top: $block;
+	}
+}
+
+.view-head {
+	@include box-sizing(border-box);
+	background: $C_accent;
+	color: $C_textPrimaryInverted;
+	height: $block;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: map-get($zindex-map, "main-header"); // TODO: maybe abstract this map a bit
+
+}
+
+.view-head--transparent {
+	background: transparent;
+	border-bottom: none;
+	color: $C_textPrimaryInverted;
+
+	.view-head-heading {
+		opacity: 0;
+	}
+}
+.view-head--photoOverlay {
+	@include background(linear-gradient(transparentize(#000000, .4), transparentize(#000000, 1) ));
+}
+
+.view-head-heading {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: $space-half;
 }

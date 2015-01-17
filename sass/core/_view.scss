@@ -72,11 +72,6 @@ parent: views
 
 
 .view{
-  background: white;
-  width: 100%;
-  min-height: 100vh;
-  @include box-sizing(border-box);
-
 	// adjust padding when view has transparent head
 	&.has-hero{
 		padding-top: 0;
@@ -90,48 +85,6 @@ parent: views
 		  display: block;
 	  }
   }
-
-  // SPLIT VIEW
-  // at wide widths, show split view as split view
-  @include atMediaUp(medium){
-	$splitw: 320px;
-	&.view--split, &.view--detail{
-	  display: block;
-	  &.off{
-		  display: none;
-	  }
-	}
-
-	&.view--split{
-	  // NOTE: uses fixed position
-	  // try not to put forms in the split part
-	  // usually the split view will be a list
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  height: 100vh;
-	  width: $splitw;
-	  border-right: 1px solid $C_border;
-	  .viewHead{
-		border-right: 1px solid $C_border;
-		width: $splitw;
-	  }
-	  .viewBody{
-		height: 100vh;
-		overflow: auto;
-	  }
-	}
-	&.view--detail{
-	  padding-left: $splitw;
-	  .viewHead{
-		left: $splitw;
-		right: 0;
-		width: auto;
-		.viewHead-back{
-			display: none;
-		}
-	  }
-	}
   }
 }
 
@@ -152,13 +105,6 @@ parent: views
 	z-index: map-get($zindex-map, "modal");
 }
 
-.viewBody {
-  .stripe:first-child {
-	padding-top: $block;
-  }
-}
-
-
 
 
 // HEAD
@@ -166,16 +112,7 @@ parent: views
 // contains an escape action, a title, and screen actions
 
 .viewHead{
-	@include box-sizing(border-box);
-	background: $C_accent;
-	color: $C_textPrimaryInverted;
-	height: $block;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: map-get($zindex-map, "main-header");
-
+	// TODO: change bounds variants to view-head-[thing]
 	// which search mode
 	.bounds--standard{ display: block; }
 	.bounds--search{ display: none; }
@@ -192,18 +129,8 @@ parent: views
 		height: 100%; // for vertical-alignment
 	}
 
-	h1{
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
 	.viewHead-back {
 	  width: 24px;
-	}
-
-	.viewHead-heading {
-	  padding-left: $space-half;
 	}
 
 	.viewHead-actions {
