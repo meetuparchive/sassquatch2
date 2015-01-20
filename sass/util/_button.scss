@@ -19,9 +19,7 @@ Disables user-select, sets cursor, and resets text-decoration.
 @extend %buttonPersonality;
 ```
 */
-// TODO: fix selector
-%buttonPersonality,
-%button-personality {
+%buttonPersonality {
 	@include user-select(none) ;
 	cursor: pointer;
 	text-decoration: none!important;
