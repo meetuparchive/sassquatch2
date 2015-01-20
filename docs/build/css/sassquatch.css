@@ -1959,13 +1959,16 @@ Class                   | Description
 .lt--IE9 .row-item--shrink {
   width: auto; }
 
-.view--split {
+.view--split, .view--detail {
   display: none; }
-  .focus.view--split {
+  .focus.view--split, .focus.view--detail {
     display: block; }
   @media only screen and (min-width: 640px) {
-    .view--split {
-      width: 320px; } }
+    .view--split, .view--detail {
+      width: 320px;
+      display: block; }
+      .off.view--split, .off.view--detail {
+        display: none; } }
 
 .view {
   -webkit-box-sizing: border-box;
@@ -1973,6 +1976,61 @@ Class                   | Description
   background: white;
   width: 100%;
   min-height: 100vh; }
+
+.view--split {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 320px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12); }
+  .view--split .view-head {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    width: 320px; }
+  .view--split .view-body {
+    height: 100vh;
+    overflow: auto; }
+
+.view--detail {
+  padding-left: 320px; }
+  .view--detail .viewHead {
+    left: 320px;
+    right: 0;
+    width: auto; }
+    .view--detail .viewHead .viewHead-back {
+      display: none; }
+
+.view-body .stripe:first-child {
+  padding-top: 48px; }
+
+.view-head {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #d55741;
+  color: white;
+  height: 48px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+
+.view-head--transparent {
+  background: transparent;
+  border-bottom: none;
+  color: white; }
+  .view-head--transparent .view-head-heading {
+    opacity: 0; }
+
+.view-head--photoOverlay {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), transparent);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), transparent); }
+
+.view-head-heading {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 8px; }
 
 /*doc
 ---
