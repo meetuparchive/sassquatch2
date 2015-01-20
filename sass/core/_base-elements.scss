@@ -11,6 +11,10 @@ html, body {
 	padding: 0;
 }
 
+body {
+	position: relative; // for the sake of views
+}
+
 /* {{{ Inline tag defaults */
 abbr, strong, acronym, span, small, time, strike, sub, sup, a {
 	display: inline;
