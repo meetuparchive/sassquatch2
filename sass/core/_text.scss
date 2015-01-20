@@ -146,10 +146,6 @@ event descriptions).
 	}
 }
 
-//
-// Link styles
-// ------------------------------ //
-
 
 /*doc
 ---
@@ -175,4 +171,51 @@ a {
 			text-decoration: underline;
 		}
 	}
+}
+
+/*doc
+---
+title: Bulleted lists
+name: bulletedList
+category: typesetting
+---
+
+`<ul>` and `<ol>` element list styles are
+reset by default.
+
+```html_example
+<ul>
+	<li>Eggs</li>
+	<li>More Eggs</li>
+</ul>
+```
+
+List style bullets are applied when list
+elements are inside a `.runningText` container.
+
+```html_example
+<div class="runningText">
+	<ul>
+		<li>Eggs</li>
+		<li>More Eggs</li>
+	</ul>
+</div>
+```
+
+You may also use the `.bullets` class to apply
+numbers/bullets to a list.
+
+```html_example
+<ul class="bullets">
+	<li>Eggs</li>
+	<li>More Eggs</li>
+</ul>
+```
+
+*/
+.bullets,
+.runningText ul,
+.runningText ol {
+	list-style-position: outside;
+	padding-left: 1.33em; /* indent by default */
 }
