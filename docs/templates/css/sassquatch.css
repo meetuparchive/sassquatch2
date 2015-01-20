@@ -361,6 +361,26 @@ Aligns children of selected element using flexbox.
   justify-content: center;
   -ms-flex-pack: center; }
 
+.stripe-heroContent {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end; }
+
 /*doc
 ---
 title: Animation
@@ -1672,6 +1692,7 @@ Class                | Description
 `.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
 `.stripe--collection`|  applies a light gray background; for use with card collections
 `.stripe--hero`      |  for hero header stripes
+`.stripe--photoHero` |  for hero header stripes; adds text protection
 */
 .stripe {
   overflow: hidden;
@@ -1684,6 +1705,7 @@ Class                | Description
 .stripe--inverted {
   background: #353E48; }
 
+.stripe--photoHero,
 .stripe--hero {
   background-color: #d55741;
   background-size: cover;
@@ -1693,17 +1715,18 @@ Class                | Description
   margin-bottom: 0;
   overflow: hidden;
   position: relative; }
-  .stripe--hero:before {
-    background-color: rgba(15, 20, 31, 0);
-    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
-    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-    top: 0; }
+
+.stripe--photoHero:before {
+  background-color: rgba(15, 20, 31, 0);
+  background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+  background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 50%, rgba(15, 20, 31, 0.8) 100%);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  top: 0; }
 
 /*doc
 ---
@@ -1959,6 +1982,13 @@ Class                   | Description
 .lt--IE9 .row-item--shrink {
   width: auto; }
 
+/*doc
+---
+title: Views
+name: views
+category: Core
+---
+*/
 .view--split, .view--detail {
   display: none; }
   .focus.view--split, .focus.view--detail {
@@ -2031,6 +2061,43 @@ Class                   | Description
   overflow: hidden;
   text-overflow: ellipsis;
   padding-left: 8px; }
+
+/*doc
+---
+title: View hero
+name: hero
+parent: views
+---
+
+A view hero is a  `<header>` element with a `stripe`
+variant class.
+
+For photo heros, use `stripe--photoHero`, which adds
+a text protection gradient. For solid colors, `stripe--hero`
+will work.
+
+The `stripe-heroContent` child handles height and alignment.
+
+```html_example
+<header class="stripe--photoHero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
+	<div class="bounds stripe-heroContent inverted">
+		<h1 class="text--display">Hero header heading</h1>
+	</div>
+</header>
+
+<header class="stripe--hero">
+	<div class="bounds stripe-heroContent inverted">
+		<h1 class="text--display">No photo in this hero</h1>
+	</div>
+</header>
+```
+*/
+.stripe-heroContent {
+  min-height: 384px;
+  position: relative; }
+  @media only screen and (max-width: 640px) {
+    .stripe-heroContent {
+      min-height: 240px; } }
 
 /*doc
 ---

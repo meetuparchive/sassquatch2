@@ -1,3 +1,11 @@
+/*doc
+---
+title: Views
+name: views
+category: Core
+---
+*/
+
 %_splitViewBase {
 	display: none;
 	&.focus {
@@ -81,6 +89,7 @@
 		opacity: 0;
 	}
 }
+
 .view-head--photoOverlay {
 	@include background(linear-gradient(transparentize(#000000, .4), transparentize(#000000, 1) ));
 }
@@ -90,4 +99,43 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	padding-left: $space-half;
+}
+
+/*doc
+---
+title: View hero
+name: hero
+parent: views
+---
+
+A view hero is a  `<header>` element with a `stripe`
+variant class.
+
+For solid colors, use `stripe--hero`. For photo heros,
+use `stripe--photoHero`, which adds a text protection gradient.
+
+The `stripe-heroContent` child handles height and alignment.
+
+```html_example
+<header class="stripe--photoHero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
+	<div class="bounds stripe-heroContent inverted">
+		<h1 class="text--display">Hero header heading</h1>
+	</div>
+</header>
+
+<header class="stripe--hero">
+	<div class="bounds stripe-heroContent inverted">
+		<h1 class="text--display">No photo in this hero</h1>
+	</div>
+</header>
+```
+*/
+.stripe-heroContent {
+	@extend %valignChildren--bottom; // maybe try to align without this?
+	min-height: $block-6;
+	position: relative;
+
+	@include atMediaDown(medium) {
+		min-height: $block-5;
+	}
 }

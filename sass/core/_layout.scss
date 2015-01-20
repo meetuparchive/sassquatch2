@@ -52,6 +52,7 @@ Class                | Description
 `.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
 `.stripe--collection`|  applies a light gray background; for use with card collections
 `.stripe--hero`      |  for hero header stripes
+`.stripe--photoHero` |  for hero header stripes; adds text protection
 */
 .stripe {
 	overflow: hidden;
@@ -67,8 +68,8 @@ Class                | Description
 	background: $C_contentBGInverted;
 }
 
+.stripe--photoHero,
 .stripe--hero {
-	@include textProtectionScrim();
 	background-color: $C_accent;
 	background-size: cover;
 	background-position: center 20%;
@@ -77,6 +78,9 @@ Class                | Description
 	margin-bottom: 0;
 	overflow: hidden;
 	position: relative;
+}
+.stripe--photoHero {
+	@include textProtectionScrim();
 }
 
 

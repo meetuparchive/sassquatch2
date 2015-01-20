@@ -413,6 +413,10 @@ optional variants:</p>
 <td><code>.stripe--hero</code></td>
 <td>for hero header stripes</td>
 </tr>
+<tr>
+<td><code>.stripe--photoHero</code></td>
+<td>for hero header stripes; adds text protection</td>
+</tr>
 </tbody></table>
 
 <h1 id="typesetting">Typesetting</h1>
@@ -520,14 +524,35 @@ linky blue color by applying the <code>.link</code> class.</p>
 <h1 id="views">Views</h1>
 
 <h2 id="hero">View hero</h2>
-<div class="codeExample"><div class="exampleOutput"><header class="stripe--hero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
-    <div class="bounds stripe--hero-content inverted">
+
+<p>A view hero is a  <code>&lt;header&gt;</code> element with a <code>stripe</code>
+variant class.</p>
+
+<p>For photo heros, use <code>stripe--photoHero</code>, which adds
+a text protection gradient. For solid colors, <code>stripe--hero</code>
+will work.</p>
+
+<p>The <code>stripe-heroContent</code> child handles height and alignment.</p>
+<div class="codeExample"><div class="exampleOutput"><header class="stripe--photoHero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
+    <div class="bounds stripe-heroContent inverted">
         <h1 class="text--display">Hero header heading</h1>
     </div>
 </header>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"stripe--hero"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds stripe--hero-content inverted"</span><span class="nt">&gt;</span>
+
+<header class="stripe--hero">
+    <div class="bounds stripe-heroContent inverted">
+        <h1 class="text--display">No photo in this hero</h1>
+    </div>
+</header>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"stripe--photoHero"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds stripe-heroContent inverted"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>Hero header heading<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+
+<span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"stripe--hero"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds stripe-heroContent inverted"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>No photo in this hero<span class="nt">&lt;/h1&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/header&gt;</span>
 </pre></div></div></div>	</main>

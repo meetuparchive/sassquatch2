@@ -14,32 +14,6 @@ category: Core
 */
 
 
-/*doc
----
-title: View hero
-name: hero
-parent: views
----
-
-```html_example
-<header class="stripe--hero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
-	<div class="bounds stripe--hero-content inverted">
-		<h1 class="text--display">Hero header heading</h1>
-	</div>
-</header>
-```
-*/
-.stripe--hero-content {
-	@extend %valignChildren--bottom; // maybe try to align without this?
-	min-height: $block-6;
-	position: relative;
-
-	@include atMediaDown(medium) {
-		min-height: $block-5;
-	}
-}
-
-
 @mixin modal-dialog{
 	@include transform( translate3d(0, 0, 0) );
 	@include transition(transform .2s ease);
