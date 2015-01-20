@@ -48,6 +48,9 @@ main > .codeBlock {
 	background-clip: content-box;
 	outline: 1px dotted red;
 }
+._DOC-RELATIVE {
+	position: relative;
+}
 
 /* TYPE OVERRIDES */
 main > h1 {

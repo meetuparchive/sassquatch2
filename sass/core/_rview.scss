@@ -4,6 +4,9 @@ title: Views
 name: views
 category: Core
 ---
+
+Imma [link u](view.html).
+
 */
 
 %_splitViewBase {
@@ -14,9 +17,6 @@ category: Core
 	@include atMediaUp(medium) {
 		width: $view-minWidth;
 		display: block;
-		&.off {
-			display: none;
-		}
 	}
 }
 
@@ -25,6 +25,25 @@ category: Core
 	background: white;
 	width: 100%;
 	min-height: 100vh;
+}
+
+.view-head {
+	.view--split & {
+		border-right: 1px solid $C_border;
+		width: $view-minWidth;
+	}
+	.view--detail & {
+		left: $view-minWidth;
+		right: 0;
+		width: auto;
+	}
+}
+
+.view-body {
+	.view--split & {
+		height: 100vh;
+		overflow: auto;
+	}
 }
 
 .view--split {
@@ -38,27 +57,35 @@ category: Core
 	height: 100vh;
 	width: $view-minWidth;
 	border-right: 1px solid $C_border;
-	.view-head {
-		border-right: 1px solid $C_border;
-		width: $view-minWidth;
-	}
-	.view-body {
-		height: 100vh;
-		overflow: auto;
-	}
 }
 
 .view--detail {
 	@extend %_splitViewBase;
 	padding-left: $view-minWidth;
-	.viewHead{
-		left: $view-minWidth;
-		right: 0;
-		width: auto;
-		.viewHead-back{
-			display: none;
-		}
-	}
+}
+
+.view--dimmed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: map-get($zindex-map, "shade");
+	@include transition(all .15s);
+	background: $C_modalShade;
+	opacity: 1;
+}
+.view--dimmed-close {
+	@include transition(all .15s .15s);
+	display: block;
+	height: 100vh;
+	left: 0;
+	line-height: 100vh;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	vertical-align: middle;
+	width: 100%;
 }
 
 .view-body {
@@ -101,35 +128,6 @@ category: Core
 	padding-left: $space-half;
 }
 
-/*doc
----
-title: View hero
-name: hero
-parent: views
----
-
-A view hero is a  `<header>` element with a `stripe`
-variant class.
-
-For solid colors, use `stripe--hero`. For photo heros,
-use `stripe--photoHero`, which adds a text protection gradient.
-
-The `stripe-heroContent` child handles height and alignment.
-
-```html_example
-<header class="stripe--photoHero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
-	<div class="bounds stripe-heroContent inverted">
-		<h1 class="text--display">Hero header heading</h1>
-	</div>
-</header>
-
-<header class="stripe--hero">
-	<div class="bounds stripe-heroContent inverted">
-		<h1 class="text--display">No photo in this hero</h1>
-	</div>
-</header>
-```
-*/
 .stripe-heroContent {
 	@extend %valignChildren--bottom; // maybe try to align without this?
 	min-height: $block-6;
@@ -139,8 +137,6 @@ The `stripe-heroContent` child handles height and alignment.
 		min-height: $block-5;
 	}
 }
-
-
 
 
 // MODAL VIEW FULL

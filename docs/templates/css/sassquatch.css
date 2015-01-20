@@ -864,6 +864,9 @@ html, body {
   margin: 0;
   padding: 0; }
 
+body {
+  position: relative; }
+
 /* {{{ Inline tag defaults */
 abbr, strong, acronym, span, small, time, strike, sub, sup, a {
   display: inline; }
@@ -1996,10 +1999,26 @@ category: Core
   @media only screen and (min-width: 640px) {
     .view--split, .view--detail {
       width: 320px;
-      display: block; }
-      .off.view--split, .off.view--detail {
-        display: none; } }
+      display: block; } }
 
+/*doc
+---
+title: Basic view
+name: basicView
+parent: views
+---
+
+```html_example
+<main class="view _DOC-RELATIVE">
+	<div class="view-head">
+		... view head ...
+	</div>
+	<div class="view-body">
+		... view body ..
+	</div>
+</main>
+```
+*/
 .view {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2007,6 +2026,51 @@ category: Core
   width: 100%;
   min-height: 100vh; }
 
+.view--split .view-head {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  width: 320px; }
+.view--detail .view-head {
+  left: 320px;
+  right: 0;
+  width: auto; }
+
+.view--split .view-body {
+  height: 100vh;
+  overflow: auto; }
+
+/*doc
+---
+title: View variants
+name: viewVar
+parent: basicView
+---
+
+#### Split View
+
+```html_example
+<main class="view--split _DOC-RELATIVE">
+	<div class="view-head">
+		... view head ...
+	</div>
+	<div class="view-body">
+		... view body ..
+	</div>
+</main>
+```
+
+#### Detail View
+
+```html_example
+<main class="view--detail _DOC-RELATIVE">
+	<div class="view-head">
+		... view head ...
+	</div>
+	<div class="view-body">
+		... view body ..
+	</div>
+</main>
+```
+*/
 .view--split {
   position: fixed;
   top: 0;
@@ -2014,21 +2078,34 @@ category: Core
   height: 100vh;
   width: 320px;
   border-right: 1px solid rgba(0, 0, 0, 0.12); }
-  .view--split .view-head {
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
-    width: 320px; }
-  .view--split .view-body {
-    height: 100vh;
-    overflow: auto; }
 
 .view--detail {
   padding-left: 320px; }
-  .view--detail .viewHead {
-    left: 320px;
-    right: 0;
-    width: auto; }
-    .view--detail .viewHead .viewHead-back {
-      display: none; }
+
+.view--dimmed {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 1; }
+
+.view--dimmed-close {
+  -webkit-transition: all 0.15s 0.15s;
+  transition: all 0.15s 0.15s;
+  display: block;
+  height: 100vh;
+  left: 0;
+  line-height: 100vh;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  vertical-align: middle;
+  width: 100%; }
 
 .view-body .stripe:first-child {
   padding-top: 48px; }
@@ -2072,9 +2149,8 @@ parent: views
 A view hero is a  `<header>` element with a `stripe`
 variant class.
 
-For photo heros, use `stripe--photoHero`, which adds
-a text protection gradient. For solid colors, `stripe--hero`
-will work.
+For solid colors, use `stripe--hero`. For photo heros,
+use `stripe--photoHero`, which adds a text protection gradient.
 
 The `stripe-heroContent` child handles height and alignment.
 
@@ -2098,6 +2174,62 @@ The `stripe-heroContent` child handles height and alignment.
   @media only screen and (max-width: 640px) {
     .stripe-heroContent {
       min-height: 240px; } }
+
+.view--modal-full {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  left: 0;
+  margin: 0;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3; }
+  .view--modal-full.off {
+    -webkit-transform: translateY(100vh);
+    -ms-transform: translateY(100vh);
+    transform: translateY(100vh); }
+
+.view--modal-snap {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  -moz-transition: -moz-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  left: 50%;
+  margin-left: -220px;
+  margin-top: 10vh;
+  min-height: 440px;
+  position: absolute;
+  width: 440px;
+  z-index: 3; }
+  .view--modal-snap.off {
+    -webkit-transform: translateY(100vh);
+    -ms-transform: translateY(100vh);
+    transform: translateY(100vh); }
+  @media only screen and (max-width: 440px) {
+    .view--modal-snap {
+      -webkit-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-transition: -webkit-transform 0.3s;
+      -moz-transition: -moz-transform 0.3s;
+      transition: transform 0.3s;
+      left: 0;
+      margin: 0;
+      min-height: 100vh;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+      .view--modal-snap.off {
+        -webkit-transform: translateY(100vh);
+        -ms-transform: translateY(100vh);
+        transform: translateY(100vh); } }
 
 /*doc
 ---

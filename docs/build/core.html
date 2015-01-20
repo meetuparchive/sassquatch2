@@ -153,6 +153,16 @@
 									
 
 								
+
+									
+									
+
+								
+
+									
+									
+
+								
 							</ul>
 						
 					</li>
@@ -523,14 +533,69 @@ linky blue color by applying the <code>.link</code> class.</p>
 </pre></div></div></div>
 <h1 id="views">Views</h1>
 
+<h2 id="basicView">Basic view</h2>
+<div class="codeExample"><div class="exampleOutput"><main class="view _DOC-RELATIVE">
+    <div class="view-head">
+        ... view head ...
+    </div>
+    <div class="view-body">
+        ... view body ..
+    </div>
+</main>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"view _DOC-RELATIVE"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
+        ... view head ...
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view-body"</span><span class="nt">&gt;</span>
+        ... view body ..
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/main&gt;</span>
+</pre></div></div></div>
+<h3 id="viewVar">View variants</h3>
+
+<h4>Split View</h4>
+<div class="codeExample"><div class="exampleOutput"><main class="view--split _DOC-RELATIVE">
+    <div class="view-head">
+        ... view head ...
+    </div>
+    <div class="view-body">
+        ... view body ..
+    </div>
+</main>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"view--split _DOC-RELATIVE"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
+        ... view head ...
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view-body"</span><span class="nt">&gt;</span>
+        ... view body ..
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/main&gt;</span>
+</pre></div></div></div>
+<h4>Detail View</h4>
+<div class="codeExample"><div class="exampleOutput"><main class="view--detail _DOC-RELATIVE">
+    <div class="view-head">
+        ... view head ...
+    </div>
+    <div class="view-body">
+        ... view body ..
+    </div>
+</main>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"view--detail _DOC-RELATIVE"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
+        ... view head ...
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view-body"</span><span class="nt">&gt;</span>
+        ... view body ..
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/main&gt;</span>
+</pre></div></div></div>
 <h2 id="hero">View hero</h2>
 
 <p>A view hero is a  <code>&lt;header&gt;</code> element with a <code>stripe</code>
 variant class.</p>
 
-<p>For photo heros, use <code>stripe--photoHero</code>, which adds
-a text protection gradient. For solid colors, <code>stripe--hero</code>
-will work.</p>
+<p>For solid colors, use <code>stripe--hero</code>. For photo heros,
+use <code>stripe--photoHero</code>, which adds a text protection gradient.</p>
 
 <p>The <code>stripe-heroContent</code> child handles height and alignment.</p>
 <div class="codeExample"><div class="exampleOutput"><header class="stripe--photoHero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
@@ -1230,6 +1295,26 @@ $(function() {
 					"title": "Views",
 					"breadcrumb": "Core > Views",
 					"path": "core.html#views"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Basic view",
+					"breadcrumb": "Core > Basic view",
+					"path": "core.html#basicView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "View variants",
+					"breadcrumb": "Core > View variants",
+					"path": "core.html#viewVar"
 				});
 
 			

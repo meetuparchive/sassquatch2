@@ -77,37 +77,3 @@
 		display: none;
 	}
 }
-
-
-// SHADE
-// dims main (and split) views when modal appears
-.shade{
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: map-get($zindex-map, "shade");
-	@include transition(all .15s);
-	background: $C_modalShade;
-	opacity: 1;
-	.x{
-		@include transition(all .15s .15s);
-		display: block;
-		height: 100vh;
-		left: 0;
-		line-height: 100vh;
-		position: fixed;
-		text-align: center;
-		top: 0;
-		vertical-align: middle;
-		width: 100%;
-	}
-	&.off{
-		opacity: 0;
-		.x{
-			opacity: 0;
-		}
-	}
-}
-
