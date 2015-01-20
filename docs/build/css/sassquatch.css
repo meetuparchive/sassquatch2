@@ -2004,6 +2004,8 @@ category: Core
 	</main>
 </div>
 ```
+
+## Split view
 */
 .view--split, .view--detail {
   display: none; }

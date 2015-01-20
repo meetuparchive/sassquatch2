@@ -3,6 +3,5 @@
 source: ../sass/
 destination: ./build
 documentation_assets: ./templates
-index: Core
 dependencies:
   - ./pages
