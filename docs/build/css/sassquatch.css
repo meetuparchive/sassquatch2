@@ -1150,12 +1150,16 @@ numbers/bullets to a list.
 ```
 
 */
-.bullets,
-.runningText ul,
-.runningText ol {
+ul.bullets, .runningText ul, ol.bullets, .runningText ol {
   list-style-position: outside;
   padding-left: 1.33em;
   /* indent by default */ }
+
+ul.bullets, .runningText ul {
+  list-style-type: disc; }
+
+ol.bullets, .runningText ol {
+  list-style-type: decimal; }
 
 /*doc
 ---

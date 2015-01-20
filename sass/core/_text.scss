@@ -213,9 +213,21 @@ numbers/bullets to a list.
 ```
 
 */
-.bullets,
-.runningText ul,
-.runningText ol {
+%_listStyleBase {
 	list-style-position: outside;
 	padding-left: 1.33em; /* indent by default */
+}
+ul {
+	&.bullets,
+	.runningText & {
+		@extend %_listStyleBase;
+		list-style-type: disc;
+	}
+}
+ol {
+	&.bullets,
+	.runningText & {
+		@extend %_listStyleBase;
+		list-style-type: decimal;
+	}
 }
