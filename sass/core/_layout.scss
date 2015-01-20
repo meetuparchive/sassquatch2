@@ -72,8 +72,7 @@ Class                | Description
 	background-color: $C_contentBGInverted;
 }
 
-.stripe--photoHero,
-.stripe--hero {
+%_heroStripe {
 	@extend %stripe;
 	background-color: $C_accent;
 	background-size: cover;
@@ -82,8 +81,13 @@ Class                | Description
 	border-top: none;
 	overflow: hidden;
 	position: relative;
+
+}
+.stripe--hero {
+	@extend %_heroStripe;
 }
 .stripe--photoHero {
+	@extend %_heroStripe;
 	@include textProtectionScrim();
 }
 

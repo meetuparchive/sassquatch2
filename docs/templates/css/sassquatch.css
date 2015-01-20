@@ -1744,8 +1744,7 @@ Class                | Description
 `.stripe--hero`      |  for hero header stripes
 `.stripe--photoHero` |  for hero header stripes; adds text protection
 */
-.stripe--collection, .stripe--inverted, .stripe--photoHero,
-.stripe--hero,
+.stripe--collection, .stripe--inverted, .stripe--hero, .stripe--photoHero,
 .stripe {
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -1758,8 +1757,7 @@ Class                | Description
 .stripe--inverted {
   background-color: #353E48; }
 
-.stripe--photoHero,
-.stripe--hero {
+.stripe--hero, .stripe--photoHero {
   background-color: #d55741;
   background-size: cover;
   background-position: center 20%;
