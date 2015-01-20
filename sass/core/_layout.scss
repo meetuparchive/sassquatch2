@@ -54,28 +54,32 @@ Class                | Description
 `.stripe--hero`      |  for hero header stripes
 `.stripe--photoHero` |  for hero header stripes; adds text protection
 */
+%stripe,
 .stripe {
 	overflow: hidden;
 	border-top: 1px solid $C_border;
 	background-color: #fff;
+	margin-bottom: 0;
 }
 
 .stripe--collection {
-	background: $C_collectionBGLight;
+	@extend %stripe;
+	background-color: $C_collectionBGLight;
 }
 
 .stripe--inverted {
-	background: $C_contentBGInverted;
+	@extend %stripe;
+	background-color: $C_contentBGInverted;
 }
 
 .stripe--photoHero,
 .stripe--hero {
+	@extend %stripe;
 	background-color: $C_accent;
 	background-size: cover;
 	background-position: center 20%;
 	background-repeat: no-repeat;
 	border-top: none;
-	margin-bottom: 0;
 	overflow: hidden;
 	position: relative;
 }

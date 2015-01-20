@@ -58,8 +58,7 @@ img {
 	}
 }
 ul, ol {
-	list-style-position: outside;
-	padding-left: 1.33em; /* indent by default */
+	@extend %list--reset;
 }
 li {
 	margin: 0;

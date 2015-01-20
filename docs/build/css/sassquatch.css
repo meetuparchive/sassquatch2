@@ -914,11 +914,6 @@ img {
     -ms-interpolation-mode: bicubic;
     image-rendering: optimizeQuality; }
 
-ul, ol {
-  list-style-position: outside;
-  padding-left: 1.33em;
-  /* indent by default */ }
-
 li {
   margin: 0;
   padding: 0; }
@@ -1120,6 +1115,57 @@ a {
 
 /*doc
 ---
+title: Bulleted lists
+name: bulletedList
+parent: typesetting
+---
+
+`<ul>` and `<ol>` element list styles are
+reset by default.
+
+```html_example
+<ul>
+	<li>Eggs</li>
+	<li>More Eggs</li>
+</ul>
+```
+
+List style bullets are applied when list
+elements are inside a `.runningText` container.
+
+```html_example
+<div class="runningText">
+	<ul>
+		<li>Eggs</li>
+		<li>More Eggs</li>
+	</ul>
+</div>
+```
+
+You may also use the `.bullets` class to apply
+numbers/bullets to a list.
+
+```html_example
+<ul class="bullets">
+	<li>Eggs</li>
+	<li>More Eggs</li>
+</ul>
+```
+
+*/
+ul.bullets, .runningText ul, ol.bullets, .runningText ol {
+  list-style-position: outside;
+  padding-left: 1.33em;
+  /* indent by default */ }
+
+ul.bullets, .runningText ul {
+  list-style-type: disc; }
+
+ol.bullets, .runningText ol {
+  list-style-type: decimal; }
+
+/*doc
+---
 title: Typesetting
 name: typesetting
 category: Core
@@ -1203,6 +1249,7 @@ Display text for header hero elements.
 @media only screen and (max-width: 440px) {
   .text--display {
     font-size: 32px; } }
+ul, ol,
 .list--reset {
   list-style: none;
   padding-left: 0; }
@@ -1697,16 +1744,18 @@ Class                | Description
 `.stripe--hero`      |  for hero header stripes
 `.stripe--photoHero` |  for hero header stripes; adds text protection
 */
+.stripe--collection, .stripe--inverted, .stripe--hero,
 .stripe {
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #fff; }
+  background-color: #fff;
+  margin-bottom: 0; }
 
 .stripe--collection {
-  background: #F3F6F9; }
+  background-color: #F3F6F9; }
 
 .stripe--inverted {
-  background: #353E48; }
+  background-color: #353E48; }
 
 .stripe--photoHero,
 .stripe--hero {
@@ -1715,7 +1764,6 @@ Class                | Description
   background-position: center 20%;
   background-repeat: no-repeat;
   border-top: none;
-  margin-bottom: 0;
   overflow: hidden;
   position: relative; }
 
