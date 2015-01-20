@@ -1991,6 +1991,19 @@ title: Views
 name: views
 category: Core
 ---
+
+## Basic view (<a class="link" href="pages/basic-view.html">Demo</a>)
+
+```
+<div class="view">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<main class="view-body">
+		... view-body ...
+	</main>
+</div>
+```
 */
 .view--split, .view--detail {
   display: none; }
@@ -2001,30 +2014,13 @@ category: Core
       width: 320px;
       display: block; } }
 
-/*doc
----
-title: Basic view
-name: basicView
-parent: views
----
-
-```html_example
-<main class="view _DOC-RELATIVE">
-	<div class="view-head">
-		... view head ...
-	</div>
-	<div class="view-body">
-		... view body ..
-	</div>
-</main>
-```
-*/
 .view {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: white;
   width: 100%;
-  min-height: 100vh; }
+  min-height: 100vh;
+  padding-top: 48px; }
 
 .view--split .view-head {
   border-right: 1px solid rgba(0, 0, 0, 0.12);
@@ -2038,39 +2034,6 @@ parent: views
   height: 100vh;
   overflow: auto; }
 
-/*doc
----
-title: View variants
-name: viewVar
-parent: basicView
----
-
-#### Split View
-
-```html_example
-<main class="view--split _DOC-RELATIVE">
-	<div class="view-head">
-		... view head ...
-	</div>
-	<div class="view-body">
-		... view body ..
-	</div>
-</main>
-```
-
-#### Detail View
-
-```html_example
-<main class="view--detail _DOC-RELATIVE">
-	<div class="view-head">
-		... view head ...
-	</div>
-	<div class="view-body">
-		... view body ..
-	</div>
-</main>
-```
-*/
 .view--split {
   position: fixed;
   top: 0;
@@ -2139,35 +2102,6 @@ parent: basicView
   text-overflow: ellipsis;
   padding-left: 8px; }
 
-/*doc
----
-title: View hero
-name: hero
-parent: views
----
-
-A view hero is a  `<header>` element with a `stripe`
-variant class.
-
-For solid colors, use `stripe--hero`. For photo heros,
-use `stripe--photoHero`, which adds a text protection gradient.
-
-The `stripe-heroContent` child handles height and alignment.
-
-```html_example
-<header class="stripe--photoHero" style="background-image: url(http://photos4.meetupstatic.com/photos/event/9/7/7/2/600_432758770.jpeg);">
-	<div class="bounds stripe-heroContent inverted">
-		<h1 class="text--display">Hero header heading</h1>
-	</div>
-</header>
-
-<header class="stripe--hero">
-	<div class="bounds stripe-heroContent inverted">
-		<h1 class="text--display">No photo in this hero</h1>
-	</div>
-</header>
-```
-*/
 .stripe-heroContent {
   min-height: 384px;
   position: relative; }

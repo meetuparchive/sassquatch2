@@ -5,8 +5,20 @@ name: views
 category: Core
 ---
 
-Imma [link u](view.html).
+## Basic view (<a class="link" href="pages/basic-view.html">Demo</a>)
 
+```
+<div class="view">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<main class="view-body">
+		... view-body ...
+	</main>
+</div>
+```
+
+## Split view
 */
 
 %_splitViewBase {
@@ -25,6 +37,7 @@ Imma [link u](view.html).
 	background: white;
 	width: 100%;
 	min-height: 100vh;
+	padding-top: $block;
 }
 
 .view-head {
