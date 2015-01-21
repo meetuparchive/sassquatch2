@@ -5,16 +5,16 @@
 
 
 // ---------------------------
-// Global vars
-// ---------------------------
-@import "globals";
-
-
-// ---------------------------
 // LIB (Bourbon, Swatches)
 // ---------------------------
 @import "../components/bourbon/dist/bourbon.scss";
 @import "../components/meetup-swatches/sass/colors.scss";
+
+
+// ---------------------------
+// Global vars
+// ---------------------------
+@import "globals";
 
 
 /*doc
