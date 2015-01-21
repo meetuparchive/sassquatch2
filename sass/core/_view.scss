@@ -41,11 +41,11 @@ category: Core
 }
 
 .view-head {
-	.view--split & {
+	.view--splitList & {
 		border-right: 1px solid $C_border;
 		width: $view-minWidth;
 	}
-	.view--detail & {
+	.view--splitDetail & {
 		left: $view-minWidth;
 		right: 0;
 		width: auto;
@@ -53,13 +53,13 @@ category: Core
 }
 
 .view-body {
-	.view--split & {
+	.view--splitList & {
 		height: 100vh;
 		overflow: auto;
 	}
 }
 
-.view--split {
+.view--splitList {
 	@extend %_splitViewBase;
 	// NOTE: uses fixed position
 	// try not to put forms in the split part
@@ -72,7 +72,7 @@ category: Core
 	border-right: 1px solid $C_border;
 }
 
-.view--detail {
+.view--splitDetail {
 	@extend %_splitViewBase;
 	padding-left: $view-minWidth;
 }
