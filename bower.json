@@ -1,21 +1,25 @@
 {
-	"name": "sassquatch2",
-	"version": "0.0.1",
-	"description": "CSS foundation and framework for Meetup",
-	"main": [
-		"./dist"
-	],
-	"ignore": [
-		"Gemfile",
-		"Rakefile",
-		".ruby-version",
-		".bowerrc",
-		"**/*.sh",
-		"**/*.txt",
-		"**/*.lock"
-	],
-	"dependencies": {
-		"bourbon": "4.0.2"
-	},
-	"license": "MIT"
+  "name": "sassquatch2",
+  "version": "0.0.1",
+  "description": "CSS foundation and framework for Meetup",
+  "main": [
+    "./dist"
+  ],
+  "ignore": [
+    "Gemfile",
+    "Rakefile",
+    ".ruby-version",
+    ".bowerrc",
+    "**/*.sh",
+    "**/*.txt",
+    "**/*.lock"
+  ],
+  "dependencies": {
+    "meetup-swatches": "git@github.com:meetup/meetup-swatches.git#foundation",
+    "bourbon": "4.0.2"
+  },
+  "license": "MIT",
+  "resolutions": {
+    "meetup-swatches": "foundation"
+  }
 }
