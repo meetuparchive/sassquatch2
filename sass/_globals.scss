@@ -126,20 +126,9 @@
 // ---------------------------
 // COLORS
 // ---------------------------
-	// TODO: replace with swatches.
-
-	// Misc colors
-	$C_red                   : rgb(213,87,65); // ORIGINAL - rgb(226,55,60)
-	//$C_red					: #D74936;
-	$C_accent                : $C_red;
 	$C_accentDark            : darken($C_red, 8%);
 
-	$C_green                 : rgb(140,191,106);
-
-	$C_blue                  : rgb(57, 135, 203);
-	//$C_blue					: #218ED0;
-	$C_link                  : $C_blue;
-
+	// TODO: set up border, shade, text etc colors in swatches
 	$C_border                : rgba(0,0,0,.12);
 	$C_borderInverted        : rgba(255,255,255,.2);
 
@@ -156,9 +145,6 @@
 	$C_contentBGInverted     : #353E48;
 	$C_collectionBGLight     : #F3F6F9;
 	$C_collectionBGDark      : #E6E9EC;
-
-	// Third party colors
-	$C_facebook              : rgb(59, 89, 152);
 
 
 // ---------------------------
