@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 		'sass': {
 			dist: {
 				files: {
-					"docs/templates/css/sassquatch.css": "sass/sassquatch.scss"
+					"docs/templates/css/sassquatch.css": "src/sass/sassquatch.scss"
 				}
 			}
 		},
