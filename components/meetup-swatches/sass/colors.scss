@@ -1,0 +1,50 @@
+// Base color palette (TK)
+$C_white: rgb(255,255,255);
+@mixin color_white($style: 'color') { #{$style}: $C_white; }
+$C_darkGray: rgb(53,62,72);
+@mixin color_darkGray($style: 'color') { #{$style}: $C_darkGray; }
+$C_mediumGray: rgb(230,233,236);
+@mixin color_mediumGray($style: 'color') { #{$style}: $C_mediumGray; }
+$C_lightGray: rgb(243,246,249);
+@mixin color_lightGray($style: 'color') { #{$style}: $C_lightGray; }
+$C_red: rgb(213,87,65);
+@mixin color_red($style: 'color') { #{$style}: $C_red; }
+$C_green: rgb(140,191,106);
+@mixin color_green($style: 'color') { #{$style}: $C_green; }
+$C_blue: rgb(57,135,203);
+@mixin color_blue($style: 'color') { #{$style}: $C_blue; }
+$C_lightBlue: rgb(104,165,217);
+@mixin color_lightBlue($style: 'color') { #{$style}: $C_lightBlue; }
+$C_purple: rgb(113,96,170);
+@mixin color_purple($style: 'color') { #{$style}: $C_purple; }
+$C_brown: rgb(113,63,25);
+@mixin color_brown($style: 'color') { #{$style}: $C_brown; }
+ 
+// UI Colors (TK)
+$C_accent: rgb(213,87,65);
+@mixin color_accent($style: 'color') { #{$style}: $C_accent; }
+$C_link: rgb(57,135,203);
+@mixin color_link($style: 'color') { #{$style}: $C_link; }
+ 
+// EXTERNAL (third party colors)
+$C_facebook: rgb(59,89,152);
+@mixin color_facebook($style: 'color') { #{$style}: $C_facebook; }
+$C_twitter: rgb(51,204,255);
+@mixin color_twitter($style: 'color') { #{$style}: $C_twitter; }
+$C_linkedin: rgb(72,117,180);
+@mixin color_linkedin($style: 'color') { #{$style}: $C_linkedin; }
+$C_tumblr: rgb(43,73,100);
+@mixin color_tumblr($style: 'color') { #{$style}: $C_tumblr; }
+$C_flickr: rgb(254,8,131);
+@mixin color_flickr($style: 'color') { #{$style}: $C_flickr; }
+$C_foursquare: rgb(12,186,223);
+@mixin color_foursquare($style: 'color') { #{$style}: $C_foursquare; }
+$C_googleplus: rgb(198,61,45);
+@mixin color_googleplus($style: 'color') { #{$style}: $C_googleplus; }
+$C_instagram: rgb(78,67,60);
+@mixin color_instagram($style: 'color') { #{$style}: $C_instagram; }
+$C_reddit: rgb(206,227,248);
+@mixin color_reddit($style: 'color') { #{$style}: $C_reddit; }
+$C_wepay: rgb(72,145,220);
+@mixin color_wepay($style: 'color') { #{$style}: $C_wepay; }
+ 
