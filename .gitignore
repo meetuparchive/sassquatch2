@@ -6,6 +6,5 @@
 *.css.map
 node_modules/
 components/
-bower_components/
 .grunt/
 !README*
