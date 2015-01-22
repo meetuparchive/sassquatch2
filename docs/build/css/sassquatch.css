@@ -2054,12 +2054,12 @@ category: Core
 
 ## Split view
 */
-.view--split, .view--detail {
+.view--splitList, .view--splitDetail {
   display: none; }
-  .focus.view--split, .focus.view--detail {
+  .focus.view--splitList, .focus.view--splitDetail {
     display: block; }
   @media only screen and (min-width: 640px) {
-    .view--split, .view--detail {
+    .view--splitList, .view--splitDetail {
       width: 320px;
       display: block; } }
 
@@ -2071,19 +2071,19 @@ category: Core
   min-height: 100vh;
   padding-top: 48px; }
 
-.view--split .view-head {
+.view--splitList .view-head {
   border-right: 1px solid rgba(0, 0, 0, 0.12);
   width: 320px; }
-.view--detail .view-head {
+.view--splitDetail .view-head {
   left: 320px;
   right: 0;
   width: auto; }
 
-.view--split .view-body {
+.view--splitList .view-body {
   height: 100vh;
   overflow: auto; }
 
-.view--split {
+.view--splitList {
   position: fixed;
   top: 0;
   left: 0;
@@ -2091,7 +2091,7 @@ category: Core
   width: 320px;
   border-right: 1px solid rgba(0, 0, 0, 0.12); }
 
-.view--detail {
+.view--splitDetail {
   padding-left: 320px; }
 
 .view--dimmed {
