@@ -4,8 +4,21 @@ title: Views
 name: views
 category: Core
 ---
+A "view" contains all layout and content for a given screen.
+Typically, a document only has a single view. Split views,
+where a document contains two view elements are possible (see below).
+
+A class of `.view` is required for view elements; the
+following classes are optional variants:
+
+Class                  | Description
+---------------------- | ---------------------------
+`view--splitList`      | Sets view to "list style" when viewport is wide enough
+`view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
+`view--dimmed`         | Dims view (for use with modal overlays)
 
 ## Basic view (<a class="link" href="pages/basic-view.html">Demo</a>)
+Basic example of a single view in a document:
 
 ```
 <div class="view">
@@ -18,9 +31,31 @@ category: Core
 </div>
 ```
 
-## Split view
-*/
+## Split view (DEMO TK)
+Basic example of two views in one document, where we specify
+which view has the "list" responsibility, and which view has
+the "detail" responsibility.
 
+```
+<div class="view view--splitList">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<main class="view-body">
+		... view-body ...
+	</main>
+</div>
+
+<div class="view view--splitDetail">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<main class="view-body">
+		... view-body ...
+	</main>
+</div>
+```
+*/
 %_splitViewBase {
 	display: none;
 	&.focus {
@@ -38,25 +73,6 @@ category: Core
 	width: 100%;
 	min-height: 100vh;
 	padding-top: $block;
-}
-
-.view-head {
-	.view--splitList & {
-		border-right: 1px solid $C_border;
-		width: $view-minWidth;
-	}
-	.view--splitDetail & {
-		left: $view-minWidth;
-		right: 0;
-		width: auto;
-	}
-}
-
-.view-body {
-	.view--splitList & {
-		height: 100vh;
-		overflow: auto;
-	}
 }
 
 .view--splitList {
@@ -88,6 +104,8 @@ category: Core
 	background: $C_modalShade;
 	opacity: 1;
 }
+
+// TODO: doc this somehow
 .view--dimmed-close {
 	@include transition(all .15s .15s);
 	display: block;
@@ -101,12 +119,35 @@ category: Core
 	width: 100%;
 }
 
-.view-body {
-	.stripe:first-child {
-		padding-top: $block;
-	}
-}
 
+/*doc
+---
+title: View Head
+name: viewHead
+parent: views
+---
+The `view-head` element is the first child (the
+fixed top nav bar) within every view.
+
+TODO: view-head inner layout TK
+
+```
+<div class="view">
+	<header class="view-head">
+	</header>
+</div>
+```
+
+## view-head variants
+A class of `.view-head` is required for view headers,
+but
+
+Class                      | Description
+-------------------------- | ---------------------------
+`.view-head--transparent`  | Makes view header transparent; hides `h1` heading
+`.view-head--photoOverlay` | Same as 'transparent' variant, but adds text protext gradient
+
+*/
 .view-head {
 	@include box-sizing(border-box);
 	background: $C_accent;
@@ -119,28 +160,64 @@ category: Core
 	z-index: map-get($zindex-map, "main-header"); // TODO: maybe abstract this map a bit
 
 }
+.view-head {
+	.view--splitList & {
+		border-right: 1px solid $C_border;
+		width: $view-minWidth;
+	}
+	.view--splitDetail & {
+		left: $view-minWidth;
+		right: 0;
+		width: auto;
+	}
+}
+
 
 .view-head--transparent {
 	background: transparent;
 	border-bottom: none;
 	color: $C_textPrimaryInverted;
-
-	.view-head-heading {
+	h1 { // assumes there's only ever one h1 in view-head
 		opacity: 0;
 	}
 }
-
 .view-head--photoOverlay {
 	@include background(linear-gradient(transparentize(#000000, .4), transparentize(#000000, 1) ));
 }
 
-.view-head-heading {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	padding-left: $space-half;
+
+/*doc
+---
+title: View Body
+name: viewBody
+parent: views
+---
+The `view-body` element is our main
+content container for the view.
+
+```
+<div class="view">
+	<main class="view-body">
+		... stripes, bounds, etc ...
+		... all content ...
+	</main>
+</div>
+```
+*/
+.view-body {
+	.stripe:first-child {
+		padding-top: $block;
+	}
+}
+.view-body {
+	.view--splitList & {
+		height: 100vh;
+		overflow: auto;
+	}
 }
 
+
+// TOOD: where does this belong?
 .stripe-heroContent {
 	@extend %valignChildren--bottom; // maybe try to align without this?
 	min-height: $block-6;

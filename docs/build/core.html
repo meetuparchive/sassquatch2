@@ -153,6 +153,16 @@
 									
 
 								
+
+									
+									
+
+								
+
+									
+									
+
+								
 							</ul>
 						
 					</li>
@@ -562,7 +572,36 @@ linky blue color by applying the <code>.link</code> class.</p>
 </pre></div></div></div>
 <h1 id="views">Views</h1>
 
+<p>A &quot;view&quot; contains all layout and content for a given screen.
+Typically, a document only has a single view. Split views,
+where a document contains two view elements are possible (see below).</p>
+
+<p>A class of <code>.view</code> is required for view elements; the
+following classes are optional variants:</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>view--splitList</code></td>
+<td>Sets view to &quot;list style&quot; when viewport is wide enough</td>
+</tr>
+<tr>
+<td><code>view--splitDetail</code></td>
+<td>Sets view to &quot;detail style&quot; when viewport is wide enough</td>
+</tr>
+<tr>
+<td><code>view--dimmed</code></td>
+<td>Dims view (for use with modal overlays)</td>
+</tr>
+</tbody></table>
+
 <h2>Basic view (<a class="link" href="pages/basic-view.html">Demo</a>)</h2>
+
+<p>Basic example of a single view in a document:</p>
 <div class="codeBlock"><div class="highlight"><pre>&lt;div class="view"&gt;
     &lt;header class="view-head"&gt;
         ... view-head ...
@@ -572,7 +611,71 @@ linky blue color by applying the <code>.link</code> class.</p>
     &lt;/main&gt;
 &lt;/div&gt;
 </pre></div></div>
-<h2>Split view</h2>
+<h2>Split view (DEMO TK)</h2>
+
+<p>Basic example of two views in one document, where we specify
+which view has the &quot;list&quot; responsibility, and which view has
+the &quot;detail&quot; responsibility.</p>
+<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view--splitList"&gt;
+    &lt;header class="view-head"&gt;
+        ... view-head ...
+    &lt;/header&gt;
+    &lt;main class="view-body"&gt;
+        ... view-body ...
+    &lt;/main&gt;
+&lt;/div&gt;
+
+&lt;div class="view--splitDetail"&gt;
+    &lt;header class="view-head"&gt;
+        ... view-head ...
+    &lt;/header&gt;
+    &lt;main class="view-body"&gt;
+        ... view-body ...
+    &lt;/main&gt;
+&lt;/div&gt;
+</pre></div></div>
+<h2 id="viewBody">View Body</h2>
+
+<p>The <code>view-body</code> element is our main
+content container for the view.</p>
+<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view"&gt;
+    &lt;main class="view-body"&gt;
+        ... stripes, bounds, etc ...
+        ... all content ...
+    &lt;/main&gt;
+&lt;/div&gt;
+</pre></div></div>
+<h2 id="viewHead">View Head</h2>
+
+<p>The <code>view-head</code> element is the first child (the
+fixed top nav bar) within every view.</p>
+
+<p>TODO: view-head inner layout TK</p>
+<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view"&gt;
+    &lt;header class="view-head"&gt;
+    &lt;/header&gt;
+&lt;/div&gt;
+</pre></div></div>
+<h2>view-head variants</h2>
+
+<p>A class of <code>.view-head</code> is required for view headers,
+but</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.view-head--transparent</code></td>
+<td>Makes view header transparent; hides <code>h1</code> heading</td>
+</tr>
+<tr>
+<td><code>.view-head--photoOverlay</code></td>
+<td>Same as &#39;transparent&#39; variant, but adds text protext gradient</td>
+</tr>
+</tbody></table>
 	</main>
 	</section>
 
@@ -1259,6 +1362,26 @@ $(function() {
 					"title": "Views",
 					"breadcrumb": "Core > Views",
 					"path": "core.html#views"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "View Body",
+					"breadcrumb": "Core > View Body",
+					"path": "core.html#viewBody"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "View Head",
+					"breadcrumb": "Core > View Head",
+					"path": "core.html#viewHead"
 				});
 
 			

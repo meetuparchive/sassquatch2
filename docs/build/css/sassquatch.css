@@ -2038,8 +2038,21 @@ title: Views
 name: views
 category: Core
 ---
+A "view" contains all layout and content for a given screen.
+Typically, a document only has a single view. Split views,
+where a document contains two view elements are possible (see below).
+
+A class of `.view` is required for view elements; the
+following classes are optional variants:
+
+Class                  | Description
+---------------------- | ---------------------------
+`view--splitList`      | Sets view to "list style" when viewport is wide enough
+`view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
+`view--dimmed`         | Dims view (for use with modal overlays)
 
 ## Basic view (<a class="link" href="pages/basic-view.html">Demo</a>)
+Basic example of a single view in a document:
 
 ```
 <div class="view">
@@ -2052,7 +2065,30 @@ category: Core
 </div>
 ```
 
-## Split view
+## Split view (DEMO TK)
+Basic example of two views in one document, where we specify
+which view has the "list" responsibility, and which view has
+the "detail" responsibility.
+
+```
+<div class="view--splitList">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<main class="view-body">
+		... view-body ...
+	</main>
+</div>
+
+<div class="view--splitDetail">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<main class="view-body">
+		... view-body ...
+	</main>
+</div>
+```
 */
 .view--splitList, .view--splitDetail {
   display: none; }
@@ -2070,18 +2106,6 @@ category: Core
   width: 100%;
   min-height: 100vh;
   padding-top: 48px; }
-
-.view--splitList .view-head {
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
-  width: 320px; }
-.view--splitDetail .view-head {
-  left: 320px;
-  right: 0;
-  width: auto; }
-
-.view--splitList .view-body {
-  height: 100vh;
-  overflow: auto; }
 
 .view--splitList {
   position: fixed;
@@ -2119,9 +2143,34 @@ category: Core
   vertical-align: middle;
   width: 100%; }
 
-.view-body .stripe:first-child {
-  padding-top: 48px; }
+/*doc
+---
+title: View Head
+name: viewHead
+parent: views
+---
+The `view-head` element is the first child (the
+fixed top nav bar) within every view.
 
+TODO: view-head inner layout TK
+
+```
+<div class="view">
+	<header class="view-head">
+	</header>
+</div>
+```
+
+## view-head variants
+A class of `.view-head` is required for view headers,
+but
+
+Class                      | Description
+-------------------------- | ---------------------------
+`.view-head--transparent`  | Makes view header transparent; hides `h1` heading
+`.view-head--photoOverlay` | Same as 'transparent' variant, but adds text protext gradient
+
+*/
 .view-head {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2134,22 +2183,49 @@ category: Core
   width: 100%;
   z-index: 1; }
 
+.view--splitList .view-head {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  width: 320px; }
+.view--splitDetail .view-head {
+  left: 320px;
+  right: 0;
+  width: auto; }
+
 .view-head--transparent {
   background: transparent;
   border-bottom: none;
   color: white; }
-  .view-head--transparent .view-head-heading {
+  .view-head--transparent h1 {
     opacity: 0; }
 
 .view-head--photoOverlay {
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0.6), transparent);
   background: linear-gradient(rgba(0, 0, 0, 0.6), transparent); }
 
-.view-head-heading {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-left: 8px; }
+/*doc
+---
+title: View Body
+name: viewBody
+parent: views
+---
+The `view-body` element is our main
+content container for the view.
+
+```
+<div class="view">
+	<main class="view-body">
+		... stripes, bounds, etc ...
+		... all content ...
+	</main>
+</div>
+```
+*/
+.view-body .stripe:first-child {
+  padding-top: 48px; }
+
+.view--splitList .view-body {
+  height: 100vh;
+  overflow: auto; }
 
 .stripe-heroContent {
   min-height: 384px;
