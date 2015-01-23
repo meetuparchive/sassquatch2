@@ -34,6 +34,12 @@ Class                   | Description
 `.button--small`        | decreases size of button
 */
 
+$btn-color-map: (
+	default: transparent,
+	primary: $C_link,
+	contrast: $C_textSecondaryInverted
+) !default;
+
 %buttonBase {
 	@include box-sizing(border-box);
 	@include transition(background .15s);

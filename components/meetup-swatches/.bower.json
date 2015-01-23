@@ -18,11 +18,11 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/meetup/meetup-swatches",
-  "_release": "80847678a7",
+  "_release": "42dfc5007c",
   "_resolution": {
     "type": "branch",
     "branch": "foundation",
-    "commit": "80847678a77dad496907b0854a2941324f2bf890"
+    "commit": "42dfc5007c63f0b7fd18605e0e96c477d808798f"
   },
   "_source": "git@github.com:meetup/meetup-swatches.git",
   "_target": "foundation",

@@ -42,16 +42,6 @@
 	$font-size-display2 : 32px;
 	$font-size-display1 : 56px;
 
-	// Type colors
-	$C_textPrimary           : rgba(0,0,0,.87);
-	$C_textSecondary         : rgba(0,0,0,.54);
-	$C_textTertiary          : rgba(0,0,0,.26);
-
-	$C_textPrimaryInverted   : rgba(255,255,255,1);
-	$C_textSecondaryInverted : rgba(255,255,255,.70);
-	$C_textTertiaryInverted  : rgba(255,255,255,.30);
-
-
 	// Weights
 	$W_normal : 400;
 	$W_bold   : 700;
@@ -125,27 +115,9 @@
 
 
 // ---------------------------
-// COLORS
+// EXTENDED COLORS
 // ---------------------------
 	$C_accentDark            : darken($C_red, 8%);
-
-	// TODO: set up border, shade, text etc colors in swatches
-	$C_border                : rgba(0,0,0,.12);
-	$C_borderInverted        : rgba(255,255,255,.2);
-
-	$C_textProtection        : rgba(0,0,0,.2);
-	$C_overlayPressed        : rgba(0,0,0,.1); //rgba(64, 197, 255, 0.2)
-	$C_modalShade            : rgba(0,0,0,.75);
-
-	$C_shade				         : rgba(0,0,0,.05);
-	$C_shadeInverted		     : rgba(255,255,255,.1);
-
-
-	// Plane colors
-	$C_contentBG             : #FFFFFF;
-	$C_contentBGInverted     : #353E48;
-	$C_collectionBGLight     : #F3F6F9;
-	$C_collectionBGDark      : #E6E9EC;
 
 
 // ---------------------------
@@ -206,11 +178,6 @@
 	$btn-border: 1px solid !default;
 
 	// button variants e.g.: <button class="button button--primary"></button>
-	$btn-color-map: (
-		default: transparent,
-		primary: $C_link,
-		contrast: $C_textSecondaryInverted
-	) !default;
 
 
 // ---------------------------
