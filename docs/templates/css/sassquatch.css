@@ -2071,7 +2071,7 @@ which view has the "list" responsibility, and which view has
 the "detail" responsibility.
 
 ```
-<div class="view--splitList">
+<div class="view view--splitList">
 	<header class="view-head">
 		... view-head ...
 	</header>
@@ -2080,7 +2080,7 @@ the "detail" responsibility.
 	</main>
 </div>
 
-<div class="view--splitDetail">
+<div class="view view--splitDetail">
 	<header class="view-head">
 		... view-head ...
 	</header>
@@ -2162,8 +2162,9 @@ TODO: view-head inner layout TK
 ```
 
 ## view-head variants
-A class of `.view-head` is required for view headers,
-but
+A class of `.view-head` is required for view headers. The following classes
+are optional variants (most likely added/removed with javascript to accommodate
+hero headers).
 
 Class                      | Description
 -------------------------- | ---------------------------

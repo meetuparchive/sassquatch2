@@ -616,7 +616,7 @@ following classes are optional variants:</p>
 <p>Basic example of two views in one document, where we specify
 which view has the &quot;list&quot; responsibility, and which view has
 the &quot;detail&quot; responsibility.</p>
-<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view--splitList"&gt;
+<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view view--splitList"&gt;
     &lt;header class="view-head"&gt;
         ... view-head ...
     &lt;/header&gt;
@@ -625,7 +625,7 @@ the &quot;detail&quot; responsibility.</p>
     &lt;/main&gt;
 &lt;/div&gt;
 
-&lt;div class="view--splitDetail"&gt;
+&lt;div class="view view--splitDetail"&gt;
     &lt;header class="view-head"&gt;
         ... view-head ...
     &lt;/header&gt;
@@ -658,8 +658,9 @@ fixed top nav bar) within every view.</p>
 </pre></div></div>
 <h2>view-head variants</h2>
 
-<p>A class of <code>.view-head</code> is required for view headers,
-but</p>
+<p>A class of <code>.view-head</code> is required for view headers. The following classes
+are optional variants (most likely added/removed with javascript to accommodate
+hero headers).</p>
 
 <table><thead>
 <tr>
