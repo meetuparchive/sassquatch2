@@ -148,28 +148,30 @@ Class             | Description
 
 /*doc
 ---
-title: Group
-name: group
+title: Chunk
+name: chunk
 parent: layout
 ---
-Groups sections of content, adding
-a margin-bottom.
+Adds bottom space to an element
+or a group of elements.
 
 ```html_example
-<div class="_DOC-SHADE group">
+<div class="_DOC-SHADE chunk">
 	<h2>Some heading</h2>
 	<p>Some text</p>
 	<p class="text--caption">Some kind of caption</p>
 </div>
 
-<div class="_DOC-SHADE group">
+<p class="text--caption chunk">Chunky caption</p>
+
+<div class="_DOC-SHADE chunk">
 	<h2>Some heading</h2>
 	<p>Some text</p>
 	<p class="text--caption">Some kind of caption</p>
 </div>
 ```
 */
-.group {
+.chunk {
 	@extend %clearfix;
 	margin-bottom: $space;
 }
