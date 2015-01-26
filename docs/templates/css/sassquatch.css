@@ -1949,14 +1949,6 @@ _Includes `table-cell` fallback for IE8._
   .row-item:first-child {
     padding-left: 0; }
 
-.row-item--shirnk {
-  -webkit-flex-grow: 0;
-  flex-grow: 0;
-  -ms-flex-positive: 0;
-  -webkit-flex-shrink: 1;
-  flex-shrink: 1;
-  -ms-flex-negative: 1; }
-
 /*doc
 ---
 title: Row variants
@@ -2020,6 +2012,34 @@ Class                   | Description
   justify-content: space-around;
   -ms-flex-pack: center; }
 
+/*doc
+---
+title: Row Item variants
+name: flexrowItemVars
+parent: flexRow
+---
+
+A class of `.row-item` is __required__ on row items.
+The following classes are optional variants:
+
+Class                   | Description
+----------------------- | -------------------------------
+`.row-item--shrink`     | Item shrinks to fit content
+`.row-item--alignMiddle`| Vertically aligns content to middle
+*/
+.row-item--shirnk {
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+  -ms-flex-negative: 1; }
+
+.row-item--alignMiddle {
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center; }
+
 .lt--IE9 .row {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2033,6 +2053,9 @@ Class                   | Description
 
 .lt--IE9 .row-item--shrink {
   width: auto; }
+
+.lt--IE9 .row-item--alignMiddle {
+  vertical-align: middle; }
 
 /*doc
 ---

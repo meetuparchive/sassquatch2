@@ -201,34 +201,34 @@ _Includes `table-cell` fallback for IE8._
 ```html_example
 <div class="row">
 	<div class="_DOC-SHADE row-item">Item 1</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
 	<div class="_DOC-SHADE row-item">Item 4</div>
 </div>
 ```
 
 ```html_example
 <div class="row">
-	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
 	<div class="_DOC-SHADE row-item">Item 2</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
 </div>
 ```
 
 ```html_example
 <div class="row row--flexEnd">
-	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
 </div>
 ```
 
 ```html_example
 <div class="row row--spaceBetween row--reverse">
-	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 4</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 4</div>
 </div>
 ```
 */
@@ -245,10 +245,6 @@ _Includes `table-cell` fallback for IE8._
 	&:first-child {
 		padding-left: 0;
 	}
-}
-.row-item--shirnk {
-	@include flex-grow(0);
-	@include flex-shrink(1);
 }
 
 
@@ -283,6 +279,29 @@ Class                   | Description
 	}
 }
 
+/*doc
+---
+title: Row Item variants
+name: flexrowItemVars
+parent: flexRow
+---
+
+A class of `.row-item` is __required__ on row items.
+The following classes are optional variants:
+
+Class                   | Description
+----------------------- | -------------------------------
+`.row-item--shrink`     | Item shrinks to fit content
+`.row-item--alignMiddle`| Vertically aligns content to middle
+*/
+.row-item--shirnk {
+	@include flex-grow(0);
+	@include flex-shrink(1);
+}
+.row-item--alignMiddle {
+	@include align-self(center);
+}
+
 // LT IE9 fallback
 .lt--IE9 .row {
 	@include box-sizing(border-box);
@@ -296,4 +315,7 @@ Class                   | Description
 }
 .lt--IE9 .row-item--shrink {
 	width: auto;
+}
+.lt--IE9 .row-item--alignMiddle {
+	vertical-align: middle;
 }
