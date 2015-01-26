@@ -294,7 +294,7 @@ Class                   | Description
 `.row-item--shrink`     | Item shrinks to fit content
 `.row-item--alignMiddle`| Vertically aligns content to middle
 */
-.row-item--shirnk {
+.row-item--shrink {
 	@include flex-grow(0);
 	@include flex-shrink(1);
 }

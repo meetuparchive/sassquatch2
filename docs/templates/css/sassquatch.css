@@ -1879,34 +1879,34 @@ _Includes `table-cell` fallback for IE8._
 ```html_example
 <div class="row">
 	<div class="_DOC-SHADE row-item">Item 1</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
 	<div class="_DOC-SHADE row-item">Item 4</div>
 </div>
 ```
 
 ```html_example
 <div class="row">
-	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
 	<div class="_DOC-SHADE row-item">Item 2</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
 </div>
 ```
 
 ```html_example
 <div class="row row--flexEnd">
-	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
 </div>
 ```
 
 ```html_example
 <div class="row row--spaceBetween row--reverse">
-	<div class="_DOC-SHADE row-item--shrink">Item 1</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 2</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 3</div>
-	<div class="_DOC-SHADE row-item--shrink">Item 4</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
+	<div class="_DOC-SHADE row-item row-item--shrink">Item 4</div>
 </div>
 ```
 */
@@ -2027,7 +2027,7 @@ Class                   | Description
 `.row-item--shrink`     | Item shrinks to fit content
 `.row-item--alignMiddle`| Vertically aligns content to middle
 */
-.row-item--shirnk {
+.row-item--shrink {
   -webkit-flex-grow: 0;
   flex-grow: 0;
   -ms-flex-positive: 0;
