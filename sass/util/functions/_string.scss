@@ -10,8 +10,8 @@ parent: functions
 
 /*doc
 ---
-title: str-capitalizeFirstLetter
-name: str-capitalizeFirstLetter
+title: str-firstCharToUpper
+name: str-firstCharToUpper
 parent: string
 ---
 Capitalizes first letter of a given string. Useful as a camelCase converter.
@@ -19,12 +19,12 @@ Capitalizes first letter of a given string. Useful as a camelCase converter.
 _returns string_
 
 ```
-str-capitalizeFirstLetter('snowflake') // -> 'Snowflake'
+str-firstCharToUpper('snowflake') // -> 'Snowflake'
 
-.special#{str-capitalizeFirstLetter('snowflake')} // -> .specialSnowflake
+.special#{str-firstCharToUpper('snowflake')} // -> .specialSnowflake
 ```
 */
-@function str-capitalizeFirstLetter( $string ) {
+@function str-firstCharToUpper( $string ) {
 	@return #{to-upper-case(str-slice($string, 1, 1))}#{str-slice($string, 2, -1)};
 }
 

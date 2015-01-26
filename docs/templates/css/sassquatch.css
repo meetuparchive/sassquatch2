@@ -28,8 +28,8 @@ parent: functions
 */
 /*doc
 ---
-title: str-capitalizeFirstLetter
-name: str-capitalizeFirstLetter
+title: str-firstCharToUpper
+name: str-firstCharToUpper
 parent: string
 ---
 Capitalizes first letter of a given string. Useful as a camelCase converter.
@@ -37,9 +37,9 @@ Capitalizes first letter of a given string. Useful as a camelCase converter.
 _returns string_
 
 ```
-str-capitalizeFirstLetter('snowflake') // -> 'Snowflake'
+str-firstCharToUpper('snowflake') // -> 'Snowflake'
 
-.specialstr-capitalizeFirstLetter("snowflake") // -> .specialSnowflake
+.specialstr-firstCharToUpper("snowflake") // -> .specialSnowflake
 ```
 */
 /*doc
@@ -2903,291 +2903,80 @@ category: Modifiers
 Media-conditional modifiers allow us to apply
 a modification at a specific breakpoint.
 
+_Uses atMediaUp_
+
 #### Signature
 
-`.[property]--[modification]--[breakpoint][Up|Down|Small]`
+`.at[Breakpoint]_[property]--modification`
 
-ie. `.align--center--mOnly` applies center text alignment at the small breakpoint only
 
 #### Supported media and modifications
-_Better documentation for this TK_
-
-- `.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]`
-- `.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]`
-- `.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]`
-- `.padding--none--[ small | medium | large ][ Up | Down | Only ]`
+- `.at[ Medium | Large ]_align--[ center | right | left ]`
+- `.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]`
+- `.at[ Medium | Large ]_border--[ none | top ]`
+- `.at[ Medium | Large ]_padding--none`
 
 Example TK
 */
-@media only screen and (min-width: 440px) {
-  .align--center--smallUp {
-    text-align: center !important; } }
-@media only screen and (max-width: 440px) {
-  .align--center--smallDown {
-    text-align: center !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .align--center--smallOnly {
-    text-align: center !important; } }
 @media only screen and (min-width: 640px) {
-  .align--center--mediumUp {
-    text-align: center !important; } }
-@media only screen and (max-width: 640px) {
-  .align--center--mediumDown {
-    text-align: center !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .align--center--mediumOnly {
+  .atMedium_align--center {
     text-align: center !important; } }
 @media only screen and (min-width: 960px) {
-  .align--center--largeUp {
+  .atLarge_align--center {
     text-align: center !important; } }
-@media only screen and (max-width: 960px) {
-  .align--center--largeDown {
-    text-align: center !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .align--center--largeOnly {
-    text-align: center !important; } }
-@media only screen and (min-width: 440px) {
-  .align--right--smallUp {
-    text-align: right !important; } }
-@media only screen and (max-width: 440px) {
-  .align--right--smallDown {
-    text-align: right !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .align--right--smallOnly {
-    text-align: right !important; } }
 @media only screen and (min-width: 640px) {
-  .align--right--mediumUp {
-    text-align: right !important; } }
-@media only screen and (max-width: 640px) {
-  .align--right--mediumDown {
-    text-align: right !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .align--right--mediumOnly {
+  .atMedium_align--right {
     text-align: right !important; } }
 @media only screen and (min-width: 960px) {
-  .align--right--largeUp {
+  .atLarge_align--right {
     text-align: right !important; } }
-@media only screen and (max-width: 960px) {
-  .align--right--largeDown {
-    text-align: right !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .align--right--largeOnly {
-    text-align: right !important; } }
-@media only screen and (min-width: 440px) {
-  .align--left--smallUp {
-    text-align: left !important; } }
-@media only screen and (max-width: 440px) {
-  .align--left--smallDown {
-    text-align: left !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .align--left--smallOnly {
-    text-align: left !important; } }
 @media only screen and (min-width: 640px) {
-  .align--left--mediumUp {
-    text-align: left !important; } }
-@media only screen and (max-width: 640px) {
-  .align--left--mediumDown {
-    text-align: left !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .align--left--mediumOnly {
+  .atMedium_align--left {
     text-align: left !important; } }
 @media only screen and (min-width: 960px) {
-  .align--left--largeUp {
+  .atLarge_align--left {
     text-align: left !important; } }
-@media only screen and (max-width: 960px) {
-  .align--left--largeDown {
-    text-align: left !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .align--left--largeOnly {
-    text-align: left !important; } }
-@media only screen and (min-width: 440px) {
-  .display--none--smallUp {
-    display: none !important; } }
-@media only screen and (max-width: 440px) {
-  .display--none--smallDown {
-    display: none !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .display--none--smallOnly {
-    display: none !important; } }
 @media only screen and (min-width: 640px) {
-  .display--none--mediumUp {
-    display: none !important; } }
-@media only screen and (max-width: 640px) {
-  .display--none--mediumDown {
-    display: none !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .display--none--mediumOnly {
+  .atMedium_display--none {
     display: none !important; } }
 @media only screen and (min-width: 960px) {
-  .display--none--largeUp {
+  .atLarge_display--none {
     display: none !important; } }
-@media only screen and (max-width: 960px) {
-  .display--none--largeDown {
-    display: none !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .display--none--largeOnly {
-    display: none !important; } }
-@media only screen and (min-width: 440px) {
-  .display--block--smallUp {
-    display: block !important; } }
-@media only screen and (max-width: 440px) {
-  .display--block--smallDown {
-    display: block !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .display--block--smallOnly {
-    display: block !important; } }
 @media only screen and (min-width: 640px) {
-  .display--block--mediumUp {
-    display: block !important; } }
-@media only screen and (max-width: 640px) {
-  .display--block--mediumDown {
-    display: block !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .display--block--mediumOnly {
+  .atMedium_display--block {
     display: block !important; } }
 @media only screen and (min-width: 960px) {
-  .display--block--largeUp {
+  .atLarge_display--block {
     display: block !important; } }
-@media only screen and (max-width: 960px) {
-  .display--block--largeDown {
-    display: block !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .display--block--largeOnly {
-    display: block !important; } }
-@media only screen and (min-width: 440px) {
-  .display--inline--smallUp {
-    display: inline !important; } }
-@media only screen and (max-width: 440px) {
-  .display--inline--smallDown {
-    display: inline !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .display--inline--smallOnly {
-    display: inline !important; } }
 @media only screen and (min-width: 640px) {
-  .display--inline--mediumUp {
-    display: inline !important; } }
-@media only screen and (max-width: 640px) {
-  .display--inline--mediumDown {
-    display: inline !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .display--inline--mediumOnly {
+  .atMedium_display--inline {
     display: inline !important; } }
 @media only screen and (min-width: 960px) {
-  .display--inline--largeUp {
+  .atLarge_display--inline {
     display: inline !important; } }
-@media only screen and (max-width: 960px) {
-  .display--inline--largeDown {
-    display: inline !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .display--inline--largeOnly {
-    display: inline !important; } }
-@media only screen and (min-width: 440px) {
-  .display--inlineBlock--smallUp {
-    display: inline-block !important; } }
-@media only screen and (max-width: 440px) {
-  .display--inlineBlock--smallDown {
-    display: inline-block !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .display--inlineBlock--smallOnly {
-    display: inline-block !important; } }
 @media only screen and (min-width: 640px) {
-  .display--inlineBlock--mediumUp {
-    display: inline-block !important; } }
-@media only screen and (max-width: 640px) {
-  .display--inlineBlock--mediumDown {
-    display: inline-block !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .display--inlineBlock--mediumOnly {
+  .atMedium_display--inlineBlock {
     display: inline-block !important; } }
 @media only screen and (min-width: 960px) {
-  .display--inlineBlock--largeUp {
+  .atLarge_display--inlineBlock {
     display: inline-block !important; } }
-@media only screen and (max-width: 960px) {
-  .display--inlineBlock--largeDown {
-    display: inline-block !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .display--inlineBlock--largeOnly {
-    display: inline-block !important; } }
-@media only screen and (min-width: 440px) {
-  .padding--none--smallUp {
-    padding: 0 !important; } }
-@media only screen and (max-width: 440px) {
-  .padding--none--smallDown {
-    padding: 0 !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .padding--none--smallOnly {
-    padding: 0 !important; } }
 @media only screen and (min-width: 640px) {
-  .padding--none--mediumUp {
-    padding: 0 !important; } }
-@media only screen and (max-width: 640px) {
-  .padding--none--mediumDown {
-    padding: 0 !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .padding--none--mediumOnly {
+  .atMedium_padding--none {
     padding: 0 !important; } }
 @media only screen and (min-width: 960px) {
-  .padding--none--largeUp {
+  .atLarge_padding--none {
     padding: 0 !important; } }
-@media only screen and (max-width: 960px) {
-  .padding--none--largeDown {
-    padding: 0 !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .padding--none--largeOnly {
-    padding: 0 !important; } }
-@media only screen and (min-width: 440px) {
-  .border--top--smallUp {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (max-width: 440px) {
-  .border--top--smallDown {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .border--top--smallOnly {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 640px) {
-  .border--top--mediumUp {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (max-width: 640px) {
-  .border--top--mediumDown {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .border--top--mediumOnly {
+  .atMedium_border--top {
     border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 960px) {
-  .border--top--largeUp {
+  .atLarge_border--top {
     border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (max-width: 960px) {
-  .border--top--largeDown {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .border--top--largeOnly {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 440px) {
-  .border--none--smallUp {
-    border-width: 0 !important; } }
-@media only screen and (max-width: 440px) {
-  .border--none--smallDown {
-    border-width: 0 !important; } }
-@media only screen and (min-width: 440px) and (max-width: 440px) {
-  .border--none--smallOnly {
-    border-width: 0 !important; } }
 @media only screen and (min-width: 640px) {
-  .border--none--mediumUp {
-    border-width: 0 !important; } }
-@media only screen and (max-width: 640px) {
-  .border--none--mediumDown {
-    border-width: 0 !important; } }
-@media only screen and (min-width: 640px) and (max-width: 640px) {
-  .border--none--mediumOnly {
+  .atMedium_border--none {
     border-width: 0 !important; } }
 @media only screen and (min-width: 960px) {
-  .border--none--largeUp {
-    border-width: 0 !important; } }
-@media only screen and (max-width: 960px) {
-  .border--none--largeDown {
-    border-width: 0 !important; } }
-@media only screen and (min-width: 960px) and (max-width: 960px) {
-  .border--none--largeOnly {
+  .atLarge_border--none {
     border-width: 0 !important; } }
 /*doc
 ---

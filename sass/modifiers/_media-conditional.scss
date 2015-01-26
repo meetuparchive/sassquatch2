@@ -8,19 +8,18 @@ category: Modifiers
 Media-conditional modifiers allow us to apply
 a modification at a specific breakpoint.
 
+_Uses atMediaUp_
+
 #### Signature
 
-`.[property]--[modification]--[breakpoint][Up|Down|Small]`
+`.at[Breakpoint]_[property]--modification`
 
-ie. `.align--center--mOnly` applies center text alignment at the small breakpoint only
 
 #### Supported media and modifications
-_Better documentation for this TK_
-
-- `.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]`
-- `.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]`
-- `.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]`
-- `.padding--none--[ small | medium | large ][ Up | Down | Only ]`
+- `.at[ Medium | Large ]_align--[ center | right | left ]`
+- `.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]`
+- `.at[ Medium | Large ]_border--[ none | top ]`
+- `.at[ Medium | Large ]_padding--none`
 
 Example TK
 */

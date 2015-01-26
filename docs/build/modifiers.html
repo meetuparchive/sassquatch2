@@ -300,21 +300,19 @@ and overflow hidden.</p>
 <p>Media-conditional modifiers allow us to apply
 a modification at a specific breakpoint.</p>
 
+<p><em>Uses atMediaUp</em></p>
+
 <h4>Signature</h4>
 
-<p><code>.[property]--[modification]--[breakpoint][Up|Down|Small]</code></p>
-
-<p>ie. <code>.align--center--mOnly</code> applies center text alignment at the small breakpoint only</p>
+<p><code>.at[Breakpoint]_[property]--modification</code></p>
 
 <h4>Supported media and modifications</h4>
 
-<p><em>Better documentation for this TK</em></p>
-
 <ul>
-<li><code>.align--[ center | right | left ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
-<li><code>.display--[ none | inline | inlineBlock | block ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
-<li><code>.border--[ none | top ]--[ small | medium | large ][ Up | Down | Only ]</code></li>
-<li><code>.padding--none--[ small | medium | large ][ Up | Down | Only ]</code></li>
+<li><code>.at[ Medium | Large ]_align--[ center | right | left ]</code></li>
+<li><code>.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]</code></li>
+<li><code>.at[ Medium | Large ]_border--[ none | top ]</code></li>
+<li><code>.at[ Medium | Large ]_padding--none</code></li>
 </ul>
 
 <p>Example TK</p>
@@ -633,9 +631,9 @@ $(function() {
 				
 
 				index.add({
-					"title": "str-capitalizeFirstLetter",
-					"breadcrumb": "Sass Utilities > str-capitalizeFirstLetter",
-					"path": "sass_utilities.html#str-capitalizeFirstLetter"
+					"title": "str-firstCharToUpper",
+					"breadcrumb": "Sass Utilities > str-firstCharToUpper",
+					"path": "sass_utilities.html#str-firstCharToUpper"
 				});
 
 			
