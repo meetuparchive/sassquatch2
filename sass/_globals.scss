@@ -18,8 +18,8 @@
 // ---------------------------
 	$breakpoint-s  : 440px;
 	$breakpoint-m  : 640px;
-	$breakpoint-l  : 960px;
-	$breakpoint-xl : 1280px;
+	$breakpoint-l  : 840px;
+	$breakpoint-xl : 1024px;
 
 	$breakpoint-map: (
 		s: $breakpoint-s,
@@ -27,6 +27,14 @@
 		l: $breakpoint-l,
 		xl: $breakpoint-xl,
 	);
+
+
+// ---------------------------
+// BOUNDS
+// ---------------------------
+	$measure   : 35em;
+	$bounds    : $breakpoint-xl;
+
 
 
 // ---------------------------
@@ -120,12 +128,6 @@
 	$C_accentDark            : darken($C_red, 8%);
 
 
-// ---------------------------
-// BOUNDS
-// ---------------------------
-	$measure      : 35em;
-	$bounds    : 1100px;
-	$narrowBounds : ($measure / 1em) * $font-size; // for things like forms
 
 
 // ---------------------------
