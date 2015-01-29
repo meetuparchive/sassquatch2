@@ -90,11 +90,12 @@ $breakpoints: (Large: $breakpoint-l, Medium: $breakpoint-m, Small: $breakpoint-s
 	@include atMediaDown($bname) {
 		@each $q in $quantities {
 			$percentage-width: percentage(1 / $q);
-			.at#{$tw}_gridList--has#{$q} > li {
+			.at#{$bname}__gridList--has#{$q} > li {
 				width: $percentage-width;
 			}
 		}
 	}
+	
 }
 
 
