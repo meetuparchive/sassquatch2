@@ -74,7 +74,8 @@
 		@include box-sizing(border-box);
 	}
 }
-$quantities: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16;
+
+$quantities: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
 // huge + larger
 @each $q in $quantities {
@@ -85,17 +86,16 @@ $quantities: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16;
 }
 
 // other breakpoints
-$breakpoints: (Large: $breakpoint-l, Medium: $breakpoint-m, Small: $breakpoint-s);
+$breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s);
 @each $bname, $bp in $breakpoints {
 	@include atMediaDown($bname) {
 		@each $q in $quantities {
 			$percentage-width: percentage(1 / $q);
-			.at#{$bname}__gridList--has#{$q} > li {
+			.at#{str-firstCharToUpper($bname)}_gridList--has#{$q} > li {
 				width: $percentage-width;
 			}
 		}
 	}
-	
 }
 
 
