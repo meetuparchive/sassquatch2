@@ -73,31 +73,30 @@
 		width: 50%;
 		@include box-sizing(border-box);
 	}
-	$quantities: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16;
-	
+}
+$quantities: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16;
 
-	// huge + larger
-	@each $q in $quantities {
-		$percentage-width: percentage(1 / $q);
-		&.gridList--has#{$q} > li {
-			width: $percentage-width;
-		}
+// huge + larger
+@each $q in $quantities {
+	$percentage-width: percentage(1 / $q);
+	&.gridList--has#{$q} > li {
+		width: $percentage-width;
 	}
-	
-	
-	// other breakpoints
-	$breakpoints: (Large: $breakpoint-l, Medium: $breakpoint-m, Small: $breakpoint-s);
-	@each $bname, $bp in $breakpoints {
-		@include atMediaDown($bname) {
-			@each $q in $quantities {
-				$percentage-width: percentage(1 / $q);
-				&.at#{$tw}_gridList--has#{$q} > li {
-					width: $percentage-width;
-				}
+}
+
+// other breakpoints
+$breakpoints: (Large: $breakpoint-l, Medium: $breakpoint-m, Small: $breakpoint-s);
+@each $bname, $bp in $breakpoints {
+	@include atMediaDown($bname) {
+		@each $q in $quantities {
+			$percentage-width: percentage(1 / $q);
+			&.at#{$tw}_gridList--has#{$q} > li {
+				width: $percentage-width;
 			}
 		}
 	}
 }
+
 
 .gridList--photo-grid > li {
 	padding: 0 $space-quarter $space-quarter 0;
