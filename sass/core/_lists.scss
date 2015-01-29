@@ -53,11 +53,11 @@
 // GRID LIST
 //
 // example:
-// <ul class="gridList gridList--100px">
+// <ul class="gridList gridList--has8 atMedium_gridList--has4 atSmall_gridList--has1">
 // <li></li>
 // </ul>
 //
-// Gives you an <li> that is in the *neighborhood* of 100px across all breakpoints
+// A grid layout with breakpoint specific numbers of items in each row.
 //
 .gridList {
 	margin: 0 #{-$space-half} 0 0;
@@ -67,28 +67,31 @@
 	> li {
 		font-size: 1rem;
 		display: inline-block;
-		//line-height: 0;
 		margin: 0;
 		padding: 0 $space-half $space-half 0;
 		vertical-align: top;
 		width: 50%;
 		@include box-sizing(border-box);
 	}
-	$target-widths: 20px, 30px, 40px, 60px, 80px, 100px, 200px, 300px, 400px;
+	$quantities: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16;
+	
+
 	// huge + larger
-	@each $tw in $target-widths {
-		$percentage-width: percentage(1 / round($breakpoint-xl / $tw));
-		&.gridList--#{$tw} > li {
+	@each $q in $quantities {
+		$percentage-width: percentage(1 / $q);
+		&.gridList--has#{$q} > li {
 			width: $percentage-width;
 		}
 	}
+	
+	
 	// other breakpoints
-	$breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s);
+	$breakpoints: (Large: $breakpoint-l, Medium: $breakpoint-m, Small: $breakpoint-s);
 	@each $bname, $bp in $breakpoints {
 		@include atMediaDown($bname) {
-			@each $tw in $target-widths {
-				$percentage-width: percentage(1 / round($bp / $tw));
-				&.gridList--#{$tw} > li {
+			@each $q in $quantities {
+				$percentage-width: percentage(1 / $q);
+				&.at#{$tw}_gridList--has#{$q} > li {
 					width: $percentage-width;
 				}
 			}
@@ -108,12 +111,6 @@
 }
 
 
-@include atMediaUp(medium) {
-	.tileGrid--photos .tileGrid-tile {
-		padding: 0 $space-half $space-half 0;
-	}
-}
-
 
 //
 // INLINE BLOCK LIST
@@ -126,6 +123,8 @@
 		padding-right: $space-half;
 	}
 }
+
+
 
 //
 // HORIZONTAL SCROLLING LISTS
@@ -187,19 +186,5 @@
 	}
 }
 
-// hmm?
-.hscroll .tileGrid-tile {
-	box-sizing: content-box;
-}
 
-// toggle pill list
-// TODO: fix this
-.toggle-pill-list {
-  list-style: none;
-  padding-left: 0;
 
-  li {
-    display: inline-block;
-  }
-
-}
