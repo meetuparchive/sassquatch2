@@ -86,9 +86,9 @@ $quantities: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 }
 
 // other breakpoints
-$breakpoints: (large: $breakpoint-l, medium: $breakpoint-m, small: $breakpoint-s);
+$breakpoints: (medium: $breakpoint-m, large: $breakpoint-l, huge: $breakpoint-xl);
 @each $bname, $bp in $breakpoints {
-	@include atMediaDown($bname) {
+	@include atMediaUp($bname) {
 		@each $q in $quantities {
 			$percentage-width: percentage(1 / $q);
 			.at#{str-firstCharToUpper($bname)}_gridList--has#{$q} > li {
