@@ -152,14 +152,18 @@ Class                      | Description
 	@include box-sizing(border-box);
 	background: $C_accent;
 	color: $C_textPrimaryInverted;
-	height: $block;
 	left: 0;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: map-get($zindex-map, "main-header"); // TODO: maybe abstract this map a bit
-
+	
+	height: $view-head-height;
+	@include atMediaUp(large){
+		height: $view-head-height-tablet;
+	}
 }
+
 .view-head {
 	.view--splitList & {
 		border-right: 1px solid $C_border;
@@ -206,7 +210,10 @@ content container for the view.
 */
 .view-body {
 	.stripe:first-child {
-		padding-top: $block;
+		padding-top: $view-head-height;
+		@include atMediaUp(large){
+			padding-top: $view-head-height-tablet;
+		}
 	}
 }
 .view-body {
