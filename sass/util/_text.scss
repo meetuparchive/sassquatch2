@@ -23,7 +23,7 @@ Adds a pseudo-element gradient
 @mixin textProtectionScrim($placement: 'top') {
 	&:before {
 		$C_scrimGradient: #0F141F;
-		@include linear-gradient(transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 50%, transparentize($C_scrimGradient, .2) 100%);
+		@include linear-gradient(transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 25%, transparentize($C_scrimGradient, .1) 100%);
 		content: '';
 		display: block;
 		height: 100%;
