@@ -20,9 +20,9 @@ Adds a pseudo-element gradient
 @mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
 ```
 */
+$C_scrimGradient: #0F141F; // move to swatches?
 @mixin textProtectionScrim($placement: 'top') {
 	&:before {
-		$C_scrimGradient: #0F141F;
 		@include linear-gradient(transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 25%, transparentize($C_scrimGradient, .1) 100%);
 		content: '';
 		display: block;
