@@ -245,6 +245,7 @@ _Includes `table-cell` fallback for IE8._
 .row-item {
 	padding-left: $space;
 	@include flex-grow(1);
+	width: 0;
 	&:first-child {
 		padding-left: 0;
 	}
@@ -300,6 +301,7 @@ Class                   | Description
 .row-item--shrink {
 	@include flex-grow(0);
 	@include flex-shrink(1);
+	width: initial;
 }
 .row-item--alignMiddle {
 	@include align-self(center);
