@@ -186,7 +186,7 @@ Class                      | Description
 	}
 }
 .view-head--photoOverlay {
-	@include background(linear-gradient(transparentize(#000000, .4), transparentize(#000000, 1) ));
+	@include background(linear-gradient(transparentize($C_scrimGradient, .2), transparentize($C_scrimGradient, 1) ));
 }
 
 
