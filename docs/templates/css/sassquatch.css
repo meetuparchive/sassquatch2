@@ -1278,148 +1278,6 @@ ul, ol,
       border-top: none;
       padding-top: 0; }
 
-.gridList {
-  margin: 0 -16px 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0; }
-  .gridList > li {
-    font-size: 1rem;
-    display: inline-block;
-    margin: 0;
-    padding: 0 16px 16px 0;
-    vertical-align: top;
-    width: 50%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; }
-
-.gridList--has1 > li {
-  width: 100%; }
-
-.gridList--has2 > li {
-  width: 50%; }
-
-.gridList--has3 > li {
-  width: 33.33333%; }
-
-.gridList--has4 > li {
-  width: 25%; }
-
-.gridList--has5 > li {
-  width: 20%; }
-
-.gridList--has6 > li {
-  width: 16.66667%; }
-
-.gridList--has7 > li {
-  width: 14.28571%; }
-
-.gridList--has8 > li {
-  width: 12.5%; }
-
-.gridList--has9 > li {
-  width: 11.11111%; }
-
-.gridList--has10 > li {
-  width: 10%; }
-
-@media only screen and (min-width: 640px) {
-  .atMedium_gridList--has1 > li {
-    width: 100%; }
-
-  .atMedium_gridList--has2 > li {
-    width: 50%; }
-
-  .atMedium_gridList--has3 > li {
-    width: 33.33333%; }
-
-  .atMedium_gridList--has4 > li {
-    width: 25%; }
-
-  .atMedium_gridList--has5 > li {
-    width: 20%; }
-
-  .atMedium_gridList--has6 > li {
-    width: 16.66667%; }
-
-  .atMedium_gridList--has7 > li {
-    width: 14.28571%; }
-
-  .atMedium_gridList--has8 > li {
-    width: 12.5%; }
-
-  .atMedium_gridList--has9 > li {
-    width: 11.11111%; }
-
-  .atMedium_gridList--has10 > li {
-    width: 10%; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_gridList--has1 > li {
-    width: 100%; }
-
-  .atLarge_gridList--has2 > li {
-    width: 50%; }
-
-  .atLarge_gridList--has3 > li {
-    width: 33.33333%; }
-
-  .atLarge_gridList--has4 > li {
-    width: 25%; }
-
-  .atLarge_gridList--has5 > li {
-    width: 20%; }
-
-  .atLarge_gridList--has6 > li {
-    width: 16.66667%; }
-
-  .atLarge_gridList--has7 > li {
-    width: 14.28571%; }
-
-  .atLarge_gridList--has8 > li {
-    width: 12.5%; }
-
-  .atLarge_gridList--has9 > li {
-    width: 11.11111%; }
-
-  .atLarge_gridList--has10 > li {
-    width: 10%; } }
-@media only screen and (min-width: 1024px) {
-  .atHuge_gridList--has1 > li {
-    width: 100%; }
-
-  .atHuge_gridList--has2 > li {
-    width: 50%; }
-
-  .atHuge_gridList--has3 > li {
-    width: 33.33333%; }
-
-  .atHuge_gridList--has4 > li {
-    width: 25%; }
-
-  .atHuge_gridList--has5 > li {
-    width: 20%; }
-
-  .atHuge_gridList--has6 > li {
-    width: 16.66667%; }
-
-  .atHuge_gridList--has7 > li {
-    width: 14.28571%; }
-
-  .atHuge_gridList--has8 > li {
-    width: 12.5%; }
-
-  .atHuge_gridList--has9 > li {
-    width: 11.11111%; }
-
-  .atHuge_gridList--has10 > li {
-    width: 10%; } }
-.gridList--photo-grid > li {
-  padding: 0 4px 4px 0; }
-
-@media only screen and (max-width: 640px) {
-  .gridList--photo-grid {
-    margin: 0 -24px 0 -16px;
-    padding: 0; } }
 .inlineblockList {
   margin: 0;
   padding: 0; }
@@ -2095,6 +1953,141 @@ Class                   | Description
 .lt--IE9 .row-item--alignMiddle {
   vertical-align: middle; }
 
+/*doc
+---
+title: Grid List
+name: gridList
+parent: layout
+---
+A grid layout with breakpoint specific numbers of items in each row.
+
+better docs TK
+
+```html_example
+<ul class="gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4">
+	<li class="_DOC-SHADE">grid cell</li>
+	<li class="_DOC-SHADE">grid cell</li>
+	<li class="_DOC-SHADE">grid cell</li>
+	<li class="_DOC-SHADE">grid cell</li>
+	<li class="_DOC-SHADE">grid cell</li>
+	<li class="_DOC-SHADE">grid cell</li>
+	<li class="_DOC-SHADE">grid cell</li>
+	<li class="_DOC-SHADE">grid cell</li>
+</ul>
+```
+*/
+.gridList {
+  margin: 0 -16px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0; }
+  .gridList > li {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0;
+    padding: 0 16px 16px 0;
+    vertical-align: top;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+
+.gridList--photo-grid > li {
+  padding: 0 4px 4px 0; }
+
+@media only screen and (max-width: 640px) {
+  .gridList--photo-grid {
+    margin: 0 -24px 0 -16px;
+    padding: 0; } }
+.gridList--has1 > li {
+  width: 100%; }
+
+.gridList--has2 > li {
+  width: 50%; }
+
+.gridList--has3 > li {
+  width: 33.33333%; }
+
+.gridList--has4 > li {
+  width: 25%; }
+
+.gridList--has5 > li {
+  width: 20%; }
+
+.gridList--has6 > li {
+  width: 16.66667%; }
+
+.gridList--has7 > li {
+  width: 14.28571%; }
+
+.gridList--has8 > li {
+  width: 12.5%; }
+
+.gridList--has9 > li {
+  width: 11.11111%; }
+
+.gridList--has10 > li {
+  width: 10%; }
+
+@media only screen and (min-width: 640px) {
+  .atMedium_gridList--has1 > li {
+    width: 100%; }
+
+  .atMedium_gridList--has2 > li {
+    width: 50%; }
+
+  .atMedium_gridList--has3 > li {
+    width: 33.33333%; }
+
+  .atMedium_gridList--has4 > li {
+    width: 25%; }
+
+  .atMedium_gridList--has5 > li {
+    width: 20%; }
+
+  .atMedium_gridList--has6 > li {
+    width: 16.66667%; }
+
+  .atMedium_gridList--has7 > li {
+    width: 14.28571%; }
+
+  .atMedium_gridList--has8 > li {
+    width: 12.5%; }
+
+  .atMedium_gridList--has9 > li {
+    width: 11.11111%; }
+
+  .atMedium_gridList--has10 > li {
+    width: 10%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has1 > li {
+    width: 100%; }
+
+  .atLarge_gridList--has2 > li {
+    width: 50%; }
+
+  .atLarge_gridList--has3 > li {
+    width: 33.33333%; }
+
+  .atLarge_gridList--has4 > li {
+    width: 25%; }
+
+  .atLarge_gridList--has5 > li {
+    width: 20%; }
+
+  .atLarge_gridList--has6 > li {
+    width: 16.66667%; }
+
+  .atLarge_gridList--has7 > li {
+    width: 14.28571%; }
+
+  .atLarge_gridList--has8 > li {
+    width: 12.5%; }
+
+  .atLarge_gridList--has9 > li {
+    width: 11.11111%; }
+
+  .atLarge_gridList--has10 > li {
+    width: 10%; } }
 /*doc
 ---
 title: Views
