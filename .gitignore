@@ -5,6 +5,5 @@
 *.swo
 *.css.map
 node_modules/
-components/
 .grunt/
 !README*
