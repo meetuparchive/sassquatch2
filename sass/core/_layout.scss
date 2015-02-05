@@ -367,12 +367,32 @@ $glColumns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 	}
 }
 
-// Photo grid
-.gridList--photo-grid > li {
+/*doc
+---
+title: Grid List variants
+name: gridListVariants
+parent: gridList
+---
+
+A class of `gridList` is __required__ on the gridList
+parent element. By default, gridList creates a 2 column
+grid.
+
+The following classes are optional variants:
+
+Class                         | Description
+----------------------------- | ------------------------------
+`.gridList--photoGrid`        | Optimizes list item spacing for a grid of photos
+`.gridList--has[n]`           | Adjusts number of columns (ie. `.gridList--has4` creates a 4 column grid for all screen sizes)
+`.atMedium_gridList--has[n]`  | Sets number of columns for medium breakpoint and up (ie. `.atMedium_gridList--has[6]`)
+`.atLarge_gridList--has[n]`   | Sets number of columns for large breakpoint and up (ie. `.atLarge_gridList--has[10]`)
+
+*/
+.gridList--photoGrid > li {
 	padding: 0 $space-quarter $space-quarter 0;
 }
 @include atMediaDown(medium) {
-	.gridList--photo-grid {
+	.gridList--photoGrid {
 		margin: 0 #{-($space + $space-half)} 0 #{-$space};
 		padding: 0;
 	}

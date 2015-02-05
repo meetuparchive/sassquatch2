@@ -98,6 +98,11 @@
 
 									
 									
+
+								
+
+									
+									
 										<li class="display--inline--mediumDown">
 											<a href="#typesetting">Typesetting</a>
 										</li>
@@ -420,6 +425,38 @@ following classes are optional variants:</p>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
 </pre></div></div></div>
+<h3 id="gridListVariants">Grid List variants</h3>
+
+<p>A class of <code>gridList</code> is <strong>required</strong> on the gridList
+parent element. By default, gridList creates a 2 column
+grid.</p>
+
+<p>The following classes are optional variants:</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.gridList--photoGrid</code></td>
+<td>Optimizes list item spacing for a grid of photos</td>
+</tr>
+<tr>
+<td><code>.gridList--has[n]</code></td>
+<td>Adjusts number of columns (ie. <code>.gridList--has4</code> creates a 4 column grid for all screen sizes)</td>
+</tr>
+<tr>
+<td><code>.atMedium_gridList--has[n]</code></td>
+<td>Sets number of columns for medium breakpoint and up (ie. <code>.atMedium_gridList--has[6]</code>)</td>
+</tr>
+<tr>
+<td><code>.atLarge_gridList--has[n]</code></td>
+<td>Sets number of columns for large breakpoint and up (ie. <code>.atLarge_gridList--has[10]</code>)</td>
+</tr>
+</tbody></table>
+
 <h2 id="stripe">Stripe</h2>
 
 <p>A <code>.stipe</code> class should be applied to <code>&lt;section&gt;</code> elements
@@ -1314,6 +1351,16 @@ $(function() {
 					"title": "Grid List",
 					"breadcrumb": "Core > Grid List",
 					"path": "core.html#gridList"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Grid List variants",
+					"breadcrumb": "Core > Grid List variants",
+					"path": "core.html#gridListVariants"
 				});
 
 			
