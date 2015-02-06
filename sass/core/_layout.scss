@@ -308,20 +308,20 @@ Class                   | Description
 }
 
 // LT IE9 fallback
-.lt--IE9 .row {
+.ieRoot--lt_IE9 .row {
 	@include box-sizing(border-box);
 	display: table;
 	table-layout: auto;
 	width: 100%;
 }
-.lt--IE9 .row-item {
+.ieRoot--lt_IE9 .row-item {
 	display: table-cell;
 	width: 100%;
 }
-.lt--IE9 .row-item--shrink {
+.ieRoot--lt_IE9 .row-item--shrink {
 	width: auto;
 }
-.lt--IE9 .row-item--alignMiddle {
+.ieRoot--lt_IE9 .row-item--alignMiddle {
 	vertical-align: middle;
 }
 
