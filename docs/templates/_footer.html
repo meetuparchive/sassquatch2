@@ -9,26 +9,32 @@ $(function() {
 	var index = lunr(function() {
 		this.field('title', {boost: 10});
 		this.field('breadcrumb');
+		this.field('path');
+
 		this.ref('path');
 	});
 
-	<% @pages.each do |file_name, page| %>
-		<% if not page[:blocks].empty? %>
-			<% page[:blocks].each do |block| %>
-				<% file_path = block[:categories][0].to_s.gsub(' ', '_').downcase + '.html' %>
-				<% file_id = "#"+block[:name].to_s %>
-
-				<%= "index.add({" %>
-					<%= "\"title\": \""+block[:title].to_s+"\"," %>
-					<%= "\"breadcrumb\": \""+block[:categories][0].to_s+" > "+block[:title]+"\"," %>
-					<%= "\"path\": \""+file_path+file_id+"\"" %>
-				<%= "});" %>
-
+	var documents = [
+		<% @pages.each do |file_name, page| %>
+			<% if not page[:blocks].empty? %>
+				<% page[:blocks].each do |block, index| %>
+					<% file_path = block[:categories][0].to_s.gsub(' ', '_').downcase + '.html' %>
+					<% file_id = "#"+block[:name].to_s %>
+					{
+						"id": <%= "#{index}" %>
+						"title": "<%= block[:title].to_s %>"
+						"breadcrumb": "<%= block[:categories][0].to_s %>"
+						"path": "<%= "#{file_path}#{file_id}" %>"
+					}<%= (index == (page[:blocks].length - 1) ? "," : "") %>
+				<% end %>
 			<% end %>
 		<% end %>
-	<% end %>
+	];
 
-	window.HOTDOG = index;
+	documents.forEach(function (document) {
+		index.add(document)
+	})
+	window.IDX = index;
 });
 </script>
 

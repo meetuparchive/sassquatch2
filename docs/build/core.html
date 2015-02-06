@@ -786,738 +786,674 @@ $(function() {
 	var index = lunr(function() {
 		this.field('title', {boost: 10});
 		this.field('breadcrumb');
+		this.field('path');
+
 		this.ref('path');
 	});
 
-	
+	var documents = [
 		
 			
 				
+					
+					
+					{
+						"id": 
+						"title": "Alignment"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#alignMod"
+					}
 				
-
-				index.add({
-					"title": "Alignment",
-					"breadcrumb": "Modifiers > Alignment",
-					"path": "modifiers.html#alignMod"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Animation"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#animMod"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Background"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#backgroundMod"
+					}
 				
-
-				index.add({
-					"title": "Animation",
-					"breadcrumb": "Modifiers > Animation",
-					"path": "modifiers.html#animMod"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Image Fill"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#imgFillMod"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Borders"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#borderMod"
+					}
 				
-
-				index.add({
-					"title": "Background",
-					"breadcrumb": "Modifiers > Background",
-					"path": "modifiers.html#backgroundMod"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Display"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#displayMod"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Float"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#floatMod"
+					}
 				
-
-				index.add({
-					"title": "Image Fill",
-					"breadcrumb": "Modifiers > Image Fill",
-					"path": "modifiers.html#imgFillMod"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Aspect ratio helper"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#keepAspect"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Media-conditional modifiers"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#mediaMod"
+					}
 				
-
-				index.add({
-					"title": "Borders",
-					"breadcrumb": "Modifiers > Borders",
-					"path": "modifiers.html#borderMod"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Media Sizing"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#sizeMod"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Thumbnails"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#thumb"
+					}
 				
-
-				index.add({
-					"title": "Display",
-					"breadcrumb": "Modifiers > Display",
-					"path": "modifiers.html#displayMod"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Type wrap/whitespace"
+						"breadcrumb": "Modifiers"
+						"path": "modifiers.html#typespaceMod"
+					}
 				
-				
-
-				index.add({
-					"title": "Float",
-					"breadcrumb": "Modifiers > Float",
-					"path": "modifiers.html#floatMod"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Aspect ratio helper",
-					"breadcrumb": "Modifiers > Aspect ratio helper",
-					"path": "modifiers.html#keepAspect"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Media-conditional modifiers",
-					"breadcrumb": "Modifiers > Media-conditional modifiers",
-					"path": "modifiers.html#mediaMod"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Media Sizing",
-					"breadcrumb": "Modifiers > Media Sizing",
-					"path": "modifiers.html#sizeMod"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Thumbnails",
-					"breadcrumb": "Modifiers > Thumbnails",
-					"path": "modifiers.html#thumb"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Type wrap/whitespace",
-					"breadcrumb": "Modifiers > Type wrap/whitespace",
-					"path": "modifiers.html#typespaceMod"
-				});
-
 			
 		
-	
-		
 			
 				
+					
+					
+					{
+						"id": 
+						"title": "Avatar"
+						"breadcrumb": "UI Components"
+						"path": "ui_components.html#avatar"
+					}
 				
-
-				index.add({
-					"title": "Avatar",
-					"breadcrumb": "UI Components > Avatar",
-					"path": "ui_components.html#avatar"
-				});
-
+					
+					
+					{
+						"id": 
+						"title": "Buttons"
+						"breadcrumb": "UI Components"
+						"path": "ui_components.html#buttons"
+					}
+				
+					
+					
+					{
+						"id": 
+						"title": "Photo Card"
+						"breadcrumb": "UI Components"
+						"path": "ui_components.html#photoCard"
+					}
+				
+					
+					
+					{
+						"id": 
+						"title": "Tearsheet"
+						"breadcrumb": "UI Components"
+						"path": "ui_components.html#tearsheet"
+					}
+				
+					
+					
+					{
+						"id": 
+						"title": "Toggle Pills"
+						"breadcrumb": "UI Components"
+						"path": "ui_components.html#togglePills"
+					}
+				
 			
-				
-				
-
-				index.add({
-					"title": "Buttons",
-					"breadcrumb": "UI Components > Buttons",
-					"path": "ui_components.html#buttons"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Photo Card",
-					"breadcrumb": "UI Components > Photo Card",
-					"path": "ui_components.html#photoCard"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Tearsheet",
-					"breadcrumb": "UI Components > Tearsheet",
-					"path": "ui_components.html#tearsheet"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Toggle Pills",
-					"breadcrumb": "UI Components > Toggle Pills",
-					"path": "ui_components.html#togglePills"
-				});
-
-			
-		
-	
 		
 			
 				
+					
+					
+					{
+						"id": 
+						"title": "Sass Functions"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#functions"
+					}
 				
-
-				index.add({
-					"title": "Sass Functions",
-					"breadcrumb": "Sass Utilities > Sass Functions",
-					"path": "sass_utilities.html#functions"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Contrast/brightness utils"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#brightness"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Perceived brightness value"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#getPerceivedBrightness"
+					}
 				
-
-				index.add({
-					"title": "Contrast/brightness utils",
-					"breadcrumb": "Sass Utilities > Contrast/brightness utils",
-					"path": "sass_utilities.html#brightness"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Programmatic contrast text"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#getPrimaryTextColor"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "isDark/isLight"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#isDarkisLight"
+					}
 				
-
-				index.add({
-					"title": "Perceived brightness value",
-					"breadcrumb": "Sass Utilities > Perceived brightness value",
-					"path": "sass_utilities.html#getPerceivedBrightness"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "String utils"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#string"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "str-firstCharToUpper"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#str-firstCharToUpper"
+					}
 				
-
-				index.add({
-					"title": "Programmatic contrast text",
-					"breadcrumb": "Sass Utilities > Programmatic contrast text",
-					"path": "sass_utilities.html#getPrimaryTextColor"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "str-replace"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#str-replace"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Sass Mixins & Placeholders"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#mixinsPlaceholders"
+					}
 				
-
-				index.add({
-					"title": "isDark/isLight",
-					"breadcrumb": "Sass Utilities > isDark/isLight",
-					"path": "sass_utilities.html#isDarkisLight"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Vertical-align children"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#align"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Animation"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#animation"
+					}
 				
-
-				index.add({
-					"title": "String utils",
-					"breadcrumb": "Sass Utilities > String utils",
-					"path": "sass_utilities.html#string"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Subtle bounce-in"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#bounce-in-subtle"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Infinite spin"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#spin"
+					}
 				
-
-				index.add({
-					"title": "str-firstCharToUpper",
-					"breadcrumb": "Sass Utilities > str-firstCharToUpper",
-					"path": "sass_utilities.html#str-firstCharToUpper"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Background Utilities"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#background"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Background clip mixin"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#backgroundClip"
+					}
 				
-
-				index.add({
-					"title": "str-replace",
-					"breadcrumb": "Sass Utilities > str-replace",
-					"path": "sass_utilities.html#str-replace"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Image fill placeholder"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#imgFill"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Media Query Breakpoints"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#breakpoints"
+					}
 				
-
-				index.add({
-					"title": "Sass Mixins & Placeholders",
-					"breadcrumb": "Sass Utilities > Sass Mixins & Placeholders",
-					"path": "sass_utilities.html#mixinsPlaceholders"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Button utilities"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#button"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Button color mixin"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#buttonColor"
+					}
 				
-
-				index.add({
-					"title": "Vertical-align children",
-					"breadcrumb": "Sass Utilities > Vertical-align children",
-					"path": "sass_utilities.html#align"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Button personality placeholder"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#buttonPersonality"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Display utils"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#display"
+					}
 				
-
-				index.add({
-					"title": "Animation",
-					"breadcrumb": "Sass Utilities > Animation",
-					"path": "sass_utilities.html#animation"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Pseudo-element display mixin"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#pseudoDisplay"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Float utils"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#float"
+					}
 				
-
-				index.add({
-					"title": "Subtle bounce-in",
-					"breadcrumb": "Sass Utilities > Subtle bounce-in",
-					"path": "sass_utilities.html#bounce-in-subtle"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Clearfix placeholder"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#clearfix"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Shadow utilities"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#shadow"
+					}
 				
-
-				index.add({
-					"title": "Infinite spin",
-					"breadcrumb": "Sass Utilities > Infinite spin",
-					"path": "sass_utilities.html#spin"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Shadow placeholder"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#shadowPlaceholder"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Shapes"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#shape"
+					}
 				
-
-				index.add({
-					"title": "Background Utilities",
-					"breadcrumb": "Sass Utilities > Background Utilities",
-					"path": "sass_utilities.html#background"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Circle mixin"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#circleMixin"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Triangle mixin"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#triangleMixin"
+					}
 				
-
-				index.add({
-					"title": "Background clip mixin",
-					"breadcrumb": "Sass Utilities > Background clip mixin",
-					"path": "sass_utilities.html#backgroundClip"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Text utils"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#text"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Text protection shim"
+						"breadcrumb": "Sass Utilities"
+						"path": "sass_utilities.html#textProtection"
+					}
 				
-
-				index.add({
-					"title": "Image fill placeholder",
-					"breadcrumb": "Sass Utilities > Image fill placeholder",
-					"path": "sass_utilities.html#imgFill"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Media Query Breakpoints",
-					"breadcrumb": "Sass Utilities > Media Query Breakpoints",
-					"path": "sass_utilities.html#breakpoints"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Button utilities",
-					"breadcrumb": "Sass Utilities > Button utilities",
-					"path": "sass_utilities.html#button"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Button color mixin",
-					"breadcrumb": "Sass Utilities > Button color mixin",
-					"path": "sass_utilities.html#buttonColor"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Button personality placeholder",
-					"breadcrumb": "Sass Utilities > Button personality placeholder",
-					"path": "sass_utilities.html#buttonPersonality"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Display utils",
-					"breadcrumb": "Sass Utilities > Display utils",
-					"path": "sass_utilities.html#display"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Pseudo-element display mixin",
-					"breadcrumb": "Sass Utilities > Pseudo-element display mixin",
-					"path": "sass_utilities.html#pseudoDisplay"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Float utils",
-					"breadcrumb": "Sass Utilities > Float utils",
-					"path": "sass_utilities.html#float"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Clearfix placeholder",
-					"breadcrumb": "Sass Utilities > Clearfix placeholder",
-					"path": "sass_utilities.html#clearfix"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Shadow utilities",
-					"breadcrumb": "Sass Utilities > Shadow utilities",
-					"path": "sass_utilities.html#shadow"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Shadow placeholder",
-					"breadcrumb": "Sass Utilities > Shadow placeholder",
-					"path": "sass_utilities.html#shadowPlaceholder"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Shapes",
-					"breadcrumb": "Sass Utilities > Shapes",
-					"path": "sass_utilities.html#shape"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Circle mixin",
-					"breadcrumb": "Sass Utilities > Circle mixin",
-					"path": "sass_utilities.html#circleMixin"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Triangle mixin",
-					"breadcrumb": "Sass Utilities > Triangle mixin",
-					"path": "sass_utilities.html#triangleMixin"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Text utils",
-					"breadcrumb": "Sass Utilities > Text utils",
-					"path": "sass_utilities.html#text"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Text protection shim",
-					"breadcrumb": "Sass Utilities > Text protection shim",
-					"path": "sass_utilities.html#textProtection"
-				});
-
 			
 		
-	
-		
 			
 				
+					
+					
+					{
+						"id": 
+						"title": "Layout"
+						"breadcrumb": "Core"
+						"path": "core.html#layout"
+					}
 				
-
-				index.add({
-					"title": "Layout",
-					"breadcrumb": "Core > Layout",
-					"path": "core.html#layout"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Bounds"
+						"breadcrumb": "Core"
+						"path": "core.html#bounds"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Chunk"
+						"breadcrumb": "Core"
+						"path": "core.html#chunk"
+					}
 				
-
-				index.add({
-					"title": "Bounds",
-					"breadcrumb": "Core > Bounds",
-					"path": "core.html#bounds"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Flex Row"
+						"breadcrumb": "Core"
+						"path": "core.html#flexRow"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Row Item variants"
+						"breadcrumb": "Core"
+						"path": "core.html#flexrowItemVars"
+					}
 				
-
-				index.add({
-					"title": "Chunk",
-					"breadcrumb": "Core > Chunk",
-					"path": "core.html#chunk"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Row variants"
+						"breadcrumb": "Core"
+						"path": "core.html#flexrowParent"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Grid List"
+						"breadcrumb": "Core"
+						"path": "core.html#gridList"
+					}
 				
-
-				index.add({
-					"title": "Flex Row",
-					"breadcrumb": "Core > Flex Row",
-					"path": "core.html#flexRow"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Grid List variants"
+						"breadcrumb": "Core"
+						"path": "core.html#gridListVariants"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Stripe"
+						"breadcrumb": "Core"
+						"path": "core.html#stripe"
+					}
 				
-
-				index.add({
-					"title": "Row Item variants",
-					"breadcrumb": "Core > Row Item variants",
-					"path": "core.html#flexrowItemVars"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Typesetting"
+						"breadcrumb": "Core"
+						"path": "core.html#typesetting"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Body/primary text"
+						"breadcrumb": "Core"
+						"path": "core.html#bodyText"
+					}
 				
-
-				index.add({
-					"title": "Row variants",
-					"breadcrumb": "Core > Row variants",
-					"path": "core.html#flexrowParent"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Bulleted lists"
+						"breadcrumb": "Core"
+						"path": "core.html#bulletedList"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Caption text"
+						"breadcrumb": "Core"
+						"path": "core.html#captionText"
+					}
 				
-
-				index.add({
-					"title": "Grid List",
-					"breadcrumb": "Core > Grid List",
-					"path": "core.html#gridList"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Display text"
+						"breadcrumb": "Core"
+						"path": "core.html#displayText"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Hint text"
+						"breadcrumb": "Core"
+						"path": "core.html#hintText"
+					}
 				
-
-				index.add({
-					"title": "Grid List variants",
-					"breadcrumb": "Core > Grid List variants",
-					"path": "core.html#gridListVariants"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Inverted text"
+						"breadcrumb": "Core"
+						"path": "core.html#invertedText"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Running text"
+						"breadcrumb": "Core"
+						"path": "core.html#runningText"
+					}
 				
-
-				index.add({
-					"title": "Stripe",
-					"breadcrumb": "Core > Stripe",
-					"path": "core.html#stripe"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Link color"
+						"breadcrumb": "Core"
+						"path": "core.html#linkColor"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Secondary text"
+						"breadcrumb": "Core"
+						"path": "core.html#secondaryText"
+					}
 				
-
-				index.add({
-					"title": "Typesetting",
-					"breadcrumb": "Core > Typesetting",
-					"path": "core.html#typesetting"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "Small text"
+						"breadcrumb": "Core"
+						"path": "core.html#smallText"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "Views"
+						"breadcrumb": "Core"
+						"path": "core.html#views"
+					}
 				
-
-				index.add({
-					"title": "Body/primary text",
-					"breadcrumb": "Core > Body/primary text",
-					"path": "core.html#bodyText"
-				});
-
-			
+					
+					
+					{
+						"id": 
+						"title": "View Body"
+						"breadcrumb": "Core"
+						"path": "core.html#viewBody"
+					}
 				
+					
+					
+					{
+						"id": 
+						"title": "View Head"
+						"breadcrumb": "Core"
+						"path": "core.html#viewHead"
+					}
 				
-
-				index.add({
-					"title": "Bulleted lists",
-					"breadcrumb": "Core > Bulleted lists",
-					"path": "core.html#bulletedList"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Caption text",
-					"breadcrumb": "Core > Caption text",
-					"path": "core.html#captionText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Display text",
-					"breadcrumb": "Core > Display text",
-					"path": "core.html#displayText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Hint text",
-					"breadcrumb": "Core > Hint text",
-					"path": "core.html#hintText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Inverted text",
-					"breadcrumb": "Core > Inverted text",
-					"path": "core.html#invertedText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Running text",
-					"breadcrumb": "Core > Running text",
-					"path": "core.html#runningText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Link color",
-					"breadcrumb": "Core > Link color",
-					"path": "core.html#linkColor"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Secondary text",
-					"breadcrumb": "Core > Secondary text",
-					"path": "core.html#secondaryText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Small text",
-					"breadcrumb": "Core > Small text",
-					"path": "core.html#smallText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Views",
-					"breadcrumb": "Core > Views",
-					"path": "core.html#views"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "View Body",
-					"breadcrumb": "Core > View Body",
-					"path": "core.html#viewBody"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "View Head",
-					"breadcrumb": "Core > View Head",
-					"path": "core.html#viewHead"
-				});
-
 			
 		
-	
+	];
 
-	window.HOTDOG = index;
+	documents.forEach(function (document) {
+		index.add(document)
+	})
+	window.IDX = index;
 });
 </script>
 
