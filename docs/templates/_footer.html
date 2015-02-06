@@ -11,29 +11,44 @@ $(function() {
 		this.field('breadcrumb');
 		this.field('path');
 
-		this.ref('path');
+		this.ref('id');
 	});
 
+
+	<%# {{{ This is a mess, but it works.%>
+	<%# hiding my shame with a vim fold. %>
+	<% blockCount = 0 %>
 	var documents = [
 		<% @pages.each do |file_name, page| %>
+
 			<% if not page[:blocks].empty? %>
-				<% page[:blocks].each do |block, index| %>
+
+				<% page[:blocks].each do |block| %>
 					<% file_path = block[:categories][0].to_s.gsub(' ', '_').downcase + '.html' %>
 					<% file_id = "#"+block[:name].to_s %>
+
 					{
-						"id": <%= "#{index}" %>
-						"title": "<%= block[:title].to_s %>"
-						"breadcrumb": "<%= block[:categories][0].to_s %>"
+						"id": <%= "#{blockCount}" %>,
+						"title": "<%= block[:title].to_s %>",
+						"breadcrumb": "<%= block[:categories][0].to_s %>",
 						"path": "<%= "#{file_path}#{file_id}" %>"
-					}<%= (index == (page[:blocks].length - 1) ? "," : "") %>
+					},
+
+					<% blockCount = blockCount+1 %>
 				<% end %>
+
 			<% end %>
+
 		<% end %>
+		"" <%# take that, erb. %>
 	];
+	<%# }}} %>
 
 	documents.forEach(function (document) {
-		index.add(document)
-	})
+		if ( Object.prototype.toString.call(document) == "[object Object]" ) { // lol
+			index.add(document)
+		}
+	});
 	window.IDX = index;
 });
 </script>
