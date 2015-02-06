@@ -4,7 +4,12 @@ title: Thumbnails
 name: thumb
 category: Modifiers
 ---
-TODO: doc this
+Sets background cover and position for photo thumbnails.
+
+```html_example
+<div class="thumb media--l" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);"></div>
+```
+
 */
 .thumb {
   background-position: center;

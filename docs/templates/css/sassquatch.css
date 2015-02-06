@@ -1936,21 +1936,21 @@ Class                   | Description
   align-self: center;
   -ms-flex-item-align: center; }
 
-.lt--IE9 .row {
+.ieRoot--lt_IE9 .row {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: table;
   table-layout: auto;
   width: 100%; }
 
-.lt--IE9 .row-item {
+.ieRoot--lt_IE9 .row-item {
   display: table-cell;
   width: 100%; }
 
-.lt--IE9 .row-item--shrink {
+.ieRoot--lt_IE9 .row-item--shrink {
   width: auto; }
 
-.lt--IE9 .row-item--alignMiddle {
+.ieRoot--lt_IE9 .row-item--alignMiddle {
   vertical-align: middle; }
 
 /*doc
@@ -3100,7 +3100,12 @@ title: Thumbnails
 name: thumb
 category: Modifiers
 ---
-TODO: doc this
+Sets background cover and position for photo thumbnails.
+
+```html_example
+<div class="thumb media--l" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);"></div>
+```
+
 */
 .thumb {
   background-position: center;
