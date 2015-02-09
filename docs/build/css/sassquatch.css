@@ -1346,9 +1346,30 @@ ul, ol,
 ---
 title: Forms
 name: forms
-cateogry: Core
+category: Core
 ---
-TK
+
+TK: better docs
+
+## Text inputs
+
+```html_example
+<div class="chunk">
+	<label>I'm a label</label>
+	<input type="text" value="Text input with value" />
+</div>
+
+<div class="chunk">
+	<label>Just another label</label>
+	<input type="text" placeholder="Text input with placeholder" />
+</div>
+
+<div class="chunk">
+	<label>Here's an area for your text</label>
+	<textarea></textarea>
+</div>
+```
+
 */
 label {
   font-size: 13px; }
