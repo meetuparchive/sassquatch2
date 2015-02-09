@@ -114,8 +114,8 @@ category: UI Components
 .avatar--org {
 	@extend %avatarCharm;
 	&:after {
+		@extend %backgroundImg--orgBadge;
 		background-color: $C_accent;
-		background-image: url('img/org-badge.svg'); // TODO: no imgs in sassquatch... what do we do with this...
 		color: $C_textPrimaryInverted;
 	}
 }

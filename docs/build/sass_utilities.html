@@ -209,6 +209,11 @@
 									
 
 								
+
+									
+									
+
+								
 							</ul>
 						
 					</li>
@@ -432,6 +437,30 @@ the <code>atMediaOnly</code> mixin will do this.</p>
 <p>Disables user-select, sets cursor, and resets text-decoration.</p>
 <div class="codeBlock"><div class="highlight"><pre>@extend %buttonPersonality;
 </pre></div></div>
+<h2 id="datauri">data uri images</h2>
+
+<p>Sassquatch image dependencies are stored
+as data uris in a Sass map.</p>
+<div class="codeBlock"><div class="highlight"><pre>map-get($data-img-map, "orgBadge") // raw data uri
+
+// OR
+
+.elWithImgBackground {
+    @extend %backgroundImg--orgBadge; // sets background-image property
+}
+</pre></div></div>
+<table><thead>
+<tr>
+<th>Img Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>orgBadge</code></td>
+<td>Organizer badge</td>
+</tr>
+</tbody></table>
+
 <h2 id="display">Display utils</h2>
 
 <h3 id="pseudoDisplay">Pseudo-element display mixin</h3>
@@ -457,11 +486,8 @@ the <code>atMediaOnly</code> mixin will do this.</p>
 
 <h3 id="circleMixin">Circle mixin</h3>
 
-<p>Adds pointers to any box.</p>
-
-<p>Use additional classes of .top-left, .top-right, .bottom-left, .bottom-right
-<em>TODO: rewrite with args</em></p>
-<div class="codeBlock"><div class="highlight"><pre>@mixin pointers-for-box($size, $background, $border)
+<p>Makes selected element a circle with border-radius</p>
+<div class="codeBlock"><div class="highlight"><pre>@mixin circle($color: black, $size: 12px)
 </pre></div></div>
 <h3 id="triangleMixin">Triangle mixin</h3>
 
@@ -866,6 +892,16 @@ $(function() {
 					"title": "Button personality placeholder",
 					"breadcrumb": "Sass Utilities > Button personality placeholder",
 					"path": "sass_utilities.html#buttonPersonality"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "data uri images",
+					"breadcrumb": "Sass Utilities > data uri images",
+					"path": "sass_utilities.html#datauri"
 				});
 
 			
