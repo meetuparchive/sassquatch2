@@ -54,7 +54,7 @@ Sets color properties for buttons
     }
   } @else {
     // if the button color is a solid (non-transparent) color
-    color: $C_textPrimaryInverted;
+    color: getPrimaryTextColor($color);
     &:hover,
     &:active,
     &:focus {
@@ -78,7 +78,7 @@ Sets color properties for buttons
       background: $color;
     }
 
-    //too much class chaining?
+    //TODO: we can make these selectors simpler
     &.button--primary {
       background: $C_textTertiary;
     }

@@ -34,6 +34,8 @@ Class                   | Description
 `.button--small`        | decreases size of button
 */
 
+// TODO: we might want to refactor buttonColor a bit
+
 $btn-color-map: (
 	default: transparent,
 	primary: $C_link,
