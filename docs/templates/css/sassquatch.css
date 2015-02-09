@@ -2140,7 +2140,7 @@ Class                  | Description
 `view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
 `view--dimmed`         | Dims view (for use with modal overlays)
 
-## Basic view (<a class="link" href="pages/basic-view.html">Demo</a>)
+## Basic view (<a class="link" href="pages/full-view.html">Demo</a>)
 Basic example of a single view in a document:
 
 ```
@@ -2154,7 +2154,7 @@ Basic example of a single view in a document:
 </div>
 ```
 
-## Split view (DEMO TK)
+## Split view (DEMO)
 Basic example of two views in one document, where we specify
 which view has the "list" responsibility, and which view has
 the "detail" responsibility.
