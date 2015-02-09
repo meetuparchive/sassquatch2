@@ -4,27 +4,38 @@ title: Toggle Pills
 name: togglePills
 category: UI Components
 ---
+Checkbox form elements styled as toggle buttons.
 
+## "unchecked" state
 ```html_example
 <div class="toggleButton">
-	<input class="toggleButton-input" type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn" />
-	<label class="toggleButton-label" for="topic-pill">Dining Out</label>
+	<input class="toggleButton-input" type="checkbox" name="topic-dining" id="topic-dining" value="ToggleBtn" />
+	<label class="toggleButton-label" for="topic-dining">Dining Out</label>
+</div>
+```
+
+## "checked" state
+```html_example
+<div class="toggleButton">
+	<input checked class="toggleButton-input" type="checkbox" name="topic-hiking" id="topic-hiking" value="ToggleBtn" />
+	<label class="toggleButton-label" for="topic-hiking">Hiking</label>
 </div>
 ```
 */
 
-// Toggle button behavior - try and find a way to bring this into regular button style area
 .toggleButton {
 	display: inline-block;
 	margin: $space-quarter 0;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
 .toggleButton-label {
 	@extend %buttonBase;
 	@extend %button--bordered;
 	@extend %button--small;
 	margin: 0;
 }
+
 .toggleButton-input {
 	display: none;
 	&:checked + .toggleButton-label {
@@ -34,26 +45,7 @@ category: UI Components
 	}
 }
 
-// TODO: rewrite with P-C pcv classes
-input.toggle-pill {
-  display: none;
-
-  & + label {
-    border: 1px solid $C-blue;
-    border-radius: 999px;
-    color: $C-blue;
-    margin-right: $space-half;
-    padding: $space-half;
-  }
-
-  &:checked + label {
-    background: $C-blue;
-    color: $C-textPrimaryInverted;
-  }
-
-}
-
-.toggle--on {
+.toggleButton--on {
 	@include animate--bounceInSubtle();
 	label {
 		font-weight: $W_bold;

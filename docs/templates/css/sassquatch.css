@@ -130,7 +130,7 @@ name: animation
 parent: mixinsPlaceholders
 ---
 */
-.toggle--on, .animate--bounceInSubtle, .animate--spin {
+.toggleButton--on, .animate--bounceInSubtle, .animate--spin {
   -webkit-transform-origin: center center;
   -ms-transform-origin: center center;
   transform-origin: center center; }
@@ -388,7 +388,7 @@ name: animation
 parent: mixinsPlaceholders
 ---
 */
-.toggle--on, .animate--bounceInSubtle, .animate--spin {
+.toggleButton--on, .animate--bounceInSubtle, .animate--spin {
   -webkit-transform-origin: center center;
   -ms-transform-origin: center center;
   transform-origin: center center; }
@@ -2765,11 +2765,21 @@ title: Toggle Pills
 name: togglePills
 category: UI Components
 ---
+Checkbox form elements styled as toggle buttons.
 
+## "unchecked" state
 ```html_example
 <div class="toggleButton">
-	<input class="toggleButton-input" type="checkbox" name="topic-pill" id="topic-pill" value="ToggleBtn" />
-	<label class="toggleButton-label" for="topic-pill">Dining Out</label>
+	<input class="toggleButton-input" type="checkbox" name="topic-dining" id="topic-dining" value="ToggleBtn" />
+	<label class="toggleButton-label" for="topic-dining">Dining Out</label>
+</div>
+```
+
+## "checked" state
+```html_example
+<div class="toggleButton">
+	<input checked class="toggleButton-input" type="checkbox" name="topic-hiking" id="topic-hiking" value="ToggleBtn" />
+	<label class="toggleButton-label" for="topic-hiking">Hiking</label>
 </div>
 ```
 */
@@ -2788,22 +2798,10 @@ category: UI Components
     border: none;
     color: white; }
 
-input.toggle-pill {
-  display: none; }
-  input.toggle-pill + label {
-    border: 1px solid #3987cb;
-    border-radius: 999px;
-    color: #3987cb;
-    margin-right: 8px;
-    padding: 8px; }
-  input.toggle-pill:checked + label {
-    background: #3987cb;
-    color: white; }
-
-.toggle--on {
+.toggleButton--on {
   -webkit-animation: bounce-in-subtle 750ms linear;
   animation: bounce-in-subtle 750ms linear; }
-  .toggle--on label {
+  .toggleButton--on label {
     font-weight: 700; }
 
 /*doc
