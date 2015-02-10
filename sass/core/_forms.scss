@@ -93,13 +93,12 @@ textarea {
 	min-height: (3 * $font-size * $line-height) + $space;
 }
 
-// TODO: doc and/or move to chapstick?
 .launcher {
-	background-image: url(/style/img/web/launch.svg);
+	@extend %backgroundImg--launcher;
 	background-position: center right #{$space-quarter};
 	background-repeat: no-repeat;
 }
-.launcher-placeholder{
+.launcher-placeholder {
 	font-style: normal;
 	color: $C_textTertiary;
 	.inverted &{
