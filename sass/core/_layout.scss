@@ -403,8 +403,8 @@ Class                         | Description
 ----------------------------- | ------------------------------
 `.gridList--photoGrid`        | Optimizes list item spacing for a grid of photos
 `.gridList--has[n]`           | Adjusts number of columns (ie. `.gridList--has4` creates a 4 column grid for all screen sizes)
-`.atMedium_gridList--has[n]`  | Sets number of columns for medium breakpoint and up (ie. `.atMedium_gridList--has[6]`)
-`.atLarge_gridList--has[n]`   | Sets number of columns for large breakpoint and up (ie. `.atLarge_gridList--has[10]`)
+`.atMedium_gridList--has[n]`  | Sets number of columns for medium breakpoint and up (ie. `.atMedium_gridList--has6`)
+`.atLarge_gridList--has[n]`   | Sets number of columns for large breakpoint and up (ie. `.atLarge_gridList--has10`)
 
 */
 .gridList--photoGrid > li {

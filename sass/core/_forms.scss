@@ -2,9 +2,30 @@
 ---
 title: Forms
 name: forms
-cateogry: Core
+category: Core
 ---
-TK
+
+TK: better docs
+
+## Text inputs
+
+```html_example
+<div class="chunk">
+	<label>I'm a label</label>
+	<input type="text" value="Text input with value" />
+</div>
+
+<div class="chunk">
+	<label>Just another label</label>
+	<input type="text" placeholder="Text input with placeholder" />
+</div>
+
+<div class="chunk">
+	<label>Here's an area for your text</label>
+	<textarea></textarea>
+</div>
+```
+
 */
 
 // TODO: needs some PCV standardization
@@ -79,14 +100,12 @@ textarea {
 	min-height: (3 * $font-size * $line-height) + $space;
 }
 
-// TODO: doc and/or move to chapstick?
-// RB: Why move to chapstick?
 .launcher {
-	background-image: url(/style/img/web/launch.svg);
+	@extend %backgroundImg--launcher;
 	background-position: center right #{$space-quarter};
 	background-repeat: no-repeat;
 }
-.launcher-placeholder{
+.launcher-placeholder {
 	font-style: normal;
 	color: $C_textTertiary;
 	.inverted &{

@@ -34,6 +34,8 @@ Class                   | Description
 `.button--small`        | decreases size of button
 */
 
+// TODO: we might want to refactor buttonColor a bit
+
 $btn-color-map: (
 	default: transparent,
 	primary: $C_link,
@@ -48,6 +50,10 @@ $btn-color-map: (
 	display: inline-block;
 	font-size: $font-size;
 	font-weight: $W_bold;
+<<<<<<< HEAD
+=======
+	margin: 0;
+>>>>>>> 780c5c0c8f92c5466639e792d3d106f1d82669f8
 	padding: $space-half $space;
 	text-align: center;
 }
