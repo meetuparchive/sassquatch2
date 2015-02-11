@@ -1,0 +1,71 @@
+/*doc
+---
+title: Cards
+name: uiCard
+category: UI Components
+---
+Card-like boxes.
+
+## Standard card
+Card with base styles
+
+```html_example
+<section class="stripe--collection">
+	<div class="card">
+		<h4>Look at this card</h4>
+		<p>Just <em>look at it</em></p>
+	</div>
+</section>
+```
+
+## Card with photo background
+Group-style card
+
+```html_example
+<section class="stripe--collection">
+	<div class="card">
+		<h4>Look at this card</h4>
+		<p>Just <em>look at it</em></p>
+	</div>
+</section>
+```
+
+
+## Event card
+You know, for meetups.
+
+```html_example
+<section class="stripe--collection">
+	<div class="card card--event">
+		<h3 class="text--graphic">06</h4>
+		<p>event stuff TK</p>
+	</div>
+</section>
+```
+*/
+
+// TODO: doc
+.card {
+	@include box-sizing(border-box);
+	background: $C_contentBG;
+	border: 1px solid $C_border;
+	border-radius: $defaultRadius;
+	padding: $space $space 0;
+	position: relative;
+	background-size: cover;
+	background-clip: border-box;
+}
+
+.card--event {
+	position: relative;
+	&:before {
+		background: $C_accent;
+		content: '';
+		display: block;
+		height: $space-quarter;
+		left: 0;
+		position: absolute;
+		top: -1px; // to overlap border
+		width: 100%;
+	}
+}
