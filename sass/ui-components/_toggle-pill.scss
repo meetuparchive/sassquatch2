@@ -39,15 +39,9 @@ Checkbox form elements styled as toggle buttons.
 .toggleButton-input {
 	display: none;
 	&:checked + .toggleButton-label {
+		@include animate--bounceInSubtle();
 		background: $C_blue;
-		border: none;
 		color: $C_textPrimaryInverted;
-	}
-}
-
-.toggleButton--on {
-	@include animate--bounceInSubtle();
-	label {
 		font-weight: $W_bold;
 	}
 }
