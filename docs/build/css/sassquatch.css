@@ -1951,6 +1951,7 @@ following classes are optional variants:
 Class                   | Description
 ----------------------- | -------------------------------
 `.row--noGutters`       | removes padding from all `.row-item` children
+`.row--wrap`            | allows row wrapping (useful for collapsing rows in smaller viewports)
 `.row--reverse`         | reverses row order
 `.row--flexEnd`         | justifies content to `flex-end`
 `.row--center`          | justifies content to `center`
@@ -1968,6 +1969,13 @@ Class                   | Description
   -webkit-flex-direction: row-reverse;
   flex-direction: row-reverse;
   -ms-flex-direction: row-reverse; }
+
+.row--wrap {
+  -webkit-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
 
 .row--flexEnd {
   -webkit-box-pack: end;

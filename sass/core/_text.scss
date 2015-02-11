@@ -131,23 +131,51 @@ parent: typesetting
 	}
 }
 
+/*doc
+---
+title: Display text
+name: displayText
+parent: typesetting
+---
+Display text for header hero elements.
+
+```html_example
+<h1 class="text--display">The hero gotham deserves</h1>
+```
+*/
+%text--display,
+.text--display {
+	color: $C_textPrimary;
+	font-size: $font-size-display1;
+	font-weight: normal;
+	line-height: 1.25;
+	.inverted &{
+		color: $C_textPrimaryInverted;
+	}
+}
+@include atMediaDown(small) {
+	%text--display,
+	.text--display {
+		font-size: $font-size-display2;
+	}
+}
 
 /*doc
 ---
-title: Text graphic
+title: Graphic text
 name: textGraphic
 parent: typesetting
 ---
-
 Useful when using large text in a graphical way.
 Cuts line height to give the glyph spacing similar to that of an image or icon.
 
 ```html_example
-<p class="text--display text--graphic">102</p>
+<p class="text--graphic">102</p>
 <p>Miles per hour</p>
 ```
 */
-.text--graphic{
+.text--graphic {
+	@extend %text--display;
 	line-height: .9;
 }
 
