@@ -130,7 +130,7 @@ name: animation
 parent: mixinsPlaceholders
 ---
 */
-.toggleButton--on, .animate--bounceInSubtle, .animate--spin {
+.toggleButton-input:checked + .toggleButton-label, .animate--bounceInSubtle, .animate--spin {
   -webkit-transform-origin: center center;
   -ms-transform-origin: center center;
   transform-origin: center center; }
@@ -388,7 +388,7 @@ name: animation
 parent: mixinsPlaceholders
 ---
 */
-.toggleButton--on, .animate--bounceInSubtle, .animate--spin {
+.toggleButton-input:checked + .toggleButton-label, .animate--bounceInSubtle, .animate--spin {
   -webkit-transform-origin: center center;
   -ms-transform-origin: center center;
   transform-origin: center center; }
@@ -2898,14 +2898,10 @@ Checkbox form elements styled as toggle buttons.
 .toggleButton-input {
   display: none; }
   .toggleButton-input:checked + .toggleButton-label {
+    -webkit-animation: bounce-in-subtle 750ms linear;
+    animation: bounce-in-subtle 750ms linear;
     background: #3987cb;
-    border: none;
-    color: white; }
-
-.toggleButton--on {
-  -webkit-animation: bounce-in-subtle 750ms linear;
-  animation: bounce-in-subtle 750ms linear; }
-  .toggleButton--on label {
+    color: white;
     font-weight: 700; }
 
 /*doc
