@@ -1048,6 +1048,21 @@ parent: typesetting
 
 /*doc
 ---
+title: Tertiary text
+name: tertiaryText
+parent: typesetting
+---
+```html_example
+<p class="text--tertiary">Tertiary text is tertiary</p>
+```
+*/
+.text--tertiary {
+  color: rgba(0, 0, 0, 0.26); }
+  .inverted .text--tertiary {
+    color: rgba(255, 255, 255, 0.3); }
+
+/*doc
+---
 title: Small text
 name: smallText
 parent: typesetting
@@ -1059,7 +1074,7 @@ parent: typesetting
 .text--caption,
 .text--small {
   font-size: 13px;
-  line-height: 1.25; }
+  line-height: 1.5; }
 
 /*doc
 ---
@@ -1075,6 +1090,24 @@ parent: typesetting
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--caption {
     color: rgba(255, 255, 255, 0.7); }
+
+/*doc
+---
+title: Text graphic
+name: textGraphic
+parent: typesetting
+---
+
+Useful when using large text in a graphical way.
+Cuts line height to give the glyph spacing similar to that of an image or icon.
+
+```html_example
+<p class="text--display text--graphic">102</p>
+<p>Miles per hour</p>
+```
+*/
+.text--graphic {
+  line-height: .9; }
 
 /*doc
 ---
@@ -1303,7 +1336,9 @@ ul, ol,
 
 .hscroll-wrap {
   -webkit-overflow-scrolling: touch;
-  overflow: scroll; }
+  overflow: scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none; }
   .hscroll-wrap .hscroll {
     box-sizing: content-box;
     padding-left: 16px;
@@ -1311,6 +1346,9 @@ ul, ol,
     white-space: nowrap; }
     .hscroll-wrap .hscroll li {
       white-space: normal; }
+
+.hscroll-wrap::-webkit-scrollbar {
+  display: none; }
 
 .hscroll-wrap-wrap {
   position: relative;
@@ -1331,6 +1369,21 @@ ul, ol,
     right: 0;
     background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
     background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
+
+.hscroll-arrow {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; }
+  .is-hovered .hscroll-arrow, .hscroll-arrow:hover {
+    opacity: 1; }
+
+.hscroll-next {
+  right: 0; }
+
+.hscroll-prev {
+  left: 0; }
 
 .stripe--collection .hscroll-wrap-wrap:before {
   background-image: -webkit-linear-gradient( left , #f3f6f9, rgba(243, 246, 249, 0));
@@ -1419,12 +1472,17 @@ select,
   .launcher {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
-    color: white; }
-    .inverted input[type="email"]:focus, .inverted input[type="number"]:focus, .inverted input[type="password"]:focus, .inverted input[type="search"]:focus, .inverted input[type="tel"]:focus, .inverted input[type="text"]:focus, .inverted input[type="url"]:focus, .inverted input[type="color"]:focus, .inverted input[type="date"]:focus, .inverted input[type="datetime"]:focus, .inverted input[type="datetime-local"]:focus, .inverted input[type="month"]:focus, .inverted input[type="time"]:focus, .inverted input[type="week"]:focus, .inverted
-    textarea:focus, .inverted
-    select:focus, .inverted
-    .launcher:focus {
-      border-color: none; }
+    color: white;
+    /*
+    &:focus{
+    	border-color: none;
+    }
+    */ }
+  .shaded input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
+  textarea, .shaded
+  select, .shaded
+  .launcher {
+    background-color: white; }
 
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 select {
@@ -1738,25 +1796,36 @@ padding, and sets a max-width.
 
 #### Bounds variants
 
-Class             | Description
------------------ | -------------------------------------
-`.bounds`         | standard bounds for any type of content
-`.bounds--form`   | bounds for wrapping forms; applies narrower measure
+Class                  | Description
+---------------------- | -------------------------------------
+`.bounds`              | standard (narrow) bounds for any type of content
+`.bounds--wide`        | bounds for wrapping wider content, such as gridList
+`.bounds--sideHeader`  | bounds for wrapping standard (narrow) content, offset by labels to the side at wide widths
+
 */
 .bounds {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1100px;
-  padding: 16px;
+  max-width: 840px;
+  padding: 24px 16px 8px;
   width: 100%; }
 
-/*
-// should get handled by side titles now
-.bounds--form {
-	max-width: $form-max-width;
-}
-*/
+.bounds--wide {
+  max-width: 1100px; }
+
+.bounds--sideHeader {
+  max-width: 1100px; }
+  @media only screen and (min-width: 840px) {
+    .bounds--sideHeader {
+      padding-left: 276px;
+      position: relative; }
+      .bounds--sideHeader .stripe-header {
+        position: absolute;
+        top: 24px;
+        left: 16px;
+        width: 236px; } }
+
 /*doc
 ---
 title: Chunk
@@ -1783,6 +1852,7 @@ or a group of elements.
 ```
 */
 .chunk {
+  display: block;
   margin-bottom: 16px; }
 
 /*doc
@@ -2348,7 +2418,9 @@ content container for the view.
 
 .stripe-heroContent {
   min-height: 384px;
-  position: relative; }
+  position: relative;
+  text-align: center;
+  max-width: 1100px; }
   @media only screen and (max-width: 640px) {
     .stripe-heroContent {
       min-height: 240px; } }
@@ -2382,7 +2454,6 @@ content container for the view.
   left: 50%;
   margin-left: -220px;
   margin-top: 10vh;
-  min-height: 440px;
   position: absolute;
   width: 440px;
   z-index: 3; }
@@ -2541,7 +2612,7 @@ Class                   | Description
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
-  margin: 8px 4px;
+  margin: 0;
   padding: 8px 16px;
   text-align: center; }
 
@@ -2615,7 +2686,6 @@ Class                   | Description
     text-decoration: none; }
 
 .button-icon {
-  margin-right: 8px;
   border: 1px solid #3987cb;
   border-radius: 999px;
   color: #3987cb;
@@ -2633,7 +2703,6 @@ Class                   | Description
 
 .button--fullWidth {
   display: block;
-  margin: 8px 0;
   width: 100%; }
 
 .button--default {
@@ -2760,12 +2829,12 @@ Cards for groups.
 <ul class="row">
 	<li class="row-item">
 		<a href="#" class="photoCard inverted" style="background-image: url(http://photos3.meetupstatic.com/photos/event/1/9/8/7/600_432486535.jpeg);">
-			<h3 class="photoCard--text">20 and 30 somethings in Portland - AWESOME Stuff</h3>
+			<h3 class="photoCard-text">20 and 30 somethings in Portland - AWESOME Stuff</h3>
 		</a>
 	</li>
 	<li class="row-item">
 		<a href="#!/groups/57" class="photoCard inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/5/a/0/9/600_431723049.jpeg);">
-			<h3 class="photoCard--text">Mazama Trail Trips</h3>
+			<h3 class="photoCard-text">Mazama Trail Trips</h3>
 		</a>
 	</li>
 </ul>
@@ -2789,7 +2858,7 @@ Cards for groups.
     z-index: 0;
     top: 0; }
 
-.photoCard--text {
+.photoCard-text {
   bottom: 0;
   padding: 16px;
   position: absolute; }
