@@ -69,6 +69,8 @@
 .hscroll-wrap {
 	-webkit-overflow-scrolling: touch;
 	overflow: scroll;
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none;
 	.hscroll {
 		box-sizing: content-box;
 		padding-left: $space;
@@ -78,6 +80,10 @@
 			white-space: normal;
 		}
 	}
+}
+
+.hscroll-wrap::-webkit-scrollbar { 
+    display: none; 
 }
 
 .hscroll-wrap-wrap {
@@ -101,6 +107,30 @@
 		@include background-image(linear-gradient(to left, #fff, transparentize(#ffffff, 1)));
 	}
 }
+
+.hscroll-arrow {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+
+	.is-hovered &,
+	&:hover { //using js to toggle hover so it won't show on touch screens
+		opacity: 1;
+	}
+}
+
+.hscroll-next {
+	right: 0;
+}
+
+.hscroll-prev {
+	left: 0;
+}
+
+
+
 
 // stripe--collection
 .stripe--collection .hscroll-wrap-wrap {

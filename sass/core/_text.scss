@@ -79,6 +79,25 @@ parent: typesetting
 
 /*doc
 ---
+title: Tertiary text
+name: tertiaryText
+parent: typesetting
+---
+```html_example
+<p class="text--tertiary">Tertiary text is tertiary</p>
+```
+*/
+.text--tertiary {
+	color: $C_textTertiary;
+	.inverted & {
+		color: $C_textTertiaryInverted;
+	}
+}
+
+
+
+/*doc
+---
 title: Small text
 name: smallText
 parent: typesetting
@@ -111,6 +130,28 @@ parent: typesetting
 		color: $C_textSecondaryInverted;
 	}
 }
+
+
+/*doc
+---
+title: Text graphic
+name: textGraphic
+parent: typesetting
+---
+
+Useful when using large text in a graphical way.
+Cuts line height to give the glyph spacing similar to that of an image or icon.
+
+```html_example
+<p class="text--display text--graphic">102</p>
+<p>Miles per hour</p>
+```
+*/
+.text--graphic{
+	line-height: .9;
+}
+
+
 
 /*doc
 ---

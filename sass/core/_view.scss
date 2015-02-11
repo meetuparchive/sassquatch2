@@ -190,6 +190,7 @@ Class                      | Description
 }
 
 
+
 /*doc
 ---
 title: View Body
@@ -229,7 +230,8 @@ content container for the view.
 	@extend %valignChildren--bottom; // maybe try to align without this?
 	min-height: $block-6;
 	position: relative;
-
+	text-align: center;
+	max-width: $bounds-wide;
 	@include atMediaDown(medium) {
 		min-height: $block-5;
 	}

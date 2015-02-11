@@ -57,9 +57,16 @@ select,
 		background-color: $C_shadeInverted;
 		border-color: $C_borderInverted;
 		color: $C_textPrimaryInverted;
+		/*
 		&:focus{
 			border-color: none;
 		}
+		*/
+	}
+	
+	.shaded & {
+		// when on an already gray background, don't get gray-er
+		background-color: white;		
 	}
 }
 
@@ -73,6 +80,7 @@ textarea {
 }
 
 // TODO: doc and/or move to chapstick?
+// RB: Why move to chapstick?
 .launcher {
 	background-image: url(/style/img/web/launch.svg);
 	background-position: center right #{$space-quarter};

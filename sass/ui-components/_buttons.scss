@@ -48,7 +48,6 @@ $btn-color-map: (
 	display: inline-block;
 	font-size: $font-size;
 	font-weight: $W_bold;
-	margin: $space-half $space-quarter;
 	padding: $space-half $space;
 	text-align: center;
 }
@@ -90,7 +89,6 @@ $btn-color-map: (
 	}
 }
 .button-icon {
-	margin-right: $space-half;
 	border: 1px solid map-get($btn-color-map, "primary");
 	border-radius: 999px;
 	color: map-get($btn-color-map, "primary");
@@ -115,7 +113,6 @@ $btn-color-map: (
 .button--fullWidth {
 	@extend %button--bordered;
 	display: block;
-	margin: $space-half 0;
 	width: 100%;
 }
 

@@ -127,27 +127,45 @@ padding, and sets a max-width.
 
 #### Bounds variants
 
-Class             | Description
------------------ | -------------------------------------
-`.bounds`         | standard bounds for any type of content
-`.bounds--form`   | bounds for wrapping forms; applies narrower measure
+Class                  | Description
+---------------------- | -------------------------------------
+`.bounds`              | standard (narrow) bounds for any type of content
+`.bounds--wide`        | bounds for wrapping wider content, such as gridList
+`.bounds--sideHeader`  | bounds for wrapping standard (narrow) content, offset by labels to the side at wide widths
+
 */
+
+$space-bounds: $space * 1.5;
+
 .bounds {
 	@extend %clearfix;
 	box-sizing: border-box;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: $bounds;
-	padding: $space;
+	padding: $space-bounds $space ($space-bounds - $space); // subtract for .chunk at bottom
 	width: 100%;
 }
 
-/*
-// should get handled by side titles now
-.bounds--form {
-	max-width: $form-max-width;
+.bounds--wide{
+	max-width: $bounds-wide;
 }
-*/
+
+.bounds--sideHeader{
+	$gutter: $bounds-wide - $bounds;
+	max-width: $bounds-wide;
+	@include atMediaUp(large) {
+		padding-left: $gutter + $space;
+		position: relative;
+		.stripe-header{
+			position: absolute;
+			top: $space-bounds;
+			left: $space;
+			width: $gutter - $space-bounds;
+		}
+	}
+}
+
 
 /*doc
 ---
@@ -176,6 +194,7 @@ or a group of elements.
 */
 .chunk {
 	@extend %clearfix;
+	display: block;
 	margin-bottom: $space;
 }
 
