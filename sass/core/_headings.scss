@@ -90,7 +90,7 @@ Display text for header hero elements.
 */
 .text--display {
 	color: $C_textPrimary;
-	font-size: $font-size-display1;
+	font-size: $font-size-display2;
 	font-weight: normal;
 	line-height: 1.25;
 	.inverted &{
@@ -100,6 +100,6 @@ Display text for header hero elements.
 
 @include atMediaUp(medium) {
 	.text--display {
-		font-size: $font-size-display2;
+		font-size: $font-size-display1;
 	}
 }
