@@ -32,7 +32,7 @@
 			<ul>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a href="modifiers.html">Modifiers</a>
+						<a class="followLink" href="modifiers.html">Modifiers</a>
 						
 							<ul>
 								
@@ -40,7 +40,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#alignMod">Alignment</a>
+											<a class="followLink" href="#alignMod">Alignment</a>
 										</li>
 									
 
@@ -49,7 +49,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#animMod">Animation</a>
+											<a class="followLink" href="#animMod">Animation</a>
 										</li>
 									
 
@@ -58,7 +58,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#backgroundMod">Background</a>
+											<a class="followLink" href="#backgroundMod">Background</a>
 										</li>
 									
 
@@ -72,7 +72,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#borderMod">Borders</a>
+											<a class="followLink" href="#borderMod">Borders</a>
 										</li>
 									
 
@@ -81,7 +81,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#displayMod">Display</a>
+											<a class="followLink" href="#displayMod">Display</a>
 										</li>
 									
 
@@ -90,7 +90,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#floatMod">Float</a>
+											<a class="followLink" href="#floatMod">Float</a>
 										</li>
 									
 
@@ -99,7 +99,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#keepAspect">Aspect ratio helper</a>
+											<a class="followLink" href="#keepAspect">Aspect ratio helper</a>
 										</li>
 									
 
@@ -108,7 +108,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#mediaMod">Media-conditional modifiers</a>
+											<a class="followLink" href="#mediaMod">Media-conditional modifiers</a>
 										</li>
 									
 
@@ -117,7 +117,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#sizeMod">Media Sizing</a>
+											<a class="followLink" href="#sizeMod">Media Sizing</a>
 										</li>
 									
 
@@ -126,7 +126,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#thumb">Thumbnails</a>
+											<a class="followLink" href="#thumb">Thumbnails</a>
 										</li>
 									
 
@@ -135,7 +135,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#typespaceMod">Type wrap/whitespace</a>
+											<a class="followLink" href="#typespaceMod">Type wrap/whitespace</a>
 										</li>
 									
 
@@ -145,17 +145,17 @@
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a href="ui_components.html">UI Components</a>
+						<a class="followLink" href="ui_components.html">UI Components</a>
 						
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a href="core.html">Core</a>
+						<a class="followLink" href="core.html">Core</a>
 						
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a href="sass_utilities.html">Sass Utilities</a>
+						<a class="followLink" href="sass_utilities.html">Sass Utilities</a>
 						
 					</li>
 				
@@ -386,6 +386,13 @@ a modification at a specific breakpoint.</p>
 <script type="text/javascript" src="js/lunr.min.js"></script>
 <script type="text/javascript">
 $(function() {
+	// Disable links by default
+	$('a').click(function(e) {
+		if ( $(this).hasClass('followLink') ) return;
+		e.preventDefault();
+	});
+
+
 	var index = lunr(function() {
 		this.field('title', {boost: 10});
 		this.field('breadcrumb');

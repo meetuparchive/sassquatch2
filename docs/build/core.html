@@ -32,17 +32,17 @@
 			<ul>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a href="modifiers.html">Modifiers</a>
+						<a class="followLink" href="modifiers.html">Modifiers</a>
 						
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a href="ui_components.html">UI Components</a>
+						<a class="followLink" href="ui_components.html">UI Components</a>
 						
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a href="core.html">Core</a>
+						<a class="followLink" href="core.html">Core</a>
 						
 							<ul>
 								
@@ -50,7 +50,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#forms">Forms</a>
+											<a class="followLink" href="#forms">Forms</a>
 										</li>
 									
 
@@ -59,56 +59,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#layout">Layout</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a href="#typesetting">Typesetting</a>
+											<a class="followLink" href="#layout">Layout</a>
 										</li>
 									
 
@@ -156,6 +107,55 @@
 
 									
 									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#typesetting">Typesetting</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
 
 								
 
@@ -177,7 +177,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a href="#views">Views</a>
+											<a class="followLink" href="#views">Views</a>
 										</li>
 									
 
@@ -197,7 +197,7 @@
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a href="sass_utilities.html">Sass Utilities</a>
+						<a class="followLink" href="sass_utilities.html">Sass Utilities</a>
 						
 					</li>
 				
@@ -857,6 +857,13 @@ hero headers).</p>
 <script type="text/javascript" src="js/lunr.min.js"></script>
 <script type="text/javascript">
 $(function() {
+	// Disable links by default
+	$('a').click(function(e) {
+		if ( $(this).hasClass('followLink') ) return;
+		e.preventDefault();
+	});
+
+
 	var index = lunr(function() {
 		this.field('title', {boost: 10});
 		this.field('breadcrumb');

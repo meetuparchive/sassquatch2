@@ -1094,7 +1094,7 @@ Display text for header hero elements.
 .text--graphic,
 .text--display {
   color: rgba(0, 0, 0, 0.87);
-  font-size: 56px;
+  font-size: 32px;
   font-weight: normal;
   line-height: 1.25; }
   .inverted .text--graphic, .inverted
@@ -1104,7 +1104,7 @@ Display text for header hero elements.
 @media only screen and (max-width: 440px) {
   .text--graphic,
   .text--display {
-    font-size: 32px; } }
+    font-size: 56px; } }
 /*doc
 ---
 title: Graphic text
