@@ -32,7 +32,7 @@
 			<ul>
 				<% @categories.each do |category, file_name| %>
 					<li class="display--inlineBlock--mediumDown">
-						<a href="<%= file_name %>"><%= category %></a>
+						<a class="followLink" href="<%= file_name %>"><%= category %></a>
 						<% if title == category %>
 							<ul>
 								<% @blocks.each do |b| %>
@@ -40,7 +40,7 @@
 									<%# Only put top-level blocks in this list %>
 									<% if b[:parent].nil? %>
 										<li class="display--inline--mediumDown">
-											<a href="#<%= b[:name] %>"><%= b[:title] %></a>
+											<a class="followLink" href="#<%= b[:name] %>"><%= b[:title] %></a>
 										</li>
 									<% end %>
 

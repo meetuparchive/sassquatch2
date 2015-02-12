@@ -2873,6 +2873,76 @@ _(The inline style on the card element is for documentation purposes only)_
 
 /*doc
 ---
+title: Tabs
+name: tabs
+category: UI Components
+---
+
+```html_example
+<nav>
+	<ul class="tabs">
+		<li class="tabs-tab"><a href="#">Tab One</a></li>
+		<li class="tabs-tab tabs-tab--selected"><a href="#">Tab Two</a></li>
+		<li class="tabs-tab"><a href="#">Tab Three</a></li>
+	</ul>
+</nav>
+```
+
+### Tabs (parent) variants
+A class of `tabs` is __required__. The following classes are
+optional variants:
+
+Class                 | Description
+--------------------- | -----------------------------
+`tabs--full`          | Makes tabs span the full width of their parent element
+
+
+### Tab (child) variants
+A class of `tabs-tab` is __required__ for tabs. The following classes
+are optional variants:
+
+Class                 | Description
+--------------------- | -----------------------------
+`tabs-tab--selected`  | Applies styles for tab selected state
+*/
+.tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block; }
+
+.tabs--full {
+  display: table;
+  table-layout: fixed;
+  width: 100%; }
+  .tabs--full .tabs-tab {
+    display: table-cell;
+    margin: 0;
+    text-align: center; }
+
+.tabs-tab {
+  color: rgba(0, 0, 0, 0.26);
+  padding: 0;
+  margin: 0 0 0 16px;
+  cursor: pointer;
+  display: inline-block;
+  border-bottom: 4px solid transparent; }
+  .tabs-tab:first-child {
+    margin-left: 0; }
+  .inverted .tabs-tab {
+    color: rgba(255, 255, 255, 0.3); }
+    .inverted .tabs-tab:hover {
+      color: rgba(255, 255, 255, 0.7); }
+    .inverted .tabs-tab.tabs-tab--selected {
+      color: white;
+      border-bottom-color: white; }
+
+.tabs-tab--selected {
+  color: #d55741;
+  border-bottom: 4px solid #d55741; }
+
+/*doc
+---
 title: Tearsheet
 name: tearsheet
 category: UI Components
@@ -3288,6 +3358,7 @@ Class                         | Description
 ----------------------------- | --------------------------------
 `.wrap--singleLine`           | forces text to a single line (nowrap)
 `.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+`.matchLineHeight`            | adds a small amount of top and bottom margin to a non-text element to match line height of nearby text
 
 */
 .wrap--singleLine--truncate,
@@ -3297,5 +3368,8 @@ Class                         | Description
 .wrap--singleLine--truncate {
   overflow: hidden !important;
   text-overflow: ellipsis !important; }
+
+.matchLineHeight {
+  margin: 3px inherit 3px inherit; }
 
 /*# sourceMappingURL=sassquatch.css.map */

@@ -63,6 +63,15 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a href="#tabs">Tabs</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a href="#tearsheet">Tearsheet</a>
 										</li>
 									
@@ -190,6 +199,56 @@ classes are optional variants:</p>
 <tr>
 <td><code>.button--small</code></td>
 <td>decreases size of button</td>
+</tr>
+</tbody></table>
+
+<h1 id="tabs">Tabs</h1>
+<div class="codeExample"><div class="exampleOutput"><nav>
+    <ul class="tabs">
+        <li class="tabs-tab"><a href="#">Tab One</a></li>
+        <li class="tabs-tab tabs-tab--selected"><a href="#">Tab Two</a></li>
+        <li class="tabs-tab"><a href="#">Tab Three</a></li>
+    </ul>
+</nav>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;nav&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"tabs"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabs-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Tab One<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabs-tab tabs-tab--selected"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Tab Two<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"tabs-tab"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Tab Three<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</pre></div></div></div>
+<h3>Tabs (parent) variants</h3>
+
+<p>A class of <code>tabs</code> is <strong>required</strong>. The following classes are
+optional variants:</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>tabs--full</code></td>
+<td>Makes tabs span the full width of their parent element</td>
+</tr>
+</tbody></table>
+
+<h3>Tab (child) variants</h3>
+
+<p>A class of <code>tabs-tab</code> is <strong>required</strong> for tabs. The following classes
+are optional variants:</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>tabs-tab--selected</code></td>
+<td>Applies styles for tab selected state</td>
 </tr>
 </tbody></table>
 
@@ -530,6 +589,16 @@ $(function() {
 					"title": "Buttons",
 					"breadcrumb": "UI Components > Buttons",
 					"path": "ui_components.html#buttons"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Tabs",
+					"breadcrumb": "UI Components > Tabs",
+					"path": "ui_components.html#tabs"
 				});
 
 			

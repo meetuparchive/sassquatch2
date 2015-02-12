@@ -41,12 +41,14 @@
 	// Views
 	@import "core/view"; // TODO: this is a WIP partial - change to _view when done
 
+
 // ---------------------------
 // UI Components
 // ---------------------------
 	@import "ui-components/avatar";
 	@import "ui-components/buttons";
 	@import "ui-components/card";
+	@import "ui-components/tabs";
 	@import "ui-components/tearsheet";
 	@import "ui-components/toggle-pill";
 
