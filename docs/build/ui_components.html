@@ -240,52 +240,133 @@ classes are optional variants:</p>
 
 <p>Card-like boxes.</p>
 
-<h2>Standard card</h2>
+<h2>Standard, Group, and Event cards</h2>
 
-<p>Card with base styles</p>
+<p>(This example uses <code>gridList</code>, but cards may placed anywhere)</p>
 <div class="codeExample"><div class="exampleOutput"><section class="stripe--collection">
-    <div class="card">
-        <h4>Look at this card</h4>
-        <p>Just <em>look at it</em></p>
+    <div class="bounds">
+        <ul class="gridList gridList--has1 atMedium_gridList--has3">
+
+            <!-- Base card styles -->
+            <li>
+                <div class="card">
+                    <h4>Look at this card</h4>
+                    <p>Just <em>look at it</em></p>
+                </div>
+            </li>
+
+            <!-- Group card -->
+            <li>
+                <div class="card inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+                    <h4>I'm a group card</h4>
+                </div>
+            </li>
+
+            <!-- Event card -->
+            <li>
+                <div class="card card--event">
+                    <h4>I'm an event card</h4>
+                </div>
+            </li>
+        </ul>
     </div>
 </section>
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--collection"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h4&gt;</span>Look at this card<span class="nt">&lt;/h4&gt;</span>
-        <span class="nt">&lt;p&gt;</span>Just <span class="nt">&lt;em&gt;</span>look at it<span class="nt">&lt;/em&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"gridList gridList--has1 atMedium_gridList--has3"</span><span class="nt">&gt;</span>
+
+            <span class="c">&lt;!-- Base card styles --&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4&gt;</span>Look at this card<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>Just <span class="nt">&lt;em&gt;</span>look at it<span class="nt">&lt;/em&gt;&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+
+            <span class="c">&lt;!-- Group card --&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card inverted"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4&gt;</span>I'm a group card<span class="nt">&lt;/h4&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+
+            <span class="c">&lt;!-- Event card --&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card card--event"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4&gt;</span>I'm an event card<span class="nt">&lt;/h4&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </pre></div></div></div>
-<h2>Card with photo background</h2>
+<h3>Event card detail</h3>
 
-<p>Group-style card</p>
+<p>An example of a full event card, with inner content
+composed of other Sassquatch2 components.</p>
+
+<p><em>(The inline style on the card element is for documentation purposes only)</em></p>
 <div class="codeExample"><div class="exampleOutput"><section class="stripe--collection">
-    <div class="card inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
-        <h4>Look at this card</h4>
-        <p>Just <em>look at it</em></p>
-    </div>
+    <a href="#" class="chunk card card--event" style="margin: 16px; max-width: 200px;">
+
+        <div class="row row--spaceBetween row--wrap">
+            <div class="row-item row-item--shrink">
+                <h2 class="text--graphic display--inlineBlock">21</h2>
+                <h2>Feb</h2>
+            </div>
+
+            <div class="row-item row-item--shrink align--right">
+                <p class="text--caption">No spots left</p>
+            </div>
+        </div>
+
+        <div class="chunk eventInfo-primary">
+            <p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+            <h3>Backpacking For Beginners</h3>
+
+            <ul class="inlineblockList matchLineHeight">
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="text--caption">+8</li>
+            </ul>
+        </div>
+    </a>
 </section>
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--collection"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card inverted"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h4&gt;</span>Look at this card<span class="nt">&lt;/h4&gt;</span>
-        <span class="nt">&lt;p&gt;</span>Just <span class="nt">&lt;em&gt;</span>look at it<span class="nt">&lt;/em&gt;&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/section&gt;</span>
-</pre></div></div></div>
-<h2>Event card</h2>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"chunk card card--event"</span> <span class="na">style=</span><span class="s">"margin: 16px; max-width: 200px;"</span><span class="nt">&gt;</span>
 
-<p>You know, for meetups.</p>
-<div class="codeExample"><div class="exampleOutput"><section class="stripe--collection">
-    <div class="card card--event">
-        <h3 class="text--graphic">06</h4>
-        <p>event stuff TK</p>
-    </div>
-</section>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--collection"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card card--event"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"text--graphic"</span><span class="nt">&gt;</span>06<span class="nt">&lt;/h4&gt;</span>
-        <span class="nt">&lt;p&gt;</span>event stuff TK<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--spaceBetween row--wrap"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"text--graphic display--inlineBlock"</span><span class="nt">&gt;</span>21<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>Feb<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink align--right"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>No spots left<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk eventInfo-primary"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate chunk text--secondary"</span><span class="nt">&gt;</span>Saturday at 2:00 pm<span class="nt">&lt;/p&gt;</span>
+
+            <span class="nt">&lt;h3&gt;</span>Backpacking For Beginners<span class="nt">&lt;/h3&gt;</span>
+
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList matchLineHeight"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>+8<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </pre></div></div></div>	</main>
 	</section>
