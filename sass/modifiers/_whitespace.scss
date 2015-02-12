@@ -10,6 +10,7 @@ Class                         | Description
 ----------------------------- | --------------------------------
 `.wrap--singleLine`           | forces text to a single line (nowrap)
 `.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+`.matchLineHeight`            | adds a small amount of top and bottom margin to a non-text element to match line height of nearby text
 
 */
 %wrap--singleLine,
@@ -20,4 +21,8 @@ Class                         | Description
 	@extend %wrap--singleLine;
 	overflow: hidden !important;
 	text-overflow: ellipsis !important;
+}
+
+.matchLineHeight {
+	margin: 3px inherit 3px inherit;
 }
