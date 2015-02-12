@@ -98,7 +98,7 @@ Display text for header hero elements.
 	}
 }
 
-@include atMediaDown(small) {
+@include atMediaUp(medium) {
 	.text--display {
 		font-size: $font-size-display2;
 	}
