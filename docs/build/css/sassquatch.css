@@ -1081,16 +1081,41 @@ parent: typesetting
 
 /*doc
 ---
-title: Text graphic
+title: Display text
+name: displayText
+parent: typesetting
+---
+Display text for header hero elements.
+
+```html_example
+<h1 class="text--display">The hero gotham deserves</h1>
+```
+*/
+.text--graphic,
+.text--display {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 56px;
+  font-weight: normal;
+  line-height: 1.25; }
+  .inverted .text--graphic, .inverted
+  .text--display {
+    color: white; }
+
+@media only screen and (max-width: 440px) {
+  .text--graphic,
+  .text--display {
+    font-size: 32px; } }
+/*doc
+---
+title: Graphic text
 name: textGraphic
 parent: typesetting
 ---
-
 Useful when using large text in a graphical way.
 Cuts line height to give the glyph spacing similar to that of an image or icon.
 
 ```html_example
-<p class="text--display text--graphic">102</p>
+<p class="text--graphic">102</p>
 <p>Miles per hour</p>
 ```
 */
@@ -1263,29 +1288,6 @@ h3, h4, h5, h6,
   .text--heading {
     color: white; }
 
-/*doc
----
-title: Display text
-name: displayText
-parent: typesetting
----
-Display text for header hero elements.
-
-```html_example
-<h1 class="text--display">The hero gotham deserves</h1>
-```
-*/
-.text--display {
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 56px;
-  font-weight: normal;
-  line-height: 1.25; }
-  .inverted .text--display {
-    color: white; }
-
-@media only screen and (max-width: 440px) {
-  .text--display {
-    font-size: 32px; } }
 ul, ol,
 .list--reset {
   list-style: none;
@@ -2784,7 +2786,7 @@ Group-style card
 
 ```html_example
 <section class="stripe--collection">
-	<div class="card">
+	<div class="card inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
 		<h4>Look at this card</h4>
 		<p>Just <em>look at it</em></p>
 	</div>
