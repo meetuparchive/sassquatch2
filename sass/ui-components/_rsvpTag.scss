@@ -6,6 +6,14 @@ category: UI Components
 ---
 Status tags for RSVP.
 
+```html_example
+<div class="rsvpTag rsvpTag--yes">Going</div>
+<div class="rsvpTag rsvpTag--no">Not going</div>
+<div class="rsvpTag rsvpTag--waiting">Waiting</div>
+```
+
+
+## Variants
 A class of `rsvpTag` is __required__.
 Variant classes:
 
