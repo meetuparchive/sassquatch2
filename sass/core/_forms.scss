@@ -11,18 +11,28 @@ TK: better docs
 
 ```html_example
 <div class="chunk">
-	<label>I'm a label</label>
-	<input type="text" value="Text input with value" />
+	<label for="test-textinput">I'm a label</label>
+	<input id="test-textinput" type="text" value="Text input with value" />
 </div>
 
 <div class="chunk">
-	<label>Just another label</label>
-	<input type="text" placeholder="Text input with placeholder" />
+	<label for="test-textinput2">Just another label</label>
+	<input id="test-textinput2" type="text" placeholder="Text input with placeholder" />
 </div>
 
 <div class="chunk">
-	<label>Here's an area for your text</label>
-	<textarea></textarea>
+	<label for="test-textarea"l>Here's an area for your text</label>
+	<textarea id="test-textarea"></textarea>
+</div>
+
+<div class="chunk">
+	<label for="test-select">What is this?</label>
+	<select id="text-select">
+		<option value="One">One</option>
+		<option value="Two">Two</option>
+		<option value="Three">Three</option>
+		<option value="Four">Four</option>
+	</select>
 </div>
 ```
 
@@ -84,10 +94,10 @@ select,
 		}
 		*/
 	}
-	
+
 	.shaded & {
 		// when on an already gray background, don't get gray-er
-		background-color: white;		
+		background-color: white;
 	}
 }
 
