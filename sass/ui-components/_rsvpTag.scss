@@ -1,0 +1,38 @@
+/*doc
+---
+title: RSVP Tags
+name: tag
+category: UI Components
+---
+Status tags for RSVP.
+
+A class of `rsvpTag` is __required__.
+Variant classes:
+
+Class                | Description
+-------------------- | --------------------------
+`rsvpTag--yes`       | indicates "yes" RSVP status
+`rsvpTag--no`        | indicates "no" RSVP status
+`rsvpTag--waiting`   | indicates waitlist RSVP status
+*/
+
+.rsvpTag {
+	border-radius: $defaultRadius;
+	color: $C_textPrimaryInverted;
+	display: inline-block;
+	padding: $space-quarter;
+	text-transform: capitalize;
+}
+
+.rsvpTag--yes {
+	background: $C_green; //probably shouldn't use actual color name for this var..
+}
+
+.rsvpTag--no {
+	background: $C_collectionBGLight;
+	color: $C_textPrimary;
+}
+
+.rsvpTag--waiting {
+	background: $C_contentBGInverted;
+}

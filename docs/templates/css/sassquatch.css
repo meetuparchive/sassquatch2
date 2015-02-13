@@ -3007,24 +3007,37 @@ Class                 | Description
 
 /*doc
 ---
-title: Tags
+title: RSVP Tags
 name: tag
 category: UI Components
 ---
+Status tags for RSVP.
+
+A class of `rsvpTag` is __required__.
+Variant classes:
+
+Class                | Description
+-------------------- | --------------------------
+`rsvpTag--yes`       | indicates "yes" RSVP status
+`rsvpTag--no`        | indicates "no" RSVP status
+`rsvpTag--waiting`   | indicates waitlist RSVP status
 */
-.tag {
+.rsvpTag {
   border-radius: 3px;
   color: white;
   display: inline-block;
   padding: 4px;
   text-transform: capitalize; }
-  .tag--yes {
-    background: #8cbf6a; }
-  .tag--no {
-    background: #f3f6f9;
-    color: rgba(0, 0, 0, 0.87); }
-  .tag--waitlist {
-    background: #353e48; }
+
+.rsvpTag--yes {
+  background: #8cbf6a; }
+
+.rsvpTag--no {
+  background: #f3f6f9;
+  color: rgba(0, 0, 0, 0.87); }
+
+.rsvpTag--waiting {
+  background: #353e48; }
 
 /*doc
 ---
