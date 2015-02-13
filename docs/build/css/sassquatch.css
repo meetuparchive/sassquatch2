@@ -3007,6 +3007,27 @@ Class                 | Description
 
 /*doc
 ---
+title: Tags
+name: tag
+category: UI Components
+---
+*/
+.tag {
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  padding: 4px;
+  text-transform: capitalize; }
+  .tag--yes {
+    background: #8cbf6a; }
+  .tag--no {
+    background: #f3f6f9;
+    color: rgba(0, 0, 0, 0.87); }
+  .tag--waitlist {
+    background: #353e48; }
+
+/*doc
+---
 title: Tearsheet
 name: tearsheet
 category: UI Components
