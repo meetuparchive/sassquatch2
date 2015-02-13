@@ -21,63 +21,21 @@ category: UI Components
 	</li>
 </ul>
 ```
+
+## Avatar variants
+A base class of `avatar` is __required__. The following classes are
+optional variants:
+
+Class                     | Description
+------------------------- | ------------------------------------
+`avatar--small`           | Adjusts avatar size to the smallest media size
+`avatar--big`             | Adjusts avatar size to the biggest media size
+`avatar--person`          | Variant for people
+`avatar--org`             | Variant for organizers
+`avatar--fbFriend`        | Variant for facebook friends
+`avatar--icon`            | For icons in avatars (might move this in a later version)
 */
 
-//
-// Avatar base
-//
-%avatar,
-.avatar {
-	@extend %imgFill;
-	background-color: $C_collectionBGLight;
-	background-position: center 42%;
-	display: inline-block;
-	font-size: $media-s * 2/3;
-	height: $media-s;
-	text-indent: 100%;
-	white-space: nowrap;
-	vertical-align: top;
-	width: $media-s;
-
-	@include atMediaUp(small) {
-		font-size: $media-m;
-		height: $media-m;
-		width: $media-m;
-	}
-
-}
-
-
-//
-// Size variants
-//
-.avatar--small {
-	font-size: $media-xs;
-	height: $media-xs;
-	width: $media-xs;
-}
-.avatar--big {
-	font-size: $media-l * 2/3;
-	height: $media-xl;
-	width: $media-xl;
-}
-
-
-//
-// Type variants
-//
-.avatar--person {
-	@extend %avatar;
-	vertical-align: middle;
-	border-radius: 999px;
-	box-sizing: border-box;
-}
-
-
-//
-// Extras
-//
-// TODO: fix selectors
 %avatarCharm {
 	position: relative;
 	overflow: visible;
@@ -102,7 +60,54 @@ category: UI Components
 	}
 }
 
-.avatar--fb-friend {
+%avatar,
+.avatar {
+	@extend %imgFill;
+	background-color: $C_collectionBGLight;
+	background-position: center 42%;
+	display: inline-block;
+	font-size: $media-s * 2/3;
+	height: $media-s;
+	text-indent: 100%;
+	white-space: nowrap;
+	vertical-align: top;
+	width: $media-s;
+
+	@include atMediaUp(small) {
+		font-size: $media-m;
+		height: $media-m;
+		width: $media-m;
+	}
+
+}
+
+//
+// Size variants
+//
+.avatar--small {
+	font-size: $media-xs;
+	height: $media-xs;
+	width: $media-xs;
+}
+.avatar--big {
+	font-size: $media-l * 2/3;
+	height: $media-xl;
+	width: $media-xl;
+}
+
+//
+// Type variants
+//
+.avatar--person {
+	@extend %avatar;
+	vertical-align: middle;
+	border-radius: 999px;
+	box-sizing: border-box;
+}
+
+
+
+.avatar--fbFriend {
 	@extend %avatarCharm;
 	&:after {
 		background-color: $C_facebook;
@@ -117,5 +122,31 @@ category: UI Components
 		@extend %backgroundImg--orgBadge;
 		background-color: $C_accent;
 		color: $C_textPrimaryInverted;
+	}
+}
+
+.avatar--icon {
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+	background: $C_collectionBGLight;
+	border-radius: 999px;
+	box-sizing: border-box;
+	height: $media-s;
+	font-size: $font-size;
+	line-height: $media-s;
+	padding: $space-half;
+	text-align: center;
+	width: $media-s;
+
+	img {
+		width: 100%;
+	}
+
+	@include atMediaUp(small) {
+		height: $media-m;
+		line-height: $media-m;
+		padding: 12px;
+		width: $media-m;
 	}
 }
