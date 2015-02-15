@@ -12,15 +12,28 @@ Documentation is built to [github pages](http://meetup.github.io/sassquatch2/cor
 
 ---
 
-## Source plan
+## Installation
+Manage installation via bower:
 
-File or [Directory]        | Description
----------------------------| --------------------------------------------------------------------------
-`base.scss`                | Main Sass file; includes all partials
-`_globals.scss`            | Defines all global variables
-`_util.scss`               | Includees all helper partials ("silent", non-ouputting scss)
-[`util/`]                  | Contains helper paritals organized by function (ie. `_breakpoints.scss`)
-[`util/functions/`]        | Contains only sass function partials, organized by function (ie. `_stringUtils.scss`)
-[`core/`]                  | Contains core low level styling partials (ie. `_layout.scss`, `_tables.scss`, etc)
-[`ui-components/`]         | Contains UI component partials (ie. `_tabView.scss`)
-[`modifiers/`]             | Contains modifier classes (ie. `_align.scss`)
+```json
+"dependencies": {
+  "sassquatch2": "git@github.com:meetup/sassquatch2.git#master",
+  ...
+  }
+```
+
+---
+
+## Development
+
+Clone this repo and run `./setup.sh`. 
+
+### Grunt tasks
+
+Command             | Result
+------------------- | -----------------------------
+`grunt`             | By default, grunt recompiles Sass and rebuilds Hologram docs
+`grunt sass`        | Recompiles Sass
+`grunt hologram`    | Rebuilds Hologram docs
+`grunt clean`       | Cleans compiled docs and CSS in `docs/build`
+`grunt ghpages`     | Cleans, rebuilds docs & css, and pushes `build/` from the __current branch__ to the gh-pages branch
