@@ -867,32 +867,6 @@ parent: bodyText
 
 /*doc
 ---
-title: Display text
-name: displayText
-parent: bodyText
----
-Display text for header hero elements.
-
-```html_example
-<h1 class="text--display">The hero gotham deserves</h1>
-```
-*/
-.text--graphic,
-.text--display {
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 32px;
-  font-weight: normal;
-  line-height: 1.25; }
-  .inverted .text--graphic, .inverted
-  .text--display {
-    color: white; }
-
-@media only screen and (max-width: 440px) {
-  .text--graphic,
-  .text--display {
-    font-size: 56px; } }
-/*doc
----
 title: Graphic text
 name: textGraphic
 parent: bodyText
@@ -1061,6 +1035,32 @@ h3, h4, h5, h6 {
   .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
     color: white; }
 
+/*doc
+---
+title: Display text
+name: displayText
+parent: headings
+---
+Display text for header hero elements.
+
+```html_example
+<h1 class="text--display">The hero gotham deserves</h1>
+```
+*/
+.text--graphic,
+.text--display {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.25; }
+  .inverted .text--graphic, .inverted
+  .text--display {
+    color: white; }
+
+@media only screen and (max-width: 440px) {
+  .text--graphic,
+  .text--display {
+    font-size: 56px; } }
 /*doc
 ---
 title: Basic Inputs

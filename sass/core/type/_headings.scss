@@ -60,3 +60,32 @@ h3, h4, h5, h6 {
 		color: $C_textPrimaryInverted;
 	}
 }
+
+/*doc
+---
+title: Display text
+name: displayText
+parent: headings
+---
+Display text for header hero elements.
+
+```html_example
+<h1 class="text--display">The hero gotham deserves</h1>
+```
+*/
+%text--display,
+.text--display {
+	color: $C_textPrimary;
+	font-size: $font-size-display2;
+	font-weight: normal;
+	line-height: 1.25;
+	.inverted &{
+		color: $C_textPrimaryInverted;
+	}
+}
+@include atMediaDown(small) {
+	%text--display,
+	.text--display {
+		font-size: $font-size-display1;
+	}
+}
