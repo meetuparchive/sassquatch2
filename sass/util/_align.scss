@@ -2,7 +2,7 @@
 ---
 title: Alignment Utilities
 name: align
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 
@@ -10,8 +10,8 @@ parent: mixinsPlaceholders
 /*doc
 ---
 title: Vertical-align children
-name: align
-parent: mixinsPlaceholders
+name: valign
+parent: align
 ---
 __Try to avoid using for essential, non-decorative things__
 Aligns children of selected element using flexbox.

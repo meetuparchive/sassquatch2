@@ -14,16 +14,9 @@
  */
 /*doc
 ---
-title: Sass Functions
-name: functions
-category: Sass Utilities
----
-*/
-/*doc
----
 title: String utils
 name: string
-parent: functions
+category: Sass Utils | Functions
 ---
 */
 /*doc
@@ -62,7 +55,7 @@ str-replace('inline-block', '-', '') // -> 'inlineblock'
 ---
 title: Contrast/brightness utils
 name: brightness
-parent: functions
+category: Sass Utils | Functions
 ---
 */
 /*doc
@@ -118,16 +111,9 @@ color: getPrimaryTextColor(#FFF);
 */
 /*doc
 ---
-title: Sass Mixins & Placeholders
-name: mixinsPlaceholders
-category: Sass Utilities
----
-*/
-/*doc
----
 title: Animation
 name: animation
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 .toggleButton-input:checked + .toggleButton-label, .animate--bounceInSubtle, .animate--spin {
@@ -324,14 +310,14 @@ Infinite 2d rotation; 0-360deg.
 ---
 title: Alignment Utilities
 name: align
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc
 ---
 title: Vertical-align children
-name: align
-parent: mixinsPlaceholders
+name: valign
+parent: align
 ---
 __Try to avoid using for essential, non-decorative things__
 Aligns children of selected element using flexbox.
@@ -383,206 +369,9 @@ Aligns children of selected element using flexbox.
 
 /*doc
 ---
-title: Animation
-name: animation
-parent: mixinsPlaceholders
----
-*/
-.toggleButton-input:checked + .toggleButton-label, .animate--bounceInSubtle, .animate--spin {
-  -webkit-transform-origin: center center;
-  -ms-transform-origin: center center;
-  transform-origin: center center; }
-
-/*doc
----
-title: Subtle bounce-in
-name: bounce-in-subtle
-parent: animation
----
-Subtle bounce effect using keyframes, provided via simple mixin
-_original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
-
-```
-@include animate--bounce-in-subtle($time: 750ms);
-```
-*/
-@-webkit-keyframes bounce-in-subtle {
-  0% {
-    -webkit-transform: matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  4.347826% {
-    -webkit-transform: matrix3d(1.12578, 0, 0, 0, 0, 1.12578, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  8.695652% {
-    -webkit-transform: matrix3d(1.03988, 0, 0, 0, 0, 1.03988, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  13.043478% {
-    -webkit-transform: matrix3d(0.99652, 0, 0, 0, 0, 0.99652, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  17.391304% {
-    -webkit-transform: matrix3d(0.98266, 0, 0, 0, 0, 0.98266, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  21.73913% {
-    -webkit-transform: matrix3d(0.98376, 0, 0, 0, 0, 0.98376, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  26.086957% {
-    -webkit-transform: matrix3d(0.98967, 0, 0, 0, 0, 0.98967, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  30.434783% {
-    -webkit-transform: matrix3d(0.99524, 0, 0, 0, 0, 0.99524, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  34.782609% {
-    -webkit-transform: matrix3d(0.99879, 0, 0, 0, 0, 0.99879, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  39.130435% {
-    -webkit-transform: matrix3d(1.00043, 0, 0, 0, 0, 1.00043, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  43.478261% {
-    -webkit-transform: matrix3d(1.00086, 0, 0, 0, 0, 1.00086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  47.826087% {
-    -webkit-transform: matrix3d(1.00071, 0, 0, 0, 0, 1.00071, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  52.173913% {
-    -webkit-transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  56.521739% {
-    -webkit-transform: matrix3d(1.00017, 0, 0, 0, 0, 1.00017, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  60.869565% {
-    -webkit-transform: matrix3d(1.00003, 0, 0, 0, 0, 1.00003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  65.217391% {
-    -webkit-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  69.565217% {
-    -webkit-transform: matrix3d(0.99996, 0, 0, 0, 0, 0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  73.913043% {
-    -webkit-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  78.26087% {
-    -webkit-transform: matrix3d(0.99998, 0, 0, 0, 0, 0.99998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  82.608696% {
-    -webkit-transform: matrix3d(0.99999, 0, 0, 0, 0, 0.99999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  86.956522% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  91.304348% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  95.652174% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  100% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
-@keyframes bounce-in-subtle {
-  0% {
-    -webkit-transform: matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.25, 0, 0, 0, 0, 1.25, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  4.347826% {
-    -webkit-transform: matrix3d(1.12578, 0, 0, 0, 0, 1.12578, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.12578, 0, 0, 0, 0, 1.12578, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.12578, 0, 0, 0, 0, 1.12578, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  8.695652% {
-    -webkit-transform: matrix3d(1.03988, 0, 0, 0, 0, 1.03988, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.03988, 0, 0, 0, 0, 1.03988, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.03988, 0, 0, 0, 0, 1.03988, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  13.043478% {
-    -webkit-transform: matrix3d(0.99652, 0, 0, 0, 0, 0.99652, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.99652, 0, 0, 0, 0, 0.99652, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.99652, 0, 0, 0, 0, 0.99652, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  17.391304% {
-    -webkit-transform: matrix3d(0.98266, 0, 0, 0, 0, 0.98266, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.98266, 0, 0, 0, 0, 0.98266, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.98266, 0, 0, 0, 0, 0.98266, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  21.73913% {
-    -webkit-transform: matrix3d(0.98376, 0, 0, 0, 0, 0.98376, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.98376, 0, 0, 0, 0, 0.98376, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.98376, 0, 0, 0, 0, 0.98376, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  26.086957% {
-    -webkit-transform: matrix3d(0.98967, 0, 0, 0, 0, 0.98967, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.98967, 0, 0, 0, 0, 0.98967, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.98967, 0, 0, 0, 0, 0.98967, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  30.434783% {
-    -webkit-transform: matrix3d(0.99524, 0, 0, 0, 0, 0.99524, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.99524, 0, 0, 0, 0, 0.99524, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.99524, 0, 0, 0, 0, 0.99524, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  34.782609% {
-    -webkit-transform: matrix3d(0.99879, 0, 0, 0, 0, 0.99879, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.99879, 0, 0, 0, 0, 0.99879, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.99879, 0, 0, 0, 0, 0.99879, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  39.130435% {
-    -webkit-transform: matrix3d(1.00043, 0, 0, 0, 0, 1.00043, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.00043, 0, 0, 0, 0, 1.00043, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.00043, 0, 0, 0, 0, 1.00043, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  43.478261% {
-    -webkit-transform: matrix3d(1.00086, 0, 0, 0, 0, 1.00086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.00086, 0, 0, 0, 0, 1.00086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.00086, 0, 0, 0, 0, 1.00086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  47.826087% {
-    -webkit-transform: matrix3d(1.00071, 0, 0, 0, 0, 1.00071, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.00071, 0, 0, 0, 0, 1.00071, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.00071, 0, 0, 0, 0, 1.00071, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  52.173913% {
-    -webkit-transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.00042, 0, 0, 0, 0, 1.00042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  56.521739% {
-    -webkit-transform: matrix3d(1.00017, 0, 0, 0, 0, 1.00017, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.00017, 0, 0, 0, 0, 1.00017, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.00017, 0, 0, 0, 0, 1.00017, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  60.869565% {
-    -webkit-transform: matrix3d(1.00003, 0, 0, 0, 0, 1.00003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1.00003, 0, 0, 0, 0, 1.00003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1.00003, 0, 0, 0, 0, 1.00003, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  65.217391% {
-    -webkit-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  69.565217% {
-    -webkit-transform: matrix3d(0.99996, 0, 0, 0, 0, 0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.99996, 0, 0, 0, 0, 0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.99996, 0, 0, 0, 0, 0.99996, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  73.913043% {
-    -webkit-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.99997, 0, 0, 0, 0, 0.99997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  78.26087% {
-    -webkit-transform: matrix3d(0.99998, 0, 0, 0, 0, 0.99998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.99998, 0, 0, 0, 0, 0.99998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.99998, 0, 0, 0, 0, 0.99998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  82.608696% {
-    -webkit-transform: matrix3d(0.99999, 0, 0, 0, 0, 0.99999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(0.99999, 0, 0, 0, 0, 0.99999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(0.99999, 0, 0, 0, 0, 0.99999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  86.956522% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  91.304348% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  95.652174% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  100% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    -ms-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
-/*doc
----
-title: Infinite spin
-name: spin
-parent: animation
----
-Infinite 2d rotation; 0-360deg.
-
-```
-@include animate--spin($time: 0.8s);
-```
-*/
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg); } }
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-/*doc
----
 title: Background Utilities
 name: background
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc
@@ -625,7 +414,7 @@ _[ie. avatars][avatar]_
 ---
 title: Media Query Breakpoints
 name: breakpoints
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 
 ### Mobile first mixin
@@ -692,7 +481,7 @@ Breakpoint name        | Description
 ---
 title: Button utilities
 name: button
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc
@@ -723,7 +512,7 @@ Sets color properties for buttons
 ---
 title: data uri images
 name: datauri
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 Sassquatch image dependencies are stored
 as data uris in a Sass map.
@@ -754,7 +543,7 @@ Img Name            | Description
 ---
 title: Display utils
 name: display
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc
@@ -773,7 +562,7 @@ Sets display property for psuedo-elements
 ---
 title: Float utils
 name: float
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc
@@ -804,7 +593,7 @@ Clears floated children.
 ---
 title: Shadow utilities
 name: shadow
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc
@@ -823,7 +612,7 @@ Applies standard box-shadow
 ---
 title: Shapes
 name: shape
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc
@@ -842,7 +631,7 @@ Makes selected element a circle with border-radius
 ---
 title: Text utils
 name: text
-parent: mixinsPlaceholders
+category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc

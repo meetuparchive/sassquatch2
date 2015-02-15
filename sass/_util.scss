@@ -17,27 +17,18 @@
 @import "globals";
 
 
-/*doc
----
-title: Sass Functions
-name: functions
-category: Sass Utilities
----
-*/
+// ---------------------------
+// Sass Functions
+// ---------------------------
 @import "util/functions/string";
 @import "util/functions/brightness";
 
 
-/*doc
----
-title: Sass Mixins & Placeholders
-name: mixinsPlaceholders
-category: Sass Utilities
----
-*/
+// ---------------------------
+// Sass Mixins & Placeholders
+// ---------------------------
 @import "util/animation";
 @import "util/align";
-@import "util/animation";
 @import "util/background";
 @import "util/breakpoint";
 @import "util/button";
