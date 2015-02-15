@@ -1,0 +1,26 @@
+/*doc
+---
+title: Launcher
+name: launcher
+category: Forms
+---
+
+TK
+*/
+
+.launcher {
+	@extend %_formFont;
+	@extend %_formDecoration;
+	@extend %backgroundImg--launcher;
+	background-position: center right #{$space-quarter};
+	background-repeat: no-repeat;
+}
+
+.launcher-placeholder {
+	font-style: normal;
+	color: $C_textTertiary;
+	.inverted &{
+		color: $C_textTertiaryInverted;
+	}
+}
+

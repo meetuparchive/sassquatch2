@@ -1,0 +1,88 @@
+/*doc
+---
+title: Radios
+name: radio
+category: Forms
+---
+
+TK
+*/
+
+// TODO: needs a lot of selector refactoring.
+//
+/* RADIOS */
+//
+.radio[type=radio] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	display: inline-block;
+	height: $font-size;
+	margin: 0 $space 0 0;
+	position: relative;
+	top: 0;
+	width: $font-size;
+	z-index: 0;
+
+	&:before {
+		@include transition (transform, 100ms, $ease-out-quad);
+		@include transform(scale(0,0));
+
+		content: "";
+
+		position: absolute;
+		top: em(3);
+		left: em(2);
+		z-index: 1;
+
+		width: em(12);
+		height: em(12);
+
+		background: $C_link;
+
+		border-radius: 999px;
+	}
+
+	&:checked, &:active {
+		&:before {
+			@include transform(scale(1,1));
+		}
+	}
+
+	&:after {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		left: em(-1);
+
+		width: 100%;
+		height: 100%;
+
+		background: $C_contentBG;
+
+		border: 1px solid $C_textTertiary;
+		border-radius: 999px;
+	}
+
+	&:checked, &:hover, &:focus {
+		outline: none;
+		&:after {
+			border: 1px solid $C_link;
+		}
+	}
+}
+
+// INVERTED RADIO INPUT
+.inverted {
+	.radio[type=radio] {
+		&:after {
+			background: $C_contentBGInverted;
+			border: 1px solid $C_textSecondaryInverted;
+		}
+		&:hover, &:focus {
+			&:after {
+				border: 1px solid $C_textPrimaryInverted;
+			}
+		}
+	}
+}

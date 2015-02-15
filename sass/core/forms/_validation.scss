@@ -1,0 +1,22 @@
+/*doc
+---
+title: Validation errors
+name: formValidation
+category: Forms
+---
+
+TK
+*/
+
+//
+/* Validation */
+// ------------------------- //
+.hasError {
+  #{$all-text-inputs}, textarea, select {
+    border-color: $C_red;
+  }
+}
+.text--error {
+ color: $C_red;
+ margin-top: $space-quarter;
+}
