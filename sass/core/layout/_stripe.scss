@@ -37,8 +37,6 @@ Class                | Description
 -------------------- | ------------------------------------------------------------
 `.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
 `.stripe--collection`|  applies a light gray background; for use with card collections
-`.stripe--hero`      |  for hero header stripes
-`.stripe--photoHero` |  for hero header stripes; adds text protection
 */
 %stripe,
 .stripe {
@@ -58,6 +56,36 @@ Class                | Description
 	background-color: $C_contentBGInverted;
 }
 
+
+/*doc
+---
+title: Hero Stripes
+name: heroStripes
+parent: stripe
+---
+Special `stripe` variants are avaiable for
+"hero" header stripes.
+
+### Basic hero
+Uses the `stripe--hero` variant.
+
+```html_example
+<section class="stripe stripe--hero inverted">
+	<h4>better example TK</h4>
+</section>
+```
+
+### Photo hero
+Uses the `stripe--photoHero` variant.
+
+```html_example
+<section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
+	<h4>better example TK</h4>
+</section>
+```
+*/
+
+// TODO: photoHero variant to just --photo?
 %_heroStripe {
 	@extend %stripe;
 	background-color: $C_accent;
@@ -69,6 +97,7 @@ Class                | Description
 	position: relative;
 
 }
+
 .stripe--hero {
 	@extend %_heroStripe;
 }
@@ -77,4 +106,14 @@ Class                | Description
 	@include textProtectionScrim();
 }
 
+.stripe-heroContent {
+	@extend %valignChildren--bottom; // maybe try to align without this?
+	min-height: $block-6;
+	position: relative;
+	text-align: center;
+	max-width: $bounds-wide;
+	@include atMediaDown(medium) {
+		min-height: $block-5;
+	}
+}
 

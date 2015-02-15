@@ -134,6 +134,11 @@
 									
 
 								
+
+									
+									
+
+								
 							</ul>
 						
 					</li>
@@ -537,16 +542,33 @@ optional variants:</p>
 <td><code>.stripe--collection</code></td>
 <td>applies a light gray background; for use with card collections</td>
 </tr>
-<tr>
-<td><code>.stripe--hero</code></td>
-<td>for hero header stripes</td>
-</tr>
-<tr>
-<td><code>.stripe--photoHero</code></td>
-<td>for hero header stripes; adds text protection</td>
-</tr>
 </tbody></table>
-	</main>
+
+<h2 id="heroStripes">Hero Stripes</h2>
+
+<p>Special <code>stripe</code> variants are avaiable for
+&quot;hero&quot; header stripes.</p>
+
+<h3>Basic hero</h3>
+
+<p>Uses the <code>stripe--hero</code> variant.</p>
+<div class="codeExample"><div class="exampleOutput"><section class="stripe stripe--hero inverted">
+    <h4>better example TK</h4>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--hero inverted"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h4&gt;</span>better example TK<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div></div></div>
+<h3>Photo hero</h3>
+
+<p>Uses the <code>stripe--photoHero</code> variant.</p>
+<div class="codeExample"><div class="exampleOutput"><section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
+    <h4>better example TK</h4>
+</section>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--photoHero inverted"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h4&gt;</span>better example TK<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div></div></div>	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -1233,6 +1255,16 @@ $(function() {
 					"title": "Stripe",
 					"breadcrumb": "Layout > Stripe",
 					"path": "layout.html#stripe"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Hero Stripes",
+					"breadcrumb": "Layout > Hero Stripes",
+					"path": "layout.html#heroStripes"
 				});
 
 			

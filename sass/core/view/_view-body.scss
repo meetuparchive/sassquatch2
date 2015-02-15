@@ -1,0 +1,32 @@
+/*doc
+---
+title: View Body
+name: viewBody
+category: Views
+---
+The `view-body` element is our main
+content container for the view.
+
+```
+<div class="view">
+	<main class="view-body">
+		... stripes, bounds, etc ...
+		... all content ...
+	</main>
+</div>
+```
+*/
+.view-body {
+	.stripe:first-child {
+		padding-top: $view-head-height;
+		@include atMediaUp(large){
+			padding-top: $view-head-height-tablet;
+		}
+	}
+}
+.view-body {
+	.view--splitList & {
+		height: 100vh;
+		overflow: auto;
+	}
+}

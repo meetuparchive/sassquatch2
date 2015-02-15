@@ -1542,8 +1542,6 @@ Class                | Description
 -------------------- | ------------------------------------------------------------
 `.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
 `.stripe--collection`|  applies a light gray background; for use with card collections
-`.stripe--hero`      |  for hero header stripes
-`.stripe--photoHero` |  for hero header stripes; adds text protection
 */
 .stripe--collection, .stripe--inverted, .stripe--hero, .stripe--photoHero,
 .stripe {
@@ -1558,6 +1556,33 @@ Class                | Description
 .stripe--inverted {
   background-color: #353e48; }
 
+/*doc
+---
+title: Hero Stripes
+name: heroStripes
+parent: stripe
+---
+Special `stripe` variants are avaiable for
+"hero" header stripes.
+
+### Basic hero
+Uses the `stripe--hero` variant.
+
+```html_example
+<section class="stripe stripe--hero inverted">
+	<h4>better example TK</h4>
+</section>
+```
+
+### Photo hero
+Uses the `stripe--photoHero` variant.
+
+```html_example
+<section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
+	<h4>better example TK</h4>
+</section>
+```
+*/
 .stripe--hero, .stripe--photoHero {
   background-color: #d55741;
   background-size: cover;
@@ -1578,6 +1603,15 @@ Class                | Description
   width: 100%;
   z-index: 0;
   top: 0; }
+
+.stripe-heroContent {
+  min-height: 384px;
+  position: relative;
+  text-align: center;
+  max-width: 1100px; }
+  @media only screen and (max-width: 640px) {
+    .stripe-heroContent {
+      min-height: 240px; } }
 
 /*doc
 ---
@@ -2267,15 +2301,6 @@ content container for the view.
 .view--splitList .view-body {
   height: 100vh;
   overflow: auto; }
-
-.stripe-heroContent {
-  min-height: 384px;
-  position: relative;
-  text-align: center;
-  max-width: 1100px; }
-  @media only screen and (max-width: 640px) {
-    .stripe-heroContent {
-      min-height: 240px; } }
 
 .view--modal-full {
   -webkit-transform: translate3d(0, 0, 0);

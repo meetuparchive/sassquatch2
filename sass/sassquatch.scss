@@ -49,7 +49,10 @@
 	@import "core/layout/inlineblockList";
 
 	// Views
-	@import "core/view";
+	@import "core/view/view";
+	@import "core/view/view-head";
+	@import "core/view/view-body";
+	@import "core/view/modal";
 
 
 // ---------------------------
