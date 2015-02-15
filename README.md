@@ -38,4 +38,4 @@ Command             | Result
 `grunt sass`        | Recompiles Sass
 `grunt hologram`    | Rebuilds Hologram docs
 `grunt clean`       | Cleans compiled docs and CSS in `docs/build`
-`grunt ghpages`     | Pushes a clean rebuild of `docs/build` from your __current__ branch to `gh-pages`
+`grunt ghpages`     | Pushes a clean rebuild of `docs/build` from your __current branch__ to `gh-pages`
