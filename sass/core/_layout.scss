@@ -1,19 +1,8 @@
 /*doc
 ---
-title: Layout
-name: layout
-category: Core
----
-TK
-TODO: link to separate layout visual example page
-*/
-
-
-/*doc
----
 title: Stripe
 name: stripe
-parent: layout
+category: Layout
 ---
 A `.stipe` class should be applied to `<section>` elements
 to visually divide the page with stripes of color.
@@ -93,7 +82,7 @@ Class                | Description
 ---
 title: Bounds
 name: bounds
-parent: layout
+category: Layout
 ---
 Used as a non-visual content container that manages content measure,
  Similar to [sassquatch 1 `docBounds`](http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar).
@@ -166,7 +155,7 @@ $space-bounds: $space * 1.5;
 ---
 title: Chunk
 name: chunk
-parent: layout
+category: Layout
 ---
 Adds bottom space to an element
 or a group of elements.
@@ -198,7 +187,7 @@ or a group of elements.
 ---
 title: Flex Row
 name: flexRow
-parent: layout
+category: Layout
 ---
 Arranges content in rows using `display: flex`.
 
@@ -348,7 +337,7 @@ Class                   | Description
 ---
 title: Grid List
 name: gridList
-parent: layout
+category: Layout
 ---
 A grid layout with breakpoint specific numbers of items in each row.
 
