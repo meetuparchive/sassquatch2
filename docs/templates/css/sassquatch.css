@@ -2935,7 +2935,7 @@ Checkbox form elements styled as toggle buttons.
 ---
 title: Animation
 name: animMod
-category: Modifiers
+category: Modifier Classes
 ---
 Applies keyframes animation to element
 
@@ -2959,7 +2959,7 @@ Class							  | Description
 ---
 title: Alignment
 name: alignMod
-category: Modifiers
+category: Modifier Classes
 ---
 Modifies text-align property of element
 
@@ -2983,7 +2983,7 @@ Class             | Description
 ---
 title: Aspect ratio helper
 name: keepAspect
-category: Modifiers
+category: Modifier Classes
 ---
 Maintains a given aspect ratio for flexible media.
 
@@ -3015,7 +3015,7 @@ Class              | Description
 ---
 title: Background
 name: backgroundMod
-category: Modifiers
+category: Modifier Classes
 ---
 */
 /*doc
@@ -3036,7 +3036,7 @@ EXAMPLE TK
 ---
 title: Borders
 name: borderMod
-category: Modifiers
+category: Modifier Classes
 ---
 Sets border properties on element
 
@@ -3056,7 +3056,7 @@ Class                   | Description
 ---
 title: Display
 name: displayMod
-category: Modifiers
+category: Modifier Classes
 ---
 Modifies display property of element
 
@@ -3084,7 +3084,7 @@ Class                   | Description
 ---
 title: Float
 name: floatMod
-category: Modifiers
+category: Modifier Classes
 ---
 TK `.clearfix`
 */
@@ -3102,7 +3102,7 @@ TK `.clearfix`
 ---
 title: Media-conditional modifiers
 name: mediaMod
-category: Modifiers
+category: Modifier Classes
 ---
 
 Media-conditional modifiers allow us to apply
@@ -3187,7 +3187,7 @@ Example TK
 ---
 title: Media Sizing
 name: sizeMod
-category: Modifiers
+category: Modifier Classes
 ---
 Classes for applying dimensions to an element.
 
@@ -3223,7 +3223,7 @@ Class          | Description
 ---
 title: Thumbnails
 name: thumb
-category: Modifiers
+category: Modifier Classes
 ---
 Sets background cover and position for photo thumbnails.
 
@@ -3245,7 +3245,7 @@ Sets background cover and position for photo thumbnails.
 ---
 title: Type wrap/whitespace
 name: typespaceMod
-category: Modifiers
+category: Modifier Classes
 ---
 Sets type wrapping, witespace, and overflow properties on element
 
