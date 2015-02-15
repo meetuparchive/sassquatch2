@@ -717,81 +717,6 @@ audio, canvas, video {
   display: inline-block; }
 
 /* }}} */
-/* {{{ Form defaults */
-label {
-  font-size: 13px; }
-
-fieldset {
-  border: 0;
-  padding: 0;
-  margin: 0; }
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.5; }
-
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
-textarea,
-select,
-.launcher {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: none;
-  box-sizing: border-box;
-  display: block;
-  margin: 0;
-  max-width: 100%;
-  padding: 8px;
-  width: 100%; }
-  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
-  textarea:focus,
-  select:focus,
-  .launcher:focus {
-    border-color: #3987cb;
-    box-shadow: none;
-    outline: none; }
-  .inverted
-  input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
-  textarea, .inverted
-  select, .inverted
-  .launcher {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: white; }
-  .shaded
-  input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
-  textarea, .shaded
-  select, .shaded
-  .launcher {
-    background-color: white; }
-
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
-select {
-  height: 40px; }
-
-textarea {
-  min-height: 88px; }
-
-.checkbox[type=checkbox],
-.radio[type=radio] {
-  border: none;
-  background: transparent;
-  -webkit-appearance: none; }
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  font-style: normal;
-  color: rgba(0, 0, 0, 0.26); }
-  .inverted input::-webkit-input-placeholder, .inverted
-  textarea::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.3); }
-
-/* }}} */
 body,
 input,
 button {
@@ -1175,17 +1100,78 @@ TK: better docs
 ```
 
 */
-.label--switch {
-  font-size: 16px;
-  position: relative; }
+label {
+  font-size: 13px; }
 
-/* INLINE FORM */
-.inline-form {
-  margin-left: -4px;
-  margin-right: -4px; }
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0; }
 
-.small-input {
-  min-width: 72px; }
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.5; }
+
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+textarea,
+select,
+.launcher {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  padding: 8px;
+  width: 100%; }
+  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+  textarea:focus,
+  select:focus,
+  .launcher:focus {
+    border-color: #3987cb;
+    box-shadow: none;
+    outline: none; }
+  .inverted
+  input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
+  textarea, .inverted
+  select, .inverted
+  .launcher {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white; }
+  .shaded
+  input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
+  textarea, .shaded
+  select, .shaded
+  .launcher {
+    background-color: white; }
+
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+select {
+  height: 40px; }
+
+textarea {
+  min-height: 88px; }
+
+.checkbox[type=checkbox],
+.radio[type=radio] {
+  border: none;
+  background: transparent;
+  -webkit-appearance: none; }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.26); }
+  .inverted input::-webkit-input-placeholder, .inverted
+  textarea::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.3); }
 
 /*doc
 ---
@@ -1383,37 +1369,6 @@ TK
   color: #d55741;
   margin-top: 4px; }
 
-/*doc
----
-title: Divided list
-name: list
-category: Layout
----
-Standard divided/spaced list; similar to
-an iOS table view.
-
-Bottom spacing is provided with `chunk`.
-
-```html_example
-<ul class="list">
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-</ul>
-```
-
-*/
-ul, ol,
-.list--reset {
-  list-style: none;
-  padding-left: 0; }
-
 .collection-header {
   height: 48px;
   margin-bottom: 0; }
@@ -1425,18 +1380,6 @@ ul, ol,
       padding: 0 8px; }
       .collection-header .collection-header-actions a:last-child {
         padding-right: 0; }
-
-.list {
-  padding: 0;
-  margin: 0;
-  list-style: none; }
-  .list > li {
-    margin: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-    padding-top: 16px; }
-    .list > li:first-child {
-      border-top: none;
-      padding-top: 0; }
 
 .hscroll-wrap {
   -webkit-overflow-scrolling: touch;
@@ -1502,6 +1445,18 @@ ul, ol,
 .stripe--inverted .hscroll-wrap-wrap:after {
   background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
   background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
+
+.label--switch {
+  font-size: 16px;
+  position: relative; }
+
+/* INLINE FORM */
+.inline-form {
+  margin-left: -4px;
+  margin-right: -4px; }
+
+.small-input {
+  min-width: 72px; }
 
 /*doc
 ---
@@ -1916,6 +1871,49 @@ Class                   | Description
 
 .ieRoot--lt_IE9 .row-item--alignMiddle {
   vertical-align: middle; }
+
+/*doc
+---
+title: Divided list
+name: list
+category: Layout
+---
+Standard divided/spaced list; similar to
+an iOS table view.
+
+Bottom spacing is provided with `chunk`.
+
+```html_example
+<ul class="list">
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+</ul>
+```
+
+*/
+ul, ol,
+.list--reset {
+  list-style: none;
+  padding-left: 0; }
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .list > li {
+    margin: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    padding-top: 16px; }
+    .list > li:first-child {
+      border-top: none;
+      padding-top: 0; }
 
 /*doc
 ---

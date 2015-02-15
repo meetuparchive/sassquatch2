@@ -1,37 +1,4 @@
-/*doc
----
-title: Divided list
-name: list
-category: Layout
----
-Standard divided/spaced list; similar to
-an iOS table view.
-
-Bottom spacing is provided with `chunk`.
-
-```html_example
-<ul class="list">
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-</ul>
-```
-
-*/
-
 // TODO: clean this shit up
-
-%list--reset,
-.list--reset {
-  list-style: none;
-  padding-left: 0;
-}
 
 // move to page structure?
 // TODO: refactor & use bourbon mixins
@@ -48,25 +15,6 @@ Bottom spacing is provided with `chunk`.
 			&:last-child {
 				padding-right: 0;
 			}
-		}
-	}
-}
-
-//
-// LIST (standard)
-//
-
-.list {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	& > li {
-		margin: 0;
-		border-top: 1px solid $C-border;
-		padding-top: $space;
-		&:first-child{
-			border-top: none;
-			padding-top: 0;
 		}
 	}
 }
@@ -163,4 +111,25 @@ Bottom spacing is provided with `chunk`.
 }
 
 
+
+// TODO: doc label-switch
+.label--switch {
+  font-size: $font-size;
+  position: relative;
+}
+
+//TODO: do we use these? How? Why?
+// once sorted out, move into a forms/_partial
+//
+/* INLINE FORM */
+//
+.inline-form {
+	margin-left: -$space-quarter;
+	margin-right: -$space-quarter;
+}
+
+// Meant for use in inline forms
+.small-input {
+  min-width: $block-2; //need to use min-width because ffbox is weird
+}
 
