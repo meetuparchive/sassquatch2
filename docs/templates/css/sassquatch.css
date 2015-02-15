@@ -1066,126 +1066,6 @@ h3, h4, h5, h6 {
 
 /*doc
 ---
-title: Divided list
-name: list
-category: Layout
----
-Standard divided/spaced list; similar to
-an iOS table view.
-
-Bottom spacing is provided with `chunk`.
-
-```html_example
-<ul class="list">
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-	<li>
-		<h2 class="chunk">Just a list item</h2>
-	</li>
-</ul>
-```
-
-*/
-ul, ol,
-.list--reset {
-  list-style: none;
-  padding-left: 0; }
-
-.collection-header {
-  height: 48px;
-  margin-bottom: 0; }
-  .collection-header .collection-header-actions {
-    white-space: nowrap; }
-    .collection-header .collection-header-actions a {
-      box-sizing: border-box;
-      display: inline-block;
-      padding: 0 8px; }
-      .collection-header .collection-header-actions a:last-child {
-        padding-right: 0; }
-
-.list {
-  padding: 0;
-  margin: 0;
-  list-style: none; }
-  .list > li {
-    margin: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-    padding-top: 16px; }
-    .list > li:first-child {
-      border-top: none;
-      padding-top: 0; }
-
-.hscroll-wrap {
-  -webkit-overflow-scrolling: touch;
-  overflow: scroll;
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none; }
-  .hscroll-wrap .hscroll {
-    box-sizing: content-box;
-    padding-left: 16px;
-    padding-right: 16px;
-    white-space: nowrap; }
-    .hscroll-wrap .hscroll li {
-      white-space: normal; }
-
-.hscroll-wrap::-webkit-scrollbar {
-  display: none; }
-
-.hscroll-wrap-wrap {
-  position: relative;
-  margin-left: -16px;
-  margin-right: -16px; }
-  .hscroll-wrap-wrap:before, .hscroll-wrap-wrap:after {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 16px;
-    top: 0; }
-  .hscroll-wrap-wrap:before {
-    left: 0;
-    background-image: -webkit-linear-gradient( left , #fff, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0)); }
-  .hscroll-wrap-wrap:after {
-    right: 0;
-    background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
-
-.hscroll-arrow {
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1; }
-  .is-hovered .hscroll-arrow, .hscroll-arrow:hover {
-    opacity: 1; }
-
-.hscroll-next {
-  right: 0; }
-
-.hscroll-prev {
-  left: 0; }
-
-.stripe--collection .hscroll-wrap-wrap:before {
-  background-image: -webkit-linear-gradient( left , #f3f6f9, rgba(243, 246, 249, 0));
-  background-image: linear-gradient(to right, #f3f6f9, rgba(243, 246, 249, 0)); }
-.stripe--collection .hscroll-wrap-wrap:after {
-  background-image: -webkit-linear-gradient( right , #f3f6f9, rgba(243, 246, 249, 0));
-  background-image: linear-gradient(to left, #f3f6f9, rgba(243, 246, 249, 0)); }
-
-.stripe--inverted .hscroll-wrap-wrap:before {
-  background-image: -webkit-linear-gradient( left , #353e48, rgba(53, 62, 72, 0));
-  background-image: linear-gradient(to right, #353e48, rgba(53, 62, 72, 0)); }
-.stripe--inverted .hscroll-wrap-wrap:after {
-  background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
-  background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
-
-/*doc
----
 title: Forms
 name: forms
 category: Forms
@@ -1472,6 +1352,126 @@ textarea::-webkit-input-placeholder {
 .has-error .caption-text {
   color: #d55741;
   margin-top: 4px; }
+
+/*doc
+---
+title: Divided list
+name: list
+category: Layout
+---
+Standard divided/spaced list; similar to
+an iOS table view.
+
+Bottom spacing is provided with `chunk`.
+
+```html_example
+<ul class="list">
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+</ul>
+```
+
+*/
+ul, ol,
+.list--reset {
+  list-style: none;
+  padding-left: 0; }
+
+.collection-header {
+  height: 48px;
+  margin-bottom: 0; }
+  .collection-header .collection-header-actions {
+    white-space: nowrap; }
+    .collection-header .collection-header-actions a {
+      box-sizing: border-box;
+      display: inline-block;
+      padding: 0 8px; }
+      .collection-header .collection-header-actions a:last-child {
+        padding-right: 0; }
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .list > li {
+    margin: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    padding-top: 16px; }
+    .list > li:first-child {
+      border-top: none;
+      padding-top: 0; }
+
+.hscroll-wrap {
+  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none; }
+  .hscroll-wrap .hscroll {
+    box-sizing: content-box;
+    padding-left: 16px;
+    padding-right: 16px;
+    white-space: nowrap; }
+    .hscroll-wrap .hscroll li {
+      white-space: normal; }
+
+.hscroll-wrap::-webkit-scrollbar {
+  display: none; }
+
+.hscroll-wrap-wrap {
+  position: relative;
+  margin-left: -16px;
+  margin-right: -16px; }
+  .hscroll-wrap-wrap:before, .hscroll-wrap-wrap:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 16px;
+    top: 0; }
+  .hscroll-wrap-wrap:before {
+    left: 0;
+    background-image: -webkit-linear-gradient( left , #fff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0)); }
+  .hscroll-wrap-wrap:after {
+    right: 0;
+    background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
+
+.hscroll-arrow {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; }
+  .is-hovered .hscroll-arrow, .hscroll-arrow:hover {
+    opacity: 1; }
+
+.hscroll-next {
+  right: 0; }
+
+.hscroll-prev {
+  left: 0; }
+
+.stripe--collection .hscroll-wrap-wrap:before {
+  background-image: -webkit-linear-gradient( left , #f3f6f9, rgba(243, 246, 249, 0));
+  background-image: linear-gradient(to right, #f3f6f9, rgba(243, 246, 249, 0)); }
+.stripe--collection .hscroll-wrap-wrap:after {
+  background-image: -webkit-linear-gradient( right , #f3f6f9, rgba(243, 246, 249, 0));
+  background-image: linear-gradient(to left, #f3f6f9, rgba(243, 246, 249, 0)); }
+
+.stripe--inverted .hscroll-wrap-wrap:before {
+  background-image: -webkit-linear-gradient( left , #353e48, rgba(53, 62, 72, 0));
+  background-image: linear-gradient(to right, #353e48, rgba(53, 62, 72, 0)); }
+.stripe--inverted .hscroll-wrap-wrap:after {
+  background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
+  background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
 
 /*doc
 ---
