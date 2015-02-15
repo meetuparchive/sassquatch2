@@ -1,8 +1,8 @@
 /*doc
 ---
-title: Typesetting
-name: typesetting
-category: Core
+title: Headings
+name: headings
+category: Typography
 ---
 TK - notes about UI text vs. body text
 
@@ -49,23 +49,9 @@ h2 {
 	text-transform: uppercase;
 }
 
-
-/*doc
----
-title: Heading class
----
-Apply a `.text--heading` class to any element
-to give it the appearance of an h3-h6 element.
-
-```html_example
-<p class="text--heading">It's usually better to use the real heading tag</p>
-```
-*/
 // H3 - H6
 // We're sticking to limited visual hierarchy
-h3, h4, h5, h6,
-.text--heading {
-// ----------------------------------------- //
+h3, h4, h5, h6 {
 	color: $C_textPrimary;
 	font-size: $font-size;
 	font-weight: 700;

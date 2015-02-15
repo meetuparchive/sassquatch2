@@ -2,7 +2,7 @@
 ---
 title: Body/primary text
 name: bodyText
-parent: typesetting
+category: Typography
 ---
 
 ```html_example
@@ -23,7 +23,7 @@ body {
 ---
 title: Inverted text
 name: invertedText
-parent: typesetting
+parent: bodyText
 ---
 
 Apply the `inverted` class to a container with
@@ -45,7 +45,7 @@ elements to inveted colors.
 ---
 title: Hint text
 name: hintText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--hint">This is hint text</p>
@@ -63,7 +63,7 @@ parent: typesetting
 ---
 title: Secondary text
 name: secondaryText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--secondary">Secondary text is secondary</p>
@@ -81,7 +81,7 @@ parent: typesetting
 ---
 title: Tertiary text
 name: tertiaryText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--tertiary">Tertiary text is tertiary</p>
@@ -100,7 +100,7 @@ parent: typesetting
 ---
 title: Small text
 name: smallText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--small">Small text is small</p>
@@ -117,7 +117,7 @@ parent: typesetting
 ---
 title: Caption text
 name: captionText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--caption">I'm captioning all the things</p>
@@ -135,7 +135,7 @@ parent: typesetting
 ---
 title: Display text
 name: displayText
-parent: typesetting
+parent: bodyText
 ---
 Display text for header hero elements.
 
@@ -164,7 +164,7 @@ Display text for header hero elements.
 ---
 title: Graphic text
 name: textGraphic
-parent: typesetting
+parent: bodyText
 ---
 Useful when using large text in a graphical way.
 Cuts line height to give the glyph spacing similar to that of an image or icon.
@@ -185,7 +185,7 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.
 ---
 title: Running text
 name: runningText
-parent: typesetting
+parent: bodyText
 ---
 By default, paragraphs and headings are not styled
 with any bottom spacing. Links are not blue by default,
@@ -246,7 +246,7 @@ a {
 ---
 title: Bulleted lists
 name: bulletedList
-parent: typesetting
+parent: bodyText
 ---
 
 `<ul>` and `<ol>` element list styles are

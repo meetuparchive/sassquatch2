@@ -1,8 +1,31 @@
-//
-// COLLECTION HEADINGS
-//
+/*doc
+---
+title: Divided list
+name: list
+category: Layout
+---
+Standard divided/spaced list; similar to
+an iOS table view.
 
-// TODO: doc this
+Bottom spacing is provided with `chunk`.
+
+```html_example
+<ul class="list">
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+</ul>
+```
+
+*/
+
+// TODO: clean this shit up
 
 %list--reset,
 .list--reset {
@@ -48,21 +71,6 @@
 	}
 }
 
-
-//
-// INLINE BLOCK LIST
-//
-.inlineblockList {
-	margin: 0;
-	padding: 0;
-	& > li {
-		display: inline-block;
-		padding-right: $space-half;
-	}
-}
-
-
-
 // TODO: refactor & move to ui-components/
 //
 // HORIZONTAL SCROLLING LISTS
@@ -84,8 +92,8 @@
 	}
 }
 
-.hscroll-wrap::-webkit-scrollbar { 
-    display: none; 
+.hscroll-wrap::-webkit-scrollbar {
+    display: none;
 }
 
 .hscroll-wrap-wrap {

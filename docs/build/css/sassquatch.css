@@ -758,7 +758,7 @@ var {
 ---
 title: Body/primary text
 name: bodyText
-parent: typesetting
+category: Typography
 ---
 
 ```html_example
@@ -777,7 +777,7 @@ body {
 ---
 title: Inverted text
 name: invertedText
-parent: typesetting
+parent: bodyText
 ---
 
 Apply the `inverted` class to a container with
@@ -797,7 +797,7 @@ elements to inveted colors.
 ---
 title: Hint text
 name: hintText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--hint">This is hint text</p>
@@ -812,7 +812,7 @@ parent: typesetting
 ---
 title: Secondary text
 name: secondaryText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--secondary">Secondary text is secondary</p>
@@ -827,7 +827,7 @@ parent: typesetting
 ---
 title: Tertiary text
 name: tertiaryText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--tertiary">Tertiary text is tertiary</p>
@@ -842,7 +842,7 @@ parent: typesetting
 ---
 title: Small text
 name: smallText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--small">Small text is small</p>
@@ -857,7 +857,7 @@ parent: typesetting
 ---
 title: Caption text
 name: captionText
-parent: typesetting
+parent: bodyText
 ---
 ```html_example
 <p class="text--caption">I'm captioning all the things</p>
@@ -872,7 +872,7 @@ parent: typesetting
 ---
 title: Display text
 name: displayText
-parent: typesetting
+parent: bodyText
 ---
 Display text for header hero elements.
 
@@ -898,7 +898,7 @@ Display text for header hero elements.
 ---
 title: Graphic text
 name: textGraphic
-parent: typesetting
+parent: bodyText
 ---
 Useful when using large text in a graphical way.
 Cuts line height to give the glyph spacing similar to that of an image or icon.
@@ -915,7 +915,7 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.
 ---
 title: Running text
 name: runningText
-parent: typesetting
+parent: bodyText
 ---
 By default, paragraphs and headings are not styled
 with any bottom spacing. Links are not blue by default,
@@ -968,7 +968,7 @@ a {
 ---
 title: Bulleted lists
 name: bulletedList
-parent: typesetting
+parent: bodyText
 ---
 
 `<ul>` and `<ol>` element list styles are
@@ -1017,9 +1017,9 @@ ol.bullets, .runningText ol {
 
 /*doc
 ---
-title: Typesetting
-name: typesetting
-category: Core
+title: Headings
+name: headings
+category: Typography
 ---
 TK - notes about UI text vs. body text
 
@@ -1056,27 +1056,40 @@ h2 {
   line-height: 1.5;
   text-transform: uppercase; }
 
-/*doc
----
-title: Heading class
----
-Apply a `.text--heading` class to any element
-to give it the appearance of an h3-h6 element.
-
-```html_example
-<p class="text--heading">It's usually better to use the real heading tag</p>
-```
-*/
-h3, h4, h5, h6,
-.text--heading {
+h3, h4, h5, h6 {
   color: rgba(0, 0, 0, 0.87);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5; }
-  .inverted h3, .inverted h4, .inverted h5, .inverted h6, .inverted
-  .text--heading {
+  .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
     color: white; }
 
+/*doc
+---
+title: Divided list
+name: list
+category: Layout
+---
+Standard divided/spaced list; similar to
+an iOS table view.
+
+Bottom spacing is provided with `chunk`.
+
+```html_example
+<ul class="list">
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+</ul>
+```
+
+*/
 ul, ol,
 .list--reset {
   list-style: none;
@@ -1105,13 +1118,6 @@ ul, ol,
     .list > li:first-child {
       border-top: none;
       padding-top: 0; }
-
-.inlineblockList {
-  margin: 0;
-  padding: 0; }
-  .inlineblockList > li {
-    display: inline-block;
-    padding-right: 8px; }
 
 .hscroll-wrap {
   -webkit-overflow-scrolling: touch;
@@ -2005,9 +2011,35 @@ Class                         | Description
     width: 10%; } }
 /*doc
 ---
-title: Views
-name: views
-category: Core
+title: Inline-block list
+name: inlineblockList
+category: Layout
+---
+Resets list styles; adds `display: inline-block` to
+each list item and right gutters between items.
+
+```html_example
+<ul class="inlineblockList">
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+</ul>
+```
+
+*/
+.inlineblockList {
+  margin: 0;
+  padding: 0; }
+  .inlineblockList > li {
+    display: inline-block;
+    padding-right: 8px; }
+
+/*doc
+---
+title: View
+name: view
+category: Views
 ---
 A "view" contains all layout and content for a given screen.
 Typically, a document only has a single view. Split views,
@@ -2117,7 +2149,7 @@ the "detail" responsibility.
 ---
 title: View Head
 name: viewHead
-parent: views
+category: Views
 ---
 The `view-head` element is the first child (the
 fixed top nav bar) within every view.
@@ -2182,7 +2214,7 @@ Class                      | Description
 ---
 title: View Body
 name: viewBody
-parent: views
+category: Views
 ---
 The `view-body` element is our main
 content container for the view.

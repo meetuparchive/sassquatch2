@@ -1,8 +1,8 @@
 /*doc
 ---
-title: Views
-name: views
-category: Core
+title: View
+name: view
+category: Views
 ---
 A "view" contains all layout and content for a given screen.
 Typically, a document only has a single view. Split views,
@@ -123,7 +123,7 @@ the "detail" responsibility.
 ---
 title: View Head
 name: viewHead
-parent: views
+category: Views
 ---
 The `view-head` element is the first child (the
 fixed top nav bar) within every view.
@@ -197,7 +197,7 @@ Class                      | Description
 ---
 title: View Body
 name: viewBody
-parent: views
+category: Views
 ---
 The `view-body` element is our main
 content container for the view.
