@@ -32,7 +32,12 @@
 	@import "core/type/headings";
 
 	// Forms
-	@import "core/forms";
+	@import "core/forms/base"; // <- TODO: only contains cruft; move or clean up styles
+	@import "core/forms/checkbox";
+	@import "core/forms/radio";
+	@import "core/forms/segmentedToggle";
+	@import "core/forms/timePicker";
+	@import "core/forms/validation";
 
 	// Layout
 	@import "core/lists"; // <- TODO: split this out into logical layout partials

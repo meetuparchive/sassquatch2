@@ -75,4 +75,86 @@ audio, canvas, video {
 }
 /* }}} */
 
+/* {{{ Form defaults */
+label {
+	font-size: $font-size-small;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+
+%_formFont,
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+%_formDecoration,
+#{$all-text-inputs},
+textarea,
+select,
+.launcher {
+	background-color: $C_shade;
+	border-radius: $defaultRadius;
+	border: 1px solid $C_border;
+	box-shadow: none;
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	max-width: 100%;
+	padding: $space-half;
+	width: 100%;
+	&:focus {
+		border-color: $C_blue;
+		box-shadow: none;
+		outline: none;
+	}
+
+	.inverted & {
+		background-color: $C_shadeInverted;
+		border-color: $C_borderInverted;
+		color: $C_textPrimaryInverted;
+	}
+
+	.shaded & {
+		// when on an already gray background, don't get gray-er
+		background-color: white;
+	}
+}
+
+#{$all-text-inputs},
+select {
+	height: ($font-size * $line-height) + $space;
+}
+
+textarea {
+	min-height: (3 * $font-size * $line-height) + $space;
+}
+
+// TODO: lower the selector
+.checkbox[type=checkbox],
+.radio[type=radio] {
+	border: none; // iOS Safari shows weird black area around checkbox without this
+	background: transparent; // iOS Safari shows weird black area around checkbox without this
+	-webkit-appearance: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	font-style: normal;
+	color: $C_textTertiary;
+	.inverted &{
+		color: $C_textTertiaryInverted;
+	}
+}
+/* }}} */
+
 // TODO: needs table defaults
