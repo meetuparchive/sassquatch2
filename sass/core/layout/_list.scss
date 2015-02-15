@@ -1,0 +1,47 @@
+/*doc
+---
+title: Divided list
+name: list
+category: Layout
+---
+Standard divided/spaced list; similar to
+an iOS table view.
+
+Bottom spacing is provided with `chunk`.
+
+```html_example
+<ul class="list">
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+	<li>
+		<h2 class="chunk">Just a list item</h2>
+	</li>
+</ul>
+```
+
+*/
+
+%list--reset,
+.list--reset {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	& > li {
+		margin: 0;
+		border-top: 1px solid $C-border;
+		padding-top: $space;
+		&:first-child{
+			border-top: none;
+			padding-top: 0;
+		}
+	}
+}
