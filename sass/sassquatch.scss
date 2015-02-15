@@ -23,19 +23,19 @@
 // ---------------------------
 // Core
 // ---------------------------
-	// Type/Reset
+	// Reset
 	@import "core/base-elements";
-	@import "core/type-reset";
-	@import "core/text";
-	@import "core/headings";
 
-	// Lists
-	@import "core/lists";
+	// Type
+	@import "core/type/type-reset";
+	@import "core/type/body-text";
+	@import "core/type/headings";
 
 	// Forms
 	@import "core/forms";
 
 	// Layout
+	@import "core/lists"; // <- TODO: split this out into logical layout partials
 	@import "core/layout/stripe";
 	@import "core/layout/bounds";
 	@import "core/layout/chunk";
@@ -44,7 +44,7 @@
 	@import "core/layout/inlineblockList";
 
 	// Views
-	@import "core/view"; // TODO: this is a WIP partial - change to _view when done
+	@import "core/view";
 
 
 // ---------------------------
