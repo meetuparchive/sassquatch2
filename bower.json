@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "meetup-swatches": "git@github.com:meetup/meetup-swatches.git#foundation",
-    "bourbon": "4.0.2"
+    "bourbon": "4.1.0"
   },
   "license": "MIT"
 }

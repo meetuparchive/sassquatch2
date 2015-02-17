@@ -1057,8 +1057,7 @@ Display text for header hero elements.
   .text--display {
     color: white; }
 
-@media only screen and (max-width: 440px) {
-  .text--graphic,
+@media only screen and (min-width: 640px) {
   .text--display {
     font-size: 56px; } }
 /*doc
@@ -1819,12 +1818,12 @@ Class                   | Description
   -ms-flex-pack: justify; }
 
 .row--spaceAround {
-  -webkit-box-pack: center;
-  box-pack: center;
+  -webkit-box-pack: distribute;
+  box-pack: distribute;
   -webkit-justify-content: space-around;
   -ms-justify-content: space-around;
   justify-content: space-around;
-  -ms-flex-pack: center; }
+  -ms-flex-pack: distribute; }
 
 /*doc
 ---
