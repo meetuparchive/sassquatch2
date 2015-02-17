@@ -1,4 +1,4 @@
-Ssassquatch 2
+Sassquatch 2
 =============
 
 ## (in dev)
