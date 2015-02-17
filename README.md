@@ -32,7 +32,7 @@ Code guidelines and standards are [documented on the wiki](https://github.com/me
 
 We use the [Gitflow branching model](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for development:
 
-- `develop` - default branch for active development
+- `develop` - default branch for active development (all PRs diff against `develop`)
 - release branches - cut from `develop`, get merged into `master`
 - `master` - only release branches and hotfixes get committed to master
 - master branch in theory should always contain the latest __stable__ release
