@@ -83,9 +83,10 @@ Display text for header hero elements.
 		color: $C_textPrimaryInverted;
 	}
 }
-@include atMediaDown(small) {
-	%text--display,
+
+@include atMediaUp(medium) {
 	.text--display {
 		font-size: $font-size-display1;
 	}
 }
+
