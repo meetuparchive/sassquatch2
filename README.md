@@ -30,6 +30,8 @@ Clone this repo and run `./setup.sh`.
 
 Code guidelines and standards are [documented on the wiki](https://github.com/meetup/sassquatch2/wiki/Code-standards-&-guidelines)
 
+We use the [Gitflow branching model](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for development. _Feature branches merge to the default branch, `develop`, releases are merged into `master`. The `master` branch should contain the latest stable release and/or hotfix)_
+
 ### Grunt tasks
 
 Command             | Result
