@@ -30,6 +30,8 @@ Clone this repo and run `./setup.sh`.
 
 Code guidelines and standards are [documented on the wiki](https://github.com/meetup/sassquatch2/wiki/Code-standards-&-guidelines)
 
+We use the [git flow branching model](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+
 ### Grunt tasks
 
 Command             | Result
