@@ -916,7 +916,7 @@ name: boldText
 parent: bodyText
 ---
 ```html_example
-<p class="text--bold">Small text is small</p>
+<p class="text--bold">Bold text is bold</p>
 ```
 */
 .text--bold {
