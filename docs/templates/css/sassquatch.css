@@ -643,6 +643,9 @@ Adds a pseudo-element gradient
 @mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
 ```
 */
+.text--hint, .text--caption {
+  font-weight: normal; }
+
 html {
   overflow-y: scroll;
   font-size: 100%;
@@ -753,6 +756,80 @@ var {
 
 /*doc
 ---
+title: Headings
+name: headings
+category: Typography
+---
+TK - notes about UI text vs. body text
+
+```html_example
+<h1 class="text--display">Heading 1 Display</h1>
+<h1>Heading 1 (white by default for use in navbar)</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<p>Body text</p>
+<p class="text--heading">Fake heading</p>
+<p class="text--hint">Hint text</p>
+<p class="text--small">Small text</p>
+<p class="text--caption">Caption text</p>
+```
+*/
+/*
+  Further Reading:
+  http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+  http://alistapart.com/article/more-meaningful-typography
+*/
+h1 {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25; }
+
+h2 {
+  color: #d55741;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase; }
+
+h3, h4, h5, h6 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5; }
+  .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
+    color: white; }
+
+/*doc
+---
+title: Display text
+name: displayText
+parent: headings
+---
+Display text for header hero elements.
+
+```html_example
+<h1 class="text--display">The hero gotham deserves</h1>
+```
+*/
+.text--graphic,
+.text--display {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.25; }
+  .inverted .text--graphic, .inverted
+  .text--display {
+    color: white; }
+
+@media only screen and (min-width: 640px) {
+  .text--display {
+    font-size: 56px; } }
+/*doc
+---
 title: Body/primary text
 name: bodyText
 category: Typography
@@ -845,8 +922,14 @@ parent: bodyText
 <p class="text--small">Small text is small</p>
 ```
 */
-.text--caption,
-.text--small {
+.text--caption, .text--caption h1, .text--caption h2, .text--caption h3, .text--caption h4, .text--caption h5, .text--caption h6,
+.text--small,
+.text--small h1,
+.text--small h2,
+.text--small h3,
+.text--small h4,
+.text--small h5,
+.text--small h6 {
   font-size: 13px;
   line-height: 1.5; }
 
@@ -986,80 +1069,6 @@ ul.bullets, .runningText ul {
 ol.bullets, .runningText ol {
   list-style-type: decimal; }
 
-/*doc
----
-title: Headings
-name: headings
-category: Typography
----
-TK - notes about UI text vs. body text
-
-```html_example
-<h1 class="text--display">Heading 1 Display</h1>
-<h1>Heading 1 (white by default for use in navbar)</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
-<p>Body text</p>
-<p class="text--heading">Fake heading</p>
-<p class="text--hint">Hint text</p>
-<p class="text--small">Small text</p>
-<p class="text--caption">Caption text</p>
-```
-*/
-/*
-  Further Reading:
-  http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
-  http://alistapart.com/article/more-meaningful-typography
-*/
-h1 {
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.25; }
-
-h2 {
-  color: #d55741;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.5;
-  text-transform: uppercase; }
-
-h3, h4, h5, h6 {
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.5; }
-  .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
-    color: white; }
-
-/*doc
----
-title: Display text
-name: displayText
-parent: headings
----
-Display text for header hero elements.
-
-```html_example
-<h1 class="text--display">The hero gotham deserves</h1>
-```
-*/
-.text--graphic,
-.text--display {
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 32px;
-  font-weight: normal;
-  line-height: 1.25; }
-  .inverted .text--graphic, .inverted
-  .text--display {
-    color: white; }
-
-@media only screen and (min-width: 640px) {
-  .text--display {
-    font-size: 56px; } }
 /*doc
 ---
 title: Basic Inputs
@@ -1638,6 +1647,9 @@ category: Layout
 ---
 Adds bottom space to an element
 or a group of elements.
+
+_Can be used in combination with any other component
+(ie. `class="row chunk"`)_
 
 ```html_example
 <div class="_DOC-SHADE chunk">
@@ -2494,6 +2506,59 @@ Class                     | Description
 
 /*doc
 ---
+title: Attachment
+name: attachment
+category: UI Components
+---
+Adding the `attachment` causes all
+children to use half of the default spacing.
+
+In foundation, an "attachment" is a piece of
+content in the feed attached to a parent item
+(ie. a reply or event meta info).
+
+_Ancestry only affects spacing for children
+in `attachment`. Text sizing remains explicit._
+
+### Event meta info example
+
+```html_example
+<div class="row attachment chunk">
+	<div class="row-item row-item--shrink">
+		<time class="tearsheet" datetime="2017-01-13">13</time>
+	</div>
+	<div class="row-item">
+		<h4 class="text--caption">Monday Jan 13, 6:30 pm</h4>
+		<p>Backpacking For Beginners</p>
+	</div>
+</div>
+```
+
+### Discussion reply example
+
+```html_example
+<div class="row attachment chunk">
+	<div class="row-item row-item--shrink">
+		<a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+	</div>
+	<div class="row-item text--small">
+		<h4 class="display--inline">Member Name</h4>
+		<p class="display--inline">This is a reply to a post. I'm going to keep writing until the line wraps. Has it wrapped yet? Who cares.</p>
+	</div>
+</div>
+```
+*/
+.attachment .row-item {
+  padding-left: 8px; }
+.attachment.chunk,
+.attachment .chunk {
+  margin-bottom: 8px; }
+.attachment.list > li,
+.attachment .list > li {
+  padding-top: 8px; }
+
+/*doc
+---
 title: Buttons
 name: buttons
 category: UI Components
@@ -2801,6 +2866,48 @@ _(The inline style on the card element is for documentation purposes only)_
 
 /*doc
 ---
+title: RSVP Tags
+name: tag
+category: UI Components
+---
+Status tags for RSVP.
+
+```html_example
+<div class="rsvpTag rsvpTag--yes">Going</div>
+<div class="rsvpTag rsvpTag--no">Not going</div>
+<div class="rsvpTag rsvpTag--waiting">Waiting</div>
+```
+
+
+## Variants
+A class of `rsvpTag` is __required__.
+Variant classes:
+
+Class                | Description
+-------------------- | --------------------------
+`rsvpTag--yes`       | indicates "yes" RSVP status
+`rsvpTag--no`        | indicates "no" RSVP status
+`rsvpTag--waiting`   | indicates waitlist RSVP status
+*/
+.rsvpTag {
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  padding: 4px;
+  text-transform: capitalize; }
+
+.rsvpTag--yes {
+  background: #8cbf6a; }
+
+.rsvpTag--no {
+  background: #f3f6f9;
+  color: rgba(0, 0, 0, 0.87); }
+
+.rsvpTag--waiting {
+  background: #353e48; }
+
+/*doc
+---
 title: Tabs
 name: tabs
 category: UI Components
@@ -2868,48 +2975,6 @@ Class                 | Description
 .tabs-tab--selected {
   color: #d55741;
   border-bottom: 4px solid #d55741; }
-
-/*doc
----
-title: RSVP Tags
-name: tag
-category: UI Components
----
-Status tags for RSVP.
-
-```html_example
-<div class="rsvpTag rsvpTag--yes">Going</div>
-<div class="rsvpTag rsvpTag--no">Not going</div>
-<div class="rsvpTag rsvpTag--waiting">Waiting</div>
-```
-
-
-## Variants
-A class of `rsvpTag` is __required__.
-Variant classes:
-
-Class                | Description
--------------------- | --------------------------
-`rsvpTag--yes`       | indicates "yes" RSVP status
-`rsvpTag--no`        | indicates "no" RSVP status
-`rsvpTag--waiting`   | indicates waitlist RSVP status
-*/
-.rsvpTag {
-  border-radius: 3px;
-  color: white;
-  display: inline-block;
-  padding: 4px;
-  text-transform: capitalize; }
-
-.rsvpTag--yes {
-  background: #8cbf6a; }
-
-.rsvpTag--no {
-  background: #f3f6f9;
-  color: rgba(0, 0, 0, 0.87); }
-
-.rsvpTag--waiting {
-  background: #353e48; }
 
 /*doc
 ---
