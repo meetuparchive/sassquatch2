@@ -4,15 +4,15 @@ title: Attachment
 name: attachment
 category: UI Components
 ---
-Adding the `attachment` causes all
-children to use half of the default spacing.
+Adding the `attachment` class to an elemeent
+creates a context in which layout classes (`row-item`,
+`chunk`, `list`) use half of their default spacing.
 
 In foundation, an "attachment" is a piece of
 content in the feed attached to a parent item
 (ie. a reply or event meta info).
 
-_Ancestry only affects spacing for children
-in `attachment`. Text sizing remains explicit._
+_Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 
 ### Event meta info example
 
