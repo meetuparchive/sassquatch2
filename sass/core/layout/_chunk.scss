@@ -7,6 +7,9 @@ category: Layout
 Adds bottom space to an element
 or a group of elements.
 
+_Can be used in combination with any other component
+(ie. `class="row chunk"`)_
+
 ```html_example
 <div class="_DOC-SHADE chunk">
 	<h2>Some heading</h2>

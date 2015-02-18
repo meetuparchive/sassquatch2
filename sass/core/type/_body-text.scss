@@ -18,7 +18,6 @@ body {
 	line-height: $line-height;
 }
 
-
 /*doc
 ---
 title: Inverted text
@@ -52,6 +51,7 @@ parent: bodyText
 ```
 */
 .text--hint {
+	@extend %_normalWeight;
 	color: $C_textTertiary;
 	.inverted & {
 		color: $C_textTertiaryInverted;
@@ -108,8 +108,10 @@ parent: bodyText
 */
 %text--small,
 .text--small {
-	font-size: $font-size-small;
-	line-height: $line-height-small;
+	@include _headingDecentants() {
+		font-size: $font-size-small;
+		line-height: $line-height-small;
+	}
 }
 
 
@@ -124,6 +126,7 @@ parent: bodyText
 ```
 */
 .text--caption {
+	@extend %_normalWeight;
 	@extend %text--small;
 	color: $C_textSecondary;
 	.inverted & {

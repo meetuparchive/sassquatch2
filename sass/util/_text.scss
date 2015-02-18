@@ -38,3 +38,30 @@ $C_scrimGradient: #0F141F; // move to swatches?
 		}
 	}
 }
+
+//
+// PRIVATE
+// support for weight resetting for text variants
+//
+%_normalWeight {
+	font-weight: normal;
+}
+
+
+//
+// PRIVATE
+// support for heading decentant specificity in
+// text variants (useful for applying a class to a
+// container instead of each individual element)
+//
+@mixin _headingDecentants() {
+	&,
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		@content;
+	}
+}
