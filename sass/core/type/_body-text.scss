@@ -51,7 +51,6 @@ parent: bodyText
 ```
 */
 .text--hint {
-	@extend %_normalWeight;
 	color: $C_textTertiary;
 	.inverted & {
 		color: $C_textTertiaryInverted;
@@ -95,6 +94,20 @@ parent: bodyText
 }
 
 
+/*doc
+---
+title: Bold text
+name: boldText
+parent: bodyText
+---
+```html_example
+<p class="text--bold">Small text is small</p>
+```
+*/
+.text--bold {
+	font-weight: $W_bold;
+}
+
 
 /*doc
 ---
@@ -126,7 +139,6 @@ parent: bodyText
 ```
 */
 .text--caption {
-	@extend %_normalWeight;
 	@extend %text--small;
 	color: $C_textSecondary;
 	.inverted & {

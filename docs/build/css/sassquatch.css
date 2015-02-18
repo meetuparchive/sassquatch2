@@ -643,9 +643,6 @@ Adds a pseudo-element gradient
 @mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
 ```
 */
-.text--hint, .text--caption {
-  font-weight: normal; }
-
 html {
   overflow-y: scroll;
   font-size: 100%;
@@ -798,7 +795,7 @@ h2 {
 h3, h4, h5, h6 {
   color: rgba(0, 0, 0, 0.87);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5; }
   .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
     color: white; }
@@ -911,6 +908,19 @@ parent: bodyText
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--tertiary {
     color: rgba(255, 255, 255, 0.3); }
+
+/*doc
+---
+title: Bold text
+name: boldText
+parent: bodyText
+---
+```html_example
+<p class="text--bold">Small text is small</p>
+```
+*/
+.text--bold {
+  font-weight: 700; }
 
 /*doc
 ---
@@ -2529,7 +2539,7 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 	</div>
 	<div class="row-item">
 		<h4 class="text--caption">Monday Jan 13, 6:30 pm</h4>
-		<p>Backpacking For Beginners</p>
+		<h4>Backpacking For Beginners</h4>
 	</div>
 </div>
 ```
@@ -2542,7 +2552,7 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 		<a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
 	</div>
 	<div class="row-item text--small">
-		<h4 class="display--inline">Member Name</h4>
+		<h4 class="text--bold display--inline">Member Name</h4>
 		<p class="display--inline">This is a reply to a post. I'm going to keep writing until the line wraps. Has it wrapped yet? Who cares.</p>
 	</div>
 </div>
