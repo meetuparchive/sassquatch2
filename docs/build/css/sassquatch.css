@@ -1689,10 +1689,11 @@ category: Layout
 ---
 The `stack` layout tool is for elements that
 should be stacked in a column at small sizes,
-and collapsed horizontally at larger sizes.
+and spreads across horizontal space at a given
+breakpoint.
 
 ```html_example
-<div class="stack atMedium_stack--collapse">
+<div class="stack atMedium_stack--spread">
 	<div class="stack-item _DOC-SHADE">
 		<p>Stack Item</p>
 	</div>
@@ -1710,8 +1711,8 @@ with one of the following classes.
 
 Class                       | Description
 --------------------------- | ----------------------------------
-`atMedium_stack--collapse`  | Collapses the stack a single row at the `medium` breakpoint
-`atLarge_stack--collapse`   | Collapses the stack a single row at the `large` breakpoint
+`atMedium_stack--spread`    | Spreads out the stack elements horizontally at `medium` breakpoint
+`atLarge_stack--spread`     | Spreads out the stack elements horizontally at `large` breakpoint
 
 
 */
@@ -1755,20 +1756,20 @@ Class                       | Description
   -ms-flex-preferred-size: 100%; }
 
 @media only screen and (min-width: 640px) {
-  .atMedium_stack--collapse .stack-item {
+  .atMedium_stack--spread .stack-item {
     -webkit-flex-basis: 0;
     flex-basis: 0;
     -ms-flex-preferred-size: 0;
     padding-left: 16px; }
-    .atMedium_stack--collapse .stack-item:first-child {
+    .atMedium_stack--spread .stack-item:first-child {
       padding-left: 0; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_stack--collapse .stack-item {
+  .atLarge_stack--spread .stack-item {
     -webkit-flex-basis: 0;
     flex-basis: 0;
     -ms-flex-preferred-size: 0;
     padding-left: 16px; }
-    .atLarge_stack--collapse .stack-item:first-child {
+    .atLarge_stack--spread .stack-item:first-child {
       padding-left: 0; } }
 /*doc
 ---
