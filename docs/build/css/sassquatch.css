@@ -1693,7 +1693,7 @@ and spreads across horizontal space at a given
 breakpoint.
 
 ```html_example
-<div class="stack atMedium_stack--spread">
+<div class="stack atLarge_stack--spread">
 	<div class="stack-item _DOC-SHADE">
 		<p>Stack Item</p>
 	</div>
@@ -1706,7 +1706,7 @@ breakpoint.
 ## Stack variants
 A class of `stack` on the parent element is required.
 Collapsing of the stack doesn't happen at any viewport
-size by default, so __you must specify a collapse point__
+size by default, so __you must specify a spread point__
 with one of the following classes.
 
 Class                       | Description
