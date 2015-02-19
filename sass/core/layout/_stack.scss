@@ -1,0 +1,58 @@
+/*doc
+---
+title: Stack
+name: stack
+category: Layout
+---
+The `stack` layout tool is for elements that
+should be stacked in a column at small sizes,
+and collapsed horizontally at larger sizes.
+
+```html_example
+<div class="stack atMedium_stack--collapse">
+	<div class="stack-item">
+		<p>Stack Item</p>
+	</div>
+	<div class="stack-item">
+		<p>Stack Item</p>
+	</div>
+</div>
+```
+
+## Stack variants
+A class of `stack` on the parent element is required.
+Collapsing of the stack doesn't happen at any viewport
+size by default, so __you must specify a collapse point__
+with one of the following classes.
+
+Class                       | Description
+--------------------------- | ----------------------------------
+`atMedium_stack--collapse`  | Collapses the stack a single row at the `medium` breakpoint
+`atLarge_stack--collapse`   | Collapses the stack a single row at the `large` breakpoint
+
+
+*/
+
+// pin?
+.stack {
+	@include display(flex);
+	@include flex-wrap(wrap);
+	@include flex-direction(row);
+	@include justify-content(flex-start);
+	@include align-items(flex);
+}
+
+.stack-item {
+	@include flex-grow(1);
+	@include flex-basis(100%);
+}
+
+@each $bpName, $bp in (medium: $breakpoint-m, large: $breakpoint-l) {
+	@include atMediaUp($bpName) {
+		.at#{str-firstCharToUpper($bpName)}_stack--collapse {
+			.stack-item {
+				@include flex-basis(0);
+			}
+		}
+	}
+}
