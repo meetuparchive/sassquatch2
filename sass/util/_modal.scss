@@ -5,6 +5,7 @@
 	left: 50%;
 	margin-left: -($modal-width/2);
 	margin-top: 10vh; // Can we do this kind of thing on native?
+	min-height: none;
 	position: absolute;
 	width: $modal-width;
 
