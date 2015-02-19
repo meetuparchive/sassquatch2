@@ -1683,7 +1683,7 @@ _Can be used in combination with any other component
 
 /*doc
 ---
-title: Flex Row
+title: Row
 name: flexRow
 category: Layout
 ---
@@ -1892,6 +1892,74 @@ Class                   | Description
 
 .ieRoot--lt_IE9 .row-item--alignMiddle {
   vertical-align: middle; }
+
+/*doc
+---
+title: wat
+name: wat
+category: Layout
+---
+
+```html_example
+<div class="wat">
+	<div class="wat-item wat-item--pin">
+		<p>pinned item</p>
+	</div>
+	<div class="wat-item">
+		<p>normal item</p>
+	</div>
+</div>
+```
+*/
+.wat {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex; }
+
+.wat-item {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1; }
+
+.wat-item--shrink {
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+  -ms-flex-negative: 1;
+  width: initial; }
+
+.wat-item--pin {
+  -webkit-flex-basis: 100%;
+  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%; }
 
 /*doc
 ---
