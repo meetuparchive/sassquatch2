@@ -45,18 +45,19 @@ Class                      | Description
 	}
 }
 
-.view-head {
-	.view--splitList & {
-		border-right: 1px solid $C_border;
-		width: $view-minWidth;
-	}
-	.view--splitDetail & {
-		left: $view-minWidth;
-		right: 0;
-		width: auto;
+@include atMediaUp(medium){
+	.view-head {
+		.view--splitList & {
+			border-right: 1px solid $C_border;
+			width: $view-minWidth;
+		}
+		.view--splitDetail & {
+			left: $view-minWidth;
+			right: 0;
+			width: auto;
+		}
 	}
 }
-
 
 //
 // view-head variants
