@@ -1693,10 +1693,10 @@ and collapsed horizontally at larger sizes.
 
 ```html_example
 <div class="stack atMedium_stack--collapse">
-	<div class="stack-item">
+	<div class="stack-item _DOC-SHADE">
 		<p>Stack Item</p>
 	</div>
-	<div class="stack-item">
+	<div class="stack-item _DOC-SHADE">
 		<p>Stack Item</p>
 	</div>
 </div>
@@ -1758,12 +1758,18 @@ Class                       | Description
   .atMedium_stack--collapse .stack-item {
     -webkit-flex-basis: 0;
     flex-basis: 0;
-    -ms-flex-preferred-size: 0; } }
+    -ms-flex-preferred-size: 0;
+    padding-left: 16px; }
+    .atMedium_stack--collapse .stack-item:first-child {
+      padding-left: 0; } }
 @media only screen and (min-width: 840px) {
   .atLarge_stack--collapse .stack-item {
     -webkit-flex-basis: 0;
     flex-basis: 0;
-    -ms-flex-preferred-size: 0; } }
+    -ms-flex-preferred-size: 0;
+    padding-left: 16px; }
+    .atLarge_stack--collapse .stack-item:first-child {
+      padding-left: 0; } }
 /*doc
 ---
 title: Row

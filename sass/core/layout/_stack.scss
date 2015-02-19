@@ -6,14 +6,15 @@ category: Layout
 ---
 The `stack` layout tool is for elements that
 should be stacked in a column at small sizes,
-and collapsed horizontally at larger sizes.
+and spreads across horizontal space at a given
+breakpoint.
 
 ```html_example
-<div class="stack atMedium_stack--collapse">
-	<div class="stack-item">
+<div class="stack atMedium_stack--spread">
+	<div class="stack-item _DOC-SHADE">
 		<p>Stack Item</p>
 	</div>
-	<div class="stack-item">
+	<div class="stack-item _DOC-SHADE">
 		<p>Stack Item</p>
 	</div>
 </div>
@@ -27,13 +28,11 @@ with one of the following classes.
 
 Class                       | Description
 --------------------------- | ----------------------------------
-`atMedium_stack--collapse`  | Collapses the stack a single row at the `medium` breakpoint
-`atLarge_stack--collapse`   | Collapses the stack a single row at the `large` breakpoint
+`atMedium_stack--spread`    | Spreads out the stack elements horizontally at `medium` breakpoint
+`atLarge_stack--spread`     | Spreads out the stack elements horizontally at `large` breakpoint
 
 
 */
-
-// pin?
 .stack {
 	@include display(flex);
 	@include flex-wrap(wrap);
@@ -49,9 +48,13 @@ Class                       | Description
 
 @each $bpName, $bp in (medium: $breakpoint-m, large: $breakpoint-l) {
 	@include atMediaUp($bpName) {
-		.at#{str-firstCharToUpper($bpName)}_stack--collapse {
+		.at#{str-firstCharToUpper($bpName)}_stack--spread {
 			.stack-item {
 				@include flex-basis(0);
+				padding-left: $space;
+				&:first-child {
+					padding-left: 0;
+				}
 			}
 		}
 	}
