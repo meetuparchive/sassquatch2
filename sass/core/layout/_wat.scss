@@ -1,0 +1,41 @@
+/*doc
+---
+title: wat
+name: wat
+category: Layout
+---
+
+```html_example
+<div class="wat">
+	<div class="wat-item wat-item--pin">
+		<p>pinned item</p>
+	</div>
+	<div class="wat-item">
+		<p>normal item</p>
+	</div>
+</div>
+```
+*/
+
+// pin?
+.wat {
+	@include display(flex);
+	@include flex-wrap(wrap);
+	@include flex-direction(row);
+	@include justify-content(flex-start);
+	@include align-items(flex);
+}
+
+.wat-item {
+	@include flex-grow(1);
+}
+
+.wat-item--shrink {
+	@include flex-grow(0);
+	@include flex-shrink(1);
+	width: initial;
+}
+
+.wat-item--pin {
+	@include flex-basis(100%)
+}
