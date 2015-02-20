@@ -1,7 +1,6 @@
 {
-	"name": "sq2",
-	"root": "./docs/build/",
-	"clean_urls": false,
-	"cache_control": {},
-	"routes": {}
+  "name": "sq2",
+  "root": "./docs/build/",
+  "clean_urls": false,
+  "error_page": "error.html"
 }
