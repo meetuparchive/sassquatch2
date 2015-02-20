@@ -1862,7 +1862,7 @@ _Includes `table-cell` fallback for IE8._
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1;
-  width: 0; }
+  width: auto; }
   .row-item:first-child {
     padding-left: 0; }
 
