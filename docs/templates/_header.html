@@ -27,14 +27,14 @@
 		</div>
 	</header>
 
-	<section id="hologramBody" class="bounds bounds--wide row display--block--mediumDown">
-		<nav class="row-item--shrink display--block--mediumDown padding--none--mediumDown">
+	<section id="hologramBody" class="bounds bounds--wide stack atMedium_stack--spread">
+		<nav class="stack-item" style="max-width: 260px;">
 			<ul>
 				<% @categories.each do |category, file_name| %>
 					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="<%= file_name %>"><%= category %></a>
 						<% if title == category %>
-							<ul>
+							<ul class="display--none atMedium_display--block">
 								<% @blocks.each do |b| %>
 
 									<%# Only put top-level blocks in this list %>
@@ -52,4 +52,4 @@
 			</ul>
 		</nav>
 
-	 	<main id="content" class="row-item display--block--mediumDown padding--none--mediumDown">
+	 	<main id="content" class="stack-item">
