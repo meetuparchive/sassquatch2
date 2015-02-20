@@ -27,6 +27,7 @@ pre {
 	border: 1px solid rgba(0,0,0,.12);
 	box-shadow: 0 0 20px rgba(0,0,0,.12);
 	margin-bottom: 32px;
+	overflow: hidden;
 }
 .exampleOutput {
 	padding: 12px;
