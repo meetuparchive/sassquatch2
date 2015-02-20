@@ -3304,7 +3304,7 @@ Class                   | Description
 `.display--none`        | sets `display` to `none`
 `.display--block`       | sets `display` to `block`
 `.display--inline`      | sets `display` to `inline`
-`.display--inlineblock` | sets `display` to `inlineblock`
+`.display--inlineBlock` | sets `display` to `inlineblock`
 
 */
 .display--none {

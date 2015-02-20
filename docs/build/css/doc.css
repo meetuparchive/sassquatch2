@@ -102,33 +102,42 @@ main > table td:first-child {
 }
 
 /* LAYOUT */
-#hologramBody > nav {
-	flex-basis: 280px;
+#navigation,
+#content {
+	float: left;
+}
+#navigation {
+	max-width: 280px;
+	padding-right: 18px;
+}
+#content {
+	max-width: 760px;
+	overflow: hidden;
 }
 
 /* NAV */
-#hologramBody > nav h4 {
+#navigation h4 {
 	margin-bottom: 8px;
 }
-#hologramBody > nav ul {
+#navigation ul {
 	list-style: none;
 	padding: 0;
 	margin-bottom: 12px;
 }
-#hologramBody > nav li > a { /* all menu items */
+#navigation li > a { /* all menu items */
 	display: block;
 	padding: 6px;
 	margin: 4px 0;
 }
-#hologramBody > nav li > a:hover {
+#navigation li > a:hover {
 	background: #E6E9EC;
 }
 
-#hologramBody > nav > ul > li > a { /* categories */
+#navigation > ul > li > a { /* categories */
 	font-size: 18px;
 	margin-bottom: 8px;
 }
-#hologramBody > nav li ul a { /* components */
+#navigation li ul a { /* components */
 	margin-left: 12px;
 	color: rgba(0,0,0,.54);
 }
