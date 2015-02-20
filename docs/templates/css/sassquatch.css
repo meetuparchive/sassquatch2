@@ -1966,21 +1966,21 @@ Class                   | Description
   align-self: center;
   -ms-flex-item-align: center; }
 
-.ieRoot--lt_IE9 .row {
+.ieRoot_lt_IE10 .row {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: table;
   table-layout: auto;
   width: 100%; }
 
-.ieRoot--lt_IE9 .row-item {
+.ieRoot_lt_IE10 .row-item {
   display: table-cell;
   width: 100%; }
 
-.ieRoot--lt_IE9 .row-item--shrink {
+.ieRoot_lt_IE10 .row-item--shrink {
   width: auto; }
 
-.ieRoot--lt_IE9 .row-item--alignMiddle {
+.ieRoot_lt_IE10 .row-item--alignMiddle {
   vertical-align: middle; }
 
 /*doc
