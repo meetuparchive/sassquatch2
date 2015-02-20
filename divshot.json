@@ -1,0 +1,7 @@
+{
+	"name": "sq2",
+	"root": "./docs/build/",
+	"clean_urls": false,
+	"cache_control": {},
+	"routes": {}
+}
