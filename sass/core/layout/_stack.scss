@@ -1,0 +1,61 @@
+/*doc
+---
+title: Stack
+name: stack
+category: Layout
+---
+The `stack` layout tool is for elements that
+should be stacked in a column at small sizes,
+and spreads across horizontal space at a given
+breakpoint.
+
+```html_example
+<div class="stack atLarge_stack--spread">
+	<div class="stack-item _DOC-SHADE">
+		<p>Stack Item</p>
+	</div>
+	<div class="stack-item _DOC-SHADE">
+		<p>Stack Item</p>
+	</div>
+</div>
+```
+
+## Stack variants
+A class of `stack` on the parent element is required.
+Collapsing of the stack doesn't happen at any viewport
+size by default, so __you must specify a spread point__
+with one of the following classes.
+
+Class                       | Description
+--------------------------- | ----------------------------------
+`atMedium_stack--spread`    | Spreads out the stack elements horizontally at `medium` breakpoint
+`atLarge_stack--spread`     | Spreads out the stack elements horizontally at `large` breakpoint
+
+
+*/
+.stack {
+	@include display(flex);
+	@include flex-wrap(wrap);
+	@include flex-direction(row);
+	@include justify-content(flex-start);
+	@include align-items(flex);
+}
+
+.stack-item {
+	@include flex-grow(1);
+	@include flex-basis(100%);
+}
+
+@each $bpName, $bp in (medium: $breakpoint-m, large: $breakpoint-l) {
+	@include atMediaUp($bpName) {
+		.at#{str-firstCharToUpper($bpName)}_stack--spread {
+			.stack-item {
+				@include flex-basis(0);
+				padding-left: $space;
+				&:first-child {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}
