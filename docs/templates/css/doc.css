@@ -102,17 +102,7 @@ main > table td:first-child {
 }
 
 /* LAYOUT */
-#navigation,
-#content {
-	float: left;
-}
-#navigation {
-	max-width: 280px;
-	padding-right: 18px;
-}
-#content {
-	max-width: 760px;
-}
+/* LOL TK */
 
 /* NAV */
 #navigation h4 {
