@@ -129,20 +129,20 @@ Class                   | Description
 	@include align-self(center);
 }
 
-// LT IE9 fallback
-.ieRoot--lt_IE9 .row {
+// LT IE10 fallback
+.ieRoot_lt_IE10 .row {
 	@include box-sizing(border-box);
 	display: table;
 	table-layout: auto;
 	width: 100%;
 }
-.ieRoot--lt_IE9 .row-item {
+.ieRoot_lt_IE10 .row-item {
 	display: table-cell;
 	width: 100%;
 }
-.ieRoot--lt_IE9 .row-item--shrink {
+.ieRoot_lt_IE10 .row-item--shrink {
 	width: auto;
 }
-.ieRoot--lt_IE9 .row-item--alignMiddle {
+.ieRoot_lt_IE10 .row-item--alignMiddle {
 	vertical-align: middle;
 }
