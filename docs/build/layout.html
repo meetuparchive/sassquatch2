@@ -78,7 +78,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#flexRow">Flex Row</a>
+											<a class="followLink" href="#flexRow">Row</a>
 										</li>
 									
 
@@ -121,6 +121,15 @@
 									
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#list">Divided list</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#stack">Stack</a>
 										</li>
 									
 
@@ -258,7 +267,7 @@ or a group of elements.</p>
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Some kind of caption<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div></div></div>
-<h1 id="flexRow">Flex Row</h1>
+<h1 id="flexRow">Row</h1>
 
 <p>Arranges content in rows using <code>display: flex</code>.</p>
 
@@ -485,6 +494,52 @@ an iOS table view.</p>
     <span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
 </pre></div></div></div>
+<h1 id="stack">Stack</h1>
+
+<p>The <code>stack</code> layout tool is for elements that
+should be stacked in a column at small sizes,
+and spreads across horizontal space at a given
+breakpoint.</p>
+<div class="codeExample"><div class="exampleOutput"><div class="stack atLarge_stack--spread">
+    <div class="stack-item _DOC-SHADE">
+        <p>Stack Item</p>
+    </div>
+    <div class="stack-item _DOC-SHADE">
+        <p>Stack Item</p>
+    </div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack atLarge_stack--spread"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack-item _DOC-SHADE"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Stack Item<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack-item _DOC-SHADE"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Stack Item<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h2>Stack variants</h2>
+
+<p>A class of <code>stack</code> on the parent element is required.
+Collapsing of the stack doesn&#39;t happen at any viewport
+size by default, so <strong>you must specify a spread point</strong>
+with one of the following classes.</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>atMedium_stack--spread</code></td>
+<td>Spreads out the stack elements horizontally at <code>medium</code> breakpoint</td>
+</tr>
+<tr>
+<td><code>atLarge_stack--spread</code></td>
+<td>Spreads out the stack elements horizontally at <code>large</code> breakpoint</td>
+</tr>
+</tbody></table>
+
 <h1 id="stripe">Stripe</h1>
 
 <p>A <code>.stipe</code> class should be applied to <code>&lt;section&gt;</code> elements
@@ -1205,8 +1260,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Flex Row",
-					"breadcrumb": "Layout > Flex Row",
+					"title": "Row",
+					"breadcrumb": "Layout > Row",
 					"path": "layout.html#flexRow"
 				});
 
@@ -1268,6 +1323,16 @@ $(function() {
 					"title": "Divided list",
 					"breadcrumb": "Layout > Divided list",
 					"path": "layout.html#list"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Stack",
+					"breadcrumb": "Layout > Stack",
+					"path": "layout.html#stack"
 				});
 
 			

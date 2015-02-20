@@ -56,16 +56,7 @@ the "detail" responsibility.
 </div>
 ```
 */
-%_splitViewBase {
-	display: none;
-	&.focus {
-		display: block;
-	}
-	@include atMediaUp(medium) {
-		width: $view-minWidth;
-		display: block;
-	}
-}
+
 
 .view {
 	@include box-sizing(border-box);
@@ -74,22 +65,31 @@ the "detail" responsibility.
 	min-height: 100vh;
 }
 
-.view--splitList {
-	@extend %_splitViewBase;
-	// NOTE: uses fixed position
-	// try not to put forms in the split part
-	// usually the split view will be a list
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: $view-minWidth;
-	border-right: 1px solid $C_border;
+.view--splitList, .view--splitDetail{
+  display: none;
+  &.focus{
+	  display: block;
+  }
 }
 
-.view--splitDetail {
-	@extend %_splitViewBase;
-	padding-left: $view-minWidth;
+@include atMediaUp(medium){
+	.view--splitList {
+		// NOTE: uses fixed position
+		// try not to put forms in the split part
+		// usually the split view will be a list
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: $view-minWidth;
+		border-right: 1px solid $C_border;
+		display: block;
+	}
+
+	.view--splitDetail {
+		display: block;
+		padding-left: $view-minWidth;
+	}
 }
 
 .view--dimmed {
