@@ -2266,15 +2266,6 @@ the "detail" responsibility.
 </div>
 ```
 */
-.view--splitList, .view--splitDetail {
-  display: none; }
-  .focus.view--splitList, .focus.view--splitDetail {
-    display: block; }
-  @media only screen and (min-width: 640px) {
-    .view--splitList, .view--splitDetail {
-      width: 320px;
-      display: block; } }
-
 .view {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2282,17 +2273,24 @@ the "detail" responsibility.
   width: 100%;
   min-height: 100vh; }
 
-.view--splitList {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 320px;
-  border-right: 1px solid rgba(0, 0, 0, 0.12); }
+.view--splitList, .view--splitDetail {
+  display: none; }
+  .view--splitList.focus, .view--splitDetail.focus {
+    display: block; }
 
-.view--splitDetail {
-  padding-left: 320px; }
+@media only screen and (min-width: 640px) {
+  .view--splitList {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 320px;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    display: block; }
 
+  .view--splitDetail {
+    display: block;
+    padding-left: 320px; } }
 .view--dimmed {
   height: 100%;
   left: 0;
@@ -2364,14 +2362,14 @@ Class                      | Description
     .view-head {
       height: 64px; } }
 
-.view--splitList .view-head {
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
-  width: 320px; }
-.view--splitDetail .view-head {
-  left: 320px;
-  right: 0;
-  width: auto; }
-
+@media only screen and (min-width: 640px) {
+  .view--splitList .view-head {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    width: 320px; }
+  .view--splitDetail .view-head {
+    left: 320px;
+    right: 0;
+    width: auto; } }
 .view-head--transparent {
   background: transparent;
   border-bottom: none;
@@ -2440,6 +2438,7 @@ content container for the view.
   left: 50%;
   margin-left: -220px;
   margin-top: 10vh;
+  min-height: 0;
   position: absolute;
   width: 440px;
   z-index: 3; }
