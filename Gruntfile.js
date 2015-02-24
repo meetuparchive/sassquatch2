@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		DIR_BUILD = DIR_DOC_SRC + 'build/';
 
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+		bower: grunt.file.readJSON('bower.json'),
 		'sass': {
 			dist: {
 				files: {
@@ -34,19 +34,19 @@ module.exports = function(grunt) {
 		'clean': [DIR_BUILD],
 		'preprocess': {
 			inline: {
-				src: ['docs/templates/_header.html'],
+				src: [ 'docs/build/*.html' ],
 				options: {
 					inline: true,
 					context: {
 						DEBUG: false,
-						'RELEASE_TAG': 'hotdogs, hotdogs, hotdogs'
+						'VERSION': '<%= bower.version %>'
 					}
 				}
 			}
 		}
 	});
 
-	grunt.registerTask('version', ['clean', 'preprocess', 'hologram']);
+	grunt.registerTask('version', ['preprocess']);
 	grunt.registerTask('default', ['clean', 'sass', 'hologram']);
-	grunt.registerTask('ghpages', ['sass', 'hologram', 'gh-pages']);
+	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
