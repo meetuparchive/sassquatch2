@@ -46,7 +46,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('version', ['preprocess']);
-	grunt.registerTask('default', ['clean', 'sass', 'hologram']);
+	grunt.registerTask('default', ['clean', 'hologram', 'sass', 'preprocess']);
 	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
