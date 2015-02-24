@@ -498,18 +498,6 @@ Disables user-select, sets cursor, and resets text-decoration.
 */
 /*doc
 ---
-title: Button color mixin
-name: buttonColor
-parent: button
----
-Sets color properties for buttons
-
-```
-@mixin buttonColor($color, $btn-border: false)
-```
-*/
-/*doc
----
 title: data uri images
 name: datauri
 category: Sass Utils | Mixins & Placeholders
@@ -2668,13 +2656,9 @@ category: UI Components
 ```html_example
 <a class="button" href="#">Button</a>
 <a class="button button--primary" href="#">Primary Button</a>
-<a class="button button--bordered" href="#">Bordered Button</a>
+<a class="button button--borderless" href="#">Borderless Button</a>
 <br />
-<a class="button button--contrast" href="#">Contrast Button</a>
-<a class="button button--iconButton" href="#">
-	<i class="button-icon">:D</i>
-	<span class="text--caption">Icon Button</span>
-</a>
+<a class="button button--primary button--contrast" href="#">Contrast Button</a>
 <a class="button button--small" href="#">Small Button</a>
 <a class="button button--bordered button--fullWidth" href="#">Full width button</a>
 ```
@@ -2686,9 +2670,8 @@ classes are optional variants:
 Class                   | Description
 ----------------------- | ----------------------------------------
 `.button--primary`      | rounded button with dark background; for primary actions
-`.button--contrast`     | bold, dark text; use on dark backgrounds (ie. top nav bar)
+`.button--contrast`     | bold, dark text; use on dark backgrounds or photos (ie. top nav bar)
 `.button--bordered`     | rounded bordered button
-`.button--icon`         | cirular icon above caption text (see example above)
 `.button--small`        | decreases size of button
 */
 .button, .toggleButton-label {
@@ -2696,6 +2679,7 @@ Class                   | Description
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 50px;
   cursor: pointer;
   display: inline-block;
@@ -2704,86 +2688,49 @@ Class                   | Description
   margin: 0;
   padding: 8px 16px;
   text-align: center; }
+  .button:focus, .toggleButton-label:focus {
+    outline: 0; }
 
 .button {
-  background-color: transparent;
-  border: none;
   color: #3987cb; }
-  .button:focus {
-    outline: 0; }
   .button:hover, .button:active, .button:focus {
-    background: rgba(0, 0, 0, 0.1); }
-  .button.button--disabled {
-    opacity: .4;
-    color: rgba(0, 0, 0, 0.87);
-    cursor: default; }
-    .button.button--disabled:hover, .button.button--disabled:active, .button.button--disabled:focus {
-      background: transparent; }
-    .button.button--disabled.button--primary {
-      background: rgba(0, 0, 0, 0.26); }
+    background: rgba(57, 135, 203, 0.2);
+    border-color: transparent; }
 
-.button--fullWidth, .toggleButton-label,
-.button--bordered {
-  background-color: #3987cb;
-  color: white;
-  border: 1px solid #3987cb;
-  background: rgba(57, 135, 203, 0);
-  color: #3987cb;
-  font-weight: 400; }
-  .button--fullWidth:focus, .toggleButton-label:focus,
-  .button--bordered:focus {
-    outline: 0; }
-  .button--fullWidth:hover, .toggleButton-label:hover,
-  .button--fullWidth:active, .toggleButton-label:active,
-  .button--fullWidth:focus, .toggleButton-label:focus,
-  .button--bordered:hover,
-  .button--bordered:active,
-  .button--bordered:focus {
+.button--primary {
+  background: #3987cb;
+  color: white; }
+  .button--primary:hover, .button--primary:active, .button--primary:focus {
     background: #619fd6; }
-  .button--disabled.button--fullWidth, .button--disabled.toggleButton-label,
-  .button--bordered.button--disabled {
-    opacity: .4;
-    color: rgba(0, 0, 0, 0.87);
-    cursor: default; }
-    .button--disabled.button--fullWidth:hover, .button--disabled.toggleButton-label:hover,
-    .button--disabled.button--fullWidth:active, .button--disabled.toggleButton-label:active,
-    .button--disabled.button--fullWidth:focus, .button--disabled.toggleButton-label:focus,
-    .button--bordered.button--disabled:hover,
-    .button--bordered.button--disabled:active,
-    .button--bordered.button--disabled:focus {
-      background: #3987cb; }
-    .button--disabled.button--primary.button--fullWidth, .button--disabled.button--primary.toggleButton-label,
-    .button--bordered.button--disabled.button--primary {
-      background: rgba(0, 0, 0, 0.26); }
-  .button--fullWidth:hover, .toggleButton-label:hover,
-  .button--fullWidth:active, .toggleButton-label:active,
-  .button--fullWidth:focus, .toggleButton-label:focus,
-  .button--bordered:hover,
-  .button--bordered:active,
-  .button--bordered:focus {
-    background: rgba(57, 135, 203, 0.2); }
+  .button--primary.button--contrast {
+    background: white;
+    color: rgba(0, 0, 0, 0.87); }
+    .button--primary.button--contrast:hover, .button--primary.button--contrast:active, .button--primary.button--contrast:focus {
+      background: rgba(255, 255, 255, 0.8); }
 
 .button--contrast {
-  color: rgba(0, 0, 0, 0.87);
-  font-weight: 700; }
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid white;
+  color: white; }
+  .button--contrast:hover, .button--contrast:active, .button--contrast:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid white; }
 
-.button--iconButton {
-  font-weight: 400;
-  padding: 0; }
-  .button--iconButton:hover, .button--iconButton:focus, .button--iconButton:active {
-    background: transparent;
-    text-decoration: none; }
-
-.button-icon {
-  border: 1px solid #3987cb;
-  border-radius: 999px;
+.toggleButton-label {
+  border: 1px solid;
   color: #3987cb;
-  display: block;
-  font-size: 24px;
-  height: 24px;
-  margin: 0 auto;
-  padding: 8px;
-  width: 24px; }
+  font-weight: 400; }
+  .toggleButton-label:hover, .toggleButton-label:active, .toggleButton-label:focus {
+    background: rgba(57, 135, 203, 0.2); }
+
+.button--primary,
+.button--borderless {
+  border: none; }
+  .button--primary:hover, .button--primary:active, .button--primary:focus,
+  .button--borderless:hover,
+  .button--borderless:active,
+  .button--borderless:focus {
+    border: none; }
 
 .toggleButton-label,
 .button--small {
@@ -2793,64 +2740,6 @@ Class                   | Description
 .button--fullWidth {
   display: block;
   width: 100%; }
-
-.button--default {
-  background-color: transparent; }
-  .button--default:focus {
-    outline: 0; }
-  .button--default:hover,
-  .button--default:active,
-  .button--default:focus {
-    background: rgba(0, 0, 0, 0.1); }
-  .button--default.button--disabled {
-    opacity: .4;
-    color: rgba(0, 0, 0, 0.87);
-    cursor: default; }
-    .button--default.button--disabled:hover,
-    .button--default.button--disabled:active,
-    .button--default.button--disabled:focus {
-      background: transparent; }
-    .button--default.button--disabled.button--primary {
-      background: rgba(0, 0, 0, 0.26); }
-
-.button--primary {
-  background-color: #3987cb;
-  color: white; }
-  .button--primary:focus {
-    outline: 0; }
-  .button--primary:hover,
-  .button--primary:active,
-  .button--primary:focus {
-    background: #619fd6; }
-  .button--primary.button--disabled {
-    opacity: .4;
-    color: rgba(0, 0, 0, 0.87);
-    cursor: default; }
-    .button--primary.button--disabled:hover,
-    .button--primary.button--disabled:active,
-    .button--primary.button--disabled:focus {
-      background: #3987cb; }
-    .button--primary.button--disabled.button--primary {
-      background: rgba(0, 0, 0, 0.26); }
-
-.button--contrast {
-  background-color: rgba(255, 255, 255, 0.7); }
-  .button--contrast:focus {
-    outline: 0; }
-  .button--contrast:hover,
-  .button--contrast:active,
-  .button--contrast:focus {
-    background: rgba(255, 255, 255, 0.8); }
-  .button--contrast.button--disabled {
-    opacity: .4;
-    color: rgba(0, 0, 0, 0.87);
-    cursor: default; }
-    .button--contrast.button--disabled:hover,
-    .button--contrast.button--disabled:active,
-    .button--contrast.button--disabled:focus {
-      background: rgba(255, 255, 255, 0.7); }
-    .button--contrast.button--disabled.button--primary {
-      background: rgba(0, 0, 0, 0.26); }
 
 /*doc
 ---
