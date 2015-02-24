@@ -3427,6 +3427,7 @@ Class                         | Description
   text-overflow: ellipsis !important; }
 
 .matchLineHeight {
-  margin: 3px inherit 3px inherit; }
+  outline: 1px dotted orange;
+  margin: 3px 0; }
 
 /*# sourceMappingURL=sassquatch.css.map */
