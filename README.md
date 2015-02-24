@@ -8,7 +8,7 @@ Sassquatch is a CSS foundation and framework for [Meetup](http://www.meetup.com)
 ---
 
 ## Documentation
-Documentation is built to [github pages](http://meetup.github.io/sassquatch2/core.html)
+Documentation is built to [github pages](http://meetup.github.io/sassquatch2/typography.html)
 
 ---
 
@@ -26,7 +26,7 @@ Manage installation via bower:
 
 ## Development
 
-Clone this repo and run `./setup.sh`. 
+Clone this repo and run `./setup.sh`.
 
 Code guidelines and standards are [documented on the wiki](https://github.com/meetup/sassquatch2/wiki/Code-standards-&-guidelines)
 
