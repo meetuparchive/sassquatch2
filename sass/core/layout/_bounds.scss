@@ -55,13 +55,13 @@ $space-bounds: $space * 1.5;
 	max-width: $bounds-wide;
 }
 
-.bounds--sideHeader{
+.bounds--sideHeading {
 	$gutter: $bounds-wide - $bounds;
 	max-width: $bounds-wide;
 	@include atMediaUp(large) {
 		padding-left: $gutter + $space;
 		position: relative;
-		.stripe-header{
+		.bounds-heading {
 			position: absolute;
 			top: $space-bounds;
 			left: $space;
