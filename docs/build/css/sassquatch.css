@@ -1605,7 +1605,7 @@ padding, and sets a max-width.
 </section>
 ```
 
-#### Bounds variants
+## Bounds variants
 
 Class                  | Description
 ---------------------- | -------------------------------------
@@ -1614,7 +1614,7 @@ Class                  | Description
 `.bounds--sideHeader`  | bounds for wrapping standard (narrow) content, offset by labels to the side at wide widths
 
 
-#### Side Header example
+## Side Header example
 
 The `bounds--sideHeader` variant applies styles to accommodate a
 `bounds-header` element. A `bounds-header` is pulled to the left side
