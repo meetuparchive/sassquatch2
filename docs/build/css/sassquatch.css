@@ -1613,6 +1613,28 @@ Class                  | Description
 `.bounds--wide`        | bounds for wrapping wider content, such as gridList
 `.bounds--sideHeader`  | bounds for wrapping standard (narrow) content, offset by labels to the side at wide widths
 
+
+#### Side Header example
+
+The `bounds--sideHeader` variant applies styles to accommodate a
+`bounds-header` element. A `bounds-header` is pulled to the left side
+of the bounds on wide screens, and linearizes on small screens.
+
+```html_example
+	<section class="stripe">
+		<div class="bounds bounds--sideHeader">
+
+			<div class="bounds-header chunk">
+				<h2>I'm in a bounds header</h2>
+				<p class="text--caption">I linearize on small screens</p>
+			</div>
+
+			<p>This is just some content within the bounds, behaving like any other bounds content.</p>
+			<p>You can apply the bounds-header class to a single element, or wrap a group of elements you'd like to pull to the side on large screens.</p>
+		</div>
+	</section>
+```
+
 */
 .bounds {
   box-sizing: border-box;
@@ -1627,16 +1649,17 @@ Class                  | Description
 
 .bounds--sideHeader {
   max-width: 1100px; }
-  @media only screen and (min-width: 840px) {
-    .bounds--sideHeader {
-      padding-left: 276px;
-      position: relative; }
-      .bounds--sideHeader .stripe-header {
-        position: absolute;
-        top: 24px;
-        left: 16px;
-        width: 236px; } }
 
+@media only screen and (min-width: 840px) {
+  .bounds--sideHeader {
+    padding-left: 276px;
+    position: relative; }
+
+  .bounds-header {
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    width: 236px; } }
 /*doc
 ---
 title: Chunk

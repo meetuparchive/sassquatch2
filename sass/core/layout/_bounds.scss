@@ -29,7 +29,7 @@ padding, and sets a max-width.
 </section>
 ```
 
-#### Bounds variants
+## Bounds variants
 
 Class                  | Description
 ---------------------- | -------------------------------------
@@ -37,9 +37,32 @@ Class                  | Description
 `.bounds--wide`        | bounds for wrapping wider content, such as gridList
 `.bounds--sideHeader`  | bounds for wrapping standard (narrow) content, offset by labels to the side at wide widths
 
+
+## Side Header example
+
+The `bounds--sideHeader` variant applies styles to accommodate a
+`bounds-header` element. A `bounds-header` is pulled to the left side
+of the bounds on wide screens, and linearizes on small screens.
+
+```html_example
+	<section class="stripe">
+		<div class="bounds bounds--sideHeader">
+
+			<div class="bounds-header chunk">
+				<h2>I'm in a bounds header</h2>
+				<p class="text--caption">I linearize on small screens</p>
+			</div>
+
+			<p>This is just some content within the bounds, behaving like any other bounds content.</p>
+			<p>You can apply the bounds-header class to a single element, or wrap a group of elements you'd like to pull to the side on large screens.</p>
+		</div>
+	</section>
+```
+
 */
 
 $space-bounds: $space * 1.5;
+$sideHeadergutter: $bounds-wide - $bounds;
 
 .bounds {
 	@extend %clearfix;
@@ -55,18 +78,20 @@ $space-bounds: $space * 1.5;
 	max-width: $bounds-wide;
 }
 
+// side headers
 .bounds--sideHeader {
-	$gutter: $bounds-wide - $bounds;
 	max-width: $bounds-wide;
-	@include atMediaUp(large) {
-		padding-left: $gutter + $space;
+}
+@include atMediaUp(large) {
+	.bounds--sideHeader {
+		padding-left: $sideHeadergutter + $space;
 		position: relative;
-		.bounds-header {
-			position: absolute;
-			top: $space-bounds;
-			left: $space;
-			width: $gutter - $space-bounds;
-		}
+	}
+	.bounds-header {
+		position: absolute;
+		top: $space-bounds;
+		left: $space;
+		width: $sideHeadergutter - $space-bounds;
 	}
 }
 
