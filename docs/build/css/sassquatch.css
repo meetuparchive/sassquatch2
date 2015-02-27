@@ -1687,10 +1687,38 @@ _Can be used in combination with any other component
 	<p class="text--caption">Some kind of caption</p>
 </div>
 ```
+
+## Chunk variants
+A class of `chunk` is __required__ for chunks. The
+following classes are optional variants.
+
+Class                 | Description
+--------------------- | ---------------------------
+`chunk--bordered`     | adds a top border and top padding ala `.list li`
+
+```html_example
+<div class="chunk"> <h2>Just a normal chunk</h2>
+	<p class="text--caption">Nothing too special</p>
+</div>
+
+<div class="chunk">
+	<h2>Just a normal chunk</h2>
+	<p class="text--caption">Nothing too special</p>
+</div>
+
+<div class="chunk chunk--bordered">
+	<h2>This is a bordered chunk</h2>
+	<p class="text--caption">It has a border, as you might have expected.</p>
+</div>
+```
 */
 .chunk {
   display: block;
   margin-bottom: 16px; }
+
+.chunk--bordered {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding-top: 16px; }
 
 /*doc
 ---

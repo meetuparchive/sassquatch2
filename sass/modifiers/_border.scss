@@ -10,11 +10,15 @@ Class                   | Description
 ----------------------- | --------------------------------
 `.border--top`          | sets a standard top border on the element
 `.border--none`         | removes all borders from element
-
+`.bordered`             | sets a standard top border AND top padding
 */
 .border--top {
 	border-top: $border-standard !important;
 }
 .border--none {
 	border-width: 0 !important;
+}
+.bordered {
+	border-top: 1px solid $C-border;
+	padding-top: $space;
 }
