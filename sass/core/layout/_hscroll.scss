@@ -1,0 +1,49 @@
+/*doc
+---
+title: Horizontal Scroll
+name: hscroll
+category: Layout
+---
+Applies styles for horizontal scrolling lists.
+
+```html_example
+<div class="hscroll">
+	<ul class="hscroll-content">
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+	</ul>
+</div>
+```
+
+*/
+.hscroll {
+	-webkit-overflow-scrolling: touch;
+	overflow: scroll;
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		 display: none;
+	}
+}
+
+.hscroll-content {
+	outline: 1px solid orange;
+	@extend %inlineblockList;
+	box-sizing: content-box;
+	padding-left: $space;
+	padding-right: $space;
+	white-space: nowrap;
+	& > li {
+		white-space: normal;
+	}
+}
