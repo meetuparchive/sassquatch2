@@ -1649,18 +1649,6 @@ of the bounds on wide screens, and linearizes on small screens.
 
 .bounds--sideHeader {
   max-width: 1100px; }
-<<<<<<< HEAD
-=======
-  @media only screen and (min-width: 840px) {
-    .bounds--sideHeader {
-      padding-left: 276px;
-      position: relative; }
-      .bounds--sideHeader .bounds-header {
-        position: absolute;
-        top: 24px;
-        left: 16px;
-        width: 236px; } }
->>>>>>> develop
 
 @media only screen and (min-width: 840px) {
   .bounds--sideHeader {
