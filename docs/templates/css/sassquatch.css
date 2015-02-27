@@ -1631,7 +1631,7 @@ Class                  | Description
     .bounds--sideHeader {
       padding-left: 276px;
       position: relative; }
-      .bounds--sideHeader .stripe-header {
+      .bounds--sideHeader .bounds-header {
         position: absolute;
         top: 24px;
         left: 16px;
@@ -2189,12 +2189,59 @@ each list item and right gutters between items.
 ```
 
 */
+.hscroll-content,
 .inlineblockList {
   margin: 0;
   padding: 0; }
+  .hscroll-content > li,
   .inlineblockList > li {
     display: inline-block;
     padding-right: 8px; }
+
+/*doc
+---
+title: Horizontal Scroll
+name: hscroll
+category: Layout
+---
+Applies styles for horizontal scrolling lists.
+
+```html_example
+<div class="hscroll">
+	<ul class="hscroll-content">
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+	</ul>
+</div>
+```
+
+*/
+.hscroll {
+  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none; }
+  .hscroll::-webkit-scrollbar {
+    display: none; }
+
+.hscroll-content {
+  outline: 1px solid orange;
+  box-sizing: content-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  white-space: nowrap; }
+  .hscroll-content > li {
+    white-space: normal; }
 
 /*doc
 ---
