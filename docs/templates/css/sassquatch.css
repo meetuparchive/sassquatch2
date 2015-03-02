@@ -1110,10 +1110,10 @@ category: Forms
 	<div class="row-item chunk">
 		<label for="split2">Unicorn color</label>
 		<select id="split2">
-			<option value="One">One</option>
-			<option value="Two">Two</option>
-			<option value="Three">Three</option>
-			<option value="Four">Four</option>
+			<option value="clear">Transparent</option>
+			<option value="green">Toasted clove saffron</option>
+			<option value="brown">Midnight brown</option>
+			<option value="black">Seabreeze black</option>
 		</select>
 	</div>
 </div>
@@ -1179,8 +1179,8 @@ select {
 textarea {
   min-height: 88px; }
 
-.checkbox[type=checkbox],
-.radio[type=radio] {
+.checkbox,
+.radio {
   border: none;
   background: transparent;
   -webkit-appearance: none; }
@@ -1193,17 +1193,38 @@ textarea::-webkit-input-placeholder {
   textarea::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.3); }
 
+.label--switch {
+  font-size: 16px;
+  position: relative; }
+
 /*doc
 ---
 title: Checkboxes
 name: checkbox
 category: Forms
 ---
+A label variant class of `label--switch` is
+used for side-by-side inputs and labels.
 
-TK
+For radios and checkboxes, we put the `input`
+element inside the `label` element.
+
+A class of `checkbox` is __required__ on checkbox
+input elements.
+
+```html_example
+<label for="check1" class="label--switch chunk">
+	<input id="check1" class="checkbox" value="green" type="checkbox" />
+	Green
+</label>
+<label for="check2" class="label--switch chunk">
+	<input id="check2" class="checkbox" value="blue" type="checkbox" />
+	Blue
+</label>
+```
 */
 /* CHECKBOXES */
-.checkbox[type=checkbox] {
+.checkbox {
   -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
@@ -1213,7 +1234,7 @@ TK
   top: 0.0625em;
   width: 16px;
   z-index: 0; }
-  .checkbox[type=checkbox]:before {
+  .checkbox:before {
     -webkit-transition: -webkit-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -moz-transition: -moz-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1230,11 +1251,11 @@ TK
     border: 2px solid white;
     border-top-style: none;
     border-right-style: none; }
-  .checkbox[type=checkbox]:checked:before {
+  .checkbox:checked:before {
     -webkit-transform: rotate(-45deg) scale(1, 1);
     -ms-transform: rotate(-45deg) scale(1, 1);
     transform: rotate(-45deg) scale(1, 1); }
-  .checkbox[type=checkbox]:after {
+  .checkbox:after {
     content: "";
     position: absolute;
     top: -0.125em;
@@ -1245,21 +1266,21 @@ TK
     border: 1px solid rgba(0, 0, 0, 0.26);
     border-radius: 3px;
     cursor: pointer; }
-  .checkbox[type=checkbox]:checked:after, .checkbox[type=checkbox]:active:after {
+  .checkbox:checked:after, .checkbox:active:after {
     background: #3987cb; }
-  .checkbox[type=checkbox]:hover, .checkbox[type=checkbox]:focus {
+  .checkbox:hover, .checkbox:focus {
     outline: none; }
-    .checkbox[type=checkbox]:hover:after, .checkbox[type=checkbox]:focus:after {
+    .checkbox:hover:after, .checkbox:focus:after {
       box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.12);
       border: 1px solid rgba(0, 0, 0, 0.54); }
 
-.inverted .checkbox[type=checkbox]:after {
+.inverted .checkbox:after {
   background: #353e48;
   border: 1px solid rgba(255, 255, 255, 0.7); }
-.inverted .checkbox[type=checkbox]:hover:after, .inverted .checkbox[type=checkbox]:focus:after {
+.inverted .checkbox:hover:after, .inverted .checkbox:focus:after {
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.12);
   border: 1px solid white; }
-.inverted .checkbox[type=checkbox]:checked:after, .inverted .checkbox[type=checkbox]:active:after {
+.inverted .checkbox:checked:after, .inverted .checkbox:active:after {
   background: #3987cb; }
 
 /*doc
@@ -1268,11 +1289,28 @@ title: Radios
 name: radio
 category: Forms
 ---
+A label variant class of `label--switch` is
+used for side-by-side inputs and labels.
 
-TK
+For radios and checkboxes, we put the `input`
+element inside the `label` element.
+
+A class of `radio` is __required__ on radio input
+elements.
+
+```html_example
+<label for="radio1" class="label--switch chunk">
+	<input id="radio1" class="radio" name="radioExample" value="green" type="radio" />
+	Green
+</label>
+<label for="radio1" class="label--switch chunk">
+	<input id="radio1" class="radio" name="radioExample" value="red" type="radio" />
+	Red
+</label>
+```
 */
 /* RADIOS */
-.radio[type=radio] {
+.radio {
   -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
@@ -1282,7 +1320,7 @@ TK
   top: 0;
   width: 16px;
   z-index: 0; }
-  .radio[type=radio]:before {
+  .radio:before {
     -webkit-transition: -webkit-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -moz-transition: -moz-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1298,11 +1336,11 @@ TK
     height: 0.75em;
     background: #3987cb;
     border-radius: 999px; }
-  .radio[type=radio]:checked:before, .radio[type=radio]:active:before {
+  .radio:checked:before, .radio:active:before {
     -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
     transform: scale(1, 1); }
-  .radio[type=radio]:after {
+  .radio:after {
     content: "";
     position: absolute;
     top: 0;
@@ -1312,15 +1350,15 @@ TK
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.26);
     border-radius: 999px; }
-  .radio[type=radio]:checked, .radio[type=radio]:hover, .radio[type=radio]:focus {
+  .radio:checked, .radio:hover, .radio:focus {
     outline: none; }
-    .radio[type=radio]:checked:after, .radio[type=radio]:hover:after, .radio[type=radio]:focus:after {
+    .radio:checked:after, .radio:hover:after, .radio:focus:after {
       border: 1px solid #3987cb; }
 
-.inverted .radio[type=radio]:after {
+.inverted .radio:after {
   background: #353e48;
   border: 1px solid rgba(255, 255, 255, 0.7); }
-.inverted .radio[type=radio]:hover:after, .inverted .radio[type=radio]:focus:after {
+.inverted .radio:hover:after, .inverted .radio:focus:after {
   border: 1px solid white; }
 
 /*doc

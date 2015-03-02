@@ -149,8 +149,31 @@
 	 	<main id="content">
 <h1 id="checkbox">Checkboxes</h1>
 
-<p>TK</p>
+<p>A label variant class of <code>label--switch</code> is
+used for side-by-side inputs and labels.</p>
 
+<p>For radios and checkboxes, we put the <code>input</code>
+element inside the <code>label</code> element.</p>
+
+<p>A class of <code>checkbox</code> is <strong>required</strong> on checkbox
+input elements.</p>
+<div class="codeExample"><div class="exampleOutput"><label for="check1" class="label--switch chunk">
+    <input id="check1" class="checkbox" value="green" type="checkbox" />
+    Green
+</label>
+<label for="check2" class="label--switch chunk">
+    <input id="check2" class="checkbox" value="blue" type="checkbox" />
+    Blue
+</label>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"check1"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"green"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span>
+    Green
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check2"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"check2"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"blue"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span>
+    Blue
+<span class="nt">&lt;/label&gt;</span>
+</pre></div></div></div>
 <h1 id="forms">Basic Inputs</h1>
 
 <h2>Text inputs</h2>
@@ -187,10 +210,10 @@
     <div class="row-item chunk">
         <label for="split2">Unicorn color</label>
         <select id="split2">
-            <option value="One">One</option>
-            <option value="Two">Two</option>
-            <option value="Three">Three</option>
-            <option value="Four">Four</option>
+            <option value="clear">Transparent</option>
+            <option value="green">Toasted clove saffron</option>
+            <option value="brown">Midnight brown</option>
+            <option value="black">Seabreeze black</option>
         </select>
     </div>
 </div>
@@ -227,10 +250,10 @@
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item chunk"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"split2"</span><span class="nt">&gt;</span>Unicorn color<span class="nt">&lt;/label&gt;</span>
         <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"split2"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"One"</span><span class="nt">&gt;</span>One<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Two"</span><span class="nt">&gt;</span>Two<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Three"</span><span class="nt">&gt;</span>Three<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Four"</span><span class="nt">&gt;</span>Four<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"clear"</span><span class="nt">&gt;</span>Transparent<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"green"</span><span class="nt">&gt;</span>Toasted clove saffron<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"brown"</span><span class="nt">&gt;</span>Midnight brown<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"black"</span><span class="nt">&gt;</span>Seabreeze black<span class="nt">&lt;/option&gt;</span>
         <span class="nt">&lt;/select&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -250,8 +273,31 @@ in launching custom input (ie. date/location pickers).</p>
 </pre></div></div></div>
 <h1 id="radio">Radios</h1>
 
-<p>TK</p>
+<p>A label variant class of <code>label--switch</code> is
+used for side-by-side inputs and labels.</p>
 
+<p>For radios and checkboxes, we put the <code>input</code>
+element inside the <code>label</code> element.</p>
+
+<p>A class of <code>radio</code> is <strong>required</strong> on radio input
+elements.</p>
+<div class="codeExample"><div class="exampleOutput"><label for="radio1" class="label--switch chunk">
+    <input id="radio1" class="radio" name="radioExample" value="green" type="radio" />
+    Green
+</label>
+<label for="radio1" class="label--switch chunk">
+    <input id="radio1" class="radio" name="radioExample" value="red" type="radio" />
+    Red
+</label>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radioExample"</span> <span class="na">value=</span><span class="s">"green"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="nt">/&gt;</span>
+    Green
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radioExample"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="nt">/&gt;</span>
+    Red
+<span class="nt">&lt;/label&gt;</span>
+</pre></div></div></div>
 <h1 id="segmentedToggle">Segmented Toggle</h1>
 
 <p>TK</p>

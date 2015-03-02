@@ -4,15 +4,31 @@ title: Checkboxes
 name: checkbox
 category: Forms
 ---
+A label variant class of `label--switch` is
+used for side-by-side inputs and labels.
 
-TK
+For radios and checkboxes, we put the `input`
+element inside the `label` element.
+
+A class of `checkbox` is __required__ on checkbox
+input elements.
+
+```html_example
+<label for="check1" class="label--switch chunk">
+	<input id="check1" class="checkbox" value="green" type="checkbox" />
+	Green
+</label>
+<label for="check2" class="label--switch chunk">
+	<input id="check2" class="checkbox" value="blue" type="checkbox" />
+	Blue
+</label>
+```
 */
 
-// TODO: needs a lot of selector refactoring.
 //
 /* CHECKBOXES */
 //
-.checkbox[type=checkbox] {
+.checkbox {
 	-webkit-appearance: none;
 	cursor: pointer;
 	display: inline-block;
@@ -82,7 +98,7 @@ TK
 
 // INVERTED CHECKBOX INPUT
 .inverted {
-	.checkbox[type=checkbox] {
+	.checkbox {
 		&:after {
 			background: $C_contentBGInverted;
 			border: 1px solid $C_textSecondaryInverted;

@@ -41,10 +41,10 @@ category: Forms
 	<div class="row-item chunk">
 		<label for="split2">Unicorn color</label>
 		<select id="split2">
-			<option value="One">One</option>
-			<option value="Two">Two</option>
-			<option value="Three">Three</option>
-			<option value="Four">Four</option>
+			<option value="clear">Transparent</option>
+			<option value="green">Toasted clove saffron</option>
+			<option value="brown">Midnight brown</option>
+			<option value="black">Seabreeze black</option>
 		</select>
 	</div>
 </div>
@@ -73,7 +73,7 @@ textarea {
 }
 
 %_formDecoration,
-#{$all-text-inputs},
+input,
 textarea,
 select,
 .launcher {
@@ -105,7 +105,7 @@ select,
 	}
 }
 
-#{$all-text-inputs},
+input,
 select {
 	height: ($font-size * $line-height) + $space;
 }
@@ -114,9 +114,8 @@ textarea {
 	min-height: (3 * $font-size * $line-height) + $space;
 }
 
-// TODO: lower the selector
-.checkbox[type=checkbox],
-.radio[type=radio] {
+.checkbox,
+.radio {
 	border: none; // iOS Safari shows weird black area around checkbox without this
 	background: transparent; // iOS Safari shows weird black area around checkbox without this
 	-webkit-appearance: none;
@@ -129,5 +128,11 @@ textarea::-webkit-input-placeholder {
 	.inverted &{
 		color: $C_textTertiaryInverted;
 	}
+}
+
+// switch labels
+.label--switch {
+  font-size: $font-size;
+  position: relative;
 }
 
