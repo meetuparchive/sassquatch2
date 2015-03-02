@@ -1402,6 +1402,35 @@ Class                    | Description
   .inverted .launcher--placeholder {
     color: rgba(255, 255, 255, 0.3); }
 
+/*doc
+---
+title: Validation errors
+name: formValidation
+category: Forms
+---
+Error styles are applied to any child
+input of an element with the class `hasError`.
+
+Error text is set explicitly with `text--error`.
+
+```html_example
+<div class="chunk hasError">
+	<label for="test-textinput">First name</label>
+	<input id="test-textinput" type="text" value="Bill" />
+	<p class="text--error">You are not Jeff Goldblum</p>
+</div>
+```
+
+*/
+.hasError input,
+.hasError textarea,
+.hasError select {
+  border-color: #d55741; }
+
+.text--error {
+  color: #d55741;
+  margin-top: 4px; }
+
 .collection-header {
   height: 48px;
   margin-bottom: 0; }

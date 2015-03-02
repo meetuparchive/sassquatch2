@@ -242,8 +242,21 @@ input elements.</p>
 </pre></div></div></div>
 <h1 id="formValidation">Validation errors</h1>
 
-<p>TK</p>
+<p>Error styles are applied to any child
+input of an element with the class <code>hasError</code>.</p>
 
+<p>Error text is set explicitly with <code>text--error</code>.</p>
+<div class="codeExample"><div class="exampleOutput"><div class="chunk hasError">
+    <label for="test-textinput">First name</label>
+    <input id="test-textinput" type="text" value="Bill" />
+    <p class="text--error">You are not Jeff Goldblum</p>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk hasError"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"test-textinput"</span><span class="nt">&gt;</span>First name<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"test-textinput"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Bill"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--error"</span><span class="nt">&gt;</span>You are not Jeff Goldblum<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
 <h1 id="launcher">Launcher</h1>
 
 <p>Applies form field styles to an anchor, for use
