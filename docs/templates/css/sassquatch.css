@@ -1378,11 +1378,6 @@ in launching custom input (ie. date/location pickers).
 
 ```html_example
 <div class="chunk">
-	<label for="specialPicker">Pick a location</label>
-	<a id="specialPicker" class="launcher launcher--placeholder" href="#">User clicks this for custom input</a>
-</div>
-
-<div class="chunk">
 	<label for="specialPicker2">Pick a location</label>
 	<a id="specialPicker2" class="launcher" href="#">Boise, Idaho</a>
 </div>
@@ -1407,9 +1402,6 @@ Class                    | Description
   .inverted .launcher--placeholder {
     color: rgba(255, 255, 255, 0.3); }
 
-/*@import "core/forms/segmentedToggle";*/
-/*@import "core/forms/timePicker";*/
-/*@import "core/forms/validation";*/
 .collection-header {
   height: 48px;
   margin-bottom: 0; }
