@@ -1074,8 +1074,6 @@ name: forms
 category: Forms
 ---
 
-TK: better docs
-
 ## Text inputs
 
 ```html_example
@@ -1102,6 +1100,22 @@ TK: better docs
 		<option value="Three">Three</option>
 		<option value="Four">Four</option>
 	</select>
+</div>
+
+<div class="row">
+	<div class="row-item chunk">
+		<label for="split1">Unicorn name</label>
+		<input id="split1" type="text" placeholder="ie. Fluffy, Resplendent" />
+	</div>
+	<div class="row-item chunk">
+		<label for="split2">Unicorn color</label>
+		<select id="split2">
+			<option value="One">One</option>
+			<option value="Two">Two</option>
+			<option value="Three">Three</option>
+			<option value="Four">Four</option>
+		</select>
+	</div>
 </div>
 ```
 

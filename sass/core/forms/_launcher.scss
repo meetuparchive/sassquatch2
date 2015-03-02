@@ -4,10 +4,17 @@ title: Launcher
 name: launcher
 category: Forms
 ---
+Applies form field styles to an anchor, for use
+in launching custom input (ie. date/location pickers).
 
-TK
+```html_example
+<label for="specialPicker">Pick something special</label>
+<a id="specialPicker" class="launcher" href="#">User clicks this to open a custom input</a>
+```
 */
 
+
+// TODO: can these styles be merged?
 .launcher {
 	@extend %_formFont;
 	@extend %_formDecoration;

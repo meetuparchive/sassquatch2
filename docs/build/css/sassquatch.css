@@ -1074,8 +1074,6 @@ name: forms
 category: Forms
 ---
 
-TK: better docs
-
 ## Text inputs
 
 ```html_example
@@ -1103,6 +1101,22 @@ TK: better docs
 		<option value="Four">Four</option>
 	</select>
 </div>
+
+<fieldset class="row">
+	<div class="row-item chunk">
+		<label for="split1">Unicorn name</label>
+		<input id="split1" type="text" placeholder="ie. Fluffy, Resplendent" />
+	</div>
+	<div class="row-item chunk">
+		<label for="split1">Unicorn color</label>
+		<select id="text-select">
+			<option value="One">One</option>
+			<option value="Two">Two</option>
+			<option value="Three">Three</option>
+			<option value="Four">Four</option>
+		</select>
+	</div>
+</fieldset>
 ```
 
 */
@@ -1687,38 +1701,10 @@ _Can be used in combination with any other component
 	<p class="text--caption">Some kind of caption</p>
 </div>
 ```
-
-## Chunk variants
-A class of `chunk` is __required__ for chunks. The
-following classes are optional variants.
-
-Class                 | Description
---------------------- | ---------------------------
-`chunk--bordered`     | adds a top border and top padding ala `.list li`
-
-```html_example
-<div class="chunk"> <h2>Just a normal chunk</h2>
-	<p class="text--caption">Nothing too special</p>
-</div>
-
-<div class="chunk">
-	<h2>Just a normal chunk</h2>
-	<p class="text--caption">Nothing too special</p>
-</div>
-
-<div class="chunk chunk--bordered">
-	<h2>This is a bordered chunk</h2>
-	<p class="text--caption">It has a border, as you might have expected.</p>
-</div>
-```
 */
 .chunk {
   display: block;
   margin-bottom: 16px; }
-
-.chunk--bordered {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  padding-top: 16px; }
 
 /*doc
 ---
@@ -3270,13 +3256,17 @@ Class                   | Description
 ----------------------- | --------------------------------
 `.border--top`          | sets a standard top border on the element
 `.border--none`         | removes all borders from element
-
+`.bordered`             | sets a standard top border AND top padding
 */
 .border--top {
   border-top: 1px solid rgba(0, 0, 0, 0.12) !important; }
 
 .border--none {
   border-width: 0 !important; }
+
+.bordered {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding-top: 16px; }
 
 /*doc
 ---
