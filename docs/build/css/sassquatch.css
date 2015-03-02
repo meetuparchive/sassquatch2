@@ -1309,8 +1309,8 @@ elements.
 	<input id="radio1" class="radio" name="radioExample" value="green" type="radio" />
 	Green
 </label>
-<label for="radio1" class="label--switch chunk">
-	<input id="radio1" class="radio" name="radioExample" value="red" type="radio" />
+<label for="radio2" class="label--switch chunk">
+	<input id="radio2" class="radio" name="radioExample" value="red" type="radio" />
 	Red
 </label>
 ```
@@ -1416,8 +1416,8 @@ Error text is set explicitly with `text--error`.
 ```html_example
 <div class="chunk hasError">
 	<label for="test-textinput">First name</label>
-	<input id="test-textinput" type="text" value="Bill" />
-	<p class="text--error">You are not Jeff Goldblum</p>
+	<input id="test-textinput" type="text" value="" />
+	<p class="text--error">First name can't be empty</p>
 </div>
 ```
 
