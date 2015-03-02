@@ -1136,7 +1136,7 @@ textarea {
   font-size: 100%;
   line-height: 1.5; }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+input,
 textarea,
 select,
 .launcher {
@@ -1150,7 +1150,7 @@ select,
   max-width: 100%;
   padding: 8px;
   width: 100%; }
-  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+  input:focus,
   textarea:focus,
   select:focus,
   .launcher:focus {
@@ -1158,7 +1158,7 @@ select,
     box-shadow: none;
     outline: none; }
   .inverted
-  input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
+  input, .inverted
   textarea, .inverted
   select, .inverted
   .launcher {
@@ -1166,13 +1166,13 @@ select,
     border-color: rgba(255, 255, 255, 0.2);
     color: white; }
   .shaded
-  input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
+  input, .shaded
   textarea, .shaded
   select, .shaded
   .launcher {
     background-color: white; }
 
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+input,
 select {
   height: 40px; }
 
@@ -1213,16 +1213,14 @@ A class of `checkbox` is __required__ on checkbox
 input elements.
 
 ```html_example
-<div class="chunk">
-	<label for="check1" class="label--switch">
-		<input id="check1" class="checkbox" value="green" type="checkbox" />
-		Green
-	</label>
-	<label for="check2" class="label--switch">
-		<input id="check2" class="checkbox" value="blue" type="checkbox" />
-		Blue
-	</label>
-</div>
+<label for="check1" class="label--switch chunk">
+	<input id="check1" class="checkbox" value="green" type="checkbox" />
+	Green
+</label>
+<label for="check2" class="label--switch chunk">
+	<input id="check2" class="checkbox" value="blue" type="checkbox" />
+	Blue
+</label>
 ```
 */
 /* CHECKBOXES */
@@ -1301,16 +1299,14 @@ A class of `radio` is __required__ on radio input
 elements.
 
 ```html_example
-<div class="chunk">
-	<label for="radio1" class="label--switch">
-		<input id="radio1" class="radio" name="radioExample" value="green" type="radio" />
-		Green
-	</label>
-	<label for="radio1" class="label--switch">
-		<input id="radio1" class="radio" name="radioExample" value="red" type="radio" />
-		Red
-	</label>
-</div>
+<label for="radio1" class="label--switch chunk">
+	<input id="radio1" class="radio" name="radioExample" value="green" type="radio" />
+	Green
+</label>
+<label for="radio1" class="label--switch chunk">
+	<input id="radio1" class="radio" name="radioExample" value="red" type="radio" />
+	Red
+</label>
 ```
 */
 /* RADIOS */
@@ -1507,10 +1503,6 @@ TK
 .stripe--inverted .hscroll-wrap-wrap:after {
   background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
   background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
-
-.label--switch {
-  font-size: 16px;
-  position: relative; }
 
 /* INLINE FORM */
 .inline-form {

@@ -266,11 +266,42 @@ input elements.</p>
 
 <p>Applies form field styles to an anchor, for use
 in launching custom input (ie. date/location pickers).</p>
-<div class="codeExample"><div class="exampleOutput"><label for="specialPicker">Pick something special</label>
-<a id="specialPicker" class="launcher" href="#">User clicks this to open a custom input</a>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"specialPicker"</span><span class="nt">&gt;</span>Pick something special<span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"specialPicker"</span> <span class="na">class=</span><span class="s">"launcher"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>User clicks this to open a custom input<span class="nt">&lt;/a&gt;</span>
+<div class="codeExample"><div class="exampleOutput"><div class="chunk">
+    <label for="specialPicker">Pick a location</label>
+    <a id="specialPicker" class="launcher launcher--placeholder" href="#">User clicks this for custom input</a>
+</div>
+
+<div class="chunk">
+    <label for="specialPicker2">Pick a location</label>
+    <a id="specialPicker2" class="launcher" href="#">Boise, Idaho</a>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"specialPicker"</span><span class="nt">&gt;</span>Pick a location<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"specialPicker"</span> <span class="na">class=</span><span class="s">"launcher launcher--placeholder"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>User clicks this for custom input<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"specialPicker2"</span><span class="nt">&gt;</span>Pick a location<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"specialPicker2"</span> <span class="na">class=</span><span class="s">"launcher"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Boise, Idaho<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </pre></div></div></div>
+<h2>Launcher variants</h2>
+
+<p>A class of <code>launcher</code> is <strong>required</strong> for launcher
+anchors. The following classes are optional variants</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>launcher--placeholder</code></td>
+<td>Applies placeholder-like text styles for &quot;unselected&quot; values</td>
+</tr>
+</tbody></table>
+
 <h1 id="radio">Radios</h1>
 
 <p>A label variant class of <code>label--switch</code> is

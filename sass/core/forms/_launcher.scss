@@ -8,9 +8,20 @@ Applies form field styles to an anchor, for use
 in launching custom input (ie. date/location pickers).
 
 ```html_example
-<label for="specialPicker">Pick something special</label>
-<a id="specialPicker" class="launcher" href="#">User clicks this to open a custom input</a>
+<div class="chunk">
+	<label for="specialPicker2">Pick a location</label>
+	<a id="specialPicker2" class="launcher" href="#">Boise, Idaho</a>
+</div>
 ```
+
+## Launcher variants
+A class of `launcher` is __required__ for launcher
+anchors. The following classes are optional variants
+
+Class                    | Description
+------------------------ | ------------------------------------------------------------
+`launcher--placeholder`  | Applies placeholder-like text styles for "unselected" values
+
 */
 
 
@@ -23,7 +34,7 @@ in launching custom input (ie. date/location pickers).
 	background-repeat: no-repeat;
 }
 
-.launcher-placeholder {
+.launcher--placeholder {
 	font-style: normal;
 	color: $C_textTertiary;
 	.inverted &{
