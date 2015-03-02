@@ -36,7 +36,7 @@ Class                      | Description
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: map-get($zindex-map, "main-header"); // TODO: maybe abstract this map a bit
+	z-index: map-get($zindex-map, "main-header");
 	height: $view-head-height;
 	padding: 0 $space;
 

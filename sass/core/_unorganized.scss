@@ -127,3 +127,26 @@
   min-width: $block-2; //need to use min-width because ffbox is weird
 }
 
+.view--dimmed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: map-get($zindex-map, "shade");
+	@include transition(all .15s);
+	background: $C_modalShade;
+	opacity: 1;
+}
+.view--dimmed-close {
+	@include transition(all .15s .15s);
+	display: block;
+	height: 100vh;
+	left: 0;
+	line-height: 100vh;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	vertical-align: middle;
+	width: 100%;
+}
