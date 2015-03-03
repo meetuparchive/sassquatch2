@@ -37,7 +37,6 @@ Applies styles for horizontal scrolling lists.
 }
 
 .hscroll-content {
-	outline: 1px solid orange;
 	@extend %inlineblockList;
 	box-sizing: content-box;
 	padding-left: $space;
