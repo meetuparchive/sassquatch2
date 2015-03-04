@@ -496,6 +496,13 @@ Disables user-select, sets cursor, and resets text-decoration.
 @extend %buttonPersonality;
 ```
 */
+.menu-actions-item a {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none !important; }
+
 /*doc
 ---
 title: data uri images
@@ -2106,10 +2113,11 @@ ul, ol, .list, .menu-actions,
   list-style: none;
   padding-left: 0; }
 
-.list > li, .menu-actions-item {
+.list > li, .hasJS .menu-actions-item {
+  display: block;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   padding-top: 16px; }
-  .list > li:first-child, .menu-actions-item:first-child {
+  .list > li:first-child, .hasJS .menu-actions-item:first-child {
     border-top: none;
     padding-top: 0; }
 
@@ -2801,7 +2809,7 @@ Class                   | Description
 `.button--bordered`     | rounded bordered button
 `.button--small`        | decreases size of button
 */
-.button, .toggleButton-label {
+.button, body:not(.hasJS) .menu-actions-item a, .toggleButton-label {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
@@ -2815,31 +2823,43 @@ Class                   | Description
   margin: 0;
   padding: 8px 16px;
   text-align: center; }
-  .button:focus, .toggleButton-label:focus {
+  .button:focus, body:not(.hasJS) .menu-actions-item a:focus, .toggleButton-label:focus {
     outline: 0; }
 
 .button {
   color: #3987cb; }
-  .button:hover, .button:active, .button:focus {
+  .button:hover,
+  .button:active,
+  .button:focus {
     background: rgba(57, 135, 203, 0.2);
     border-color: transparent; }
 
+body:not(.hasJS) .menu-actions-item a,
 .button--primary {
   background: #3987cb;
   color: white; }
-  .button--primary:hover, .button--primary:active, .button--primary:focus {
+  body:not(.hasJS) .menu-actions-item a:hover, body:not(.hasJS) .menu-actions-item a:active, body:not(.hasJS) .menu-actions-item a:focus,
+  .button--primary:hover,
+  .button--primary:active,
+  .button--primary:focus {
     background: #619fd6; }
+  body:not(.hasJS) .menu-actions-item a.button--contrast,
   .button--primary.button--contrast {
     background: white;
     color: rgba(0, 0, 0, 0.87); }
-    .button--primary.button--contrast:hover, .button--primary.button--contrast:active, .button--primary.button--contrast:focus {
+    body:not(.hasJS) .menu-actions-item a.button--contrast:hover, body:not(.hasJS) .menu-actions-item a.button--contrast:active, body:not(.hasJS) .menu-actions-item a.button--contrast:focus,
+    .button--primary.button--contrast:hover,
+    .button--primary.button--contrast:active,
+    .button--primary.button--contrast:focus {
       background: rgba(255, 255, 255, 0.8); }
 
 .button--contrast {
   background: rgba(255, 255, 255, 0);
   border: 1px solid white;
   color: white; }
-  .button--contrast:hover, .button--contrast:active, .button--contrast:focus {
+  .button--contrast:hover,
+  .button--contrast:active,
+  .button--contrast:focus {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid white; }
 
@@ -2850,16 +2870,20 @@ Class                   | Description
   .toggleButton-label:hover, .toggleButton-label:active, .toggleButton-label:focus {
     background: rgba(57, 135, 203, 0.2); }
 
+body:not(.hasJS) .menu-actions-item a,
 .button--primary,
 .button--borderless {
   border: none; }
-  .button--primary:hover, .button--primary:active, .button--primary:focus,
+  body:not(.hasJS) .menu-actions-item a:hover,
+  .button--primary:hover, body:not(.hasJS) .menu-actions-item a:active,
+  .button--primary:active, body:not(.hasJS) .menu-actions-item a:focus,
+  .button--primary:focus,
   .button--borderless:hover,
   .button--borderless:active,
   .button--borderless:focus {
     border: none; }
 
-.toggleButton-label,
+body:not(.hasJS) .menu-actions-item a, .toggleButton-label,
 .button--small {
   font-size: 13px;
   padding: 4px 8px; }
@@ -2985,6 +3009,15 @@ title: Menu
 name: menu
 category: UI Components
 ---
+Context menu style dropdoowns. Actions are delivered in-document
+next to the menu toggle as a non-js fallback. When a client is
+javascript-enabled, the menu is hidden and posisitioned absolute.
+
+Toggling of menu visibility is handled with javascript (supporting js
+for documentation TK).
+
+__NOTE:__ This visual example currently shows the non-js fallback only.
+Use as a guide for markup.
 
 ```html_example
 <div class="menu">
@@ -3004,18 +3037,26 @@ category: UI Components
 .menu {
   position: relative; }
 
-.menu-actions {
+.hasJS .menu-actions {
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 3px; }
+  border-radius: 3px;
+  background-color: white;
+  display: none;
+  position: absolute; }
 
 .menu-actions-item {
-  padding-top: 0; }
+  display: inline; }
+  .hasJS .menu-actions-item {
+    padding-top: 0; }
 
 .menu-actions-item a {
-  display: block;
-  padding: 16px 8px; }
-  .menu-actions-item a:hover {
-    background-color: rgba(0, 0, 0, 0.1); }
+  display: inline-block;
+  padding-right: 16px; }
+  .hasJS .menu-actions-item a {
+    display: block;
+    padding: 16px 8px; }
+    .hasJS .menu-actions-item a:hover, .hasJS .menu-actions-item a:active {
+      background-color: rgba(0, 0, 0, 0.1); }
 
 /*doc
 ---

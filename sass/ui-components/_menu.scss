@@ -4,6 +4,15 @@ title: Menu
 name: menu
 category: UI Components
 ---
+Context menu style dropdoowns. Actions are delivered in-document
+next to the menu toggle as a non-js fallback. When a client is
+javascript-enabled, the menu is hidden and posisitioned absolute.
+
+Toggling of menu visibility is handled with javascript (supporting js
+for documentation TK).
+
+__NOTE:__ This visual example currently shows the non-js fallback only.
+Use as a guide for markup.
 
 ```html_example
 <div class="menu">
@@ -26,28 +35,49 @@ category: UI Components
 	position: relative;
 }
 
-// Triggers hide/show of menu-actions sibling
-.menu-toggle {
-}
-
 // Unorderd list sibling of menu-toggle
 .menu-actions {
 	@extend %list--reset;
-	border: 1px solid $C_border;
-	border-radius: $defaultRadius;
+
+	.hasJS & {
+		border: 1px solid $C_border;
+		border-radius: $defaultRadius;
+		background-color: $C_white;
+		display: none;
+		position: absolute;
+	}
 }
 
 // List item
 .menu-actions-item {
-	@extend %listBorders;
-	padding-top: 0;
+	display: inline;
+
+	.hasJS & {
+		@extend %listBorders;
+		padding-top: 0;
+	}
 }
 
 // Action
 .menu-actions-item a {
-	display: block;
-	padding: $space $space/2;
-	&:hover {
-		background-color: $C_overlayPressed;
+	@extend %buttonPersonality;
+	display: inline-block;
+	padding-right: $space;
+
+	.hasJS & {
+		display: block;
+		padding: $space $space/2;
+		&:hover,
+		&:active {
+			background-color: $C_overlayPressed;
+		}
+	}
+
+	// js fallback only
+	body:not(.hasJS) & {
+		@extend %buttonBase;
+		@extend %button--primary;
+		@extend %button--small;
 	}
 }
+

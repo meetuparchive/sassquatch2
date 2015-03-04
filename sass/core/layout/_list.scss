@@ -33,6 +33,7 @@ Bottom spacing is provided with `chunk`.
 
 // TODO: consider moving this placeholder to util/_border.scss and documenting
 %listBorders {
+	display: block;
 	border-top: 1px solid $C_border;
 	padding-top: $space;
 	&:first-child{

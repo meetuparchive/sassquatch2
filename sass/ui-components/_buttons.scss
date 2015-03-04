@@ -1,3 +1,11 @@
+// TODO: this needs a lot of mixin and selector cleanup
+// 1) avoid outputting selectors from mixins
+// 2) create some clarity around modifiers
+// 3) clean up selectors generated in button color mixin (and see #1)
+// 4) ???
+// 5) PROFIT
+
+
 /*doc
 ---
 title: Buttons
@@ -52,6 +60,7 @@ $btn-color-map: (
 	}
 }
 
+%button,
 .button {
 	@extend %buttonBase;
 	color: map-get($btn-color-map, "primary");
@@ -64,6 +73,7 @@ $btn-color-map: (
 
 }
 
+%button--primary,
 .button--primary {
 	@extend %button--borderless;
 	background: map-get($btn-color-map, "primary");
@@ -87,6 +97,7 @@ $btn-color-map: (
 
 }
 
+%button--contrast,
 .button--contrast {
 	background: transparentize(map-get($btn-color-map, "contrast"), 1);
 	border: $btn-border map-get($btn-color-map, "contrast");
