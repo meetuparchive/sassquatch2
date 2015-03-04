@@ -565,19 +565,19 @@ Clears floated children.
 @extend %clearfix;
 ```
 */
-.bounds, .menu-actions-item a,
+.bounds,
 .chunk {
   /**
   * For IE 6/7 only
   * Include this rule to trigger hasLayout and contain floats.
   */
   *zoom: 1; }
-  .bounds:before, .menu-actions-item a:before,
-  .chunk:before, .bounds:after, .menu-actions-item a:after,
+  .bounds:before,
+  .chunk:before, .bounds:after,
   .chunk:after {
     content: " ";
     display: table; }
-  .bounds:after, .menu-actions-item a:after,
+  .bounds:after,
   .chunk:after {
     clear: both; }
 
@@ -1769,7 +1769,6 @@ _Can be used in combination with any other component
 </div>
 ```
 */
-.menu-actions-item a,
 .chunk {
   display: block;
   margin-bottom: 16px; }
@@ -2107,18 +2106,19 @@ ul, ol, .list, .menu-actions,
   list-style: none;
   padding-left: 0; }
 
-.list, .menu-actions {
+.list > li, .menu-actions-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding-top: 16px; }
+  .list > li:first-child, .menu-actions-item:first-child {
+    border-top: none;
+    padding-top: 0; }
+
+.list {
   padding: 0;
   margin: 0;
   list-style: none; }
-
-.list > li, .menu-actions-item a {
-  margin: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  padding-top: 16px; }
-  .list > li:first-child, .menu-actions-item a:first-child {
-    border-top: none;
-    padding-top: 0; }
+  .list > li {
+    margin: 0; }
 
 /*doc
 ---
@@ -3004,17 +3004,18 @@ category: UI Components
 .menu {
   position: relative; }
 
-.menu-toggle {
-  outline: 1px solid red; }
-
 .menu-actions {
   border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 3px;
-  padding-top: 16px; }
+  border-radius: 3px; }
+
+.menu-actions-item {
+  padding-top: 0; }
 
 .menu-actions-item a {
   display: block;
   padding: 16px 8px; }
+  .menu-actions-item a:hover {
+    background-color: rgba(0, 0, 0, 0.1); }
 
 /*doc
 ---

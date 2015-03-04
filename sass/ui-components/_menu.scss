@@ -28,21 +28,26 @@ category: UI Components
 
 // Triggers hide/show of menu-actions sibling
 .menu-toggle {
-	outline: 1px solid red;
 }
 
 // Unorderd list sibling of menu-toggle
 .menu-actions {
-	@extend %list;
+	@extend %list--reset;
 	border: 1px solid $C_border;
 	border-radius: $defaultRadius;
-	padding-top: $space;
 }
 
 // List item
+.menu-actions-item {
+	@extend %listBorders;
+	padding-top: 0;
+}
+
+// Action
 .menu-actions-item a {
 	display: block;
 	padding: $space $space/2;
+	&:hover {
+		background-color: $C_overlayPressed;
+	}
 }
-
-

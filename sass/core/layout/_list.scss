@@ -31,17 +31,24 @@ Bottom spacing is provided with `chunk`.
   padding-left: 0;
 }
 
+// TODO: consider moving this placeholder to util/_border.scss and documenting
+%listBorders {
+	border-top: 1px solid $C_border;
+	padding-top: $space;
+	&:first-child{
+		border-top: none;
+		padding-top: 0;
+	}
+}
+
 .list {
+	@extend %list--reset;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+
 	& > li {
+		@extend %listBorders;
 		margin: 0;
-		border-top: 1px solid $C-border;
-		padding-top: $space;
-		&:first-child{
-			border-top: none;
-			padding-top: 0;
-		}
 	}
 }
