@@ -26,6 +26,7 @@ _Can be used in combination with any other component
 </div>
 ```
 */
+%chunk,
 .chunk {
 	@extend %clearfix;
 	display: block;

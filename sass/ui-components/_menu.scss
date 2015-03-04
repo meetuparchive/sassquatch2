@@ -1,0 +1,48 @@
+/*doc
+---
+title: Menu
+name: menu
+category: UI Components
+---
+
+```html_example
+<div class="menu">
+	<a class="menu-toggle" href="#">(icon)</a>
+
+	<ul class="menu-actions">
+		<li class="menu-actions-item">
+			<a href="#">Select All</a>
+		</li>
+		<li class="menu-actions-item">
+			<a href="#">Select None</a>
+		</li>
+	</ul>
+</div>
+```
+*/
+
+// Parent
+.menu {
+	position: relative;
+}
+
+// Triggers hide/show of menu-actions sibling
+.menu-toggle {
+	outline: 1px solid red;
+}
+
+// Unorderd list sibling of menu-toggle
+.menu-actions {
+	@extend %list;
+	border: 1px solid $C_border;
+	border-radius: $defaultRadius;
+	padding-top: $space;
+}
+
+// List item
+.menu-actions-item a {
+	display: block;
+	padding: $space $space/2;
+}
+
+

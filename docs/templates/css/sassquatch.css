@@ -565,16 +565,20 @@ Clears floated children.
 @extend %clearfix;
 ```
 */
-.bounds, .chunk {
+.bounds, .menu-actions-item a,
+.chunk {
   /**
   * For IE 6/7 only
   * Include this rule to trigger hasLayout and contain floats.
   */
   *zoom: 1; }
-  .bounds:before, .chunk:before, .bounds:after, .chunk:after {
+  .bounds:before, .menu-actions-item a:before,
+  .chunk:before, .bounds:after, .menu-actions-item a:after,
+  .chunk:after {
     content: " ";
     display: table; }
-  .bounds:after, .chunk:after {
+  .bounds:after, .menu-actions-item a:after,
+  .chunk:after {
     clear: both; }
 
 /*doc
@@ -1516,6 +1520,31 @@ Error text is set explicitly with `text--error`.
 .small-input {
   min-width: 72px; }
 
+.view--dimmed {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 1; }
+
+.view--dimmed-close {
+  -webkit-transition: all 0.15s 0.15s;
+  transition: all 0.15s 0.15s;
+  display: block;
+  height: 100vh;
+  left: 0;
+  line-height: 100vh;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  vertical-align: middle;
+  width: 100%; }
+
 /*doc
 ---
 title: Stripe
@@ -1740,6 +1769,7 @@ _Can be used in combination with any other component
 </div>
 ```
 */
+.menu-actions-item a,
 .chunk {
   display: block;
   margin-bottom: 16px; }
@@ -2072,22 +2102,24 @@ Bottom spacing is provided with `chunk`.
 ```
 
 */
-ul, ol,
+ul, ol, .list, .menu-actions,
 .list--reset {
   list-style: none;
   padding-left: 0; }
 
-.list {
+.list, .menu-actions {
   padding: 0;
   margin: 0;
   list-style: none; }
-  .list > li {
-    margin: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-    padding-top: 16px; }
-    .list > li:first-child {
-      border-top: none;
-      padding-top: 0; }
+
+.list > li, .menu-actions-item a {
+  outline: 20px dotted red;
+  margin: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding-top: 16px; }
+  .list > li:first-child, .menu-actions-item a:first-child {
+    border-top: none;
+    padding-top: 0; }
 
 /*doc
 ---
@@ -2310,7 +2342,6 @@ Applies styles for horizontal scrolling lists.
     display: none; }
 
 .hscroll-content {
-  outline: 1px solid orange;
   box-sizing: content-box;
   padding-left: 16px;
   padding-right: 16px;
@@ -2401,31 +2432,6 @@ the "detail" responsibility.
   .view--splitDetail {
     display: block;
     padding-left: 320px; } }
-.view--dimmed {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  -webkit-transition: all 0.15s;
-  transition: all 0.15s;
-  background: rgba(0, 0, 0, 0.75);
-  opacity: 1; }
-
-.view--dimmed-close {
-  -webkit-transition: all 0.15s 0.15s;
-  transition: all 0.15s 0.15s;
-  display: block;
-  height: 100vh;
-  left: 0;
-  line-height: 100vh;
-  position: fixed;
-  text-align: center;
-  top: 0;
-  vertical-align: middle;
-  width: 100%; }
-
 /*doc
 ---
 title: View Head
@@ -2973,6 +2979,43 @@ _(The inline style on the card element is for documentation purposes only)_
     left: -1px;
     right: -1px;
     top: -1px; }
+
+/*doc
+---
+title: Menu
+name: menu
+category: UI Components
+---
+
+```html_example
+<div class="menu">
+	<a class="menu-toggle" href="#">(icon)</a>
+
+	<ul class="menu-actions">
+		<li class="menu-actions-item">
+			<a href="#">Select All</a>
+		</li>
+		<li class="menu-actions-item">
+			<a href="#">Select None</a>
+		</li>
+	</ul>
+</div>
+```
+*/
+.menu {
+  position: relative; }
+
+.menu-toggle {
+  outline: 1px solid red; }
+
+.menu-actions {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  padding-top: 16px; }
+
+.menu-actions-item a {
+  display: block;
+  padding: 16px 8px; }
 
 /*doc
 ---
