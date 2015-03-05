@@ -45,6 +45,8 @@ Use as a guide for markup.
 		background-color: $C_white;
 		display: none;
 		position: absolute;
+		top: 0;
+		right: $space-2;
 	}
 }
 
@@ -67,6 +69,7 @@ Use as a guide for markup.
 	.hasJS & {
 		display: block;
 		padding: $space $space/2;
+		color: $C_textSecondary !important;
 		&:hover,
 		&:active {
 			background-color: $C_overlayPressed;

@@ -9,7 +9,7 @@ $C_blue: rgb(57,135,203);
 $C_lightBlue: rgb(104,165,217);
 $C_purple: rgb(113,96,170);
 $C_brown: rgb(113,63,25);
- 
+
 // Text colors (TK)
 $C_textPrimary: rgba(0,0,0,0.87);
 @mixin color_textPrimary($style: 'color') { #{$style}: lighten( rgb(0,0,0), 13%); #{$style}: $C_textPrimary; }
@@ -22,7 +22,7 @@ $C_textSecondaryInverted: rgba(255,255,255,0.7);
 @mixin color_textSecondaryInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 30%); #{$style}: $C_textSecondaryInverted; }
 $C_textTertiaryInverted: rgba(255,255,255,0.3);
 @mixin color_textTertiaryInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 70%); #{$style}: $C_textTertiaryInverted; }
- 
+
 // UI Colors (TK)
 $C_accent: rgb(213,87,65);
 $C_link: rgb(57,135,203);
@@ -40,13 +40,13 @@ $C_shadeInverted: rgba(255,255,255,0.1);
 @mixin color_shadeInverted($style: 'color') { #{$style}: darken( rgb(255,255,255), 90%); #{$style}: $C_shadeInverted; }
 $C_textProtection: rgba(0,0,0,0.05);
 @mixin color_textProtection($style: 'color') { #{$style}: lighten( rgb(0,0,0), 95%); #{$style}: $C_textProtection; }
- 
+
 // Background colors (TK)
 $C_contentBG: rgb(255,255,255);
 $C_contentBGInverted: rgb(53,62,72);
 $C_collectionBGDark: rgb(230,233,236);
 $C_collectionBGLight: rgb(243,246,249);
- 
+
 // EXTERNAL (third party colors)
 $C_facebook: rgb(59,89,152);
 $C_twitter: rgb(51,204,255);
@@ -58,4 +58,4 @@ $C_googleplus: rgb(198,61,45);
 $C_instagram: rgb(78,67,60);
 $C_reddit: rgb(206,227,248);
 $C_wepay: rgb(72,145,220);
- 
+
