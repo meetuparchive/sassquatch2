@@ -11,13 +11,13 @@ Bottom spacing is provided with `chunk`.
 
 ```html_example
 <ul class="list">
-	<li>
+	<li class="list-item">
 		<h2 class="chunk">Just a list item</h2>
 	</li>
-	<li>
+	<li class="list-item">
 		<h2 class="chunk">Just a list item</h2>
 	</li>
-	<li>
+	<li class="list-item">
 		<h2 class="chunk">Just a list item</h2>
 	</li>
 </ul>
@@ -47,9 +47,9 @@ Bottom spacing is provided with `chunk`.
 	padding: 0;
 	margin: 0;
 	list-style: none;
+}
 
-	& > li {
-		@extend %listBorders;
-		margin: 0;
-	}
+.list-item {
+	@extend %listBorders;
+	margin: 0;
 }

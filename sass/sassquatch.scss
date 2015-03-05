@@ -43,14 +43,14 @@
 
 	// Layout
 	@import "core/layout/stripe";
-	@import "core/layout/bounds";
-	@import "core/layout/chunk";
-	@import "core/layout/stack";
-	@import "core/layout/row";
 	@import "core/layout/list";
 	@import "core/layout/gridList";
 	@import "core/layout/inlineblockList";
 	@import "core/layout/hscroll";
+	@import "core/layout/chunk";
+	@import "core/layout/bounds";
+	@import "core/layout/row";
+	@import "core/layout/stack";
 
 	// Views
 	@import "core/view/view";
