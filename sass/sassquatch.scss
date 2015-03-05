@@ -42,15 +42,15 @@
 	@import "core/unorganized"; // <- TODO: split this out into logical layout partials
 
 	// Layout
-	@import "core/layout/list";
-	@import "core/layout/gridList";
-	@import "core/layout/inlineblockList";
-	@import "core/layout/hscroll";
 	@import "core/layout/stripe";
 	@import "core/layout/bounds";
 	@import "core/layout/chunk";
 	@import "core/layout/stack";
 	@import "core/layout/row";
+	@import "core/layout/list";
+	@import "core/layout/gridList";
+	@import "core/layout/inlineblockList";
+	@import "core/layout/hscroll";
 
 	// Views
 	@import "core/view/view";
