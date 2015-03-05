@@ -38,6 +38,7 @@ Use as a guide for markup.
 // Unorderd list sibling of menu-toggle
 .menu-actions {
 	@extend %list--reset;
+	@extend %shadow;
 
 	.hasJS & {
 		border: 1px solid $C_border;
