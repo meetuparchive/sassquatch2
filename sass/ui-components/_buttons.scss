@@ -46,6 +46,7 @@ $btn-color-map: (
 %buttonBase {
 	@include box-sizing(border-box);
 	@include transition(background .15s);
+	background: transparent;
 	border: $border-standard;
 	border-radius: 50px;
 	cursor: pointer;
@@ -91,7 +92,7 @@ $btn-color-map: (
 		&:hover,
 		&:active,
 		&:focus {
-			background: transparentize(map-get($btn-color-map, "contrast"), .2);
+			background: transparentize(map-get($btn-color-map, "contrast"), .1);
 		}
 	}
 
@@ -99,14 +100,14 @@ $btn-color-map: (
 
 %button--contrast,
 .button--contrast {
-	background: transparentize(map-get($btn-color-map, "contrast"), 1);
+	background: $C_textTertiary;
 	border: $btn-border map-get($btn-color-map, "contrast");
 	color: map-get($btn-color-map, "contrast");
 
 	&:hover,
 	&:active,
 	&:focus {
-		background: transparentize(map-get($btn-color-map, "contrast"), .8);
+		background: $C_textSecondary;
 		border: $btn-border map-get($btn-color-map, "contrast");
 	}
 }
