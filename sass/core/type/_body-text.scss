@@ -121,7 +121,7 @@ parent: bodyText
 */
 %text--small,
 .text--small {
-	@include _headingDecentants() {
+	@include _headingDescendant() {
 		font-size: $font-size-small;
 		line-height: $line-height-small;
 	}
@@ -222,10 +222,7 @@ a {
 	&.link,
 	.runningText &,
 	.running-text-container & {
-		color: $C_link;
-		&:hover, &:focus, &:active{
-			text-decoration: underline;
-		}
+		@extend %link;
 	}
 }
 

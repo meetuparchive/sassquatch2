@@ -47,7 +47,7 @@ Use as a guide for markup.
 		display: none;
 		position: absolute;
 		top: 0;
-		right: $space-2;
+		right: 0;
 	}
 }
 
@@ -79,9 +79,7 @@ Use as a guide for markup.
 
 	// js fallback only
 	body:not(.hasJS) & {
-		@extend %buttonBase;
-		@extend %button--primary;
-		@extend %button--small;
+		@extend %link;
 	}
 }
 

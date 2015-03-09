@@ -6,6 +6,24 @@ category: Sass Utils | Mixins & Placeholders
 ---
 */
 
+/*doc
+---
+title: Link color
+name: linkColor
+parent: text
+---
+Forces an element to use link-like styling.
+
+```
+@extend %link;
+```
+*/
+%link {
+	color: $C_link;
+	&:hover, &:focus, &:active {
+		text-decoration: underline;
+	}
+}
 
 
 /*doc
@@ -42,11 +60,11 @@ $C_scrimGradient: #0F141F; // move to swatches?
 
 //
 // PRIVATE
-// support for heading decentant specificity in
+// support for heading descendant specificity in
 // text variants (useful for applying a class to a
 // container instead of each individual element)
 //
-@mixin _headingDecentants() {
+@mixin _headingDescendant() {
 	&,
 	& h1,
 	& h2,
