@@ -635,6 +635,23 @@ category: Sass Utils | Mixins & Placeholders
 */
 /*doc
 ---
+title: Link color
+name: linkColor
+parent: text
+---
+Forces an element to use link-like styling.
+
+```
+@extend %link;
+```
+*/
+a.link, .runningText a, .running-text-container a, body:not(.hasJS) .menu-actions-item a {
+  color: #3987cb; }
+  a.link:hover, .runningText a:hover, .running-text-container a:hover, body:not(.hasJS) .menu-actions-item a:hover, a.link:focus, .runningText a:focus, .running-text-container a:focus, body:not(.hasJS) .menu-actions-item a:focus, a.link:active, .runningText a:active, .running-text-container a:active, body:not(.hasJS) .menu-actions-item a:active {
+    text-decoration: underline; }
+
+/*doc
+---
 title: Text protection shim
 name: textProtection
 parent: text
@@ -1025,10 +1042,6 @@ linky blue color by applying the `.link` class.
 a {
   color: inherit;
   text-decoration: none; }
-  a.link, .runningText a, .running-text-container a {
-    color: #3987cb; }
-    a.link:hover, a.link:focus, a.link:active, .runningText a:hover, .runningText a:focus, .runningText a:active, .running-text-container a:hover, .running-text-container a:focus, .running-text-container a:active {
-      text-decoration: underline; }
 
 /*doc
 ---
@@ -2810,11 +2823,12 @@ Class                   | Description
 `.button--bordered`     | rounded bordered button
 `.button--small`        | decreases size of button
 */
-.button, body:not(.hasJS) .menu-actions-item a, .toggleButton-label {
+.button, .toggleButton-label {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
+  background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 50px;
   cursor: pointer;
@@ -2824,7 +2838,7 @@ Class                   | Description
   margin: 0;
   padding: 8px 16px;
   text-align: center; }
-  .button:focus, body:not(.hasJS) .menu-actions-item a:focus, .toggleButton-label:focus {
+  .button:focus, .toggleButton-label:focus {
     outline: 0; }
 
 .button {
@@ -2835,33 +2849,29 @@ Class                   | Description
     background: rgba(57, 135, 203, 0.2);
     border-color: transparent; }
 
-body:not(.hasJS) .menu-actions-item a,
 .button--primary {
   background: #3987cb;
   color: white; }
-  body:not(.hasJS) .menu-actions-item a:hover, body:not(.hasJS) .menu-actions-item a:active, body:not(.hasJS) .menu-actions-item a:focus,
   .button--primary:hover,
   .button--primary:active,
   .button--primary:focus {
     background: #619fd6; }
-  body:not(.hasJS) .menu-actions-item a.button--contrast,
   .button--primary.button--contrast {
     background: white;
     color: rgba(0, 0, 0, 0.87); }
-    body:not(.hasJS) .menu-actions-item a.button--contrast:hover, body:not(.hasJS) .menu-actions-item a.button--contrast:active, body:not(.hasJS) .menu-actions-item a.button--contrast:focus,
     .button--primary.button--contrast:hover,
     .button--primary.button--contrast:active,
     .button--primary.button--contrast:focus {
-      background: rgba(255, 255, 255, 0.8); }
+      background: rgba(255, 255, 255, 0.9); }
 
 .button--contrast {
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.26);
   border: 1px solid white;
   color: white; }
   .button--contrast:hover,
   .button--contrast:active,
   .button--contrast:focus {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.54);
     border: 1px solid white; }
 
 .toggleButton-label {
@@ -2871,20 +2881,18 @@ body:not(.hasJS) .menu-actions-item a,
   .toggleButton-label:hover, .toggleButton-label:active, .toggleButton-label:focus {
     background: rgba(57, 135, 203, 0.2); }
 
-body:not(.hasJS) .menu-actions-item a,
 .button--primary,
 .button--borderless {
   border: none; }
-  body:not(.hasJS) .menu-actions-item a:hover,
-  .button--primary:hover, body:not(.hasJS) .menu-actions-item a:active,
-  .button--primary:active, body:not(.hasJS) .menu-actions-item a:focus,
+  .button--primary:hover,
+  .button--primary:active,
   .button--primary:focus,
   .button--borderless:hover,
   .button--borderless:active,
   .button--borderless:focus {
     border: none; }
 
-body:not(.hasJS) .menu-actions-item a, .toggleButton-label,
+.toggleButton-label,
 .button--small {
   font-size: 13px;
   padding: 4px 8px; }

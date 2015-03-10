@@ -3053,7 +3053,7 @@ Use as a guide for markup.
   display: none;
   position: absolute;
   top: 0;
-  right: 24px; }
+  right: 0; }
 
 .menu-actions-item {
   display: inline; }
