@@ -25,12 +25,43 @@ Applies styles for horizontal scrolling lists.
 </div>
 ```
 
+## Media-conditional `hscroll`
+It's possible to create an `hscroll` for small screens that expands
+into a non-scrolling list in the document flow for larger screens.
+
+```html_example
+<div class="hscroll atMedium_hscroll--unclip">
+	<ul class="hscroll-content">
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+	</ul>
+</div>
+```
+
+A class of `hscroll` is __required__; the following classes are
+optional variants:
+
+Class                       | Description
+--------------------------- | ----------------------------------
+`atMedium_hscroll--unclip`  | Allows visible overflow (as inline block list) at medium & up
+`atLarge_hscroll--unclip`  | Allows visible overflow (as inline block list) at large & up
+
 */
 .hscroll {
 	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
 	overflow: scroll;
 	overflow: -moz-scrollbars-none;
-	-ms-overflow-style: none;
 	&::-webkit-scrollbar {
 		 display: none;
 	}
@@ -44,5 +75,20 @@ Applies styles for horizontal scrolling lists.
 	white-space: nowrap;
 	& > li {
 		white-space: normal;
+	}
+}
+
+@each $bpName, $bp in (medium: $breakpoint-m, large: $breakpoint-l) {
+	@include atMediaUp($bpName) {
+		.at#{str-firstCharToUpper($bpName)}_hscroll--unclip {
+			-webkit-overflow-scrolling: auto;
+			-ms-overflow-style: auto;
+			overflow: visible;
+
+			.hscroll-content {
+				white-space: normal;
+				padding: 0;
+			}
+		}
 	}
 }
