@@ -1933,12 +1933,40 @@ Applies styles for horizontal scrolling lists.
 </div>
 ```
 
+## Media-conditional `hscroll`
+It's possible to create an `hscroll` for small screens that expands
+into a non-scrolling list in the document flow for larger screens.
+
+```html_example
+<div class="hscroll atMedium_hscroll--unclip">
+	<ul class="hscroll-content">
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/92/56" /></li>
+	</ul>
+</div>
+```
+
+Class                       | Description
+--------------------------- | ----------------------------------
+`atMedium_hscroll--unclip`  | Allows visible overflow (as inline block list) at medium & up
+`atLarge_hscroll--unclip`  | Allows visible overflow (as inline block list) at large & up
+
 */
 .hscroll {
   -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
   overflow: scroll;
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none; }
+  overflow: -moz-scrollbars-none; }
   .hscroll::-webkit-scrollbar {
     display: none; }
 
@@ -1950,6 +1978,22 @@ Applies styles for horizontal scrolling lists.
   .hscroll-content > li {
     white-space: normal; }
 
+@media only screen and (min-width: 640px) {
+  .atMedium_hscroll--unclip {
+    -webkit-overflow-scrolling: auto;
+    -ms-overflow-style: auto;
+    overflow: visible; }
+    .atMedium_hscroll--unclip .hscroll-content {
+      white-space: normal;
+      padding: 0; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_hscroll--unclip {
+    -webkit-overflow-scrolling: auto;
+    -ms-overflow-style: auto;
+    overflow: visible; }
+    .atLarge_hscroll--unclip .hscroll-content {
+      white-space: normal;
+      padding: 0; } }
 /*doc
 ---
 title: Chunk

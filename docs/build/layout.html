@@ -528,6 +528,62 @@ grid.</p>
     <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div></div></div>
+<h2>Media-conditional <code>hscroll</code></h2>
+
+<p>It&#39;s possible to create an <code>hscroll</code> for small screens that expands
+into a non-scrolling list in the document flow for larger screens.</p>
+<div class="codeExample"><div class="exampleOutput"><div class="hscroll atMedium_hscroll--unclip">
+    <ul class="hscroll-content">
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+        <li><img src="https://placekitten.com/g/92/56" /></li>
+    </ul>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hscroll atMedium_hscroll--unclip"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hscroll-content"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/92/56"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<p>A class of <code>hscroll</code> is <strong>required</strong>; the following classes are
+optional variants:</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>atMedium_hscroll--unclip</code></td>
+<td>Allows visible overflow (as inline block list) at medium &amp; up</td>
+</tr>
+<tr>
+<td><code>atLarge_hscroll--unclip</code></td>
+<td>Allows visible overflow (as inline block list) at large &amp; up</td>
+</tr>
+</tbody></table>
+
 <h1 id="inlineblockList">Inline-block list</h1>
 
 <p>Resets list styles; adds <code>display: inline-block</code> to
