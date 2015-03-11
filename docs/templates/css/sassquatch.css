@@ -3354,13 +3354,28 @@ title: Alignment
 name: alignMod
 category: Modifier Classes
 ---
-Modifies text-align property of element
+Modifies text-align property of element.
+
+__Applies `!important` declaration__
+
+## Horizontal text alignment
 
 Class             | Description
 ----------------- | --------------------------------
 `.align--center`  | sets `text-align` to `center`
 `.align--right`   | sets `text-align` to `right`
 `.align--left`    | sets `text-align` to `left`
+
+## Vertical alignment
+_These classes only work on flex children (`row-item`, `stack-item`),
+elements with `display: table-cell`, and elements displayed `inline-block`._
+
+Class                    | Description
+------------------------ | --------------------------------
+`.valign--baseline`      | sets `vertical-align` to `baseline`
+`.valign--bottom`        | sets `vertical-align` to `bottom`
+`.valign--middle`        | sets `vertical-align` to `middle`
+`.valign--top`           | sets `vertical-align` to `top`
 
 */
 .align--left {
@@ -3371,6 +3386,18 @@ Class             | Description
 
 .align--center {
   text-align: center !important; }
+
+.valign--baseline {
+  veritcal-align: baseline !important; }
+
+.valign--bottom {
+  veritcal-align: bottom !important; }
+
+.valign--middle {
+  veritcal-align: middle !important; }
+
+.valign--top {
+  veritcal-align: top !important; }
 
 /*doc
 ---
