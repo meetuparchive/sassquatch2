@@ -70,8 +70,6 @@ Class                       | Description
 .hscroll-content {
 	@extend %inlineblockList;
 	box-sizing: content-box;
-	padding-left: $space;
-	padding-right: $space;
 	white-space: nowrap;
 	& > li {
 		white-space: normal;
@@ -87,7 +85,6 @@ Class                       | Description
 
 			.hscroll-content {
 				white-space: normal;
-				padding: 0;
 			}
 		}
 	}
