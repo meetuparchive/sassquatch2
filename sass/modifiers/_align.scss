@@ -4,7 +4,11 @@ title: Alignment
 name: alignMod
 category: Modifier Classes
 ---
-Modifies text-align property of element
+Modifies text-align property of element.
+
+__Applies `!important` declaration__
+
+## Horizontal text alignment
 
 Class             | Description
 ----------------- | --------------------------------
@@ -12,9 +16,26 @@ Class             | Description
 `.align--right`   | sets `text-align` to `right`
 `.align--left`    | sets `text-align` to `left`
 
+## Vertical alignment
+_These classes only work on flex children (`row-item`, `stack-item`),
+elements with `display: table-cell`, and elements displayed `inline-block`._
+
+Class                    | Description
+------------------------ | --------------------------------
+`.valign--baseline`      | sets `vertical-align` to `baseline`
+`.valign--bottom`        | sets `vertical-align` to `bottom`
+`.valign--middle`        | sets `vertical-align` to `middle`
+`.valign--top`           | sets `vertical-align` to `top`
+
 */
 @each $alignment in (left, right, center) {
 	@include _modifier(align, $alignment) {
 		text-align: $alignment !important;
+	}
+}
+
+@each $valignment in (baseline, bottom, middle, top) {
+	@include _modifier(valign, $valignment) {
+		veritcal-align: $valignment !important;
 	}
 }
