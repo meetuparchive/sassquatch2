@@ -49,7 +49,7 @@ Class                       | Description
 @each $bpName, $bp in (medium: $breakpoint-m, large: $breakpoint-l) {
 	@include atMediaUp($bpName) {
 		.at#{str-firstCharToUpper($bpName)}_stack--spread {
-			.stack-item {
+			& > .stack-item {
 				@include flex-basis(0);
 				padding-left: $space;
 				&:first-child {
