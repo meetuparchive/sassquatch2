@@ -17,6 +17,6 @@ Class                   | Description
 @each $display in $display-values {
 	$modifierVariant: str-replace($display, '-block', 'Block'); // camelCase inline-block
 	@include _modifier(display, $modifierVariant) {
-		display: $display !important;
+		display: $display;
 	}
 }
