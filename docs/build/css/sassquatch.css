@@ -1975,8 +1975,6 @@ Class                       | Description
 
 .hscroll-content {
   box-sizing: content-box;
-  padding-left: 16px;
-  padding-right: 16px;
   white-space: nowrap; }
   .hscroll-content > li {
     white-space: normal; }
@@ -1987,16 +1985,14 @@ Class                       | Description
     -ms-overflow-style: auto;
     overflow: visible; }
     .atMedium_hscroll--unclip .hscroll-content {
-      white-space: normal;
-      padding: 0; } }
+      white-space: normal; } }
 @media only screen and (min-width: 840px) {
   .atLarge_hscroll--unclip {
     -webkit-overflow-scrolling: auto;
     -ms-overflow-style: auto;
     overflow: visible; }
     .atLarge_hscroll--unclip .hscroll-content {
-      white-space: normal;
-      padding: 0; } }
+      white-space: normal; } }
 /*doc
 ---
 title: Chunk
@@ -2340,8 +2336,8 @@ breakpoint.
 
 ```html_example
 <div class="stack atLarge_stack--spread">
-	<div class="stack-item _DOC-SHADE">
-		<p>Stack Item</p>
+	<div class="stack-item stack-item--shrink _DOC-SHADE">
+		<p>Stack Item (shrinks when spread)</p>
 	</div>
 	<div class="stack-item _DOC-SHADE">
 		<p>Stack Item</p>
@@ -2360,6 +2356,12 @@ Class                       | Description
 `atMedium_stack--spread`    | Spreads out the stack elements horizontally at `medium` breakpoint
 `atLarge_stack--spread`     | Spreads out the stack elements horizontally at `large` breakpoint
 
+
+## stack-item variants
+
+Class                   | Description
+----------------------- | -------------------------------
+`.stack-item--shrink`   | Item shrinks to fit content __only when spread__
 
 */
 .stack {
@@ -2402,21 +2404,37 @@ Class                       | Description
   -ms-flex-preferred-size: 100%; }
 
 @media only screen and (min-width: 640px) {
-  .atMedium_stack--spread .stack-item {
-    -webkit-flex-basis: 0;
-    flex-basis: 0;
-    -ms-flex-preferred-size: 0;
+  .atMedium_stack--spread > .stack-item {
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+    -ms-flex-preferred-size: auto;
     padding-left: 16px; }
-    .atMedium_stack--spread .stack-item:first-child {
-      padding-left: 0; } }
+    .atMedium_stack--spread > .stack-item:first-child {
+      padding-left: 0; }
+  .atMedium_stack--spread .stack-item--shrink {
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -ms-flex-positive: 0;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+    -ms-flex-negative: 1;
+    width: initial; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_stack--spread .stack-item {
-    -webkit-flex-basis: 0;
-    flex-basis: 0;
-    -ms-flex-preferred-size: 0;
+  .atLarge_stack--spread > .stack-item {
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+    -ms-flex-preferred-size: auto;
     padding-left: 16px; }
-    .atLarge_stack--spread .stack-item:first-child {
-      padding-left: 0; } }
+    .atLarge_stack--spread > .stack-item:first-child {
+      padding-left: 0; }
+  .atLarge_stack--spread .stack-item--shrink {
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -ms-flex-positive: 0;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+    -ms-flex-negative: 1;
+    width: initial; } }
 /*doc
 ---
 title: View
@@ -3676,6 +3694,75 @@ Class          | Description
 .media--xl {
   height: auto;
   width: 160px; }
+
+/*doc
+---
+title: Margin/Padding
+name: spacingMod
+category: Modifier Classes
+---
+Applies the standard unit of space as margin or padding
+to an element.
+
+## Margin
+
+Class                    | Description
+------------------------ | --------------------------------
+`.margin--top`           | Adds top margin to element
+`.margin--right`         | Adds right margin to element
+`.margin--bottom`        | Adds bottom margin to element
+`.margin--left`          | Adds left margin to element
+`.margin--all`           | Adds margin to all sides of element
+`.margin--none`          | Sets `margin` to `0`
+
+
+## Margin
+
+Class                    | Description
+------------------------ | --------------------------------
+`.padding--top`          | Adds top padding to element
+`.padding--right`        | Adds right padding to element
+`.padding--bottom`       | Adds bottom padding to element
+`.padding--left`         | Adds left padding to element
+`.padding--all`          | Adds padding to all sides of element
+`.padding--none`         | Sets `padding` to `0`
+
+*/
+.margin--top {
+  margin-top: 16px; }
+
+.margin--right {
+  margin-right: 16px; }
+
+.margin--left {
+  margin-left: 16px; }
+
+.margin--bottom {
+  margin-bottom: 16px; }
+
+.margin--all {
+  margin: 16px; }
+
+.margin--none {
+  margin: 0; }
+
+.padding--top {
+  padding-top: 16px; }
+
+.padding--right {
+  padding-right: 16px; }
+
+.padding--left {
+  padding-left: 16px; }
+
+.padding--bottom {
+  padding-bottom: 16px; }
+
+.padding--all {
+  padding: 16px; }
+
+.padding--none {
+  padding: 0; }
 
 /*doc
 ---

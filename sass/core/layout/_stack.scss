@@ -11,8 +11,8 @@ breakpoint.
 
 ```html_example
 <div class="stack atLarge_stack--spread">
-	<div class="stack-item _DOC-SHADE">
-		<p>Stack Item</p>
+	<div class="stack-item stack-item--shrink _DOC-SHADE">
+		<p>Stack Item (shrinks when spread)</p>
 	</div>
 	<div class="stack-item _DOC-SHADE">
 		<p>Stack Item</p>
@@ -32,6 +32,12 @@ Class                       | Description
 `atLarge_stack--spread`     | Spreads out the stack elements horizontally at `large` breakpoint
 
 
+## stack-item variants
+
+Class                   | Description
+----------------------- | -------------------------------
+`.stack-item--shrink`   | Item shrinks to fit content __only when spread__
+
 */
 .stack {
 	@include display(flex);
@@ -50,11 +56,16 @@ Class                       | Description
 	@include atMediaUp($bpName) {
 		.at#{str-firstCharToUpper($bpName)}_stack--spread {
 			& > .stack-item {
-				@include flex-basis(0);
+				@include flex-basis(auto);
 				padding-left: $space;
 				&:first-child {
 					padding-left: 0;
 				}
+			}
+			.stack-item--shrink {
+				@include flex-grow(0);
+				@include flex-shrink(1);
+				width: initial;
 			}
 		}
 	}
