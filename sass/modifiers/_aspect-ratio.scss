@@ -5,35 +5,37 @@ name: keepAspect
 category: Modifier Classes
 ---
 Maintains a given aspect ratio for flexible media.
+Apply to elements with background images.
 
 Class              | Description
 ------------------ | ------------------------------
 `.keepAspect`      | maintains 1-1 aspect ratio when resized
 `.keepAspect--16-9`| maintains 16-9 aspect ratio when resized
 `.keepAspect--2-1` | maintains 2-1 aspect ratio when resized
+`.keepAspect--2-3` | maintains 2-3 aspect ratio when resized
 
 */
-.keepAspect {
+@mixin _aspect( $ratio ) {
   margin-bottom: 0;
   &:before {
     content: '';
     display: block;
-    padding-top: percentage(1/1);
+    padding-top: $ratio;
   }
+}
+
+.keepAspect {
+	@include _aspect(percentage(1/1));
 }
 
 .keepAspect--16-9 {
-  &:before {
-    content: '';
-    display: block;
-    padding-top: percentage(9/16);
-  }
+	@include _aspect(percentage(9/16));
 }
 
 .keepAspect--2-1 {
-  &:before {
-    content: '';
-    display: block;
-    padding-top: percentage(1/2);
-  }
+	@include _aspect(percentage(1/2));
+}
+
+.keepAspect--2-3 {
+	@include _aspect(percentage(2/3));
 }
