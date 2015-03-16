@@ -1943,7 +1943,7 @@ Class                  | Description
 
 The `bounds--sideHeader` variant applies styles to accommodate a
 `bounds-header` element. A `bounds-header` is pulled to the left side
-of the bounds on wide screens, and linearizes on small screens.
+of the bounds on wide screens (`large` breakpoint), and linearizes on small screens (less than `large`).
 
 ```html_example
 	<section class="stripe">
@@ -3386,16 +3386,16 @@ Class                   | Description
 
 */
 .display--none {
-  display: none !important; }
+  display: none; }
 
 .display--block {
-  display: block !important; }
+  display: block; }
 
 .display--inline {
-  display: inline !important; }
+  display: inline; }
 
 .display--inlineBlock {
-  display: inline-block !important; }
+  display: inline-block; }
 
 /*doc
 ---
