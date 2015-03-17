@@ -86,6 +86,7 @@ _(The inline style on the card element is for documentation purposes only)_
 */
 .card {
 	@include box-sizing(border-box);
+	display: block;
 	background: $C_contentBG;
 	border: 1px solid $C_border;
 	border-radius: $defaultRadius;
