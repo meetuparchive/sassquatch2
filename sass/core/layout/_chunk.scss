@@ -30,5 +30,5 @@ _Can be used in combination with any other component
 .chunk {
 	@extend %clearfix;
 	display: block;
-	margin-bottom: $space;
+	margin-bottom: $space !important;
 }
