@@ -116,7 +116,9 @@ name: animation
 category: Sass Utils | Mixins & Placeholders
 ---
 */
-.toggleButton-input:checked + .toggleButton-label, .animate--bounceInSubtle, .animate--spin {
+.toggleButton-input:checked + .toggleButton-label,
+.animate--bounceInSubtle,
+.animate--spin {
   -webkit-transform-origin: center center;
   -ms-transform-origin: center center;
   transform-origin: center center; }
