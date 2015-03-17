@@ -43,6 +43,7 @@ Class                   | Description
 	@include display(flex);
 	@include flex-wrap(wrap);
 	@include flex-direction(row);
+	@include flex-wrap(nowrap);
 	@include justify-content(flex-start);
 	@include align-items(flex);
 }

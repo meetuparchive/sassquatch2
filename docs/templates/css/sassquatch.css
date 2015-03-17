@@ -580,8 +580,7 @@ table, dl, dd,
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
   margin: 0;
-  padding: 0;
-  margin-bottom: 16px; }
+  padding: 0; }
 
 form, legend {
   margin-bottom: 0; }
@@ -1897,7 +1896,7 @@ _Can be used in combination with any other component
 */
 .chunk {
   display: block;
-  margin-bottom: 16px; }
+  margin-bottom: 16px !important; }
 
 /*doc
 ---
@@ -2256,6 +2255,11 @@ Class                   | Description
   -webkit-flex-direction: row;
   flex-direction: row;
   -ms-flex-direction: row;
+  -webkit-box-lines: single;
+  box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-pack: start;
   box-pack: start;
   -webkit-justify-content: flex-start;
@@ -2929,6 +2933,7 @@ _(The inline style on the card element is for documentation purposes only)_
 .card {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: block;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 3px;
@@ -3299,12 +3304,14 @@ name: keepAspect
 category: Modifier Classes
 ---
 Maintains a given aspect ratio for flexible media.
+Apply to elements with background images.
 
 Class              | Description
 ------------------ | ------------------------------
 `.keepAspect`      | maintains 1-1 aspect ratio when resized
 `.keepAspect--16-9`| maintains 16-9 aspect ratio when resized
 `.keepAspect--2-1` | maintains 2-1 aspect ratio when resized
+`.keepAspect--2-3` | maintains 2-3 aspect ratio when resized
 
 */
 .keepAspect {
@@ -3314,15 +3321,26 @@ Class              | Description
     display: block;
     padding-top: 100%; }
 
-.keepAspect--16-9:before {
-  content: '';
-  display: block;
-  padding-top: 56.25%; }
+.keepAspect--16-9 {
+  margin-bottom: 0; }
+  .keepAspect--16-9:before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; }
 
-.keepAspect--2-1:before {
-  content: '';
-  display: block;
-  padding-top: 50%; }
+.keepAspect--2-1 {
+  margin-bottom: 0; }
+  .keepAspect--2-1:before {
+    content: '';
+    display: block;
+    padding-top: 50%; }
+
+.keepAspect--2-3 {
+  margin-bottom: 0; }
+  .keepAspect--2-3:before {
+    content: '';
+    display: block;
+    padding-top: 66.66667%; }
 
 /*doc
 ---
