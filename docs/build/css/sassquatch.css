@@ -1693,62 +1693,62 @@ Class                         | Description
 
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has1 > li {
-    width: 100%; }
-
+    width: 100%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has1 > li {
+    width: 100%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has2 > li {
-    width: 50%; }
-
+    width: 50%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has2 > li {
+    width: 50%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has3 > li {
-    width: 33.33333%; }
-
+    width: 33.33333%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has3 > li {
+    width: 33.33333%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has4 > li {
-    width: 25%; }
-
+    width: 25%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has4 > li {
+    width: 25%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has5 > li {
-    width: 20%; }
-
+    width: 20%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has5 > li {
+    width: 20%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has6 > li {
-    width: 16.66667%; }
-
+    width: 16.66667%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has6 > li {
+    width: 16.66667%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has7 > li {
-    width: 14.28571%; }
-
+    width: 14.28571%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has7 > li {
+    width: 14.28571%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has8 > li {
-    width: 12.5%; }
-
+    width: 12.5%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has8 > li {
+    width: 12.5%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has9 > li {
-    width: 11.11111%; }
-
+    width: 11.11111%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has9 > li {
+    width: 11.11111%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has10 > li {
     width: 10%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has1 > li {
-    width: 100%; }
-
-  .atLarge_gridList--has2 > li {
-    width: 50%; }
-
-  .atLarge_gridList--has3 > li {
-    width: 33.33333%; }
-
-  .atLarge_gridList--has4 > li {
-    width: 25%; }
-
-  .atLarge_gridList--has5 > li {
-    width: 20%; }
-
-  .atLarge_gridList--has6 > li {
-    width: 16.66667%; }
-
-  .atLarge_gridList--has7 > li {
-    width: 14.28571%; }
-
-  .atLarge_gridList--has8 > li {
-    width: 12.5%; }
-
-  .atLarge_gridList--has9 > li {
-    width: 11.11111%; }
-
   .atLarge_gridList--has10 > li {
     width: 10%; } }
 /*doc
