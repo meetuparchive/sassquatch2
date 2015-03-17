@@ -106,6 +106,13 @@ main > table td:first-child {
 /* LOL TK */
 
 /* NAV */
+@media only screen and (min-width: 840px) {
+	#navigation {
+		-webkit-flex-basis: 900px; /*obviously a hack.*/
+		flex-basis: 900px;
+		-ms-flex-preferred-size: 900px;
+	}
+}
 #navigation h4 {
 	margin-bottom: 8px;
 }

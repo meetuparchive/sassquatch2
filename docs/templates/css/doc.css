@@ -103,7 +103,16 @@ main > table td:first-child {
 }
 
 /* LAYOUT */
-/* LOL TK */
+#hologramBody {
+	overflow: scroll;
+}
+@media only screen and (min-width: 840px) {
+	#navigation {
+		-webkit-flex-basis: 900px; /*obviously a hack.*/
+		flex-basis: 900px;
+		-ms-flex-preferred-size: 900px;
+	}
+}
 
 /* NAV */
 #navigation h4 {
