@@ -3348,7 +3348,7 @@ Class              | Description
   .keepAspect--2-3:before {
     content: '';
     display: block;
-    padding-top: 66.66667%; }
+    padding-top: 150%; }
 
 /*doc
 ---
