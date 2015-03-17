@@ -1693,62 +1693,62 @@ Class                         | Description
 
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has1 > li {
-    width: 100%; }
-
+    width: 100%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has1 > li {
+    width: 100%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has2 > li {
-    width: 50%; }
-
+    width: 50%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has2 > li {
+    width: 50%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has3 > li {
-    width: 33.33333%; }
-
+    width: 33.33333%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has3 > li {
+    width: 33.33333%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has4 > li {
-    width: 25%; }
-
+    width: 25%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has4 > li {
+    width: 25%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has5 > li {
-    width: 20%; }
-
+    width: 20%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has5 > li {
+    width: 20%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has6 > li {
-    width: 16.66667%; }
-
+    width: 16.66667%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has6 > li {
+    width: 16.66667%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has7 > li {
-    width: 14.28571%; }
-
+    width: 14.28571%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has7 > li {
+    width: 14.28571%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has8 > li {
-    width: 12.5%; }
-
+    width: 12.5%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has8 > li {
+    width: 12.5%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has9 > li {
-    width: 11.11111%; }
-
+    width: 11.11111%; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_gridList--has9 > li {
+    width: 11.11111%; } }
+@media only screen and (min-width: 640px) {
   .atMedium_gridList--has10 > li {
     width: 10%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has1 > li {
-    width: 100%; }
-
-  .atLarge_gridList--has2 > li {
-    width: 50%; }
-
-  .atLarge_gridList--has3 > li {
-    width: 33.33333%; }
-
-  .atLarge_gridList--has4 > li {
-    width: 25%; }
-
-  .atLarge_gridList--has5 > li {
-    width: 20%; }
-
-  .atLarge_gridList--has6 > li {
-    width: 16.66667%; }
-
-  .atLarge_gridList--has7 > li {
-    width: 14.28571%; }
-
-  .atLarge_gridList--has8 > li {
-    width: 12.5%; }
-
-  .atLarge_gridList--has9 > li {
-    width: 11.11111%; }
-
   .atLarge_gridList--has10 > li {
     width: 10%; } }
 /*doc
@@ -2245,21 +2245,16 @@ Class                   | Description
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-lines: multiple;
-  box-lines: multiple;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-direction: row;
   -webkit-box-lines: single;
   box-lines: single;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
   -webkit-box-pack: start;
   box-pack: start;
   -webkit-justify-content: flex-start;
@@ -2282,37 +2277,49 @@ Class                   | Description
   -ms-flex-preferred-size: 100%; }
 
 @media only screen and (min-width: 640px) {
-  .atMedium_stack--spread > .stack-item {
-    -webkit-flex-basis: auto;
-    flex-basis: auto;
-    -ms-flex-preferred-size: auto;
-    padding-left: 16px; }
-    .atMedium_stack--spread > .stack-item:first-child {
-      padding-left: 0; }
-  .atMedium_stack--spread .stack-item--shrink {
-    -webkit-flex-grow: 0;
-    flex-grow: 0;
-    -ms-flex-positive: 0;
-    -webkit-flex-shrink: 1;
-    flex-shrink: 1;
-    -ms-flex-negative: 1;
-    width: initial; } }
+  .atMedium_stack--spread {
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row; }
+    .atMedium_stack--spread > .stack-item {
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+      padding-left: 16px; }
+      .atMedium_stack--spread > .stack-item:first-child {
+        padding-left: 0; }
+    .atMedium_stack--spread .stack-item--shrink {
+      -webkit-flex-grow: 0;
+      flex-grow: 0;
+      -ms-flex-positive: 0;
+      -webkit-flex-shrink: 1;
+      flex-shrink: 1;
+      -ms-flex-negative: 1;
+      width: initial; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_stack--spread > .stack-item {
-    -webkit-flex-basis: auto;
-    flex-basis: auto;
-    -ms-flex-preferred-size: auto;
-    padding-left: 16px; }
-    .atLarge_stack--spread > .stack-item:first-child {
-      padding-left: 0; }
-  .atLarge_stack--spread .stack-item--shrink {
-    -webkit-flex-grow: 0;
-    flex-grow: 0;
-    -ms-flex-positive: 0;
-    -webkit-flex-shrink: 1;
-    flex-shrink: 1;
-    -ms-flex-negative: 1;
-    width: initial; } }
+  .atLarge_stack--spread {
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row; }
+    .atLarge_stack--spread > .stack-item {
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+      padding-left: 16px; }
+      .atLarge_stack--spread > .stack-item:first-child {
+        padding-left: 0; }
+    .atLarge_stack--spread .stack-item--shrink {
+      -webkit-flex-grow: 0;
+      flex-grow: 0;
+      -ms-flex-positive: 0;
+      -webkit-flex-shrink: 1;
+      flex-shrink: 1;
+      -ms-flex-negative: 1;
+      width: initial; } }
 /*doc
 ---
 title: View
@@ -3341,7 +3348,7 @@ Class              | Description
   .keepAspect--2-3:before {
     content: '';
     display: block;
-    padding-top: 66.66667%; }
+    padding-top: 150%; }
 
 /*doc
 ---

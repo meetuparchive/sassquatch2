@@ -12,9 +12,10 @@ Class							  | Description
 `.animate--spin`          | Applies 360deg rotation keyframes (infinite)
 
 */
-.animate--bounceInSubtle {
+@include _modifier(animate, bounceInSubtle) {
 	@include animate--bounceInSubtle();
 }
-.animate--spin {
+
+@include _modifier(animate, spin) {
 	@include animate--spin();
 }

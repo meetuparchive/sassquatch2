@@ -78,12 +78,10 @@ Class                         | Description
 }
 
 // larger breakpoints
-@each $bname, $bp in (medium: $breakpoint-m, large: $breakpoint-l) {
-	@include atMediaUp($bname) {
-		@each $col in $glColumns {
-			.at#{str-firstCharToUpper($bname)}_gridList--has#{$col} > li {
-				width: percentage(1 / $col);
-			}
+@each $col in $glColumns {
+	@include _bpModifier(gridList, has#{$col}) {
+		& > li {
+			width: percentage(1 / $col);
 		}
 	}
 }

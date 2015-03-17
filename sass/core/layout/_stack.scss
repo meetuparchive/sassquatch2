@@ -41,9 +41,8 @@ Class                   | Description
 */
 .stack {
 	@include display(flex);
-	@include flex-wrap(wrap);
-	@include flex-direction(row);
 	@include flex-wrap(nowrap);
+	@include flex-direction(column);
 	@include justify-content(flex-start);
 	@include align-items(flex);
 }
@@ -53,21 +52,19 @@ Class                   | Description
 	@include flex-basis(100%);
 }
 
-@each $bpName, $bp in (medium: $breakpoint-m, large: $breakpoint-l) {
-	@include atMediaUp($bpName) {
-		.at#{str-firstCharToUpper($bpName)}_stack--spread {
-			& > .stack-item {
-				@include flex-basis(auto);
-				padding-left: $space;
-				&:first-child {
-					padding-left: 0;
-				}
-			}
-			.stack-item--shrink {
-				@include flex-grow(0);
-				@include flex-shrink(1);
-				width: initial;
-			}
+@include _bpModifier(stack, spread) {
+	@include flex-direction(row);
+
+	& > .stack-item {
+		@include flex-basis(auto);
+		padding-left: $space;
+		&:first-child {
+			padding-left: 0;
 		}
+	}
+	.stack-item--shrink {
+		@include flex-grow(0);
+		@include flex-shrink(1);
+		width: initial;
 	}
 }

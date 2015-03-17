@@ -76,16 +76,12 @@ Class                       | Description
 	}
 }
 
-@each $bpName, $bp in (medium: $breakpoint-m, large: $breakpoint-l) {
-	@include atMediaUp($bpName) {
-		.at#{str-firstCharToUpper($bpName)}_hscroll--unclip {
-			-webkit-overflow-scrolling: auto;
-			-ms-overflow-style: auto;
-			overflow: visible;
+@include _bpModifier(hscroll, unclip) {
+	-webkit-overflow-scrolling: auto;
+	-ms-overflow-style: auto;
+	overflow: visible;
 
-			.hscroll-content {
-				white-space: normal;
-			}
-		}
+	.hscroll-content {
+		white-space: normal;
 	}
 }
