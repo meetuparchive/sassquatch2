@@ -2607,6 +2607,7 @@ Class                     | Description
 .avatar {
   background-color: #f3f6f9;
   background-position: center 42%;
+  color: transparent;
   display: inline-block;
   font-size: 24px;
   height: 36px;
