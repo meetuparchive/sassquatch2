@@ -108,9 +108,9 @@ main > table td:first-child {
 }
 @media only screen and (min-width: 840px) {
 	#navigation {
-		-webkit-flex-basis: 900px; /*obviously a hack.*/
-		flex-basis: 900px;
-		-ms-flex-preferred-size: 900px;
+		-webkit-flex-basis: 460px; /*obviously a hack.*/
+		flex-basis: 460px;
+		-ms-flex-preferred-size: 460px;
 	}
 }
 
