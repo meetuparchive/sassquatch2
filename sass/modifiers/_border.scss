@@ -12,12 +12,15 @@ Class                   | Description
 `.border--none`         | removes all borders from element
 `.bordered`             | sets a standard top border AND top padding
 */
-.border--top {
+
+@include _modifier(border, top) {
 	border-top: $border-standard !important;
 }
-.border--none {
+
+@include _modifier(border, none) {
 	border-width: 0 !important;
 }
+
 .bordered {
 	border-top: 1px solid $C-border;
 	padding-top: $space;
