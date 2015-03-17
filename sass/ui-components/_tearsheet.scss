@@ -4,20 +4,19 @@ title: Tearsheet
 name: tearsheet
 category: UI Components
 ---
-Standard display for dates via the
-`<time>` element.
+Standard display for dates.
 
 #### Tearsheet example
 ```html_example
-<time class="tearsheet" datetime="2015-01-13">13</time>
+<div class="tearsheet">13</div>
 ```
 
 #### Tearsheet with date detail
 ```html_example
-<time class="dateTime" datetime="2015-01-13">
+<div class="dateTime">
 	<div class="dateTime-tearsheet">13</div>
 	<p class="dateTime-detail">Tomorrow at 7:00 PM</p>
-</time>
+</div>
 ```
 */
 
