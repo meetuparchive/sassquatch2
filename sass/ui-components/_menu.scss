@@ -83,3 +83,9 @@ Use as a guide for markup.
 	}
 }
 
+.menu-toggle {
+	display: none;
+	@extend .hasJS_display--block;
+}
+}
+
