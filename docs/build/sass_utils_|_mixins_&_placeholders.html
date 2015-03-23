@@ -28,7 +28,7 @@
 	<header class="stripe--inverted inverted">
 		<div class="bounds bounds--wide">
 			<h1 class="text--display">Sassquatch 2</h1>
-			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v0.9.0</a>
+			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v<!-- @echo VERSION --></a>
 		</div>
 	</header>
 
@@ -350,40 +350,6 @@ use the <code>atMediaDown</code> mixin.</p>
 <tr>
 <td><code>atMediaDown(huge)</code></td>
 <td>Huge screens and under</td>
-</tr>
-</tbody></table>
-
-<h3>Targeting a specific breakpoint</h3>
-
-<p>It will be rare that we target a specific breakpoint, but
-the <code>atMediaOnly</code> mixin will do this.</p>
-<div class="codeBlock"><div class="highlight"><pre>    @include atMediaOnly(medium) {
-        body::after {
-            content: "only medium screens will see this";
-        }
-    }
-</pre></div></div>
-<table><thead>
-<tr>
-<th>Breakpoint name</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>atMediaOnly(small)</code></td>
-<td>Small screens only</td>
-</tr>
-<tr>
-<td><code>atMediaOnly(medium)</code></td>
-<td>Landscape on most phones only</td>
-</tr>
-<tr>
-<td><code>atMediaOnly(large)</code></td>
-<td>Landscape on phabelts only</td>
-</tr>
-<tr>
-<td><code>atMediaOnly(huge)</code></td>
-<td>Huge screens only</td>
 </tr>
 </tbody></table>
 
@@ -890,6 +856,16 @@ $(function() {
 					"title": "Buttons",
 					"breadcrumb": "UI Components > Buttons",
 					"path": "ui_components.html#buttons"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Floating Action",
+					"breadcrumb": "UI Components > Floating Action",
+					"path": "ui_components.html#floatingAction"
 				});
 
 			

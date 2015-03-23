@@ -60,25 +60,6 @@ Breakpoint name        | Description
 `atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
 `atMediaDown(huge)`    | Huge screens and under
 
-
-### Targeting a specific breakpoint
-It will be rare that we target a specific breakpoint, but
-the `atMediaOnly` mixin will do this.
-
-```scss
-	@include atMediaOnly(medium) {
-		body::after {
-			content: "only medium screens will see this";
-		}
-	}
-```
-
-Breakpoint name        | Description
------------------------| ---------------------------------------------
-`atMediaOnly(small)`   | Small screens only
-`atMediaOnly(medium)`  | Landscape on most phones only
-`atMediaOnly(large)`   | Landscape on phabelts only
-`atMediaOnly(huge)`    | Huge screens only
 */
 $breakpoints_minWidth:
 	(
@@ -110,21 +91,6 @@ $breakpoints_maxWidth:
 	)
 ;
 
-$breakpoints_only:
-	(
-		small "only screen and (min-width: #{$breakpoint-s}) and (max-width: #{$breakpoint-s})"
-	),
-	(
-		medium "only screen and (min-width: #{$breakpoint-m}) and (max-width: #{$breakpoint-m})"
-	),
-	(
-		large "only screen and (min-width: #{$breakpoint-l}) and (max-width: #{$breakpoint-l})"
-	),
-	(
-		huge "only screen and (min-width: #{$breakpoint-xl}) and (max-width: #{$breakpoint-xl})"
-	)
-;
-
 @mixin atMediaUp($breakpoint: "") {
 	@include _wrapMediaQuery( $breakpoint, $breakpoints_minWidth ) {
 		@content;
@@ -136,10 +102,3 @@ $breakpoints_only:
 		@content;
 	}
 }
-
-@mixin atMediaOnly($breakpoint: "") {
-	@include _wrapMediaQuery( $breakpoint, $breakpoints_only ) {
-		@content;
-	}
-}
-
