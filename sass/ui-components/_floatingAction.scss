@@ -1,0 +1,32 @@
+/*doc
+---
+title: Floating Action
+name: floatingAction
+category: UI Components
+---
+If a page has a single important action, you can use a `floatingAction` wrapper to
+call it out. At small screen sizes, the element with the `floatingAction` class
+will fix to the bottom of the viewport.
+
+```html_example
+	<div class="bounds">
+		<p class="chunk">The button below will fix to the bottom of the viewport at small sizes</p>
+		<div class="floatingAction">
+			<a href="#" class="chunk button button--primary button--fullWidth">Floating Action</a>
+		</div>
+	</div>
+```
+*/
+
+.floatingAction {
+	@include atMediaDown(small) {
+		box-sizing: border-box;
+		padding-left: $space-half;
+		padding-right: $space-half;
+		bottom: 0;
+		left: 0;
+		position: fixed;
+		width: 100%;
+		z-index: 1;
+	}
+}
