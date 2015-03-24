@@ -3292,9 +3292,15 @@ These classes only apply a `vertical-align` rule to an element.
 In order to actually vertically align something with this property,
 the element must be one of the following:
 
-- a flex child (child of `.row` or `.stack`
-- have a `display` value of `inline-block`
-- have a `display` value of `table-cell`
+a flex child (child of `.row` or `.stack`)
+
+__OR__
+
+have a `display` value of `inline-block`
+
+__OR__
+
+have a `display` value of `table-cell`
 
 Class                    | Description
 ------------------------ | --------------------------------
