@@ -3288,8 +3288,13 @@ Class             | Description
 `.align--left`    | sets `text-align` to `left`
 
 ## Vertical alignment
-_These classes only work on flex children (`row-item`, `stack-item`),
-elements with `display: table-cell`, and elements displayed `inline-block`._
+These classes only apply a `vertical-align` rule to an element.
+In order to actually vertically align something with this property,
+the element must be one of the following:
+
+- a flex child (child of `.row` or `.stack`
+- have a `display` value of `inline-block`
+- have a `display` value of `table-cell`
 
 Class                    | Description
 ------------------------ | --------------------------------
@@ -3309,16 +3314,16 @@ Class                    | Description
   text-align: center !important; }
 
 .valign--baseline {
-  veritcal-align: baseline !important; }
+  vertical-align: baseline !important; }
 
 .valign--bottom {
-  veritcal-align: bottom !important; }
+  vertical-align: bottom !important; }
 
 .valign--middle {
-  veritcal-align: middle !important; }
+  vertical-align: middle !important; }
 
 .valign--top {
-  veritcal-align: top !important; }
+  vertical-align: top !important; }
 
 /*doc
 ---

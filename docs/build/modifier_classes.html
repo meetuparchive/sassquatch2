@@ -28,7 +28,7 @@
 	<header class="stripe--inverted inverted">
 		<div class="bounds bounds--wide">
 			<h1 class="text--display">Sassquatch 2</h1>
-			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v0.10.0</a>
+			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v0.10.1</a>
 		</div>
 	</header>
 
@@ -236,8 +236,15 @@
 
 <h2>Vertical alignment</h2>
 
-<p><em>These classes only work on flex children (<code>row-item</code>, <code>stack-item</code>),
-elements with <code>display: table-cell</code>, and elements displayed <code>inline-block</code>.</em></p>
+<p>These classes only apply a <code>vertical-align</code> rule to an element.
+In order to actually vertically align something with this property,
+the element must be one of the following:</p>
+
+<ul>
+<li>a flex child (child of <code>.row</code> or <code>.stack</code></li>
+<li>have a <code>display</code> value of <code>inline-block</code></li>
+<li>have a <code>display</code> value of <code>table-cell</code></li>
+</ul>
 
 <table><thead>
 <tr>
