@@ -3275,14 +3275,35 @@ title: Alignment
 name: alignMod
 category: Modifier Classes
 ---
-Modifies `text-align`, `vertical-align`, or
-`align-self` property of element.
 
 __Applies `!important` declaration__
 
+## Text alignment
+The following classes change the `text-align` of an element.
+
 Class                    | Description
 ------------------------ | --------------------------------
-`.class`                 | descr
+`.align--left`           | sets `text-align` to `left`
+`.align--right`          | sets `text-align` to `right`
+`.align--center`         | sets `text-align` to `center`
+
+
+## Vertical alignment
+The following classes adjust vertical centering of element
+contents.
+
+For elements displaying as `inline-block` or `table-cell`,
+the `vertical-align` property is used.
+
+For flex children, these classes set the `align-self` property
+to a value that best matches the `vertical-align` value.
+
+Class                    | Description
+------------------------ | --------------------------------
+`.valign--baseline`      | vertically centers element to baseline
+`.valign--bottom`        | vertically centers element to bottom
+`.valign--middle`        | vertically centers element to middle
+`.valign--top`           | vertically centers element to top
 
 */
 .align--left {
@@ -3295,27 +3316,27 @@ Class                    | Description
   text-align: center !important; }
 
 .valign--baseline {
-  -webkit-align-self: baseline !important;
-  align-self: baseline !important;
-  -ms-flex-item-align: baseline !important;
+  -webkit-align-self: baseline;
+  align-self: baseline;
+  -ms-flex-item-align: baseline;
   vertical-align: baseline !important; }
 
 .valign--bottom {
-  -webkit-align-self: flex-end !important;
-  align-self: flex-end !important;
-  -ms-flex-item-align: flex-end !important;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+  -ms-flex-item-align: end;
   vertical-align: bottom !important; }
 
 .valign--middle {
-  -webkit-align-self: center !important;
-  align-self: center !important;
-  -ms-flex-item-align: center !important;
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
   vertical-align: middle !important; }
 
 .valign--top {
-  -webkit-align-self: flex-start !important;
-  align-self: flex-start !important;
-  -ms-flex-item-align: flex-start !important;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+  -ms-flex-item-align: start;
   vertical-align: top !important; }
 
 /*doc

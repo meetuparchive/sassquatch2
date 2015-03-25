@@ -208,10 +208,11 @@
 	 	<main id="content" class="stack-item">
 <h1 id="alignMod">Alignment</h1>
 
-<p>Modifies <code>text-align</code>, <code>vertical-align</code>, or
-<code>align-self</code> property of element.</p>
-
 <p><strong>Applies <code>!important</code> declaration</strong></p>
+
+<h2>Text alignment</h2>
+
+<p>The following classes change the <code>text-align</code> of an element.</p>
 
 <table><thead>
 <tr>
@@ -220,8 +221,51 @@
 </tr>
 </thead><tbody>
 <tr>
-<td><code>.class</code></td>
-<td>descr</td>
+<td><code>.align--left</code></td>
+<td>sets <code>text-align</code> to <code>left</code></td>
+</tr>
+<tr>
+<td><code>.align--right</code></td>
+<td>sets <code>text-align</code> to <code>right</code></td>
+</tr>
+<tr>
+<td><code>.align--center</code></td>
+<td>sets <code>text-align</code> to <code>center</code></td>
+</tr>
+</tbody></table>
+
+<h2>Vertical alignment</h2>
+
+<p>The following classes adjust vertical centering of element
+contents.</p>
+
+<p>For elements displaying as <code>inline-block</code> or <code>table-cell</code>,
+the <code>vertical-align</code> property is used.</p>
+
+<p>For flex children, these classes set the <code>align-self</code> property
+to a value that best matches the <code>vertical-align</code> value.</p>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.valign--baseline</code></td>
+<td>vertically centers element to baseline</td>
+</tr>
+<tr>
+<td><code>.valign--bottom</code></td>
+<td>vertically centers element to bottom</td>
+</tr>
+<tr>
+<td><code>.valign--middle</code></td>
+<td>vertically centers element to middle</td>
+</tr>
+<tr>
+<td><code>.valign--top</code></td>
+<td>vertically centers element to top</td>
 </tr>
 </tbody></table>
 

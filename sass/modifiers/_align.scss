@@ -4,14 +4,35 @@ title: Alignment
 name: alignMod
 category: Modifier Classes
 ---
-Modifies `text-align`, `vertical-align`, or
-`align-self` property of element.
 
 __Applies `!important` declaration__
 
+## Text alignment
+The following classes change the `text-align` of an element.
+
 Class                    | Description
 ------------------------ | --------------------------------
-`.class`                 | descr
+`.align--left`           | sets `text-align` to `left`
+`.align--right`          | sets `text-align` to `right`
+`.align--center`         | sets `text-align` to `center`
+
+
+## Vertical alignment
+The following classes adjust vertical centering of element
+contents.
+
+For elements displaying as `inline-block` or `table-cell`,
+the `vertical-align` property is used.
+
+For flex children, these classes set the `align-self` property
+to a value that best matches the `vertical-align` value.
+
+Class                    | Description
+------------------------ | --------------------------------
+`.valign--baseline`      | vertically centers element to baseline
+`.valign--bottom`        | vertically centers element to bottom
+`.valign--middle`        | vertically centers element to middle
+`.valign--top`           | vertically centers element to top
 
 */
 $_flexAlignMap: (
