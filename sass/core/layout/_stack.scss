@@ -55,7 +55,7 @@ Class                   | Description
 @include _bpModifier(stack, spread) {
 	@include flex-direction(row);
 
-	& > .stack-item {
+	> .stack-item {
 		@include flex-basis(auto);
 		padding-left: $space;
 		&:first-child {
