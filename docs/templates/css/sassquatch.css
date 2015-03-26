@@ -2434,10 +2434,12 @@ Class                      | Description
     left: 320px;
     right: 0;
     width: auto; } }
+.view-head--photoOverlay,
 .view-head--transparent {
   background: transparent;
   border-bottom: none;
   color: white; }
+  .view-head--photoOverlay h1,
   .view-head--transparent h1 {
     opacity: 0; }
 
