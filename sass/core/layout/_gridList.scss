@@ -80,7 +80,7 @@ Class                         | Description
 // larger breakpoints
 @each $col in $glColumns {
 	@include _bpModifier(gridList, has#{$col}) {
-		& > li {
+		> li {
 			width: percentage(1 / $col);
 		}
 	}

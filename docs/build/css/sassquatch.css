@@ -3726,7 +3726,7 @@ _(this class will not work on `inline` elements)_
 ```html_example
 <a class="display--block text--hide" href="#">
 	You can see the kitten, but you can't see this text.
-	<img src="https://placekitten.com/g/24/24" />
+	<img src="https://placekitten.com/g/32/32" />
 </a>
 ```
 
