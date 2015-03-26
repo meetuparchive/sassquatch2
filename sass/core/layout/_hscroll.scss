@@ -32,18 +32,12 @@ into a non-scrolling list in the document flow for larger screens.
 ```html_example
 <div class="hscroll atMedium_hscroll--unclip">
 	<ul class="hscroll-content">
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
-		<li><img src="https://placekitten.com/g/92/56" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
 	</ul>
 </div>
 ```
@@ -71,7 +65,7 @@ Class                       | Description
 	@extend %inlineblockList;
 	box-sizing: content-box;
 	white-space: nowrap;
-	& > li {
+	> li {
 		white-space: normal;
 	}
 }
