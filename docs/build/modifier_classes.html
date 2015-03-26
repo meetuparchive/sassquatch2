@@ -154,6 +154,15 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#textMod">Text Modifiers</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#thumb">Thumbnails</a>
 										</li>
 									
@@ -546,6 +555,38 @@ to an element.</p>
 <tr>
 <td><code>.padding--none</code></td>
 <td>Sets <code>padding</code> to <code>0</code></td>
+</tr>
+</tbody></table>
+
+<h1 id="textMod">Text Modifiers</h1>
+
+<h2>Hiding Text</h2>
+
+<p>To hide just the text node of an element, use
+the <code>text--hide</code> modifier.</p>
+
+<p>This is useful for links that only contain an
+SVG icon (use descriptive text for screen readers).</p>
+
+<p><em>(this class will not work on <code>inline</code> elements)</em></p>
+<div class="codeExample"><div class="exampleOutput"><a class="display--block text--hide" href="#">
+    You can see the kitten, but you can't see this text.
+    <img src="https://placekitten.com/g/32/32" />
+</a>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"display--block text--hide"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+    You can see the kitten, but you can't see this text.
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/32/32"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+</pre></div></div></div>
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.text--hide</code></td>
+<td>Visually hides text; removes text from document flow</td>
 </tr>
 </tbody></table>
 
@@ -953,6 +994,16 @@ $(function() {
 					"title": "Margin/Padding",
 					"breadcrumb": "Modifier Classes > Margin/Padding",
 					"path": "modifier_classes.html#spacingMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text Modifiers",
+					"breadcrumb": "Modifier Classes > Text Modifiers",
+					"path": "modifier_classes.html#textMod"
 				});
 
 			

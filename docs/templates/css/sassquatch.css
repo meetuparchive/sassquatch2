@@ -3709,6 +3709,39 @@ Class                    | Description
 
 /*doc
 ---
+title: Text Modifiers
+name: textMod
+category: Modifier Classes
+---
+
+## Hiding Text
+To hide just the text node of an element, use
+the `text--hide` modifier.
+
+This is useful for links that only contain an
+SVG icon (use descriptive text for screen readers).
+
+_(this class will not work on `inline` elements)_
+
+```html_example
+<a class="display--block text--hide" href="#">
+	You can see the kitten, but you can't see this text.
+	<img src="https://placekitten.com/g/32/32" />
+</a>
+```
+
+Class          | Description
+-------------- | ----------------------------
+`.text--hide`  | Visually hides text; removes text from document flow
+*/
+.text--hide {
+  font-size: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*doc
+---
 title: Thumbnails
 name: thumb
 category: Modifier Classes
