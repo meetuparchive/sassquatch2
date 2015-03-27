@@ -88,3 +88,7 @@ Use as a guide for markup.
 	@extend .hasJS_display--block;
 }
 
+// Active state of menu-actions
+.menu-actions--active {
+	display: block !important;
+}
