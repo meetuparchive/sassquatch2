@@ -25,6 +25,26 @@ Forces an element to use link-like styling.
 	}
 }
 
+/*doc
+---
+title: Text wrap
+name: textWrapUtil
+parent: text
+---
+Nice hyphenation and wrapping for running text.
+
+```
+@extend %link;
+```
+*/
+%wrapNice {
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
 
 /*doc
 ---
