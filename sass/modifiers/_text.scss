@@ -5,7 +5,12 @@ name: textMod
 category: Modifier Classes
 ---
 
-## Hiding Text
+/*doc
+---
+title: Hiding Text
+name: textHideUtil
+parent: textMod
+---
 To hide just the text node of an element, use
 the `text--hide` modifier.
 
@@ -30,4 +35,21 @@ Class          | Description
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+
+/*doc
+---
+title: Nice Hyphenation
+name: wrapNiceUtil
+parent: textMod
+---
+Enables breaking all words and auto-hyphenation.
+
+Class              | Description
+------------------ | ----------------------------
+`.text--wrapNice`  | Visually hides text; removes text from document flow
+*/
+.text--wrapNice {
+	@extend %wrapNice;
 }
