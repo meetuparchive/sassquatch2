@@ -62,6 +62,7 @@ Class                      | Description
 //
 // view-head variants
 //
+%view-head--transparent,
 .view-head--transparent {
 	background: transparent;
 	border-bottom: none;
@@ -72,5 +73,6 @@ Class                      | Description
 }
 
 .view-head--photoOverlay {
+	@extend %view-head--transparent;
 	@include background(linear-gradient(transparentize($C_scrimGradient, .2), transparentize($C_scrimGradient, 1) ));
 }
