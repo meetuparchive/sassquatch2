@@ -47,9 +47,9 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 		padding-left: $space/2;
 	}
 	@include _sel-selfAndChild( 'chunk' ) {
-		margin-bottom: $space/2;
+		margin-bottom: $space/2 !important;
 	}
-	@include _sel-selfAndChild( 'list > li' ) {
+	@include _sel-selfAndChild( 'list-item' ) {
 		padding-top: $space/2;
 	}
 }
