@@ -195,11 +195,8 @@ event descriptions).
 </div>
 ```
 */
-.runningText {
-	@extend %wrapNice;
-}
 .runningText p {
-	@extend .wrapNice;
+	@extend %wrapNice;
 	margin-bottom: $space;
 	&:last-child {
 		margin-bottom: 0;
