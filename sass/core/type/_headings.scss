@@ -90,3 +90,21 @@ Display text for header hero elements.
 	}
 }
 
+/*doc
+---
+title: Headline text
+name: headlineText
+parent: headings
+---
+Headline text for when something between display and normal text is needed. Use sparingly and with caution.
+
+```html_example
+<h2 class="text--headline">If display text is Batman, I'm Robin</h2>
+```
+*/
+%text--headline,
+.text--headline {
+	@extend %text--display;
+	text-transform: none;
+}
+
