@@ -2758,9 +2758,9 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
   padding-left: 8px; }
 .attachment.chunk,
 .attachment .chunk {
-  margin-bottom: 8px; }
-.attachment.list > li,
-.attachment .list > li {
+  margin-bottom: 8px !important; }
+.attachment.list-item,
+.attachment .list-item {
   padding-top: 8px; }
 
 /*doc
