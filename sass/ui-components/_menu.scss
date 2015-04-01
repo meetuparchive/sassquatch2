@@ -48,8 +48,8 @@ Use as a guide for markup.
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 32vw;
-		min-width: $block-4;
+		min-width: $block-3;
+		max-width: $breakpoint-s/2;
 	}
 }
 
@@ -66,6 +66,7 @@ Use as a guide for markup.
 // Action
 .menu-actions-item a {
 	@extend %buttonPersonality;
+	position: relative; // normal text-wrap inside absolutely positioned container
 	display: inline-block;
 	padding-right: $space;
 
