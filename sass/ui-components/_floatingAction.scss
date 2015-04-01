@@ -8,6 +8,9 @@ If a page has a single important action, you can use a `floatingAction` wrapper 
 call it out. At small screen sizes, the element with the `floatingAction` class
 will fix to the bottom of the viewport.
 
+__Note:__ A class of `hasFloatingAction` is available if extra space is needed at the bottom
+of a page for the floating action to "land" in. Apply to the `body` tag.
+
 ```html_example
 	<div class="bounds">
 		<p class="chunk">The button below will fix to the bottom of the viewport at small sizes</p>
@@ -29,4 +32,10 @@ will fix to the bottom of the viewport.
 		width: 100%;
 		z-index: 1;
 	}
+}
+
+// for `body` tag
+.hasFloatingAction {
+	background-color: $C_contentBGInverted;
+	padding-bottom: $space*2 + 40px; // 40px = button height
 }
