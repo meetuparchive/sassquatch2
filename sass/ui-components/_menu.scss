@@ -49,7 +49,7 @@ Use as a guide for markup.
 		top: 0;
 		right: 0;
 		min-width: $block-3;
-		max-width: $breakpoint-s/2;
+		max-width: $breakpoint-s*0.75;
 	}
 }
 
