@@ -1776,6 +1776,49 @@ Class                         | Description
     width: 10%; } }
 /*doc
 ---
+title: Exact list
+name: exactList
+category: Layout
+---
+Adaptive overflow control for inline block lists
+
+_better docs TK_
+
+```html_example
+<div class="exactList">
+	<ul class="inlineblockList exactList-content">
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+	</ul>
+</div>
+```
+
+*/
+.exactList {
+  display: block;
+  overflow: hidden;
+  margin-right: -8px;
+  height: 36px; }
+  @media only screen and (min-width: 440px) {
+    .exactList {
+      height: 48px; } }
+
+.exactList-content {
+  text-align: justify; }
+
+/*doc
+---
 title: Inline-block list
 name: inlineblockList
 category: Layout
@@ -3015,6 +3058,9 @@ If a page has a single important action, you can use a `floatingAction` wrapper 
 call it out. At small screen sizes, the element with the `floatingAction` class
 will fix to the bottom of the viewport.
 
+__Note:__ A class of `hasFloatingAction` is available if extra space is needed at the bottom
+of a page for the floating action to "land" in. Apply to the `body` tag.
+
 ```html_example
 	<div class="bounds">
 		<p class="chunk">The button below will fix to the bottom of the viewport at small sizes</p>
@@ -3034,6 +3080,10 @@ will fix to the bottom of the viewport.
     position: fixed;
     width: 100%;
     z-index: 1; } }
+
+.hasFloatingAction {
+  background-color: #353e48;
+  padding-bottom: 72px; }
 
 /*doc
 ---
@@ -3076,7 +3126,9 @@ Use as a guide for markup.
   display: none;
   position: absolute;
   top: 0;
-  right: 0; }
+  right: 0;
+  min-width: 108px;
+  max-width: 330px; }
 
 .menu-actions-item {
   display: inline; }
@@ -3084,6 +3136,7 @@ Use as a guide for markup.
     padding-top: 0; }
 
 .menu-actions-item a {
+  position: relative;
   display: inline-block;
   padding-right: 16px; }
   .hasJS .menu-actions-item a {
