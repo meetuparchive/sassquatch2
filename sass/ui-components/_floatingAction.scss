@@ -21,8 +21,8 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 ```
 */
 
-.floatingAction {
-	@include atMediaDown(small) {
+@include atMediaDown(small) {
+	.floatingAction {
 		box-sizing: border-box;
 		padding-left: $space-half;
 		padding-right: $space-half;
@@ -32,10 +32,10 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 		width: 100%;
 		z-index: 1;
 	}
-}
 
-// for `body` tag
-.hasFloatingAction {
-	background-color: $C_contentBGInverted;
-	padding-bottom: $space*2 + 40px; // 40px = button height
+	// for `body` tag
+	.hasFloatingAction {
+		background-color: $C_contentBGInverted;
+		padding-bottom: $space*2 + 40px; // 40px = button height
+	}
 }
