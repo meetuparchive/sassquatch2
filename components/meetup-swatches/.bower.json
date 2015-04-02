@@ -26,6 +26,6 @@
     "commit": "12afa0cc6ad5311898b78356e36562cfd1e195a2"
   },
   "_source": "git://github.com/meetup/meetup-swatches.git",
-  "_target": "1.0.0",
+  "_target": ">0.6.0",
   "_originalSource": "meetup-swatches"
 }
