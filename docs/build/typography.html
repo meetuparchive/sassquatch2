@@ -118,11 +118,6 @@
 
 									
 									
-
-								
-
-									
-									
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#headings">Headings</a>
 										</li>
@@ -167,146 +162,84 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="bodyText" class="styleguide">Body/primary text</h1>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
+<h1 id="bodyText">Body/primary text</h1>
+<div class="codeExample"><div class="exampleOutput"><p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="boldText">Bold text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--bold">Bold text is bold</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>Bold text is bold<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="bulletedList">Bulleted lists</h2>
 
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="boldText" class="styleguide">Bold text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--bold">Bold text is bold</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>Bold text is bold<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="bulletedList" class="styleguide">Bulleted lists</h2>
-<p class="styleguide"><code class="styleguide">&lt;ul&gt;</code> and <code class="styleguide">&lt;ol&gt;</code> element list styles are
-reset by default.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <ul>
+<p><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> element list styles are
+reset by default.</p>
+<div class="codeExample"><div class="exampleOutput"><ul>
     <li>Eggs</li>
     <li>More Eggs</li>
 </ul>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;ul&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;ul&gt;</span>
     <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></pre>
-    </div>
-  </div>
-</div>
-<p class="styleguide">List style bullets are applied when list
-elements are inside a <code class="styleguide">.runningText</code> container.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <div class="runningText">
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<p>List style bullets are applied when list
+elements are inside a <code>.runningText</code> container.</p>
+<div class="codeExample"><div class="exampleOutput"><div class="runningText">
     <ul>
         <li>Eggs</li>
         <li>More Eggs</li>
     </ul>
 </div>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"runningText"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"runningText"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul&gt;</span>
         <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
-  </div>
-</div>
-<p class="styleguide">You may also use the <code class="styleguide">.bullets</code> class to apply
-numbers/bullets to a list.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <ul class="bullets">
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<p>You may also use the <code>.bullets</code> class to apply
+numbers/bullets to a list.</p>
+<div class="codeExample"><div class="exampleOutput"><ul class="bullets">
     <li>Eggs</li>
     <li>More Eggs</li>
 </ul>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"bullets"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"bullets"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></pre>
-    </div>
-  </div>
-</div>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div></div></div>
+<h2 id="captionText">Caption text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--caption">I'm captioning all the things</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>I'm captioning all the things<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="hintText">Hint text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--hint">This is hint text</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>This is hint text<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="invertedText">Inverted text</h2>
 
-<h2 id="captionText" class="styleguide">Caption text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--caption">I'm captioning all the things</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>I'm captioning all the things<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="hintText" class="styleguide">Hint text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--hint">This is hint text</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>This is hint text<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="invertedText" class="styleguide">Inverted text</h2>
-<p class="styleguide">Apply the <code class="styleguide">inverted</code> class to a container with
+<p>Apply the <code>inverted</code> class to a container with
 a dark background color or photo to flip all text
-elements to inveted colors.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <div style="background: #353E48;" class="inverted">
+elements to inveted colors.</p>
+<div class="codeExample"><div class="exampleOutput"><div style="background: #353E48;" class="inverted">
     <p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
 </div>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background: #353E48;"</span> <span class="na">class=</span><span class="s">"inverted"</span><span class="nt">&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background: #353E48;"</span> <span class="na">class=</span><span class="s">"inverted"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
-  </div>
-</div>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h2 id="runningText">Running text</h2>
 
-<h2 id="runningText" class="styleguide">Running text</h2>
-<p class="styleguide">By default, paragraphs and headings are not styled
+<p>By default, paragraphs and headings are not styled
 with any bottom spacing. Links are not blue by default,
 as the most common case on Meetup will be block-level
-anchors with large touch targets.</p><p class="styleguide">However, there will be instaces where you want the blue
+anchors with large touch targets.</p>
+
+<p>However, there will be instaces where you want the blue
 links and properly spaced paragraphs of running text (ie.
-event descriptions).</p><div class="codeExample">
-  <div class="exampleOutput">
-    <p>The robot is partially dressed in waterproof surgical garb.</p>
+event descriptions).</p>
+<div class="codeExample"><div class="exampleOutput"><p>The robot is partially dressed in waterproof surgical garb.</p>
 <p>"Bruce Springsteen" is a terrible name for a <a href="#">cat</a>.</p>
 
 <hr style="margin: 8px;" /> <!-- lol, hr -->
@@ -315,11 +248,7 @@ event descriptions).</p><div class="codeExample">
     <p>The robot is partially dressed in waterproof surgical garb.</p>
     <p>"Bruce Springsteen" is a terrible name for a <a href="#">cat</a>.</p>
 </div>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p&gt;</span>"Bruce Springsteen" is a terrible name for a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>cat<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
 
 <span class="nt">&lt;hr</span> <span class="na">style=</span><span class="s">"margin: 8px;"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- lol, hr --&gt;</span>
@@ -327,84 +256,33 @@ event descriptions).</p><div class="codeExample">
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"runningText"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;p&gt;</span>"Bruce Springsteen" is a terrible name for a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>cat<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
-  </div>
-</div>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h2 id="secondaryText">Secondary text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--secondary">Secondary text is secondary</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--secondary"</span><span class="nt">&gt;</span>Secondary text is secondary<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="smallText">Small text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--small">Small text is small</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text is small<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="tertiaryText">Tertiary text</h2>
+<div class="codeExample"><div class="exampleOutput"><p class="text--tertiary">Tertiary text is tertiary</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--tertiary"</span><span class="nt">&gt;</span>Tertiary text is tertiary<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="textGraphic">Graphic text</h2>
 
-<h3 id="linkColor" class="styleguide">Link color</h3>
-<p class="styleguide">You can always force an anchor to apply a
-linky blue color by applying the <code class="styleguide">.link</code> class.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <p>Let's force this <a class="link" href="#">link</a> to be blue</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>Let's force this <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>link<span class="nt">&lt;/a&gt;</span> to be blue<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="secondaryText" class="styleguide">Secondary text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--secondary">Secondary text is secondary</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--secondary"</span><span class="nt">&gt;</span>Secondary text is secondary<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="smallText" class="styleguide">Small text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--small">Small text is small</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text is small<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="tertiaryText" class="styleguide">Tertiary text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--tertiary">Tertiary text is tertiary</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--tertiary"</span><span class="nt">&gt;</span>Tertiary text is tertiary<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="textGraphic" class="styleguide">Graphic text</h2>
-<p class="styleguide">Useful when using large text in a graphical way.
-Cuts line height to give the glyph spacing similar to that of an image or icon.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--graphic">102</p>
+<p>Useful when using large text in a graphical way.
+Cuts line height to give the glyph spacing similar to that of an image or icon.</p>
+<div class="codeExample"><div class="exampleOutput"><p class="text--graphic">102</p>
 <p>Miles per hour</p>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--graphic"</span><span class="nt">&gt;</span>102<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Miles per hour<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h1 id="headings">Headings</h1>
 
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--graphic"</span><span class="nt">&gt;</span>102<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>Miles per hour<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h1 id="headings" class="styleguide">Headings</h1>
-<p class="styleguide">TK - notes about UI text vs. body text</p><div class="codeExample">
-  <div class="exampleOutput">
-    <h1 class="text--display">Heading 1 Display</h1>
+<p>TK - notes about UI text vs. body text</p>
+<div class="codeExample"><div class="exampleOutput"><h1 class="text--display">Heading 1 Display</h1>
 <h1>Heading 1 (white by default for use in navbar)</h1>
 <h2>Heading 2</h2>
 <h3>Heading 3</h3>
@@ -416,11 +294,7 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.<
 <p class="text--hint">Hint text</p>
 <p class="text--small">Small text</p>
 <p class="text--caption">Caption text</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>Heading 1 Display<span class="nt">&lt;/h1&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>Heading 1 Display<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;h1&gt;</span>Heading 1 (white by default for use in navbar)<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;h2&gt;</span>Heading 2<span class="nt">&lt;/h2&gt;</span>
 <span class="nt">&lt;h3&gt;</span>Heading 3<span class="nt">&lt;/h3&gt;</span>
@@ -431,37 +305,20 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.<
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--heading"</span><span class="nt">&gt;</span>Fake heading<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>Hint text<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Caption text<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Caption text<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div>
+<h2 id="displayText">Display text</h2>
 
-<h2 id="displayText" class="styleguide">Display text</h2>
-<p class="styleguide">Display text for header hero elements.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <h1 class="text--display">The hero gotham deserves</h1>
+<p>Display text for header hero elements.</p>
+<div class="codeExample"><div class="exampleOutput"><h1 class="text--display">The hero gotham deserves</h1>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>The hero gotham deserves<span class="nt">&lt;/h1&gt;</span>
+</pre></div></div></div>
+<h2 id="headlineText">Headline text</h2>
 
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>The hero gotham deserves<span class="nt">&lt;/h1&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="headlineText" class="styleguide">Headline text</h2>
-<p class="styleguide">Headline text for when something between display and normal text is needed. Use sparingly and with caution.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <h2 class="text--headline">If display text is Batman, I'm Robin</h2>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"text--headline"</span><span class="nt">&gt;</span>If display text is Batman, I'm Robin<span class="nt">&lt;/h2&gt;</span></pre>
-    </div>
-  </div>
-</div>
-	</main>
+<p>Headline text for when something between display and normal text is needed. Use sparingly and with caution.</p>
+<div class="codeExample"><div class="exampleOutput"><h2 class="text--headline">If display text is Batman, I'm Robin</h2>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"text--headline"</span><span class="nt">&gt;</span>If display text is Batman, I'm Robin<span class="nt">&lt;/h2&gt;</span>
+</pre></div></div></div>	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -692,6 +549,16 @@ $(function() {
 					"title": "Text utils",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text utils",
 					"path": "sass_utils_|_mixins_&_placeholders.html#text"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Link color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#linkColor"
 				});
 
 			
@@ -1054,16 +921,6 @@ $(function() {
 					"title": "Running text",
 					"breadcrumb": "Typography > Running text",
 					"path": "typography.html#runningText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Link color",
-					"breadcrumb": "Typography > Link color",
-					"path": "typography.html#linkColor"
 				});
 
 			

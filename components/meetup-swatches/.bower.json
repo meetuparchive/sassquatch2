@@ -1,5 +1,6 @@
 {
   "name": "meetup-swatches",
+  "version": "1.0.0",
   "description": "Color swatches for Meetup",
   "main": "./sass",
   "ignore": [
@@ -18,13 +19,13 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/meetup/meetup-swatches",
-  "_release": "42dfc5007c",
+  "_release": "1.0.0",
   "_resolution": {
-    "type": "branch",
-    "branch": "foundation",
-    "commit": "42dfc5007c63f0b7fd18605e0e96c477d808798f"
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "12afa0cc6ad5311898b78356e36562cfd1e195a2"
   },
-  "_source": "git@github.com:meetup/meetup-swatches.git",
-  "_target": "foundation",
-  "_originalSource": "git@github.com:meetup/meetup-swatches.git"
+  "_source": "git://github.com/meetup/meetup-swatches.git",
+  "_target": "1.0.0",
+  "_originalSource": "meetup-swatches"
 }
