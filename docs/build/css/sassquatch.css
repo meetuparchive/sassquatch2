@@ -1780,26 +1780,26 @@ title: Exact list
 name: exactList
 category: Layout
 ---
-Adaptive overflow control for lists
+Adaptive overflow control for inline block lists
 
 _better docs TK_
 
 ```html_example
 <div class="exactList">
-	<ul class="exactList-content">
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
-		<li><img src="https://placekitten.com/g/42/68" /></li>
+	<ul class="inlineblockList exactList-content">
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
+		<li><img src="https://placekitten.com/g/42/60" /></li>
 	</ul>
 </div>
 ```
