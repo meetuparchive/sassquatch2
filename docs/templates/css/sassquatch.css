@@ -2710,11 +2710,17 @@ Class                     | Description
   font-size: 24px;
   height: 24px;
   width: 24px; }
+  .avatar--small.avatar-initial {
+    width: 160px;
+    line-height: 160px; }
 
 .avatar--big {
   font-size: 48px;
   height: 160px;
   width: 160px; }
+  .avatar--big.avatar-initial {
+    width: 160px;
+    line-height: 160px; }
 
 .avatar--person {
   vertical-align: middle;
