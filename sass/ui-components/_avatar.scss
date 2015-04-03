@@ -94,11 +94,21 @@ Class                     | Description
 	font-size: $media-xs;
 	height: $media-xs;
 	width: $media-xs;
+
+	&.avatar-initial {
+		width: $media-xl;
+		line-height: $media-xl;
+	}
 }
 .avatar--big {
 	font-size: $media-l * 2/3;
 	height: $media-xl;
 	width: $media-xl;
+
+	&.avatar-initial {
+		width: $media-xl;
+		line-height: $media-xl;
+	}
 }
 
 //
