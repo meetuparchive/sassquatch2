@@ -54,6 +54,7 @@ Class                   | Description
 
 @include _bpModifier(stack, spread) {
 	@include flex-direction(row);
+	@include flex-wrap(nowrap);
 
 	> .stack-item {
 		@include flex-basis(auto);
