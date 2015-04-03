@@ -2635,6 +2635,16 @@ category: UI Components
 	<li>
 		<a href="#" class="avatar avatar--person avatar--fb-friend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
 	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--fb-friend">
+			<span class="avatar-initial">A</span>
+		</a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--fb-friend">
+			<span title="Member name" class="avatar-initial">M</span>
+		</a>
+	</li>
 </ul>
 ```
 
@@ -2652,7 +2662,6 @@ Class                     | Description
 `avatar--icon`            | For icons in avatars (might move this in a later version)
 */
 .avatar--fbFriend, .avatar--org {
-  position: relative;
   overflow: visible; }
   .avatar--fbFriend:after, .avatar--org:after {
     background-position: center;
@@ -2661,7 +2670,7 @@ Class                     | Description
     border-radius: 999px;
     bottom: 0;
     content: "";
-    display: block;
+    display: inline-block;
     font-size: 10px;
     font-weight: 700;
     height: 16px;
@@ -2674,10 +2683,11 @@ Class                     | Description
 
 .avatar--person,
 .avatar {
+  position: relative;
   background-color: #f3f6f9;
   background-position: center 42%;
   color: transparent;
-  display: inline-block;
+  display: block;
   font-size: 24px;
   height: 36px;
   text-indent: 100%;
@@ -2752,6 +2762,21 @@ Class                     | Description
       line-height: 48px;
       padding: 12px;
       width: 48px; } }
+
+.avatar-initial {
+  color: rgba(0, 0, 0, 0.26);
+  font-weight: bold;
+  font-size: 18px;
+  text-indent: 0%;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  width: 36px;
+  line-height: 36px; }
+  @media only screen and (min-width: 440px) {
+    .avatar-initial {
+      width: 48px;
+      line-height: 48px; } }
 
 /*doc
 ---
