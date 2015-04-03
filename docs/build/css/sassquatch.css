@@ -2650,6 +2650,16 @@ category: UI Components
 			<abbr title="Member name" class="avatar-initial">M</abbr>
 		</a>
 	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--big">
+			<abbr title="Member name" class="avatar-initial">M</abbr>
+		</a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--small">
+			<abbr title="Member name" class="avatar-initial">M</abbr>
+		</a>
+	</li>
 </ul>
 ```
 
@@ -2710,17 +2720,35 @@ Class                     | Description
   font-size: 24px;
   height: 24px;
   width: 24px; }
-  .avatar--small.avatar-initial {
-    width: 160px;
-    line-height: 160px; }
+  .avatar--small .avatar-initial {
+    width: 24px;
+    line-height: 24px;
+    font-size: 13px; }
 
 .avatar--big {
   font-size: 48px;
   height: 160px;
   width: 160px; }
-  .avatar--big.avatar-initial {
+  .avatar--big .avatar-initial {
     width: 160px;
-    line-height: 160px; }
+    line-height: 160px;
+    font-size: 56px;
+    font-weight: normal; }
+
+.avatar-initial {
+  color: rgba(0, 0, 0, 0.26);
+  font-weight: bold;
+  font-size: 18px;
+  text-indent: 0%;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  width: 36px;
+  line-height: 36px; }
+  @media only screen and (min-width: 440px) {
+    .avatar-initial {
+      width: 48px;
+      line-height: 48px; } }
 
 .avatar--person {
   vertical-align: middle;
@@ -2773,21 +2801,6 @@ Class                     | Description
       line-height: 48px;
       padding: 12px;
       width: 48px; } }
-
-.avatar-initial {
-  color: rgba(0, 0, 0, 0.26);
-  font-weight: bold;
-  font-size: 18px;
-  text-indent: 0%;
-  text-align: center;
-  vertical-align: middle;
-  display: table-cell;
-  width: 36px;
-  line-height: 36px; }
-  @media only screen and (min-width: 440px) {
-    .avatar-initial {
-      width: 48px;
-      line-height: 48px; } }
 
 /*doc
 ---

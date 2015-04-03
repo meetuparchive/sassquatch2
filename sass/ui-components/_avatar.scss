@@ -95,9 +95,10 @@ Class                     | Description
 	height: $media-xs;
 	width: $media-xs;
 
-	&.avatar-initial {
-		width: $media-xl;
-		line-height: $media-xl;
+	.avatar-initial {
+		width: $media-xs;
+		line-height: $media-xs;
+		font-size: $font-size-small;
 	}
 }
 .avatar--big {
@@ -105,9 +106,31 @@ Class                     | Description
 	height: $media-xl;
 	width: $media-xl;
 
-	&.avatar-initial {
+	.avatar-initial {
 		width: $media-xl;
 		line-height: $media-xl;
+		font-size: $font-size-display1;
+		font-weight: normal;
+	}
+}
+
+//
+// Avatar children
+//
+.avatar-initial {
+	color: $C_textTertiary;
+	font-weight: bold;
+	font-size: $font-size-navbar;
+	text-indent: 0%;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+	width: $media-s;
+	line-height: $media-s;
+
+	@include atMediaUp(small) {
+		width: $media-m;
+		line-height: $media-m;
 	}
 }
 
@@ -163,26 +186,5 @@ Class                     | Description
 		line-height: $media-m;
 		padding: 12px;
 		width: $media-m;
-	}
-}
-
-
-//
-// Avatar children
-//
-.avatar-initial {
-	color: $C_textTertiary;
-	font-weight: bold;
-	font-size: $font-size-navbar;
-	text-indent: 0%;
-	text-align: center;
-	vertical-align: middle;
-	display: table-cell;
-	width: $media-s;
-	line-height: $media-s;
-
-	@include atMediaUp(small) {
-		width: $media-m;
-		line-height: $media-m;
 	}
 }
