@@ -3459,12 +3459,21 @@ Class                    | Description
 
 */
 .align--left {
+  -webkit-align-self: left;
+  align-self: left;
+  -ms-flex-item-align: left;
   text-align: left !important; }
 
 .align--right {
+  -webkit-align-self: right;
+  align-self: right;
+  -ms-flex-item-align: right;
   text-align: right !important; }
 
 .align--center {
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
   text-align: center !important; }
 
 .valign--baseline {
