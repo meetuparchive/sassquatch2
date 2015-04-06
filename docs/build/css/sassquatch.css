@@ -2650,6 +2650,16 @@ category: UI Components
 			<abbr title="Member name" class="avatar-initial">M</abbr>
 		</a>
 	</li>
+	<li>
+		<a href="#" class="avatar avatar--big avatar--person">
+			<abbr title="Teresa Wall" class="avatar-initial">T</abbr>
+		</a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--small avatar--person">
+			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
+		</a>
+	</li>
 </ul>
 ```
 
@@ -2692,7 +2702,7 @@ Class                     | Description
   background-color: #f3f6f9;
   background-position: center 42%;
   color: transparent;
-  display: block;
+  display: inline-block;
   font-size: 24px;
   height: 36px;
   text-indent: 100%;
@@ -2713,7 +2723,7 @@ Class                     | Description
   .avatar--small .avatar-initial {
     width: 24px;
     line-height: 24px;
-    font-size: 13px; }
+    font-size: 16px; }
 
 .avatar--big {
   font-size: 48px;
@@ -2722,7 +2732,7 @@ Class                     | Description
   .avatar--big .avatar-initial {
     width: 160px;
     line-height: 160px;
-    font-size: 56px;
+    font-size: 108px;
     font-weight: normal; }
 
 .avatar-initial {
@@ -2738,7 +2748,8 @@ Class                     | Description
   @media only screen and (min-width: 440px) {
     .avatar-initial {
       width: 48px;
-      line-height: 48px; } }
+      line-height: 48px;
+      font-size: 24px; } }
 
 .avatar--person {
   vertical-align: middle;

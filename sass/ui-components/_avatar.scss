@@ -24,6 +24,16 @@ category: UI Components
 			<abbr title="Member name" class="avatar-initial">M</abbr>
 		</a>
 	</li>
+	<li>
+		<a href="#" class="avatar avatar--big avatar--person">
+			<abbr title="Teresa Wall" class="avatar-initial">T</abbr>
+		</a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--small avatar--person">
+			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
+		</a>
+	</li>
 </ul>
 ```
 
@@ -98,7 +108,7 @@ Class                     | Description
 	.avatar-initial {
 		width: $media-xs;
 		line-height: $media-xs;
-		font-size: $font-size-small;
+		font-size: $font-size;
 	}
 }
 .avatar--big {
@@ -109,7 +119,7 @@ Class                     | Description
 	.avatar-initial {
 		width: $media-xl;
 		line-height: $media-xl;
-		font-size: $font-size-display1;
+		font-size: $block-3;
 		font-weight: normal;
 	}
 }
@@ -131,6 +141,7 @@ Class                     | Description
 	@include atMediaUp(small) {
 		width: $media-m;
 		line-height: $media-m;
+		font-size: $font-size-display3;
 	}
 }
 
