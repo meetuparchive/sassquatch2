@@ -2342,7 +2342,12 @@ Class                   | Description
     box-orient: horizontal;
     -webkit-flex-direction: row;
     flex-direction: row;
-    -ms-flex-direction: row; }
+    -ms-flex-direction: row;
+    -webkit-box-lines: single;
+    box-lines: single;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
     .atMedium_stack--spread > .stack-item {
       -webkit-flex-basis: auto;
       flex-basis: auto;
@@ -2364,7 +2369,12 @@ Class                   | Description
     box-orient: horizontal;
     -webkit-flex-direction: row;
     flex-direction: row;
-    -ms-flex-direction: row; }
+    -ms-flex-direction: row;
+    -webkit-box-lines: single;
+    box-lines: single;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
     .atLarge_stack--spread > .stack-item {
       -webkit-flex-basis: auto;
       flex-basis: auto;
@@ -2633,7 +2643,12 @@ category: UI Components
 		<a href="#" class="avatar avatar--person avatar--big" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">Member Name</a>
 	</li>
 	<li>
-		<a href="#" class="avatar avatar--person avatar--fb-friend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
+		<a href="#" class="avatar avatar--person avatar--fbFriend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person">
+			<abbr title="Member name" class="avatar-initial">M</abbr>
+		</a>
 	</li>
 </ul>
 ```
@@ -2652,7 +2667,6 @@ Class                     | Description
 `avatar--icon`            | For icons in avatars (might move this in a later version)
 */
 .avatar--fbFriend, .avatar--org {
-  position: relative;
   overflow: visible; }
   .avatar--fbFriend:after, .avatar--org:after {
     background-position: center;
@@ -2661,7 +2675,7 @@ Class                     | Description
     border-radius: 999px;
     bottom: 0;
     content: "";
-    display: block;
+    display: inline-block;
     font-size: 10px;
     font-weight: 700;
     height: 16px;
@@ -2674,10 +2688,11 @@ Class                     | Description
 
 .avatar--person,
 .avatar {
+  position: relative;
   background-color: #f3f6f9;
   background-position: center 42%;
   color: transparent;
-  display: inline-block;
+  display: block;
   font-size: 24px;
   height: 36px;
   text-indent: 100%;
@@ -2695,11 +2710,35 @@ Class                     | Description
   font-size: 24px;
   height: 24px;
   width: 24px; }
+  .avatar--small .avatar-initial {
+    width: 24px;
+    line-height: 24px;
+    font-size: 13px; }
 
 .avatar--big {
   font-size: 48px;
   height: 160px;
   width: 160px; }
+  .avatar--big .avatar-initial {
+    width: 160px;
+    line-height: 160px;
+    font-size: 56px;
+    font-weight: normal; }
+
+.avatar-initial {
+  color: rgba(0, 0, 0, 0.26);
+  font-weight: bold;
+  font-size: 18px;
+  text-indent: 0%;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  width: 36px;
+  line-height: 36px; }
+  @media only screen and (min-width: 440px) {
+    .avatar-initial {
+      width: 48px;
+      line-height: 48px; } }
 
 .avatar--person {
   vertical-align: middle;
@@ -3420,12 +3459,21 @@ Class                    | Description
 
 */
 .align--left {
+  -webkit-align-self: left;
+  align-self: left;
+  -ms-flex-item-align: left;
   text-align: left !important; }
 
 .align--right {
+  -webkit-align-self: right;
+  align-self: right;
+  -ms-flex-item-align: right;
   text-align: right !important; }
 
 .align--center {
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center;
   text-align: center !important; }
 
 .valign--baseline {

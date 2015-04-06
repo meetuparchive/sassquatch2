@@ -17,7 +17,12 @@ category: UI Components
 		<a href="#" class="avatar avatar--person avatar--big" style="background-image: url(http://photos4.meetupstatic.com/photos/member/d/0/2/c/member_156833292.jpeg);">Member Name</a>
 	</li>
 	<li>
-		<a href="#" class="avatar avatar--person avatar--fb-friend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
+		<a href="#" class="avatar avatar--person avatar--fbFriend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
+	</li>
+	<li>
+		<a href="#" class="avatar avatar--person">
+			<abbr title="Member name" class="avatar-initial">M</abbr>
+		</a>
 	</li>
 </ul>
 ```
@@ -37,7 +42,6 @@ Class                     | Description
 */
 
 %avatarCharm {
-	position: relative;
 	overflow: visible;
 
 	&:after {
@@ -47,7 +51,7 @@ Class                     | Description
 		border-radius: 999px;
 		bottom: 0;
 		content: "";
-		display: block;
+		display: inline-block;
 		font-size: 10px;
 		font-weight: $W_bold;
 		height: $space;
@@ -63,10 +67,11 @@ Class                     | Description
 %avatar,
 .avatar {
 	@extend %imgFill;
+	position: relative;
 	background-color: $C_collectionBGLight;
 	background-position: center 42%;
 	color: transparent;
-	display: inline-block;
+	display: block;
 	font-size: $media-s * 2/3;
 	height: $media-s;
 	text-indent: 100%;
@@ -89,11 +94,44 @@ Class                     | Description
 	font-size: $media-xs;
 	height: $media-xs;
 	width: $media-xs;
+
+	.avatar-initial {
+		width: $media-xs;
+		line-height: $media-xs;
+		font-size: $font-size-small;
+	}
 }
 .avatar--big {
 	font-size: $media-l * 2/3;
 	height: $media-xl;
 	width: $media-xl;
+
+	.avatar-initial {
+		width: $media-xl;
+		line-height: $media-xl;
+		font-size: $font-size-display1;
+		font-weight: normal;
+	}
+}
+
+//
+// Avatar children
+//
+.avatar-initial {
+	color: $C_textTertiary;
+	font-weight: bold;
+	font-size: $font-size-navbar;
+	text-indent: 0%;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+	width: $media-s;
+	line-height: $media-s;
+
+	@include atMediaUp(small) {
+		width: $media-m;
+		line-height: $media-m;
+	}
 }
 
 //
@@ -105,7 +143,6 @@ Class                     | Description
 	border-radius: 999px;
 	box-sizing: border-box;
 }
-
 
 
 .avatar--fbFriend {
