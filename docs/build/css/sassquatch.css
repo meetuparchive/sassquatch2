@@ -3912,7 +3912,7 @@ Class          | Description
 `.text--hide`  | Visually hides text; removes text from document flow
 */
 .text--hide {
-  display: inline-block;
+  display: block;
   width: 0;
   height: 0;
   font-size: 0;
