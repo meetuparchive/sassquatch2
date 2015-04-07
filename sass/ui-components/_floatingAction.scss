@@ -24,8 +24,7 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 @include atMediaDown(small) {
 	.floatingAction {
 		box-sizing: border-box;
-		padding-left: $space-half;
-		padding-right: $space-half;
+		padding: inherit $space;
 		bottom: 0;
 		left: 0;
 		position: fixed;

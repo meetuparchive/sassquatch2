@@ -3123,8 +3123,7 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 @media only screen and (max-width: 440px) {
   .floatingAction {
     box-sizing: border-box;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding: inherit 16px;
     bottom: 0;
     left: 0;
     position: fixed;
