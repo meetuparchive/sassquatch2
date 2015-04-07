@@ -353,7 +353,7 @@ Disables user-select, sets cursor, and resets text-decoration.
 @extend %buttonPersonality;
 ```
 */
-.menu-actions-item a {
+.hasJS .menu-actions-item a {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -461,7 +461,7 @@ Applies standard box-shadow
 @extend %shadow;
 ```
 */
-.menu-actions {
+.hasJS .menu-actions {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.12); }
 
 /*doc
@@ -502,9 +502,9 @@ Forces an element to use link-like styling.
 @extend %link;
 ```
 */
-a.link, .runningText a, .running-text-container a, body:not(.hasJS) .menu-actions-item a {
+a.link, .runningText a, .running-text-container a {
   color: #3987cb; }
-  a.link:hover, .runningText a:hover, .running-text-container a:hover, body:not(.hasJS) .menu-actions-item a:hover, a.link:focus, .runningText a:focus, .running-text-container a:focus, body:not(.hasJS) .menu-actions-item a:focus, a.link:active, .runningText a:active, .running-text-container a:active, body:not(.hasJS) .menu-actions-item a:active {
+  a.link:hover, .runningText a:hover, .running-text-container a:hover, a.link:focus, .runningText a:focus, .running-text-container a:focus, a.link:active, .runningText a:active, .running-text-container a:active {
     text-decoration: underline; }
 
 /*doc
@@ -3173,9 +3173,9 @@ Use as a guide for markup.
   border-radius: 3px;
   background-color: white;
   display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: relative;
+  top: -8px;
+  right: -8px;
   min-width: 108px;
   max-width: 330px; }
 
@@ -3185,7 +3185,6 @@ Use as a guide for markup.
     padding-top: 0; }
 
 .menu-actions-item a {
-  position: relative;
   display: inline-block;
   padding-right: 16px; }
   .hasJS .menu-actions-item a {

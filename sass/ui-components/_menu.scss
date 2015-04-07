@@ -38,16 +38,16 @@ Use as a guide for markup.
 // Unorderd list sibling of menu-toggle
 .menu-actions {
 	@extend %list--reset;
-	@extend %shadow;
 
 	.hasJS & {
+		@extend %shadow;
 		border: 1px solid $C_border;
 		border-radius: $defaultRadius;
 		background-color: $C_white;
 		display: none;
-		position: absolute;
-		top: 0;
-		right: 0;
+		position: relative;
+		top: -($space/2);
+		right: -($space/2);
 		min-width: $block-3;
 		max-width: $breakpoint-s*0.75;
 	}
@@ -65,12 +65,11 @@ Use as a guide for markup.
 
 // Action
 .menu-actions-item a {
-	@extend %buttonPersonality;
-	position: relative; // normal text-wrap inside absolutely positioned container
 	display: inline-block;
 	padding-right: $space;
 
 	.hasJS & {
+		@extend %buttonPersonality;
 		display: block;
 		padding: $space;
 		color: $C_textSecondary !important;
@@ -78,11 +77,6 @@ Use as a guide for markup.
 		&:active {
 			background-color: $C_overlayPressed;
 		}
-	}
-
-	// js fallback only
-	body:not(.hasJS) & {
-		@extend %link;
 	}
 }
 
