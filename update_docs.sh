@@ -4,10 +4,22 @@ source /usr/local/bin/tputcolors
 
 BRANCH_SRC="master"
 BRANCH_DOC="gh-pages"
+URL_DOCS="http://meetup.github.io/sassquatch2/layout.html"
 HR="----------------------------------------"
 
 branch_current=$(git rev-parse --abbrev-ref HEAD)
 is_branch_dirty=$(git diff --shortstat 2> /dev/null | tail -n1)
+
+returnToBranch() {
+	echo "Returning to $branch_name..."
+	git checkout $branch_current > /dev/null 2>&1
+}
+
+showSuccess() {
+	echo "${t_white}${t_bold}${HR$}"
+	echo "See changes at    ${URL_DOCS}"
+	echo "${t_white}${t_bold}${HR$}"
+}
 
 echo
 echo "${t_white}${t_bold}Updating gh-pages branch.${t_reset}"
@@ -33,5 +45,16 @@ git merge master > /dev/null 2>&1
 echo
 echo "${t_white}${t_bold}Building documentation..."
 echo "${HR}${t_reset}"
+grunt --verbose
 
-exit 0
+if [ $? -eq 0 ]
+then
+	success "${t_green}Documentation updated on ${BRANCH_DOC}${t_reset}"
+	showSuccess
+	returnToBranch
+	exit 0
+else
+	error "${t_red}Build failed${t_red}"
+	returnToBranch
+	exit 1
+fi
