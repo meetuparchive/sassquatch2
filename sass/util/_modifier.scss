@@ -1,0 +1,26 @@
+//
+// PRIVATE modifier factory
+//
+@mixin _modifier($base, $modification) {
+	%#{$base}--#{$modification},
+	.#{$base}--#{$modification} {
+		@content;
+	}
+}
+
+//
+// PRIVATE media query modifier factory
+//
+@mixin _bpModifier($base, $modification) {
+
+	@each $breakpoint in (medium, large) {
+
+		@include atMediaUp($breakpoint) {
+			.at#{str-firstCharToUpper($breakpoint)}_#{$base}--#{$modification} {
+				@content;
+			}
+		}
+
+	}
+
+}

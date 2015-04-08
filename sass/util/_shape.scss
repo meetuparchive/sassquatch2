@@ -1,0 +1,26 @@
+/*doc
+---
+title: Shapes
+name: shape
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+
+/*doc
+---
+title: Circle mixin
+name: circleMixin
+parent: shape
+---
+Makes selected element a circle with border-radius
+
+```
+@mixin circle($color: black, $size: 12px)
+```
+*/
+@mixin circle($color: black, $size: 12px){
+	width: $size;
+	height: $size;
+	border-radius: $size/2;
+	background: $color;
+}

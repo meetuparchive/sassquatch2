@@ -1,0 +1,17 @@
+//
+// PRIVATE
+//
+// Selects a class on selected element AND
+// the same class as a child element
+//
+// Use inisde an existing rule block.
+//
+// @include _sel-selfAndChild( 'row' ) {
+//   ... rules ...
+// }
+@mixin _sel-selfAndChild( $class ) {
+	&.#{$class},
+	.#{$class} {
+		@content;
+	}
+}

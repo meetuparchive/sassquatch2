@@ -1,0 +1,19 @@
+// TODO: needs docs and cleanup
+
+
+// MODAL VIEW FULL
+// full screen at all screen widths
+.view--modal-full {
+	@include modal-full;
+	z-index: map-get($zindex-map, "modal");
+}
+
+// MODAL VIEW SNAP
+// full at narrow widths, dialog at wide widths
+.view--modal-snap {
+	@include modal-dialog;
+	@include atMediaDown(small){
+		@include modal-full;
+	}
+	z-index: map-get($zindex-map, "modal");
+}

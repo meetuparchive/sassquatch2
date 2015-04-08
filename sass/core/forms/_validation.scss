@@ -1,0 +1,32 @@
+/*doc
+---
+title: Validation errors
+name: formValidation
+category: Forms
+---
+Error styles are applied to any child
+input of an element with the class `hasError`.
+
+Error text is set explicitly with `text--error`.
+
+```html_example
+<div class="chunk hasError">
+	<label for="test-textinput">First name</label>
+	<input id="test-textinput" type="text" value="" />
+	<p class="text--error">First name can't be empty</p>
+</div>
+```
+
+*/
+.hasError {
+	input,
+	textarea,
+	select {
+		border-color: $C_red;
+	}
+}
+
+.text--error {
+	color: $C_red;
+	margin-top: $space-quarter;
+}

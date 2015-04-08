@@ -1,0 +1,152 @@
+// TODO: clean this shit up
+
+// move to page structure?
+// TODO: refactor & use bourbon mixins
+.collection-header {
+	@extend %valignChildren;
+	height: $block;
+	margin-bottom: 0;
+	.collection-header-actions {
+		white-space: nowrap;
+		a {
+			box-sizing: border-box;
+			display: inline-block;
+			padding: 0 $space-half;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+// TODO: refactor & move to ui-components/
+//
+// HORIZONTAL SCROLLING LISTS
+//
+// ------------ HSCROLL ------------
+.hscroll-wrap {
+	-webkit-overflow-scrolling: touch;
+	overflow: scroll;
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none;
+	.hscroll {
+		box-sizing: content-box;
+		padding-left: $space;
+		padding-right: $space;
+		white-space: nowrap;
+		li {
+			white-space: normal;
+		}
+	}
+}
+
+.hscroll-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.hscroll-wrap-wrap {
+	position: relative;
+	margin-left: -$space;
+	margin-right: -$space;
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: $space;
+		top: 0;
+	}
+	&:before {
+		left: 0;
+		@include background-image(linear-gradient(to right, #fff, transparentize(#ffffff, 1)));
+	}
+	&:after {
+		right: 0;
+		@include background-image(linear-gradient(to left, #fff, transparentize(#ffffff, 1)));
+	}
+}
+
+.hscroll-arrow {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+
+	.is-hovered &,
+	&:hover { //using js to toggle hover so it won't show on touch screens
+		opacity: 1;
+	}
+}
+
+.hscroll-next {
+	right: 0;
+}
+
+.hscroll-prev {
+	left: 0;
+}
+
+
+
+
+// stripe--collection
+.stripe--collection .hscroll-wrap-wrap {
+	&:before {
+		@include background-image(linear-gradient(to right, $C-collectionBGLight, transparentize($C-collectionBGLight, 1)));
+	}
+	&:after {
+		@include background-image(linear-gradient(to left, $C-collectionBGLight, transparentize($C-collectionBGLight, 1)));
+	}
+}
+
+// stripe--inverted
+.stripe--inverted .hscroll-wrap-wrap {
+	&:before {
+		@include background-image(linear-gradient(to right, $C-contentBGInverted, transparentize($C-contentBGInverted, 1)));
+	}
+	&:after {
+		@include background-image(linear-gradient(to left, $C-contentBGInverted, transparentize($C-contentBGInverted, 1)));
+	}
+}
+
+
+
+//TODO: do we use these? How? Why?
+// once sorted out, move into a forms/_partial
+//
+/* INLINE FORM */
+//
+.inline-form {
+	margin-left: -$space-quarter;
+	margin-right: -$space-quarter;
+}
+
+// Meant for use in inline forms
+.small-input {
+  min-width: $block-2; //need to use min-width because ffbox is weird
+}
+
+.view--dimmed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: map-get($zindex-map, "shade");
+	@include transition(all .15s);
+	background: $C_modalShade;
+	opacity: 1;
+}
+.view--dimmed-close {
+	@include transition(all .15s .15s);
+	display: block;
+	height: 100vh;
+	left: 0;
+	line-height: 100vh;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	vertical-align: middle;
+	width: 100%;
+}

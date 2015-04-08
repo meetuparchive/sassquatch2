@@ -1,0 +1,71 @@
+/*doc
+---
+title: Stack
+name: stack
+category: Layout
+---
+The `stack` layout tool is for elements that
+should be stacked in a column at small sizes,
+and spreads across horizontal space at a given
+breakpoint.
+
+```html_example
+<div class="stack atLarge_stack--spread">
+	<div class="stack-item stack-item--shrink _DOC-SHADE">
+		<p>Stack Item (shrinks when spread)</p>
+	</div>
+	<div class="stack-item _DOC-SHADE">
+		<p>Stack Item</p>
+	</div>
+</div>
+```
+
+## Stack variants
+A class of `stack` on the parent element is required.
+Collapsing of the stack doesn't happen at any viewport
+size by default, so __you must specify a spread point__
+with one of the following classes.
+
+Class                       | Description
+--------------------------- | ----------------------------------
+`atMedium_stack--spread`    | Spreads out the stack elements horizontally at `medium` breakpoint
+`atLarge_stack--spread`     | Spreads out the stack elements horizontally at `large` breakpoint
+
+
+## stack-item variants
+
+Class                   | Description
+----------------------- | -------------------------------
+`.stack-item--shrink`   | Item shrinks to fit content __only when spread__
+
+*/
+.stack {
+	@include display(flex);
+	@include flex-wrap(nowrap);
+	@include flex-direction(column);
+	@include justify-content(flex-start);
+	@include align-items(flex);
+}
+
+.stack-item {
+	@include flex-grow(1);
+	@include flex-basis(100%);
+}
+
+@include _bpModifier(stack, spread) {
+	@include flex-direction(row);
+	@include flex-wrap(nowrap);
+
+	> .stack-item {
+		@include flex-basis(auto);
+		padding-left: $space;
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+	.stack-item--shrink {
+		@include flex-grow(0);
+		@include flex-shrink(1);
+		width: initial;
+	}
+}

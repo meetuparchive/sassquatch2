@@ -1,0 +1,52 @@
+/*doc
+---
+title: Media-conditional modifiers
+name: mediaMod
+category: Modifier Classes
+---
+
+Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.
+
+_Uses atMediaUp_
+
+#### Signature
+
+`.at[Breakpoint]_[property]--modification`
+
+
+#### Supported media and modifications
+- `.at[ Medium | Large ]_align--[ center | right | left ]`
+- `.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]`
+- `.at[ Medium | Large ]_border--[ none | top ]`
+- `.at[ Medium | Large ]_padding--none`
+
+Example TK
+*/
+
+// text align
+@each $alignment in (center, right, left) {
+	@include _bpModifier('align', $alignment) {
+		text-align: $alignment !important;
+	}
+}
+
+// display
+@each $display in $display-values {
+	@include _bpModifier('display', str-replace($display, '-block', 'Block')) {
+		display: $display !important;
+	}
+}
+
+// padding
+@include _bpModifier('padding', 'none') {
+	padding: 0 !important;
+};
+
+// border
+@include _bpModifier('border', 'top') {
+	border-top: $border-standard !important;
+}
+@include _bpModifier('border', 'none') {
+	border-width: 0 !important;
+}

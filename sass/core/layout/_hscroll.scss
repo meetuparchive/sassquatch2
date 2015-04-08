@@ -1,0 +1,81 @@
+/*doc
+---
+title: Horizontal Scroll
+name: hscroll
+category: Layout
+---
+Applies styles for horizontal scrolling lists.
+
+```html_example
+<div class="hscroll">
+	<ul class="hscroll-content">
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li><img src="https://placekitten.com/g/240/160" /></li>
+	</ul>
+</div>
+```
+
+## Media-conditional `hscroll`
+It's possible to create an `hscroll` for small screens that expands
+into a non-scrolling list in the document flow for larger screens.
+
+```html_example
+<div class="hscroll atMedium_hscroll--unclip">
+	<ul class="hscroll-content">
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+		<li><img src="https://placekitten.com/g/200/120" /></li>
+	</ul>
+</div>
+```
+
+A class of `hscroll` is __required__; the following classes are
+optional variants:
+
+Class                       | Description
+--------------------------- | ----------------------------------
+`atMedium_hscroll--unclip`  | Allows visible overflow (as inline block list) at medium & up
+`atLarge_hscroll--unclip`  | Allows visible overflow (as inline block list) at large & up
+
+*/
+.hscroll {
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+	overflow: scroll;
+	overflow: -moz-scrollbars-none;
+	&::-webkit-scrollbar {
+		 display: none;
+	}
+}
+
+.hscroll-content {
+	@extend %inlineblockList;
+	box-sizing: content-box;
+	white-space: nowrap;
+	> li {
+		white-space: normal;
+	}
+}
+
+@include _bpModifier(hscroll, unclip) {
+	-webkit-overflow-scrolling: auto;
+	-ms-overflow-style: auto;
+	overflow: visible;
+
+	.hscroll-content {
+		white-space: normal;
+	}
+}

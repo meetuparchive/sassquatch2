@@ -1,0 +1,119 @@
+/*doc
+---
+title: Stripe
+name: stripe
+category: Layout
+---
+A `.stipe` class should be applied to `<section>` elements
+to visually divide the page with stripes of color.
+
+To align content within a stripe, use `.bounds`.
+
+```html_example
+<section class="stripe">
+	<div class="bounds">
+		<p>... default stripe ...</p>
+	</div>
+</section>
+
+<section class="stripe--inverted inverted">
+	<div class="bounds">
+		<p>... inverted stripe, using `inverted` class to set text colors  ...</p>
+	</div>
+</section>
+
+<section class="stripe--collection">
+	<div class="bounds">
+		<p>... collection variant of stripe, used to contain collections of cards </p>
+	</div>
+</section>
+```
+
+#### Stripe variants
+A class of `.stripe` is required; the following classes are
+optional variants:
+
+Class                | Description
+-------------------- | ------------------------------------------------------------
+`.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
+`.stripe--collection`|  applies a light gray background; for use with card collections
+*/
+%stripe,
+.stripe {
+	overflow: hidden;
+	border-top: 1px solid $C_border;
+	background-color: #fff;
+	margin-bottom: 0;
+}
+
+.stripe--collection {
+	@extend %stripe;
+	background-color: $C_collectionBGLight;
+}
+
+.stripe--inverted {
+	@extend %stripe;
+	background-color: $C_contentBGInverted;
+}
+
+
+/*doc
+---
+title: Hero Stripes
+name: heroStripes
+parent: stripe
+---
+Special `stripe` variants are avaiable for
+"hero" header stripes.
+
+### Basic hero
+Uses the `stripe--hero` variant.
+
+```html_example
+<section class="stripe stripe--hero inverted">
+	<h4>better example TK</h4>
+</section>
+```
+
+### Photo hero
+Uses the `stripe--photoHero` variant.
+
+```html_example
+<section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
+	<h4>better example TK</h4>
+</section>
+```
+*/
+
+// TODO: photoHero variant to just --photo?
+%_heroStripe {
+	@extend %stripe;
+	background-color: $C_accent;
+	background-size: cover;
+	background-position: center 20%;
+	background-repeat: no-repeat;
+	border-top: none;
+	overflow: hidden;
+	position: relative;
+
+}
+
+.stripe--hero {
+	@extend %_heroStripe;
+}
+.stripe--photoHero {
+	@extend %_heroStripe;
+	@include textProtectionScrim();
+}
+
+.stripe-heroContent {
+	@extend %valignChildren--bottom; // maybe try to align without this?
+	min-height: $block-6;
+	position: relative;
+	text-align: center;
+	max-width: $bounds-wide;
+	@include atMediaDown(medium) {
+		min-height: $block-5;
+	}
+}
+

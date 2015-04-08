@@ -1,0 +1,91 @@
+/*doc
+---
+title: Contrast/brightness utils
+name: brightness
+category: Sass Utils | Functions
+---
+*/
+
+
+
+/*doc
+---
+title: Perceived brightness value
+name: getPerceivedBrightness
+parent: brightness
+---
+Gets brightness of a color on a scale of 0-255 based on a yiq color space.
+_Calculates green-weighted sum of RGB channels (green is perceived as brighter
+on additive color screens)._
+
+_returns int_
+
+```
+getPerceivedBrightness(#000) // -> 0
+```
+*/
+@function getPerceivedBrightness( $color ) {
+	$R: red($color);
+	$G: green($color);
+	$B: blue($color);
+
+	@return floor( ( ($R * 299) + ($G * 587) + ($B * 114) )/1000 );
+}
+
+
+
+/*doc
+---
+title: isDark/isLight
+name: isDarkisLight
+parent: brightness
+---
+Checks a given color for brightness and returns a boolean.
+Our default dark/light threshold is 160 on a scale of 0-255
+
+_returns boolean_
+
+```
+isDark(#000) // -> true
+isLight(#000) // -> false
+```
+*/
+$brightness_threshold: 160;
+
+@function isDark( $color, $threshold: $brightness_threshold ) {
+	@return ( getPerceivedBrightness($color) <= $threshold );
+}
+
+@function isLight( $color, $threshold: $brightness_threshold ) {
+	@return not(isDark( $color, $threshold ));
+}
+
+
+
+/*doc
+---
+title: Programmatic contrast text
+name: getPrimaryTextColor
+parent: brightness
+---
+For a given background color, this function returns
+a text color value with appropriate contrast.
+
+_returns `color` value_
+
+```
+// -> color: $C_textPrimaryInverted; (white text on dark)
+color: getPrimaryTextColor(#000);
+
+// -> color: $C_textPrimary; (dark text on white)
+color: getPrimaryTextColor(#FFF);
+```
+*/
+@function getPrimaryTextColor( $color ) {
+	@if isDark($color) { // very threshold darkness
+		@return $C_textPrimaryInverted;
+	} @else { // much light
+		@return $C_textPrimary;
+	}
+	// wow
+}

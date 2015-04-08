@@ -1,0 +1,43 @@
+	</main>
+	</section>
+
+<!-- lunr.js search index -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/lunr.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	// Disable links by default
+	$('a').click(function(e) {
+		if ( $(this).hasClass('followLink') ) return;
+		e.preventDefault();
+	});
+
+
+	var index = lunr(function() {
+		this.field('title', {boost: 10});
+		this.field('breadcrumb');
+		this.ref('path');
+	});
+
+	<% @pages.each do |file_name, page| %>
+		<% if not page[:blocks].empty? %>
+			<% page[:blocks].each do |block| %>
+				<% file_path = block[:categories][0].to_s.gsub(' ', '_').downcase + '.html' %>
+				<% file_id = "#"+block[:name].to_s %>
+
+				<%= "index.add({" %>
+					<%= "\"title\": \""+block[:title].to_s+"\"," %>
+					<%= "\"breadcrumb\": \""+block[:categories][0].to_s+" > "+block[:title]+"\"," %>
+					<%= "\"path\": \""+file_path+file_id+"\"" %>
+				<%= "});" %>
+
+			<% end %>
+		<% end %>
+	<% end %>
+
+	window.HOTDOG = index;
+});
+</script>
+
+</body>
+</html>

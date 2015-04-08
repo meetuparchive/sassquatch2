@@ -1,0 +1,10 @@
+.DS_Store
+.sass-cache
+.divshot-cache
+.bundle
+*.swp
+*.swo
+*.css.map
+node_modules/
+.grunt/
+!README*

@@ -1,0 +1,19 @@
+/*doc
+---
+title: Float
+name: floatMod
+category: Modifier Classes
+---
+TK `.clearfix`
+*/
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	height: 0;
+}
+.lt--IE9 .clearfix {
+	zoom: 1;
+}
+

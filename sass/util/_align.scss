@@ -1,0 +1,37 @@
+/*doc
+---
+title: Alignment Utilities
+name: align
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+
+
+/*doc
+---
+title: Vertical-align children
+name: valign
+parent: align
+---
+__Try to avoid using for essential, non-decorative things__
+Aligns children of selected element using flexbox.
+
+```
+@extend %valignChildren;
+@extend %valignChildren--bottom;
+```
+*/
+
+%valignChildren {
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+}
+
+%valignChildren--bottom {
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(flex-end);
+}
+
+
