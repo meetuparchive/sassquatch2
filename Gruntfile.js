@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-preprocess');
+	grunt.loadNpmTasks('grunt-exec');
 
 	var DIR_DOC_SRC = 'docs/',
 		DIR_BUILD = DIR_DOC_SRC + 'build/';
@@ -36,8 +37,12 @@ module.exports = function(grunt) {
 					}
 				}
 			}
+		},
+		"exec": {
+			gh-pages: './update_docs.sh'
 		}
 	});
 
-	grunt.registerTask('default', ['clean', 'sass', 'hologram', 'preprocess']);
+	grunt.registerTask('default', ['clean', 'sass', 'hologram']);
+	grunt.registerTask('ghpages', ['exec']);
 };
