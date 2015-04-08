@@ -56,6 +56,8 @@ then
 	exit 0
 else
 	error "${t_red}Build failed${t_red}"
+	git reset --hard > /dev/null 2>&1
+	git clean -df > /dev/null 2>&1
 	returnToBranch
 	exit 1
 fi
