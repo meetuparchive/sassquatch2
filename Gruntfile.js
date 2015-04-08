@@ -39,10 +39,10 @@ module.exports = function(grunt) {
 			}
 		},
 		"exec": {
-			gh-pages: './update_docs.sh'
+			ghpages: './update_docs.sh'
 		}
 	});
 
 	grunt.registerTask('default', ['clean', 'sass', 'hologram', 'preprocess']);
-	grunt.registerTask('ghpages', ['exec']);
+	grunt.registerTask('ghpages', ['exec:ghpages']);
 };
