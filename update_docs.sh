@@ -11,7 +11,7 @@ branch_current=$(git rev-parse --abbrev-ref HEAD)
 is_branch_dirty=$(git diff --shortstat 2> /dev/null | tail -n1)
 
 returnToBranch() {
-	echo "Returning to $branch_name..."
+	echo "Returning to $branch_current..."
 	git checkout $branch_current > /dev/null 2>&1
 }
 
@@ -65,6 +65,7 @@ then
 	exit 0
 else
 	error "${t_red}Build failed${t_red}"
+	echo "Resetting ${BRANCH_DOC}..."
 	git reset --hard > /dev/null 2>&1
 	git clean -df > /dev/null 2>&1
 	returnToBranch

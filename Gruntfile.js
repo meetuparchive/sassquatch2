@@ -2,7 +2,6 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-hologram');
-	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-exec');
 
@@ -25,7 +24,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		'clean': [DIR_BUILD],
 		'preprocess': {
 			inline: {
 				src: [ 'docs/build/*.html' ],
@@ -43,6 +41,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['clean', 'sass', 'hologram', 'preprocess']);
+	grunt.registerTask('default', ['sass', 'hologram', 'preprocess']);
 	grunt.registerTask('ghpages', ['exec:ghpages']);
 };
