@@ -26,6 +26,13 @@ echo "${t_white}${t_bold}Updating gh-pages branch.${t_reset}"
 echo "(updates ${BRANCH_DOC} from ${BRANCH_SRC})"
 echo
 
+# make sure gh-pages is locally checked out
+if git show-ref --verify --quiet "refs/heads/${BRANCH_DOC}"; then
+	: # branch already checked out
+else
+	git checkout -t origin/${BRANCH_DOC}
+fi
+
 # Check if current branch is dirty.
 echo "Checking current branch status..."
 if [[ $is_branch_dirty != "" ]]; then
@@ -36,6 +43,7 @@ fi
 success "${t_green}Current branch is clean.${t_reset}"
 echo
 
+# check out gh-pages; get latest from origin & master
 echo "Switching to gh-pages branch..."
 git checkout $BRANCH_DOC > /dev/null 2>&1
 echo "Updating gh-pages from origin..."
@@ -43,6 +51,7 @@ git pull origin gh-pages > /dev/null 2>&1
 echo "Updating gh-pages from ${BRANCH_SRC}..."
 git merge master > /dev/null 2>&1
 
+# build Sass and hologram docs
 echo
 echo "${t_white}${t_bold}Building documentation..."
 echo "${HR}${t_reset}"
