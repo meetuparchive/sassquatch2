@@ -20,7 +20,6 @@
 		"grunt-cli": "",
 		"grunt-contrib-sass": "0.8.1",
 		"grunt-hologram": "0.0.4",
-		"grunt-gh-pages": "0.9.1",
 		"grunt-contrib-clean": "0.6.0",
 		"grunt-preprocess": "4.1.0"
 	},
