@@ -7,5 +7,5 @@
 *.css.map
 node_modules/
 .grunt/
-docs/build/
+docs/build/*
 !README*
