@@ -23,6 +23,7 @@ showSuccess() {
 
 echo
 echo "${t_white}${t_bold}Updating gh-pages branch.${t_reset}"
+echo "(updates ${BRANCH_DOC} from ${BRANCH_SRC})"
 echo
 
 # Check if current branch is dirty.
