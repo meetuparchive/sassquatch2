@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-exec');
 
 	var DIR_DOC_SRC = 'docs/',
-		DIR_BUILD = DIR_DOC_SRC + 'build/';
+		DIR_BUILD = './';
 
 	grunt.initConfig({
 		bower: grunt.file.readJSON('bower.json'),
