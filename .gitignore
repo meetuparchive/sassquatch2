@@ -5,6 +5,8 @@
 *.swp
 *.swo
 *.css.map
+*.html
+*.css
 node_modules/
 .grunt/
 docs/build/*
