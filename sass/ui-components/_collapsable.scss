@@ -1,0 +1,19 @@
+/*doc
+---
+title: Collapsable
+name: collapsable
+category: UI Components
+---
+*/
+.collapsable {
+	@include transition(max-height 200ms ease-in-out);
+	will-change: max-height;
+}
+
+.collapsable--shrink {
+	max-height: 0vh;
+}
+
+.collapsable--grow {
+	max-height: 10vh; /* arbitrary value for easing */
+}
