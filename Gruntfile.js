@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 		'clean': [DIR_BUILD],
 		'preprocess': {
 			inline: {
-				src: [ 'docs/build/*.html' ],
+				src: [ '*.html' ],
 				options: {
 					inline: true,
 					context: {
