@@ -1,33 +1,33 @@
 /*doc
 ---
-title: Collapsable
-name: collapsable
+title: Collapsible
+name: collapsible
 category: UI Components
 ---
 Collapses elements using class toggling. A base
-class of `collapsable` is __required__.
+class of `collapsible` is __required__.
 
 To collapse the element, add the `collapse--close` class.
 
 ```html_example
 <a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
 
-<section class="stripe collapsable" id="collapse-container">
+<section class="stripe collapsible" id="collapse-container">
 	<div class="bounds">
-		<h2>I'm collapsable content</h2>
-		<p>Adding a class of `collapsable--close` to this `section` will set max height to 0vh</p>
+		<h2>I'm collapsible content</h2>
+		<p>Adding a class of `collapsible--close` to this `section` will set max height to 0vh</p>
 	</div>
 </section>
 ```
 */
-.collapsable {
+.collapsible {
 	@include transition(max-height 200ms ease-in-out);
 	will-change: max-height;
 	height: auto;
 	max-height: $breakpoint-xl; /* arbitrary value for easing */
 }
 
-.collapsable--close {
+.collapsible--close {
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
