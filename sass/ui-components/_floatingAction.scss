@@ -21,20 +21,40 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 ```
 */
 
+$_buttonHeight: 40px;
+$_containerHeight: $space*2 + $_buttonHeight;
+
 @include atMediaDown(small) {
 	.floatingAction {
 		box-sizing: border-box;
-		padding: inherit $space;
+		padding: 0 $space;
 		bottom: 0;
 		left: 0;
 		position: fixed;
 		width: 100%;
 		z-index: 1;
+
+		&:before {
+			display: block;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			content: "";
+			background-color: $C_contentBGInverted;
+			z-index: 2;
+			height: $_containerHeight;
+			width: 100%;
+		}
+
+		> a {
+			position: relative;
+			z-index: 3;
+		}
 	}
 
 	// for `body` tag
 	.hasFloatingAction {
 		background-color: $C_contentBGInverted;
-		padding-bottom: $space*2 + 40px; // 40px = button height
+		padding-bottom: $_containerHeight;
 	}
 }

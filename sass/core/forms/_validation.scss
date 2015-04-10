@@ -27,6 +27,7 @@ Error text is set explicitly with `text--error`.
 }
 
 .text--error {
+	@extend %text--small;
 	color: $C_red;
 	margin-top: $space-quarter;
 }

@@ -847,7 +847,7 @@ parent: bodyText
 <p class="text--small">Small text is small</p>
 ```
 */
-.text--caption, .text--caption h1, .text--caption h2, .text--caption h3, .text--caption h4, .text--caption h5, .text--caption h6,
+.text--caption, .text--error, .text--caption h1, .text--error h1, .text--caption h2, .text--error h2, .text--caption h3, .text--error h3, .text--caption h4, .text--error h4, .text--caption h5, .text--error h5, .text--caption h6, .text--error h6,
 .text--small,
 .text--small h1,
 .text--small h2,
@@ -3098,6 +3098,43 @@ _(The inline style on the card element is for documentation purposes only)_
 
 /*doc
 ---
+title: Collapsible
+name: collapsible
+category: UI Components
+---
+Collapses elements using class toggling. A base
+class of `collapsible` is __required__.
+
+To collapse the element, add the `collapse--close` class.
+
+```html_example
+<a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
+
+<section class="stripe collapsible" id="collapse-container">
+	<div class="bounds">
+		<h2>I'm collapsible content</h2>
+		<p>Adding a class of `collapsible--close` to this `section` will set max height to 0vh</p>
+	</div>
+</section>
+```
+*/
+.collapsible {
+  -webkit-transition: max-height 200ms ease-in-out;
+  transition: max-height 200ms ease-in-out;
+  will-change: max-height;
+  height: auto;
+  max-height: 1024px;
+  /* arbitrary value for easing */ }
+
+.collapsible--close {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  max-height: 0; }
+
+/*doc
+---
 title: Floating Action
 name: floatingAction
 category: UI Components
@@ -3121,12 +3158,25 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 @media only screen and (max-width: 440px) {
   .floatingAction {
     box-sizing: border-box;
-    padding: inherit 16px;
+    padding: 0 16px;
     bottom: 0;
     left: 0;
     position: fixed;
     width: 100%;
     z-index: 1; }
+    .floatingAction:before {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background-color: #353e48;
+      z-index: 2;
+      height: 72px;
+      width: 100%; }
+    .floatingAction > a {
+      position: relative;
+      z-index: 3; }
 
   .hasFloatingAction {
     background-color: #353e48;

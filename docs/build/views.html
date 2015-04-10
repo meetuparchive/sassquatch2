@@ -227,13 +227,24 @@ hero headers).</p>
 <script type="text/javascript" src="js/lunr.min.js"></script>
 <script type="text/javascript">
 $(function() {
+	//
 	// Disable links by default
+	//
 	$('a').click(function(e) {
 		if ( $(this).hasClass('followLink') ) return;
 		e.preventDefault();
 	});
 
+	//
+	// collapsable example
+	//
+	$('#collapse-trigger').click(function() {
+		$('#collapse-container').toggle('collapsable--shrink');
+	});
 
+	//
+	// lunr search index
+	//
 	var index = lunr(function() {
 		this.field('title', {boost: 10});
 		this.field('breadcrumb');
@@ -678,6 +689,16 @@ $(function() {
 					"title": "Buttons",
 					"breadcrumb": "UI Components > Buttons",
 					"path": "ui_components.html#buttons"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Collapsible",
+					"breadcrumb": "UI Components > Collapsible",
+					"path": "ui_components.html#collapsible"
 				});
 
 			
@@ -1204,6 +1225,7 @@ $(function() {
 		
 	
 
+	// TEMP: debug search index
 	window.HOTDOG = index;
 });
 </script>
