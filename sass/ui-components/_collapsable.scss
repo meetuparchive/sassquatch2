@@ -7,7 +7,7 @@ category: UI Components
 Collapses elements using class toggling. A base
 class of `collapsable` is __required__.
 
-To collapse the element, add the `collapse--shrink` class.
+To collapse the element, add the `collapse--close` class.
 
 ```html_example
 <a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
@@ -15,7 +15,7 @@ To collapse the element, add the `collapse--shrink` class.
 <section class="stripe collapsable" id="collapse-container">
 	<div class="bounds">
 		<h2>I'm collapsable content</h2>
-		<p>Adding a class of `collapsable--shrink` to this `section` will set max height to 0vh</p>
+		<p>Adding a class of `collapsable--close` to this `section` will set max height to 0vh</p>
 	</div>
 </section>
 ```
@@ -27,7 +27,7 @@ To collapse the element, add the `collapse--shrink` class.
 	max-height: $breakpoint-xl; /* arbitrary value for easing */
 }
 
-.collapsable--shrink {
+.collapsable--close {
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
