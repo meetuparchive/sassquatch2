@@ -4,16 +4,33 @@ title: Collapsable
 name: collapsable
 category: UI Components
 ---
+Collapses elements using class toggling. A base
+class of `collapsable` is __required__.
+
+To collapse the element, add the `collapse--shrink` class.
+
+```html_example
+<a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
+
+<section class="stripe collapsable" id="collapse-container">
+	<div class="bounds">
+		<h2>I'm collapsable content</h2>
+		<p>Adding a class of `collapsable--shrink` to this `section` will set max height to 0vh</p>
+	</div>
+</section>
+```
 */
 .collapsable {
 	@include transition(max-height 200ms ease-in-out);
 	will-change: max-height;
+	height: auto;
+	max-height: $breakpoint-xl; /* arbitrary value for easing */
 }
 
 .collapsable--shrink {
-	max-height: 0vh;
-}
-
-.collapsable--grow {
-	max-height: 10vh; /* arbitrary value for easing */
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	max-height: 0;
 }
