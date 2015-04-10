@@ -130,19 +130,21 @@ Class                   | Description
 }
 
 // LT IE10 fallback
-.ieRoot_lt_IE10 .row {
-	@include box-sizing(border-box);
-	display: table;
-	table-layout: auto;
-	width: 100%;
-}
-.ieRoot_lt_IE10 .row-item {
-	display: table-cell;
-	width: 100%;
-}
-.ieRoot_lt_IE10 .row-item--shrink {
-	width: auto;
-}
-.ieRoot_lt_IE10 .row-item--alignMiddle {
-	vertical-align: middle;
+.ieRoot_lt_IE10 {
+	.row {
+		@include box-sizing(border-box);
+		display: table;
+		table-layout: auto;
+		width: 100%;
+	}
+	.row-item {
+		display: table-cell;
+		width: 100%;
+	}
+	.row-item--shrink {
+		width: auto;
+	}
+	.row-item--alignMiddle {
+		vertical-align: middle;
+	}
 }
