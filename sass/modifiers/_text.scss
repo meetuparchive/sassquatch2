@@ -56,3 +56,34 @@ Class              | Description
 .text--wrapNice {
 	@extend %wrapNice;
 }
+
+/*doc
+---
+title: Type wrap/whitespace
+name: typespaceMod
+parent: textMod
+---
+Sets type wrapping, witespace, and overflow properties on element
+
+Class                         | Description
+----------------------------- | --------------------------------
+`.wrap--singleLine`           | forces text to a single line (nowrap)
+`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+`.matchLineHeight`            | adds a small amount of top and bottom margin to a non-text element to match line height of nearby text
+
+*/
+@include _modifier(wrap, singleLine) {
+	white-space: nowrap !important;
+}
+
+%wrap--singleLine--truncate,
+.wrap--singleLine--truncate {
+	@extend %wrap--singleLine;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
+
+%matchLineHeight,
+.matchLineHeight {
+	margin: 3px 0;
+}
