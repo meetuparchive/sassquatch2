@@ -362,6 +362,38 @@ Disables user-select, sets cursor, and resets text-decoration.
 
 /*doc
 ---
+title: Color
+name: colorUtil
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+/*doc
+---
+title: SVG color
+name: svgColorMixin
+parent: colorUtil
+---
+Sets properties to color SVG icons
+
+```
+@mixin color-svg($color: black);
+```
+*/
+/*doc
+---
+title: SVG + Text color
+name: colorAllMixin
+parent: colorUtil
+---
+Sets properties to apply color to SVG icons
+_and_ text.
+
+```
+@mixin color-all($color: black);
+```
+*/
+/*doc
+---
 title: data uri images
 name: datauri
 category: Sass Utils | Mixins & Placeholders
@@ -790,8 +822,12 @@ parent: bodyText
 ```
 */
 .text--hint {
+  fill: rgba(0, 0, 0, 0.26);
+  stroke: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--hint {
+    fill: rgba(255, 255, 255, 0.3);
+    stroke: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -805,8 +841,12 @@ parent: bodyText
 ```
 */
 .text--secondary {
+  fill: rgba(0, 0, 0, 0.54);
+  stroke: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--secondary {
+    fill: rgba(255, 255, 255, 0.7);
+    stroke: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -820,8 +860,12 @@ parent: bodyText
 ```
 */
 .text--tertiary {
+  fill: rgba(0, 0, 0, 0.26);
+  stroke: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--tertiary {
+    fill: rgba(255, 255, 255, 0.3);
+    stroke: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -869,8 +913,12 @@ parent: bodyText
 ```
 */
 .text--caption {
+  fill: rgba(0, 0, 0, 0.54);
+  stroke: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--caption {
+    fill: rgba(255, 255, 255, 0.7);
+    stroke: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -3673,7 +3721,7 @@ and user-select.
 
 ```html_example
 	<a class="chunk display--block">I'm just an anchor, displayed block</a>
-	<a class="buttonPersonality chunk display--block">I behave more like a button</a>
+	<a class="buttonPersonality chunk display--block">I behave more like a button (hover over me; try to select this text)</a>
 ```
 */
 /*doc
