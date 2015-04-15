@@ -396,7 +396,7 @@ classes are optional variants:</p>
 <p>Collapses elements using class toggling. A base
 class of <code>collapsible</code> is <strong>required</strong>.</p>
 
-<p>To collapse the element, add the <code>collapse--close</code> class.</p>
+<p>To collapse the element, add the <code>collapsible--close</code> class.</p>
 <div class="codeExample"><div class="exampleOutput"><a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
 
 <section class="stripe collapsible" id="collapse-container">
@@ -751,11 +751,19 @@ $(function() {
 	});
 
 	//
-	// collapsable example
+	// collapsible example
 	//
-	$('#collapse-trigger').click(function() {
-		$('#collapse-container').toggle('collapsable--shrink');
-	});
+	var $c = $('#collapse-container'),
+		CLASS_COL_CLOSE = 'collapsible--close';
+	if ( $c.length > 0 ) {
+		$('#collapse-trigger').on('click', function() {
+			if ( $c.hasClass(CLASS_COL_CLOSE) ) {
+				$c.removeClass(CLASS_COL_CLOSE);
+			} else {
+				$c.addClass(CLASS_COL_CLOSE);
+			}
+		});
+	}
 
 	//
 	// lunr search index
