@@ -82,7 +82,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#collapsable">Collapsable</a>
+											<a class="followLink" href="#collapsible">Collapsible</a>
 										</li>
 									
 
@@ -391,26 +391,26 @@ classes are optional variants:</p>
 </tr>
 </tbody></table>
 
-<h1 id="collapsable">Collapsable</h1>
+<h1 id="collapsible">Collapsible</h1>
 
 <p>Collapses elements using class toggling. A base
-class of <code>collapsable</code> is <strong>required</strong>.</p>
+class of <code>collapsible</code> is <strong>required</strong>.</p>
 
-<p>To collapse the element, add the <code>collapse--shrink</code> class.</p>
+<p>To collapse the element, add the <code>collapse--close</code> class.</p>
 <div class="codeExample"><div class="exampleOutput"><a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
 
-<section class="stripe collapsable" id="collapse-container">
+<section class="stripe collapsible" id="collapse-container">
     <div class="bounds">
-        <h2>I'm collapsable content</h2>
-        <p>Adding a class of `collapsable--shrink` to this `section` will set max height to 0vh</p>
+        <h2>I'm collapsible content</h2>
+        <p>Adding a class of `collapsible--close` to this `section` will set max height to 0vh</p>
     </div>
 </section>
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"collapse-trigger"</span> <span class="na">class=</span><span class="s">"button button--primary chunk followLink"</span><span class="nt">&gt;</span>Toggle<span class="nt">&lt;/a&gt;</span>
 
-<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe collapsable"</span> <span class="na">id=</span><span class="s">"collapse-container"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe collapsible"</span> <span class="na">id=</span><span class="s">"collapse-container"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h2&gt;</span>I'm collapsable content<span class="nt">&lt;/h2&gt;</span>
-        <span class="nt">&lt;p&gt;</span>Adding a class of `collapsable--shrink` to this `section` will set max height to 0vh<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;h2&gt;</span>I'm collapsible content<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Adding a class of `collapsible--close` to this `section` will set max height to 0vh<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </pre></div></div></div>
@@ -1147,6 +1147,16 @@ $(function() {
 				
 
 				index.add({
+					"title": "Type wrap/whitespace",
+					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
+					"path": "modifier_classes.html#typespaceMod"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Nice Hyphenation",
 					"breadcrumb": "Modifier Classes > Nice Hyphenation",
 					"path": "modifier_classes.html#wrapNiceUtil"
@@ -1160,16 +1170,6 @@ $(function() {
 					"title": "Thumbnails",
 					"breadcrumb": "Modifier Classes > Thumbnails",
 					"path": "modifier_classes.html#thumb"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Type wrap/whitespace",
-					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
-					"path": "modifier_classes.html#typespaceMod"
 				});
 
 			
@@ -1211,9 +1211,9 @@ $(function() {
 				
 
 				index.add({
-					"title": "Collapsable",
-					"breadcrumb": "UI Components > Collapsable",
-					"path": "ui_components.html#collapsable"
+					"title": "Collapsible",
+					"breadcrumb": "UI Components > Collapsible",
+					"path": "ui_components.html#collapsible"
 				});
 
 			
