@@ -3156,10 +3156,10 @@ class of `collapsible` is __required__.
 To collapse the element, add the `collapsible--close` class.
 
 ```html_example
-<a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
+<a id="cTrigger" class="button button--primary chunk followLink">Toggle</a>
 
-<section class="stripe collapsible" id="collapse-container">
-	<div class="bounds">
+<section class="stripe collapsible" id="cContainer">
+	<div class="bounds collapsible-content">
 		<h2>I'm collapsible content</h2>
 		<p>Adding a class of `collapsible--close` to this `section` will set max height to 0vh</p>
 	</div>
@@ -3167,19 +3167,26 @@ To collapse the element, add the `collapsible--close` class.
 ```
 */
 .collapsible {
-  -webkit-transition: max-height 200ms ease-in-out;
-  transition: max-height 200ms ease-in-out;
+  -webkit-transition: max-height 300ms ease-in-out;
+  transition: max-height 300ms ease-in-out;
   will-change: max-height;
   height: auto;
   max-height: 1024px;
   /* arbitrary value for easing */ }
 
+.collapsible-content {
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  -moz-transition: -moz-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out; }
+
 .collapsible--close {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
   border-width: 0;
-  max-height: 0; }
+  max-height: 0;
+  overflow: hidden; }
+  .collapsible--close .collapsible-content {
+    -webkit-transform: translateY(-33%);
+    -ms-transform: translateY(-33%);
+    transform: translateY(-33%); }
 
 /*doc
 ---

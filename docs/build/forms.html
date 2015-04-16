@@ -129,17 +129,13 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="checkbox">Checkboxes</h1>
-
-<p>A label variant class of <code>label--switch</code> is
-used for side-by-side inputs and labels.</p>
-
-<p>For radios and checkboxes, we put the <code>input</code>
-element inside the <code>label</code> element.</p>
-
-<p>A class of <code>checkbox</code> is <strong>required</strong> on checkbox
-input elements.</p>
-<div class="codeExample"><div class="exampleOutput"><label for="check1" class="label--switch chunk">
+<h1 id="checkbox" class="styleguide">Checkboxes</h1>
+<p class="styleguide">A label variant class of <code class="styleguide">label--switch</code> is
+used for side-by-side inputs and labels.</p><p class="styleguide">For radios and checkboxes, we put the <code class="styleguide">input</code>
+element inside the <code class="styleguide">label</code> element.</p><p class="styleguide">A class of <code class="styleguide">checkbox</code> is <strong>required</strong> on checkbox
+input elements.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <label for="check1" class="label--switch chunk">
     <input id="check1" class="checkbox" value="green" type="checkbox" />
     Green
 </label>
@@ -147,19 +143,28 @@ input elements.</p>
     <input id="check2" class="checkbox" value="blue" type="checkbox" />
     Blue
 </label>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"check1"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"green"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span>
     Green
 <span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check2"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"check2"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"blue"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span>
     Blue
-<span class="nt">&lt;/label&gt;</span>
-</pre></div></div></div>
-<h1 id="forms">Basic Inputs</h1>
+<span class="nt">&lt;/label&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="forms" class="styleguide">Basic Inputs</h1>
 
 <h2>Text inputs</h2>
-<div class="codeExample"><div class="exampleOutput"><div class="chunk">
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="chunk">
     <label for="test-textinput">I'm a label</label>
     <input id="test-textinput" type="text" value="Text input with value" />
 </div>
@@ -199,7 +204,11 @@ input elements.</p>
         </select>
     </div>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"test-textinput"</span><span class="nt">&gt;</span>I'm a label<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"test-textinput"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Text input with value"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -238,66 +247,71 @@ input elements.</p>
             <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"black"</span><span class="nt">&gt;</span>Seabreeze black<span class="nt">&lt;/option&gt;</span>
         <span class="nt">&lt;/select&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h1 id="formValidation">Validation errors</h1>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>Error styles are applied to any child
-input of an element with the class <code>hasError</code>.</p>
-
-<p>Error text is set explicitly with <code>text--error</code>.</p>
-<div class="codeExample"><div class="exampleOutput"><div class="chunk hasError">
+<h1 id="formValidation" class="styleguide">Validation errors</h1>
+<p class="styleguide">Error styles are applied to any child
+input of an element with the class <code class="styleguide">hasError</code>.</p><p class="styleguide">Error text is set explicitly with <code class="styleguide">text--error</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="chunk hasError">
     <label for="test-textinput">First name</label>
     <input id="test-textinput" type="text" value="" />
     <p class="text--error">First name can't be empty</p>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk hasError"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk hasError"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"test-textinput"</span><span class="nt">&gt;</span>First name<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"test-textinput"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--error"</span><span class="nt">&gt;</span>First name can't be empty<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h1 id="launcher">Launcher</h1>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>Applies form field styles to an anchor, for use
-in launching custom input (ie. date/location pickers).</p>
-<div class="codeExample"><div class="exampleOutput"><div class="chunk">
+<h1 id="launcher" class="styleguide">Launcher</h1>
+<p class="styleguide">Applies form field styles to an anchor, for use
+in launching custom input (ie. date/location pickers).</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="chunk">
     <label for="specialPicker2">Pick a location</label>
     <a id="specialPicker2" class="launcher" href="#">Boise, Idaho</a>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"specialPicker2"</span><span class="nt">&gt;</span>Pick a location<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"specialPicker2"</span> <span class="na">class=</span><span class="s">"launcher"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Boise, Idaho<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
 <h2>Launcher variants</h2>
-
-<p>A class of <code>launcher</code> is <strong>required</strong> for launcher
-anchors. The following classes are optional variants</p>
-
-<table><thead>
-<tr>
+<p class="styleguide">A class of <code class="styleguide">launcher</code> is <strong>required</strong> for launcher
+anchors. The following classes are optional variants</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>launcher--placeholder</code></td>
+ <tr>
+<td><code class="styleguide">launcher--placeholder</code></td>
 <td>Applies placeholder-like text styles for &quot;unselected&quot; values</td>
 </tr>
-</tbody></table>
-
-<h1 id="radio">Radios</h1>
-
-<p>A label variant class of <code>label--switch</code> is
-used for side-by-side inputs and labels.</p>
-
-<p>For radios and checkboxes, we put the <code>input</code>
-element inside the <code>label</code> element.</p>
-
-<p>A class of <code>radio</code> is <strong>required</strong> on radio input
-elements.</p>
-<div class="codeExample"><div class="exampleOutput"><label for="radio1" class="label--switch chunk">
+ </table>
+<h1 id="radio" class="styleguide">Radios</h1>
+<p class="styleguide">A label variant class of <code class="styleguide">label--switch</code> is
+used for side-by-side inputs and labels.</p><p class="styleguide">For radios and checkboxes, we put the <code class="styleguide">input</code>
+element inside the <code class="styleguide">label</code> element.</p><p class="styleguide">A class of <code class="styleguide">radio</code> is <strong>required</strong> on radio input
+elements.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <label for="radio1" class="label--switch chunk">
     <input id="radio1" class="radio" name="radioExample" value="green" type="radio" />
     Green
 </label>
@@ -305,15 +319,22 @@ elements.</p>
     <input id="radio2" class="radio" name="radioExample" value="red" type="radio" />
     Red
 </label>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radioExample"</span> <span class="na">value=</span><span class="s">"green"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="nt">/&gt;</span>
     Green
 <span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio2"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"radio2"</span> <span class="na">class=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radioExample"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="nt">/&gt;</span>
     Red
-<span class="nt">&lt;/label&gt;</span>
-</pre></div></div></div>	</main>
+<span class="nt">&lt;/label&gt;</span></pre>
+    </div>
+  </div>
+</div>
+	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -332,10 +353,10 @@ $(function() {
 	//
 	// collapsible example
 	//
-	var $c = $('#collapse-container'),
+	var $c = $('#cContainer'),
 		CLASS_COL_CLOSE = 'collapsible--close';
 	if ( $c.length > 0 ) {
-		$('#collapse-trigger').on('click', function() {
+		$('#cTrigger').on('click', function() {
 			if ( $c.hasClass(CLASS_COL_CLOSE) ) {
 				$c.removeClass(CLASS_COL_CLOSE);
 			} else {
@@ -600,16 +621,6 @@ $(function() {
 				
 
 				index.add({
-					"title": "Link color",
-					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
-					"path": "sass_utils_|_mixins_&_placeholders.html#linkColor"
-				});
-
-			
-				
-				
-
-				index.add({
 					"title": "Text protection shim",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text protection shim",
 					"path": "sass_utils_|_mixins_&_placeholders.html#textProtection"
@@ -684,8 +695,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Anchors & Buttons",
-					"breadcrumb": "Modifier Classes > Anchors & Buttons",
+					"title": "Anchors &amp; Buttons",
+					"breadcrumb": "Modifier Classes > Anchors &amp; Buttons",
 					"path": "modifier_classes.html#buttonMod"
 				});
 
@@ -1005,6 +1016,16 @@ $(function() {
 					"title": "Running text",
 					"breadcrumb": "Typography > Running text",
 					"path": "typography.html#runningText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Link color",
+					"breadcrumb": "Typography > Link color",
+					"path": "typography.html#linkColor"
 				});
 
 			
