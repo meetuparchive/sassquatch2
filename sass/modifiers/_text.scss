@@ -41,6 +41,21 @@ Class          | Description
 	overflow: hidden;
 }
 
+/*doc
+---
+title: Text decoration
+name: textDecoration
+parent: textMod
+---
+Basic text decoration
+
+Class                  | Description
+---------------------- | ----------------------------
+`.text--strikethrough` | strikethrough/strikeout/line-through
+*/
+.text--strikethrough {
+	text-decoration: line-through;
+}
 
 /*doc
 ---
