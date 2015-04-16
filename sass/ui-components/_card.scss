@@ -114,3 +114,15 @@ _(The inline style on the card element is for documentation purposes only)_
 		top: -1px;
 	}
 }
+
+.card--event--canceled {
+	&:before { background: $C_gray; }
+}
+
+.card--event--featured {
+	&:before { background: $C_yellow; }
+}
+
+.card--event--draft {
+	&:before { background: $C_green; }
+}
