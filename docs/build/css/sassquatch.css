@@ -823,11 +823,11 @@ parent: bodyText
 */
 .text--hint {
   fill: rgba(0, 0, 0, 0.26);
-  stroke: rgba(0, 0, 0, 0.26);
+  stroke: transparent;
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--hint {
     fill: rgba(255, 255, 255, 0.3);
-    stroke: rgba(255, 255, 255, 0.3);
+    stroke: transparent;
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -842,11 +842,11 @@ parent: bodyText
 */
 .text--secondary {
   fill: rgba(0, 0, 0, 0.54);
-  stroke: rgba(0, 0, 0, 0.54);
+  stroke: transparent;
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--secondary {
     fill: rgba(255, 255, 255, 0.7);
-    stroke: rgba(255, 255, 255, 0.7);
+    stroke: transparent;
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -861,11 +861,11 @@ parent: bodyText
 */
 .text--tertiary {
   fill: rgba(0, 0, 0, 0.26);
-  stroke: rgba(0, 0, 0, 0.26);
+  stroke: transparent;
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--tertiary {
     fill: rgba(255, 255, 255, 0.3);
-    stroke: rgba(255, 255, 255, 0.3);
+    stroke: transparent;
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -914,11 +914,11 @@ parent: bodyText
 */
 .text--caption {
   fill: rgba(0, 0, 0, 0.54);
-  stroke: rgba(0, 0, 0, 0.54);
+  stroke: transparent;
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--caption {
     fill: rgba(255, 255, 255, 0.7);
-    stroke: rgba(255, 255, 255, 0.7);
+    stroke: transparent;
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -2277,9 +2277,9 @@ Class                   | Description
   -webkit-flex-grow: 0;
   flex-grow: 0;
   -ms-flex-positive: 0;
-  -webkit-flex-shrink: 1;
-  flex-shrink: 1;
-  -ms-flex-negative: 1;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
   width: initial; }
 
 .row-item--alignMiddle {
@@ -2398,9 +2398,9 @@ Class                   | Description
       -webkit-flex-grow: 0;
       flex-grow: 0;
       -ms-flex-positive: 0;
-      -webkit-flex-shrink: 1;
-      flex-shrink: 1;
-      -ms-flex-negative: 1;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -ms-flex-negative: 0;
       width: initial; } }
 @media only screen and (min-width: 840px) {
   .atLarge_stack--spread {
@@ -2426,9 +2426,9 @@ Class                   | Description
       -webkit-flex-grow: 0;
       flex-grow: 0;
       -ms-flex-positive: 0;
-      -webkit-flex-shrink: 1;
-      flex-shrink: 1;
-      -ms-flex-negative: 1;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -ms-flex-negative: 0;
       width: initial; } }
 .ieRoot_lt_IE10 .stack,
 .ieRoot_lt_IE10 .stack-item {
@@ -2895,6 +2895,12 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 */
 .attachment .row-item {
   padding-left: 8px; }
+@media only screen and (min-width: 640px) {
+  .attachment .atMedium_stack--spread .stack-item {
+    padding-left: 8px; } }
+@media only screen and (min-width: 840px) {
+  .attachment .atLarge_stack--spread .stack-item {
+    padding-left: 8px; } }
 .attachment.chunk,
 .attachment .chunk {
   margin-bottom: 8px !important; }
@@ -3114,6 +3120,99 @@ _(The inline style on the card element is for documentation purposes only)_
 			</ul>
 		</div>
 	</a>
+	<a href="#" class="chunk card card--event card--event--featured" style="margin: 16px; max-width: 250px;">
+
+		<div class="row row--spaceBetween row--wrap">
+
+			<time datetime="20150221" class="row-item row-item--shrink">
+				<h2 class="text--graphic display--inlineBlock">21</h2>
+				<h2>Feb</h2>
+			</time>
+
+			<div class="row-item row-item--shrink align--right">
+				<p class="text--caption">Featured</p>
+			</div>
+
+		</div>
+
+		<div class="chunk eventInfo-primary">
+			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+			<h3>Backpacking For Beginners</h3>
+
+			<ul class="inlineblockList matchLineHeight">
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="text--caption">+8</li>
+			</ul>
+		</div>
+	</a>
+	<a href="#" class="chunk card card--event card--event--cancelled" style="margin: 16px; max-width: 250px;">
+
+		<div class="row row--spaceBetween row--wrap">
+
+			<time datetime="20150221" class="row-item row-item--shrink">
+				<h2 class="text--graphic display--inlineBlock">21</h2>
+				<h2>Feb</h2>
+			</time>
+
+			<div class="row-item row-item--shrink align--right">
+				<p class="text--caption">Cancelled</p>
+			</div>
+
+		</div>
+
+		<div class="chunk eventInfo-primary">
+			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+			<h3 class="text--strikethrough">Backpacking For Beginners</h3>
+
+			<ul class="inlineblockList matchLineHeight">
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="text--caption">+8</li>
+			</ul>
+		</div>
+	</a>
+	<a href="#" class="chunk card card--event card--event--draft" style="margin: 16px; max-width: 250px;">
+
+		<div class="row row--spaceBetween row--wrap">
+
+			<time datetime="20150221" class="row-item row-item--shrink">
+				<h2 class="text--graphic display--inlineBlock">21</h2>
+				<h2>Feb</h2>
+			</time>
+
+			<div class="row-item row-item--shrink align--right">
+				<p class="text--caption">Draft</p>
+			</div>
+
+		</div>
+
+		<div class="chunk eventInfo-primary">
+			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+			<h3>Backpacking For Beginners</h3>
+
+			<ul class="inlineblockList matchLineHeight">
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="text--caption">+8</li>
+			</ul>
+		</div>
+	</a>
 </section>
 ```
 
@@ -3143,6 +3242,15 @@ _(The inline style on the card element is for documentation purposes only)_
     left: -1px;
     right: -1px;
     top: -1px; }
+
+.card--event--canceled:before {
+  background: #353e48; }
+
+.card--event--featured:before {
+  background: #f0cb4f; }
+
+.card--event--draft:before {
+  background: #8cbf6a; }
 
 /*doc
 ---
@@ -4041,6 +4149,21 @@ Class          | Description
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden; }
+
+/*doc
+---
+title: Text decoration
+name: textDecoration
+parent: textMod
+---
+Basic text decoration
+
+Class                  | Description
+---------------------- | ----------------------------
+`.text--strikethrough` | strikethrough/strikeout/line-through
+*/
+.text--strikethrough {
+  text-decoration: line-through; }
 
 /*doc
 ---

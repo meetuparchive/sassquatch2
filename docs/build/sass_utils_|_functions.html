@@ -127,53 +127,58 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="brightness" class="styleguide">Contrast/brightness utils</h1>
+<h1 id="brightness">Contrast/brightness utils</h1>
 
-<h2 id="getPerceivedBrightness" class="styleguide">Perceived brightness value</h2>
-<p class="styleguide">Gets brightness of a color on a scale of 0-255 based on a yiq color space.
+<h2 id="getPerceivedBrightness">Perceived brightness value</h2>
+
+<p>Gets brightness of a color on a scale of 0-255 based on a yiq color space.
 <em>Calculates green-weighted sum of RGB channels (green is perceived as brighter
-on additive color screens).</em></p><p class="styleguide"><em>returns int</em></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>getPerceivedBrightness(#000) // -&gt; 0</pre>
-  </div>
-</div>
-<h2 id="getPrimaryTextColor" class="styleguide">Programmatic contrast text</h2>
-<p class="styleguide">For a given background color, this function returns
-a text color value with appropriate contrast.</p><p class="styleguide"><em>returns <code class="styleguide">color</code> value</em></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>// -&gt; color: $C_textPrimaryInverted; (white text on dark)
+on additive color screens).</em></p>
+
+<p><em>returns int</em></p>
+<div class="codeBlock"><div class="highlight"><pre>getPerceivedBrightness(#000) // -&gt; 0
+</pre></div></div>
+<h2 id="getPrimaryTextColor">Programmatic contrast text</h2>
+
+<p>For a given background color, this function returns
+a text color value with appropriate contrast.</p>
+
+<p><em>returns <code>color</code> value</em></p>
+<div class="codeBlock"><div class="highlight"><pre>// -&gt; color: $C_textPrimaryInverted; (white text on dark)
 color: getPrimaryTextColor(#000);
 
 // -&gt; color: $C_textPrimary; (dark text on white)
-color: getPrimaryTextColor(#FFF);</pre>
-  </div>
-</div>
-<h2 id="isDarkisLight" class="styleguide">isDark/isLight</h2>
-<p class="styleguide">Checks a given color for brightness and returns a boolean.
-Our default dark/light threshold is 160 on a scale of 0-255</p><p class="styleguide"><em>returns boolean</em></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>isDark(#000) // -&gt; true
-isLight(#000) // -&gt; false</pre>
-  </div>
-</div>
-<h1 id="string" class="styleguide">String utils</h1>
+color: getPrimaryTextColor(#FFF);
+</pre></div></div>
+<h2 id="isDarkisLight">isDark/isLight</h2>
 
-<h2 id="str-firstCharToUpper" class="styleguide">str-firstCharToUpper</h2>
-<p class="styleguide">Capitalizes first letter of a given string. Useful as a camelCase converter.</p><p class="styleguide"><em>returns string</em></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>str-firstCharToUpper('snowflake') // -&gt; 'Snowflake'
+<p>Checks a given color for brightness and returns a boolean.
+Our default dark/light threshold is 160 on a scale of 0-255</p>
 
-.special#{str-firstCharToUpper('snowflake')} // -&gt; .specialSnowflake</pre>
-  </div>
-</div>
-<h2 id="str-replace" class="styleguide">str-replace</h2>
-<p class="styleguide">Search and replace on strings.</p><p class="styleguide"><em>returns string</em></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>str-replace('inline-block', '-', '') // -&gt; 'inlineblock'
+<p><em>returns boolean</em></p>
+<div class="codeBlock"><div class="highlight"><pre>isDark(#000) // -&gt; true
+isLight(#000) // -&gt; false
+</pre></div></div>
+<h1 id="string">String utils</h1>
 
-.display--#{str-replace('inline-block', '-block', 'Block')} -&gt; .display--inlineBlock</pre>
-  </div>
-</div>	</main>
+<h2 id="str-firstCharToUpper">str-firstCharToUpper</h2>
+
+<p>Capitalizes first letter of a given string. Useful as a camelCase converter.</p>
+
+<p><em>returns string</em></p>
+<div class="codeBlock"><div class="highlight"><pre>str-firstCharToUpper('snowflake') // -&gt; 'Snowflake'
+
+.special#{str-firstCharToUpper('snowflake')} // -&gt; .specialSnowflake
+</pre></div></div>
+<h2 id="str-replace">str-replace</h2>
+
+<p>Search and replace on strings.</p>
+
+<p><em>returns string</em></p>
+<div class="codeBlock"><div class="highlight"><pre>str-replace('inline-block', '-', '') // -&gt; 'inlineblock'
+
+.display--#{str-replace('inline-block', '-block', 'Block')} -&gt; .display--inlineBlock
+</pre></div></div>	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -460,6 +465,16 @@ $(function() {
 				
 
 				index.add({
+					"title": "Link color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#linkColor"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Text protection shim",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text protection shim",
 					"path": "sass_utils_|_mixins_&_placeholders.html#textProtection"
@@ -534,8 +549,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Anchors &amp; Buttons",
-					"breadcrumb": "Modifier Classes > Anchors &amp; Buttons",
+					"title": "Anchors & Buttons",
+					"breadcrumb": "Modifier Classes > Anchors & Buttons",
 					"path": "modifier_classes.html#buttonMod"
 				});
 
@@ -627,6 +642,16 @@ $(function() {
 					"title": "Text Modifiers",
 					"breadcrumb": "Modifier Classes > Text Modifiers",
 					"path": "modifier_classes.html#textMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text decoration",
+					"breadcrumb": "Modifier Classes > Text decoration",
+					"path": "modifier_classes.html#textDecoration"
 				});
 
 			
@@ -855,16 +880,6 @@ $(function() {
 					"title": "Running text",
 					"breadcrumb": "Typography > Running text",
 					"path": "typography.html#runningText"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Link color",
-					"breadcrumb": "Typography > Link color",
-					"path": "typography.html#linkColor"
 				});
 
 			
