@@ -122,7 +122,7 @@ Class                   | Description
 */
 .row-item--shrink {
 	@include flex-grow(0);
-	@include flex-shrink(1);
+	@include flex-shrink(0);
 	width: initial;
 }
 .row-item--alignMiddle {
