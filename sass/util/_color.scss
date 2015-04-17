@@ -20,7 +20,7 @@ Sets properties to color SVG icons
 */
 @mixin color-svg($color: black) {
 	fill: $color;
-	stroke: $color;
+	stroke: transparent;
 };
 
 /*doc
@@ -38,7 +38,7 @@ _and_ text.
 */
 @mixin color-all($color: black) {
 	fill: $color;
-	stroke: $color;
+	stroke: transparent;
 	color: $color;
 };
 
