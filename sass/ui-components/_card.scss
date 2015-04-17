@@ -209,7 +209,7 @@ _(The inline style on the card element is for documentation purposes only)_
 }
 
 .card--event--canceled {
-	&:before { background: $C_gray; }
+	&:before { background: $C_darkGray; }
 }
 
 .card--event--featured {
