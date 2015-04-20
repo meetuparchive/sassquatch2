@@ -208,8 +208,12 @@ _(The inline style on the card element is for documentation purposes only)_
 	}
 }
 
+.card--event--past {
+	&:before { background: $C_mediumGray; }
+}
+
 .card--event--canceled {
-	&:before { background: $C_darkGray; }
+	&:before { background: $C_mediumGray; }
 }
 
 .card--event--featured {
