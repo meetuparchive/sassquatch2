@@ -30,14 +30,11 @@ Use as a guide for markup.
 ```
 */
 
-// Parent
-.menu {
-	position: relative;
-}
 
 // Unorderd list sibling of menu-toggle
 .menu-actions {
 	@extend %list--reset;
+	z-index: map-get($zindex-map, popup);
 
 	.hasJS & {
 		@extend %shadow;
@@ -46,10 +43,16 @@ Use as a guide for markup.
 		background-color: $C_white;
 		display: none;
 		position: relative;
-		top: -($space/2);
-		right: -($space/2);
 		min-width: $block-3;
 		max-width: $breakpoint-s*0.75;
+
+		// JS will remove the element from the DOM
+		// and append it as a direct child of <body>.
+		//
+		// These values will be overriden with JS to
+		// position the menu over the trigger element.
+		top: $space;
+		right: $space;
 	}
 }
 
