@@ -33,7 +33,6 @@ Class                      | Description
 	background: $C_accent;
 	color: $C_textPrimaryInverted;
 	left: 0;
-	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: map-get($zindex-map, "main-header");
@@ -67,6 +66,7 @@ Class                      | Description
 	background: transparent;
 	border-bottom: none;
 	color: $C_textPrimaryInverted;
+	position: absolute;
 	h1 { // assumes there's only ever one h1 in view-head
 		opacity: 0;
 	}
