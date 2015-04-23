@@ -2499,7 +2499,8 @@ the "detail" responsibility.
   box-sizing: border-box;
   background: white;
   width: 100%;
-  min-height: 100vh; }
+  min-height: 100vh;
+  position: relative; }
 
 .view--splitList, .view--splitDetail {
   display: none; }
@@ -2555,7 +2556,6 @@ Class                      | Description
   background: #d55741;
   color: white;
   left: 0;
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -2577,7 +2577,8 @@ Class                      | Description
 .view-head--transparent {
   background: transparent;
   border-bottom: none;
-  color: white; }
+  color: white;
+  position: absolute; }
   .view-head--photoOverlay h1,
   .view-head--transparent h1 {
     opacity: 0; }
@@ -2907,12 +2908,10 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 @media only screen and (min-width: 640px) {
   .attachment.atMedium_stack--spread .stack-item,
   .attachment .atMedium_stack--spread .stack-item {
-    outline: 20px solid red;
     padding-left: 8px; } }
 @media only screen and (min-width: 840px) {
   .attachment.atLarge_stack--spread .stack-item,
   .attachment .atLarge_stack--spread .stack-item {
-    outline: 20px solid red;
     padding-left: 8px; } }
 .attachment.chunk,
 .attachment .chunk {
@@ -3256,8 +3255,11 @@ _(The inline style on the card element is for documentation purposes only)_
     right: -1px;
     top: -1px; }
 
+.card--event--past:before {
+  background: #e6e9ec; }
+
 .card--event--canceled:before {
-  background: #353e48; }
+  background: #e6e9ec; }
 
 .card--event--featured:before {
   background: #f0cb4f; }
