@@ -80,6 +80,25 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#modals">Modals</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#view">View</a>
 										</li>
 									
@@ -111,6 +130,59 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
+<h1 id="modals" class="styleguide">Modals</h1>
+
+<h2 id="fullModalView" class="styleguide">Full Modal View</h2>
+<p class="styleguide">Modal that is presented full screen on all sizes</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="view view--modal-full"&gt;
+    &lt;header class="view-head"&gt;
+        &lt;div class="row inverted"&gt; 
+            &lt;a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle"&gt;
+                &lt;img src="style/img/logo.svg" width="35" height="24"&gt;&lt;/a&gt;
+            &lt;/a&gt;
+            &lt;div class="row-item row-item--alignMiddle viewHead-heading"&gt;
+                &lt;h1 class="wrap--singleLine--truncate"&gt;This is a header&lt;/h1&gt; 
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div id="modal_body" class="view-body"&gt;
+        &lt;div class="stripe"&gt;
+            &lt;div class="bounds"&gt;
+            ... body content here ...
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div>
+<h2 id="snapModalView" class="styleguide">Snap Modal View (Dialog)</h2>
+<p class="styleguide">Modal that snaps to the whole viewport and is full screen on small screens,
+lays out as a dialog on background content on larger screens.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="view view--modal-snap"&gt;
+    &lt;header class="view-head"&gt;
+        &lt;div class="row inverted"&gt; 
+            &lt;a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle"&gt;
+                Close
+            &lt;/a&gt;
+            &lt;div class="row-item row-item--alignMiddle viewHead-heading"&gt;
+                &lt;h1 class="wrap--singleLine--truncate"&gt;Change your setting&lt;/h1&gt; 
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div id="modal_body" class="view-body"&gt;
+        &lt;div class="stripe"&gt;
+            &lt;div class="bounds"&gt;
+            ... body content here ...
+
+            &lt;button&gt;Save&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div>
 <h1 id="view" class="styleguide">View</h1>
 <p class="styleguide">A &quot;view&quot; contains all layout and content for a given screen.
 Typically, a document only has a single view. Split views,
@@ -239,6 +311,13 @@ $(function() {
 			}
 		});
 	}
+
+
+	// TODO: modal code
+
+
+
+
 
 	//
 	// lunr search index
@@ -439,6 +518,36 @@ $(function() {
 					"title": "Clearfix placeholder",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Clearfix placeholder",
 					"path": "sass_utils_|_mixins_&_placeholders.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal mixins",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal mixins",
+					"path": "sass_utils_|_mixins_&_placeholders.html#modalUtils"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Dialog Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Dialog Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Dialog_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Full Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Full Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Full_Mixin"
 				});
 
 			
@@ -1259,6 +1368,36 @@ $(function() {
 		
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Modals",
+					"breadcrumb": "Views > Modals",
+					"path": "views.html#modals"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Full Modal View",
+					"breadcrumb": "Views > Full Modal View",
+					"path": "views.html#fullModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Snap Modal View (Dialog)",
+					"breadcrumb": "Views > Snap Modal View (Dialog)",
+					"path": "views.html#snapModalView"
+				});
+
 			
 				
 				
