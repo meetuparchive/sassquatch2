@@ -42,7 +42,7 @@ Use as a guide for markup.
 		border-radius: $defaultRadius;
 		background-color: $C_white;
 		display: none;
-		position: relative;
+		position: absolute;
 		min-width: $block-3;
 		max-width: $breakpoint-s*0.75;
 
