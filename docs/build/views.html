@@ -138,11 +138,11 @@
 <th>Description</th>
 </tr>
  <tr>
-<td><code class="styleguide">.view-modal--full</code></td>
+<td><code class="styleguide">.view--modalFull</code></td>
 <td>Makes a modal that is full screen on all screen sizes</td>
 </tr>
 <tr>
-<td><code class="styleguide">.view-modal--snap</code></td>
+<td><code class="styleguide">.view--modalSnap</code></td>
 <td>Creates a modal that is full screen on small sizes, overlay/dialog on larger screens</td>
 </tr>
  </table>
@@ -151,7 +151,7 @@
   <div class="exampleOutput">
     <a class="link" href="pages/modal-full.html">Demo</a> 
 
-<div class="view view--modal-full display--none">
+<div class="view view--modalFull display--none">
     <header class="view-head">
         <div class="row inverted"> 
             <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
@@ -176,7 +176,7 @@
     <div class="highlight">
       <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-full.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span> 
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modal-full display--none"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modalFull display--none"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span> 
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
@@ -205,7 +205,7 @@ lays out as a dialog on background content on larger screens.</p><div class="cod
   <div class="exampleOutput">
     <a class="link" href="pages/modal-snap.html">Demo</a> 
 
-<div class="view view--modal-snap display--none">
+<div class="view view--modalSnap display--none">
     <header class="view-head">
         <div class="row inverted"> 
             <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
@@ -232,7 +232,7 @@ lays out as a dialog on background content on larger screens.</p><div class="cod
     <div class="highlight">
       <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-snap.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span> 
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modal-snap display--none"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modalSnap display--none"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span> 
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
@@ -367,7 +367,8 @@ $(function() {
 	// Disable links by default
 	//
 	$('a').on("click", function(e) {
-		if ( this.href == "#" || $(this).hasClass('noFollow') ) {
+		debugger;
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
 			e.preventDefault();
 		}
 		return;
@@ -387,13 +388,6 @@ $(function() {
 			}
 		});
 	}
-
-
-	// TODO: modal code
-
-
-
-
 
 	//
 	// lunr search index

@@ -882,7 +882,8 @@ $(function() {
 	// Disable links by default
 	//
 	$('a').on("click", function(e) {
-		if ( this.href == "#" || $(this).hasClass('noFollow') ) {
+		debugger;
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
 			e.preventDefault();
 		}
 		return;
@@ -902,13 +903,6 @@ $(function() {
 			}
 		});
 	}
-
-
-	// TODO: modal code
-
-
-
-
 
 	//
 	// lunr search index

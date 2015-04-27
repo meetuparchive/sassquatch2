@@ -2664,8 +2664,8 @@ category: Views
 
 Class                      | Description
 -------------------------- | ---------------------------
-`.view-modal--full`        | Makes a modal that is full screen on all screen sizes
-`.view-modal--snap`        | Creates a modal that is full screen on small sizes, overlay/dialog on larger screens
+`.view--modalFull`        | Makes a modal that is full screen on all screen sizes
+`.view--modalSnap`        | Creates a modal that is full screen on small sizes, overlay/dialog on larger screens
 
 
 */
@@ -2681,7 +2681,7 @@ Modal that is presented full screen on all sizes
 ```html_example
 <a class="link" href="pages/modal-full.html">Demo</a> 
 
-<div class="view view--modal-full display--none">
+<div class="view view--modalFull display--none">
 	<header class="view-head">
 		<div class="row inverted"> 
 			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
@@ -2703,7 +2703,7 @@ Modal that is presented full screen on all sizes
 ```
 
 */
-.view--modal-full {
+.view--modalFull {
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2717,7 +2717,7 @@ Modal that is presented full screen on all sizes
   top: 0;
   width: 100%;
   z-index: 3; }
-  .view--modal-full.off {
+  .view--modalFull.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
     transform: translateY(100vh); }
@@ -2736,7 +2736,7 @@ lays out as a dialog on background content on larger screens.
 ```html_example
 <a class="link" href="pages/modal-snap.html">Demo</a> 
 
-<div class="view view--modal-snap display--none">
+<div class="view view--modalSnap display--none">
 	<header class="view-head">
 		<div class="row inverted"> 
 			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
@@ -2759,7 +2759,7 @@ lays out as a dialog on background content on larger screens.
 </div>
 ```
 */
-.view--modal-snap {
+.view--modalSnap {
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2773,12 +2773,12 @@ lays out as a dialog on background content on larger screens.
   position: absolute;
   width: 440px;
   z-index: 3; }
-  .view--modal-snap.off {
+  .view--modalSnap.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
     transform: translateY(100vh); }
   @media only screen and (max-width: 440px) {
-    .view--modal-snap {
+    .view--modalSnap {
       -webkit-transform: translate3d(0, 0, 0);
       -ms-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
@@ -2791,7 +2791,7 @@ lays out as a dialog on background content on larger screens.
       position: absolute;
       top: 0;
       width: 100%; }
-      .view--modal-snap.off {
+      .view--modalSnap.off {
         -webkit-transform: translateY(100vh);
         -ms-transform: translateY(100vh);
         transform: translateY(100vh); } }
