@@ -7,10 +7,10 @@
 <script type="text/javascript">
 $(function() {
 	//
-	// Disable links by default
+	// Disable links without real href
 	//
 	$('a').on("click", function(e) {
-		if ( this.href == "#" || $(this).hasClass('noFollow') ) {
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
 			e.preventDefault();
 		}
 		return;
@@ -30,13 +30,6 @@ $(function() {
 			}
 		});
 	}
-
-
-	// TODO: modal code
-
-
-
-
 
 	//
 	// lunr search index
