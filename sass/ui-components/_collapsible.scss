@@ -27,7 +27,7 @@ $_easingFunc: ease-in-out;
 	@include transition(max-height $_transitionSpeed $_easingFunc);
 	will-change: max-height;
 	height: auto;
-	max-height: $breakpoint-xl; /* arbitrary value for easing */
+	max-height: 4000px; /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */
 
 }
 
