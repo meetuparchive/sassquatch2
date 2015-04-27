@@ -7,11 +7,13 @@
 <script type="text/javascript">
 $(function() {
 	//
-	// Disable links by default
+	// Disable links without real href
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//

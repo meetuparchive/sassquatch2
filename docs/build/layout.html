@@ -194,14 +194,12 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="bounds">Bounds</h1>
-
-<p>Used as a non-visual content container that manages content measure,
- Similar to <a href="http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar">sassquatch 1 <code>docBounds</code></a>.</p>
-
-<p>Centers children with auto margin, clears floats, applies
-padding, and sets a max-width.</p>
-<div class="codeExample"><div class="exampleOutput"><section class="stripe">
+<h1 id="bounds" class="styleguide">Bounds</h1>
+<p class="styleguide">Used as a non-visual content container that manages content measure,
+ Similar to <a class="styleguide" href="http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar" title="http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar">sassquatch 1 <code class="styleguide">docBounds</code></a>.</p><p class="styleguide">Centers children with auto margin, clears floats, applies
+padding, and sets a max-width.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="stripe">
     <p>This is just a paragraph inside a stripe. There's no bounds element to center and set the measure of this text.</p>
 </section>
 
@@ -217,7 +215,11 @@ padding, and sets a max-width.</p>
         <p>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
     </div>
 </section>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>This is just a paragraph inside a stripe. There's no bounds element to center and set the measure of this text.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 
@@ -232,36 +234,35 @@ padding, and sets a max-width.</p>
         <span class="nt">&lt;p&gt;&lt;strong&gt;</span>Previous example, shaded to show detail<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
         <span class="nt">&lt;p&gt;</span>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/section&gt;</span>
-</pre></div></div></div>
-<h2>Bounds variants</h2>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<table><thead>
-<tr>
+<h2>Bounds variants</h2>
+<table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>.bounds</code></td>
+ <tr>
+<td><code class="styleguide">.bounds</code></td>
 <td>standard (narrow) bounds for any type of content</td>
 </tr>
 <tr>
-<td><code>.bounds--wide</code></td>
+<td><code class="styleguide">.bounds--wide</code></td>
 <td>bounds for wrapping wider content, such as gridList</td>
 </tr>
 <tr>
-<td><code>.bounds--sideHeader</code></td>
+<td><code class="styleguide">.bounds--sideHeader</code></td>
 <td>bounds for wrapping standard (narrow) content, offset by labels to the side at wide widths</td>
 </tr>
-</tbody></table>
-
+ </table>
 <h2>Side Header example</h2>
-
-<p>The <code>bounds--sideHeader</code> variant applies styles to accommodate a
-<code>bounds-header</code> element. A <code>bounds-header</code> is pulled to the left side
-of the bounds on wide screens (<code>large</code> breakpoint), and linearizes on small screens (less than <code>large</code>).</p>
-<div class="codeExample"><div class="exampleOutput">    <section class="stripe">
+<p class="styleguide">The <code class="styleguide">bounds--sideHeader</code> variant applies styles to accommodate a
+<code class="styleguide">bounds-header</code> element. A <code class="styleguide">bounds-header</code> is pulled to the left side
+of the bounds on wide screens (<code class="styleguide">large</code> breakpoint), and linearizes on small screens (less than <code class="styleguide">large</code>).</p><div class="codeExample">
+  <div class="exampleOutput">
+        <section class="stripe">
         <div class="bounds bounds--sideHeader">
 
             <div class="bounds-header chunk">
@@ -273,7 +274,11 @@ of the bounds on wide screens (<code>large</code> breakpoint), and linearizes on
             <p>You can apply the bounds-header class to a single element, or wrap a group of elements you'd like to pull to the side on large screens.</p>
         </div>
     </section>
-</div><div class="codeBlock"><div class="highlight"><pre>    <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds bounds--sideHeader"</span><span class="nt">&gt;</span>
 
             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds-header chunk"</span><span class="nt">&gt;</span>
@@ -284,16 +289,17 @@ of the bounds on wide screens (<code>large</code> breakpoint), and linearizes on
             <span class="nt">&lt;p&gt;</span>This is just some content within the bounds, behaving like any other bounds content.<span class="nt">&lt;/p&gt;</span>
             <span class="nt">&lt;p&gt;</span>You can apply the bounds-header class to a single element, or wrap a group of elements you'd like to pull to the side on large screens.<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/section&gt;</span>
-</pre></div></div></div>
-<h1 id="chunk">Chunk</h1>
+    <span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>Adds bottom space to an element
-or a group of elements.</p>
-
-<p><em>Can be used in combination with any other component
-(ie. <code>class=&quot;row chunk&quot;</code>)</em></p>
-<div class="codeExample"><div class="exampleOutput"><div class="_DOC-SHADE chunk">
+<h1 id="chunk" class="styleguide">Chunk</h1>
+<p class="styleguide">Adds bottom space to an element
+or a group of elements.</p><p class="styleguide"><em>Can be used in combination with any other component
+(ie. <code class="styleguide">class=&quot;row chunk&quot;</code>)</em></p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="_DOC-SHADE chunk">
     <h2>Some heading</h2>
     <p>Some text</p>
     <p class="text--caption">Some kind of caption</p>
@@ -306,7 +312,11 @@ or a group of elements.</p>
     <p>Some text</p>
     <p class="text--caption">Some kind of caption</p>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE chunk"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE chunk"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;h2&gt;</span>Some heading<span class="nt">&lt;/h2&gt;</span>
     <span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Some kind of caption<span class="nt">&lt;/p&gt;</span>
@@ -318,14 +328,15 @@ or a group of elements.</p>
     <span class="nt">&lt;h2&gt;</span>Some heading<span class="nt">&lt;/h2&gt;</span>
     <span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Some kind of caption<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h1 id="exactList">Exact list</h1>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>Adaptive overflow control for inline block lists</p>
-
-<p><em>better docs TK</em></p>
-<div class="codeExample"><div class="exampleOutput"><div class="exactList">
+<h1 id="exactList" class="styleguide">Exact list</h1>
+<p class="styleguide">Adaptive overflow control for inline block lists</p><p class="styleguide"><em>better docs TK</em></p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="exactList">
     <ul class="inlineblockList exactList-content">
         <li><img src="https://placekitten.com/g/42/60" /></li>
         <li><img src="https://placekitten.com/g/42/60" /></li>
@@ -342,7 +353,11 @@ or a group of elements.</p>
         <li><img src="https://placekitten.com/g/42/60" /></li>
     </ul>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"exactList"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"exactList"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList exactList-content"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
@@ -358,137 +373,152 @@ or a group of elements.</p>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h1 id="flexRow">Row</h1>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>Arranges content in rows using <code>display: flex</code>.</p>
-
-<p>The <code>.row</code> class is applied to a wrapping element.</p>
-
-<p>Direct children of <code>.row</code> are flex children, and require
-a class of <code>.row-item</code> with an optional <code>.row-item--shirnk</code>
-for a flex-shrink item.</p>
-
-<p>The flex children in flex row do not have a <code>flex-basis</code> set; a
-basis is not required for most common layout tasks.</p>
-
-<p><em>Includes <code>table-cell</code> fallback for IE8.</em></p>
-
+<h1 id="flexRow" class="styleguide">Row</h1>
+<p class="styleguide">Arranges content in rows using <code class="styleguide">display: flex</code>.</p><p class="styleguide">The <code class="styleguide">.row</code> class is applied to a wrapping element.</p><p class="styleguide">Direct children of <code class="styleguide">.row</code> are flex children, and require
+a class of <code class="styleguide">.row-item</code> with an optional <code class="styleguide">.row-item--shirnk</code>
+for a flex-shrink item.</p><p class="styleguide">The flex children in flex row do not have a <code class="styleguide">flex-basis</code> set; a
+basis is not required for most common layout tasks.</p><p class="styleguide"><em>Includes <code class="styleguide">table-cell</code> fallback for IE8.</em></p>
 <h4>Examples:</h4>
-<div class="codeExample"><div class="exampleOutput"><div class="row">
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row">
     <div class="_DOC-SHADE row-item">Item 1</div>
     <div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
     <div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
     <div class="_DOC-SHADE row-item">Item 4</div>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="row">
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row">
     <div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
     <div class="_DOC-SHADE row-item">Item 2</div>
     <div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="row row--flexEnd">
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row row--flexEnd">
     <div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
     <div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
     <div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--flexEnd"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--flexEnd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div><div class="codeExample"><div class="exampleOutput"><div class="row row--spaceBetween row--reverse">
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row row--spaceBetween row--reverse">
     <div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
     <div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
     <div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
     <div class="_DOC-SHADE row-item row-item--shrink">Item 4</div>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--spaceBetween row--reverse"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--spaceBetween row--reverse"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h2 id="flexrowItemVars">Row Item variants</h2>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>A class of <code>.row-item</code> is <strong>required</strong> on row items.
-The following classes are optional variants:</p>
-
-<table><thead>
-<tr>
+<h2 id="flexrowItemVars" class="styleguide">Row Item variants</h2>
+<p class="styleguide">A class of <code class="styleguide">.row-item</code> is <strong>required</strong> on row items.
+The following classes are optional variants:</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>.row-item--shrink</code></td>
+ <tr>
+<td><code class="styleguide">.row-item--shrink</code></td>
 <td>Item shrinks to fit content</td>
 </tr>
 <tr>
-<td><code>.row-item--alignMiddle</code></td>
+<td><code class="styleguide">.row-item--alignMiddle</code></td>
 <td>Vertically aligns content to middle</td>
 </tr>
-</tbody></table>
-
-<h2 id="flexrowParent">Row variants</h2>
-
-<p>A class of <code>.row</code> is <strong>required</strong> on the flex row parent. The
-following classes are optional variants:</p>
-
-<table><thead>
-<tr>
+ </table>
+<h2 id="flexrowParent" class="styleguide">Row variants</h2>
+<p class="styleguide">A class of <code class="styleguide">.row</code> is <strong>required</strong> on the flex row parent. The
+following classes are optional variants:</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>.row--noGutters</code></td>
-<td>removes padding from all <code>.row-item</code> children</td>
+ <tr>
+<td><code class="styleguide">.row--noGutters</code></td>
+<td>removes padding from all <code class="styleguide">.row-item</code> children</td>
 </tr>
 <tr>
-<td><code>.row--wrap</code></td>
+<td><code class="styleguide">.row--wrap</code></td>
 <td>allows row wrapping (useful for collapsing rows in smaller viewports)</td>
 </tr>
 <tr>
-<td><code>.row--reverse</code></td>
+<td><code class="styleguide">.row--reverse</code></td>
 <td>reverses row order</td>
 </tr>
 <tr>
-<td><code>.row--flexEnd</code></td>
-<td>justifies content to <code>flex-end</code></td>
+<td><code class="styleguide">.row--flexEnd</code></td>
+<td>justifies content to <code class="styleguide">flex-end</code></td>
 </tr>
 <tr>
-<td><code>.row--center</code></td>
-<td>justifies content to <code>center</code></td>
+<td><code class="styleguide">.row--center</code></td>
+<td>justifies content to <code class="styleguide">center</code></td>
 </tr>
 <tr>
-<td><code>.row--spaceBetween</code></td>
-<td>justifies content to <code>spaceBetween</code></td>
+<td><code class="styleguide">.row--spaceBetween</code></td>
+<td>justifies content to <code class="styleguide">spaceBetween</code></td>
 </tr>
 <tr>
-<td><code>.row--spaceAround</code></td>
-<td>justifies content to <code>spaceAround</code></td>
+<td><code class="styleguide">.row--spaceAround</code></td>
+<td>justifies content to <code class="styleguide">spaceAround</code></td>
 </tr>
-</tbody></table>
-
-<h1 id="gridList">Grid List</h1>
-
-<p>A grid layout with breakpoint specific numbers of items in each row.</p>
-
-<p>better docs TK</p>
-<div class="codeExample"><div class="exampleOutput"><ul class="gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4">
+ </table>
+<h1 id="gridList" class="styleguide">Grid List</h1>
+<p class="styleguide">A grid layout with breakpoint specific numbers of items in each row.</p><p class="styleguide">better docs TK</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul class="gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4">
     <li class="_DOC-SHADE">grid cell</li>
     <li class="_DOC-SHADE">grid cell</li>
     <li class="_DOC-SHADE">grid cell</li>
@@ -498,53 +528,52 @@ following classes are optional variants:</p>
     <li class="_DOC-SHADE">grid cell</li>
     <li class="_DOC-SHADE">grid cell</li>
 </ul>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</pre></div></div></div>
-<h2 id="gridListVariants">Grid List variants</h2>
 
-<p>A class of <code>gridList</code> is <strong>required</strong> on the gridList
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="gridListVariants" class="styleguide">Grid List variants</h2>
+<p class="styleguide">A class of <code class="styleguide">gridList</code> is <strong>required</strong> on the gridList
 parent element. By default, gridList creates a 2 column
-grid.</p>
-
-<p>The following classes are optional variants:</p>
-
-<table><thead>
-<tr>
+grid.</p><p class="styleguide">The following classes are optional variants:</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>.gridList--photoGrid</code></td>
+ <tr>
+<td><code class="styleguide">.gridList--photoGrid</code></td>
 <td>Optimizes list item spacing for a grid of photos</td>
 </tr>
 <tr>
-<td><code>.gridList--has[n]</code></td>
-<td>Adjusts number of columns (ie. <code>.gridList--has4</code> creates a 4 column grid for all screen sizes)</td>
+<td><code class="styleguide">.gridList--has[n]</code></td>
+<td>Adjusts number of columns (ie. <code class="styleguide">.gridList--has4</code> creates a 4 column grid for all screen sizes)</td>
 </tr>
 <tr>
-<td><code>.atMedium_gridList--has[n]</code></td>
-<td>Sets number of columns for medium breakpoint and up (ie. <code>.atMedium_gridList--has6</code>)</td>
+<td><code class="styleguide">.atMedium_gridList--has[n]</code></td>
+<td>Sets number of columns for medium breakpoint and up (ie. <code class="styleguide">.atMedium_gridList--has6</code>)</td>
 </tr>
 <tr>
-<td><code>.atLarge_gridList--has[n]</code></td>
-<td>Sets number of columns for large breakpoint and up (ie. <code>.atLarge_gridList--has10</code>)</td>
+<td><code class="styleguide">.atLarge_gridList--has[n]</code></td>
+<td>Sets number of columns for large breakpoint and up (ie. <code class="styleguide">.atLarge_gridList--has10</code>)</td>
 </tr>
-</tbody></table>
-
-<h1 id="hscroll">Horizontal Scroll</h1>
-
-<p>Applies styles for horizontal scrolling lists.</p>
-<div class="codeExample"><div class="exampleOutput"><div class="hscroll">
+ </table>
+<h1 id="hscroll" class="styleguide">Horizontal Scroll</h1>
+<p class="styleguide">Applies styles for horizontal scrolling lists.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="hscroll">
     <ul class="hscroll-content">
         <li><img src="https://placekitten.com/g/240/160" /></li>
         <li><img src="https://placekitten.com/g/240/160" /></li>
@@ -560,7 +589,11 @@ grid.</p>
         <li><img src="https://placekitten.com/g/240/160" /></li>
     </ul>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hscroll"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hscroll"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hscroll-content"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/240/160"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/240/160"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
@@ -575,13 +608,16 @@ grid.</p>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/240/160"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/240/160"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h2>Media-conditional <code>hscroll</code></h2>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>It&#39;s possible to create an <code>hscroll</code> for small screens that expands
-into a non-scrolling list in the document flow for larger screens.</p>
-<div class="codeExample"><div class="exampleOutput"><div class="hscroll atMedium_hscroll--unclip">
+<h2>Media-conditional <code class="styleguide">hscroll</code></h2>
+<p class="styleguide">It&#39;s possible to create an <code class="styleguide">hscroll</code> for small screens that expands
+into a non-scrolling list in the document flow for larger screens.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="hscroll atMedium_hscroll--unclip">
     <ul class="hscroll-content">
         <li><img src="https://placekitten.com/g/200/120" /></li>
         <li><img src="https://placekitten.com/g/200/120" /></li>
@@ -591,7 +627,11 @@ into a non-scrolling list in the document flow for larger screens.</p>
         <li><img src="https://placekitten.com/g/200/120" /></li>
     </ul>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hscroll atMedium_hscroll--unclip"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hscroll atMedium_hscroll--unclip"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hscroll-content"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/200/120"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/200/120"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
@@ -600,51 +640,53 @@ into a non-scrolling list in the document flow for larger screens.</p>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/200/120"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/200/120"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<p>A class of <code>hscroll</code> is <strong>required</strong>; the following classes are
-optional variants:</p>
-
-<table><thead>
-<tr>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">A class of <code class="styleguide">hscroll</code> is <strong>required</strong>; the following classes are
+optional variants:</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>atMedium_hscroll--unclip</code></td>
+ <tr>
+<td><code class="styleguide">atMedium_hscroll--unclip</code></td>
 <td>Allows visible overflow (as inline block list) at medium &amp; up</td>
 </tr>
 <tr>
-<td><code>atLarge_hscroll--unclip</code></td>
+<td><code class="styleguide">atLarge_hscroll--unclip</code></td>
 <td>Allows visible overflow (as inline block list) at large &amp; up</td>
 </tr>
-</tbody></table>
-
-<h1 id="inlineblockList">Inline-block list</h1>
-
-<p>Resets list styles; adds <code>display: inline-block</code> to
-each list item and right gutters between items.</p>
-<div class="codeExample"><div class="exampleOutput"><ul class="inlineblockList">
+ </table>
+<h1 id="inlineblockList" class="styleguide">Inline-block list</h1>
+<p class="styleguide">Resets list styles; adds <code class="styleguide">display: inline-block</code> to
+each list item and right gutters between items.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul class="inlineblockList">
     <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
     <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
     <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
     <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 </ul>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</pre></div></div></div>
-<h1 id="list">Divided list</h1>
 
-<p>Standard divided/spaced list; similar to
-an iOS table view.</p>
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>Bottom spacing is provided with <code>chunk</code>.</p>
-<div class="codeExample"><div class="exampleOutput"><ul class="list">
+<h1 id="list" class="styleguide">Divided list</h1>
+<p class="styleguide">Standard divided/spaced list; similar to
+an iOS table view.</p><p class="styleguide">Bottom spacing is provided with <code class="styleguide">chunk</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul class="list">
     <li class="list-item">
         <h2 class="chunk">Just a list item</h2>
     </li>
@@ -655,25 +697,32 @@ an iOS table view.</p>
         <h2 class="chunk">Just a list item</h2>
     </li>
 </ul>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</pre></div></div></div>
-<h1 id="stack">Stack</h1>
 
-<p>The <code>stack</code> layout tool is for elements that
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="stack" class="styleguide">Stack</h1>
+<p class="styleguide">The <code class="styleguide">stack</code> layout tool is for elements that
 should be stacked in a column at small sizes,
 and spreads across horizontal space at a given
-breakpoint.</p>
-<div class="codeExample"><div class="exampleOutput"><div class="stack atLarge_stack--spread">
+breakpoint.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="stack atLarge_stack--spread">
     <div class="stack-item stack-item--shrink _DOC-SHADE">
         <p>Stack Item (shrinks when spread)</p>
     </div>
@@ -681,59 +730,54 @@ breakpoint.</p>
         <p>Stack Item</p>
     </div>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack atLarge_stack--spread"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack atLarge_stack--spread"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack-item stack-item--shrink _DOC-SHADE"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>Stack Item (shrinks when spread)<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack-item _DOC-SHADE"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>Stack Item<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h2>Stack variants</h2>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>A class of <code>stack</code> on the parent element is required.
+<h2>Stack variants</h2>
+<p class="styleguide">A class of <code class="styleguide">stack</code> on the parent element is required.
 Collapsing of the stack doesn&#39;t happen at any viewport
 size by default, so <strong>you must specify a spread point</strong>
-with one of the following classes.</p>
-
-<table><thead>
-<tr>
+with one of the following classes.</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>atMedium_stack--spread</code></td>
-<td>Spreads out the stack elements horizontally at <code>medium</code> breakpoint</td>
+ <tr>
+<td><code class="styleguide">atMedium_stack--spread</code></td>
+<td>Spreads out the stack elements horizontally at <code class="styleguide">medium</code> breakpoint</td>
 </tr>
 <tr>
-<td><code>atLarge_stack--spread</code></td>
-<td>Spreads out the stack elements horizontally at <code>large</code> breakpoint</td>
+<td><code class="styleguide">atLarge_stack--spread</code></td>
+<td>Spreads out the stack elements horizontally at <code class="styleguide">large</code> breakpoint</td>
 </tr>
-</tbody></table>
-
+ </table>
 <h2>stack-item variants</h2>
-
-<table><thead>
-<tr>
+<table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>.stack-item--shrink</code></td>
+ <tr>
+<td><code class="styleguide">.stack-item--shrink</code></td>
 <td>Item shrinks to fit content <strong>only when spread</strong></td>
 </tr>
-</tbody></table>
-
-<h1 id="stripe">Stripe</h1>
-
-<p>A <code>.stipe</code> class should be applied to <code>&lt;section&gt;</code> elements
-to visually divide the page with stripes of color.</p>
-
-<p>To align content within a stripe, use <code>.bounds</code>.</p>
-<div class="codeExample"><div class="exampleOutput"><section class="stripe">
+ </table>
+<h1 id="stripe" class="styleguide">Stripe</h1>
+<p class="styleguide">A <code class="styleguide">.stipe</code> class should be applied to <code class="styleguide">&lt;section&gt;</code> elements
+to visually divide the page with stripes of color.</p><p class="styleguide">To align content within a stripe, use <code class="styleguide">.bounds</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="stripe">
     <div class="bounds">
         <p>... default stripe ...</p>
     </div>
@@ -750,7 +794,11 @@ to visually divide the page with stripes of color.</p>
         <p>... collection variant of stripe, used to contain collections of cards </p>
     </div>
 </section>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>... default stripe ...<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
@@ -766,54 +814,63 @@ to visually divide the page with stripes of color.</p>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>... collection variant of stripe, used to contain collections of cards <span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/section&gt;</span>
-</pre></div></div></div>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
 <h4>Stripe variants</h4>
-
-<p>A class of <code>.stripe</code> is required; the following classes are
-optional variants:</p>
-
-<table><thead>
-<tr>
+<p class="styleguide">A class of <code class="styleguide">.stripe</code> is required; the following classes are
+optional variants:</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>.stripe--inverted</code></td>
-<td>applies the standard <code>$C_contentBGInverted</code> background color</td>
+ <tr>
+<td><code class="styleguide">.stripe--inverted</code></td>
+<td>applies the standard <code class="styleguide">$C_contentBGInverted</code> background color</td>
 </tr>
 <tr>
-<td><code>.stripe--collection</code></td>
+<td><code class="styleguide">.stripe--collection</code></td>
 <td>applies a light gray background; for use with card collections</td>
 </tr>
-</tbody></table>
-
-<h2 id="heroStripes">Hero Stripes</h2>
-
-<p>Special <code>stripe</code> variants are avaiable for
+ </table>
+<h2 id="heroStripes" class="styleguide">Hero Stripes</h2>
+<p class="styleguide">Special <code class="styleguide">stripe</code> variants are avaiable for
 &quot;hero&quot; header stripes.</p>
-
 <h3>Basic hero</h3>
-
-<p>Uses the <code>stripe--hero</code> variant.</p>
-<div class="codeExample"><div class="exampleOutput"><section class="stripe stripe--hero inverted">
+<p class="styleguide">Uses the <code class="styleguide">stripe--hero</code> variant.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="stripe stripe--hero inverted">
     <h4>better example TK</h4>
 </section>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--hero inverted"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--hero inverted"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;h4&gt;</span>better example TK<span class="nt">&lt;/h4&gt;</span>
-<span class="nt">&lt;/section&gt;</span>
-</pre></div></div></div>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
 <h3>Photo hero</h3>
-
-<p>Uses the <code>stripe--photoHero</code> variant.</p>
-<div class="codeExample"><div class="exampleOutput"><section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
+<p class="styleguide">Uses the <code class="styleguide">stripe--photoHero</code> variant.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
     <h4>better example TK</h4>
 </section>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--photoHero inverted"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);"</span><span class="nt">&gt;</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--photoHero inverted"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;h4&gt;</span>better example TK<span class="nt">&lt;/h4&gt;</span>
-<span class="nt">&lt;/section&gt;</span>
-</pre></div></div></div>	</main>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -824,9 +881,12 @@ $(function() {
 	//
 	// Disable links by default
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		debugger;
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//
@@ -1050,6 +1110,36 @@ $(function() {
 				
 
 				index.add({
+					"title": "Modal mixins",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal mixins",
+					"path": "sass_utils_|_mixins_&_placeholders.html#modalUtils"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Dialog Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Dialog Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Dialog_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Full Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Full Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Full_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Shadow utilities",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Shadow utilities",
 					"path": "sass_utils_|_mixins_&_placeholders.html#shadow"
@@ -1093,16 +1183,6 @@ $(function() {
 					"title": "Text utils",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text utils",
 					"path": "sass_utils_|_mixins_&_placeholders.html#text"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Link color",
-					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
-					"path": "sass_utils_|_mixins_&_placeholders.html#linkColor"
 				});
 
 			
@@ -1184,8 +1264,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Anchors & Buttons",
-					"breadcrumb": "Modifier Classes > Anchors & Buttons",
+					"title": "Anchors &amp; Buttons",
+					"breadcrumb": "Modifier Classes > Anchors &amp; Buttons",
 					"path": "modifier_classes.html#buttonMod"
 				});
 
@@ -1515,6 +1595,16 @@ $(function() {
 					"title": "Running text",
 					"breadcrumb": "Typography > Running text",
 					"path": "typography.html#runningText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Link color",
+					"breadcrumb": "Typography > Link color",
+					"path": "typography.html#linkColor"
 				});
 
 			
@@ -1863,6 +1953,36 @@ $(function() {
 		
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Modals",
+					"breadcrumb": "Views > Modals",
+					"path": "views.html#modals"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Full Modal View",
+					"breadcrumb": "Views > Full Modal View",
+					"path": "views.html#fullModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Snap Modal View (Dialog)",
+					"breadcrumb": "Views > Snap Modal View (Dialog)",
+					"path": "views.html#snapModalView"
+				});
+
 			
 				
 				

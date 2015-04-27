@@ -1,16 +1,105 @@
-// TODO: needs docs and cleanup
+/*doc
+---
+title: Modals
+name: modals
+category: Views
+---
 
+## view--modal variants
+
+Class                      | Description
+-------------------------- | ---------------------------
+`.view--modalFull`        | Makes a modal that is full screen on all screen sizes
+`.view--modalSnap`        | Creates a modal that is full screen on small sizes, overlay/dialog on larger screens
+
+
+*/
+
+/*doc
+---
+title: Full Modal View 
+name: fullModalView
+parent: modals
+---
+
+Modal that is presented full screen on all sizes
+
+```html_example
+<a class="link" href="pages/modal-full.html">Demo</a> 
+
+<div class="view view--modalFull display--none">
+	<header class="view-head">
+		<div class="row inverted"> 
+			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+				<img src="style/img/logo.svg" width="35" height="24"></a>
+			</a>
+			<div class="row-item row-item--alignMiddle viewHead-heading">
+				<h1 class="wrap--singleLine--truncate">This is a header</h1> 
+			</div>
+		</div>
+	</header>
+	<div id="modal_body" class="view-body">
+		<div class="stripe">
+			<div class="bounds">
+			... body content here ...
+			</div>
+		</div>
+	</div>
+</div>
+```
+
+*/
 
 // MODAL VIEW FULL
 // full screen at all screen widths
-.view--modal-full {
+
+.view--modalFull {
 	@include modal-full;
 	z-index: map-get($zindex-map, "modal");
 }
 
+/*doc
+---
+title: Snap Modal View (Dialog) 
+name: snapModalView
+parent: modals
+---
+
+Modal that snaps to the whole viewport and is full screen on small screens,
+lays out as a dialog on background content on larger screens.
+
+
+```html_example
+<a class="link" href="pages/modal-snap.html">Demo</a> 
+
+<div class="view view--modalSnap display--none">
+	<header class="view-head">
+		<div class="row inverted"> 
+			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+				Close
+			</a>
+			<div class="row-item row-item--alignMiddle viewHead-heading">
+				<h1 class="wrap--singleLine--truncate">Change your setting</h1> 
+			</div>
+		</div>
+	</header>
+	<div id="modal_body" class="view-body">
+		<div class="stripe">
+			<div class="bounds">
+			... body content here ...
+			
+				<button>Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+```
+*/
+
 // MODAL VIEW SNAP
 // full at narrow widths, dialog at wide widths
-.view--modal-snap {
+
+.view--modalSnap {
 	@include modal-dialog;
 	@include atMediaDown(small){
 		@include modal-full;

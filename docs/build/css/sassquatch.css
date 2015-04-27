@@ -476,6 +476,44 @@ Clears floated children.
 
 /*doc
 ---
+title: Modal mixins
+name: modalUtils
+category: Sass Utils | Mixins & Placeholders
+---
+
+Description here
+
+*/
+/*doc
+---
+title: Modal Dialog Mixin
+parent: modalUtils
+---
+
+Use this mixin to get the behavior of a [Snap Modal View][snapModalView],
+a view that snaps to full page on small screens and a dialog on larger formats.
+
+```
+	@include modal-dialog;
+
+```
+*/
+/*doc
+---
+title: Modal Full Mixin
+parent: modalUtils
+---
+
+Use this mixin to get behavior of a full page modal.
+See [the Full Modal View documentation][fullModalView]
+
+```
+	@include modal-full;
+
+```
+*/
+/*doc
+---
 title: Shadow utilities
 name: shadow
 category: Sass Utils | Mixins & Placeholders
@@ -2615,7 +2653,57 @@ content container for the view.
   height: 100vh;
   overflow: auto; }
 
-.view--modal-full {
+/*doc
+---
+title: Modals
+name: modals
+category: Views
+---
+
+## view--modal variants
+
+Class                      | Description
+-------------------------- | ---------------------------
+`.view--modalFull`        | Makes a modal that is full screen on all screen sizes
+`.view--modalSnap`        | Creates a modal that is full screen on small sizes, overlay/dialog on larger screens
+
+
+*/
+/*doc
+---
+title: Full Modal View 
+name: fullModalView
+parent: modals
+---
+
+Modal that is presented full screen on all sizes
+
+```html_example
+<a class="link" href="pages/modal-full.html">Demo</a> 
+
+<div class="view view--modalFull display--none">
+	<header class="view-head">
+		<div class="row inverted"> 
+			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+				<img src="style/img/logo.svg" width="35" height="24"></a>
+			</a>
+			<div class="row-item row-item--alignMiddle viewHead-heading">
+				<h1 class="wrap--singleLine--truncate">This is a header</h1> 
+			</div>
+		</div>
+	</header>
+	<div id="modal_body" class="view-body">
+		<div class="stripe">
+			<div class="bounds">
+			... body content here ...
+			</div>
+		</div>
+	</div>
+</div>
+```
+
+*/
+.view--modalFull {
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2629,12 +2717,49 @@ content container for the view.
   top: 0;
   width: 100%;
   z-index: 3; }
-  .view--modal-full.off {
+  .view--modalFull.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
     transform: translateY(100vh); }
 
-.view--modal-snap {
+/*doc
+---
+title: Snap Modal View (Dialog) 
+name: snapModalView
+parent: modals
+---
+
+Modal that snaps to the whole viewport and is full screen on small screens,
+lays out as a dialog on background content on larger screens.
+
+
+```html_example
+<a class="link" href="pages/modal-snap.html">Demo</a> 
+
+<div class="view view--modalSnap display--none">
+	<header class="view-head">
+		<div class="row inverted"> 
+			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+				Close
+			</a>
+			<div class="row-item row-item--alignMiddle viewHead-heading">
+				<h1 class="wrap--singleLine--truncate">Change your setting</h1> 
+			</div>
+		</div>
+	</header>
+	<div id="modal_body" class="view-body">
+		<div class="stripe">
+			<div class="bounds">
+			... body content here ...
+			
+				<button>Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+```
+*/
+.view--modalSnap {
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2648,12 +2773,12 @@ content container for the view.
   position: absolute;
   width: 440px;
   z-index: 3; }
-  .view--modal-snap.off {
+  .view--modalSnap.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
     transform: translateY(100vh); }
   @media only screen and (max-width: 440px) {
-    .view--modal-snap {
+    .view--modalSnap {
       -webkit-transform: translate3d(0, 0, 0);
       -ms-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
@@ -2666,7 +2791,7 @@ content container for the view.
       position: absolute;
       top: 0;
       width: 100%; }
-      .view--modal-snap.off {
+      .view--modalSnap.off {
         -webkit-transform: translateY(100vh);
         -ms-transform: translateY(100vh);
         transform: translateY(100vh); } }
@@ -3255,8 +3380,11 @@ _(The inline style on the card element is for documentation purposes only)_
     right: -1px;
     top: -1px; }
 
+.card--event--past:before {
+  background: #e6e9ec; }
+
 .card--event--canceled:before {
-  background: #353e48; }
+  background: #e6e9ec; }
 
 .card--event--featured:before {
   background: #f0cb4f; }

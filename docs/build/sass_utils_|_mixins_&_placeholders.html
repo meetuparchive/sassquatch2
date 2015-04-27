@@ -176,6 +176,25 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#modalUtils">Modal mixins</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#shadow">Shadow utilities</a>
 										</li>
 									
@@ -206,11 +225,6 @@
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#text">Text utils</a>
 										</li>
-									
-
-								
-
-									
 									
 
 								
@@ -267,209 +281,223 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="align">Alignment Utilities</h1>
+<h1 id="align" class="styleguide">Alignment Utilities</h1>
 
-<h2 id="valign">Vertical-align children</h2>
+<h2 id="valign" class="styleguide">Vertical-align children</h2>
+<p class="styleguide"><strong>Try to avoid using for essential, non-decorative things</strong>
+Aligns children of selected element using flexbox.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %valignChildren;
+@extend %valignChildren--bottom;</pre>
+  </div>
+</div>
+<h1 id="animation" class="styleguide">Animation</h1>
 
-<p><strong>Try to avoid using for essential, non-decorative things</strong>
-Aligns children of selected element using flexbox.</p>
-<div class="codeBlock"><div class="highlight"><pre>@extend %valignChildren;
-@extend %valignChildren--bottom;
-</pre></div></div>
-<h1 id="animation">Animation</h1>
+<h2 id="bounce-in-subtle" class="styleguide">Subtle bounce-in</h2>
+<p class="styleguide">Subtle bounce effect using keyframes, provided via simple mixin
+<em>original keyframes generated with <a class="styleguide" href="http://goo.gl/tT4jnp" title="http://goo.gl/tT4jnp">Bounce.js</a></em></p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include animate--bounce-in-subtle($time: 750ms);</pre>
+  </div>
+</div>
+<h2 id="spin" class="styleguide">Infinite spin</h2>
+<p class="styleguide">Infinite 2d rotation; 0-360deg.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include animate--spin($time: 0.8s);</pre>
+  </div>
+</div>
+<h1 id="background" class="styleguide">Background Utilities</h1>
 
-<h2 id="bounce-in-subtle">Subtle bounce-in</h2>
-
-<p>Subtle bounce effect using keyframes, provided via simple mixin
-<em>original keyframes generated with <a href="http://goo.gl/tT4jnp">Bounce.js</a></em></p>
-<div class="codeBlock"><div class="highlight"><pre>@include animate--bounce-in-subtle($time: 750ms);
-</pre></div></div>
-<h2 id="spin">Infinite spin</h2>
-
-<p>Infinite 2d rotation; 0-360deg.</p>
-<div class="codeBlock"><div class="highlight"><pre>@include animate--spin($time: 0.8s);
-</pre></div></div>
-<h1 id="background">Background Utilities</h1>
-
-<h2 id="backgroundClip">Background clip mixin</h2>
-
-<p>Sets background-clip property</p>
-<div class="codeBlock"><div class="highlight"><pre>@include background-clip($value: padding);
-@include background-clip('border');
-</pre></div></div>
-<h2 id="imgFill">Image fill placeholder</h2>
-
-<p>Sets background properties that center
+<h2 id="backgroundClip" class="styleguide">Background clip mixin</h2>
+<p class="styleguide">Sets background-clip property</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include background-clip($value: padding);
+@include background-clip('border');</pre>
+  </div>
+</div>
+<h2 id="imgFill" class="styleguide">Image fill placeholder</h2>
+<p class="styleguide">Sets background properties that center
 background image, set size to &#39;cover&#39;,
-and overflow hidden.</p>
-
-<p><em>[ie. avatars][avatar]</em></p>
-<div class="codeBlock"><div class="highlight"><pre>@extend %imgFill;
-</pre></div></div>
-<h1 id="breakpoints">Media Query Breakpoints</h1>
+and overflow hidden.</p><p class="styleguide"><em><a class="styleguide" href="ui_components.html#avatar" title="ui_components.html#avatar">ie. avatars</a></em></p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %imgFill;</pre>
+  </div>
+</div>
+<h1 id="breakpoints" class="styleguide">Media Query Breakpoints</h1>
 
 <h3>Mobile first mixin</h3>
-
-<p>This breakpoint mixin uses a <strong>mobile first</strong>
-strategy, meaning the <code>medium</code> breakpoint, for
-example, applies to <em>medium screens and larger</em>.</p>
-<div class="codeBlock"><div class="highlight"><pre>    @include atMediaUp(medium) {
+<p class="styleguide">This breakpoint mixin uses a <strong>mobile first</strong>
+strategy, meaning the <code class="styleguide">medium</code> breakpoint, for
+example, applies to <em>medium screens and larger</em>.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include atMediaUp(medium) {
         body::after {
             content: "medium screens and larger can see me";
         }
-    }
-</pre></div></div>
-<table><thead>
-<tr>
+    }</pre>
+  </div>
+</div><table class="styleguide"> <tr>
 <th>Breakpoint name</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>atMediaUp(small)</code></td>
+ <tr>
+<td><code class="styleguide">atMediaUp(small)</code></td>
 <td>Small sreens and up</td>
 </tr>
 <tr>
-<td><code>atMediaUp(medium)</code></td>
+<td><code class="styleguide">atMediaUp(medium)</code></td>
 <td>Landscape on most phones and up; portrait on some phablets</td>
 </tr>
 <tr>
-<td><code>atMediaUp(large)</code></td>
+<td><code class="styleguide">atMediaUp(large)</code></td>
 <td>Landscape on phabelts and up; portrait on most tablets or old desktops</td>
 </tr>
 <tr>
-<td><code>atMediaUp(huge)</code></td>
-<td>Modern desktop viewports and up or <a href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a></td>
+<td><code class="styleguide">atMediaUp(huge)</code></td>
+<td>Modern desktop viewports and up or <a class="styleguide" href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg" title="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a></td>
 </tr>
-</tbody></table>
-
+ </table>
 <h3>Breaking for smaller sizes and under</h3>
-
-<p>In the event you need to target a <strong>specific screen size and under</strong>,
-use the <code>atMediaDown</code> mixin.</p>
-<div class="codeBlock"><div class="highlight"><pre>    @include atMediaDown(medium) {
+<p class="styleguide">In the event you need to target a <strong>specific screen size and under</strong>,
+use the <code class="styleguide">atMediaDown</code> mixin.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include atMediaDown(medium) {
         body::after {
             content: "medium screens and smaller can see me";
         }
-    }
-</pre></div></div>
-<table><thead>
-<tr>
+    }</pre>
+  </div>
+</div><table class="styleguide"> <tr>
 <th>Breakpoint name</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>atMediaDown(small)</code></td>
+ <tr>
+<td><code class="styleguide">atMediaDown(small)</code></td>
 <td>Small screens and under; portrait on most mobile devices</td>
 </tr>
 <tr>
-<td><code>atMediaDown(medium)</code></td>
+<td><code class="styleguide">atMediaDown(medium)</code></td>
 <td>Landscape on most phones and under; portrait on some phablets</td>
 </tr>
 <tr>
-<td><code>atMediaDown(large)</code></td>
+<td><code class="styleguide">atMediaDown(large)</code></td>
 <td>Landscape on phabelts and under; portrait on most tablets or old desktops</td>
 </tr>
 <tr>
-<td><code>atMediaDown(huge)</code></td>
+<td><code class="styleguide">atMediaDown(huge)</code></td>
 <td>Huge screens and under</td>
 </tr>
-</tbody></table>
+ </table>
+<h1 id="button" class="styleguide">Button utilities</h1>
 
-<h1 id="button">Button utilities</h1>
+<h2 id="buttonPersonality" class="styleguide">Button personality placeholder</h2>
+<p class="styleguide">Disables user-select, sets cursor, and resets text-decoration.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %buttonPersonality;</pre>
+  </div>
+</div>
+<h1 id="colorUtil" class="styleguide">Color</h1>
 
-<h2 id="buttonPersonality">Button personality placeholder</h2>
-
-<p>Disables user-select, sets cursor, and resets text-decoration.</p>
-<div class="codeBlock"><div class="highlight"><pre>@extend %buttonPersonality;
-</pre></div></div>
-<h1 id="colorUtil">Color</h1>
-
-<h2 id="colorAllMixin">SVG + Text color</h2>
-
-<p>Sets properties to apply color to SVG icons
-<em>and</em> text.</p>
-<div class="codeBlock"><div class="highlight"><pre>@mixin color-all($color: black);
-</pre></div></div>
-<h2 id="svgColorMixin">SVG color</h2>
-
-<p>Sets properties to color SVG icons</p>
-<div class="codeBlock"><div class="highlight"><pre>@mixin color-svg($color: black);
-</pre></div></div>
-<h1 id="datauri">data uri images</h1>
-
-<p>Sassquatch image dependencies are stored
-as data uris in a Sass map.</p>
-<div class="codeBlock"><div class="highlight"><pre>map-get($data-img-map, "orgBadge") // raw data uri
+<h2 id="colorAllMixin" class="styleguide">SVG + Text color</h2>
+<p class="styleguide">Sets properties to apply color to SVG icons
+<em>and</em> text.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@mixin color-all($color: black);</pre>
+  </div>
+</div>
+<h2 id="svgColorMixin" class="styleguide">SVG color</h2>
+<p class="styleguide">Sets properties to color SVG icons</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@mixin color-svg($color: black);</pre>
+  </div>
+</div>
+<h1 id="datauri" class="styleguide">data uri images</h1>
+<p class="styleguide">Sassquatch image dependencies are stored
+as data uris in a Sass map.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>map-get($data-img-map, "orgBadge") // raw data uri
 
 // OR
 
 .elWithImgBackground {
     @extend %backgroundImg--orgBadge; // sets background-image property
-}
-</pre></div></div>
-<table><thead>
-<tr>
+}</pre>
+  </div>
+</div><table class="styleguide"> <tr>
 <th>Img Name</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>orgBadge</code></td>
+ <tr>
+<td><code class="styleguide">orgBadge</code></td>
 <td>Organizer badge</td>
 </tr>
 <tr>
-<td><code>launcher</code></td>
+<td><code class="styleguide">launcher</code></td>
 <td>Form launcher input icon</td>
 </tr>
-</tbody></table>
+ </table>
+<h1 id="display" class="styleguide">Display utils</h1>
 
-<h1 id="display">Display utils</h1>
+<h2 id="pseudoDisplay" class="styleguide">Pseudo-element display mixin</h2>
+<p class="styleguide">Sets display property for psuedo-elements</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include pseudoDisplay($value: block);</pre>
+  </div>
+</div>
+<h1 id="float" class="styleguide">Float utils</h1>
 
-<h2 id="pseudoDisplay">Pseudo-element display mixin</h2>
+<h2 id="clearfix" class="styleguide">Clearfix placeholder</h2>
+<p class="styleguide">Clears floated children.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %clearfix;</pre>
+  </div>
+</div>
+<h1 id="modalUtils" class="styleguide">Modal mixins</h1>
+<p class="styleguide">Description here</p>
+<h2 id="Modal_Dialog_Mixin" class="styleguide">Modal Dialog Mixin</h2>
+<p class="styleguide">Use this mixin to get the behavior of a <a class="styleguide" href="views.html#snapModalView" title="views.html#snapModalView">Snap Modal View</a>,
+a view that snaps to full page on small screens and a dialog on larger formats.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include modal-dialog;</pre>
+  </div>
+</div>
+<h2 id="Modal_Full_Mixin" class="styleguide">Modal Full Mixin</h2>
+<p class="styleguide">Use this mixin to get behavior of a full page modal.
+See <a class="styleguide" href="views.html#fullModalView" title="views.html#fullModalView">the Full Modal View documentation</a></p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include modal-full;</pre>
+  </div>
+</div>
+<h1 id="shadow" class="styleguide">Shadow utilities</h1>
 
-<p>Sets display property for psuedo-elements</p>
-<div class="codeBlock"><div class="highlight"><pre>@include pseudoDisplay($value: block);
-</pre></div></div>
-<h1 id="float">Float utils</h1>
+<h2 id="shadowPlaceholder" class="styleguide">Shadow placeholder</h2>
+<p class="styleguide">Applies standard box-shadow</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %shadow;</pre>
+  </div>
+</div>
+<h1 id="shape" class="styleguide">Shapes</h1>
 
-<h2 id="clearfix">Clearfix placeholder</h2>
+<h2 id="circleMixin" class="styleguide">Circle mixin</h2>
+<p class="styleguide">Makes selected element a circle with border-radius</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@mixin circle($color: black, $size: 12px)</pre>
+  </div>
+</div>
+<h1 id="text" class="styleguide">Text utils</h1>
 
-<p>Clears floated children.</p>
-<div class="codeBlock"><div class="highlight"><pre>@extend %clearfix;
-</pre></div></div>
-<h1 id="shadow">Shadow utilities</h1>
-
-<h2 id="shadowPlaceholder">Shadow placeholder</h2>
-
-<p>Applies standard box-shadow</p>
-<div class="codeBlock"><div class="highlight"><pre>@extend %shadow;
-</pre></div></div>
-<h1 id="shape">Shapes</h1>
-
-<h2 id="circleMixin">Circle mixin</h2>
-
-<p>Makes selected element a circle with border-radius</p>
-<div class="codeBlock"><div class="highlight"><pre>@mixin circle($color: black, $size: 12px)
-</pre></div></div>
-<h1 id="text">Text utils</h1>
-
-<h2 id="linkColor">Link color</h2>
-
-<p>Forces an element to use link-like styling.</p>
-<div class="codeBlock"><div class="highlight"><pre>@extend %link;
-</pre></div></div>
-<h2 id="textProtection">Text protection shim</h2>
-
-<p>Adds a pseudo-element gradient</p>
-<div class="codeBlock"><div class="highlight"><pre>@mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
-</pre></div></div>
-<h2 id="textWrapUtil">Text wrap</h2>
-
-<p>Nice hyphenation and wrapping for running text.</p>
-<div class="codeBlock"><div class="highlight"><pre>@extend %link;
-</pre></div></div>	</main>
+<h2 id="textProtection" class="styleguide">Text protection shim</h2>
+<p class="styleguide">Adds a pseudo-element gradient</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el</pre>
+  </div>
+</div>
+<h2 id="textWrapUtil" class="styleguide">Text wrap</h2>
+<p class="styleguide">Nice hyphenation and wrapping for running text.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %link;</pre>
+  </div>
+</div>	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -480,9 +508,12 @@ $(function() {
 	//
 	// Disable links by default
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		debugger;
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//
@@ -706,6 +737,36 @@ $(function() {
 				
 
 				index.add({
+					"title": "Modal mixins",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal mixins",
+					"path": "sass_utils_|_mixins_&_placeholders.html#modalUtils"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Dialog Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Dialog Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Dialog_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Full Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Full Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Full_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Shadow utilities",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Shadow utilities",
 					"path": "sass_utils_|_mixins_&_placeholders.html#shadow"
@@ -749,16 +810,6 @@ $(function() {
 					"title": "Text utils",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text utils",
 					"path": "sass_utils_|_mixins_&_placeholders.html#text"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Link color",
-					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
-					"path": "sass_utils_|_mixins_&_placeholders.html#linkColor"
 				});
 
 			
@@ -840,8 +891,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Anchors & Buttons",
-					"breadcrumb": "Modifier Classes > Anchors & Buttons",
+					"title": "Anchors &amp; Buttons",
+					"breadcrumb": "Modifier Classes > Anchors &amp; Buttons",
 					"path": "modifier_classes.html#buttonMod"
 				});
 
@@ -1171,6 +1222,16 @@ $(function() {
 					"title": "Running text",
 					"breadcrumb": "Typography > Running text",
 					"path": "typography.html#runningText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Link color",
+					"breadcrumb": "Typography > Link color",
+					"path": "typography.html#linkColor"
 				});
 
 			
@@ -1519,6 +1580,36 @@ $(function() {
 		
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Modals",
+					"breadcrumb": "Views > Modals",
+					"path": "views.html#modals"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Full Modal View",
+					"breadcrumb": "Views > Full Modal View",
+					"path": "views.html#fullModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Snap Modal View (Dialog)",
+					"breadcrumb": "Views > Snap Modal View (Dialog)",
+					"path": "views.html#snapModalView"
+				});
+
 			
 				
 				
