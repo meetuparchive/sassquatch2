@@ -455,7 +455,7 @@ as data uris in a Sass map.</p><div class="codeBlock">
 <h1 id="modalUtils" class="styleguide">Modal mixins</h1>
 <p class="styleguide">Description here</p>
 <h2 id="Modal_Dialog_Mixin" class="styleguide">Modal Dialog Mixin</h2>
-<p class="styleguide">Use this mixin to get the behavior of a <a class="styleguide" href="views.html#snapModalView" title="views.html#snapModalView">link Snap Modal View</a>,
+<p class="styleguide">Use this mixin to get the behavior of a <a class="styleguide" href="views.html#snapModalView" title="views.html#snapModalView">Snap Modal View</a>,
 a view that snaps to full page on small screens and a dialog on larger formats.</p><div class="codeBlock">
   <div class="highlight">
     <pre>@include modal-dialog;</pre>
@@ -463,7 +463,7 @@ a view that snaps to full page on small screens and a dialog on larger formats.<
 </div>
 <h2 id="Modal_Full_Mixin" class="styleguide">Modal Full Mixin</h2>
 <p class="styleguide">Use this mixin to get behavior of a full page modal.
-See <a class="styleguide" href="views.html#fullModalView" title="views.html#fullModalView">link the Full Modal View documentation</a></p><div class="codeBlock">
+See <a class="styleguide" href="views.html#fullModalView" title="views.html#fullModalView">the Full Modal View documentation</a></p><div class="codeBlock">
   <div class="highlight">
     <pre>@include modal-full;</pre>
   </div>
@@ -508,9 +508,11 @@ $(function() {
 	//
 	// Disable links by default
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		if ( this.href == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//

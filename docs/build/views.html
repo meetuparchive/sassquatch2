@@ -132,57 +132,131 @@
 	 	<main id="content" class="stack-item">
 <h1 id="modals" class="styleguide">Modals</h1>
 
+<h2>view--modal variants</h2>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.view-modal--full</code></td>
+<td>Makes a modal that is full screen on all screen sizes</td>
+</tr>
+<tr>
+<td><code class="styleguide">.view-modal--snap</code></td>
+<td>Creates a modal that is full screen on small sizes, overlay/dialog on larger screens</td>
+</tr>
+ </table>
 <h2 id="fullModalView" class="styleguide">Full Modal View</h2>
-<p class="styleguide">Modal that is presented full screen on all sizes</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>&lt;div class="view view--modal-full"&gt;
-    &lt;header class="view-head"&gt;
-        &lt;div class="row inverted"&gt; 
-            &lt;a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle"&gt;
-                &lt;img src="style/img/logo.svg" width="35" height="24"&gt;&lt;/a&gt;
-            &lt;/a&gt;
-            &lt;div class="row-item row-item--alignMiddle viewHead-heading"&gt;
-                &lt;h1 class="wrap--singleLine--truncate"&gt;This is a header&lt;/h1&gt; 
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/header&gt;
-    &lt;div id="modal_body" class="view-body"&gt;
-        &lt;div class="stripe"&gt;
-            &lt;div class="bounds"&gt;
+<p class="styleguide">Modal that is presented full screen on all sizes</p><div class="codeExample">
+  <div class="exampleOutput">
+    <a class="link" href="pages/modal-full.html">Demo</a> 
+
+<div class="view view--modal-full display--none">
+    <header class="view-head">
+        <div class="row inverted"> 
+            <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+                <img src="style/img/logo.svg" width="35" height="24"></a>
+            </a>
+            <div class="row-item row-item--alignMiddle viewHead-heading">
+                <h1 class="wrap--singleLine--truncate">This is a header</h1> 
+            </div>
+        </div>
+    </header>
+    <div id="modal_body" class="view-body">
+        <div class="stripe">
+            <div class="bounds">
             ... body content here ...
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-full.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span> 
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modal-full display--none"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span> 
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"style/img/logo.svg"</span> <span class="na">width=</span><span class="s">"35"</span> <span class="na">height=</span><span class="s">"24"</span><span class="nt">&gt;&lt;/a&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--alignMiddle viewHead-heading"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>This is a header<span class="nt">&lt;/h1&gt;</span> 
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"modal_body"</span> <span class="na">class=</span><span class="s">"view-body"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+            ... body content here ...
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
   </div>
 </div>
+
 <h2 id="snapModalView" class="styleguide">Snap Modal View (Dialog)</h2>
 <p class="styleguide">Modal that snaps to the whole viewport and is full screen on small screens,
-lays out as a dialog on background content on larger screens.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>&lt;div class="view view--modal-snap"&gt;
-    &lt;header class="view-head"&gt;
-        &lt;div class="row inverted"&gt; 
-            &lt;a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle"&gt;
+lays out as a dialog on background content on larger screens.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <a class="link" href="pages/modal-snap.html">Demo</a> 
+
+<div class="view view--modal-snap display--none">
+    <header class="view-head">
+        <div class="row inverted"> 
+            <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
                 Close
-            &lt;/a&gt;
-            &lt;div class="row-item row-item--alignMiddle viewHead-heading"&gt;
-                &lt;h1 class="wrap--singleLine--truncate"&gt;Change your setting&lt;/h1&gt; 
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/header&gt;
-    &lt;div id="modal_body" class="view-body"&gt;
-        &lt;div class="stripe"&gt;
-            &lt;div class="bounds"&gt;
+            </a>
+            <div class="row-item row-item--alignMiddle viewHead-heading">
+                <h1 class="wrap--singleLine--truncate">Change your setting</h1> 
+            </div>
+        </div>
+    </header>
+    <div id="modal_body" class="view-body">
+        <div class="stripe">
+            <div class="bounds">
             ... body content here ...
 
-            &lt;button&gt;Save&lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-snap.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span> 
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modal-snap display--none"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span> 
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
+                Close
+            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--alignMiddle viewHead-heading"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>Change your setting<span class="nt">&lt;/h1&gt;</span> 
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"modal_body"</span> <span class="na">class=</span><span class="s">"view-body"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+            ... body content here ...
+
+                <span class="nt">&lt;button&gt;</span>Save<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
   </div>
 </div>
+
 <h1 id="view" class="styleguide">View</h1>
 <p class="styleguide">A &quot;view&quot; contains all layout and content for a given screen.
 Typically, a document only has a single view. Split views,
@@ -292,9 +366,11 @@ $(function() {
 	//
 	// Disable links by default
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		if ( this.href == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//
