@@ -17,16 +17,8 @@ content container for the view.
 ```
 */
 .view-body {
-	.stripe:first-child {
-		padding-top: $view-head-height;
-		@include atMediaUp(large){
-			padding-top: $view-head-height-tablet;
-		}
-	}
-}
-.view-body {
 	.view--splitList & {
-		height: 100vh;
+		height: 100vh;  // might have trouble on iOS7
 		overflow: auto;
 	}
 }
