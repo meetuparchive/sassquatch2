@@ -2492,6 +2492,7 @@ Class                  | Description
 `view--splitList`      | Sets view to "list style" when viewport is wide enough
 `view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
 `view--dimmed`         | Dims view (for use with modal overlays)
+`view--collection`     | Sets the style for views that are primarily "collections"
 
 ## Basic view (<a class="link followLink" href="pages/full-view.html">Demo</a>)
 Basic example of a single view in a document:
@@ -2540,6 +2541,9 @@ the "detail" responsibility.
   min-height: 100vh;
   position: relative; }
 
+.view--collection {
+  background-color: #f3f6f9; }
+
 .view--splitList, .view--splitDetail {
   display: none; }
   .view--splitList.focus, .view--splitDetail.focus {
@@ -2585,7 +2589,7 @@ hero headers).
 Class                      | Description
 -------------------------- | ---------------------------
 `.view-head--transparent`  | Makes view header transparent; hides `h1` heading
-`.view-head--photoOverlay` | Same as 'transparent' variant, but adds text protext gradient
+`.view-head--photoOverlay` | Adds text protext gradient (`view-head--trasnparent` required with this class)
 
 */
 .view-head {
@@ -2611,17 +2615,15 @@ Class                      | Description
     left: 320px;
     right: 0;
     width: auto; } }
-.view-head--photoOverlay,
 .view-head--transparent {
   background: transparent;
   border-bottom: none;
   color: white;
   position: absolute; }
-  .view-head--photoOverlay h1,
   .view-head--transparent h1 {
     opacity: 0; }
 
-.view-head--photoOverlay {
+.view-head--transparent.view-head--photoOverlay {
   background: -webkit-linear-gradient(rgba(15, 20, 31, 0.8), rgba(15, 20, 31, 0));
   background: linear-gradient(rgba(15, 20, 31, 0.8), rgba(15, 20, 31, 0)); }
 
@@ -2643,12 +2645,6 @@ content container for the view.
 </div>
 ```
 */
-.view-body .stripe:first-child {
-  padding-top: 56px; }
-  @media only screen and (min-width: 840px) {
-    .view-body .stripe:first-child {
-      padding-top: 64px; } }
-
 .view--splitList .view-body {
   height: 100vh;
   overflow: auto; }
@@ -3419,8 +3415,8 @@ To collapse the element, add the `collapsible--close` class.
   transition: max-height 300ms ease-in-out;
   will-change: max-height;
   height: auto;
-  max-height: 1024px;
-  /* arbitrary value for easing */ }
+  max-height: 4000px;
+  /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */ }
 
 .collapsible-content {
   -webkit-transition: -webkit-transform 300ms ease-in-out;
@@ -3515,19 +3511,18 @@ Use as a guide for markup.
 </div>
 ```
 */
-.menu {
-  position: relative; }
-
-.hasJS .menu-actions {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 3px;
-  background-color: white;
-  display: none;
-  position: relative;
-  top: -8px;
-  right: -8px;
-  min-width: 108px;
-  max-width: 330px; }
+.menu-actions {
+  z-index: 5; }
+  .hasJS .menu-actions {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+    background-color: white;
+    display: none;
+    position: absolute;
+    min-width: 108px;
+    max-width: 330px;
+    top: 16px;
+    right: 16px; }
 
 .menu-actions-item {
   display: inline; }

@@ -115,6 +115,9 @@ main > table td:first-child {
 }
 
 /* NAV */
+#navigation {
+	max-width: 300px;
+}
 #navigation h4 {
 	margin-bottom: 8px;
 }
