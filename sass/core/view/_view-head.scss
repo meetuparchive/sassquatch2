@@ -25,7 +25,7 @@ hero headers).
 Class                      | Description
 -------------------------- | ---------------------------
 `.view-head--transparent`  | Makes view header transparent; hides `h1` heading
-`.view-head--photoOverlay` | Same as 'transparent' variant, but adds text protext gradient
+`.view-head--photoOverlay` | Adds text protext gradient (`view-head--trasnparent` required with this class)
 
 */
 .view-head {
@@ -61,7 +61,6 @@ Class                      | Description
 //
 // view-head variants
 //
-%view-head--transparent,
 .view-head--transparent {
 	background: transparent;
 	border-bottom: none;
@@ -72,7 +71,10 @@ Class                      | Description
 	}
 }
 
-.view-head--photoOverlay {
-	@extend %view-head--transparent;
+//
+// photoOverlay adds gradient to transparent
+// view-head (both classes required)
+//
+.view-head--transparent.view-head--photoOverlay {
 	@include background(linear-gradient(transparentize($C_scrimGradient, .2), transparentize($C_scrimGradient, 1) ));
 }
