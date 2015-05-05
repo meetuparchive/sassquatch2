@@ -64,6 +64,7 @@ _Includes `table-cell` fallback for IE8._
 	padding-left: $space;
 	@include flex-grow(1);
 	width: auto;
+	min-width: 0;
 	&:first-child {
 		padding-left: 0;
 	}
