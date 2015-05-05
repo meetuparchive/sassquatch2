@@ -163,23 +163,13 @@ $btn-color-map: (
 // Handling icon buttons
 //
 .button-icon {
-	height: $media-xs;
-	padding-left: $space-half;
-	vertical-align: middle;
+	margin-left: $space-half/2;
+	vertical-align: bottom;
 
 	&:first-child {
-		padding-left: 0;
-		padding-right: $space-half;
+		margin-left: 0;
+		margin-right: $space-half/2;
 	}
-
-	* {
-		fill: map-get($btn-color-map, "primary");
-	}
-
-}
-
-.button--primary .button-icon * {
-	fill: $C_textPrimaryInverted
 }
 
 .button--small .button-icon {
