@@ -26,6 +26,15 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 		<h4>Backpacking For Beginners</h4>
 	</div>
 </div>
+<div class="stack attachment chunk atMedium_stack--spread">
+	<div class="stack-item stack-item--shrink">
+		<time class="tearsheet" datetime="2017-01-13">13</time>
+	</div>
+	<div class="stack-item">
+		<h4 class="text--caption">Monday Jan 13, 6:30 pm</h4>
+		<h4>Backpacking For Beginners</h4>
+	</div>
+</div>
 ```
 
 ### Discussion reply example
@@ -46,6 +55,19 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 	& .row-item {
 		padding-left: $space/2;
 	}
+
+	// this gets tricky for `stack`, because padding
+	// is only present on items in a "spread" stack
+	@each $breakpoint in (medium, large) {
+		@include atMediaUp($breakpoint) {
+			@include _sel-selfAndChild( at#{str-firstCharToUpper($breakpoint)}_stack--spread ) {
+				.stack-item {
+					padding-left: $space/2;
+				}
+			}
+		}
+	}
+
 	@include _sel-selfAndChild( 'chunk' ) {
 		margin-bottom: $space/2 !important;
 	}

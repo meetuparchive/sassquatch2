@@ -353,13 +353,45 @@ Disables user-select, sets cursor, and resets text-decoration.
 @extend %buttonPersonality;
 ```
 */
-.hasJS .menu-actions-item a {
+.hasJS .menu-actions-item a, .buttonPersonality {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
   text-decoration: none !important; }
 
+/*doc
+---
+title: Color
+name: colorUtil
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+/*doc
+---
+title: SVG color
+name: svgColorMixin
+parent: colorUtil
+---
+Sets properties to color SVG icons
+
+```
+@mixin color-svg($color: black);
+```
+*/
+/*doc
+---
+title: SVG + Text color
+name: colorAllMixin
+parent: colorUtil
+---
+Sets properties to apply color to SVG icons
+_and_ text.
+
+```
+@mixin color-all($color: black);
+```
+*/
 /*doc
 ---
 title: data uri images
@@ -442,6 +474,44 @@ Clears floated children.
   .chunk:after, .bounds:after {
     clear: both; }
 
+/*doc
+---
+title: Modal mixins
+name: modalUtils
+category: Sass Utils | Mixins & Placeholders
+---
+
+Description here
+
+*/
+/*doc
+---
+title: Modal Dialog Mixin
+parent: modalUtils
+---
+
+Use this mixin to get the behavior of a [Snap Modal View][snapModalView],
+a view that snaps to full page on small screens and a dialog on larger formats.
+
+```
+	@include modal-dialog;
+
+```
+*/
+/*doc
+---
+title: Modal Full Mixin
+parent: modalUtils
+---
+
+Use this mixin to get behavior of a full page modal.
+See [the Full Modal View documentation][fullModalView]
+
+```
+	@include modal-full;
+
+```
+*/
 /*doc
 ---
 title: Shadow utilities
@@ -790,8 +860,12 @@ parent: bodyText
 ```
 */
 .text--hint {
+  fill: rgba(0, 0, 0, 0.26);
+  stroke: transparent;
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--hint {
+    fill: rgba(255, 255, 255, 0.3);
+    stroke: transparent;
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -805,8 +879,12 @@ parent: bodyText
 ```
 */
 .text--secondary {
+  fill: rgba(0, 0, 0, 0.54);
+  stroke: transparent;
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--secondary {
+    fill: rgba(255, 255, 255, 0.7);
+    stroke: transparent;
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -820,8 +898,12 @@ parent: bodyText
 ```
 */
 .text--tertiary {
+  fill: rgba(0, 0, 0, 0.26);
+  stroke: transparent;
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--tertiary {
+    fill: rgba(255, 255, 255, 0.3);
+    stroke: transparent;
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -869,8 +951,12 @@ parent: bodyText
 ```
 */
 .text--caption {
+  fill: rgba(0, 0, 0, 0.54);
+  stroke: transparent;
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--caption {
+    fill: rgba(255, 255, 255, 0.7);
+    stroke: transparent;
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -2135,7 +2221,8 @@ _Includes `table-cell` fallback for IE8._
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1;
-  width: auto; }
+  width: auto;
+  min-width: 0; }
   .row-item:first-child {
     padding-left: 0; }
 
@@ -2229,9 +2316,9 @@ Class                   | Description
   -webkit-flex-grow: 0;
   flex-grow: 0;
   -ms-flex-positive: 0;
-  -webkit-flex-shrink: 1;
-  flex-shrink: 1;
-  -ms-flex-negative: 1;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
   width: initial; }
 
 .row-item--alignMiddle {
@@ -2324,7 +2411,8 @@ Class                   | Description
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1;
-  width: 100%; }
+  width: 100%;
+  min-width: 0; }
 
 @media only screen and (min-width: 640px) {
   .atMedium_stack--spread {
@@ -2350,9 +2438,9 @@ Class                   | Description
       -webkit-flex-grow: 0;
       flex-grow: 0;
       -ms-flex-positive: 0;
-      -webkit-flex-shrink: 1;
-      flex-shrink: 1;
-      -ms-flex-negative: 1;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -ms-flex-negative: 0;
       width: initial; } }
 @media only screen and (min-width: 840px) {
   .atLarge_stack--spread {
@@ -2378,9 +2466,9 @@ Class                   | Description
       -webkit-flex-grow: 0;
       flex-grow: 0;
       -ms-flex-positive: 0;
-      -webkit-flex-shrink: 1;
-      flex-shrink: 1;
-      -ms-flex-negative: 1;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -ms-flex-negative: 0;
       width: initial; } }
 .ieRoot_lt_IE10 .stack,
 .ieRoot_lt_IE10 .stack-item {
@@ -2406,6 +2494,7 @@ Class                  | Description
 `view--splitList`      | Sets view to "list style" when viewport is wide enough
 `view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
 `view--dimmed`         | Dims view (for use with modal overlays)
+`view--collection`     | Sets the style for views that are primarily "collections"
 
 ## Basic view (<a class="link followLink" href="pages/full-view.html">Demo</a>)
 Basic example of a single view in a document:
@@ -2451,7 +2540,11 @@ the "detail" responsibility.
   box-sizing: border-box;
   background: white;
   width: 100%;
-  min-height: 100vh; }
+  min-height: 100vh;
+  position: relative; }
+
+.view--collection {
+  background-color: #f3f6f9; }
 
 .view--splitList, .view--splitDetail {
   display: none; }
@@ -2498,7 +2591,7 @@ hero headers).
 Class                      | Description
 -------------------------- | ---------------------------
 `.view-head--transparent`  | Makes view header transparent; hides `h1` heading
-`.view-head--photoOverlay` | Same as 'transparent' variant, but adds text protext gradient
+`.view-head--photoOverlay` | Adds text protext gradient (`view-head--trasnparent` required with this class)
 
 */
 .view-head {
@@ -2507,7 +2600,6 @@ Class                      | Description
   background: #d55741;
   color: white;
   left: 0;
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -2525,16 +2617,15 @@ Class                      | Description
     left: 320px;
     right: 0;
     width: auto; } }
-.view-head--photoOverlay,
 .view-head--transparent {
   background: transparent;
   border-bottom: none;
-  color: white; }
-  .view-head--photoOverlay h1,
+  color: white;
+  position: absolute; }
   .view-head--transparent h1 {
     opacity: 0; }
 
-.view-head--photoOverlay {
+.view-head--transparent.view-head--photoOverlay {
   background: -webkit-linear-gradient(rgba(15, 20, 31, 0.8), rgba(15, 20, 31, 0));
   background: linear-gradient(rgba(15, 20, 31, 0.8), rgba(15, 20, 31, 0)); }
 
@@ -2556,17 +2647,61 @@ content container for the view.
 </div>
 ```
 */
-.view-body .stripe:first-child {
-  padding-top: 56px; }
-  @media only screen and (min-width: 840px) {
-    .view-body .stripe:first-child {
-      padding-top: 64px; } }
-
 .view--splitList .view-body {
   height: 100vh;
   overflow: auto; }
 
-.view--modal-full {
+/*doc
+---
+title: Modals
+name: modals
+category: Views
+---
+
+## view--modal variants
+
+Class                      | Description
+-------------------------- | ---------------------------
+`.view--modalFull`        | Makes a modal that is full screen on all screen sizes
+`.view--modalSnap`        | Creates a modal that is full screen on small sizes, overlay/dialog on larger screens
+
+
+*/
+/*doc
+---
+title: Full Modal View 
+name: fullModalView
+parent: modals
+---
+
+Modal that is presented full screen on all sizes
+
+```html_example
+<a class="link" href="pages/modal-full.html">Demo</a> 
+
+<div class="view view--modalFull display--none">
+	<header class="view-head">
+		<div class="row inverted"> 
+			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+				<img src="style/img/logo.svg" width="35" height="24"></a>
+			</a>
+			<div class="row-item row-item--alignMiddle viewHead-heading">
+				<h1 class="wrap--singleLine--truncate">This is a header</h1> 
+			</div>
+		</div>
+	</header>
+	<div id="modal_body" class="view-body">
+		<div class="stripe">
+			<div class="bounds">
+			... body content here ...
+			</div>
+		</div>
+	</div>
+</div>
+```
+
+*/
+.view--modalFull {
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2580,12 +2715,49 @@ content container for the view.
   top: 0;
   width: 100%;
   z-index: 3; }
-  .view--modal-full.off {
+  .view--modalFull.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
     transform: translateY(100vh); }
 
-.view--modal-snap {
+/*doc
+---
+title: Snap Modal View (Dialog) 
+name: snapModalView
+parent: modals
+---
+
+Modal that snaps to the whole viewport and is full screen on small screens,
+lays out as a dialog on background content on larger screens.
+
+
+```html_example
+<a class="link" href="pages/modal-snap.html">Demo</a> 
+
+<div class="view view--modalSnap display--none">
+	<header class="view-head">
+		<div class="row inverted"> 
+			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+				Close
+			</a>
+			<div class="row-item row-item--alignMiddle viewHead-heading">
+				<h1 class="wrap--singleLine--truncate">Change your setting</h1> 
+			</div>
+		</div>
+	</header>
+	<div id="modal_body" class="view-body">
+		<div class="stripe">
+			<div class="bounds">
+			... body content here ...
+			
+				<button>Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+```
+*/
+.view--modalSnap {
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -2599,12 +2771,12 @@ content container for the view.
   position: absolute;
   width: 440px;
   z-index: 3; }
-  .view--modal-snap.off {
+  .view--modalSnap.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
     transform: translateY(100vh); }
   @media only screen and (max-width: 440px) {
-    .view--modal-snap {
+    .view--modalSnap {
       -webkit-transform: translate3d(0, 0, 0);
       -ms-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
@@ -2617,7 +2789,7 @@ content container for the view.
       position: absolute;
       top: 0;
       width: 100%; }
-      .view--modal-snap.off {
+      .view--modalSnap.off {
         -webkit-transform: translateY(100vh);
         -ms-transform: translateY(100vh);
         transform: translateY(100vh); } }
@@ -2829,6 +3001,15 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 		<h4>Backpacking For Beginners</h4>
 	</div>
 </div>
+<div class="stack attachment chunk atMedium_stack--spread">
+	<div class="stack-item stack-item--shrink">
+		<time class="tearsheet" datetime="2017-01-13">13</time>
+	</div>
+	<div class="stack-item">
+		<h4 class="text--caption">Monday Jan 13, 6:30 pm</h4>
+		<h4>Backpacking For Beginners</h4>
+	</div>
+</div>
 ```
 
 ### Discussion reply example
@@ -2847,6 +3028,14 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 */
 .attachment .row-item {
   padding-left: 8px; }
+@media only screen and (min-width: 640px) {
+  .attachment.atMedium_stack--spread .stack-item,
+  .attachment .atMedium_stack--spread .stack-item {
+    padding-left: 8px; } }
+@media only screen and (min-width: 840px) {
+  .attachment.atLarge_stack--spread .stack-item,
+  .attachment .atLarge_stack--spread .stack-item {
+    padding-left: 8px; } }
 .attachment.chunk,
 .attachment .chunk {
   margin-bottom: 8px !important; }
@@ -3066,6 +3255,99 @@ _(The inline style on the card element is for documentation purposes only)_
 			</ul>
 		</div>
 	</a>
+	<a href="#" class="chunk card card--event card--event--featured" style="margin: 16px; max-width: 250px;">
+
+		<div class="row row--spaceBetween row--wrap">
+
+			<time datetime="20150221" class="row-item row-item--shrink">
+				<h2 class="text--graphic display--inlineBlock">21</h2>
+				<h2>Feb</h2>
+			</time>
+
+			<div class="row-item row-item--shrink align--right">
+				<p class="text--caption">Featured</p>
+			</div>
+
+		</div>
+
+		<div class="chunk eventInfo-primary">
+			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+			<h3>Backpacking For Beginners</h3>
+
+			<ul class="inlineblockList matchLineHeight">
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="text--caption">+8</li>
+			</ul>
+		</div>
+	</a>
+	<a href="#" class="chunk card card--event card--event--cancelled" style="margin: 16px; max-width: 250px;">
+
+		<div class="row row--spaceBetween row--wrap">
+
+			<time datetime="20150221" class="row-item row-item--shrink">
+				<h2 class="text--graphic display--inlineBlock">21</h2>
+				<h2>Feb</h2>
+			</time>
+
+			<div class="row-item row-item--shrink align--right">
+				<p class="text--caption">Cancelled</p>
+			</div>
+
+		</div>
+
+		<div class="chunk eventInfo-primary">
+			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+			<h3 class="text--strikethrough">Backpacking For Beginners</h3>
+
+			<ul class="inlineblockList matchLineHeight">
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="text--caption">+8</li>
+			</ul>
+		</div>
+	</a>
+	<a href="#" class="chunk card card--event card--event--draft" style="margin: 16px; max-width: 250px;">
+
+		<div class="row row--spaceBetween row--wrap">
+
+			<time datetime="20150221" class="row-item row-item--shrink">
+				<h2 class="text--graphic display--inlineBlock">21</h2>
+				<h2>Feb</h2>
+			</time>
+
+			<div class="row-item row-item--shrink align--right">
+				<p class="text--caption">Draft</p>
+			</div>
+
+		</div>
+
+		<div class="chunk eventInfo-primary">
+			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+			<h3>Backpacking For Beginners</h3>
+
+			<ul class="inlineblockList matchLineHeight">
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+				<li class="text--caption">+8</li>
+			</ul>
+		</div>
+	</a>
 </section>
 ```
 
@@ -3096,6 +3378,18 @@ _(The inline style on the card element is for documentation purposes only)_
     right: -1px;
     top: -1px; }
 
+.card--event--past:before {
+  background: #e6e9ec; }
+
+.card--event--canceled:before {
+  background: #e6e9ec; }
+
+.card--event--featured:before {
+  background: #f0cb4f; }
+
+.card--event--draft:before {
+  background: #8cbf6a; }
+
 /*doc
 ---
 title: Collapsible
@@ -3105,13 +3399,13 @@ category: UI Components
 Collapses elements using class toggling. A base
 class of `collapsible` is __required__.
 
-To collapse the element, add the `collapse--close` class.
+To collapse the element, add the `collapsible--close` class.
 
 ```html_example
-<a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
+<a id="cTrigger" class="button button--primary chunk followLink">Toggle</a>
 
-<section class="stripe collapsible" id="collapse-container">
-	<div class="bounds">
+<section class="stripe collapsible" id="cContainer">
+	<div class="bounds collapsible-content">
 		<h2>I'm collapsible content</h2>
 		<p>Adding a class of `collapsible--close` to this `section` will set max height to 0vh</p>
 	</div>
@@ -3119,19 +3413,26 @@ To collapse the element, add the `collapse--close` class.
 ```
 */
 .collapsible {
-  -webkit-transition: max-height 200ms ease-in-out;
-  transition: max-height 200ms ease-in-out;
+  -webkit-transition: max-height 300ms ease-in-out;
+  transition: max-height 300ms ease-in-out;
   will-change: max-height;
   height: auto;
-  max-height: 1024px;
-  /* arbitrary value for easing */ }
+  max-height: 4000px;
+  /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */ }
+
+.collapsible-content {
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  -moz-transition: -moz-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out; }
 
 .collapsible--close {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
   border-width: 0;
-  max-height: 0; }
+  max-height: 0;
+  overflow: hidden; }
+  .collapsible--close .collapsible-content {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%); }
 
 /*doc
 ---
@@ -3212,19 +3513,18 @@ Use as a guide for markup.
 </div>
 ```
 */
-.menu {
-  position: relative; }
-
-.hasJS .menu-actions {
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 3px;
-  background-color: white;
-  display: none;
-  position: relative;
-  top: -8px;
-  right: -8px;
-  min-width: 108px;
-  max-width: 330px; }
+.menu-actions {
+  z-index: 5; }
+  .hasJS .menu-actions {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+    background-color: white;
+    display: none;
+    position: absolute;
+    min-width: 108px;
+    max-width: 330px;
+    top: 16px;
+    right: 16px; }
 
 .menu-actions-item {
   display: inline; }
@@ -3657,6 +3957,27 @@ Class                   | Description
 
 /*doc
 ---
+title: Anchors & Buttons
+name: buttonMod
+category: Modifier Classes
+---
+*/
+/*doc
+---
+title: Button personality
+name: buttonPersonalityMod
+parent: buttonMod
+---
+Applies button-like pointer styles, text-decoration,
+and user-select.
+
+```html_example
+	<a class="chunk display--block">I'm just an anchor, displayed block</a>
+	<a class="buttonPersonality chunk display--block">I behave more like a button (hover over me; try to select this text)</a>
+```
+*/
+/*doc
+---
 title: Display
 name: displayMod
 category: Modifier Classes
@@ -3931,7 +4252,7 @@ title: Text Modifiers
 name: textMod
 category: Modifier Classes
 ---
-
+*/
 /*doc
 ---
 title: Hiding Text
@@ -3968,6 +4289,21 @@ Class          | Description
 
 /*doc
 ---
+title: Text decoration
+name: textDecoration
+parent: textMod
+---
+Basic text decoration
+
+Class                  | Description
+---------------------- | ----------------------------
+`.text--strikethrough` | strikethrough/strikeout/line-through
+*/
+.text--strikethrough {
+  text-decoration: line-through; }
+
+/*doc
+---
 title: Nice Hyphenation
 name: wrapNiceUtil
 parent: textMod
@@ -3978,6 +4314,32 @@ Class              | Description
 ------------------ | ----------------------------
 `.text--wrapNice`  | Visually hides text; removes text from document flow
 */
+/*doc
+---
+title: Type wrap/whitespace
+name: typespaceMod
+parent: textMod
+---
+Sets type wrapping, witespace, and overflow properties on element
+
+Class                         | Description
+----------------------------- | --------------------------------
+`.wrap--singleLine`           | forces text to a single line (nowrap)
+`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
+`.matchLineHeight`            | adds a small amount of top and bottom margin to a non-text element to match line height of nearby text
+
+*/
+.wrap--singleLine--truncate,
+.wrap--singleLine {
+  white-space: nowrap !important; }
+
+.wrap--singleLine--truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important; }
+
+.matchLineHeight {
+  margin: 3px 0; }
+
 /*doc
 ---
 title: Thumbnails
@@ -3999,31 +4361,5 @@ Sets background cover and position for photo thumbnails.
     content: '';
     display: block;
     padding-top: 100%; }
-
-/*doc
----
-title: Type wrap/whitespace
-name: typespaceMod
-category: Modifier Classes
----
-Sets type wrapping, witespace, and overflow properties on element
-
-Class                         | Description
------------------------------ | --------------------------------
-`.wrap--singleLine`           | forces text to a single line (nowrap)
-`.wrap--singleLine--truncate` | forces text to a single line (nowrap) and truncates with &hellip;
-`.matchLineHeight`            | adds a small amount of top and bottom margin to a non-text element to match line height of nearby text
-
-*/
-.wrap--singleLine--truncate,
-.wrap--singleLine {
-  white-space: nowrap !important; }
-
-.wrap--singleLine--truncate {
-  overflow: hidden !important;
-  text-overflow: ellipsis !important; }
-
-.matchLineHeight {
-  margin: 3px 0; }
 
 /*# sourceMappingURL=sassquatch.css.map */

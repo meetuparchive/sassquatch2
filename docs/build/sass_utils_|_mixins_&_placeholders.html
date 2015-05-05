@@ -120,6 +120,25 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#colorUtil">Color</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#datauri">data uri images</a>
 										</li>
 									
@@ -145,6 +164,25 @@
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#float">Float utils</a>
 										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#modalUtils">Modal mixins</a>
+										</li>
+									
+
+								
+
+									
 									
 
 								
@@ -365,6 +403,19 @@ use the <code>atMediaDown</code> mixin.</p>
 <p>Disables user-select, sets cursor, and resets text-decoration.</p>
 <div class="codeBlock"><div class="highlight"><pre>@extend %buttonPersonality;
 </pre></div></div>
+<h1 id="colorUtil">Color</h1>
+
+<h2 id="colorAllMixin">SVG + Text color</h2>
+
+<p>Sets properties to apply color to SVG icons
+<em>and</em> text.</p>
+<div class="codeBlock"><div class="highlight"><pre>@mixin color-all($color: black);
+</pre></div></div>
+<h2 id="svgColorMixin">SVG color</h2>
+
+<p>Sets properties to color SVG icons</p>
+<div class="codeBlock"><div class="highlight"><pre>@mixin color-svg($color: black);
+</pre></div></div>
 <h1 id="datauri">data uri images</h1>
 
 <p>Sassquatch image dependencies are stored
@@ -407,6 +458,24 @@ as data uris in a Sass map.</p>
 <p>Clears floated children.</p>
 <div class="codeBlock"><div class="highlight"><pre>@extend %clearfix;
 </pre></div></div>
+<h1 id="modalUtils">Modal mixins</h1>
+
+<p>Description here</p>
+
+<h2 id="Modal_Dialog_Mixin">Modal Dialog Mixin</h2>
+
+<p>Use this mixin to get the behavior of a [Snap Modal View][snapModalView],
+a view that snaps to full page on small screens and a dialog on larger formats.</p>
+<div class="codeBlock"><div class="highlight"><pre>    @include modal-dialog;
+
+</pre></div></div>
+<h2 id="Modal_Full_Mixin">Modal Full Mixin</h2>
+
+<p>Use this mixin to get behavior of a full page modal.
+See [the Full Modal View documentation][fullModalView]</p>
+<div class="codeBlock"><div class="highlight"><pre>    @include modal-full;
+
+</pre></div></div>
 <h1 id="shadow">Shadow utilities</h1>
 
 <h2 id="shadowPlaceholder">Shadow placeholder</h2>
@@ -446,19 +515,29 @@ as data uris in a Sass map.</p>
 <script type="text/javascript">
 $(function() {
 	//
-	// Disable links by default
+	// Disable links without real href
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//
-	// collapsable example
+	// collapsible example
 	//
-	$('#collapse-trigger').click(function() {
-		$('#collapse-container').toggle('collapsable--shrink');
-	});
+	var $c = $('#cContainer'),
+		CLASS_COL_CLOSE = 'collapsible--close';
+	if ( $c.length > 0 ) {
+		$('#cTrigger').on('click', function() {
+			if ( $c.hasClass(CLASS_COL_CLOSE) ) {
+				$c.removeClass(CLASS_COL_CLOSE);
+			} else {
+				$c.addClass(CLASS_COL_CLOSE);
+			}
+		});
+	}
 
 	//
 	// lunr search index
@@ -586,6 +665,36 @@ $(function() {
 				
 
 				index.add({
+					"title": "Color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#colorUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "SVG + Text color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > SVG + Text color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#colorAllMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "SVG color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > SVG color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#svgColorMixin"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "data uri images",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > data uri images",
 					"path": "sass_utils_|_mixins_&_placeholders.html#datauri"
@@ -629,6 +738,36 @@ $(function() {
 					"title": "Clearfix placeholder",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Clearfix placeholder",
 					"path": "sass_utils_|_mixins_&_placeholders.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal mixins",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal mixins",
+					"path": "sass_utils_|_mixins_&_placeholders.html#modalUtils"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Dialog Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Dialog Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Dialog_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Full Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Full Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Full_Mixin"
 				});
 
 			
@@ -770,6 +909,26 @@ $(function() {
 				
 
 				index.add({
+					"title": "Anchors & Buttons",
+					"breadcrumb": "Modifier Classes > Anchors & Buttons",
+					"path": "modifier_classes.html#buttonMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button personality",
+					"breadcrumb": "Modifier Classes > Button personality",
+					"path": "modifier_classes.html#buttonPersonalityMod"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Display",
 					"breadcrumb": "Modifier Classes > Display",
 					"path": "modifier_classes.html#displayMod"
@@ -850,6 +1009,36 @@ $(function() {
 				
 
 				index.add({
+					"title": "Text decoration",
+					"breadcrumb": "Modifier Classes > Text decoration",
+					"path": "modifier_classes.html#textDecoration"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Hiding Text",
+					"breadcrumb": "Modifier Classes > Hiding Text",
+					"path": "modifier_classes.html#textHideUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Type wrap/whitespace",
+					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
+					"path": "modifier_classes.html#typespaceMod"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Nice Hyphenation",
 					"breadcrumb": "Modifier Classes > Nice Hyphenation",
 					"path": "modifier_classes.html#wrapNiceUtil"
@@ -863,16 +1052,6 @@ $(function() {
 					"title": "Thumbnails",
 					"breadcrumb": "Modifier Classes > Thumbnails",
 					"path": "modifier_classes.html#thumb"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Type wrap/whitespace",
-					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
-					"path": "modifier_classes.html#typespaceMod"
 				});
 
 			
@@ -1409,6 +1588,36 @@ $(function() {
 		
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Modals",
+					"breadcrumb": "Views > Modals",
+					"path": "views.html#modals"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Full Modal View",
+					"breadcrumb": "Views > Full Modal View",
+					"path": "views.html#fullModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Snap Modal View (Dialog)",
+					"breadcrumb": "Views > Snap Modal View (Dialog)",
+					"path": "views.html#snapModalView"
+				});
+
 			
 				
 				

@@ -7,19 +7,29 @@
 <script type="text/javascript">
 $(function() {
 	//
-	// Disable links by default
+	// Disable links without real href
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//
-	// collapsable example
+	// collapsible example
 	//
-	$('#collapse-trigger').click(function() {
-		$('#collapse-container').toggle('collapsable--shrink');
-	});
+	var $c = $('#cContainer'),
+		CLASS_COL_CLOSE = 'collapsible--close';
+	if ( $c.length > 0 ) {
+		$('#cTrigger').on('click', function() {
+			if ( $c.hasClass(CLASS_COL_CLOSE) ) {
+				$c.removeClass(CLASS_COL_CLOSE);
+			} else {
+				$c.addClass(CLASS_COL_CLOSE);
+			}
+		});
+	}
 
 	//
 	// lunr search index

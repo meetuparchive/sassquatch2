@@ -49,6 +49,7 @@ Class                   | Description
 .stack-item {
 	@include flex-grow(1);
 	width: 100%;
+	min-width: 0;
 }
 
 @include _bpModifier(stack, spread) {
@@ -65,7 +66,7 @@ Class                   | Description
 	}
 	.stack-item--shrink {
 		@include flex-grow(0);
-		@include flex-shrink(1);
+		@include flex-shrink(0);
 		width: initial;
 	}
 }

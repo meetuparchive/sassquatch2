@@ -1,0 +1,45 @@
+/*doc
+---
+title: Color
+name: colorUtil
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+
+/*doc
+---
+title: SVG color
+name: svgColorMixin
+parent: colorUtil
+---
+Sets properties to color SVG icons
+
+```
+@mixin color-svg($color: black);
+```
+*/
+@mixin color-svg($color: black) {
+	fill: $color;
+	stroke: transparent;
+};
+
+/*doc
+---
+title: SVG + Text color
+name: colorAllMixin
+parent: colorUtil
+---
+Sets properties to apply color to SVG icons
+_and_ text.
+
+```
+@mixin color-all($color: black);
+```
+*/
+@mixin color-all($color: black) {
+	fill: $color;
+	stroke: transparent;
+	color: $color;
+};
+
+

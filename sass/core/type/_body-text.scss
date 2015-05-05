@@ -51,9 +51,9 @@ parent: bodyText
 ```
 */
 .text--hint {
-	color: $C_textTertiary;
+	@include color-all($C_textTertiary);
 	.inverted & {
-		color: $C_textTertiaryInverted;
+		@include color-all($C_textTertiaryInverted);
 	}
 }
 
@@ -69,9 +69,9 @@ parent: bodyText
 ```
 */
 .text--secondary {
-	color: $C_textSecondary;
+	@include color-all($C_textSecondary);
 	.inverted & {
-		color: $C_textSecondaryInverted;
+		@include color-all($C_textSecondaryInverted)
 	}
 }
 
@@ -87,9 +87,9 @@ parent: bodyText
 ```
 */
 .text--tertiary {
-	color: $C_textTertiary;
+	@include color-all($C_textTertiary);
 	.inverted & {
-		color: $C_textTertiaryInverted;
+		@include color-all($C_textTertiaryInverted);
 	}
 }
 
@@ -140,9 +140,9 @@ parent: bodyText
 */
 .text--caption {
 	@extend %text--small;
-	color: $C_textSecondary;
+	@include color-all($C_textSecondary);
 	.inverted & {
-		color: $C_textSecondaryInverted;
+		@include color-all($C_textSecondaryInverted);
 	}
 }
 
