@@ -1615,6 +1615,7 @@ name: heroStripes
 parent: stripe
 ---
 Special `stripe` variants are avaiable for "hero" sections.
+Viewport size adjustments are built-in.
 
 **Note:** _Hero stripes require a `.bounds.stripe-heroContent`
 to properly position content within a hero. See examples below._
