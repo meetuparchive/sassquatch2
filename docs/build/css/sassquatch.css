@@ -1615,6 +1615,7 @@ name: heroStripes
 parent: stripe
 ---
 Special `stripe` variants are avaiable for "hero" sections.
+Viewport size adjustments are built-in.
 
 **Note:** _Hero stripes require a `.bounds.stripe-heroContent`
 to properly position content within a hero. See examples below._
@@ -3115,6 +3116,8 @@ Class                   | Description
     outline: 0; }
 
 .button {
+  fill: #3987cb;
+  stroke: transparent;
   color: #3987cb; }
   .button:hover,
   .button:active,
@@ -3123,24 +3126,30 @@ Class                   | Description
     border-color: transparent; }
 
 .button--primary {
-  background: #3987cb;
-  color: white; }
+  fill: white;
+  stroke: transparent;
+  color: white;
+  background: #3987cb; }
   .button--primary:hover,
   .button--primary:active,
   .button--primary:focus {
     background: #619fd6; }
   .button--primary.button--contrast {
-    background: white;
-    color: rgba(0, 0, 0, 0.87); }
+    fill: rgba(0, 0, 0, 0.87);
+    stroke: transparent;
+    color: rgba(0, 0, 0, 0.87);
+    background: white; }
     .button--primary.button--contrast:hover,
     .button--primary.button--contrast:active,
     .button--primary.button--contrast:focus {
       background: rgba(255, 255, 255, 0.9); }
 
 .button--contrast {
+  fill: white;
+  stroke: transparent;
+  color: white;
   background: rgba(0, 0, 0, 0.26);
-  border: 1px solid white;
-  color: white; }
+  border: 1px solid white; }
   .button--contrast:hover,
   .button--contrast:active,
   .button--contrast:focus {
@@ -3148,8 +3157,10 @@ Class                   | Description
     border: 1px solid white; }
 
 .toggleButton-label {
-  border: 1px solid;
+  fill: #3987cb;
+  stroke: transparent;
   color: #3987cb;
+  border: 1px solid;
   font-weight: 400; }
   .toggleButton-label:hover, .toggleButton-label:active, .toggleButton-label:focus {
     background: rgba(57, 135, 203, 0.2); }
@@ -3175,17 +3186,11 @@ Class                   | Description
   width: 100%; }
 
 .button-icon {
-  height: 24px;
-  padding-left: 8px;
-  vertical-align: middle; }
+  margin-left: 4px;
+  vertical-align: bottom; }
   .button-icon:first-child {
-    padding-left: 0;
-    padding-right: 8px; }
-  .button-icon * {
-    fill: #3987cb; }
-
-.button--primary .button-icon * {
-  fill: white; }
+    margin-left: 0;
+    margin-right: 4px; }
 
 .button--small .button-icon {
   height: 16px; }
