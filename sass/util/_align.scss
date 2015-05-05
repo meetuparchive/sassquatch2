@@ -26,12 +26,22 @@ Aligns children of selected element using flexbox.
 	@include display(flex);
 	@include flex-direction(column);
 	@include justify-content(center);
+
+	.ieRoot_lt_IE10 & {
+		display: table-cell;
+		vertical-align: center;
+	}
 }
 
 %valignChildren--bottom {
 	@include display(flex);
 	@include flex-direction(column);
 	@include justify-content(flex-end);
+
+	.ieRoot_lt_IE10 & {
+		display: table-cell;
+		vertical-align: bottom;
+	}
 }
 
 

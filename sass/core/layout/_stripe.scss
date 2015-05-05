@@ -37,7 +37,10 @@ Class                | Description
 -------------------- | ------------------------------------------------------------
 `.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
 `.stripe--collection`|  applies a light gray background; for use with card collections
+`.stripe--hero`      |  for hero sections without a photo (see below)
+`.stripe--photoHero` |  for hero sections with a photo (see below)
 */
+
 %stripe,
 .stripe {
 	overflow: hidden;
@@ -63,15 +66,20 @@ title: Hero Stripes
 name: heroStripes
 parent: stripe
 ---
-Special `stripe` variants are avaiable for
-"hero" header stripes.
+Special `stripe` variants are avaiable for "hero" sections.
+Viewport size adjustments are built-in.
+
+**Note:** _Hero stripes require a `.bounds.stripe-heroContent`
+to properly position content within a hero. See examples below._
 
 ### Basic hero
 Uses the `stripe--hero` variant.
 
 ```html_example
 <section class="stripe stripe--hero inverted">
-	<h4>better example TK</h4>
+	<div class="bounds stripe-heroContent">
+		<h1 class="text--display">Chattanooga Tuba Enthusiasts</h1>
+	</div>
 </section>
 ```
 
@@ -80,7 +88,9 @@ Uses the `stripe--photoHero` variant.
 
 ```html_example
 <section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
-	<h4>better example TK</h4>
+	<div class="bounds stripe-heroContent">
+		<h1 class="text--display">Manitoba Yoga Meetup</h1>
+	</div>
 </section>
 ```
 */
@@ -96,6 +106,14 @@ Uses the `stripe--photoHero` variant.
 	overflow: hidden;
 	position: relative;
 
+	//
+	// for use with valignChildren--bottom
+	// on stripe-heroContent in IE9 and below
+	//
+	.ieRoot_lt_IE10 & {
+		display: table;
+		width: 100%;
+	}
 }
 
 .stripe--hero {
@@ -107,11 +125,12 @@ Uses the `stripe--photoHero` variant.
 }
 
 .stripe-heroContent {
-	@extend %valignChildren--bottom; // maybe try to align without this?
+	@extend %valignChildren--bottom;
 	min-height: $block-6;
 	position: relative;
 	text-align: center;
 	max-width: $bounds-wide;
+
 	@include atMediaDown(medium) {
 		min-height: $block-5;
 	}
