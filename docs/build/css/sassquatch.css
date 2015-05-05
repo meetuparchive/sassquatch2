@@ -222,6 +222,9 @@ Aligns children of selected element using flexbox.
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
+  .ieRoot_lt_IE10 .collection-header {
+    display: table-cell;
+    vertical-align: center; }
 
 .stripe-heroContent {
   display: -webkit-box;
@@ -242,6 +245,9 @@ Aligns children of selected element using flexbox.
   -ms-justify-content: flex-end;
   justify-content: flex-end;
   -ms-flex-pack: end; }
+  .ieRoot_lt_IE10 .stripe-heroContent {
+    display: table-cell;
+    vertical-align: bottom; }
 
 /*doc
 ---
@@ -1586,6 +1592,8 @@ Class                | Description
 -------------------- | ------------------------------------------------------------
 `.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
 `.stripe--collection`|  applies a light gray background; for use with card collections
+`.stripe--hero`      |  for hero sections without a photo (see below)
+`.stripe--photoHero` |  for hero sections with a photo (see below)
 */
 .stripe--collection, .stripe--inverted, .stripe--hero, .stripe--photoHero,
 .stripe {
@@ -1606,15 +1614,19 @@ title: Hero Stripes
 name: heroStripes
 parent: stripe
 ---
-Special `stripe` variants are avaiable for
-"hero" header stripes.
+Special `stripe` variants are avaiable for "hero" sections.
+
+**Note:** _Hero stripes require a `.bounds.stripe-heroContent`
+to properly position content within a hero. See examples below._
 
 ### Basic hero
 Uses the `stripe--hero` variant.
 
 ```html_example
 <section class="stripe stripe--hero inverted">
-	<h4>better example TK</h4>
+	<div class="bounds stripe-heroContent">
+		<h1 class="text--display">Chattanooga Tuba Enthusiasts</h1>
+	</div>
 </section>
 ```
 
@@ -1623,7 +1635,9 @@ Uses the `stripe--photoHero` variant.
 
 ```html_example
 <section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
-	<h4>better example TK</h4>
+	<div class="bounds stripe-heroContent">
+		<h1 class="text--display">Manitoba Yoga Meetup</h1>
+	</div>
 </section>
 ```
 */
@@ -1635,6 +1649,9 @@ Uses the `stripe--photoHero` variant.
   border-top: none;
   overflow: hidden;
   position: relative; }
+  .ieRoot_lt_IE10 .stripe--hero, .ieRoot_lt_IE10 .stripe--photoHero {
+    display: table;
+    width: 100%; }
 
 .stripe--photoHero:before {
   background-color: rgba(15, 20, 31, 0);
