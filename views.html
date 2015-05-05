@@ -28,7 +28,7 @@
 	<header class="stripe--inverted inverted">
 		<div class="bounds bounds--wide">
 			<h1 class="text--display">Sassquatch 2</h1>
-			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v0.14.1</a>
+			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v<!-- @echo VERSION --></a>
 		</div>
 	</header>
 
@@ -80,6 +80,25 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#modals">Modals</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#view">View</a>
 										</li>
 									
@@ -111,6 +130,123 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
+<h1 id="modals">Modals</h1>
+
+<h2>view--modal variants</h2>
+
+<table><thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>.view--modalFull</code></td>
+<td>Makes a modal that is full screen on all screen sizes</td>
+</tr>
+<tr>
+<td><code>.view--modalSnap</code></td>
+<td>Creates a modal that is full screen on small sizes, overlay/dialog on larger screens</td>
+</tr>
+</tbody></table>
+
+<h2 id="fullModalView">Full Modal View</h2>
+
+<p>Modal that is presented full screen on all sizes</p>
+<div class="codeExample"><div class="exampleOutput"><a class="link" href="pages/modal-full.html">Demo</a> 
+
+<div class="view view--modalFull display--none">
+    <header class="view-head">
+        <div class="row inverted"> 
+            <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+                <img src="style/img/logo.svg" width="35" height="24"></a>
+            </a>
+            <div class="row-item row-item--alignMiddle viewHead-heading">
+                <h1 class="wrap--singleLine--truncate">This is a header</h1> 
+            </div>
+        </div>
+    </header>
+    <div id="modal_body" class="view-body">
+        <div class="stripe">
+            <div class="bounds">
+            ... body content here ...
+            </div>
+        </div>
+    </div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-full.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span> 
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modalFull display--none"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span> 
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"style/img/logo.svg"</span> <span class="na">width=</span><span class="s">"35"</span> <span class="na">height=</span><span class="s">"24"</span><span class="nt">&gt;&lt;/a&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--alignMiddle viewHead-heading"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>This is a header<span class="nt">&lt;/h1&gt;</span> 
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"modal_body"</span> <span class="na">class=</span><span class="s">"view-body"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+            ... body content here ...
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
+<h2 id="snapModalView">Snap Modal View (Dialog)</h2>
+
+<p>Modal that snaps to the whole viewport and is full screen on small screens,
+lays out as a dialog on background content on larger screens.</p>
+<div class="codeExample"><div class="exampleOutput"><a class="link" href="pages/modal-snap.html">Demo</a> 
+
+<div class="view view--modalSnap display--none">
+    <header class="view-head">
+        <div class="row inverted"> 
+            <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+                Close
+            </a>
+            <div class="row-item row-item--alignMiddle viewHead-heading">
+                <h1 class="wrap--singleLine--truncate">Change your setting</h1> 
+            </div>
+        </div>
+    </header>
+    <div id="modal_body" class="view-body">
+        <div class="stripe">
+            <div class="bounds">
+            ... body content here ...
+
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-snap.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span> 
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modalSnap display--none"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span> 
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
+                Close
+            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--alignMiddle viewHead-heading"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>Change your setting<span class="nt">&lt;/h1&gt;</span> 
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"modal_body"</span> <span class="na">class=</span><span class="s">"view-body"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+            ... body content here ...
+
+                <span class="nt">&lt;button&gt;</span>Save<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div>
 <h1 id="view">View</h1>
 
 <p>A &quot;view&quot; contains all layout and content for a given screen.
@@ -137,6 +273,10 @@ following classes are optional variants:</p>
 <tr>
 <td><code>view--dimmed</code></td>
 <td>Dims view (for use with modal overlays)</td>
+</tr>
+<tr>
+<td><code>view--collection</code></td>
+<td>Sets the style for views that are primarily &quot;collections&quot;</td>
 </tr>
 </tbody></table>
 
@@ -216,7 +356,7 @@ hero headers).</p>
 </tr>
 <tr>
 <td><code>.view-head--photoOverlay</code></td>
-<td>Same as &#39;transparent&#39; variant, but adds text protext gradient</td>
+<td>Adds text protext gradient (<code>view-head--trasnparent</code> required with this class)</td>
 </tr>
 </tbody></table>
 	</main>
@@ -228,19 +368,29 @@ hero headers).</p>
 <script type="text/javascript">
 $(function() {
 	//
-	// Disable links by default
+	// Disable links without real href
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//
-	// collapsable example
+	// collapsible example
 	//
-	$('#collapse-trigger').click(function() {
-		$('#collapse-container').toggle('collapsable--shrink');
-	});
+	var $c = $('#cContainer'),
+		CLASS_COL_CLOSE = 'collapsible--close';
+	if ( $c.length > 0 ) {
+		$('#cTrigger').on('click', function() {
+			if ( $c.hasClass(CLASS_COL_CLOSE) ) {
+				$c.removeClass(CLASS_COL_CLOSE);
+			} else {
+				$c.addClass(CLASS_COL_CLOSE);
+			}
+		});
+	}
 
 	//
 	// lunr search index
@@ -368,6 +518,36 @@ $(function() {
 				
 
 				index.add({
+					"title": "Color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#colorUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "SVG + Text color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > SVG + Text color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#colorAllMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "SVG color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > SVG color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#svgColorMixin"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "data uri images",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > data uri images",
 					"path": "sass_utils_|_mixins_&_placeholders.html#datauri"
@@ -411,6 +591,36 @@ $(function() {
 					"title": "Clearfix placeholder",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Clearfix placeholder",
 					"path": "sass_utils_|_mixins_&_placeholders.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal mixins",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal mixins",
+					"path": "sass_utils_|_mixins_&_placeholders.html#modalUtils"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Dialog Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Dialog Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Dialog_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Full Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Full Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Full_Mixin"
 				});
 
 			
@@ -552,6 +762,26 @@ $(function() {
 				
 
 				index.add({
+					"title": "Anchors & Buttons",
+					"breadcrumb": "Modifier Classes > Anchors & Buttons",
+					"path": "modifier_classes.html#buttonMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button personality",
+					"breadcrumb": "Modifier Classes > Button personality",
+					"path": "modifier_classes.html#buttonPersonalityMod"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Display",
 					"breadcrumb": "Modifier Classes > Display",
 					"path": "modifier_classes.html#displayMod"
@@ -632,6 +862,36 @@ $(function() {
 				
 
 				index.add({
+					"title": "Text decoration",
+					"breadcrumb": "Modifier Classes > Text decoration",
+					"path": "modifier_classes.html#textDecoration"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Hiding Text",
+					"breadcrumb": "Modifier Classes > Hiding Text",
+					"path": "modifier_classes.html#textHideUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Type wrap/whitespace",
+					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
+					"path": "modifier_classes.html#typespaceMod"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Nice Hyphenation",
 					"breadcrumb": "Modifier Classes > Nice Hyphenation",
 					"path": "modifier_classes.html#wrapNiceUtil"
@@ -645,16 +905,6 @@ $(function() {
 					"title": "Thumbnails",
 					"breadcrumb": "Modifier Classes > Thumbnails",
 					"path": "modifier_classes.html#thumb"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Type wrap/whitespace",
-					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
-					"path": "modifier_classes.html#typespaceMod"
 				});
 
 			
@@ -1191,6 +1441,36 @@ $(function() {
 		
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Modals",
+					"breadcrumb": "Views > Modals",
+					"path": "views.html#modals"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Full Modal View",
+					"breadcrumb": "Views > Full Modal View",
+					"path": "views.html#fullModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Snap Modal View (Dialog)",
+					"breadcrumb": "Views > Snap Modal View (Dialog)",
+					"path": "views.html#snapModalView"
+				});
+
 			
 				
 				

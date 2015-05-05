@@ -28,7 +28,7 @@
 	<header class="stripe--inverted inverted">
 		<div class="bounds bounds--wide">
 			<h1 class="text--display">Sassquatch 2</h1>
-			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v0.14.1</a>
+			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v<!-- @echo VERSION --></a>
 		</div>
 	</header>
 
@@ -205,11 +205,29 @@ content in the feed attached to a parent item
         <h4>Backpacking For Beginners</h4>
     </div>
 </div>
+<div class="stack attachment chunk atMedium_stack--spread">
+    <div class="stack-item stack-item--shrink">
+        <time class="tearsheet" datetime="2017-01-13">13</time>
+    </div>
+    <div class="stack-item">
+        <h4 class="text--caption">Monday Jan 13, 6:30 pm</h4>
+        <h4>Backpacking For Beginners</h4>
+    </div>
+</div>
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row attachment chunk"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"tearsheet"</span> <span class="na">datetime=</span><span class="s">"2017-01-13"</span><span class="nt">&gt;</span>13<span class="nt">&lt;/time&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Monday Jan 13, 6:30 pm<span class="nt">&lt;/h4&gt;</span>
+        <span class="nt">&lt;h4&gt;</span>Backpacking For Beginners<span class="nt">&lt;/h4&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack attachment chunk atMedium_stack--spread"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack-item stack-item--shrink"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"tearsheet"</span> <span class="na">datetime=</span><span class="s">"2017-01-13"</span><span class="nt">&gt;</span>13<span class="nt">&lt;/time&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack-item"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Monday Jan 13, 6:30 pm<span class="nt">&lt;/h4&gt;</span>
         <span class="nt">&lt;h4&gt;</span>Backpacking For Beginners<span class="nt">&lt;/h4&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
@@ -396,19 +414,19 @@ classes are optional variants:</p>
 <p>Collapses elements using class toggling. A base
 class of <code>collapsible</code> is <strong>required</strong>.</p>
 
-<p>To collapse the element, add the <code>collapse--close</code> class.</p>
-<div class="codeExample"><div class="exampleOutput"><a id="collapse-trigger" class="button button--primary chunk followLink">Toggle</a>
+<p>To collapse the element, add the <code>collapsible--close</code> class.</p>
+<div class="codeExample"><div class="exampleOutput"><a id="cTrigger" class="button button--primary chunk followLink">Toggle</a>
 
-<section class="stripe collapsible" id="collapse-container">
-    <div class="bounds">
+<section class="stripe collapsible" id="cContainer">
+    <div class="bounds collapsible-content">
         <h2>I'm collapsible content</h2>
         <p>Adding a class of `collapsible--close` to this `section` will set max height to 0vh</p>
     </div>
 </section>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"collapse-trigger"</span> <span class="na">class=</span><span class="s">"button button--primary chunk followLink"</span><span class="nt">&gt;</span>Toggle<span class="nt">&lt;/a&gt;</span>
+</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"cTrigger"</span> <span class="na">class=</span><span class="s">"button button--primary chunk followLink"</span><span class="nt">&gt;</span>Toggle<span class="nt">&lt;/a&gt;</span>
 
-<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe collapsible"</span> <span class="na">id=</span><span class="s">"collapse-container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe collapsible"</span> <span class="na">id=</span><span class="s">"cContainer"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds collapsible-content"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h2&gt;</span>I'm collapsible content<span class="nt">&lt;/h2&gt;</span>
         <span class="nt">&lt;p&gt;</span>Adding a class of `collapsible--close` to this `section` will set max height to 0vh<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
@@ -700,6 +718,99 @@ Variant classes:</p>
             </ul>
         </div>
     </a>
+    <a href="#" class="chunk card card--event card--event--featured" style="margin: 16px; max-width: 250px;">
+
+        <div class="row row--spaceBetween row--wrap">
+
+            <time datetime="20150221" class="row-item row-item--shrink">
+                <h2 class="text--graphic display--inlineBlock">21</h2>
+                <h2>Feb</h2>
+            </time>
+
+            <div class="row-item row-item--shrink align--right">
+                <p class="text--caption">Featured</p>
+            </div>
+
+        </div>
+
+        <div class="chunk eventInfo-primary">
+            <p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+            <h3>Backpacking For Beginners</h3>
+
+            <ul class="inlineblockList matchLineHeight">
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="text--caption">+8</li>
+            </ul>
+        </div>
+    </a>
+    <a href="#" class="chunk card card--event card--event--cancelled" style="margin: 16px; max-width: 250px;">
+
+        <div class="row row--spaceBetween row--wrap">
+
+            <time datetime="20150221" class="row-item row-item--shrink">
+                <h2 class="text--graphic display--inlineBlock">21</h2>
+                <h2>Feb</h2>
+            </time>
+
+            <div class="row-item row-item--shrink align--right">
+                <p class="text--caption">Cancelled</p>
+            </div>
+
+        </div>
+
+        <div class="chunk eventInfo-primary">
+            <p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+            <h3 class="text--strikethrough">Backpacking For Beginners</h3>
+
+            <ul class="inlineblockList matchLineHeight">
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="text--caption">+8</li>
+            </ul>
+        </div>
+    </a>
+    <a href="#" class="chunk card card--event card--event--draft" style="margin: 16px; max-width: 250px;">
+
+        <div class="row row--spaceBetween row--wrap">
+
+            <time datetime="20150221" class="row-item row-item--shrink">
+                <h2 class="text--graphic display--inlineBlock">21</h2>
+                <h2>Feb</h2>
+            </time>
+
+            <div class="row-item row-item--shrink align--right">
+                <p class="text--caption">Draft</p>
+            </div>
+
+        </div>
+
+        <div class="chunk eventInfo-primary">
+            <p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
+
+            <h3>Backpacking For Beginners</h3>
+
+            <ul class="inlineblockList matchLineHeight">
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
+                <li class="text--caption">+8</li>
+            </ul>
+        </div>
+    </a>
 </section>
 </div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--collection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"chunk card card--event"</span> <span class="na">style=</span><span class="s">"margin: 16px; max-width: 250px;"</span><span class="nt">&gt;</span>
@@ -733,6 +844,99 @@ Variant classes:</p>
             <span class="nt">&lt;/ul&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"chunk card card--event card--event--featured"</span> <span class="na">style=</span><span class="s">"margin: 16px; max-width: 250px;"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--spaceBetween row--wrap"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">"20150221"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"text--graphic display--inlineBlock"</span><span class="nt">&gt;</span>21<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>Feb<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;/time&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink align--right"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Featured<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk eventInfo-primary"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate chunk text--secondary"</span><span class="nt">&gt;</span>Saturday at 2:00 pm<span class="nt">&lt;/p&gt;</span>
+
+            <span class="nt">&lt;h3&gt;</span>Backpacking For Beginners<span class="nt">&lt;/h3&gt;</span>
+
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList matchLineHeight"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>+8<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"chunk card card--event card--event--cancelled"</span> <span class="na">style=</span><span class="s">"margin: 16px; max-width: 250px;"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--spaceBetween row--wrap"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">"20150221"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"text--graphic display--inlineBlock"</span><span class="nt">&gt;</span>21<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>Feb<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;/time&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink align--right"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Cancelled<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk eventInfo-primary"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate chunk text--secondary"</span><span class="nt">&gt;</span>Saturday at 2:00 pm<span class="nt">&lt;/p&gt;</span>
+
+            <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"text--strikethrough"</span><span class="nt">&gt;</span>Backpacking For Beginners<span class="nt">&lt;/h3&gt;</span>
+
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList matchLineHeight"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>+8<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"chunk card card--event card--event--draft"</span> <span class="na">style=</span><span class="s">"margin: 16px; max-width: 250px;"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--spaceBetween row--wrap"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">"20150221"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"text--graphic display--inlineBlock"</span><span class="nt">&gt;</span>21<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>Feb<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;/time&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink align--right"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Draft<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk eventInfo-primary"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate chunk text--secondary"</span><span class="nt">&gt;</span>Saturday at 2:00 pm<span class="nt">&lt;/p&gt;</span>
+
+            <span class="nt">&lt;h3&gt;</span>Backpacking For Beginners<span class="nt">&lt;/h3&gt;</span>
+
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList matchLineHeight"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--small"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);"</span><span class="nt">&gt;</span>Member name<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>+8<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </pre></div></div></div>	</main>
 	</section>
@@ -743,19 +947,29 @@ Variant classes:</p>
 <script type="text/javascript">
 $(function() {
 	//
-	// Disable links by default
+	// Disable links without real href
 	//
-	$('a').click(function(e) {
-		if ( $(this).hasClass('followLink') ) return;
-		e.preventDefault();
+	$('a').on("click", function(e) {
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
 	});
 
 	//
-	// collapsable example
+	// collapsible example
 	//
-	$('#collapse-trigger').click(function() {
-		$('#collapse-container').toggle('collapsable--shrink');
-	});
+	var $c = $('#cContainer'),
+		CLASS_COL_CLOSE = 'collapsible--close';
+	if ( $c.length > 0 ) {
+		$('#cTrigger').on('click', function() {
+			if ( $c.hasClass(CLASS_COL_CLOSE) ) {
+				$c.removeClass(CLASS_COL_CLOSE);
+			} else {
+				$c.addClass(CLASS_COL_CLOSE);
+			}
+		});
+	}
 
 	//
 	// lunr search index
@@ -883,6 +1097,36 @@ $(function() {
 				
 
 				index.add({
+					"title": "Color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#colorUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "SVG + Text color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > SVG + Text color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#colorAllMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "SVG color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > SVG color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#svgColorMixin"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "data uri images",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > data uri images",
 					"path": "sass_utils_|_mixins_&_placeholders.html#datauri"
@@ -926,6 +1170,36 @@ $(function() {
 					"title": "Clearfix placeholder",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Clearfix placeholder",
 					"path": "sass_utils_|_mixins_&_placeholders.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal mixins",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal mixins",
+					"path": "sass_utils_|_mixins_&_placeholders.html#modalUtils"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Dialog Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Dialog Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Dialog_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Full Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Full Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Full_Mixin"
 				});
 
 			
@@ -1067,6 +1341,26 @@ $(function() {
 				
 
 				index.add({
+					"title": "Anchors & Buttons",
+					"breadcrumb": "Modifier Classes > Anchors & Buttons",
+					"path": "modifier_classes.html#buttonMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button personality",
+					"breadcrumb": "Modifier Classes > Button personality",
+					"path": "modifier_classes.html#buttonPersonalityMod"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Display",
 					"breadcrumb": "Modifier Classes > Display",
 					"path": "modifier_classes.html#displayMod"
@@ -1147,6 +1441,36 @@ $(function() {
 				
 
 				index.add({
+					"title": "Text decoration",
+					"breadcrumb": "Modifier Classes > Text decoration",
+					"path": "modifier_classes.html#textDecoration"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Hiding Text",
+					"breadcrumb": "Modifier Classes > Hiding Text",
+					"path": "modifier_classes.html#textHideUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Type wrap/whitespace",
+					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
+					"path": "modifier_classes.html#typespaceMod"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Nice Hyphenation",
 					"breadcrumb": "Modifier Classes > Nice Hyphenation",
 					"path": "modifier_classes.html#wrapNiceUtil"
@@ -1160,16 +1484,6 @@ $(function() {
 					"title": "Thumbnails",
 					"breadcrumb": "Modifier Classes > Thumbnails",
 					"path": "modifier_classes.html#thumb"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Type wrap/whitespace",
-					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
-					"path": "modifier_classes.html#typespaceMod"
 				});
 
 			
@@ -1706,6 +2020,36 @@ $(function() {
 		
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Modals",
+					"breadcrumb": "Views > Modals",
+					"path": "views.html#modals"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Full Modal View",
+					"breadcrumb": "Views > Full Modal View",
+					"path": "views.html#fullModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Snap Modal View (Dialog)",
+					"breadcrumb": "Views > Snap Modal View (Dialog)",
+					"path": "views.html#snapModalView"
+				});
+
 			
 				
 				
