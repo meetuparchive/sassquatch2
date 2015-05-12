@@ -1,8 +1,6 @@
 Sassquatch 2
 =============
 
-## (in dev)
-
 Sassquatch is a CSS foundation and framework for [Meetup](http://www.meetup.com), built with [Sass](http://sass-lang.com/).
 
 ---
