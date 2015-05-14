@@ -2687,7 +2687,7 @@ Class                      | Description
 */
 /*doc
 ---
-title: Full Modal View 
+title: Full Modal View
 name: fullModalView
 parent: modals
 ---
@@ -2695,16 +2695,16 @@ parent: modals
 Modal that is presented full screen on all sizes
 
 ```html_example
-<a class="link" href="pages/modal-full.html">Demo</a> 
+<a class="link" href="pages/modal-full.html">Demo</a>
 
 <div class="view view--modalFull display--none">
 	<header class="view-head">
-		<div class="row inverted"> 
+		<div class="row inverted">
 			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
 				<img src="style/img/logo.svg" width="35" height="24"></a>
 			</a>
 			<div class="row-item row-item--alignMiddle viewHead-heading">
-				<h1 class="wrap--singleLine--truncate">This is a header</h1> 
+				<h1 class="wrap--singleLine--truncate">This is a header</h1>
 			</div>
 		</div>
 	</header>
@@ -2740,7 +2740,7 @@ Modal that is presented full screen on all sizes
 
 /*doc
 ---
-title: Snap Modal View (Dialog) 
+title: Snap Modal View (Dialog)
 name: snapModalView
 parent: modals
 ---
@@ -2750,16 +2750,16 @@ lays out as a dialog on background content on larger screens.
 
 
 ```html_example
-<a class="link" href="pages/modal-snap.html">Demo</a> 
+<a class="link" href="pages/modal-snap.html">Demo</a>
 
 <div class="view view--modalSnap display--none">
 	<header class="view-head">
-		<div class="row inverted"> 
+		<div class="row inverted">
 			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
 				Close
 			</a>
 			<div class="row-item row-item--alignMiddle viewHead-heading">
-				<h1 class="wrap--singleLine--truncate">Change your setting</h1> 
+				<h1 class="wrap--singleLine--truncate">Change your setting</h1>
 			</div>
 		</div>
 	</header>
@@ -2767,7 +2767,7 @@ lays out as a dialog on background content on larger screens.
 		<div class="stripe">
 			<div class="bounds">
 			... body content here ...
-			
+
 				<button>Save</button>
 			</div>
 		</div>
@@ -2779,34 +2779,34 @@ lays out as a dialog on background content on larger screens.
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  -webkit-transition: -webkit-transform 0.2s ease;
-  -moz-transition: -moz-transform 0.2s ease;
-  transition: transform 0.2s ease;
-  left: 50%;
-  margin-left: -220px;
-  margin-top: 10vh;
-  min-height: 0;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  left: 0;
+  margin: 0;
+  min-height: 100vh;
   position: absolute;
-  width: 440px;
+  top: 0;
+  width: 100%;
   z-index: 3; }
   .view--modalSnap.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
     transform: translateY(100vh); }
-  @media only screen and (max-width: 440px) {
+  @media only screen and (min-width: 640px) {
     .view--modalSnap {
       -webkit-transform: translate3d(0, 0, 0);
       -ms-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
-      -webkit-transition: -webkit-transform 0.3s;
-      -moz-transition: -moz-transform 0.3s;
-      transition: transform 0.3s;
-      left: 0;
-      margin: 0;
-      min-height: 100vh;
+      -webkit-transition: -webkit-transform 0.2s ease;
+      -moz-transition: -moz-transform 0.2s ease;
+      transition: transform 0.2s ease;
+      left: 50%;
+      margin-left: -220px;
+      margin-top: 10vh;
+      min-height: 0;
       position: absolute;
-      top: 0;
-      width: 100%; }
+      width: 440px; }
       .view--modalSnap.off {
         -webkit-transform: translateY(100vh);
         -ms-transform: translateY(100vh);
@@ -3439,6 +3439,8 @@ To collapse the element, add the `collapsible--close` class.
   transition: max-height 300ms ease-in-out;
   will-change: max-height;
   height: auto;
+  min-height: 0 !important;
+  /* override any min-height rules */
   max-height: 4000px;
   /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */ }
 
