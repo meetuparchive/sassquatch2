@@ -17,7 +17,7 @@ Class                      | Description
 
 /*doc
 ---
-title: Full Modal View 
+title: Full Modal View
 name: fullModalView
 parent: modals
 ---
@@ -25,16 +25,16 @@ parent: modals
 Modal that is presented full screen on all sizes
 
 ```html_example
-<a class="link" href="pages/modal-full.html">Demo</a> 
+<a class="link" href="pages/modal-full.html">Demo</a>
 
 <div class="view view--modalFull display--none">
 	<header class="view-head">
-		<div class="row inverted"> 
+		<div class="row inverted">
 			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
 				<img src="style/img/logo.svg" width="35" height="24"></a>
 			</a>
 			<div class="row-item row-item--alignMiddle viewHead-heading">
-				<h1 class="wrap--singleLine--truncate">This is a header</h1> 
+				<h1 class="wrap--singleLine--truncate">This is a header</h1>
 			</div>
 		</div>
 	</header>
@@ -60,7 +60,7 @@ Modal that is presented full screen on all sizes
 
 /*doc
 ---
-title: Snap Modal View (Dialog) 
+title: Snap Modal View (Dialog)
 name: snapModalView
 parent: modals
 ---
@@ -70,16 +70,16 @@ lays out as a dialog on background content on larger screens.
 
 
 ```html_example
-<a class="link" href="pages/modal-snap.html">Demo</a> 
+<a class="link" href="pages/modal-snap.html">Demo</a>
 
 <div class="view view--modalSnap display--none">
 	<header class="view-head">
-		<div class="row inverted"> 
+		<div class="row inverted">
 			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
 				Close
 			</a>
 			<div class="row-item row-item--alignMiddle viewHead-heading">
-				<h1 class="wrap--singleLine--truncate">Change your setting</h1> 
+				<h1 class="wrap--singleLine--truncate">Change your setting</h1>
 			</div>
 		</div>
 	</header>
@@ -87,7 +87,7 @@ lays out as a dialog on background content on larger screens.
 		<div class="stripe">
 			<div class="bounds">
 			... body content here ...
-			
+
 				<button>Save</button>
 			</div>
 		</div>
@@ -100,9 +100,9 @@ lays out as a dialog on background content on larger screens.
 // full at narrow widths, dialog at wide widths
 
 .view--modalSnap {
-	@include modal-dialog;
-	@include atMediaDown(small){
-		@include modal-full;
+	@include modal-full;
+	@include atMediaUp(medium){
+		@include modal-dialog;
 	}
 	z-index: map-get($zindex-map, "modal");
 }

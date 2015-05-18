@@ -130,39 +130,35 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="modals">Modals</h1>
+<h1 id="modals" class="styleguide">Modals</h1>
 
 <h2>view--modal variants</h2>
-
-<table><thead>
-<tr>
+<table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>.view--modalFull</code></td>
+ <tr>
+<td><code class="styleguide">.view--modalFull</code></td>
 <td>Makes a modal that is full screen on all screen sizes</td>
 </tr>
 <tr>
-<td><code>.view--modalSnap</code></td>
+<td><code class="styleguide">.view--modalSnap</code></td>
 <td>Creates a modal that is full screen on small sizes, overlay/dialog on larger screens</td>
 </tr>
-</tbody></table>
-
-<h2 id="fullModalView">Full Modal View</h2>
-
-<p>Modal that is presented full screen on all sizes</p>
-<div class="codeExample"><div class="exampleOutput"><a class="link" href="pages/modal-full.html">Demo</a> 
+ </table>
+<h2 id="fullModalView" class="styleguide">Full Modal View</h2>
+<p class="styleguide">Modal that is presented full screen on all sizes</p><div class="codeExample">
+  <div class="exampleOutput">
+    <a class="link" href="pages/modal-full.html">Demo</a>
 
 <div class="view view--modalFull display--none">
     <header class="view-head">
-        <div class="row inverted"> 
+        <div class="row inverted">
             <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
                 <img src="style/img/logo.svg" width="35" height="24"></a>
             </a>
             <div class="row-item row-item--alignMiddle viewHead-heading">
-                <h1 class="wrap--singleLine--truncate">This is a header</h1> 
+                <h1 class="wrap--singleLine--truncate">This is a header</h1>
             </div>
         </div>
     </header>
@@ -174,16 +170,20 @@
         </div>
     </div>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-full.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span> 
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-full.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span>
 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modalFull display--none"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"style/img/logo.svg"</span> <span class="na">width=</span><span class="s">"35"</span> <span class="na">height=</span><span class="s">"24"</span><span class="nt">&gt;&lt;/a&gt;</span>
             <span class="nt">&lt;/a&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--alignMiddle viewHead-heading"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>This is a header<span class="nt">&lt;/h1&gt;</span> 
+                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>This is a header<span class="nt">&lt;/h1&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/header&gt;</span>
@@ -194,22 +194,25 @@
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h2 id="snapModalView">Snap Modal View (Dialog)</h2>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>Modal that snaps to the whole viewport and is full screen on small screens,
-lays out as a dialog on background content on larger screens.</p>
-<div class="codeExample"><div class="exampleOutput"><a class="link" href="pages/modal-snap.html">Demo</a> 
+<h2 id="snapModalView" class="styleguide">Snap Modal View (Dialog)</h2>
+<p class="styleguide">Modal that snaps to the whole viewport and is full screen on small screens,
+lays out as a dialog on background content on larger screens.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <a class="link" href="pages/modal-snap.html">Demo</a>
 
 <div class="view view--modalSnap display--none">
     <header class="view-head">
-        <div class="row inverted"> 
+        <div class="row inverted">
             <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
                 Close
             </a>
             <div class="row-item row-item--alignMiddle viewHead-heading">
-                <h1 class="wrap--singleLine--truncate">Change your setting</h1> 
+                <h1 class="wrap--singleLine--truncate">Change your setting</h1>
             </div>
         </div>
     </header>
@@ -223,16 +226,20 @@ lays out as a dialog on background content on larger screens.</p>
         </div>
     </div>
 </div>
-</div><div class="codeBlock"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-snap.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span> 
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-snap.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span>
 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modalSnap display--none"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row inverted"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
                 Close
             <span class="nt">&lt;/a&gt;</span>
             <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--alignMiddle viewHead-heading"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>Change your setting<span class="nt">&lt;/h1&gt;</span> 
+                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>Change your setting<span class="nt">&lt;/h1&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/header&gt;</span>
@@ -245,59 +252,55 @@ lays out as a dialog on background content on larger screens.</p>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre></div></div></div>
-<h1 id="view">View</h1>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
 
-<p>A &quot;view&quot; contains all layout and content for a given screen.
+<h1 id="view" class="styleguide">View</h1>
+<p class="styleguide">A &quot;view&quot; contains all layout and content for a given screen.
 Typically, a document only has a single view. Split views,
-where a document contains two view elements are possible (see below).</p>
-
-<p>A class of <code>.view</code> is required for view elements; the
-following classes are optional variants:</p>
-
-<table><thead>
-<tr>
+where a document contains two view elements are possible (see below).</p><p class="styleguide">A class of <code class="styleguide">.view</code> is required for view elements; the
+following classes are optional variants:</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>view--splitList</code></td>
+ <tr>
+<td><code class="styleguide">view--splitList</code></td>
 <td>Sets view to &quot;list style&quot; when viewport is wide enough</td>
 </tr>
 <tr>
-<td><code>view--splitDetail</code></td>
+<td><code class="styleguide">view--splitDetail</code></td>
 <td>Sets view to &quot;detail style&quot; when viewport is wide enough</td>
 </tr>
 <tr>
-<td><code>view--dimmed</code></td>
+<td><code class="styleguide">view--dimmed</code></td>
 <td>Dims view (for use with modal overlays)</td>
 </tr>
 <tr>
-<td><code>view--collection</code></td>
+<td><code class="styleguide">view--collection</code></td>
 <td>Sets the style for views that are primarily &quot;collections&quot;</td>
 </tr>
-</tbody></table>
-
+ </table>
 <h2>Basic view (<a class="link followLink" href="pages/full-view.html">Demo</a>)</h2>
-
-<p>Basic example of a single view in a document:</p>
-<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view"&gt;
+<p class="styleguide">Basic example of a single view in a document:</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="view"&gt;
     &lt;header class="view-head"&gt;
         ... view-head ...
     &lt;/header&gt;
     &lt;main class="view-body"&gt;
         ... view-body ...
     &lt;/main&gt;
-&lt;/div&gt;
-</pre></div></div>
+&lt;/div&gt;</pre>
+  </div>
+</div>
 <h2>Split view (DEMO)</h2>
-
-<p>Basic example of two views in one document, where we specify
+<p class="styleguide">Basic example of two views in one document, where we specify
 which view has the &quot;list&quot; responsibility, and which view has
-the &quot;detail&quot; responsibility.</p>
-<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view view--splitList"&gt;
+the &quot;detail&quot; responsibility.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="view view--splitList"&gt;
     &lt;header class="view-head"&gt;
         ... view-head ...
     &lt;/header&gt;
@@ -313,53 +316,50 @@ the &quot;detail&quot; responsibility.</p>
     &lt;main class="view-body"&gt;
         ... view-body ...
     &lt;/main&gt;
-&lt;/div&gt;
-</pre></div></div>
-<h1 id="viewBody">View Body</h1>
-
-<p>The <code>view-body</code> element is our main
-content container for the view.</p>
-<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view"&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div>
+<h1 id="viewBody" class="styleguide">View Body</h1>
+<p class="styleguide">The <code class="styleguide">view-body</code> element is our main
+content container for the view.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="view"&gt;
     &lt;main class="view-body"&gt;
         ... stripes, bounds, etc ...
         ... all content ...
     &lt;/main&gt;
-&lt;/div&gt;
-</pre></div></div>
-<h1 id="viewHead">View Head</h1>
-
-<p>The <code>view-head</code> element is the first child (the
-fixed top nav bar) within every view.</p>
-<div class="codeBlock"><div class="highlight"><pre>&lt;div class="view"&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div>
+<h1 id="viewHead" class="styleguide">View Head</h1>
+<p class="styleguide">The <code class="styleguide">view-head</code> element is the first child (the
+fixed top nav bar) within every view.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="view"&gt;
     &lt;header class="view-head row inverted"&gt;
         &lt;a href="#" class="row-item row-item--shrink row-item--alignMiddle"&gt;[...]&lt;/a&gt;
         &lt;a href="#" class="row-item row-item--alignMiddle"&gt;Page Title&lt;/a&gt;
         &lt;a href="#" class="row-item row-item--shrink row-item--alignMiddle"&gt;[...]&lt;/a&gt;
     &lt;/header&gt;
-&lt;/div&gt;
-</pre></div></div>
+&lt;/div&gt;</pre>
+  </div>
+</div>
 <h2>view-head variants</h2>
-
-<p>A class of <code>.view-head</code> is required for view headers. The following classes
+<p class="styleguide">A class of <code class="styleguide">.view-head</code> is required for view headers. The following classes
 are optional variants (most likely added/removed with javascript to accommodate
-hero headers).</p>
-
-<table><thead>
-<tr>
+hero headers).</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
-</thead><tbody>
-<tr>
-<td><code>.view-head--transparent</code></td>
-<td>Makes view header transparent; hides <code>h1</code> heading</td>
+ <tr>
+<td><code class="styleguide">.view-head--transparent</code></td>
+<td>Makes view header transparent; hides <code class="styleguide">h1</code> heading</td>
 </tr>
 <tr>
-<td><code>.view-head--photoOverlay</code></td>
-<td>Adds text protext gradient (<code>view-head--trasnparent</code> required with this class)</td>
+<td><code class="styleguide">.view-head--photoOverlay</code></td>
+<td>Adds text protext gradient (<code class="styleguide">view-head--trasnparent</code> required with this class)</td>
 </tr>
-</tbody></table>
-	</main>
+ </table>	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -678,16 +678,6 @@ $(function() {
 				
 
 				index.add({
-					"title": "Link color",
-					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
-					"path": "sass_utils_|_mixins_&_placeholders.html#linkColor"
-				});
-
-			
-				
-				
-
-				index.add({
 					"title": "Text protection shim",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text protection shim",
 					"path": "sass_utils_|_mixins_&_placeholders.html#textProtection"
@@ -762,8 +752,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "Anchors & Buttons",
-					"breadcrumb": "Modifier Classes > Anchors & Buttons",
+					"title": "Anchors &amp; Buttons",
+					"breadcrumb": "Modifier Classes > Anchors &amp; Buttons",
 					"path": "modifier_classes.html#buttonMod"
 				});
 
@@ -1093,6 +1083,16 @@ $(function() {
 					"title": "Running text",
 					"breadcrumb": "Typography > Running text",
 					"path": "typography.html#runningText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Link color",
+					"breadcrumb": "Typography > Link color",
+					"path": "typography.html#linkColor"
 				});
 
 			

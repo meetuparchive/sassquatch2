@@ -1,14 +1,14 @@
 Sassquatch 2
 =============
 
-## (in dev)
-
 Sassquatch is a CSS foundation and framework for [Meetup](http://www.meetup.com), built with [Sass](http://sass-lang.com/).
 
 ---
 
 ## Documentation
-Documentation is built to [github pages](http://meetup.github.io/sassquatch2/typography.html)
+Hologram documentation is built to [github pages](http://meetup.github.io/sassquatch2/typography.html)
+
+An overview of basic Sassquatch2 conventions is also available in [the wiki](https://github.com/meetup/sassquatch2/wiki)
 
 ---
 
@@ -45,4 +45,3 @@ Command             | Result
 `grunt sass`        | Recompiles Sass
 `grunt hologram`    | Rebuilds Hologram docs
 `grunt clean`       | Cleans compiled docs and CSS in `docs/build`
-`grunt ghpages`     | Pushes a clean rebuild of `docs/build` from your __current branch__ to `gh-pages`

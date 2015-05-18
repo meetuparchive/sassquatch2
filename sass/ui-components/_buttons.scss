@@ -70,7 +70,7 @@ $btn-color-map: (
 %button,
 .button {
 	@extend %buttonBase;
-	color: map-get($btn-color-map, "primary");
+	@include color-all( map-get($btn-color-map, "primary") );
 	&:hover,
 	&:active,
 	&:focus {
@@ -83,8 +83,8 @@ $btn-color-map: (
 %button--primary,
 .button--primary {
 	@extend %button--borderless;
+	@include color-all( $C_textPrimaryInverted );
 	background: map-get($btn-color-map, "primary");
-	color: $C_textPrimaryInverted;
 
 	&:hover,
 	&:active,
@@ -93,8 +93,8 @@ $btn-color-map: (
 	}
 
 	&.button--contrast { // TODO (mikep): look into ways to do this without chaining classes
+		@include color-all($C_textPrimary);
 		background: map-get($btn-color-map, "contrast");
-		color: $C_textPrimary;
 		&:hover,
 		&:active,
 		&:focus {
@@ -106,9 +106,9 @@ $btn-color-map: (
 
 %button--contrast,
 .button--contrast {
+	@include color-all( map-get($btn-color-map, "contrast") );
 	background: $C_textTertiary;
 	border: $btn-border map-get($btn-color-map, "contrast");
-	color: map-get($btn-color-map, "contrast");
 
 	&:hover,
 	&:active,
@@ -122,8 +122,8 @@ $btn-color-map: (
 // Button border modifiers
 //
 %button--bordered {
+	@include color-all( map-get($btn-color-map, "primary") );
 	border: $btn-border;
-	color: map-get($btn-color-map, "primary");
 	font-weight: $W_normal;
 	&:hover,
 	&:active,
@@ -163,23 +163,13 @@ $btn-color-map: (
 // Handling icon buttons
 //
 .button-icon {
-	height: $media-xs;
-	padding-left: $space-half;
-	vertical-align: middle;
+	margin-left: $space-half/2;
+	vertical-align: bottom;
 
 	&:first-child {
-		padding-left: 0;
-		padding-right: $space-half;
+		margin-left: 0;
+		margin-right: $space-half/2;
 	}
-
-	* {
-		fill: map-get($btn-color-map, "primary");
-	}
-
-}
-
-.button--primary .button-icon * {
-	fill: $C_textPrimaryInverted
 }
 
 .button--small .button-icon {
