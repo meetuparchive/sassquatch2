@@ -126,13 +126,13 @@ Uses the `stripe--photoHero` variant.
 
 .stripe-heroContent {
 	@extend %valignChildren--bottom;
-	min-height: $block-6;
+	min-height: $block-5;
 	position: relative;
 	text-align: center;
 	max-width: $bounds-wide;
 
-	@include atMediaDown(medium) {
-		min-height: $block-5;
+	@include atMediaUp(medium) {
+		min-height: $block-6;
 	}
 }
 

@@ -357,37 +357,6 @@ example, applies to <em>medium screens and larger</em>.</p><div class="codeBlock
 <td>Modern desktop viewports and up or <a class="styleguide" href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg" title="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a></td>
 </tr>
  </table>
-<h3>Breaking for smaller sizes and under</h3>
-<p class="styleguide">In the event you need to target a <strong>specific screen size and under</strong>,
-use the <code class="styleguide">atMediaDown</code> mixin.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include atMediaDown(medium) {
-        body::after {
-            content: "medium screens and smaller can see me";
-        }
-    }</pre>
-  </div>
-</div><table class="styleguide"> <tr>
-<th>Breakpoint name</th>
-<th>Description</th>
-</tr>
- <tr>
-<td><code class="styleguide">atMediaDown(small)</code></td>
-<td>Small screens and under; portrait on most mobile devices</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaDown(medium)</code></td>
-<td>Landscape on most phones and under; portrait on some phablets</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaDown(large)</code></td>
-<td>Landscape on phabelts and under; portrait on most tablets or old desktops</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaDown(huge)</code></td>
-<td>Huge screens and under</td>
-</tr>
- </table>
 <h1 id="button" class="styleguide">Button utilities</h1>
 
 <h2 id="buttonPersonality" class="styleguide">Button personality placeholder</h2>
