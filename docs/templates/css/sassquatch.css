@@ -1653,8 +1653,7 @@ Uses the `stripe--photoHero` variant.
   max-width: 1100px; }
   @media only screen and (min-width: 640px) {
     .stripe-heroContent {
-      min-height: 384px;
-      outline: 3px dotted red; } }
+      min-height: 384px; } }
 
 /*doc
 ---
@@ -1696,6 +1695,7 @@ ul, ol, .list, .menu-actions,
     padding-top: 0; }
 
 .list {
+  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none; }
@@ -1768,9 +1768,6 @@ Class                         | Description
   .gridList--photoGrid > li {
     padding: 0 4px 4px 0; }
 
-@media only screen and (min-width: 640px) {
-  .gridList--photoGrid {
-    outline: 3px dotted red; } }
 .gridList--has1 > li {
   width: 100%; }
 
@@ -1987,9 +1984,7 @@ Class                       | Description
 */
 .hscroll {
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  overflow: scroll;
-  overflow: -moz-scrollbars-none; }
+  overflow: scroll; }
   .hscroll::-webkit-scrollbar {
     display: none; }
 
@@ -2218,10 +2213,13 @@ _Includes `table-cell` fallback for IE8._
   -ms-flex-align: flex; }
 
 .row-item {
-  padding-left: 16px;
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  padding-left: 16px;
   width: auto;
   min-width: 0; }
   .row-item:first-child {
@@ -2320,6 +2318,9 @@ Class                   | Description
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
   -ms-flex-negative: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   width: initial; }
 
 .row-item--alignMiddle {
@@ -2428,10 +2429,11 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .atMedium_stack--spread > .stack-item {
+      -webkit-flex-basis: 0;
+      flex-basis: 0;
+      -ms-flex-preferred-size: 0;
       width: auto;
-      -webkit-flex-basis: auto;
-      flex-basis: auto;
-      -ms-flex-preferred-size: auto;
+      min-width: 0;
       padding-left: 16px; }
       .atMedium_stack--spread > .stack-item:first-child {
         padding-left: 0; }
@@ -2442,6 +2444,9 @@ Class                   | Description
       -webkit-flex-shrink: 0;
       flex-shrink: 0;
       -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
       width: initial; } }
 @media only screen and (min-width: 840px) {
   .atLarge_stack--spread {
@@ -2456,10 +2461,11 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .atLarge_stack--spread > .stack-item {
+      -webkit-flex-basis: 0;
+      flex-basis: 0;
+      -ms-flex-preferred-size: 0;
       width: auto;
-      -webkit-flex-basis: auto;
-      flex-basis: auto;
-      -ms-flex-preferred-size: auto;
+      min-width: 0;
       padding-left: 16px; }
       .atLarge_stack--spread > .stack-item:first-child {
         padding-left: 0; }
@@ -2470,6 +2476,9 @@ Class                   | Description
       -webkit-flex-shrink: 0;
       flex-shrink: 0;
       -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
       width: initial; } }
 .ieRoot_lt_IE10 .stack,
 .ieRoot_lt_IE10 .stack-item {
