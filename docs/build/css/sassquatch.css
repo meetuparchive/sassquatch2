@@ -4095,18 +4095,23 @@ a modification at a specific breakpoint.
 
 _Uses atMediaUp_
 
-#### Signature
+### Example
 
-`.at[Breakpoint]_[property]--modification`
+```html_example
+	<p class="atLarge_align--center">
+		This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
+	</p>
+```
 
+### Supported modifications
+Using this signature: `.at[Breakpoint]_[base]--[variant]`
 
-#### Supported media and modifications
-- `.at[ Medium | Large ]_align--[ center | right | left ]`
-- `.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]`
-- `.at[ Medium | Large ]_border--[ none | top ]`
-- `.at[ Medium | Large ]_padding--none`
-
-Example TK
+Base           | Variants
+-------------- | ---------------------------
+`align`        | `center`, `right`, `left`
+`display`      | `none`, `block`, `inline`, `inlineBlock`
+`padding`      | `none`
+`border`       | `top`, `none`
 */
 @media only screen and (min-width: 640px) {
   .atMedium_align--center {
