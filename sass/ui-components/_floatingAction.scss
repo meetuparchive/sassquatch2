@@ -47,7 +47,7 @@ $_containerHeight: $space*2 + $_buttonHeight;
 
 	> a {
 		position: relative;
-		z-index: 3;
+		z-index: map-get($zindex-map, modal);
 	}
 }
 
@@ -64,6 +64,9 @@ $_containerHeight: $space*2 + $_buttonHeight;
 			position: static;
 			height: 0;
 			width: 0;
+		}
+		> a {
+			z-index: map-get($zindex-map, main);
 		}
 	}
 	.hasFloatingAction {
