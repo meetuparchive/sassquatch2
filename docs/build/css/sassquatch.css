@@ -319,26 +319,6 @@ Breakpoint name      | Description
 `atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
 `atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
 
-
-### Breaking for smaller sizes and under
-In the event you need to target a **specific screen size and under**,
-use the `atMediaDown` mixin.
-
-```scss
-	@include atMediaDown(medium) {
-		body::after {
-			content: "medium screens and smaller can see me";
-		}
-	}
-```
-
-Breakpoint name        | Description
------------------------| ---------------------------------------------
-`atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
-`atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
-`atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
-`atMediaDown(huge)`    | Huge screens and under
-
 */
 /*doc
 ---
@@ -1669,13 +1649,13 @@ Uses the `stripe--photoHero` variant.
   top: 0; }
 
 .stripe-heroContent {
-  min-height: 384px;
+  min-height: 240px;
   position: relative;
   text-align: center;
   max-width: 1100px; }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (min-width: 640px) {
     .stripe-heroContent {
-      min-height: 240px; } }
+      min-height: 384px; } }
 
 /*doc
 ---
@@ -1717,6 +1697,7 @@ ul, ol, .list, .menu-actions,
     padding-top: 0; }
 
 .list {
+  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none; }
@@ -1783,13 +1764,12 @@ Class                         | Description
 `.atLarge_gridList--has[n]`   | Sets number of columns for large breakpoint and up (ie. `.atLarge_gridList--has10`)
 
 */
-.gridList--photoGrid > li {
-  padding: 0 4px 4px 0; }
+.gridList--photoGrid {
+  margin: 0 -24px 0 -16px;
+  padding: 0; }
+  .gridList--photoGrid > li {
+    padding: 0 4px 4px 0; }
 
-@media only screen and (max-width: 640px) {
-  .gridList--photoGrid {
-    margin: 0 -24px 0 -16px;
-    padding: 0; } }
 .gridList--has1 > li {
   width: 100%; }
 
@@ -2006,9 +1986,7 @@ Class                       | Description
 */
 .hscroll {
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  overflow: scroll;
-  overflow: -moz-scrollbars-none; }
+  overflow: scroll; }
   .hscroll::-webkit-scrollbar {
     display: none; }
 
@@ -3496,32 +3474,43 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 	</div>
 ```
 */
-@media only screen and (max-width: 440px) {
-  .floatingAction {
-    box-sizing: border-box;
-    padding: 0 16px;
+.floatingAction {
+  box-sizing: border-box;
+  padding: 0 16px;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1; }
+  .floatingAction:before {
+    display: block;
+    position: fixed;
     bottom: 0;
     left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1; }
+    content: "";
+    background-color: #353e48;
+    z-index: 2;
+    height: 72px;
+    width: 100%; }
+  .floatingAction > a {
+    position: relative;
+    z-index: 3; }
+
+.hasFloatingAction {
+  background-color: #353e48;
+  padding-bottom: 72px; }
+
+@media only screen and (min-width: 640px) {
+  .floatingAction {
+    position: static; }
     .floatingAction:before {
-      display: block;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      content: "";
-      background-color: #353e48;
-      z-index: 2;
-      height: 72px;
-      width: 100%; }
-    .floatingAction > a {
-      position: relative;
-      z-index: 3; }
+      position: static;
+      height: 0;
+      width: 0; }
 
   .hasFloatingAction {
-    background-color: #353e48;
-    padding-bottom: 72px; } }
+    background-color: transparent;
+    padding-bottom: 0; } }
 /*doc
 ---
 title: Menu
@@ -4108,18 +4097,23 @@ a modification at a specific breakpoint.
 
 _Uses atMediaUp_
 
-#### Signature
+### Example
 
-`.at[Breakpoint]_[property]--modification`
+```html_example
+	<p class="atLarge_align--center">
+		This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
+	</p>
+```
 
+### Supported modifications
+Using this signature: `.at[Breakpoint]_[base]--[variant]`
 
-#### Supported media and modifications
-- `.at[ Medium | Large ]_align--[ center | right | left ]`
-- `.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]`
-- `.at[ Medium | Large ]_border--[ none | top ]`
-- `.at[ Medium | Large ]_padding--none`
-
-Example TK
+Base           | Variants
+-------------- | ---------------------------
+`align`        | `center`, `right`, `left`
+`display`      | `none`, `block`, `inline`, `inlineBlock`
+`padding`      | `none`
+`border`       | `top`, `none`
 */
 @media only screen and (min-width: 640px) {
   .atMedium_align--center {

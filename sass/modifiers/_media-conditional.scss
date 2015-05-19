@@ -10,18 +10,23 @@ a modification at a specific breakpoint.
 
 _Uses atMediaUp_
 
-#### Signature
+### Example
 
-`.at[Breakpoint]_[property]--modification`
+```html_example
+	<p class="atLarge_align--center">
+		This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
+	</p>
+```
 
+### Supported modifications
+Using this signature: `.at[Breakpoint]_[property]--[variant]`
 
-#### Supported media and modifications
-- `.at[ Medium | Large ]_align--[ center | right | left ]`
-- `.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]`
-- `.at[ Medium | Large ]_border--[ none | top ]`
-- `.at[ Medium | Large ]_padding--none`
-
-Example TK
+Breakpoints        | Property       | Variants
+------------------ | -------------- | ---------------------------
+`medium`, `large`  | `align`        | `center`, `right`, `left`
+`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `padding`      | `none`
+`medium`, `large`  | `border`       | `top`, `none`
 */
 
 // text align
