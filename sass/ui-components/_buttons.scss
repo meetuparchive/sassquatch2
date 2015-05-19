@@ -83,7 +83,7 @@ $btn-color-map: (
 %button--primary,
 .button--primary {
 	@extend %button--borderless;
-	@include color-all( $C_textPrimaryInverted );
+	@include color-all( $C_textPrimaryInverted, true );
 	background: map-get($btn-color-map, "primary");
 
 	&:hover,

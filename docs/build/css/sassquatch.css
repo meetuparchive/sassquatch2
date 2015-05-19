@@ -578,9 +578,9 @@ Forces an element to use link-like styling.
 @extend %link;
 ```
 */
-a.link, .runningText a, .running-text-container a {
+a.link, .runningText a {
   color: #3987cb; }
-  a.link:hover, .runningText a:hover, .running-text-container a:hover, a.link:focus, .runningText a:focus, .running-text-container a:focus, a.link:active, .runningText a:active, .running-text-container a:active {
+  a.link:hover, .runningText a:hover, a.link:focus, .runningText a:focus, a.link:active, .runningText a:active {
     text-decoration: underline; }
 
 /*doc
@@ -866,12 +866,12 @@ parent: bodyText
 ```
 */
 .text--hint {
-  fill: rgba(0, 0, 0, 0.26);
   stroke: transparent;
+  fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--hint {
-    fill: rgba(255, 255, 255, 0.3);
     stroke: transparent;
+    fill: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -885,12 +885,12 @@ parent: bodyText
 ```
 */
 .text--secondary {
-  fill: rgba(0, 0, 0, 0.54);
   stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--secondary {
-    fill: rgba(255, 255, 255, 0.7);
     stroke: transparent;
+    fill: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -904,12 +904,12 @@ parent: bodyText
 ```
 */
 .text--tertiary {
-  fill: rgba(0, 0, 0, 0.26);
   stroke: transparent;
+  fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--tertiary {
-    fill: rgba(255, 255, 255, 0.3);
     stroke: transparent;
+    fill: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -957,12 +957,12 @@ parent: bodyText
 ```
 */
 .text--caption {
-  fill: rgba(0, 0, 0, 0.54);
   stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--caption {
-    fill: rgba(255, 255, 255, 0.7);
     stroke: transparent;
+    fill: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -1030,6 +1030,8 @@ linky blue color by applying the `.link` class.
 a {
   color: inherit;
   text-decoration: none; }
+  a.link.button, .runningText a.button {
+    text-decoration: none; }
 
 /*doc
 ---
@@ -2235,10 +2237,13 @@ _Includes `table-cell` fallback for IE8._
   -ms-flex-align: flex; }
 
 .row-item {
-  padding-left: 16px;
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  padding-left: 16px;
   width: auto;
   min-width: 0; }
   .row-item:first-child {
@@ -2337,6 +2342,9 @@ Class                   | Description
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
   -ms-flex-negative: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   width: initial; }
 
 .row-item--alignMiddle {
@@ -2445,10 +2453,11 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .atMedium_stack--spread > .stack-item {
+      -webkit-flex-basis: 0;
+      flex-basis: 0;
+      -ms-flex-preferred-size: 0;
       width: auto;
-      -webkit-flex-basis: auto;
-      flex-basis: auto;
-      -ms-flex-preferred-size: auto;
+      min-width: 0;
       padding-left: 16px; }
       .atMedium_stack--spread > .stack-item:first-child {
         padding-left: 0; }
@@ -2459,6 +2468,9 @@ Class                   | Description
       -webkit-flex-shrink: 0;
       flex-shrink: 0;
       -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
       width: initial; } }
 @media only screen and (min-width: 840px) {
   .atLarge_stack--spread {
@@ -2473,10 +2485,11 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .atLarge_stack--spread > .stack-item {
+      -webkit-flex-basis: 0;
+      flex-basis: 0;
+      -ms-flex-preferred-size: 0;
       width: auto;
-      -webkit-flex-basis: auto;
-      flex-basis: auto;
-      -ms-flex-preferred-size: auto;
+      min-width: 0;
       padding-left: 16px; }
       .atLarge_stack--spread > .stack-item:first-child {
         padding-left: 0; }
@@ -2487,6 +2500,9 @@ Class                   | Description
       -webkit-flex-shrink: 0;
       flex-shrink: 0;
       -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
       width: initial; } }
 .ieRoot_lt_IE10 .stack,
 .ieRoot_lt_IE10 .stack-item {
@@ -3116,8 +3132,8 @@ Class                   | Description
     outline: 0; }
 
 .button {
-  fill: #3987cb;
   stroke: transparent;
+  fill: #3987cb;
   color: #3987cb; }
   .button:hover,
   .button:active,
@@ -3126,17 +3142,17 @@ Class                   | Description
     border-color: transparent; }
 
 .button--primary {
-  fill: white;
   stroke: transparent;
-  color: white;
+  fill: white !important;
+  color: white !important;
   background: #3987cb; }
   .button--primary:hover,
   .button--primary:active,
   .button--primary:focus {
     background: #619fd6; }
   .button--primary.button--contrast {
-    fill: rgba(0, 0, 0, 0.87);
     stroke: transparent;
+    fill: rgba(0, 0, 0, 0.87);
     color: rgba(0, 0, 0, 0.87);
     background: white; }
     .button--primary.button--contrast:hover,
@@ -3145,8 +3161,8 @@ Class                   | Description
       background: rgba(255, 255, 255, 0.9); }
 
 .button--contrast {
-  fill: white;
   stroke: transparent;
+  fill: white;
   color: white;
   background: rgba(0, 0, 0, 0.26);
   border: 1px solid white; }
@@ -3157,8 +3173,8 @@ Class                   | Description
     border: 1px solid white; }
 
 .toggleButton-label {
-  fill: #3987cb;
   stroke: transparent;
+  fill: #3987cb;
   color: #3987cb;
   border: 1px solid;
   font-weight: 400; }

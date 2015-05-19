@@ -221,9 +221,11 @@ a {
 	color: inherit;
 	text-decoration: none;
 	&.link,
-	.runningText &,
-	.running-text-container & {
+	.runningText & {
 		@extend %link;
+		&.button {
+			text-decoration: none;
+		}
 	}
 }
 
