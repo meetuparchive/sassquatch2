@@ -93,7 +93,7 @@ $btn-color-map: (
 	}
 
 	&.button--contrast { // TODO (mikep): look into ways to do this without chaining classes
-		@include color-all($C_textPrimary);
+		@include color-all($C_textPrimary, true);
 		background: map-get($btn-color-map, "contrast");
 		&:hover,
 		&:active,
