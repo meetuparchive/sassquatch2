@@ -87,6 +87,11 @@ Class                   | Description
 `.row--noGutters`       | removes padding from all `.row-item` children
 `.row--wrap`            | allows row wrapping (useful for collapsing rows in smaller viewports)
 `.row--reverse`         | reverses row order
+
+Content justification variants are also available (see also: <a class="link" target="_blank" href="https://css-tricks.com/almanac/properties/j/justify-content/">css tricks flexbox demo</a>)
+
+Class                   | Description
+----------------------- | -------------------------------
 `.row--flexEnd`         | justifies content to `flex-end`
 `.row--center`          | justifies content to `center`
 `.row--spaceBetween`    | justifies content to `spaceBetween`

@@ -1901,7 +1901,7 @@ _better docs TK_
       height: 48px; } }
 
 .exactList-content {
-  text-align: justify; }
+  text-align: center; }
 
 /*doc
 ---
@@ -2242,6 +2242,11 @@ Class                   | Description
 `.row--noGutters`       | removes padding from all `.row-item` children
 `.row--wrap`            | allows row wrapping (useful for collapsing rows in smaller viewports)
 `.row--reverse`         | reverses row order
+
+Content justification variants are also available (see also: <a class="link" target="_blank" href="https://css-tricks.com/almanac/properties/j/justify-content/">css tricks flexbox demo</a>)
+
+Class                   | Description
+----------------------- | -------------------------------
 `.row--flexEnd`         | justifies content to `flex-end`
 `.row--center`          | justifies content to `center`
 `.row--spaceBetween`    | justifies content to `spaceBetween`
@@ -3130,8 +3135,8 @@ Class                   | Description
     background: #619fd6; }
   .button--primary.button--contrast {
     stroke: transparent;
-    fill: rgba(0, 0, 0, 0.87);
-    color: rgba(0, 0, 0, 0.87);
+    fill: rgba(0, 0, 0, 0.87) !important;
+    color: rgba(0, 0, 0, 0.87) !important;
     background: white; }
     .button--primary.button--contrast:hover,
     .button--primary.button--contrast:active,
@@ -3507,6 +3512,8 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
       position: static;
       height: 0;
       width: 0; }
+    .floatingAction > a {
+      z-index: 0; }
 
   .hasFloatingAction {
     background-color: transparent;
@@ -4106,14 +4113,14 @@ _Uses atMediaUp_
 ```
 
 ### Supported modifications
-Using this signature: `.at[Breakpoint]_[base]--[variant]`
+Using this signature: `.at[Breakpoint]_[property]--[variant]`
 
-Base           | Variants
--------------- | ---------------------------
-`align`        | `center`, `right`, `left`
-`display`      | `none`, `block`, `inline`, `inlineBlock`
-`padding`      | `none`
-`border`       | `top`, `none`
+Breakpoints        | Property       | Variants
+------------------ | -------------- | ---------------------------
+`medium`, `large`  | `align`        | `center`, `right`, `left`
+`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `padding`      | `none`
+`medium`, `large`  | `border`       | `top`, `none`
 */
 @media only screen and (min-width: 640px) {
   .atMedium_align--center {
