@@ -23,25 +23,26 @@ To collapse the element, add the `collapsible--close` class.
 $_transitionSpeed: 300ms;
 $_easingFunc: ease-in-out;
 
-.collapsible {
-	@include transition(max-height $_transitionSpeed $_easingFunc);
-	will-change: max-height;
-	height: auto;
-	min-height: 0 !important; /* override any min-height rules */
-	max-height: 4000px; /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */
-
-}
-
-.collapsible-content {
-	@include transition(transform $_transitionSpeed $_easingFunc);
-}
-
-.collapsible--close {
-	border-width: 0;
-	max-height: 0;
-	overflow: hidden;
+.hasJS {
+	.collapsible {
+		@include transition(max-height $_transitionSpeed $_easingFunc);
+		will-change: max-height;
+		height: auto;
+		min-height: 0 !important; /* override any min-height rules */
+		max-height: 4000px; /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */
+	}
 
 	.collapsible-content {
-		@include transform(translateY(-100%))
+		@include transition(transform $_transitionSpeed $_easingFunc);
+	}
+
+	.collapsible--close {
+		border-width: 0;
+		max-height: 0;
+		overflow: hidden;
+
+		.collapsible-content {
+			@include transform(translateY(-100%))
+		}
 	}
 }
