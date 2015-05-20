@@ -517,7 +517,7 @@ Applies standard box-shadow
 @extend %shadow;
 ```
 */
-.hasJS .menu-actions {
+.floatingAction:before, .hasJS .menu-actions {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.12); }
 
 /*doc
@@ -3493,7 +3493,7 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
     bottom: 0;
     left: 0;
     content: "";
-    background-color: #353e48;
+    background-color: white;
     z-index: 2;
     height: 72px;
     width: 100%; }

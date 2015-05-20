@@ -34,12 +34,13 @@ $_containerHeight: $space*2 + $_buttonHeight;
 	z-index: 1;
 
 	&:before {
+		@extend %shadow;
 		display: block;
 		position: fixed;
 		bottom: 0;
 		left: 0;
 		content: "";
-		background-color: $C_contentBGInverted;
+		background-color: $C_contentBG;
 		z-index: 2;
 		height: $_containerHeight;
 		width: 100%;
