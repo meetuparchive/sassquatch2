@@ -518,7 +518,7 @@ Applies standard box-shadow
 ```
 */
 .floatingAction:before, .hasJS .menu-actions {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.12); }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
 
 /*doc
 ---
@@ -3433,7 +3433,7 @@ To collapse the element, add the `collapsible--close` class.
 </section>
 ```
 */
-.collapsible {
+.hasJS .collapsible {
   -webkit-transition: max-height 300ms ease-in-out;
   transition: max-height 300ms ease-in-out;
   will-change: max-height;
@@ -3442,17 +3442,15 @@ To collapse the element, add the `collapsible--close` class.
   /* override any min-height rules */
   max-height: 4000px;
   /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */ }
-
-.collapsible-content {
+.hasJS .collapsible-content {
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   -moz-transition: -moz-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out; }
-
-.collapsible--close {
+.hasJS .collapsible--close {
   border-width: 0;
   max-height: 0;
   overflow: hidden; }
-  .collapsible--close .collapsible-content {
+  .hasJS .collapsible--close .collapsible-content {
     -webkit-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     transform: translateY(-100%); }
@@ -3502,6 +3500,7 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
     z-index: 3; }
 
 .hasFloatingAction {
+  outline: 1px solid red;
   background-color: #353e48;
   padding-bottom: 72px; }
 
@@ -3938,6 +3937,13 @@ Class              | Description
     content: '';
     display: block;
     padding-top: 150%; }
+
+.keepAspect--3-2 {
+  margin-bottom: 0; }
+  .keepAspect--3-2:before {
+    content: '';
+    display: block;
+    padding-top: 66.66667%; }
 
 .keepAspect--4-3 {
   margin-bottom: 0; }
