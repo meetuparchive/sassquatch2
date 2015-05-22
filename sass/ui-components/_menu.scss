@@ -43,7 +43,6 @@ Use as a guide for markup.
 		border-radius: $defaultRadius;
 		background-color: $C_white;
 		display: none;
-		position: fixed;
 		min-width: $block-3;
 		max-width: $breakpoint-s*0.75;
 
@@ -54,6 +53,15 @@ Use as a guide for markup.
 		// position the menu over the trigger element.
 		top: $space;
 		right: $space;
+
+
+		// use absolute positioning by default;
+		// set to fixed positioning if a child of a fixed
+		// position nav
+		position: absolute;
+		.position--fixed & {
+			position: fixed;
+		}
 	}
 }
 
