@@ -1652,10 +1652,14 @@ Uses the `stripe--photoHero` variant.
   min-height: 240px;
   position: relative;
   text-align: center;
-  max-width: 1100px; }
+  max-width: 1100px;
+  padding-top: 56px; }
   @media only screen and (min-width: 640px) {
     .stripe-heroContent {
       min-height: 384px; } }
+  @media only screen and (min-width: 840px) {
+    .stripe-heroContent {
+      padding-top: 64px; } }
 
 /*doc
 ---
@@ -3525,7 +3529,8 @@ category: UI Components
 ---
 Context menu style dropdoowns. Actions are delivered in-document
 next to the menu toggle as a non-js fallback. When a client is
-javascript-enabled, the menu is hidden and posisitioned absolute.
+javascript-enabled, the menu is hidden and posisitioned __fixed__
+(assumes this style of menu will only be found within a `view-head`).
 
 Toggling of menu visibility is handled with javascript (supporting js
 for documentation TK).
@@ -3555,7 +3560,7 @@ Use as a guide for markup.
     border-radius: 3px;
     background-color: white;
     display: none;
-    position: absolute;
+    position: fixed;
     min-width: 108px;
     max-width: 330px;
     top: 16px;

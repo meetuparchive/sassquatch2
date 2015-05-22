@@ -130,9 +130,14 @@ Uses the `stripe--photoHero` variant.
 	position: relative;
 	text-align: center;
 	max-width: $bounds-wide;
+	padding-top: $view-head-height;
 
 	@include atMediaUp(medium) {
 		min-height: $block-6;
+	}
+
+	@include atMediaUp(large) {
+		padding-top: $view-head-height-tablet;
 	}
 }
 
