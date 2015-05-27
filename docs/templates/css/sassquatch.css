@@ -947,6 +947,18 @@ parent: bodyText
 
 /*doc
 ---
+title: Label text
+name: textLabel
+parent: bodyText
+---
+Applies form label styling
+
+```html_example
+	<p class="text--label">I share styling with the `label` element</p>
+```
+*/
+/*doc
+---
 title: Graphic text
 name: textGraphic
 parent: bodyText
@@ -1117,6 +1129,7 @@ category: Forms
 ```
 
 */
+.text--label,
 label {
   font-size: 13px; }
 
@@ -1408,17 +1421,15 @@ input of an element with the class `hasError`.
 Error text is set explicitly with `text--error`.
 
 ```html_example
-<div class="chunk hasError">
+<div class="chunk">
 	<label for="test-textinput">First name</label>
-	<input id="test-textinput" type="text" value="" />
+	<input class="field--error" id="test-textinput" type="text" value="" />
 	<p class="text--error">First name can't be empty</p>
 </div>
 ```
 
 */
-.hasError input,
-.hasError textarea,
-.hasError select {
+.field--error {
   border-color: #d55741; }
 
 .text--error {

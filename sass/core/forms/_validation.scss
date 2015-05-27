@@ -10,20 +10,16 @@ input of an element with the class `hasError`.
 Error text is set explicitly with `text--error`.
 
 ```html_example
-<div class="chunk hasError">
+<div class="chunk">
 	<label for="test-textinput">First name</label>
-	<input id="test-textinput" type="text" value="" />
+	<input class="field--error" id="test-textinput" type="text" value="" />
 	<p class="text--error">First name can't be empty</p>
 </div>
 ```
 
 */
-.hasError {
-	input,
-	textarea,
-	select {
-		border-color: $C_red;
-	}
+.field--error {
+	border-color: $C_red;
 }
 
 .text--error {
