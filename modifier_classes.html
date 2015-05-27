@@ -123,6 +123,15 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#flushMod">Flush</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#jsMod">Javascript-conditional modifiers</a>
 										</li>
 									
@@ -364,7 +373,42 @@ and user-select.</p><div class="codeExample">
 </tr>
  </table>
 <h1 id="floatMod" class="styleguide">Float</h1>
-<p class="styleguide">TK <code class="styleguide">.clearfix</code></p>
+<p class="styleguide">Float clearing.</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.clearfix</code></td>
+<td>clears <code class="styleguide">float</code> property of children</td>
+</tr>
+ </table>
+<h1 id="flushMod" class="styleguide">Flush</h1>
+<p class="styleguide"><strong>Applies <code class="styleguide">!important</code> declaration</strong></p><p class="styleguide">The following classes &quot;flush&quot; an element, removing
+padding and margin for a given side variant.</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.flush--all</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from all sides of an element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.flush--top</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from the top side of an element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.flush--right</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from the right side of an element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.flush--bottom</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from the bottom side of an element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.flush--left</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from the left side of an element</td>
+</tr>
+ </table>
 <h1 id="jsMod" class="styleguide">Javascript-conditional modifiers</h1>
 <p class="styleguide">Conditionally changes the display property of an element based
 javascript availability.</p><p class="styleguide"><em>Assumes a class of <code class="styleguide">hasJS</code> is added to the <code class="styleguide">body</code> tag with
@@ -419,14 +463,50 @@ Apply to elements with background images.</p><table class="styleguide"> <tr>
 <h1 id="mediaMod" class="styleguide">Media-conditional modifiers</h1>
 <p class="styleguide">Media-conditional modifiers allow us to apply
 a modification at a specific breakpoint.</p><p class="styleguide"><em>Uses atMediaUp</em></p>
-<h4>Signature</h4>
-<p class="styleguide"><code class="styleguide">.at[Breakpoint]_[property]--modification</code></p>
-<h4>Supported media and modifications</h4>
-<ul class="styleguide"><li><code class="styleguide">.at[ Medium | Large ]_align--[ center | right | left ]</code></li>
-<li><code class="styleguide">.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]</code></li>
-<li><code class="styleguide">.at[ Medium | Large ]_border--[ none | top ]</code></li>
-<li><code class="styleguide">.at[ Medium | Large ]_padding--none</code></li>
-</ul><p class="styleguide">Example TK</p>
+<h3>Example</h3>
+<div class="codeExample">
+  <div class="exampleOutput">
+        <p class="atLarge_align--center">
+        This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
+    </p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"atLarge_align--center"</span><span class="nt">&gt;</span>
+        This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
+    <span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Supported modifications</h3>
+<p class="styleguide">Using this signature: <code class="styleguide">.at[Breakpoint]_[property]--[variant]</code></p><table class="styleguide"> <tr>
+<th>Breakpoints</th>
+<th>Property</th>
+<th>Variants</th>
+</tr>
+ <tr>
+<td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
+<td><code class="styleguide">align</code></td>
+<td><code class="styleguide">center</code>, <code class="styleguide">right</code>, <code class="styleguide">left</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
+<td><code class="styleguide">display</code></td>
+<td><code class="styleguide">none</code>, <code class="styleguide">block</code>, <code class="styleguide">inline</code>, <code class="styleguide">inlineBlock</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
+<td><code class="styleguide">padding</code></td>
+<td><code class="styleguide">none</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
+<td><code class="styleguide">border</code></td>
+<td><code class="styleguide">top</code>, <code class="styleguide">none</code></td>
+</tr>
+ </table>
 <h1 id="sizeMod" class="styleguide">Media Sizing</h1>
 <p class="styleguide">Classes for applying dimensions to an element.</p><table class="styleguide"> <tr>
 <th>Class</th>
@@ -916,6 +996,16 @@ $(function() {
 				
 
 				index.add({
+					"title": "Link color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#linkColorPlaceholder"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Text protection shim",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text protection shim",
 					"path": "sass_utils_|_mixins_&_placeholders.html#textProtection"
@@ -1023,6 +1113,16 @@ $(function() {
 					"title": "Float",
 					"breadcrumb": "Modifier Classes > Float",
 					"path": "modifier_classes.html#floatMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flush",
+					"breadcrumb": "Modifier Classes > Flush",
+					"path": "modifier_classes.html#flushMod"
 				});
 
 			
