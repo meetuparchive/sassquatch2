@@ -123,6 +123,15 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#flushMod">Flush</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#jsMod">Javascript-conditional modifiers</a>
 										</li>
 									
@@ -364,7 +373,42 @@ and user-select.</p><div class="codeExample">
 </tr>
  </table>
 <h1 id="floatMod" class="styleguide">Float</h1>
-<p class="styleguide">TK <code class="styleguide">.clearfix</code></p>
+<p class="styleguide">Float clearing.</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.clearfix</code></td>
+<td>clears <code class="styleguide">float</code> property of children</td>
+</tr>
+ </table>
+<h1 id="flushMod" class="styleguide">Flush</h1>
+<p class="styleguide"><strong>Applies <code class="styleguide">!important</code> declaration</strong></p><p class="styleguide">The following classes &quot;flush&quot; an element, removing
+padding and margin for a given side variant.</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.flush--all</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from all sides of an element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.flush--top</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from the top side of an element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.flush--right</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from the right side of an element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.flush--bottom</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from the bottom side of an element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.flush--left</code></td>
+<td>removes <code class="styleguide">padding</code> and <code class="styleguide">margin</code> from the left side of an element</td>
+</tr>
+ </table>
 <h1 id="jsMod" class="styleguide">Javascript-conditional modifiers</h1>
 <p class="styleguide">Conditionally changes the display property of an element based
 javascript availability.</p><p class="styleguide"><em>Assumes a class of <code class="styleguide">hasJS</code> is added to the <code class="styleguide">body</code> tag with
@@ -952,6 +996,16 @@ $(function() {
 				
 
 				index.add({
+					"title": "Link color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#linkColorPlaceholder"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Text protection shim",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text protection shim",
 					"path": "sass_utils_|_mixins_&_placeholders.html#textProtection"
@@ -1059,6 +1113,16 @@ $(function() {
 					"title": "Float",
 					"breadcrumb": "Modifier Classes > Float",
 					"path": "modifier_classes.html#floatMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flush",
+					"breadcrumb": "Modifier Classes > Flush",
+					"path": "modifier_classes.html#flushMod"
 				});
 
 			
