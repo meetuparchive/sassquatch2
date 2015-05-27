@@ -146,6 +146,21 @@ parent: bodyText
 	}
 }
 
+/*doc
+---
+title: Label text
+name: textLabel
+parent: bodyText
+---
+Applies form label styling
+
+```html_example
+	<p class="text--label">I share styling with the `label` element</p>
+```
+*/
+.text--label {
+	@extend %label;
+}
 
 /*doc
 ---
