@@ -57,8 +57,9 @@ Class                   | Description
 	@include flex-wrap(nowrap);
 
 	> .stack-item {
+		@include flex-basis(0);
 		width: auto;
-		@include flex-basis(auto);
+		min-width: 0;
 		padding-left: $space;
 		&:first-child {
 			padding-left: 0;
@@ -67,6 +68,7 @@ Class                   | Description
 	.stack-item--shrink {
 		@include flex-grow(0);
 		@include flex-shrink(0);
+		@include flex-basis(auto);
 		width: initial;
 	}
 }

@@ -4,7 +4,12 @@ title: Float
 name: floatMod
 category: Modifier Classes
 ---
-TK `.clearfix`
+Float clearing.
+
+Class             | Description
+----------------- | -----------------------------------------
+`.clearfix`       | clears `float` property of children
+
 */
 .clearfix:after {
 	visibility: hidden;
@@ -13,7 +18,8 @@ TK `.clearfix`
 	content: " ";
 	height: 0;
 }
-.lt--IE9 .clearfix {
+
+.ieRoot_lt_IE10 .clearfix {
 	zoom: 1;
 }
 

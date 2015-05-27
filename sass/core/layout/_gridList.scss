@@ -60,13 +60,11 @@ Class                         | Description
 `.atLarge_gridList--has[n]`   | Sets number of columns for large breakpoint and up (ie. `.atLarge_gridList--has10`)
 
 */
-.gridList--photoGrid > li {
-	padding: 0 $space-quarter $space-quarter 0;
-}
-@include atMediaDown(medium) {
-	.gridList--photoGrid {
-		margin: 0 #{-($space + $space-half)} 0 #{-$space};
-		padding: 0;
+.gridList--photoGrid {
+	margin: 0 #{-($space + $space-half)} 0 #{-$space};
+	padding: 0;
+	> li {
+		padding: 0 $space-quarter $space-quarter 0;
 	}
 }
 

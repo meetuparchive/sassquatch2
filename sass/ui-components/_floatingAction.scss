@@ -24,37 +24,55 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 $_buttonHeight: 40px;
 $_containerHeight: $space*2 + $_buttonHeight;
 
-@include atMediaDown(small) {
-	.floatingAction {
-		box-sizing: border-box;
-		padding: 0 $space;
+.floatingAction {
+	box-sizing: border-box;
+	padding: 0 $space;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+
+	&:before {
+		@extend %shadow;
+		display: block;
+		position: fixed;
 		bottom: 0;
 		left: 0;
-		position: fixed;
+		content: "";
+		background-color: $C_contentBG;
+		z-index: 2;
+		height: $_containerHeight;
 		width: 100%;
-		z-index: 1;
-
-		&:before {
-			display: block;
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			content: "";
-			background-color: $C_contentBGInverted;
-			z-index: 2;
-			height: $_containerHeight;
-			width: 100%;
-		}
-
-		> a {
-			position: relative;
-			z-index: 3;
-		}
 	}
 
-	// for `body` tag
+	> a {
+		position: relative;
+		z-index: map-get($zindex-map, modal);
+	}
+}
+
+// for `body` tag
+.hasFloatingAction {
+	outline: 1px solid red;
+	background-color: $C_contentBGInverted;
+	padding-bottom: $_containerHeight;
+}
+
+@include atMediaUp(medium) {
+	.floatingAction {
+		position: static;
+		&:before {
+			position: static;
+			height: 0;
+			width: 0;
+		}
+		> a {
+			z-index: map-get($zindex-map, main);
+		}
+	}
 	.hasFloatingAction {
-		background-color: $C_contentBGInverted;
-		padding-bottom: $_containerHeight;
+		background-color: transparent;
+		padding-bottom: 0;
 	}
 }

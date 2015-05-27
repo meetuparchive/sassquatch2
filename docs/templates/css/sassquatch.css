@@ -319,26 +319,6 @@ Breakpoint name      | Description
 `atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
 `atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
 
-
-### Breaking for smaller sizes and under
-In the event you need to target a **specific screen size and under**,
-use the `atMediaDown` mixin.
-
-```scss
-	@include atMediaDown(medium) {
-		body::after {
-			content: "medium screens and smaller can see me";
-		}
-	}
-```
-
-Breakpoint name        | Description
------------------------| ---------------------------------------------
-`atMediaDown(small)`   | Small screens and under; portrait on most mobile devices
-`atMediaDown(medium)`  | Landscape on most phones and under; portrait on some phablets
-`atMediaDown(large)`   | Landscape on phabelts and under; portrait on most tablets or old desktops
-`atMediaDown(huge)`    | Huge screens and under
-
 */
 /*doc
 ---
@@ -537,8 +517,8 @@ Applies standard box-shadow
 @extend %shadow;
 ```
 */
-.hasJS .menu-actions {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.12); }
+.floatingAction:before, .hasJS .menu-actions {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
 
 /*doc
 ---
@@ -569,7 +549,7 @@ category: Sass Utils | Mixins & Placeholders
 /*doc
 ---
 title: Link color
-name: linkColor
+name: linkColorPlaceholder
 parent: text
 ---
 Forces an element to use link-like styling.
@@ -578,9 +558,9 @@ Forces an element to use link-like styling.
 @extend %link;
 ```
 */
-a.link, .runningText a, .running-text-container a {
+a.link, .runningText a {
   color: #3987cb; }
-  a.link:hover, .runningText a:hover, .running-text-container a:hover, a.link:focus, .runningText a:focus, .running-text-container a:focus, a.link:active, .runningText a:active, .running-text-container a:active {
+  a.link:hover, .runningText a:hover, a.link:focus, .runningText a:focus, a.link:active, .runningText a:active {
     text-decoration: underline; }
 
 /*doc
@@ -866,12 +846,12 @@ parent: bodyText
 ```
 */
 .text--hint {
-  fill: rgba(0, 0, 0, 0.26);
   stroke: transparent;
+  fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--hint {
-    fill: rgba(255, 255, 255, 0.3);
     stroke: transparent;
+    fill: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -885,12 +865,12 @@ parent: bodyText
 ```
 */
 .text--secondary {
-  fill: rgba(0, 0, 0, 0.54);
   stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--secondary {
-    fill: rgba(255, 255, 255, 0.7);
     stroke: transparent;
+    fill: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -904,12 +884,12 @@ parent: bodyText
 ```
 */
 .text--tertiary {
-  fill: rgba(0, 0, 0, 0.26);
   stroke: transparent;
+  fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
   .inverted .text--tertiary {
-    fill: rgba(255, 255, 255, 0.3);
     stroke: transparent;
+    fill: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.3); }
 
 /*doc
@@ -957,12 +937,12 @@ parent: bodyText
 ```
 */
 .text--caption {
-  fill: rgba(0, 0, 0, 0.54);
   stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
   .inverted .text--caption {
-    fill: rgba(255, 255, 255, 0.7);
     stroke: transparent;
+    fill: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
 
 /*doc
@@ -1030,6 +1010,8 @@ linky blue color by applying the `.link` class.
 a {
   color: inherit;
   text-decoration: none; }
+  a.link.button, .runningText a.button {
+    text-decoration: none; }
 
 /*doc
 ---
@@ -1667,13 +1649,17 @@ Uses the `stripe--photoHero` variant.
   top: 0; }
 
 .stripe-heroContent {
-  min-height: 384px;
+  min-height: 240px;
   position: relative;
   text-align: center;
-  max-width: 1100px; }
-  @media only screen and (max-width: 640px) {
+  max-width: 1100px;
+  padding-top: 56px; }
+  @media only screen and (min-width: 640px) {
     .stripe-heroContent {
-      min-height: 240px; } }
+      min-height: 384px; } }
+  @media only screen and (min-width: 840px) {
+    .stripe-heroContent {
+      padding-top: 64px; } }
 
 /*doc
 ---
@@ -1715,6 +1701,7 @@ ul, ol, .list, .menu-actions,
     padding-top: 0; }
 
 .list {
+  width: 100%;
   padding: 0;
   margin: 0;
   list-style: none; }
@@ -1781,13 +1768,12 @@ Class                         | Description
 `.atLarge_gridList--has[n]`   | Sets number of columns for large breakpoint and up (ie. `.atLarge_gridList--has10`)
 
 */
-.gridList--photoGrid > li {
-  padding: 0 4px 4px 0; }
+.gridList--photoGrid {
+  margin: 0 -24px 0 -16px;
+  padding: 0; }
+  .gridList--photoGrid > li {
+    padding: 0 4px 4px 0; }
 
-@media only screen and (max-width: 640px) {
-  .gridList--photoGrid {
-    margin: 0 -24px 0 -16px;
-    padding: 0; } }
 .gridList--has1 > li {
   width: 100%; }
 
@@ -1919,7 +1905,7 @@ _better docs TK_
       height: 48px; } }
 
 .exactList-content {
-  text-align: justify; }
+  text-align: center; }
 
 /*doc
 ---
@@ -2004,9 +1990,7 @@ Class                       | Description
 */
 .hscroll {
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  overflow: scroll;
-  overflow: -moz-scrollbars-none; }
+  overflow: scroll; }
   .hscroll::-webkit-scrollbar {
     display: none; }
 
@@ -2235,10 +2219,13 @@ _Includes `table-cell` fallback for IE8._
   -ms-flex-align: flex; }
 
 .row-item {
-  padding-left: 16px;
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  padding-left: 16px;
   width: auto;
   min-width: 0; }
   .row-item:first-child {
@@ -2259,6 +2246,11 @@ Class                   | Description
 `.row--noGutters`       | removes padding from all `.row-item` children
 `.row--wrap`            | allows row wrapping (useful for collapsing rows in smaller viewports)
 `.row--reverse`         | reverses row order
+
+Content justification variants are also available (see also: <a class="link" target="_blank" href="https://css-tricks.com/almanac/properties/j/justify-content/">css tricks flexbox demo</a>)
+
+Class                   | Description
+----------------------- | -------------------------------
 `.row--flexEnd`         | justifies content to `flex-end`
 `.row--center`          | justifies content to `center`
 `.row--spaceBetween`    | justifies content to `spaceBetween`
@@ -2337,6 +2329,9 @@ Class                   | Description
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
   -ms-flex-negative: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   width: initial; }
 
 .row-item--alignMiddle {
@@ -2445,10 +2440,11 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .atMedium_stack--spread > .stack-item {
+      -webkit-flex-basis: 0;
+      flex-basis: 0;
+      -ms-flex-preferred-size: 0;
       width: auto;
-      -webkit-flex-basis: auto;
-      flex-basis: auto;
-      -ms-flex-preferred-size: auto;
+      min-width: 0;
       padding-left: 16px; }
       .atMedium_stack--spread > .stack-item:first-child {
         padding-left: 0; }
@@ -2459,6 +2455,9 @@ Class                   | Description
       -webkit-flex-shrink: 0;
       flex-shrink: 0;
       -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
       width: initial; } }
 @media only screen and (min-width: 840px) {
   .atLarge_stack--spread {
@@ -2473,10 +2472,11 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .atLarge_stack--spread > .stack-item {
+      -webkit-flex-basis: 0;
+      flex-basis: 0;
+      -ms-flex-preferred-size: 0;
       width: auto;
-      -webkit-flex-basis: auto;
-      flex-basis: auto;
-      -ms-flex-preferred-size: auto;
+      min-width: 0;
       padding-left: 16px; }
       .atLarge_stack--spread > .stack-item:first-child {
         padding-left: 0; }
@@ -2487,6 +2487,9 @@ Class                   | Description
       -webkit-flex-shrink: 0;
       flex-shrink: 0;
       -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
       width: initial; } }
 .ieRoot_lt_IE10 .stack,
 .ieRoot_lt_IE10 .stack-item {
@@ -3116,8 +3119,8 @@ Class                   | Description
     outline: 0; }
 
 .button {
-  fill: #3987cb;
   stroke: transparent;
+  fill: #3987cb;
   color: #3987cb; }
   .button:hover,
   .button:active,
@@ -3126,18 +3129,18 @@ Class                   | Description
     border-color: transparent; }
 
 .button--primary {
-  fill: white;
   stroke: transparent;
-  color: white;
+  fill: white !important;
+  color: white !important;
   background: #3987cb; }
   .button--primary:hover,
   .button--primary:active,
   .button--primary:focus {
     background: #619fd6; }
   .button--primary.button--contrast {
-    fill: rgba(0, 0, 0, 0.87);
     stroke: transparent;
-    color: rgba(0, 0, 0, 0.87);
+    fill: rgba(0, 0, 0, 0.87) !important;
+    color: rgba(0, 0, 0, 0.87) !important;
     background: white; }
     .button--primary.button--contrast:hover,
     .button--primary.button--contrast:active,
@@ -3145,8 +3148,8 @@ Class                   | Description
       background: rgba(255, 255, 255, 0.9); }
 
 .button--contrast {
-  fill: white;
   stroke: transparent;
+  fill: white;
   color: white;
   background: rgba(0, 0, 0, 0.26);
   border: 1px solid white; }
@@ -3157,8 +3160,8 @@ Class                   | Description
     border: 1px solid white; }
 
 .toggleButton-label {
-  fill: #3987cb;
   stroke: transparent;
+  fill: #3987cb;
   color: #3987cb;
   border: 1px solid;
   font-weight: 400; }
@@ -3434,7 +3437,7 @@ To collapse the element, add the `collapsible--close` class.
 </section>
 ```
 */
-.collapsible {
+.hasJS .collapsible {
   -webkit-transition: max-height 300ms ease-in-out;
   transition: max-height 300ms ease-in-out;
   will-change: max-height;
@@ -3443,17 +3446,15 @@ To collapse the element, add the `collapsible--close` class.
   /* override any min-height rules */
   max-height: 4000px;
   /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */ }
-
-.collapsible-content {
+.hasJS .collapsible-content {
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   -moz-transition: -moz-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out; }
-
-.collapsible--close {
+.hasJS .collapsible--close {
   border-width: 0;
   max-height: 0;
   overflow: hidden; }
-  .collapsible--close .collapsible-content {
+  .hasJS .collapsible--close .collapsible-content {
     -webkit-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     transform: translateY(-100%); }
@@ -3480,32 +3481,46 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 	</div>
 ```
 */
-@media only screen and (max-width: 440px) {
-  .floatingAction {
-    box-sizing: border-box;
-    padding: 0 16px;
+.floatingAction {
+  box-sizing: border-box;
+  padding: 0 16px;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1; }
+  .floatingAction:before {
+    display: block;
+    position: fixed;
     bottom: 0;
     left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1; }
+    content: "";
+    background-color: white;
+    z-index: 2;
+    height: 72px;
+    width: 100%; }
+  .floatingAction > a {
+    position: relative;
+    z-index: 3; }
+
+.hasFloatingAction {
+  outline: 1px solid red;
+  background-color: #353e48;
+  padding-bottom: 72px; }
+
+@media only screen and (min-width: 640px) {
+  .floatingAction {
+    position: static; }
     .floatingAction:before {
-      display: block;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      content: "";
-      background-color: #353e48;
-      z-index: 2;
-      height: 72px;
-      width: 100%; }
+      position: static;
+      height: 0;
+      width: 0; }
     .floatingAction > a {
-      position: relative;
-      z-index: 3; }
+      z-index: 0; }
 
   .hasFloatingAction {
-    background-color: #353e48;
-    padding-bottom: 72px; } }
+    background-color: transparent;
+    padding-bottom: 0; } }
 /*doc
 ---
 title: Menu
@@ -3514,7 +3529,8 @@ category: UI Components
 ---
 Context menu style dropdoowns. Actions are delivered in-document
 next to the menu toggle as a non-js fallback. When a client is
-javascript-enabled, the menu is hidden and posisitioned absolute.
+javascript-enabled, the menu is hidden and posisitioned __fixed__
+(assumes this style of menu will only be found within a `view-head`).
 
 Toggling of menu visibility is handled with javascript (supporting js
 for documentation TK).
@@ -3544,11 +3560,13 @@ Use as a guide for markup.
     border-radius: 3px;
     background-color: white;
     display: none;
-    position: absolute;
     min-width: 108px;
     max-width: 330px;
     top: 16px;
-    right: 16px; }
+    right: 16px;
+    position: absolute; }
+    .position--fixed .hasJS .menu-actions {
+      position: fixed; }
 
 .menu-actions-item {
   display: inline; }
@@ -3927,6 +3945,13 @@ Class              | Description
     display: block;
     padding-top: 150%; }
 
+.keepAspect--3-2 {
+  margin-bottom: 0; }
+  .keepAspect--3-2:before {
+    content: '';
+    display: block;
+    padding-top: 66.66667%; }
+
 .keepAspect--4-3 {
   margin-bottom: 0; }
   .keepAspect--4-3:before {
@@ -4034,7 +4059,12 @@ title: Float
 name: floatMod
 category: Modifier Classes
 ---
-TK `.clearfix`
+Float clearing.
+
+Class             | Description
+----------------- | -----------------------------------------
+`.clearfix`       | clears `float` property of children
+
 */
 .clearfix:after {
   visibility: hidden;
@@ -4043,8 +4073,48 @@ TK `.clearfix`
   content: " ";
   height: 0; }
 
-.lt--IE9 .clearfix {
+.ieRoot_lt_IE10 .clearfix {
   zoom: 1; }
+
+/*doc
+---
+title: Flush
+name: flushMod
+category: Modifier Classes
+---
+
+__Applies `!important` declaration__
+
+The following classes "flush" an element, removing
+padding and margin for a given side variant.
+
+Class               | Description
+------------------- | ------------------------------------------------------------
+`.flush--all`       | removes `padding` and `margin` from all sides of an element
+`.flush--top`       | removes `padding` and `margin` from the top side of an element
+`.flush--right`     | removes `padding` and `margin` from the right side of an element
+`.flush--bottom`    | removes `padding` and `margin` from the bottom side of an element
+`.flush--left`      | removes `padding` and `margin` from the left side of an element
+*/
+.flush--all {
+  padding: 0 !important;
+  margin: 0 !important; }
+
+.flush--top {
+  padding-top: 0 !important;
+  margin-top: 0 !important; }
+
+.flush--right {
+  padding-right: 0 !important;
+  margin-right: 0 !important; }
+
+.flush--left {
+  padding-left: 0 !important;
+  margin-left: 0 !important; }
+
+.flush--bottom {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important; }
 
 /*doc
 ---
@@ -4092,18 +4162,23 @@ a modification at a specific breakpoint.
 
 _Uses atMediaUp_
 
-#### Signature
+### Example
 
-`.at[Breakpoint]_[property]--modification`
+```html_example
+	<p class="atLarge_align--center">
+		This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
+	</p>
+```
 
+### Supported modifications
+Using this signature: `.at[Breakpoint]_[property]--[variant]`
 
-#### Supported media and modifications
-- `.at[ Medium | Large ]_align--[ center | right | left ]`
-- `.at[ Medium | Large ]_display--[ none | inline | inlineBlock | block ]`
-- `.at[ Medium | Large ]_border--[ none | top ]`
-- `.at[ Medium | Large ]_padding--none`
-
-Example TK
+Breakpoints        | Property       | Variants
+------------------ | -------------- | ---------------------------
+`medium`, `large`  | `align`        | `center`, `right`, `left`
+`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `padding`      | `none`
+`medium`, `large`  | `border`       | `top`, `none`
 */
 @media only screen and (min-width: 640px) {
   .atMedium_align--center {

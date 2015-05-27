@@ -18,9 +18,13 @@ Sets properties to color SVG icons
 @mixin color-svg($color: black);
 ```
 */
-@mixin color-svg($color: black) {
-	fill: $color;
+@mixin color-svg($color: black, $isImportant:false) {
 	stroke: transparent;
+	@if $isImportant {
+		fill: $color !important;
+	} @else {
+		fill: $color;
+	}
 };
 
 /*doc
@@ -36,10 +40,13 @@ _and_ text.
 @mixin color-all($color: black);
 ```
 */
-@mixin color-all($color: black) {
-	fill: $color;
-	stroke: transparent;
-	color: $color;
+@mixin color-all($color: black, $isImportant:false) {
+	@include color-svg($color, $isImportant);
+	@if $isImportant {
+		color: $color !important;
+	} @else {
+		color: $color;
+	}
 };
 
 

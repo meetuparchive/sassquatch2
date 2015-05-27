@@ -484,7 +484,8 @@ of a page for the floating action to &quot;land&quot; in. Apply to the <code cla
 <h1 id="menu" class="styleguide">Menu</h1>
 <p class="styleguide">Context menu style dropdoowns. Actions are delivered in-document
 next to the menu toggle as a non-js fallback. When a client is
-javascript-enabled, the menu is hidden and posisitioned absolute.</p><p class="styleguide">Toggling of menu visibility is handled with javascript (supporting js
+javascript-enabled, the menu is hidden and posisitioned <strong>fixed</strong>
+(assumes this style of menu will only be found within a <code class="styleguide">view-head</code>).</p><p class="styleguide">Toggling of menu visibility is handled with javascript (supporting js
 for documentation TK).</p><p class="styleguide"><strong>NOTE:</strong> This visual example currently shows the non-js fallback only.
 Use as a guide for markup.</p><div class="codeExample">
   <div class="exampleOutput">
@@ -1328,6 +1329,16 @@ $(function() {
 				
 
 				index.add({
+					"title": "Link color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#linkColorPlaceholder"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Text protection shim",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text protection shim",
 					"path": "sass_utils_|_mixins_&_placeholders.html#textProtection"
@@ -1435,6 +1446,16 @@ $(function() {
 					"title": "Float",
 					"breadcrumb": "Modifier Classes > Float",
 					"path": "modifier_classes.html#floatMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flush",
+					"breadcrumb": "Modifier Classes > Flush",
+					"path": "modifier_classes.html#flushMod"
 				});
 
 			

@@ -6,7 +6,8 @@ category: UI Components
 ---
 Context menu style dropdoowns. Actions are delivered in-document
 next to the menu toggle as a non-js fallback. When a client is
-javascript-enabled, the menu is hidden and posisitioned absolute.
+javascript-enabled, the menu is hidden and posisitioned __fixed__
+(assumes this style of menu will only be found within a `view-head`).
 
 Toggling of menu visibility is handled with javascript (supporting js
 for documentation TK).
@@ -42,7 +43,6 @@ Use as a guide for markup.
 		border-radius: $defaultRadius;
 		background-color: $C_white;
 		display: none;
-		position: absolute;
 		min-width: $block-3;
 		max-width: $breakpoint-s*0.75;
 
@@ -53,6 +53,15 @@ Use as a guide for markup.
 		// position the menu over the trigger element.
 		top: $space;
 		right: $space;
+
+
+		// use absolute positioning by default;
+		// set to fixed positioning if a child of a fixed
+		// position nav
+		position: absolute;
+		.position--fixed & {
+			position: fixed;
+		}
 	}
 }
 
