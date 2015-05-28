@@ -1416,7 +1416,7 @@ name: formValidation
 category: Forms
 ---
 Error styles can be applied to any input, textarea, 
-or selectare with the class `field--error`.
+or select element with the class `field--error`.
 
 Error text is set explicitly with `text--error`.
 
