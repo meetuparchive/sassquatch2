@@ -1415,8 +1415,8 @@ title: Validation errors
 name: formValidation
 category: Forms
 ---
-Error styles are applied to any child
-input of an element with the class `hasError`.
+Error styles can be applied to any input, textarea, 
+or selectare with the class `field--error`.
 
 Error text is set explicitly with `text--error`.
 
