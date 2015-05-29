@@ -54,9 +54,6 @@ Class                       | Description
 .hscroll {
 	-webkit-overflow-scrolling: touch;
 	overflow: scroll;
-	&::-webkit-scrollbar {
-		 display: none;
-	}
 }
 
 .hscroll-content {

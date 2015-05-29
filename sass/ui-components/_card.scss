@@ -24,8 +24,11 @@ Card-like boxes.
 
 			<!-- Group card -->
 			<li>
-				<div class="card inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
-					<h4>I'm a group card</h4>
+				<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+					<div class="card--group-content">
+						<h4 class="text--bold">Some Meetup Group Name</h4>
+						<p>457 [chapter.who]</p>
+					</div>
 				</div>
 			</li>
 
@@ -175,8 +178,15 @@ _(The inline style on the card element is for documentation purposes only)_
 	</a>
 </section>
 ```
-
 */
+
+$_eventStripes: (
+	past: $C_mediumGray,
+	canceled: $C_mediumGray,
+	featured: $C_yellow,
+	draft: $C_green
+);
+
 .card {
 	@include box-sizing(border-box);
 	display: block;
@@ -186,8 +196,20 @@ _(The inline style on the card element is for documentation purposes only)_
 	padding: $space $space 0;
 	position: relative;
 	background-size: cover;
-	background-clip: border-box;
+	background-clip: padding-box;
 	min-height: $block-4;
+}
+
+.card--group {
+	@extend %valignChildren--bottom;
+	@extend %text--small;
+	@include display(flex);
+	@include textProtectionScrim();
+	border-radius: 0;
+	padding: $space;
+}
+.card--group-content {
+	position: relative;
 }
 
 .card--event {
@@ -208,18 +230,8 @@ _(The inline style on the card element is for documentation purposes only)_
 	}
 }
 
-.card--event--past {
-	&:before { background: $C_mediumGray; }
-}
-
-.card--event--canceled {
-	&:before { background: $C_mediumGray; }
-}
-
-.card--event--featured {
-	&:before { background: $C_yellow; }
-}
-
-.card--event--draft {
-	&:before { background: $C_green; }
+@each $eventVariant, $stripeColor in $_eventStripes {
+	.card--event--#{$eventVariant} {
+		&:before { background: $stripeColor; }
+	}
 }
