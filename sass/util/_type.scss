@@ -68,6 +68,7 @@ $C_scrimGradient: #0F141F; // move to swatches?
 		position: absolute;
 		width: 100%;
 		z-index: 0;
+		left: 0;
 
 		@if $placement == 'top' {
 			top: 0;

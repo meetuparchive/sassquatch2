@@ -226,7 +226,7 @@ Aligns children of selected element using flexbox.
     display: table-cell;
     vertical-align: center; }
 
-.stripe-heroContent {
+.stripe-heroContent, .card--group {
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -245,7 +245,7 @@ Aligns children of selected element using flexbox.
   -ms-justify-content: flex-end;
   justify-content: flex-end;
   -ms-flex-pack: end; }
-  .ieRoot_lt_IE10 .stripe-heroContent {
+  .ieRoot_lt_IE10 .stripe-heroContent, .ieRoot_lt_IE10 .card--group {
     display: table-cell;
     vertical-align: bottom; }
 
@@ -915,7 +915,7 @@ parent: bodyText
 <p class="text--small">Small text is small</p>
 ```
 */
-.text--caption, .text--error, .text--caption h1, .text--error h1, .text--caption h2, .text--error h2, .text--caption h3, .text--error h3, .text--caption h4, .text--error h4, .text--caption h5, .text--error h5, .text--caption h6, .text--error h6,
+.text--caption, .text--error, .card--group, .text--caption h1, .text--error h1, .card--group h1, .text--caption h2, .text--error h2, .card--group h2, .text--caption h3, .text--error h3, .card--group h3, .text--caption h4, .text--error h4, .card--group h4, .text--caption h5, .text--error h5, .card--group h5, .text--caption h6, .text--error h6, .card--group h6,
 .text--small,
 .text--small h1,
 .text--small h2,
@@ -1415,8 +1415,7 @@ title: Validation errors
 name: formValidation
 category: Forms
 ---
-Error styles are applied to any child
-input of an element with the class `hasError`.
+Field errors set explicitly with `field--error`.
 
 Error text is set explicitly with `text--error`.
 
@@ -1657,6 +1656,7 @@ Uses the `stripe--photoHero` variant.
   position: absolute;
   width: 100%;
   z-index: 0;
+  left: 0;
   top: 0; }
 
 .stripe-heroContent {
@@ -2002,8 +2002,6 @@ Class                       | Description
 .hscroll {
   -webkit-overflow-scrolling: touch;
   overflow: scroll; }
-  .hscroll::-webkit-scrollbar {
-    display: none; }
 
 .hscroll-content {
   box-sizing: content-box;
@@ -3235,8 +3233,11 @@ Card-like boxes.
 
 			<!-- Group card -->
 			<li>
-				<div class="card inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
-					<h4>I'm a group card</h4>
+				<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+					<div class="card--group-content">
+						<h4 class="text--bold">Some Meetup Group Name</h4>
+						<p>457 [chapter.who]</p>
+					</div>
 				</div>
 			</li>
 
@@ -3386,7 +3387,6 @@ _(The inline style on the card element is for documentation purposes only)_
 	</a>
 </section>
 ```
-
 */
 .card {
   -webkit-box-sizing: border-box;
@@ -3398,8 +3398,34 @@ _(The inline style on the card element is for documentation purposes only)_
   padding: 16px 16px 0;
   position: relative;
   background-size: cover;
-  background-clip: border-box;
+  background-clip: padding-box;
   min-height: 160px; }
+
+.card--group {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0;
+  padding: 16px; }
+  .card--group:before {
+    background-color: rgba(15, 20, 31, 0);
+    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 25%, rgba(15, 20, 31, 0.9) 100%);
+    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 25%, rgba(15, 20, 31, 0.9) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    left: 0;
+    top: 0; }
+
+.card--group-content {
+  position: relative; }
 
 .card--event {
   position: relative; }
@@ -3515,7 +3541,6 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
     z-index: 3; }
 
 .hasFloatingAction {
-  outline: 1px solid red;
   background-color: #353e48;
   padding-bottom: 72px; }
 
