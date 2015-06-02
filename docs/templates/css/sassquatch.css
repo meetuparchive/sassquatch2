@@ -3084,38 +3084,20 @@ category: UI Components
 #### Example
 
 ```html_example
-<ul class="inlineblockList">
-	<li>
-		<a class="button" href="#">Button</a>
-	</li>
-	<li>
-		<a class="button button--primary" href="#">Primary Button</a>
-	</li>
-	<li>
-		<a class="button" href="#">
-			<span class="button-label">Button with right Icon</span>
-			<span class="button-icon">X</span>
-		</a>
-	</li>
-	<li>
-		<a class="button button--primary" href="#">
-			<span class="button-icon">X</span>
-			<span class="button-label">Primary button with left Icon</span>
-		</a>
-	</li>
-	<li>
-		<a class="button button--borderless" href="#">Borderless Button</a>
-	</li>
-	<li>
-		<a class="button button--primary button--contrast" href="#">Contrast Button</a>
-	</li>
-	<li>
-		<a class="button button--small" href="#">Small Button</a>
-	</li>
-	<li>
-		<a class="button button--bordered button--fullWidth" href="#">Full width button</a>
-	</li>
-</ul>
+<a class="button" href="#">Button</a>
+<a class="button button--primary" href="#">Primary Button</a>
+<a class="button" href="#">
+	<span class="button-label">Button with right Icon</span>
+	<span class="button-icon">X</span>
+</a>
+<a class="button button--primary" href="#">
+	<span class="button-icon">X</span>
+	<span class="button-label">Primary button with left Icon</span>
+</a>
+<a class="button button--borderless" href="#">Borderless Button</a>
+<a class="button button--primary button--contrast" href="#">Contrast Button</a>
+<a class="button button--small" href="#">Small Button</a>
+<a class="button button--bordered button--fullWidth" href="#">Full width button</a>
 ```
 
 #### Button variants
