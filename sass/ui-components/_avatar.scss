@@ -34,6 +34,11 @@ category: UI Components
 			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
 		</a>
 	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--org">
+			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
+		</a>
+	</li>
 </ul>
 ```
 
@@ -82,16 +87,14 @@ Class                     | Description
 	background-position: center 42%;
 	color: transparent;
 	display: inline-block;
-	font-size: $media-s * 2/3;
+	font-size: 0;
 	height: $media-s;
 	text-indent: 100%;
 	white-space: nowrap;
 	vertical-align: top;
 	width: $media-s;
-	overflow: hidden;
 
 	@include atMediaUp(small) {
-		font-size: $media-m;
 		height: $media-m;
 		width: $media-m;
 	}
@@ -102,7 +105,6 @@ Class                     | Description
 // Size variants
 //
 .avatar--small {
-	font-size: $media-xs;
 	height: $media-xs;
 	width: $media-xs;
 
@@ -113,7 +115,6 @@ Class                     | Description
 	}
 }
 .avatar--big {
-	font-size: $media-l * 2/3;
 	height: $media-xl;
 	width: $media-xl;
 

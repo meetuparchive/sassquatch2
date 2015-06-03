@@ -2002,7 +2002,7 @@ Class                       | Description
 */
 .hscroll {
   -webkit-overflow-scrolling: touch;
-  overflow: scroll; }
+  overflow-x: scroll; }
 
 .hscroll-content {
   box-sizing: content-box;
@@ -2861,6 +2861,11 @@ category: UI Components
 			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
 		</a>
 	</li>
+	<li>
+		<a href="#" class="avatar avatar--person avatar--org">
+			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
+		</a>
+	</li>
 </ul>
 ```
 
@@ -2904,22 +2909,19 @@ Class                     | Description
   background-position: center 42%;
   color: transparent;
   display: inline-block;
-  font-size: 24px;
+  font-size: 0;
   height: 36px;
   text-indent: 100%;
   white-space: nowrap;
   vertical-align: top;
-  width: 36px;
-  overflow: hidden; }
+  width: 36px; }
   @media only screen and (min-width: 440px) {
     .avatar--person,
     .avatar {
-      font-size: 48px;
       height: 48px;
       width: 48px; } }
 
 .avatar--small {
-  font-size: 24px;
   height: 24px;
   width: 24px; }
   .avatar--small .avatar-initial {
@@ -2928,7 +2930,6 @@ Class                     | Description
     font-size: 16px; }
 
 .avatar--big {
-  font-size: 48px;
   height: 160px;
   width: 160px; }
   .avatar--big .avatar-initial {
