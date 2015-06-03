@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  *---------------------------------------------------
  *   __,                                         __
@@ -3086,11 +3087,11 @@ category: UI Components
 ```html_example
 <a class="button" href="#">Button</a>
 <a class="button button--primary" href="#">Primary Button</a>
-<a class="button" href="#">
+<a class="button button--icon" href="#">
 	<span class="button-label">Button with right Icon</span>
 	<span class="button-icon">X</span>
 </a>
-<a class="button button--primary" href="#">
+<a class="button button--icon button--primary" href="#">
 	<span class="button-icon">X</span>
 	<span class="button-label">Primary button with left Icon</span>
 </a>
@@ -3098,6 +3099,10 @@ category: UI Components
 <a class="button button--primary button--contrast" href="#">Contrast Button</a>
 <a class="button button--small" href="#">Small Button</a>
 <a class="button button--bordered button--fullWidth" href="#">Full width button</a>
+<a class="button button--primary button--icon button--fullWidth" href="#">
+	<span class="button-icon">ヘ(◕。◕ヘ)</span>
+	<span class="button-label">Full width primary button with left Icon</span>
+</a>
 ```
 
 #### Button variants
@@ -3109,7 +3114,9 @@ Class                   | Description
 `.button--primary`      | rounded button with dark background; for primary actions
 `.button--contrast`     | bold, dark text; use on dark backgrounds or photos (ie. top nav bar)
 `.button--bordered`     | rounded bordered button
+`.button--borderless`   | borderless button
 `.button--small`        | decreases size of button
+`.button--icon`         | button with icon
 */
 .button, .toggleButton-label {
   -webkit-box-sizing: border-box;
@@ -3199,12 +3206,72 @@ Class                   | Description
   display: block;
   width: 100%; }
 
+.button--icon {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-lines: single;
+  box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex; }
+
+.button-label {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0; }
+
 .button-icon {
-  margin-left: 4px;
-  vertical-align: bottom; }
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  width: initial; }
   .button-icon:first-child {
-    margin-left: 0;
-    margin-right: 4px; }
+    margin-right: 8px; }
+  .button-icon:last-child {
+    margin-left: 8px; }
+
+.ieRoot_lt_IE10 .button--icon {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: table;
+  table-layout: auto; }
+.ieRoot_lt_IE10 .button-label,
+.ieRoot_lt_IE10 .button-icon {
+  display: table-cell;
+  width: 100%; }
+.ieRoot_lt_IE10 .button-icon {
+  width: auto; }
 
 .button--small .button-icon {
   height: 16px; }
