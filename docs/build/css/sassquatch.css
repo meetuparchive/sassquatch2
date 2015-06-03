@@ -3229,13 +3229,7 @@ Class                   | Description
   -webkit-justify-content: flex-end;
   -ms-justify-content: flex-end;
   justify-content: flex-end;
-  -ms-flex-pack: end;
-  -webkit-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -ms-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex; }
+  -ms-flex-pack: end; }
 
 .button-label,
 .button-icon {
@@ -3261,7 +3255,8 @@ Class                   | Description
   -webkit-flex-basis: auto;
   flex-basis: auto;
   -ms-flex-preferred-size: auto;
-  width: initial; }
+  width: initial;
+  line-height: 0; }
   .button-icon:first-child {
     margin-right: 8px; }
   .button-icon:last-child {

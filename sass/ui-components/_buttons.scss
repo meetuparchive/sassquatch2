@@ -175,7 +175,6 @@ $_iconGutter: $space/2;
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
 	@include justify-content(flex-end);
-	@include align-items(flex);
 }
 .button-label,
 .button-icon {
@@ -190,6 +189,7 @@ $_iconGutter: $space/2;
 	@include flex-shrink(0);
 	@include flex-basis(auto);
 	width: initial;
+	line-height: 0;
 
 	&:first-child {
 		margin-right: $_iconGutter;
