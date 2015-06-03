@@ -3237,6 +3237,12 @@ Class                   | Description
   align-items: flex;
   -ms-flex-align: flex; }
 
+.button-label,
+.button-icon {
+  -webkit-align-self: center;
+  align-self: center;
+  -ms-flex-item-align: center; }
+
 .button-label {
   -webkit-flex-grow: 1;
   flex-grow: 1;

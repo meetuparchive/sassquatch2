@@ -177,6 +177,10 @@ $_iconGutter: $space/2;
 	@include justify-content(flex-end);
 	@include align-items(flex);
 }
+.button-label,
+.button-icon {
+	@include align-self(center);
+}
 .button-label {
 	@include flex-grow(1);
 	@include flex-basis(0);
