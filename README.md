@@ -45,3 +45,13 @@ Command             | Result
 `grunt sass`        | Recompiles Sass
 `grunt hologram`    | Rebuilds Hologram docs
 `grunt clean`       | Cleans compiled docs and CSS in `docs/build`
+
+### Building to `gh-pages`
+As of 6/3/2014, building to `gh-pages` is still a manual process until
+we get around to setting up proper versioning for src/built files.
+
+1. `git checkout gh-pages`
+2. `git merge master`
+3. `grunt`
+4. `cp -r docs/build/. ./`
+5. commit all changes & push to origin
