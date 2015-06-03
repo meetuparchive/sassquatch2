@@ -53,7 +53,7 @@ Class                       | Description
 */
 .hscroll {
 	-webkit-overflow-scrolling: touch;
-	overflow: scroll;
+	overflow-x: scroll;
 }
 
 .hscroll-content {
