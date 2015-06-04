@@ -1242,8 +1242,9 @@ input elements.
   -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
+  font-size: 16px;
   height: 16px;
-  margin: 0 16px 0 0;
+  margin: 0 8px 0 0;
   position: relative;
   top: 0.0625em;
   width: 16px;
@@ -1328,8 +1329,9 @@ elements.
   -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
+  font-size: 16px;
   height: 16px;
-  margin: 0 16px 0 0;
+  margin: 0 8px 0 0;
   position: relative;
   top: 0;
   width: 16px;
