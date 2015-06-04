@@ -64,6 +64,8 @@ Class                       | Description
 		// avoid whitespace between <li>s to ensure
 		// consistent spacing on all browsers
 		white-space: normal;
+	}
+	.card {
 		width: 100%;
 		max-width: $block-5;
 	}
