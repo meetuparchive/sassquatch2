@@ -61,14 +61,18 @@ Class                       | Description
 	box-sizing: content-box;
 	white-space: nowrap;
 	> li {
+		// avoid whitespace between <li>s to ensure
+		// consistent spacing on all browsers
 		white-space: normal;
+		width: 100%;
+		max-width: $block-5;
 	}
 }
 
 @include _bpModifier(hscroll, unclip) {
 	-webkit-overflow-scrolling: auto;
 	-ms-overflow-style: auto;
-	overflow: visible;
+	overflow-x: visible;
 
 	.hscroll-content {
 		white-space: normal;
