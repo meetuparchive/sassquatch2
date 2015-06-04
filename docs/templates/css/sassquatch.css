@@ -1529,7 +1529,7 @@ Error text is set explicitly with `text--error`.
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 20;
   -webkit-transition: all 0.15s;
   transition: all 0.15s;
   background: rgba(0, 0, 0, 0.75);
@@ -2635,7 +2635,7 @@ Class                      | Description
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   height: 56px;
   padding: 0 16px; }
   @media only screen and (min-width: 840px) {
@@ -2747,7 +2747,7 @@ Modal that is presented full screen on all sizes
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 3; }
+  z-index: 30; }
   .view--modalFull.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
@@ -2803,7 +2803,7 @@ lays out as a dialog on background content on larger screens.
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 3; }
+  z-index: 30; }
   .view--modalSnap.off {
     -webkit-transform: translateY(100vh);
     -ms-transform: translateY(100vh);
@@ -2826,6 +2826,33 @@ lays out as a dialog on background content on larger screens.
         -webkit-transform: translateY(100vh);
         -ms-transform: translateY(100vh);
         transform: translateY(100vh); } }
+
+/*doc
+---
+title: Overlay Shim
+name: overlay shim
+parent: modals
+---
+
+TK
+
+*/
+.overlayShim {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 20; }
+
+.overlayShim-content {
+  position: fixed;
+  bottom: 4em;
+  z-index: 25;
+  margin: auto;
+  width: 100%; }
 
 /*doc
 ---
@@ -3611,7 +3638,7 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
     width: 100%; }
   .floatingAction > a {
     position: relative;
-    z-index: 3; }
+    z-index: 30; }
 
 .hasFloatingAction {
   background-color: #353e48;
@@ -3663,7 +3690,7 @@ Use as a guide for markup.
 ```
 */
 .menu-actions {
-  z-index: 5; }
+  z-index: 50; }
   .hasJS .menu-actions {
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 3px;

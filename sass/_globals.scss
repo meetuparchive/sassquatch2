@@ -139,11 +139,12 @@
 // ---------------------------
 	$zindex-map: (
 		main: 0,
-		main-header: 1,
-		shade: 2,
-		modal: 3,
-		modal-header: 4,
-		popup: 5
+		main-header: 10,
+		shade: 20,
+		shade-content: 25,
+		modal: 30,
+		modal-header: 40,
+		popup: 50
 	);
 
 

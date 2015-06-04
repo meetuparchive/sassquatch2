@@ -106,3 +106,33 @@ lays out as a dialog on background content on larger screens.
 	}
 	z-index: map-get($zindex-map, "modal");
 }
+
+
+/*doc
+---
+title: Overlay Shim
+name: overlay shim
+parent: modals
+---
+
+TK
+
+*/
+.overlayShim {
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	z-index: map-get($zindex-map, shade);
+}
+
+.overlayShim-content {
+	position: fixed;
+	bottom: 4em;
+	z-index: map-get($zindex-map, shade-content);
+	margin: auto;
+	width: 100%;
+}
