@@ -48,7 +48,11 @@ Command             | Result
 
 
 ### Creating a release
-Until I write the script for creating a release, this is the process:
+Until I write the script for creating a release, the process is unfortunately manual.
+Because we're using the git-flow branching model, all fix and feature commits flow into
+the `develop` branch. The `master` branch is our "production" branch.
+
+To create a release:
 
 1. merge changes from `develop` into `master`
 2. increment the version number in `bower.json`
