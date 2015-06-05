@@ -448,16 +448,23 @@ Clears floated children.
 @extend %clearfix;
 ```
 */
+.floatingAction > a,
+.floatingAction .floatingAction-content,
 .chunk, .bounds {
   /**
   * For IE 6/7 only
   * Include this rule to trigger hasLayout and contain floats.
   */
   *zoom: 1; }
-  .chunk:before, .bounds:before,
+  .floatingAction > a:before,
+  .floatingAction .floatingAction-content:before,
+  .chunk:before, .bounds:before, .floatingAction > a:after,
+  .floatingAction .floatingAction-content:after,
   .chunk:after, .bounds:after {
     content: " ";
     display: table; }
+  .floatingAction > a:after,
+  .floatingAction .floatingAction-content:after,
   .chunk:after, .bounds:after {
     clear: both; }
 
@@ -2054,6 +2061,8 @@ _Can be used in combination with any other component
 </div>
 ```
 */
+.floatingAction > a,
+.floatingAction .floatingAction-content,
 .chunk {
   display: block;
   margin-bottom: 16px !important; }
@@ -3613,7 +3622,7 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 	<div class="bounds">
 		<p class="chunk">The button below will fix to the bottom of the viewport at small sizes</p>
 		<div class="floatingAction">
-			<a href="#" class="chunk button button--primary button--fullWidth">Floating Action</a>
+			<a href="#" class="floatingAction-content button button--primary button--fullWidth">Floating Action</a>
 		</div>
 	</div>
 ```
@@ -3636,7 +3645,8 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
     z-index: 2;
     height: 72px;
     width: 100%; }
-  .floatingAction > a {
+  .floatingAction > a,
+  .floatingAction .floatingAction-content {
     position: relative;
     z-index: 30; }
 
