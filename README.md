@@ -46,6 +46,20 @@ Command             | Result
 `grunt hologram`    | Rebuilds Hologram docs
 `grunt clean`       | Cleans compiled docs and CSS in `docs/build`
 
+
+### Creating a release
+Until I write the script for creating a release, this is the process:
+
+1. merge changes from `develop` into `master`
+2. increment the version number in `bower.json`
+3. commit the result & push
+4. `git tag -a vX.X.X -m "tag message"`
+5. git push origin vX.X.X
+
+Once the tag ref is pushed to origin the version is available to install in
+chapstick or elsewhere.
+
+
 ### Building to `gh-pages`
 As of 6/3/2014, building to `gh-pages` is still a manual process until
 we get around to setting up proper versioning for src/built files.
