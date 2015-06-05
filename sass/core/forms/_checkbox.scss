@@ -32,8 +32,9 @@ input elements.
 	-webkit-appearance: none;
 	cursor: pointer;
 	display: inline-block;
+	font-size: $font-size;
 	height: $font-size;
-	margin: 0 $space 0 0;
+	margin: 0 $inputGutter 0 0;
 	position: relative;
 	top: em(1);
 	width: $font-size;

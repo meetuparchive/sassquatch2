@@ -98,6 +98,11 @@
 
 									
 									
+
+								
+
+									
+									
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#view">View</a>
 										</li>
@@ -199,6 +204,19 @@
   </div>
 </div>
 
+<h2 id="overlayShim" class="styleguide">Overlay Shim</h2>
+<p class="styleguide">This overlay shim will most likely be written in with javascript
+when a modal is activated. It should be a direct child of <code class="styleguide">body</code>.</p><p class="styleguide">The shim contains <code class="styleguide">overlayShim-content</code>, an element that is fixed
+just above the bottom of the viewport that can contain &quot;close&quot; or
+&quot;back to top&quot; prompts.</p><p class="styleguide">We do not block scrolling when a modal is open.</p><p class="styleguide"><em>See demo pages for <code class="styleguide">.view--modalSnap</code> and <code class="styleguide">.view--modalSnap</code></em></p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div id="shim" class="overlayShim"&gt;
+    &lt;div class="overlayShim-content inverted"&gt;
+        overlayShim content (ie. close prompt)
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div>
 <h2 id="snapModalView" class="styleguide">Snap Modal View (Dialog)</h2>
 <p class="styleguide">Modal that snaps to the whole viewport and is full screen on small screens,
 lays out as a dialog on background content on larger screens.</p><div class="codeExample">
@@ -1489,6 +1507,16 @@ $(function() {
 					"title": "Full Modal View",
 					"breadcrumb": "Views > Full Modal View",
 					"path": "views.html#fullModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Overlay Shim",
+					"breadcrumb": "Views > Overlay Shim",
+					"path": "views.html#overlayShim"
 				});
 
 			
