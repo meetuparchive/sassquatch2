@@ -111,12 +111,28 @@ lays out as a dialog on background content on larger screens.
 /*doc
 ---
 title: Overlay Shim
-name: overlay shim
+name: overlayShim
 parent: modals
 ---
 
-TK
+This overlay shim will most likely be written in with javascript
+when a modal is activated. It should be a direct child of `body`.
 
+The shim contains `overlayShim-content`, an element that is fixed
+just above the bottom of the viewport that can contain "close" or
+"back to top" prompts.
+
+We do not block scrolling when a modal is open.
+
+_See `.view--modalSnap` demo page for example_
+
+```
+<div id="shim" class="overlayShim">
+	<div class="overlayShim-content inverted">
+		overlayShim content (ie. close prompt)
+	</div>
+</div>
+```
 */
 .overlayShim {
 	text-align: center;
