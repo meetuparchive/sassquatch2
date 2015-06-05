@@ -17,6 +17,7 @@ Class                    | Description
 `.margin--left`          | Adds left margin to element
 `.margin--all`           | Adds margin to all sides of element
 `.margin--none`          | Sets `margin` to `0`
+`.margin--center`        | Sets left and right margin to `auto`
 
 
 ## Margin
@@ -52,4 +53,9 @@ Class                    | Description
 		#{$property}: 0;
 	}
 
+}
+
+.margin--center {
+	margin-left: auto;
+	margin-right: auto;
 }
