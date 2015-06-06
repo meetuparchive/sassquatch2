@@ -8,7 +8,62 @@ Applies styles for horizontal scrolling lists.
 
 ```html_example
 <div class="hscroll">
-	<ul class="hscroll-content">
+	<ul class="hscroll-content hscroll-content--cards">
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+	</ul>
+</div>
+```
+
+```html_example
+<div class="hscroll">
+	<ul class="hscroll-content hscroll-content--cards">
 		<li>
 			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
 				<div class="card--group-content">
