@@ -3943,11 +3943,24 @@ category: UI Components
 
 ```html_example
 <ul role="navigation" class="pagination">
-	<li class="pagination-prev"><a href="#" rel="prev">Previous</a></li>
-	<li class="pagination-page"><a href="#"><span class="text--hide">Page</span> 1</a></li>
-	<li class="pagination-page"><span class="pagination-page-current">3 <em class="text--hide">Current page</em></span></li>
-	<li class="pagination-page"><a href="#"><span class="text--hide">Page </span>5</a></li>
-	<li class="pagination-next"><a href="#" rel="next">Next</a></li>
+	<li>
+		<a class="pagination-prev" href="#" rel="prev">Previous</a>
+	</li>
+	<li>
+		<a class="pagination-page" href="#"><span class="text--hide">Page</span> 1</a>
+	</li>
+	<li>
+		<span class="pagination-page pagination-page--current">2 <em class="text--hide">Current page</em></span>
+	</li>
+	<li>
+		<a class="pagination-page" href="#"><span class="text--hide">Page </span>3</a>
+	</li>
+	<li>
+		<a class="pagination-page" href="#"><span class="text--hide">Page </span>4</a>
+	</li>
+	<li>
+		<a class="pagination-next" href="#" rel="next">Next</a>
+	</li>
 </ul>
 ```
 */

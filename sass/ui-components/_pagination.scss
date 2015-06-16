@@ -8,7 +8,7 @@ category: UI Components
 ```html_example
 <ul role="navigation" class="pagination">
 	<li>
-		<a class="pagination-prev" href="#" rel="prev">Previous</a>
+		<a class="pagination-page" href="#" rel="prev">Previous</a>
 	</li>
 	<li>
 		<a class="pagination-page" href="#"><span class="text--hide">Page</span> 1</a>
@@ -23,8 +23,18 @@ category: UI Components
 		<a class="pagination-page" href="#"><span class="text--hide">Page </span>4</a>
 	</li>
 	<li>
-		<a class="pagination-next" href="#" rel="next">Next</a>
+		<a class="pagination-page" href="#" rel="next">Next</a>
 	</li>
 </ul>
 ```
 */
+
+.pagination {
+	@extend %list--rest;
+}
+
+.pagination-page {
+}
+
+.pagination-page--current {
+}
