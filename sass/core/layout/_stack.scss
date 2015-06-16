@@ -40,10 +40,8 @@ Class                   | Description
 
 */
 .stack {
-	@include display(flex);
-	@include flex-direction(column);
-	@include justify-content(flex-start);
-	@include align-items(flex);
+	@extend %flexParent;
+	@extend %flexParent--column;
 }
 
 .stack-item {
