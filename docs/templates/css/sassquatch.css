@@ -617,7 +617,8 @@ html {
 
 html, body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background-color: #fff; }
 
 body {
   position: relative; }
@@ -1967,18 +1968,157 @@ Applies styles for horizontal scrolling lists.
 ```html_example
 <div class="hscroll">
 	<ul class="hscroll-content">
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
-		<li><img src="https://placekitten.com/g/240/160" /></li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+		<li>
+			<p>This is some content in an hscroll list. It can be almost anything.</p>
+			<a class="button">Button</a>
+		</li>
+	</ul>
+</div>
+```
+
+```html_example
+<div class="hscroll">
+	<ul class="hscroll-content hscroll-content--cards">
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
 	</ul>
 </div>
 ```
@@ -1989,13 +2129,55 @@ into a non-scrolling list in the document flow for larger screens.
 
 ```html_example
 <div class="hscroll atMedium_hscroll--unclip">
-	<ul class="hscroll-content">
-		<li><img src="https://placekitten.com/g/200/120" /></li>
-		<li><img src="https://placekitten.com/g/200/120" /></li>
-		<li><img src="https://placekitten.com/g/200/120" /></li>
-		<li><img src="https://placekitten.com/g/200/120" /></li>
-		<li><img src="https://placekitten.com/g/200/120" /></li>
-		<li><img src="https://placekitten.com/g/200/120" /></li>
+	<ul class="hscroll-content hscroll-content--cards">
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+				<div class="card--group-content">
+					<h4 class="text--bold">New York City Social Group</h4>
+					<p>979 Members</p>
+				</div>
+			</a>
+		</li>
 	</ul>
 </div>
 ```
@@ -2016,11 +2198,9 @@ Class                       | Description
 .hscroll-content {
   box-sizing: content-box;
   white-space: nowrap; }
-  .hscroll-content > li {
-    white-space: normal; }
-  .hscroll-content .card {
-    width: 100%;
-    max-width: 240px; }
+
+.hscroll-content--cards > li {
+  width: 240px; }
 
 @media only screen and (min-width: 640px) {
   .atMedium_hscroll--unclip {
@@ -2855,7 +3035,7 @@ just above the bottom of the viewport that can contain "close" or
 
 We do not block scrolling when a modal is open.
 
-_See demo pages for `.view--modalSnap` and `.view--modalSnap`_
+_See `.view--modalSnap` demo page for example_
 
 ```
 <div id="shim" class="overlayShim">
@@ -3756,6 +3936,23 @@ Use as a guide for markup.
 
 /*doc
 ---
+title: Pagination
+name: uiPager
+category: UI Components
+---
+
+```html_example
+<ul role="navigation" class="pagination">
+	<li class="pagination-prev"><a href="#" rel="prev">Previous</a></li>
+	<li class="pagination-page"><a href="#"><span class="text--hide">Page</span> 1</a></li>
+	<li class="pagination-page"><span class="pagination-page-current">3 <em class="text--hide">Current page</em></span></li>
+	<li class="pagination-page"><a href="#"><span class="text--hide">Page </span>5</a></li>
+	<li class="pagination-next"><a href="#" rel="next">Next</a></li>
+</ul>
+```
+*/
+/*doc
+---
 title: RSVP Tags
 name: tag
 category: UI Components
@@ -4460,6 +4657,7 @@ Class                    | Description
 `.margin--left`          | Adds left margin to element
 `.margin--all`           | Adds margin to all sides of element
 `.margin--none`          | Sets `margin` to `0`
+`.margin--center`        | Sets left and right margin to `auto`
 
 
 ## Margin
@@ -4509,6 +4707,10 @@ Class                    | Description
 
 .padding--none {
   padding: 0; }
+
+.margin--center {
+  margin-left: auto;
+  margin-right: auto; }
 
 /*doc
 ---
