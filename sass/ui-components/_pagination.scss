@@ -1,0 +1,30 @@
+/*doc
+---
+title: Pagination
+name: uiPager
+category: UI Components
+---
+
+```html_example
+<ul role="navigation" class="pagination">
+	<li>
+		<a class="pagination-prev" href="#" rel="prev">Previous</a>
+	</li>
+	<li>
+		<a class="pagination-page" href="#"><span class="text--hide">Page</span> 1</a>
+	</li>
+	<li>
+		<span class="pagination-page pagination-page--current">2 <em class="text--hide">Current page</em></span>
+	</li>
+	<li>
+		<a class="pagination-page" href="#"><span class="text--hide">Page </span>3</a>
+	</li>
+	<li>
+		<a class="pagination-page" href="#"><span class="text--hide">Page </span>4</a>
+	</li>
+	<li>
+		<a class="pagination-next" href="#" rel="next">Next</a>
+	</li>
+</ul>
+```
+*/
