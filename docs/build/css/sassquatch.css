@@ -4568,6 +4568,7 @@ Breakpoints        | Property       | Variants
 `medium`, `large`  | `align`        | `center`, `right`, `left`
 `medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
 `medium`, `large`  | `padding`      | `none`
+`medium`, `large`  | `margin`       | `center`
 `medium`, `large`  | `border`       | `top`, `none`
 */
 @media only screen and (min-width: 640px) {
@@ -4618,6 +4619,14 @@ Breakpoints        | Property       | Variants
 @media only screen and (min-width: 840px) {
   .atLarge_padding--none {
     padding: 0 !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_margin--center {
+    margin-left: auto;
+    margin-right: auto; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_margin--center {
+    margin-left: auto;
+    margin-right: auto; } }
 @media only screen and (min-width: 640px) {
   .atMedium_border--top {
     border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
