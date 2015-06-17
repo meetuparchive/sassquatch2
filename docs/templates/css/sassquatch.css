@@ -4014,12 +4014,12 @@ category: UI Components
 ```
 */
 .pagination {
-  -webkit-box-pack: distribute;
-  box-pack: distribute;
-  -webkit-justify-content: space-around;
-  -ms-justify-content: space-around;
-  justify-content: space-around;
-  -ms-flex-pack: distribute; }
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify; }
 
 /*doc
 ---

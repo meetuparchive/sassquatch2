@@ -33,7 +33,7 @@ category: UI Components
 	@extend %list--reset;
 	@extend %flexParent;
 	@extend %flexParent--row;
-	@include justify-content(space-around);
+	@include justify-content(space-between);
 }
 
 .pagination-page {
