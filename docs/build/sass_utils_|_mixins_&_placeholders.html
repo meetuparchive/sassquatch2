@@ -106,6 +106,15 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#browserUtils">Browser filter mixin (IE only)</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#button">Button utilities</a>
 										</li>
 									
@@ -150,6 +159,25 @@
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#display">Display utils</a>
 										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#flexboxUtil">Flexbox</a>
+										</li>
+									
+
+								
+
+									
 									
 
 								
@@ -362,6 +390,17 @@ example, applies to <em>medium screens and larger</em>.</p><div class="codeBlock
 <td>Modern desktop viewports and up or <a class="styleguide" href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg" title="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a></td>
 </tr>
  </table>
+<h1 id="browserUtils" class="styleguide">Browser filter mixin (IE only)</h1>
+<p class="styleguide">Targets styles to specific IE versions using
+the root class method (applying classes to the
+<code class="styleguide">body</code> tag with IE conditional comments).</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>.myClass {
+    @include browser-lessThanIE( 10 ) { ...styles for all IE versions below 10... }
+    @include browser-lessThanIE( 9 ) { ...styles for all IE versions below 9... }
+}</pre>
+  </div>
+</div>
 <h1 id="button" class="styleguide">Button utilities</h1>
 
 <h2 id="buttonPersonality" class="styleguide">Button personality placeholder</h2>
@@ -418,6 +457,44 @@ as data uris in a Sass map.</p><div class="codeBlock">
     <pre>@include pseudoDisplay($value: block);</pre>
   </div>
 </div>
+<h1 id="flexboxUtil" class="styleguide">Flexbox</h1>
+
+<h2 id="flexChildUtil" class="styleguide">Flex child</h2>
+<p class="styleguide">Sets flexbox properties for a flex children.</p><table class="styleguide"> <tr>
+<th>Placeholder Variant</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">%flexChild--grow</code></td>
+<td>sets flex child to fill remaining space of the flex parent</td>
+</tr>
+<tr>
+<td><code class="styleguide">%flexChild--shrink</code></td>
+<td>sets flex child to shrink to the width of its content</td>
+</tr>
+ </table>
+<h2 id="flexParentUtil" class="styleguide">Flex parent</h2>
+<p class="styleguide">Sets flexbox properties for a flex parent (<code class="styleguide">display: flex;</code>)</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %flexParent;</pre>
+  </div>
+</div><table class="styleguide"> <tr>
+<th>Placeholder Variant</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">%flexParent</code></td>
+<td>sets <code class="styleguide">display</code> to <code class="styleguide">flex</code>, aligns items to <code class="styleguide">flex-start</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">%flexParent--column</code></td>
+<td>sets <code class="styleguide">flex-direction</code> to <code class="styleguide">column</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">%flexParent--row</code></td>
+<td>sets <code class="styleguide">flex-direction</code> to <code class="styleguide">row</code></td>
+</tr>
+ </table>
 <h1 id="float" class="styleguide">Float utils</h1>
 
 <h2 id="clearfix" class="styleguide">Clearfix placeholder</h2>
@@ -616,6 +693,16 @@ $(function() {
 				
 
 				index.add({
+					"title": "Browser filter mixin (IE only)",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Browser filter mixin (IE only)",
+					"path": "sass_utils_|_mixins_&_placeholders.html#browserUtils"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Button utilities",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Button utilities",
 					"path": "sass_utils_|_mixins_&_placeholders.html#button"
@@ -689,6 +776,36 @@ $(function() {
 					"title": "Pseudo-element display mixin",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Pseudo-element display mixin",
 					"path": "sass_utils_|_mixins_&_placeholders.html#pseudoDisplay"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flexbox",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Flexbox",
+					"path": "sass_utils_|_mixins_&_placeholders.html#flexboxUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flex child",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Flex child",
+					"path": "sass_utils_|_mixins_&_placeholders.html#flexChildUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flex parent",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Flex parent",
+					"path": "sass_utils_|_mixins_&_placeholders.html#flexParentUtil"
 				});
 
 			

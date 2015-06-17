@@ -8,13 +8,23 @@ category: Sass Utils | Mixins & Placeholders
 
 /*doc
 ---
-title: tk lol
-name: tkLol
+title: Flex parent
+name: flexParentUtil
 parent: flexboxUtil
 ---
-lol TK
-*/
 
+Sets flexbox properties for a flex parent (`display: flex;`)
+
+```
+@extend %flexParent;
+```
+
+Placeholder Variant       | Description
+------------------------- | --------------------------------------------------------
+`%flexParent`             | sets `display` to `flex`, aligns items to `flex-start`
+`%flexParent--column`     | sets `flex-direction` to `column`
+`%flexParent--row`        | sets `flex-direction` to `row`
+*/
 %flexParent {
 	@include display(flex);
 	@include justify-content(flex-start);
@@ -27,14 +37,40 @@ lol TK
 
 %flexParent--row {
 	@include flex-direction(row);
+
+	@include browser-lessThanIE( 10 ) {
+		@include box-sizing(border-box);
+		display: table;
+		table-layout: auto;
+		width: 100%;
+	}
 }
 
 
+/*doc
+---
+title: Flex child
+name: flexChildUtil
+parent: flexboxUtil
+---
+
+Sets flexbox properties for a flex children.
+
+Placeholder Variant       | Description
+------------------------- | --------------------------------------------------------
+`%flexChild--grow`        | sets flex child to fill remaining space of the flex parent
+`%flexChild--shrink`      | sets flex child to shrink to the width of its content
+*/
 %flexChild--grow {
 	@include flex-grow(1);
 	@include flex-basis(0);
 	width: auto;
 	min-width: 0;
+
+	@include browser-lessThanIE( 10 ) {
+		display: table-cell;
+		width: 100%;
+	}
 }
 
 %flexChild--shrink {
@@ -42,4 +78,8 @@ lol TK
 	@include flex-shrink(0);
 	@include flex-basis(auto);
 	width: initial;
+
+	@include browser-lessThanIE( 10 ) {
+		width: auto;
+	}
 }

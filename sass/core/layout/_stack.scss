@@ -42,42 +42,65 @@ Class                   | Description
 .stack {
 	@extend %flexParent;
 	@extend %flexParent--column;
+
+	@include browser-lessThanIE( 10 ) {
+		display: block;
+	}
 }
 
 .stack-item {
 	@include flex-grow(1);
 	width: 100%;
 	min-width: 0;
+
+	@include browser-lessThanIE( 10 ) {
+		display: block;
+		padding-left: 0 !important;
+	}
 }
 
+//
+// repeating rules from sass/util/_flexbox.scss
+// because you can't @extend from within a @media
+// directive
+//
 @include _bpModifier(stack, spread) {
 	@include flex-direction(row);
 	@include flex-wrap(nowrap);
 
+	@include browser-lessThanIE( 10 ) {
+		@include box-sizing(border-box);
+		display: table;
+		table-layout: auto;
+		width: 100%;
+	}
+
 	> .stack-item {
+		@include flex-grow(1);
 		@include flex-basis(0);
+
+		@include browser-lessThanIE( 10 ) {
+			display: table-cell;
+			width: 100%;
+		}
+
 		width: auto;
 		min-width: 0;
 		padding-left: $space;
+
 		&:first-child {
 			padding-left: 0;
 		}
 	}
+
 	.stack-item--shrink {
 		@include flex-grow(0);
 		@include flex-shrink(0);
 		@include flex-basis(auto);
 		width: initial;
-	}
-}
 
-// LT IE10 fallback
-.ieRoot_lt_IE10 {
-	.stack,
-	.stack-item {
-		display: block;
-	}
-	.stack-item {
-		padding-left: 0 !important;
+		@include browser-lessThanIE( 10 ) {
+			width: auto;
+		}
 	}
 }

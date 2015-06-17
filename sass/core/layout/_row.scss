@@ -59,7 +59,7 @@ _Includes `table-cell` fallback for IE8._
 	@include flex-wrap(nowrap);
 }
 .row-item {
-	@extend flexChild--grow;
+	@extend %flexChild--grow;
 	padding-left: $space;
 	&:first-child {
 		padding-left: 0;
@@ -127,24 +127,8 @@ Class                   | Description
 }
 .row-item--alignMiddle {
 	@include align-self(center);
-}
 
-// LT IE10 fallback
-.ieRoot_lt_IE10 {
-	.row {
-		@include box-sizing(border-box);
-		display: table;
-		table-layout: auto;
-		width: 100%;
-	}
-	.row-item {
-		display: table-cell;
-		width: 100%;
-	}
-	.row-item--shrink {
-		width: auto;
-	}
-	.row-item--alignMiddle {
+	@include browser-lessThanIE( 10 ) {
 		vertical-align: middle;
 	}
 }
