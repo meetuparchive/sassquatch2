@@ -110,7 +110,7 @@ Uses the `stripe--photoHero` variant.
 	// for use with valignChildren--bottom
 	// on stripe-heroContent in IE9 and below
 	//
-	.ieRoot_lt_IE10 & {
+	@include browser-lessThanIE( 10 ) {
 		display: table;
 		width: 100%;
 	}

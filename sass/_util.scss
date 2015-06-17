@@ -27,18 +27,28 @@
 // ---------------------------
 // Sass Mixins & Placeholders
 // ---------------------------
-@import "util/animation";
-@import "util/align";
-@import "util/background";
-@import "util/breakpoint";
-@import "util/button";
-@import "util/color";
-@import "util/data-img";
-@import "util/display";
-@import "util/float";
-@import "util/modal";
-@import "util/modifier";
-@import "util/selector";
-@import "util/shadow";
-@import "util/shape";
-@import "util/type";
+	//
+	// Sass util dependencies for
+	// all other mixins/placeholders
+	//
+	@import "util/selector";
+	@import "util/browser";
+	@import "util/modifier";
+	@import "util/breakpoint";
+
+	//
+	// mixins/placeholders for UI
+	//
+	@import "util/animation";
+	@import "util/align";
+	@import "util/background";
+	@import "util/button";
+	@import "util/color";
+	@import "util/data-img";
+	@import "util/display";
+	@import "util/flexbox";
+	@import "util/float";
+	@import "util/modal";
+	@import "util/shadow";
+	@import "util/shape";
+	@import "util/type";
