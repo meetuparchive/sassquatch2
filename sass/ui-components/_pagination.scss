@@ -30,10 +30,14 @@ category: UI Components
 */
 
 .pagination {
-	@extend %list--rest;
+	@extend %list--reset;
+	@extend %flexParent;
+	@extend %flexParent--row;
+	@include justify-content(space-around);
 }
 
 .pagination-page {
+	@extend %flexChild--shrink;
 }
 
 .pagination-page--current {
