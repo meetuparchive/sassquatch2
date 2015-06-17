@@ -17,9 +17,9 @@ Class             | Description
 	font-size: 0;
 	content: " ";
 	height: 0;
-}
 
-.ieRoot_lt_IE10 .clearfix {
-	zoom: 1;
+	@include browser-lessThanIE( 10 ) {
+		zoom: 1;
+	}
 }
 

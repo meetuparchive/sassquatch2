@@ -22,26 +22,27 @@ Aligns children of selected element using flexbox.
 ```
 */
 
+%_valignIE {
+	display: table-cell;
+	vertical-align: center;
+}
+
 %valignChildren {
-	@include display(flex);
-	@include flex-direction(column);
+	@extend %flexParent;
+	@extend %flexParent--column;
 	@include justify-content(center);
 
-	.ieRoot_lt_IE10 & {
-		display: table-cell;
-		vertical-align: center;
+	@include browser-lessThanIE( 10 ) {
+		@extend %_valignIE;
 	}
 }
 
 %valignChildren--bottom {
-	@include display(flex);
-	@include flex-direction(column);
+	@extend %flexParent;
+	@extend %flexParent--column;
 	@include justify-content(flex-end);
 
-	.ieRoot_lt_IE10 & {
-		display: table-cell;
-		vertical-align: bottom;
+	@include browser-lessThanIE( 10 ) {
+		@extend %_valignIE;
 	}
 }
-
-

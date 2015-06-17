@@ -54,18 +54,13 @@ _Includes `table-cell` fallback for IE8._
 ```
 */
 .row {
-	@include display(flex);
+	@extend %flexParent;
+	@extend %flexParent--row;
 	@include flex-wrap(nowrap);
-	@include flex-direction(row);
-	@include justify-content(flex-start);
-	@include align-items(flex);
 }
 .row-item {
-	@include flex-grow(1);
-	@include flex-basis(0);
+	@extend %flexChild--grow;
 	padding-left: $space;
-	width: auto;
-	min-width: 0;
 	&:first-child {
 		padding-left: 0;
 	}
@@ -128,31 +123,12 @@ Class                   | Description
 `.row-item--alignMiddle`| Vertically aligns content to middle
 */
 .row-item--shrink {
-	@include flex-grow(0);
-	@include flex-shrink(0);
-	@include flex-basis(auto);
-	width: initial;
+	@extend %flexChild--shrink;
 }
 .row-item--alignMiddle {
 	@include align-self(center);
-}
 
-// LT IE10 fallback
-.ieRoot_lt_IE10 {
-	.row {
-		@include box-sizing(border-box);
-		display: table;
-		table-layout: auto;
-		width: 100%;
-	}
-	.row-item {
-		display: table-cell;
-		width: 100%;
-	}
-	.row-item--shrink {
-		width: auto;
-	}
-	.row-item--alignMiddle {
+	@include browser-lessThanIE( 10 ) {
 		vertical-align: middle;
 	}
 }
