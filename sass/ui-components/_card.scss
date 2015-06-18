@@ -32,6 +32,16 @@ Card-like boxes.
 				</div>
 			</li>
 
+			<!-- Group card with long name -->
+			<li>
+				<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+					<div class="card--group-content">
+						<h4 class="text--bold">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
+						<p>457 [chapter.who]</p>
+					</div>
+				</div>
+			</li>
+
 			<!-- Event card -->
 			<li>
 				<div class="card card--event">
@@ -210,6 +220,7 @@ $_eventStripes: (
 }
 .card--group-content {
 	position: relative;
+	white-space: normal;
 }
 
 .card--event {
