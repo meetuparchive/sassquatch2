@@ -2135,7 +2135,7 @@ Applies styles for horizontal scrolling lists.
 		<li>
 			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
 				<div class="card--group-content">
-					<h4 class="text--bold">New York City Social Group</h4>
+					<h4 class="text--bold">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
 					<p>979 Members</p>
 				</div>
 			</a>
@@ -2299,6 +2299,8 @@ Class                       | Description
 .hscroll-content {
   box-sizing: content-box;
   white-space: nowrap; }
+  .hscroll-content > li {
+    vertical-align: top; }
 
 .hscroll-content--cards > li {
   width: 240px; }
@@ -3586,6 +3588,16 @@ Card-like boxes.
 				</div>
 			</li>
 
+			<!-- Group card with long name -->
+			<li>
+				<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+					<div class="card--group-content">
+						<h4 class="text--bold">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
+						<p>457 [chapter.who]</p>
+					</div>
+				</div>
+			</li>
+
 			<!-- Event card -->
 			<li>
 				<div class="card card--event">
@@ -3770,7 +3782,8 @@ _(The inline style on the card element is for documentation purposes only)_
     top: 0; }
 
 .card--group-content {
-  position: relative; }
+  position: relative;
+  white-space: normal; }
 
 .card--event {
   position: relative; }
