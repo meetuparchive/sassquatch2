@@ -1,45 +1,45 @@
 /*doc
 ---
-title: Stack
-name: stack
+title: Spreadable
+name: spreadable
 category: Layout
 ---
-The `stack` layout tool is for elements that
-should be stacked in a column at small sizes,
-and spreads across horizontal space at a given
+The `spreadable` layout tool is for elements that
+should be stacked in a column by default at small sizes,
+and can be spread across horizontal space at a given
 breakpoint.
 
 ```html_example
-<div class="stack atLarge_stack--spread">
-	<div class="stack-item stack-item--shrink _DOC-SHADE">
-		<p>Stack Item (shrinks when spread)</p>
+<div class="spreadable atLarge_spreadable--spread">
+	<div class="spreadable-item spreadable-item--shrink _DOC-SHADE">
+		<p>Spreadable Item (shrinks when spread)</p>
 	</div>
-	<div class="stack-item _DOC-SHADE">
-		<p>Stack Item</p>
+	<div class="spreadable-item _DOC-SHADE">
+		<p>Spreadable Item</p>
 	</div>
 </div>
 ```
 
-## Stack variants
-A class of `stack` on the parent element is required.
-Collapsing of the stack doesn't happen at any viewport
+## Spreadable variants
+A class of `spreadable` on the parent element is required.
+Collapsing of the spreadable doesn't happen at any viewport
 size by default, so __you must specify a spread point__
 with one of the following classes.
 
-Class                       | Description
---------------------------- | ----------------------------------
-`atMedium_stack--spread`    | Spreads out the stack elements horizontally at `medium` breakpoint
-`atLarge_stack--spread`     | Spreads out the stack elements horizontally at `large` breakpoint
+Class                            | Description
+-------------------------------- | ----------------------------------
+`atMedium_spreadable--spread`    | Spreads out the spreadable elements horizontally at `medium` breakpoint
+`atLarge_spreadable--spread`     | Spreads out the spreadable elements horizontally at `large` breakpoint
 
 
-## stack-item variants
+## spreadable-item variants
 
 Class                   | Description
 ----------------------- | -------------------------------
-`.stack-item--shrink`   | Item shrinks to fit content __only when spread__
+`.spreadable-item--shrink`   | Item shrinks to fit content __only when spread__
 
 */
-.stack {
+.spreadable {
 	@extend %flexParent;
 	@extend %flexParent--column;
 
@@ -48,7 +48,7 @@ Class                   | Description
 	}
 }
 
-.stack-item {
+.spreadable-item {
 	@include flex-grow(1);
 	width: 100%;
 	min-width: 0;
@@ -64,7 +64,7 @@ Class                   | Description
 // because you can't @extend from within a @media
 // directive
 //
-@include _bpModifier(stack, spread) {
+@include _bpModifier(spreadable, spread) {
 	@include flex-direction(row);
 	@include flex-wrap(nowrap);
 
@@ -75,7 +75,7 @@ Class                   | Description
 		width: 100%;
 	}
 
-	> .stack-item {
+	> .spreadable-item {
 		@include flex-grow(1);
 		@include flex-basis(0);
 
@@ -93,7 +93,7 @@ Class                   | Description
 		}
 	}
 
-	.stack-item--shrink {
+	.spreadable-item--shrink {
 		@include flex-grow(0);
 		@include flex-shrink(0);
 		@include flex-basis(auto);
