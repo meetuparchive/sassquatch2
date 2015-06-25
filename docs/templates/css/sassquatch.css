@@ -1188,6 +1188,54 @@ ol.bullets, .runningText ol {
 
 /*doc
 ---
+title: Debug text
+name: debugText
+category: Typography
+---
+
+Sometimes you just need to dump some text into a document
+for debugging purposes.
+
+By default, `debug` is hidden. Apply the `enableDebug` class
+to a parent element to display `debug` elements.
+
+_Setting the `enableDebug` class on `body` for dev only is recommended._
+
+```html_example
+<p class="debug">Invisible debug</p>
+
+<div class="enableDebug">
+<p class="debug">
+	Visible debug [ ChapterProto =>
+	chapterId=530569
+	parentChapterId=0
+	transitionalVenueId=0
+	relocatedZip=
+	name=Foreign Androids Feel Frustrated
+</p>
+</div>
+```
+*/
+.debug {
+  display: none; }
+  .enableDebug .debug {
+    display: block;
+    padding: 0.25em 0.5em;
+    margin-bottom: 16px;
+    font-family: Monaco, "Andale Mono", "Courier New", monospace;
+    font-size: 13px;
+    color: purple;
+    background: pink;
+    outline: 1px dotted red; }
+    .enableDebug .debug:before {
+      display: inline;
+      content: "DEBUG:";
+      color: red;
+      font-weight: 700;
+      padding-right: 0.25em; }
+
+/*doc
+---
 title: Basic Inputs
 name: forms
 category: Forms
@@ -3401,6 +3449,7 @@ Class                   | Description
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
+  -webkit-appearance: none;
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 50px;
