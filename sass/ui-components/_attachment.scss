@@ -48,7 +48,7 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 	}
 
 	// this gets tricky for `spreadable`, because padding
-	// is only present on items in a "spread" spreadable
+	// is only present on items when the spreadable is "spread"
 	@each $breakpoint in (medium, large) {
 		@include atMediaUp($breakpoint) {
 			@include _sel-selfAndChild( at#{str-firstCharToUpper($breakpoint)}_spreadable--spread ) {
