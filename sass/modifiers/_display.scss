@@ -12,11 +12,33 @@ Class                   | Description
 `.display--block`       | sets `display` to `block`
 `.display--inline`      | sets `display` to `inline`
 `.display--inlineBlock` | sets `display` to `inlineblock`
-
+`.display--visualHide`  | visually hides an element
+`.display--visualShow`  | visually shows an element
 */
 @each $display in $display-values {
 	$modifierVariant: str-replace($display, '-block', 'Block'); // camelCase inline-block
 	@include _modifier(display, $modifierVariant) {
 		display: $display;
 	}
+}
+
+@include _modifier(display, visualHide) {
+	border: 0;
+	clip: rect(0 0 0 0);
+	position: absolute;
+	overflow: hidden;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+}
+
+@include _modifier(display, visualShow) {
+	clip: auto;
+	clip: rect(auto auto auto auto);
+	position: static;
+	overflow: visible;
+	margin: 0;
+	width: auto;
+	height: auto;
 }

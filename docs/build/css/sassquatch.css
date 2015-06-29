@@ -424,6 +424,30 @@ Sets display property for psuedo-elements
 */
 /*doc
 ---
+title: Visually hide an element mixin
+name: visualHide
+parent: display
+---
+Hide an element visually, but keep it available to screenreaders
+
+```
+@include visualHide();
+```
+*/
+/*doc
+---
+title: Visually show an element mixin
+name: visualShow
+parent: display
+---
+Used to override the visualHide() mixin
+
+```
+@include visualShow();
+```
+*/
+/*doc
+---
 title: Flexbox
 name: flexboxUtil
 category: Sass Utils | Mixins & Placeholders
@@ -503,7 +527,7 @@ Placeholder Variant       | Description
 `%flexChild--grow`        | sets flex child to fill remaining space of the flex parent
 `%flexChild--shrink`      | sets flex child to shrink to the width of its content
 */
-.row-item {
+.row-item, .pagination-page--control {
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1;
@@ -512,11 +536,11 @@ Placeholder Variant       | Description
   -ms-flex-preferred-size: 0;
   width: auto;
   min-width: 0; }
-  .ieRoot_lt_IE10 .row-item {
+  .ieRoot_lt_IE10 .row-item, .ieRoot_lt_IE10 .pagination-page--control {
     display: table-cell;
     width: 100%; }
 
-.row-item--shrink, .pagination-page {
+.row-item--shrink, .pagination-page:not(.pagination-page--control) {
   -webkit-flex-grow: 0;
   flex-grow: 0;
   -ms-flex-positive: 0;
@@ -527,7 +551,7 @@ Placeholder Variant       | Description
   flex-basis: auto;
   -ms-flex-preferred-size: auto;
   width: initial; }
-  .ieRoot_lt_IE10 .row-item--shrink, .ieRoot_lt_IE10 .pagination-page {
+  .ieRoot_lt_IE10 .row-item--shrink, .ieRoot_lt_IE10 .pagination-page:not(.pagination-page--control) {
     width: auto; }
 
 /*doc
@@ -3991,26 +4015,119 @@ category: UI Components
 ---
 
 ```html_example
-<ul role="navigation" class="pagination">
-	<li>
-		<a class="pagination-page" href="#" rel="prev">Previous</a>
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
 	</li>
-	<li>
-		<a class="pagination-page" href="#"><span class="text--hide">Page</span> 1</a>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
 	</li>
-	<li>
-		<span class="pagination-page pagination-page--current">2 <em class="text--hide">Current page</em></span>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>2 <em class="text--hide">Current page</em></span>
 	</li>
-	<li>
-		<a class="pagination-page" href="#"><span class="text--hide">Page </span>3</a>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>3</a>
 	</li>
-	<li>
-		<a class="pagination-page" href="#"><span class="text--hide">Page </span>4</a>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>4</a>
 	</li>
-	<li>
-		<a class="pagination-page" href="#" rel="next">Next</a>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>5</a>
 	</li>
-</ul>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>6</a>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>7</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
+
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>11</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>12</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>13</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>14 <em class="text--hide">Current page</em></span>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>15</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>16</a>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>17</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
+
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>19</a>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>20</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>21</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>22</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>23</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>24 <em class="text--hide">Current page</em></span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
 ```
 */
 .pagination {
@@ -4020,6 +4137,47 @@ category: UI Components
   -ms-justify-content: space-between;
   justify-content: space-between;
   -ms-flex-pack: justify; }
+
+.pagination-page {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border-radius: 3px; }
+  .pagination-page:not(.pagination-page--control) {
+    padding: 8px; }
+  @media only screen and (min-width: 440px) {
+    .pagination-page {
+      clip: auto;
+      clip: rect(auto auto auto auto);
+      position: static;
+      overflow: visible;
+      margin: 0;
+      width: auto;
+      height: auto;
+      min-width: 24px; } }
+
+.pagination-page--persist {
+  clip: auto;
+  clip: rect(auto auto auto auto);
+  position: static;
+  overflow: visible;
+  margin: 0;
+  width: auto;
+  height: auto;
+  min-width: 24px; }
+
+.pagination-page--current {
+  background: #3987cb;
+  font-weight: bold;
+  margin: 0 8px; }
+  @media only screen and (min-width: 440px) {
+    .pagination-page--current {
+      margin: 0; } }
 
 /*doc
 ---
@@ -4289,18 +4447,21 @@ Class                    | Description
 `.valign--top`           | vertically centers element to top
 
 */
+.pagination-page--control:first-child,
 .align--left {
   -webkit-align-self: left;
   align-self: left;
   -ms-flex-item-align: left;
   text-align: left !important; }
 
+.pagination-page--control:last-child,
 .align--right {
   -webkit-align-self: right;
   align-self: right;
   -ms-flex-item-align: right;
   text-align: right !important; }
 
+.pagination-page,
 .align--center {
   -webkit-align-self: center;
   align-self: center;
@@ -4319,6 +4480,7 @@ Class                    | Description
   -ms-flex-item-align: end;
   vertical-align: bottom !important; }
 
+.pagination-page,
 .valign--middle {
   -webkit-align-self: center;
   align-self: center;
@@ -4471,7 +4633,8 @@ Class                   | Description
 `.display--block`       | sets `display` to `block`
 `.display--inline`      | sets `display` to `inline`
 `.display--inlineBlock` | sets `display` to `inlineblock`
-
+`.display--visualHide`  | visually hides an element
+`.display--visualShow`  | visually shows an element
 */
 .display--none {
   display: none; }
@@ -4484,6 +4647,25 @@ Class                   | Description
 
 .display--inlineBlock {
   display: inline-block; }
+
+.display--visualHide {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px; }
+
+.display--visualShow {
+  clip: auto;
+  clip: rect(auto auto auto auto);
+  position: static;
+  overflow: visible;
+  margin: 0;
+  width: auto;
+  height: auto; }
 
 /*doc
 ---
@@ -4607,7 +4789,7 @@ Using this signature: `.at[Breakpoint]_[property]--[variant]`
 Breakpoints        | Property       | Variants
 ------------------ | -------------- | ---------------------------
 `medium`, `large`  | `align`        | `center`, `right`, `left`
-`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`, `visualHide`, `visualShow`
 `medium`, `large`  | `padding`      | `none`
 `medium`, `large`  | `border`       | `top`, `none`
 */
@@ -4653,6 +4835,44 @@ Breakpoints        | Property       | Variants
 @media only screen and (min-width: 840px) {
   .atLarge_display--inlineBlock {
     display: inline-block !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--visualHide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--visualHide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--visualShow {
+    clip: auto;
+    clip: rect(auto auto auto auto);
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--visualShow {
+    clip: auto;
+    clip: rect(auto auto auto auto);
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto; } }
 @media only screen and (min-width: 640px) {
   .atMedium_padding--none {
     padding: 0 !important; } }

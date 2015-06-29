@@ -24,7 +24,7 @@ Using this signature: `.at[Breakpoint]_[property]--[variant]`
 Breakpoints        | Property       | Variants
 ------------------ | -------------- | ---------------------------
 `medium`, `large`  | `align`        | `center`, `right`, `left`
-`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`, `visualHide`, `visualShow`
 `medium`, `large`  | `padding`      | `none`
 `medium`, `large`  | `border`       | `top`, `none`
 */
@@ -41,6 +41,28 @@ Breakpoints        | Property       | Variants
 	@include _bpModifier('display', str-replace($display, '-block', 'Block')) {
 		display: $display !important;
 	}
+}
+
+// a11y display hide and show
+@include _bpModifier('display', 'visualHide') {
+	border: 0;
+	clip: rect(0 0 0 0);
+	position: absolute;
+	overflow: hidden;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+}
+
+@include _bpModifier('display', 'visualShow') {
+	clip: auto;
+	clip: rect(auto auto auto auto);
+	position: static;
+	overflow: visible;
+	margin: 0;
+	width: auto;
+	height: auto;
 }
 
 // padding

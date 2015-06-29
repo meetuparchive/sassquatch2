@@ -1057,50 +1057,236 @@ Variant classes:</p><table class="styleguide"> <tr>
 <h1 id="uiPager" class="styleguide">Pagination</h1>
 <div class="codeExample">
   <div class="exampleOutput">
-    <ul role="navigation" class="pagination">
-    <li>
-        <a class="pagination-page" href="#" rel="prev">Previous</a>
+    <div class="chunk"><ul role="navigation" class="pagination">
+    <li class="pagination-page pagination-page--persist pagination-page--control">
+        <a href="#" class="link" rel="prev">←</a>
     </li>
-    <li>
-        <a class="pagination-page" href="#"><span class="text--hide">Page</span> 1</a>
+    <li class="pagination-page pagination-page--persist">
+        <a href="#" class="link"><span class="text--hide">Page </span>1</a>
     </li>
-    <li>
-        <span class="pagination-page pagination-page--current">2 <em class="text--hide">Current page</em></span>
+    <li class="pagination-page pagination-page--persist pagination-page--current inverted">
+        <span>2 <em class="text--hide">Current page</em></span>
     </li>
-    <li>
-        <a class="pagination-page" href="#"><span class="text--hide">Page </span>3</a>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>3</a>
     </li>
-    <li>
-        <a class="pagination-page" href="#"><span class="text--hide">Page </span>4</a>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>4</a>
     </li>
-    <li>
-        <a class="pagination-page" href="#" rel="next">Next</a>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>5</a>
     </li>
-</ul>
+    <li class="pagination-page display--visualHide atMedium_display--visualShow">
+        <a href="#" class="link"><span class="text--hide">Page </span>6</a>
+    </li>
+    <li class="pagination-page display--visualHide atMedium_display--visualShow">
+        <a href="#" class="link"><span class="text--hide">Page </span>7</a>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <span class="text--hint">&hellip;</span>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <a href="#" class="link"><span class="text--hide">Page </span>25</a>
+    </li>
+    <li class="pagination-page pagination-page--persist pagination-page--control">
+        <a href="#" class="link" rel="next">→</a>
+    </li>
+</ul></div>
+
+<div class="chunk"><ul role="navigation" class="pagination">
+    <li class="pagination-page pagination-page--persist pagination-page--control">
+        <a href="#" class="link" rel="prev">←</a>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <a href="#" class="link"><span class="text--hide">Page </span>1</a>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <span class="text--hint">&hellip;</span>
+    </li>
+    <li class="pagination-page display--visualHide atMedium_display--visualShow">
+        <a href="#" class="link"><span class="text--hide">Page </span>11</a>
+    </li>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>12</a>
+    </li>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>13</a>
+    </li>
+    <li class="pagination-page pagination-page--persist pagination-page--current inverted">
+        <span>14 <em class="text--hide">Current page</em></span>
+    </li>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>15</a>
+    </li>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>16</a>
+    </li>
+    <li class="pagination-page display--visualHide atMedium_display--visualShow">
+        <a href="#" class="link"><span class="text--hide">Page </span>17</a>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <span class="text--hint">&hellip;</span>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <a href="#" class="link"><span class="text--hide">Page </span>25</a>
+    </li>
+    <li class="pagination-page pagination-page--persist pagination-page--control">
+        <a href="#" class="link" rel="next">→</a>
+    </li>
+</ul></div>
+
+<div class="chunk"><ul role="navigation" class="pagination">
+    <li class="pagination-page pagination-page--persist pagination-page--control">
+        <a href="#" class="link" rel="prev">←</a>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <a href="#" class="link"><span class="text--hide">Page </span>1</a>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <span class="text--hint">&hellip;</span>
+    </li>
+    <li class="pagination-page display--visualHide atMedium_display--visualShow">
+        <a href="#" class="link"><span class="text--hide">Page </span>19</a>
+    </li>
+    <li class="pagination-page display--visualHide atMedium_display--visualShow">
+        <a href="#" class="link"><span class="text--hide">Page </span>20</a>
+    </li>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>21</a>
+    </li>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>22</a>
+    </li>
+    <li class="pagination-page">
+        <a href="#" class="link"><span class="text--hide">Page </span>23</a>
+    </li>
+    <li class="pagination-page pagination-page--persist pagination-page--current inverted">
+        <span>24 <em class="text--hide">Current page</em></span>
+    </li>
+    <li class="pagination-page pagination-page--persist">
+        <a href="#" class="link"><span class="text--hide">Page </span>25</a>
+    </li>
+    <li class="pagination-page pagination-page--persist pagination-page--control">
+        <a href="#" class="link" rel="next">→</a>
+    </li>
+</ul></div>
 
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">class=</span><span class="s">"pagination"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"pagination-page"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">rel=</span><span class="s">"prev"</span><span class="nt">&gt;</span>Previous<span class="nt">&lt;/a&gt;</span>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;&lt;ul</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">class=</span><span class="s">"pagination"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">rel=</span><span class="s">"prev"</span><span class="nt">&gt;</span>←<span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"pagination-page"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page<span class="nt">&lt;/span&gt;</span> 1<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>1<span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--current"</span><span class="nt">&gt;</span>2 <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Current page<span class="nt">&lt;/em&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--current inverted"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>2 <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Current page<span class="nt">&lt;/em&gt;&lt;/span&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"pagination-page"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>3<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>3<span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"pagination-page"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>4<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>4<span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"pagination-page"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">rel=</span><span class="s">"next"</span><span class="nt">&gt;</span>Next<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>5<span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></pre>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page display--visualHide atMedium_display--visualShow"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>6<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page display--visualHide atMedium_display--visualShow"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>7<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span><span class="ni">&amp;hellip;</span><span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>25<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">rel=</span><span class="s">"next"</span><span class="nt">&gt;</span>→<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;&lt;ul</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">class=</span><span class="s">"pagination"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">rel=</span><span class="s">"prev"</span><span class="nt">&gt;</span>←<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span><span class="ni">&amp;hellip;</span><span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page display--visualHide atMedium_display--visualShow"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>11<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>12<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>13<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--current inverted"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>14 <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Current page<span class="nt">&lt;/em&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>15<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>16<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page display--visualHide atMedium_display--visualShow"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>17<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span><span class="ni">&amp;hellip;</span><span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>25<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">rel=</span><span class="s">"next"</span><span class="nt">&gt;</span>→<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;&lt;ul</span> <span class="na">role=</span><span class="s">"navigation"</span> <span class="na">class=</span><span class="s">"pagination"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">rel=</span><span class="s">"prev"</span><span class="nt">&gt;</span>←<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span><span class="ni">&amp;hellip;</span><span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page display--visualHide atMedium_display--visualShow"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>19<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page display--visualHide atMedium_display--visualShow"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>20<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>21<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>22<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>23<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--current inverted"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>24 <span class="nt">&lt;em</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Current page<span class="nt">&lt;/em&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"text--hide"</span><span class="nt">&gt;</span>Page <span class="nt">&lt;/span&gt;</span>25<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination-page pagination-page--persist pagination-page--control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">rel=</span><span class="s">"next"</span><span class="nt">&gt;</span>→<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;&lt;/div&gt;</span></pre>
     </div>
   </div>
 </div>
@@ -1326,6 +1512,26 @@ $(function() {
 					"title": "Pseudo-element display mixin",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Pseudo-element display mixin",
 					"path": "sass_utils_|_mixins_&_placeholders.html#pseudoDisplay"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Visually hide an element mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Visually hide an element mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#visualHide"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Visually show an element mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Visually show an element mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#visualShow"
 				});
 
 			

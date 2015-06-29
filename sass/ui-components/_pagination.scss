@@ -6,26 +6,119 @@ category: UI Components
 ---
 
 ```html_example
-<ul role="navigation" class="pagination">
-	<li>
-		<a class="pagination-page" href="#" rel="prev">Previous</a>
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
 	</li>
-	<li>
-		<a class="pagination-page" href="#"><span class="text--hide">Page</span> 1</a>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
 	</li>
-	<li>
-		<span class="pagination-page pagination-page--current">2 <em class="text--hide">Current page</em></span>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>2 <em class="text--hide">Current page</em></span>
 	</li>
-	<li>
-		<a class="pagination-page" href="#"><span class="text--hide">Page </span>3</a>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>3</a>
 	</li>
-	<li>
-		<a class="pagination-page" href="#"><span class="text--hide">Page </span>4</a>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>4</a>
 	</li>
-	<li>
-		<a class="pagination-page" href="#" rel="next">Next</a>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>5</a>
 	</li>
-</ul>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>6</a>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>7</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
+
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>11</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>12</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>13</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>14 <em class="text--hide">Current page</em></span>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>15</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>16</a>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>17</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
+
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>19</a>
+	</li>
+	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>20</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>21</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>22</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>23</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>24 <em class="text--hide">Current page</em></span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
 ```
 */
 
@@ -37,8 +130,44 @@ category: UI Components
 }
 
 .pagination-page {
-	@extend %flexChild--shrink;
+	@extend %align--center;
+	@extend %valign--middle;
+	@include visualHide;
+	border-radius: $defaultRadius;
+
+	&:not(.pagination-page--control){
+		@extend %flexChild--shrink;
+		padding: $space-half;
+	}
+
+	@include atMediaUp(small) {
+		@include visualShow;
+		min-width: $media-xs;
+	}
+}
+
+.pagination-page--persist {
+	@include visualShow;
+	min-width: $media-xs;
+}
+
+.pagination-page--control {
+	@extend %flexChild--grow;
+
+	&:first-child {
+		@extend %align--left;
+	}
+	&:last-child {
+		@extend %align--right;
+	}
 }
 
 .pagination-page--current {
+	background: $C_link;
+	font-weight: bold; // @extend %text--bold gives me an error
+	margin: 0 $space-half;
+
+	@include atMediaUp(small) {
+		margin: 0;
+	}
 }
