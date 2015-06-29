@@ -184,13 +184,7 @@ Placeholder Variant       | Description
 `%flexParent--row`        | sets `flex-direction` to `row`
 */
 .collection-header, .stripe-heroContent, .card--group, .row, .stack, .pagination {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: flex !important;
   -webkit-box-pack: start;
   box-pack: start;
   -webkit-justify-content: flex-start;
@@ -4713,8 +4707,6 @@ Class                   | Description
 `.display--block`       | sets `display` to `block`
 `.display--inline`      | sets `display` to `inline`
 `.display--inlineBlock` | sets `display` to `inlineblock`
-`.display--visualHide`  | visually hides an element
-`.display--visualShow`  | visually shows an element
 */
 .display--none {
   display: none; }
@@ -4727,25 +4719,6 @@ Class                   | Description
 
 .display--inlineBlock {
   display: inline-block; }
-
-.display--visualHide {
-  border: 0;
-  clip: rect(0 0 0 0);
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px; }
-
-.display--visualShow {
-  clip: auto;
-  clip: rect(auto auto auto auto);
-  position: static;
-  overflow: visible;
-  margin: 0;
-  width: auto;
-  height: auto; }
 
 /*doc
 ---

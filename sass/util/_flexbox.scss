@@ -26,7 +26,7 @@ Placeholder Variant       | Description
 `%flexParent--row`        | sets `flex-direction` to `row`
 */
 %flexParent {
-	@include display(flex);
+	@include display(flex !important);
 	@include justify-content(flex-start);
 	@include align-items(flex);
 }
