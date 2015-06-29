@@ -45,6 +45,20 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#a11yUtil">Accessibility utils</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#align">Alignment Utilities</a>
 										</li>
 									
@@ -314,6 +328,26 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
+<h1 id="a11yUtil" class="styleguide">Accessibility utils</h1>
+<p class="styleguide">Accessibility utilities based on the <a class="styleguide" href="http://a11yproject.com/about.html" title="http://a11yproject.com/about.html">a11y project</a></p>
+<h2 id="a11yVisibilityMixin" class="styleguide">a11y Visibility</h2>
+
+<h3>Hiding elements</h3>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>@include a11yVisibility('hidden');</pre>
+  </div>
+</div><p class="styleguide">Takes element out of document flow and hides it
+by clipping to a 1x1 pixel. Allows content to be
+visually hidden but <a class="styleguide" href="http://a11yproject.com/posts/how-to-hide-content/" title="http://a11yproject.com/posts/how-to-hide-content/">available to screen readers</a>.</p>
+<h3>Showing a11y hidden elements</h3>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>@include a11yVisibility('visibile');</pre>
+  </div>
+</div><p class="styleguide">When applied to an element hidden with <code class="styleguide">a11yHide()</code>,
+the element is forced to unclip and returned to the
+document flow.</p>
 <h1 id="align" class="styleguide">Alignment Utilities</h1>
 
 <h2 id="valign" class="styleguide">Vertical-align children</h2>
@@ -598,6 +632,26 @@ $(function() {
 
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Accessibility utils",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Accessibility utils",
+					"path": "sass_utils_|_mixins_&_placeholders.html#a11yUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "a11y Visibility",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > a11y Visibility",
+					"path": "sass_utils_|_mixins_&_placeholders.html#a11yVisibilityMixin"
+				});
+
 			
 				
 				
@@ -1153,6 +1207,16 @@ $(function() {
 				});
 
 			
+				
+				
+
+				index.add({
+					"title": "Visibility",
+					"breadcrumb": "Modifier Classes > Visibility",
+					"path": "modifier_classes.html#visibilityMod"
+				});
+
+			
 		
 	
 		
@@ -1264,6 +1328,16 @@ $(function() {
 					"title": "Cards",
 					"breadcrumb": "UI Components > Cards",
 					"path": "ui_components.html#uiCard"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Pagination",
+					"breadcrumb": "UI Components > Pagination",
+					"path": "ui_components.html#uiPager"
 				});
 
 			
