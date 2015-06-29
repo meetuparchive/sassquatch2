@@ -25,10 +25,10 @@ category: UI Components
 	<li class="pagination-page">
 		<a href="#" class="link"><span class="text--hide">Page </span>5</a>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>6</a>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>7</a>
 	</li>
 	<li class="pagination-page pagination-page--persist">
@@ -52,7 +52,7 @@ category: UI Components
 	<li class="pagination-page pagination-page--persist">
 		<span class="text--hint">&hellip;</span>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>11</a>
 	</li>
 	<li class="pagination-page">
@@ -70,7 +70,7 @@ category: UI Components
 	<li class="pagination-page">
 		<a href="#" class="link"><span class="text--hide">Page </span>16</a>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>17</a>
 	</li>
 	<li class="pagination-page pagination-page--persist">
@@ -94,10 +94,10 @@ category: UI Components
 	<li class="pagination-page pagination-page--persist">
 		<span class="text--hint">&hellip;</span>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>19</a>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>20</a>
 	</li>
 	<li class="pagination-page">
@@ -132,7 +132,7 @@ category: UI Components
 .pagination-page {
 	@extend %align--center;
 	@extend %valign--middle;
-	@include visualHide;
+	@include a11yVisibility('hidden');
 	border-radius: $defaultRadius;
 
 	&:not(.pagination-page--control){
@@ -141,13 +141,13 @@ category: UI Components
 	}
 
 	@include atMediaUp(small) {
-		@include visualShow;
+	@include a11yVisibility('visibile');
 		min-width: $media-xs;
 	}
 }
 
 .pagination-page--persist {
-	@include visualShow;
+	@include a11yVisibility('visibile');
 	min-width: $media-xs;
 }
 

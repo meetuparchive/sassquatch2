@@ -159,6 +159,45 @@ Breakpoint name      | Description
 */
 /*doc
 ---
+title: Accessibility utils
+name: a11yUtil
+category: Sass Utils | Mixins & Placeholders
+---
+
+Accessibility utilities based on the [a11y project](http://a11yproject.com/about.html)
+*/
+/*doc
+---
+title: a11y Visibility
+name: a11yVisibilityMixin
+parent: a11yUtil
+---
+
+### Hiding elements
+
+```
+@include a11yVisibility('hidden');
+```
+
+Takes element out of document flow and hides it
+by clipping to a 1x1 pixel. Allows content to be
+visually hidden but [available to screen readers](http://a11yproject.com/posts/how-to-hide-content/).
+
+
+### Showing a11y hidden elements
+
+```
+@include a11yVisibility('visibile');
+```
+
+When applied to an element hidden with `a11yHide()`,
+the element is forced to unclip and returned to the
+document flow.
+
+
+*/
+/*doc
+---
 title: Animation
 name: animation
 category: Sass Utils | Mixins & Placeholders
@@ -420,30 +459,6 @@ Sets display property for psuedo-elements
 
 ```
 @include pseudoDisplay($value: block);
-```
-*/
-/*doc
----
-title: Visually hide an element mixin
-name: visualHide
-parent: display
----
-Hide an element visually, but keep it available to screenreaders
-
-```
-@include visualHide();
-```
-*/
-/*doc
----
-title: Visually show an element mixin
-name: visualShow
-parent: display
----
-Used to override the visualHide() mixin
-
-```
-@include visualShow();
 ```
 */
 /*doc
@@ -4034,10 +4049,10 @@ category: UI Components
 	<li class="pagination-page">
 		<a href="#" class="link"><span class="text--hide">Page </span>5</a>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>6</a>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>7</a>
 	</li>
 	<li class="pagination-page pagination-page--persist">
@@ -4061,7 +4076,7 @@ category: UI Components
 	<li class="pagination-page pagination-page--persist">
 		<span class="text--hint">&hellip;</span>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>11</a>
 	</li>
 	<li class="pagination-page">
@@ -4079,7 +4094,7 @@ category: UI Components
 	<li class="pagination-page">
 		<a href="#" class="link"><span class="text--hide">Page </span>16</a>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>17</a>
 	</li>
 	<li class="pagination-page pagination-page--persist">
@@ -4103,10 +4118,10 @@ category: UI Components
 	<li class="pagination-page pagination-page--persist">
 		<span class="text--hint">&hellip;</span>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>19</a>
 	</li>
-	<li class="pagination-page display--visualHide atMedium_display--visualShow">
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
 		<a href="#" class="link"><span class="text--hide">Page </span>20</a>
 	</li>
 	<li class="pagination-page">
@@ -4765,134 +4780,6 @@ Class                        | Description
 
 /*doc
 ---
-title: Media-conditional modifiers
-name: mediaMod
-category: Modifier Classes
----
-
-Media-conditional modifiers allow us to apply
-a modification at a specific breakpoint.
-
-_Uses atMediaUp_
-
-### Example
-
-```html_example
-	<p class="atLarge_align--center">
-		This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
-	</p>
-```
-
-### Supported modifications
-Using this signature: `.at[Breakpoint]_[property]--[variant]`
-
-Breakpoints        | Property       | Variants
------------------- | -------------- | ---------------------------
-`medium`, `large`  | `align`        | `center`, `right`, `left`
-`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`, `visualHide`, `visualShow`
-`medium`, `large`  | `padding`      | `none`
-`medium`, `large`  | `border`       | `top`, `none`
-*/
-@media only screen and (min-width: 640px) {
-  .atMedium_align--center {
-    text-align: center !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_align--center {
-    text-align: center !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_align--right {
-    text-align: right !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_align--right {
-    text-align: right !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_align--left {
-    text-align: left !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_align--left {
-    text-align: left !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--none {
-    display: none !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--none {
-    display: none !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--block {
-    display: block !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--block {
-    display: block !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--inline {
-    display: inline !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--inline {
-    display: inline !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--inlineBlock {
-    display: inline-block !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--inlineBlock {
-    display: inline-block !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--visualHide {
-    border: 0;
-    clip: rect(0 0 0 0);
-    position: absolute;
-    overflow: hidden;
-    margin: -1px;
-    padding: 0;
-    width: 1px;
-    height: 1px; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--visualHide {
-    border: 0;
-    clip: rect(0 0 0 0);
-    position: absolute;
-    overflow: hidden;
-    margin: -1px;
-    padding: 0;
-    width: 1px;
-    height: 1px; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--visualShow {
-    clip: auto;
-    clip: rect(auto auto auto auto);
-    position: static;
-    overflow: visible;
-    margin: 0;
-    width: auto;
-    height: auto; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--visualShow {
-    clip: auto;
-    clip: rect(auto auto auto auto);
-    position: static;
-    overflow: visible;
-    margin: 0;
-    width: auto;
-    height: auto; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_padding--none {
-    padding: 0 !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_padding--none {
-    padding: 0 !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_border--top {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_border--top {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_border--none {
-    border-width: 0 !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_border--none {
-    border-width: 0 !important; } }
-/*doc
----
 title: Media Sizing
 name: sizeMod
 category: Modifier Classes
@@ -5116,5 +5003,169 @@ Sets background cover and position for photo thumbnails.
     content: '';
     display: block;
     padding-top: 100%; }
+
+/*doc
+---
+title: Visibility
+name: visibilityMod
+category: Modifier Classes
+---
+Modifies `visibility` property of an element __or__
+in the case of `a11y` classes, visually hides an element
+that will [not be ignored by screen readers](http://a11yproject.com/posts/how-to-hide-content/).
+
+Class                    | Description
+------------------------ | --------------------------------
+`.visibility--a11yHide`  | takes element out of document flow and hides it (screen readers will NOT ignore the element)
+`.visibility--a11yShow`  | reveals a a11y hidden element for sighted users
+*/
+.visibility--a11yHide {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px; }
+
+.visibility--a11yShow {
+  clip: auto;
+  clip: rect(auto auto auto auto);
+  position: static;
+  overflow: visible;
+  margin: 0;
+  width: auto;
+  height: auto; }
+
+/*doc
+---
+title: Media-conditional modifiers
+name: mediaMod
+category: Modifier Classes
+---
+
+Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.
+
+_Uses atMediaUp_
+
+### Example
+
+```html_example
+	<p class="atLarge_align--center">
+		This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
+	</p>
+```
+
+### Supported modifications
+Using this signature: `.at[Breakpoint]_[property]--[variant]`
+
+Breakpoints        | Property       | Variants
+------------------ | -------------- | ---------------------------
+`medium`, `large`  | `align`        | `center`, `right`, `left`
+`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `padding`      | `none`
+`medium`, `large`  | `border`       | `top`, `none`
+`medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
+*/
+@media only screen and (min-width: 640px) {
+  .atMedium_align--center {
+    text-align: center !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_align--center {
+    text-align: center !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_align--right {
+    text-align: right !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_align--right {
+    text-align: right !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_align--left {
+    text-align: left !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_align--left {
+    text-align: left !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--none {
+    display: none !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--none {
+    display: none !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--block {
+    display: block !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--block {
+    display: block !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--inline {
+    display: inline !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--inline {
+    display: inline !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--inlineBlock {
+    display: inline-block !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--inlineBlock {
+    display: inline-block !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_visibility--a11yHide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_visibility--a11yHide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_visibility--a11yShow {
+    clip: auto;
+    clip: rect(auto auto auto auto);
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_visibility--a11yShow {
+    clip: auto;
+    clip: rect(auto auto auto auto);
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_padding--none {
+    padding: 0 !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_padding--none {
+    padding: 0 !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_border--top {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_border--top {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_border--none {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_border--none {
+    border-width: 0 !important; } }
 
 /*# sourceMappingURL=sassquatch.css.map */

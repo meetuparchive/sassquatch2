@@ -24,9 +24,10 @@ Using this signature: `.at[Breakpoint]_[property]--[variant]`
 Breakpoints        | Property       | Variants
 ------------------ | -------------- | ---------------------------
 `medium`, `large`  | `align`        | `center`, `right`, `left`
-`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`, `visualHide`, `visualShow`
+`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
 `medium`, `large`  | `padding`      | `none`
 `medium`, `large`  | `border`       | `top`, `none`
+`medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
 */
 
 // text align
@@ -44,25 +45,12 @@ Breakpoints        | Property       | Variants
 }
 
 // a11y display hide and show
-@include _bpModifier('display', 'visualHide') {
-	border: 0;
-	clip: rect(0 0 0 0);
-	position: absolute;
-	overflow: hidden;
-	margin: -1px;
-	padding: 0;
-	width: 1px;
-	height: 1px;
+@include _bpModifier( 'visibility', 'a11yHide' ) {
+	@include a11yVisibility('hidden');
 }
 
-@include _bpModifier('display', 'visualShow') {
-	clip: auto;
-	clip: rect(auto auto auto auto);
-	position: static;
-	overflow: visible;
-	margin: 0;
-	width: auto;
-	height: auto;
+@include _bpModifier( 'visibility', 'a11yShow') {
+	@include a11yVisibility('visible');
 }
 
 // padding

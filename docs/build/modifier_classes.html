@@ -211,6 +211,15 @@
 									
 
 								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#visibilityMod">Visibility</a>
+										</li>
+									
+
+								
 							</ul>
 						
 					</li>
@@ -502,7 +511,7 @@ a modification at a specific breakpoint.</p><p class="styleguide"><em>Uses atMed
 <tr>
 <td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
 <td><code class="styleguide">display</code></td>
-<td><code class="styleguide">none</code>, <code class="styleguide">block</code>, <code class="styleguide">inline</code>, <code class="styleguide">inlineBlock</code>, <code class="styleguide">visualHide</code>, <code class="styleguide">visualShow</code></td>
+<td><code class="styleguide">none</code>, <code class="styleguide">block</code>, <code class="styleguide">inline</code>, <code class="styleguide">inlineBlock</code></td>
 </tr>
 <tr>
 <td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
@@ -513,6 +522,11 @@ a modification at a specific breakpoint.</p><p class="styleguide"><em>Uses atMed
 <td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
 <td><code class="styleguide">border</code></td>
 <td><code class="styleguide">top</code>, <code class="styleguide">none</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
+<td><code class="styleguide">visibility</code></td>
+<td><code class="styleguide">a11yHide</code>, <code class="styleguide">a11yShow</code></td>
 </tr>
  </table>
 <h1 id="sizeMod" class="styleguide">Media Sizing</h1>
@@ -689,7 +703,23 @@ SVG icon (use descriptive text for screen readers).</p><p class="styleguide"><em
     </div>
   </div>
 </div>
-	</main>
+
+<h1 id="visibilityMod" class="styleguide">Visibility</h1>
+<p class="styleguide">Modifies <code class="styleguide">visibility</code> property of an element <strong>or</strong>
+in the case of <code class="styleguide">a11y</code> classes, visually hides an element
+that will <a class="styleguide" href="http://a11yproject.com/posts/how-to-hide-content/" title="http://a11yproject.com/posts/how-to-hide-content/">not be ignored by screen readers</a>.</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.visibility--a11yHide</code></td>
+<td>takes element out of document flow and hides it (screen readers will NOT ignore the element)</td>
+</tr>
+<tr>
+<td><code class="styleguide">.visibility--a11yShow</code></td>
+<td>reveals a a11y hidden element for sighted users</td>
+</tr>
+ </table>	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -733,6 +763,26 @@ $(function() {
 
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Accessibility utils",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Accessibility utils",
+					"path": "sass_utils_|_mixins_&_placeholders.html#a11yUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "a11y Visibility",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > a11y Visibility",
+					"path": "sass_utils_|_mixins_&_placeholders.html#a11yVisibilityMixin"
+				});
+
 			
 				
 				
@@ -911,26 +961,6 @@ $(function() {
 					"title": "Pseudo-element display mixin",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Pseudo-element display mixin",
 					"path": "sass_utils_|_mixins_&_placeholders.html#pseudoDisplay"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Visually hide an element mixin",
-					"breadcrumb": "Sass Utils | Mixins & Placeholders > Visually hide an element mixin",
-					"path": "sass_utils_|_mixins_&_placeholders.html#visualHide"
-				});
-
-			
-				
-				
-
-				index.add({
-					"title": "Visually show an element mixin",
-					"breadcrumb": "Sass Utils | Mixins & Placeholders > Visually show an element mixin",
-					"path": "sass_utils_|_mixins_&_placeholders.html#visualShow"
 				});
 
 			
@@ -1305,6 +1335,16 @@ $(function() {
 					"title": "Thumbnails",
 					"breadcrumb": "Modifier Classes > Thumbnails",
 					"path": "modifier_classes.html#thumb"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Visibility",
+					"breadcrumb": "Modifier Classes > Visibility",
+					"path": "modifier_classes.html#visibilityMod"
 				});
 
 			
