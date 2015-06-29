@@ -129,6 +129,15 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#debugText">Debug text</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#headings">Headings</a>
 										</li>
 									
@@ -415,6 +424,43 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.<
   <div class="codeBlock">
     <div class="highlight">
       <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--label"</span><span class="nt">&gt;</span>I share styling with the `label` element<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="debugText" class="styleguide">Debug text</h1>
+<p class="styleguide">Sometimes you just need to dump some text into a document
+to debug.</p><p class="styleguide">By default, the <code class="styleguide">debug</code> element is hidden. Apply the <code class="styleguide">enableDebug</code> class
+to a parent element to display <code class="styleguide">debug</code> elements.</p><p class="styleguide"><em>Setting the <code class="styleguide">enableDebug</code> class on <code class="styleguide">body</code> for dev only is recommended.</em></p><div class="codeExample">
+  <div class="exampleOutput">
+    <p class="debug">Invisible debug</p>
+
+<div class="enableDebug">
+<p class="debug">
+    Visible debug [ ChapterProto =>
+    chapterId=530569
+    parentChapterId=0
+    transitionalVenueId=0
+    relocatedZip=
+    name=Foreign Androids Feel Frustrated
+</p>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"debug"</span><span class="nt">&gt;</span>Invisible debug<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"enableDebug"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"debug"</span><span class="nt">&gt;</span>
+    Visible debug [ ChapterProto =&gt;
+    chapterId=530569
+    parentChapterId=0
+    transitionalVenueId=0
+    relocatedZip=
+    name=Foreign Androids Feel Frustrated
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
     </div>
   </div>
 </div>
@@ -1363,6 +1409,16 @@ $(function() {
 					"title": "Label text",
 					"breadcrumb": "Typography > Label text",
 					"path": "typography.html#textLabel"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Debug text",
+					"breadcrumb": "Typography > Debug text",
+					"path": "typography.html#debugText"
 				});
 
 			

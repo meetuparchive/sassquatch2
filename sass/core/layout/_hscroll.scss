@@ -75,7 +75,7 @@ Applies styles for horizontal scrolling lists.
 		<li>
 			<a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
 				<div class="card--group-content">
-					<h4 class="text--bold">New York City Social Group</h4>
+					<h4 class="text--bold">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
 					<p>979 Members</p>
 				</div>
 			</a>
@@ -241,6 +241,9 @@ Class                       | Description
 	@extend %inlineblockList;
 	box-sizing: content-box;
 	white-space: nowrap;
+	> li {
+		vertical-align: top;
+	}
 }
 
 .hscroll-content--cards {
