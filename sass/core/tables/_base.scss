@@ -1,0 +1,29 @@
+/*doc
+---
+title: Tables
+name: tables
+category: Tables
+---
+
+## Default table styles
+
+```html_example
+<table>
+	<thead>
+		<tr>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+```
+*/
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
