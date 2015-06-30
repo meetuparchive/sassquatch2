@@ -1,0 +1,2560 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<title>Sassquatch 2 : Layout</title>
+
+	<!-- Whitney -->
+	<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
+
+	<!-- Styleguide CSS -->
+	<link rel="stylesheet" href="css/doc.css">
+	<link rel="stylesheet" href="css/github.css">
+
+	<!-- CSS to be documented -->
+	<link rel="stylesheet" href="css/sassquatch.css">
+</head>
+
+<!--[if IE 8]> <body class="ieRoot_IE8 ieRoot_lt_IE9 ieRoot_lt_IE10"> <![endif]-->
+<!--[if IE 9]> <body class="ieRoot_IE9 ieRoot_lt_IE10"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+
+	<!-- HOTDOGS -->
+	<header class="stripe--inverted inverted">
+		<div class="bounds bounds--wide">
+			<h1 class="text--display">Sassquatch 2</h1>
+			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v<!-- @echo VERSION --></a>
+		</div>
+	</header>
+
+	<section id="hologramBody" class="bounds bounds--wide stack atLarge_stack--spread">
+		<nav id="navigation" class="stack-item stack-item--shrink">
+			<ul>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="sass_utils_|_mixins_&_placeholders.html">Sass Utils | Mixins & Placeholders</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="modifier_classes.html">Modifier Classes</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="ui_components.html">UI Components</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="typography.html">Typography</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="layout.html">Layout</a>
+						
+							<ul class="display--none atMedium_display--block">
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#bounds">Bounds</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#chunk">Chunk</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#exactList">Exact list</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#flexRow">Row</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#gridList">Grid List</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#hscroll">Horizontal Scroll</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#inlineblockList">Inline-block list</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#list">Divided list</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#stack">Stack</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#stripe">Stripe</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+							</ul>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="sass_utils_|_functions.html">Sass Utils | Functions</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="forms.html">Forms</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="views.html">Views</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="tables.html">Tables</a>
+						
+					</li>
+				
+			</ul>
+		</nav>
+
+	 	<main id="content" class="stack-item">
+<h1 id="bounds" class="styleguide">Bounds</h1>
+<p class="styleguide">Used as a non-visual content container that manages content measure,
+ Similar to <a class="styleguide" href="http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar" title="http://meetup.github.io/sassquatch/doc_desktop/layout.html#docstar">sassquatch 1 <code class="styleguide">docBounds</code></a>.</p><p class="styleguide">Centers children with auto margin, clears floats, applies
+padding, and sets a max-width.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="stripe">
+    <p>This is just a paragraph inside a stripe. There's no bounds element to center and set the measure of this text.</p>
+</section>
+
+<section class="stripe">
+    <div class="bounds">
+        <p>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.</p>
+    </div>
+</section>
+
+<section class="stripe">
+    <div class="bounds _DOC-SHADE">
+        <p><strong>Previous example, shaded to show detail</strong></p>
+        <p>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.</p>
+    </div>
+</section>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is just a paragraph inside a stripe. There's no bounds element to center and set the measure of this text.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable at all viewport sizes.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds _DOC-SHADE"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;strong&gt;</span>Previous example, shaded to show detail<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>This paragraph is inside a bounds. It enjoyes auto-margin and a max-width to ensure the type measure remains readable.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Bounds variants</h2>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.bounds</code></td>
+<td>standard (narrow) bounds for any type of content</td>
+</tr>
+<tr>
+<td><code class="styleguide">.bounds--wide</code></td>
+<td>bounds for wrapping wider content, such as gridList</td>
+</tr>
+<tr>
+<td><code class="styleguide">.bounds--sideHeader</code></td>
+<td>bounds for wrapping standard (narrow) content, offset by labels to the side at wide widths</td>
+</tr>
+ </table>
+<h2>Side Header example</h2>
+<p class="styleguide">The <code class="styleguide">bounds--sideHeader</code> variant applies styles to accommodate a
+<code class="styleguide">bounds-header</code> element. A <code class="styleguide">bounds-header</code> is pulled to the left side
+of the bounds on wide screens (<code class="styleguide">large</code> breakpoint), and linearizes on small screens (less than <code class="styleguide">large</code>).</p><div class="codeExample">
+  <div class="exampleOutput">
+        <section class="stripe">
+        <div class="bounds bounds--sideHeader">
+
+            <div class="bounds-header chunk">
+                <h2>I'm in a bounds header</h2>
+                <p class="text--caption">I linearize on small screens</p>
+            </div>
+
+            <p>This is just some content within the bounds, behaving like any other bounds content.</p>
+            <p>You can apply the bounds-header class to a single element, or wrap a group of elements you'd like to pull to the side on large screens.</p>
+        </div>
+    </section>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds bounds--sideHeader"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds-header chunk"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>I'm in a bounds header<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>I linearize on small screens<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+            <span class="nt">&lt;p&gt;</span>This is just some content within the bounds, behaving like any other bounds content.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;</span>You can apply the bounds-header class to a single element, or wrap a group of elements you'd like to pull to the side on large screens.<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="chunk" class="styleguide">Chunk</h1>
+<p class="styleguide">Adds bottom space to an element
+or a group of elements.</p><p class="styleguide"><em>Can be used in combination with any other component
+(ie. <code class="styleguide">class=&quot;row chunk&quot;</code>)</em></p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="_DOC-SHADE chunk">
+    <h2>Some heading</h2>
+    <p>Some text</p>
+    <p class="text--caption">Some kind of caption</p>
+</div>
+
+<p class="text--caption chunk">Chunky caption</p>
+
+<div class="_DOC-SHADE chunk">
+    <h2>Some heading</h2>
+    <p>Some text</p>
+    <p class="text--caption">Some kind of caption</p>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Some heading<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Some kind of caption<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption chunk"</span><span class="nt">&gt;</span>Chunky caption<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Some heading<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Some text<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Some kind of caption<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="exactList" class="styleguide">Exact list</h1>
+<p class="styleguide">Adaptive overflow control for inline block lists</p><p class="styleguide"><em>better docs TK</em></p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="exactList">
+    <ul class="inlineblockList exactList-content">
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+        <li><img src="https://placekitten.com/g/42/60" /></li>
+    </ul>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"exactList"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList exactList-content"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/42/60"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="flexRow" class="styleguide">Row</h1>
+<p class="styleguide">Arranges content in rows using <code class="styleguide">display: flex</code>.</p><p class="styleguide">The <code class="styleguide">.row</code> class is applied to a wrapping element.</p><p class="styleguide">Direct children of <code class="styleguide">.row</code> are flex children, and require
+a class of <code class="styleguide">.row-item</code> with an optional <code class="styleguide">.row-item--shirnk</code>
+for a flex-shrink item.</p><p class="styleguide">The flex children in flex row do not have a <code class="styleguide">flex-basis</code> set; a
+basis is not required for most common layout tasks.</p><p class="styleguide"><em>Includes <code class="styleguide">table-cell</code> fallback for IE8.</em></p>
+<h4>Examples:</h4>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row">
+    <div class="_DOC-SHADE row-item">Item 1</div>
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
+    <div class="_DOC-SHADE row-item">Item 4</div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row">
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
+    <div class="_DOC-SHADE row-item">Item 2</div>
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row row--flexEnd">
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--flexEnd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row row--spaceBetween row--reverse">
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 1</div>
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 2</div>
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 3</div>
+    <div class="_DOC-SHADE row-item row-item--shrink">Item 4</div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row--spaceBetween row--reverse"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"_DOC-SHADE row-item row-item--shrink"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="flexrowItemVars" class="styleguide">Row Item variants</h2>
+<p class="styleguide">A class of <code class="styleguide">.row-item</code> is <strong>required</strong> on row items.
+The following classes are optional variants:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.row-item--shrink</code></td>
+<td>Item shrinks to fit content</td>
+</tr>
+<tr>
+<td><code class="styleguide">.row-item--alignMiddle</code></td>
+<td>Vertically aligns content to middle</td>
+</tr>
+ </table>
+<h2 id="flexrowParent" class="styleguide">Row variants</h2>
+<p class="styleguide">A class of <code class="styleguide">.row</code> is <strong>required</strong> on the flex row parent. The
+following classes are optional variants:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.row--noGutters</code></td>
+<td>removes padding from all <code class="styleguide">.row-item</code> children</td>
+</tr>
+<tr>
+<td><code class="styleguide">.row--wrap</code></td>
+<td>allows row wrapping (useful for collapsing rows in smaller viewports)</td>
+</tr>
+<tr>
+<td><code class="styleguide">.row--reverse</code></td>
+<td>reverses row order</td>
+</tr>
+ </table><p class="styleguide">Content justification variants are also available (see also: <a class="link" target="_blank" href="https://css-tricks.com/almanac/properties/j/justify-content/">css tricks flexbox demo</a>)</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.row--flexEnd</code></td>
+<td>justifies content to <code class="styleguide">flex-end</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">.row--center</code></td>
+<td>justifies content to <code class="styleguide">center</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">.row--spaceBetween</code></td>
+<td>justifies content to <code class="styleguide">spaceBetween</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">.row--spaceAround</code></td>
+<td>justifies content to <code class="styleguide">spaceAround</code></td>
+</tr>
+ </table>
+<h1 id="gridList" class="styleguide">Grid List</h1>
+<p class="styleguide">A grid layout with breakpoint specific numbers of items in each row.</p><p class="styleguide">better docs TK</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul class="gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4">
+    <li class="_DOC-SHADE">grid cell</li>
+    <li class="_DOC-SHADE">grid cell</li>
+    <li class="_DOC-SHADE">grid cell</li>
+    <li class="_DOC-SHADE">grid cell</li>
+    <li class="_DOC-SHADE">grid cell</li>
+    <li class="_DOC-SHADE">grid cell</li>
+    <li class="_DOC-SHADE">grid cell</li>
+    <li class="_DOC-SHADE">grid cell</li>
+</ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="gridListVariants" class="styleguide">Grid List variants</h2>
+<p class="styleguide">A class of <code class="styleguide">gridList</code> is <strong>required</strong> on the gridList
+parent element. By default, gridList creates a 2 column
+grid.</p><p class="styleguide">The following classes are optional variants:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.gridList--photoGrid</code></td>
+<td>Optimizes list item spacing for a grid of photos</td>
+</tr>
+<tr>
+<td><code class="styleguide">.gridList--has[n]</code></td>
+<td>Adjusts number of columns (ie. <code class="styleguide">.gridList--has4</code> creates a 4 column grid for all screen sizes)</td>
+</tr>
+<tr>
+<td><code class="styleguide">.atMedium_gridList--has[n]</code></td>
+<td>Sets number of columns for medium breakpoint and up (ie. <code class="styleguide">.atMedium_gridList--has6</code>)</td>
+</tr>
+<tr>
+<td><code class="styleguide">.atLarge_gridList--has[n]</code></td>
+<td>Sets number of columns for large breakpoint and up (ie. <code class="styleguide">.atLarge_gridList--has10</code>)</td>
+</tr>
+ </table>
+<h1 id="hscroll" class="styleguide">Horizontal Scroll</h1>
+<p class="styleguide">Applies styles for horizontal scrolling lists.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="hscroll">
+    <ul class="hscroll-content">
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+        <li>
+            <p>This is some content in an hscroll list. It can be almost anything.</p>
+            <a class="button">Button</a>
+        </li>
+    </ul>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hscroll"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hscroll-content"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;p&gt;</span>This is some content in an hscroll list. It can be almost anything.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="hscroll">
+    <ul class="hscroll-content hscroll-content--cards">
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hscroll"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hscroll-content hscroll-content--cards"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>Béchamel Hell: French Cuisine for Survivalists Meetup<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Media-conditional <code class="styleguide">hscroll</code></h2>
+<p class="styleguide">It&#39;s possible to create an <code class="styleguide">hscroll</code> for small screens that expands
+into a non-scrolling list in the document flow for larger screens.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="hscroll atMedium_hscroll--unclip">
+    <ul class="hscroll-content hscroll-content--cards">
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="card card--group inverted" href="http://www.dev.meetup.com/New-York-City-Social-Group/" style="background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);">
+                <div class="card--group-content">
+                    <h4 class="text--bold">New York City Social Group</h4>
+                    <p>979 Members</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hscroll atMedium_hscroll--unclip"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"hscroll-content hscroll-content--cards"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"card card--group inverted"</span> <span class="na">href=</span><span class="s">"http://www.dev.meetup.com/New-York-City-Social-Group/"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos1.dev.meetupstatic.com/photos/event/1/b/3/2/600_406026962.jpeg);"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card--group-content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>New York City Social Group<span class="nt">&lt;/h4&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>979 Members<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">A class of <code class="styleguide">hscroll</code> is <strong>required</strong>; the following classes are
+optional variants:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">atMedium_hscroll--unclip</code></td>
+<td>Allows visible overflow (as inline block list) at medium &amp; up</td>
+</tr>
+<tr>
+<td><code class="styleguide">atLarge_hscroll--unclip</code></td>
+<td>Allows visible overflow (as inline block list) at large &amp; up</td>
+</tr>
+ </table>
+<h1 id="inlineblockList" class="styleguide">Inline-block list</h1>
+<p class="styleguide">Resets list styles; adds <code class="styleguide">display: inline-block</code> to
+each list item and right gutters between items.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul class="inlineblockList">
+    <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+    <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+    <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+    <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+</ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="list" class="styleguide">Divided list</h1>
+<p class="styleguide">Standard divided/spaced list; similar to
+an iOS table view.</p><p class="styleguide">Bottom spacing is provided with <code class="styleguide">chunk</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul class="list">
+    <li class="list-item">
+        <h2 class="chunk">Just a list item</h2>
+    </li>
+    <li class="list-item">
+        <h2 class="chunk">Just a list item</h2>
+    </li>
+    <li class="list-item">
+        <h2 class="chunk">Just a list item</h2>
+    </li>
+</ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="stack" class="styleguide">Stack</h1>
+<p class="styleguide">The <code class="styleguide">stack</code> layout tool is for elements that
+should be stacked in a column at small sizes,
+and spreads across horizontal space at a given
+breakpoint.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="stack atLarge_stack--spread">
+    <div class="stack-item stack-item--shrink _DOC-SHADE">
+        <p>Stack Item (shrinks when spread)</p>
+    </div>
+    <div class="stack-item _DOC-SHADE">
+        <p>Stack Item</p>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack atLarge_stack--spread"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack-item stack-item--shrink _DOC-SHADE"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Stack Item (shrinks when spread)<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"stack-item _DOC-SHADE"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Stack Item<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Stack variants</h2>
+<p class="styleguide">A class of <code class="styleguide">stack</code> on the parent element is required.
+Collapsing of the stack doesn&#39;t happen at any viewport
+size by default, so <strong>you must specify a spread point</strong>
+with one of the following classes.</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">atMedium_stack--spread</code></td>
+<td>Spreads out the stack elements horizontally at <code class="styleguide">medium</code> breakpoint</td>
+</tr>
+<tr>
+<td><code class="styleguide">atLarge_stack--spread</code></td>
+<td>Spreads out the stack elements horizontally at <code class="styleguide">large</code> breakpoint</td>
+</tr>
+ </table>
+<h2>stack-item variants</h2>
+<table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.stack-item--shrink</code></td>
+<td>Item shrinks to fit content <strong>only when spread</strong></td>
+</tr>
+ </table>
+<h1 id="stripe" class="styleguide">Stripe</h1>
+<p class="styleguide">A <code class="styleguide">.stipe</code> class should be applied to <code class="styleguide">&lt;section&gt;</code> elements
+to visually divide the page with stripes of color.</p><p class="styleguide">To align content within a stripe, use <code class="styleguide">.bounds</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="stripe">
+    <div class="bounds">
+        <p>... default stripe ...</p>
+    </div>
+</section>
+
+<section class="stripe--inverted inverted">
+    <div class="bounds">
+        <p>... inverted stripe, using `inverted` class to set text colors  ...</p>
+    </div>
+</section>
+
+<section class="stripe--collection">
+    <div class="bounds">
+        <p>... collection variant of stripe, used to contain collections of cards </p>
+    </div>
+</section>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>... default stripe ...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--inverted inverted"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>... inverted stripe, using `inverted` class to set text colors  ...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--collection"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>... collection variant of stripe, used to contain collections of cards <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h4>Stripe variants</h4>
+<p class="styleguide">A class of <code class="styleguide">.stripe</code> is required; the following classes are
+optional variants:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.stripe--inverted</code></td>
+<td>applies the standard <code class="styleguide">$C_contentBGInverted</code> background color</td>
+</tr>
+<tr>
+<td><code class="styleguide">.stripe--collection</code></td>
+<td>applies a light gray background; for use with card collections</td>
+</tr>
+<tr>
+<td><code class="styleguide">.stripe--hero</code></td>
+<td>for hero sections without a photo (see below)</td>
+</tr>
+<tr>
+<td><code class="styleguide">.stripe--photoHero</code></td>
+<td>for hero sections with a photo (see below)</td>
+</tr>
+ </table>
+<h2 id="heroStripes" class="styleguide">Hero Stripes</h2>
+<p class="styleguide">Special <code class="styleguide">stripe</code> variants are avaiable for &quot;hero&quot; sections.
+Viewport size adjustments are built-in.</p><p class="styleguide"><strong>Note:</strong> <em>Hero stripes require a <code class="styleguide">.bounds.stripe-heroContent</code>
+to properly position content within a hero. See examples below.</em></p>
+<h3>Basic hero</h3>
+<p class="styleguide">Uses the <code class="styleguide">stripe--hero</code> variant.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="stripe stripe--hero inverted">
+    <div class="bounds stripe-heroContent">
+        <h1 class="text--display">Chattanooga Tuba Enthusiasts</h1>
+    </div>
+</section>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--hero inverted"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds stripe-heroContent"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>Chattanooga Tuba Enthusiasts<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Photo hero</h3>
+<p class="styleguide">Uses the <code class="styleguide">stripe--photoHero</code> variant.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
+    <div class="bounds stripe-heroContent">
+        <h1 class="text--display">Manitoba Yoga Meetup</h1>
+    </div>
+</section>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--photoHero inverted"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds stripe-heroContent"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>Manitoba Yoga Meetup<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+	</main>
+	</section>
+
+<!-- lunr.js search index -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/lunr.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	//
+	// Disable links without real href
+	//
+	$('a').on("click", function(e) {
+		if ( this.getAttribute("href") == "#" || $(this).hasClass('noFollow') ) {
+			e.preventDefault();
+		}
+		return;
+	});
+
+	//
+	// collapsible example
+	//
+	var $c = $('#cContainer'),
+		CLASS_COL_CLOSE = 'collapsible--close';
+	if ( $c.length > 0 ) {
+		$('#cTrigger').on('click', function() {
+			if ( $c.hasClass(CLASS_COL_CLOSE) ) {
+				$c.removeClass(CLASS_COL_CLOSE);
+			} else {
+				$c.addClass(CLASS_COL_CLOSE);
+			}
+		});
+	}
+
+	//
+	// lunr search index
+	//
+	var index = lunr(function() {
+		this.field('title', {boost: 10});
+		this.field('breadcrumb');
+		this.ref('path');
+	});
+
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Accessibility utils",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Accessibility utils",
+					"path": "sass_utils_|_mixins_&_placeholders.html#a11yUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "a11y Visibility",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > a11y Visibility",
+					"path": "sass_utils_|_mixins_&_placeholders.html#a11yVisibilityMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Alignment Utilities",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Alignment Utilities",
+					"path": "sass_utils_|_mixins_&_placeholders.html#align"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Vertical-align children",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Vertical-align children",
+					"path": "sass_utils_|_mixins_&_placeholders.html#valign"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Animation",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Animation",
+					"path": "sass_utils_|_mixins_&_placeholders.html#animation"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Subtle bounce-in",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Subtle bounce-in",
+					"path": "sass_utils_|_mixins_&_placeholders.html#bounce-in-subtle"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Infinite spin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Infinite spin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#spin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Background Utilities",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Background Utilities",
+					"path": "sass_utils_|_mixins_&_placeholders.html#background"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Background clip mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Background clip mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#backgroundClip"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Image fill placeholder",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Image fill placeholder",
+					"path": "sass_utils_|_mixins_&_placeholders.html#imgFill"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Media Query Breakpoints",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Media Query Breakpoints",
+					"path": "sass_utils_|_mixins_&_placeholders.html#breakpoints"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Browser filter mixin (IE only)",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Browser filter mixin (IE only)",
+					"path": "sass_utils_|_mixins_&_placeholders.html#browserUtils"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button utilities",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Button utilities",
+					"path": "sass_utils_|_mixins_&_placeholders.html#button"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button personality placeholder",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Button personality placeholder",
+					"path": "sass_utils_|_mixins_&_placeholders.html#buttonPersonality"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#colorUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "SVG + Text color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > SVG + Text color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#colorAllMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "SVG color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > SVG color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#svgColorMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "data uri images",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > data uri images",
+					"path": "sass_utils_|_mixins_&_placeholders.html#datauri"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Display utils",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Display utils",
+					"path": "sass_utils_|_mixins_&_placeholders.html#display"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Pseudo-element display mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Pseudo-element display mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#pseudoDisplay"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flexbox",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Flexbox",
+					"path": "sass_utils_|_mixins_&_placeholders.html#flexboxUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flex child",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Flex child",
+					"path": "sass_utils_|_mixins_&_placeholders.html#flexChildUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flex parent",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Flex parent",
+					"path": "sass_utils_|_mixins_&_placeholders.html#flexParentUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Float utils",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Float utils",
+					"path": "sass_utils_|_mixins_&_placeholders.html#float"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Clearfix placeholder",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Clearfix placeholder",
+					"path": "sass_utils_|_mixins_&_placeholders.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal mixins",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal mixins",
+					"path": "sass_utils_|_mixins_&_placeholders.html#modalUtils"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Dialog Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Dialog Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Dialog_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Modal Full Mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Modal Full Mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#Modal_Full_Mixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Shadow utilities",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Shadow utilities",
+					"path": "sass_utils_|_mixins_&_placeholders.html#shadow"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Shadow placeholder",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Shadow placeholder",
+					"path": "sass_utils_|_mixins_&_placeholders.html#shadowPlaceholder"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Shapes",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Shapes",
+					"path": "sass_utils_|_mixins_&_placeholders.html#shape"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Circle mixin",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Circle mixin",
+					"path": "sass_utils_|_mixins_&_placeholders.html#circleMixin"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text utils",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text utils",
+					"path": "sass_utils_|_mixins_&_placeholders.html#text"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Link color",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Link color",
+					"path": "sass_utils_|_mixins_&_placeholders.html#linkColorPlaceholder"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text protection shim",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text protection shim",
+					"path": "sass_utils_|_mixins_&_placeholders.html#textProtection"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text wrap",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Text wrap",
+					"path": "sass_utils_|_mixins_&_placeholders.html#textWrapUtil"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Alignment",
+					"breadcrumb": "Modifier Classes > Alignment",
+					"path": "modifier_classes.html#alignMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Animation",
+					"breadcrumb": "Modifier Classes > Animation",
+					"path": "modifier_classes.html#animMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Background",
+					"breadcrumb": "Modifier Classes > Background",
+					"path": "modifier_classes.html#backgroundMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Image Fill",
+					"breadcrumb": "Modifier Classes > Image Fill",
+					"path": "modifier_classes.html#imgFillMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Borders",
+					"breadcrumb": "Modifier Classes > Borders",
+					"path": "modifier_classes.html#borderMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Anchors &amp; Buttons",
+					"breadcrumb": "Modifier Classes > Anchors &amp; Buttons",
+					"path": "modifier_classes.html#buttonMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Button personality",
+					"breadcrumb": "Modifier Classes > Button personality",
+					"path": "modifier_classes.html#buttonPersonalityMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Display",
+					"breadcrumb": "Modifier Classes > Display",
+					"path": "modifier_classes.html#displayMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Float",
+					"breadcrumb": "Modifier Classes > Float",
+					"path": "modifier_classes.html#floatMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Flush",
+					"breadcrumb": "Modifier Classes > Flush",
+					"path": "modifier_classes.html#flushMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Javascript-conditional modifiers",
+					"breadcrumb": "Modifier Classes > Javascript-conditional modifiers",
+					"path": "modifier_classes.html#jsMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Aspect ratio helper",
+					"breadcrumb": "Modifier Classes > Aspect ratio helper",
+					"path": "modifier_classes.html#keepAspect"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Media-conditional modifiers",
+					"breadcrumb": "Modifier Classes > Media-conditional modifiers",
+					"path": "modifier_classes.html#mediaMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Media Sizing",
+					"breadcrumb": "Modifier Classes > Media Sizing",
+					"path": "modifier_classes.html#sizeMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Margin/Padding",
+					"breadcrumb": "Modifier Classes > Margin/Padding",
+					"path": "modifier_classes.html#spacingMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text Modifiers",
+					"breadcrumb": "Modifier Classes > Text Modifiers",
+					"path": "modifier_classes.html#textMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Text decoration",
+					"breadcrumb": "Modifier Classes > Text decoration",
+					"path": "modifier_classes.html#textDecoration"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Hiding Text",
+					"breadcrumb": "Modifier Classes > Hiding Text",
+					"path": "modifier_classes.html#textHideUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Type wrap/whitespace",
+					"breadcrumb": "Modifier Classes > Type wrap/whitespace",
+					"path": "modifier_classes.html#typespaceMod"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Nice Hyphenation",
+					"breadcrumb": "Modifier Classes > Nice Hyphenation",
+					"path": "modifier_classes.html#wrapNiceUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Thumbnails",
+					"breadcrumb": "Modifier Classes > Thumbnails",
+					"path": "modifier_classes.html#thumb"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Visibility",
+					"breadcrumb": "Modifier Classes > Visibility",
+					"path": "modifier_classes.html#visibilityMod"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Attachment",
+					"breadcrumb": "UI Components > Attachment",
+					"path": "ui_components.html#attachment"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Avatar",
+					"breadcrumb": "UI Components > Avatar",
+					"path": "ui_components.html#avatar"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Buttons",
+					"breadcrumb": "UI Components > Buttons",
+					"path": "ui_components.html#buttons"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Collapsible",
+					"breadcrumb": "UI Components > Collapsible",
+					"path": "ui_components.html#collapsible"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Floating Action",
+					"breadcrumb": "UI Components > Floating Action",
+					"path": "ui_components.html#floatingAction"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Menu",
+					"breadcrumb": "UI Components > Menu",
+					"path": "ui_components.html#menu"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Tabs",
+					"breadcrumb": "UI Components > Tabs",
+					"path": "ui_components.html#tabs"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "RSVP Tags",
+					"breadcrumb": "UI Components > RSVP Tags",
+					"path": "ui_components.html#tag"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Tearsheet",
+					"breadcrumb": "UI Components > Tearsheet",
+					"path": "ui_components.html#tearsheet"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Toggle Pills",
+					"breadcrumb": "UI Components > Toggle Pills",
+					"path": "ui_components.html#togglePills"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Cards",
+					"breadcrumb": "UI Components > Cards",
+					"path": "ui_components.html#uiCard"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Pagination",
+					"breadcrumb": "UI Components > Pagination",
+					"path": "ui_components.html#uiPager"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Body/primary text",
+					"breadcrumb": "Typography > Body/primary text",
+					"path": "typography.html#bodyText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Bold text",
+					"breadcrumb": "Typography > Bold text",
+					"path": "typography.html#boldText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Bulleted lists",
+					"breadcrumb": "Typography > Bulleted lists",
+					"path": "typography.html#bulletedList"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Caption text",
+					"breadcrumb": "Typography > Caption text",
+					"path": "typography.html#captionText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Hint text",
+					"breadcrumb": "Typography > Hint text",
+					"path": "typography.html#hintText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Inverted text",
+					"breadcrumb": "Typography > Inverted text",
+					"path": "typography.html#invertedText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Running text",
+					"breadcrumb": "Typography > Running text",
+					"path": "typography.html#runningText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Link color",
+					"breadcrumb": "Typography > Link color",
+					"path": "typography.html#linkColor"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Secondary text",
+					"breadcrumb": "Typography > Secondary text",
+					"path": "typography.html#secondaryText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Small text",
+					"breadcrumb": "Typography > Small text",
+					"path": "typography.html#smallText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Tertiary text",
+					"breadcrumb": "Typography > Tertiary text",
+					"path": "typography.html#tertiaryText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Graphic text",
+					"breadcrumb": "Typography > Graphic text",
+					"path": "typography.html#textGraphic"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Label text",
+					"breadcrumb": "Typography > Label text",
+					"path": "typography.html#textLabel"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Debug text",
+					"breadcrumb": "Typography > Debug text",
+					"path": "typography.html#debugText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Headings",
+					"breadcrumb": "Typography > Headings",
+					"path": "typography.html#headings"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Display text",
+					"breadcrumb": "Typography > Display text",
+					"path": "typography.html#displayText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Headline text",
+					"breadcrumb": "Typography > Headline text",
+					"path": "typography.html#headlineText"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Bounds",
+					"breadcrumb": "Layout > Bounds",
+					"path": "layout.html#bounds"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Chunk",
+					"breadcrumb": "Layout > Chunk",
+					"path": "layout.html#chunk"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Exact list",
+					"breadcrumb": "Layout > Exact list",
+					"path": "layout.html#exactList"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Row",
+					"breadcrumb": "Layout > Row",
+					"path": "layout.html#flexRow"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Row Item variants",
+					"breadcrumb": "Layout > Row Item variants",
+					"path": "layout.html#flexrowItemVars"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Row variants",
+					"breadcrumb": "Layout > Row variants",
+					"path": "layout.html#flexrowParent"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Grid List",
+					"breadcrumb": "Layout > Grid List",
+					"path": "layout.html#gridList"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Grid List variants",
+					"breadcrumb": "Layout > Grid List variants",
+					"path": "layout.html#gridListVariants"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Horizontal Scroll",
+					"breadcrumb": "Layout > Horizontal Scroll",
+					"path": "layout.html#hscroll"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Inline-block list",
+					"breadcrumb": "Layout > Inline-block list",
+					"path": "layout.html#inlineblockList"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Divided list",
+					"breadcrumb": "Layout > Divided list",
+					"path": "layout.html#list"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Stack",
+					"breadcrumb": "Layout > Stack",
+					"path": "layout.html#stack"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Stripe",
+					"breadcrumb": "Layout > Stripe",
+					"path": "layout.html#stripe"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Hero Stripes",
+					"breadcrumb": "Layout > Hero Stripes",
+					"path": "layout.html#heroStripes"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Contrast/brightness utils",
+					"breadcrumb": "Sass Utils | Functions > Contrast/brightness utils",
+					"path": "sass_utils_|_functions.html#brightness"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Perceived brightness value",
+					"breadcrumb": "Sass Utils | Functions > Perceived brightness value",
+					"path": "sass_utils_|_functions.html#getPerceivedBrightness"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Programmatic contrast text",
+					"breadcrumb": "Sass Utils | Functions > Programmatic contrast text",
+					"path": "sass_utils_|_functions.html#getPrimaryTextColor"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "isDark/isLight",
+					"breadcrumb": "Sass Utils | Functions > isDark/isLight",
+					"path": "sass_utils_|_functions.html#isDarkisLight"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "String utils",
+					"breadcrumb": "Sass Utils | Functions > String utils",
+					"path": "sass_utils_|_functions.html#string"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "str-firstCharToUpper",
+					"breadcrumb": "Sass Utils | Functions > str-firstCharToUpper",
+					"path": "sass_utils_|_functions.html#str-firstCharToUpper"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "str-replace",
+					"breadcrumb": "Sass Utils | Functions > str-replace",
+					"path": "sass_utils_|_functions.html#str-replace"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Checkboxes",
+					"breadcrumb": "Forms > Checkboxes",
+					"path": "forms.html#checkbox"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Basic Inputs",
+					"breadcrumb": "Forms > Basic Inputs",
+					"path": "forms.html#forms"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Validation errors",
+					"breadcrumb": "Forms > Validation errors",
+					"path": "forms.html#formValidation"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Launcher",
+					"breadcrumb": "Forms > Launcher",
+					"path": "forms.html#launcher"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Radios",
+					"breadcrumb": "Forms > Radios",
+					"path": "forms.html#radio"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Modals",
+					"breadcrumb": "Views > Modals",
+					"path": "views.html#modals"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Full Modal View",
+					"breadcrumb": "Views > Full Modal View",
+					"path": "views.html#fullModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Overlay Shim",
+					"breadcrumb": "Views > Overlay Shim",
+					"path": "views.html#overlayShim"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Snap Modal View (Dialog)",
+					"breadcrumb": "Views > Snap Modal View (Dialog)",
+					"path": "views.html#snapModalView"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "View",
+					"breadcrumb": "Views > View",
+					"path": "views.html#view"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "View Body",
+					"breadcrumb": "Views > View Body",
+					"path": "views.html#viewBody"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "View Head",
+					"breadcrumb": "Views > View Head",
+					"path": "views.html#viewHead"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Tables",
+					"breadcrumb": "Tables > Tables",
+					"path": "tables.html#tables"
+				});
+
+			
+		
+	
+
+	// TEMP: debug search index
+	window.HOTDOG = index;
+});
+</script>
+
+</body>
+</html>

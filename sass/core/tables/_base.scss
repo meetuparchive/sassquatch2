@@ -11,12 +11,31 @@ category: Tables
 <table>
 	<thead>
 		<tr>
-			<th></th>
+			<th>State</th>
+			<th>Number of escalators</th>
+			<th>State bird</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td></td>
+			<th>New York</th>
+			<td>7,674</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Wyoming</th>
+			<td>2</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Oregon</th>
+			<td>400</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Florida</th>
+			<td>n/a</td>
+			<td>Cardinal</td>
 		</tr>
 	</tbody>
 </table>
@@ -27,3 +46,21 @@ table {
 	border-collapse: collapse;
 }
 
+caption, td, th {
+	padding: $space/2;
+	text-align: left;
+	vertical-align: middle;
+}
+
+caption {
+	padding-left: 0;
+}
+
+th {
+	font-weight: $W_bold;
+}
+
+td, tbody th {
+	vertical-align: top;
+	border-top: 1px solid $C_border;
+}
