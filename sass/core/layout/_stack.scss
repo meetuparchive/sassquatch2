@@ -79,11 +79,6 @@ Class                   | Description
 		@include flex-grow(1);
 		@include flex-basis(0);
 
-		@include browser-lessThanIE( 10 ) {
-			display: table-cell;
-			width: 100%;
-		}
-
 		width: auto;
 		min-width: 0;
 		padding-left: $space;
@@ -91,6 +86,12 @@ Class                   | Description
 		&:first-child {
 			padding-left: 0;
 		}
+
+		@include browser-lessThanIE( 10 ) {
+			display: table-cell;
+			width: 50%; /* for stacks with two items, stop at 50% */
+		}
+
 	}
 
 	.stack-item--shrink {

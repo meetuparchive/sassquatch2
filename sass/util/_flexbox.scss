@@ -69,7 +69,7 @@ Placeholder Variant       | Description
 
 	@include browser-lessThanIE( 10 ) {
 		display: table-cell;
-		width: 100%;
+		width: 50%; /* for stacks with two items, stop at 50% */
 	}
 }
 
