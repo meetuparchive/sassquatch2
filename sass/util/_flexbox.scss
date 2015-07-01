@@ -16,33 +16,29 @@ parent: flexboxUtil
 Sets flexbox properties for a flex parent (`display: flex;`)
 
 ```
-@extend %flexParent;
+@include flexParent('row'); // displays element as flex with children in row orientation
+@include flexParent('column'); // displays element as flex with children in column orientation
 ```
-
-Placeholder Variant       | Description
-------------------------- | --------------------------------------------------------
-`%flexParent`             | sets `display` to `flex`, aligns items to `flex-start`
-`%flexParent--column`     | sets `flex-direction` to `column`
-`%flexParent--row`        | sets `flex-direction` to `row`
 */
-%flexParent {
+@mixin flexParent( $orientation ) {
 	@include display(flex);
 	@include justify-content(flex-start);
 	@include align-items(flex);
-}
 
-%flexParent--column {
-	@include flex-direction(column);
-}
-
-%flexParent--row {
-	@include flex-direction(row);
-
-	@include browser-lessThanIE( 10 ) {
-		@include box-sizing(border-box);
-		display: table;
-		table-layout: auto;
-		width: 100%;
+	@if '#{$orientation}' == 'row' {
+		@include flex-direction(row);
+		@include flex-wrap(nowrap);
+		@include browser-lessThanIE( 10 ) {
+			@include box-sizing(border-box);
+			display: table;
+			table-layout: auto;
+			width: 100%;
+		}
+	} @else {
+		@include flex-direction(column);
+		@include browser-lessThanIE( 10 ) {
+			display: block;
+		}
 	}
 }
 
@@ -56,30 +52,30 @@ parent: flexboxUtil
 
 Sets flexbox properties for a flex children.
 
-Placeholder Variant       | Description
-------------------------- | --------------------------------------------------------
-`%flexChild--grow`        | sets flex child to fill remaining space of the flex parent
-`%flexChild--shrink`      | sets flex child to shrink to the width of its content
+```
+@include flexChild('grow'); // sets element to grow to fill remaining space in flex parent
+@include flexChild('shrink'); // sets element to shirnk to the width of its content
+```
 */
-%flexChild--grow {
-	@include flex-grow(1);
-	@include flex-basis(0);
-	width: auto;
-	min-width: 0;
-
-	@include browser-lessThanIE( 10 ) {
-		display: table-cell;
-		width: 100%;
-	}
-}
-
-%flexChild--shrink {
-	@include flex-grow(0);
-	@include flex-shrink(0);
-	@include flex-basis(auto);
-	width: initial;
-
-	@include browser-lessThanIE( 10 ) {
+@mixin flexChild( $variant ) {
+	@if "#{$variant}" == "grow" {
+		@include flex-grow(1);
+		@include flex-basis(0);
 		width: auto;
+		min-width: 0;
+
+		@include browser-lessThanIE( 10 ) {
+			display: table-cell;
+			width: 50%; /* for rows with two items, stop at 50% */
+		}
+	} @else {
+		@include flex-grow(0);
+		@include flex-shrink(0);
+		@include flex-basis(auto);
+		width: initial;
+
+		@include browser-lessThanIE( 10 ) {
+			width: auto;
+		}
 	}
 }

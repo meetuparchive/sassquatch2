@@ -174,56 +174,10 @@ parent: flexboxUtil
 Sets flexbox properties for a flex parent (`display: flex;`)
 
 ```
-@extend %flexParent;
+@include flexParent('row'); // displays element as flex with children in row orientation
+@include flexParent('column'); // displays element as flex with children in column orientation
 ```
-
-Placeholder Variant       | Description
-------------------------- | --------------------------------------------------------
-`%flexParent`             | sets `display` to `flex`, aligns items to `flex-start`
-`%flexParent--column`     | sets `flex-direction` to `column`
-`%flexParent--row`        | sets `flex-direction` to `row`
 */
-.collection-header, .stripe-heroContent, .card--group, .row, .stack {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -ms-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex; }
-
-.collection-header, .stripe-heroContent, .card--group, .stack {
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column; }
-
-.row {
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-direction: row; }
-  .ieRoot_lt_IE10 .row {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    display: table;
-    table-layout: auto;
-    width: 100%; }
-
 /*doc
 ---
 title: Flex child
@@ -233,38 +187,11 @@ parent: flexboxUtil
 
 Sets flexbox properties for a flex children.
 
-Placeholder Variant       | Description
-------------------------- | --------------------------------------------------------
-`%flexChild--grow`        | sets flex child to fill remaining space of the flex parent
-`%flexChild--shrink`      | sets flex child to shrink to the width of its content
+```
+@include flexChild('grow'); // sets element to grow to fill remaining space in flex parent
+@include flexChild('shrink'); // sets element to shirnk to the width of its content
+```
 */
-.row-item {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  -ms-flex-positive: 1;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  width: auto;
-  min-width: 0; }
-  .ieRoot_lt_IE10 .row-item {
-    display: table-cell;
-    width: 100%; }
-
-.row-item--shrink {
-  -webkit-flex-grow: 0;
-  flex-grow: 0;
-  -ms-flex-positive: 0;
-  -webkit-flex-shrink: 0;
-  flex-shrink: 0;
-  -ms-flex-negative: 0;
-  -webkit-flex-basis: auto;
-  flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  width: initial; }
-  .ieRoot_lt_IE10 .row-item--shrink {
-    width: auto; }
-
 /*doc
 ---
 title: Animation
@@ -364,20 +291,72 @@ Aligns children of selected element using flexbox.
   vertical-align: center; }
 
 .collection-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
   -webkit-box-pack: center;
   box-pack: center;
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
+  .ieRoot_lt_IE10 .collection-header {
+    display: block; }
 
 .stripe-heroContent, .card--group {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
   -webkit-box-pack: end;
   box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-justify-content: flex-end;
   justify-content: flex-end;
   -ms-flex-pack: end; }
+  .ieRoot_lt_IE10 .stripe-heroContent, .ieRoot_lt_IE10 .card--group {
+    display: block; }
 
 /*doc
 ---
@@ -2495,14 +2474,56 @@ _Includes `table-cell` fallback for IE8._
 ```
 */
 .row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
   -webkit-box-lines: single;
   box-lines: single;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap; }
+  .ieRoot_lt_IE10 .row {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: table;
+    table-layout: auto;
+    width: 100%; }
 
 .row-item {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  width: auto;
+  min-width: 0;
   padding-left: 16px; }
+  .ieRoot_lt_IE10 .row-item {
+    display: table-cell;
+    width: 50%;
+    /* for rows with two items, stop at 50% */ }
   .row-item:first-child {
     padding-left: 0; }
 
@@ -2597,6 +2618,20 @@ Class                   | Description
 `.row-item--shrink`     | Item shrinks to fit content
 `.row-item--alignMiddle`| Vertically aligns content to middle
 */
+.row-item--shrink {
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  width: initial; }
+  .ieRoot_lt_IE10 .row-item--shrink {
+    width: auto; }
+
 .row-item--alignMiddle {
   -webkit-align-self: center;
   align-self: center;
@@ -2645,8 +2680,33 @@ Class                   | Description
 `.stack-item--shrink`   | Item shrinks to fit content __only when spread__
 
 */
-.ieRoot_lt_IE10 .stack {
-  display: block; }
+.stack {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column; }
+  .ieRoot_lt_IE10 .stack {
+    display: block; }
 
 .stack-item {
   -webkit-flex-grow: 1;
@@ -2660,6 +2720,25 @@ Class                   | Description
 
 @media only screen and (min-width: 640px) {
   .atMedium_stack--spread {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-align: flex;
+    box-align: flex;
+    -webkit-align-items: flex;
+    -ms-align-items: flex;
+    align-items: flex;
+    -ms-flex-align: flex;
     -webkit-box-orient: horizontal;
     box-orient: horizontal;
     -webkit-flex-direction: row;
@@ -2688,7 +2767,8 @@ Class                   | Description
       padding-left: 16px; }
       .ieRoot_lt_IE10 .atMedium_stack--spread > .stack-item {
         display: table-cell;
-        width: 100%; }
+        width: 50%;
+        /* for rows with two items, stop at 50% */ }
       .atMedium_stack--spread > .stack-item:first-child {
         padding-left: 0; }
     .atMedium_stack--spread .stack-item--shrink {
@@ -2706,6 +2786,25 @@ Class                   | Description
         width: auto; } }
 @media only screen and (min-width: 840px) {
   .atLarge_stack--spread {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-align: flex;
+    box-align: flex;
+    -webkit-align-items: flex;
+    -ms-align-items: flex;
+    align-items: flex;
+    -ms-flex-align: flex;
     -webkit-box-orient: horizontal;
     box-orient: horizontal;
     -webkit-flex-direction: row;
@@ -2734,7 +2833,8 @@ Class                   | Description
       padding-left: 16px; }
       .ieRoot_lt_IE10 .atLarge_stack--spread > .stack-item {
         display: table-cell;
-        width: 100%; }
+        width: 50%;
+        /* for rows with two items, stop at 50% */ }
       .atLarge_stack--spread > .stack-item:first-child {
         padding-left: 0; }
     .atLarge_stack--spread .stack-item--shrink {
@@ -3401,6 +3501,7 @@ Class                   | Description
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
+  -webkit-appearance: none;
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 50px;
