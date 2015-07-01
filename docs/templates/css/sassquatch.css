@@ -325,43 +325,9 @@ Aligns children of selected element using flexbox.
 @extend %valignChildren--bottom;
 ```
 */
-.ieRoot_lt_IE10 .collection-header, .ieRoot_lt_IE10 .stripe-heroContent, .ieRoot_lt_IE10 .card--group {
+.ieRoot_lt_IE10 .stripe-heroContent, .ieRoot_lt_IE10 .card--group {
   display: table-cell;
   vertical-align: center; }
-
-.collection-header {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -ms-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex;
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center; }
-  .ieRoot_lt_IE10 .collection-header {
-    display: block; }
 
 .stripe-heroContent, .card--group {
   display: -webkit-box;
@@ -1855,116 +1821,6 @@ stripe to every other row of the table.
   .stripedTable tbody tr:nth-child(odd) th {
     background-color: rgba(0, 0, 0, 0.26); }
 
-.collection-header {
-  height: 48px;
-  margin-bottom: 0; }
-  .collection-header .collection-header-actions {
-    white-space: nowrap; }
-    .collection-header .collection-header-actions a {
-      box-sizing: border-box;
-      display: inline-block;
-      padding: 0 8px; }
-      .collection-header .collection-header-actions a:last-child {
-        padding-right: 0; }
-
-.hscroll-wrap {
-  -webkit-overflow-scrolling: touch;
-  overflow: scroll;
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none; }
-  .hscroll-wrap .hscroll {
-    box-sizing: content-box;
-    padding-left: 16px;
-    padding-right: 16px;
-    white-space: nowrap; }
-    .hscroll-wrap .hscroll li {
-      white-space: normal; }
-
-.hscroll-wrap::-webkit-scrollbar {
-  display: none; }
-
-.hscroll-wrap-wrap {
-  position: relative;
-  margin-left: -16px;
-  margin-right: -16px; }
-  .hscroll-wrap-wrap:before, .hscroll-wrap-wrap:after {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 16px;
-    top: 0; }
-  .hscroll-wrap-wrap:before {
-    left: 0;
-    background-image: -webkit-linear-gradient( left , #fff, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0)); }
-  .hscroll-wrap-wrap:after {
-    right: 0;
-    background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
-
-.hscroll-arrow {
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1; }
-  .is-hovered .hscroll-arrow, .hscroll-arrow:hover {
-    opacity: 1; }
-
-.hscroll-next {
-  right: 0; }
-
-.hscroll-prev {
-  left: 0; }
-
-.stripe--collection .hscroll-wrap-wrap:before {
-  background-image: -webkit-linear-gradient( left , #f3f6f9, rgba(243, 246, 249, 0));
-  background-image: linear-gradient(to right, #f3f6f9, rgba(243, 246, 249, 0)); }
-.stripe--collection .hscroll-wrap-wrap:after {
-  background-image: -webkit-linear-gradient( right , #f3f6f9, rgba(243, 246, 249, 0));
-  background-image: linear-gradient(to left, #f3f6f9, rgba(243, 246, 249, 0)); }
-
-.stripe--inverted .hscroll-wrap-wrap:before {
-  background-image: -webkit-linear-gradient( left , #353e48, rgba(53, 62, 72, 0));
-  background-image: linear-gradient(to right, #353e48, rgba(53, 62, 72, 0)); }
-.stripe--inverted .hscroll-wrap-wrap:after {
-  background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
-  background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
-
-/* INLINE FORM */
-.inline-form {
-  margin-left: -4px;
-  margin-right: -4px; }
-
-.small-input {
-  min-width: 72px; }
-
-.view--dimmed {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 20;
-  -webkit-transition: all 0.15s;
-  transition: all 0.15s;
-  background: rgba(0, 0, 0, 0.75);
-  opacity: 1; }
-
-.view--dimmed-close {
-  -webkit-transition: all 0.15s 0.15s;
-  transition: all 0.15s 0.15s;
-  display: block;
-  height: 100vh;
-  left: 0;
-  line-height: 100vh;
-  position: fixed;
-  text-align: center;
-  top: 0;
-  vertical-align: middle;
-  width: 100%; }
-
 /*doc
 ---
 title: Stripe
@@ -2377,6 +2233,8 @@ category: Layout
 ---
 Applies styles for horizontal scrolling lists.
 
+## Basic `hscroll`
+
 ```html_example
 <div class="hscroll">
 	<ul class="hscroll-content">
@@ -2431,6 +2289,8 @@ Applies styles for horizontal scrolling lists.
 	</ul>
 </div>
 ```
+
+## Group cards `hscroll`
 
 ```html_example
 <div class="hscroll">
@@ -2535,6 +2395,66 @@ Applies styles for horizontal scrolling lists.
 </div>
 ```
 
+## Gradient `hscroll`
+Wrap the `hscroll` element with `hscrollGradientWrap` to add
+gradient overlays to both sides of the `hscroll`.
+
+```html_example
+<div class="hscrollGradientWrap">
+	<div class="hscroll">
+		<ul class="hscroll-content">
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+		</ul>
+	</div>
+</div>
+```
 ## Media-conditional `hscroll`
 It's possible to create an `hscroll` for small screens that expands
 into a non-scrolling list in the document flow for larger screens.
@@ -2603,6 +2523,36 @@ Class                       | Description
 `atLarge_hscroll--unclip`  | Allows visible overflow (as inline block list) at large & up
 
 */
+.hscrollGradientWrap {
+  position: relative; }
+  .hscrollGradientWrap:before, .hscrollGradientWrap:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 16px;
+    top: 0; }
+  .hscrollGradientWrap:before {
+    left: 0;
+    background-image: -webkit-linear-gradient( left , #fff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0)); }
+  .hscrollGradientWrap:after {
+    right: 0;
+    background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
+  .stripe--collection .hscrollGradientWrap:before {
+    background-image: -webkit-linear-gradient( left , #f3f6f9, rgba(243, 246, 249, 0));
+    background-image: linear-gradient(to right, #f3f6f9, rgba(243, 246, 249, 0)); }
+  .stripe--collection .hscrollGradientWrap:after {
+    background-image: -webkit-linear-gradient( right , #f3f6f9, rgba(243, 246, 249, 0));
+    background-image: linear-gradient(to left, #f3f6f9, rgba(243, 246, 249, 0)); }
+  .hscrollGradientWrap .stripe--inverted:before {
+    background-image: -webkit-linear-gradient( left , #353e48, rgba(53, 62, 72, 0));
+    background-image: linear-gradient(to right, #353e48, rgba(53, 62, 72, 0)); }
+  .hscrollGradientWrap .stripe--inverted:after {
+    background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
+    background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
+
 .hscroll {
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll; }

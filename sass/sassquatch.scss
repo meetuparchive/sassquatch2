@@ -45,9 +45,6 @@
 	@import "core/tables/borderedTable";
 	@import "core/tables/stripedTable";
 
-	// temporary cruft
-	@import "core/unorganized"; // <- TODO: split this out into logical layout partials
-
 	// Layout
 	@import "core/layout/stripe";
 	@import "core/layout/list";
