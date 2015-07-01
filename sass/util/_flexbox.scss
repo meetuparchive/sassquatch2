@@ -58,7 +58,7 @@ Sets flexbox properties for a flex children.
 ```
 */
 @mixin flexChild( $variant ) {
-	@if #{$variant} == "grow" {
+	@if "#{$variant}" == "grow" {
 		@include flex-grow(1);
 		@include flex-basis(0);
 		width: auto;

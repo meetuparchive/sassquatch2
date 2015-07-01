@@ -2619,18 +2619,18 @@ Class                   | Description
 `.row-item--alignMiddle`| Vertically aligns content to middle
 */
 .row-item--shrink {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  -ms-flex-positive: 1;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  width: auto;
-  min-width: 0; }
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  width: initial; }
   .ieRoot_lt_IE10 .row-item--shrink {
-    display: table-cell;
-    width: 50%;
-    /* for rows with two items, stop at 50% */ }
+    width: auto; }
 
 .row-item--alignMiddle {
   -webkit-align-self: center;
@@ -2772,18 +2772,18 @@ Class                   | Description
       .atMedium_stack--spread > .stack-item:first-child {
         padding-left: 0; }
     .atMedium_stack--spread .stack-item--shrink {
-      -webkit-flex-grow: 1;
-      flex-grow: 1;
-      -ms-flex-positive: 1;
-      -webkit-flex-basis: 0;
-      flex-basis: 0;
-      -ms-flex-preferred-size: 0;
-      width: auto;
-      min-width: 0; }
+      -webkit-flex-grow: 0;
+      flex-grow: 0;
+      -ms-flex-positive: 0;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+      width: initial; }
       .ieRoot_lt_IE10 .atMedium_stack--spread .stack-item--shrink {
-        display: table-cell;
-        width: 50%;
-        /* for rows with two items, stop at 50% */ } }
+        width: auto; } }
 @media only screen and (min-width: 840px) {
   .atLarge_stack--spread {
     display: -webkit-box;
@@ -2838,18 +2838,18 @@ Class                   | Description
       .atLarge_stack--spread > .stack-item:first-child {
         padding-left: 0; }
     .atLarge_stack--spread .stack-item--shrink {
-      -webkit-flex-grow: 1;
-      flex-grow: 1;
-      -ms-flex-positive: 1;
-      -webkit-flex-basis: 0;
-      flex-basis: 0;
-      -ms-flex-preferred-size: 0;
-      width: auto;
-      min-width: 0; }
+      -webkit-flex-grow: 0;
+      flex-grow: 0;
+      -ms-flex-positive: 0;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+      width: initial; }
       .ieRoot_lt_IE10 .atLarge_stack--spread .stack-item--shrink {
-        display: table-cell;
-        width: 50%;
-        /* for rows with two items, stop at 50% */ } }
+        width: auto; } }
 /*doc
 ---
 title: View
