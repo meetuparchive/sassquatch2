@@ -317,52 +317,15 @@ title: Vertical-align children
 name: valign
 parent: align
 ---
-__Try to avoid using for essential, non-decorative things__
-Aligns children of selected element using flexbox.
+Aligns children of selected element using flexbox
+with a table-cell fallback for old IE.
 
 ```
-@extend %valignChildren;
-@extend %valignChildren--bottom;
+@include valignChildren(center); // centers children in element
+@include valignChildren(top); // positions children to top of element
+@include valignChildren(bottom); // positions children to bottom of element
 ```
 */
-.ieRoot_lt_IE10 .stripe-heroContent, .ieRoot_lt_IE10 .card--group {
-  display: table-cell;
-  vertical-align: center; }
-
-.stripe-heroContent, .card--group {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -ms-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex;
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: end;
-  box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  justify-content: flex-end;
-  -ms-flex-pack: end; }
-  .ieRoot_lt_IE10 .stripe-heroContent, .ieRoot_lt_IE10 .card--group {
-    display: block; }
-
 /*doc
 ---
 title: Background Utilities
@@ -1936,11 +1899,46 @@ Uses the `stripe--photoHero` variant.
   top: 0; }
 
 .stripe-heroContent {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end;
   min-height: 240px;
   position: relative;
   text-align: center;
   max-width: 1100px;
   padding-top: 56px; }
+  .ieRoot_lt_IE10 .stripe-heroContent {
+    display: block; }
+  .ieRoot_lt_IE10 .stripe-heroContent {
+    display: table-cell;
+    vertical-align: bottom; }
   @media only screen and (min-width: 640px) {
     .stripe-heroContent {
       min-height: 384px; } }
@@ -4149,8 +4147,36 @@ _(The inline style on the card element is for documentation purposes only)_
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end;
   border-radius: 0;
   padding: 16px; }
+  .ieRoot_lt_IE10 .card--group {
+    display: block; }
+  .ieRoot_lt_IE10 .card--group {
+    display: table-cell;
+    vertical-align: bottom; }
   .card--group:before {
     background-color: rgba(15, 20, 31, 0);
     background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 25%, rgba(15, 20, 31, 0.9) 100%);

@@ -107,7 +107,7 @@ Uses the `stripe--photoHero` variant.
 	position: relative;
 
 	//
-	// for use with valignChildren--bottom
+	// for use with valignChildren
 	// on stripe-heroContent in IE9 and below
 	//
 	@include browser-lessThanIE( 10 ) {
@@ -125,7 +125,7 @@ Uses the `stripe--photoHero` variant.
 }
 
 .stripe-heroContent {
-	@extend %valignChildren--bottom;
+	@include valignChildren(bottom);
 	min-height: $block-5;
 	position: relative;
 	text-align: center;

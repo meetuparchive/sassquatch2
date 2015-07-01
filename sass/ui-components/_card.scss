@@ -211,10 +211,9 @@ $_eventStripes: (
 }
 
 .card--group {
-	@extend %valignChildren--bottom;
-	@extend %text--small;
-	@include display(flex);
+	@include valignChildren(bottom);
 	@include textProtectionScrim();
+	@extend %text--small;
 	border-radius: 0;
 	padding: $space;
 }
