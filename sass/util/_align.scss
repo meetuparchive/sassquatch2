@@ -28,8 +28,7 @@ Aligns children of selected element using flexbox.
 }
 
 %valignChildren {
-	@extend %flexParent;
-	@extend %flexParent--column;
+	@include flexParent('column');
 	@include justify-content(center);
 
 	@include browser-lessThanIE( 10 ) {
@@ -38,8 +37,7 @@ Aligns children of selected element using flexbox.
 }
 
 %valignChildren--bottom {
-	@extend %flexParent;
-	@extend %flexParent--column;
+	@include flexParent('column');
 	@include justify-content(flex-end);
 
 	@include browser-lessThanIE( 10 ) {

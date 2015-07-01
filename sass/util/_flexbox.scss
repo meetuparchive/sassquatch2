@@ -24,14 +24,20 @@ Sets flexbox properties for a flex parent (`display: flex;`)
 	@include display(flex);
 	@include justify-content(flex-start);
 	@include align-items(flex);
-	@include flex-direction($orientation);
 
-	@if #{$orientation} == 'row' {
+	@if '#{$orientation}' == 'row' {
+		@include flex-direction(row);
+		@include flex-wrap(nowrap);
 		@include browser-lessThanIE( 10 ) {
 			@include box-sizing(border-box);
 			display: table;
 			table-layout: auto;
 			width: 100%;
+		}
+	} @else {
+		@include flex-direction(column);
+		@include browser-lessThanIE( 10 ) {
+			display: block;
 		}
 	}
 }
