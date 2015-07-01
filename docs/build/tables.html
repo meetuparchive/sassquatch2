@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<title>Sassquatch 2 : Sass Utils | Mixins & Placeholders</title>
+	<title>Sassquatch 2 : Tables</title>
 
 	<!-- Whitney -->
 	<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
@@ -39,254 +39,6 @@
 					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="sass_utils_|_mixins_&_placeholders.html">Sass Utils | Mixins & Placeholders</a>
 						
-							<ul class="display--none atMedium_display--block">
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#a11yUtil">Accessibility utils</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#align">Alignment Utilities</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#animation">Animation</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#background">Background Utilities</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#breakpoints">Media Query Breakpoints</a>
-										</li>
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#browserUtils">Browser filter mixin (IE only)</a>
-										</li>
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#button">Button utilities</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#colorUtil">Color</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#datauri">data uri images</a>
-										</li>
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#display">Display utils</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#flexboxUtil">Flexbox</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#float">Float utils</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#modalUtils">Modal mixins</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#shadow">Shadow utilities</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#shape">Shapes</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#text">Text utils</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-							</ul>
-						
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
@@ -306,6 +58,46 @@
 				
 					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="tables.html">Tables</a>
+						
+							<ul class="display--none atMedium_display--block">
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#borderedTable">Bordered table</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#resetTable">Reset table</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#stripedTable">Striped table</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#tableDefault">Default table styles</a>
+										</li>
+									
+
+								
+							</ul>
 						
 					</li>
 				
@@ -333,245 +125,299 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="a11yUtil" class="styleguide">Accessibility utils</h1>
-<p class="styleguide">Accessibility utilities based on the <a class="styleguide" href="http://a11yproject.com/about.html" title="http://a11yproject.com/about.html">a11y project</a></p>
-<h2 id="a11yVisibilityMixin" class="styleguide">a11y Visibility</h2>
+<h1 id="borderedTable" class="styleguide">Bordered table</h1>
+<p class="styleguide">Apply the <code class="styleguide">borderedTable</code> class to apply borders to table cells.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <table class="borderedTable">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Number of escalators</th>
+            <th>State bird</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>New York</th>
+            <td>7,674</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Wyoming</th>
+            <td>2</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Oregon</th>
+            <td>400</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Florida</th>
+            <td>n/a</td>
+            <td>Cardinal</td>
+        </tr>
+    </tbody>
+</table>
 
-<h3>Hiding elements</h3>
-<div class="codeBlock">
-  <div class="highlight">
-    <pre>@include a11yVisibility('hidden');</pre>
   </div>
-</div><p class="styleguide">Takes element out of document flow and hides it
-by clipping to a 1x1 pixel. Allows content to be
-visually hidden but <a class="styleguide" href="http://a11yproject.com/posts/how-to-hide-content/" title="http://a11yproject.com/posts/how-to-hide-content/">available to screen readers</a>.</p>
-<h3>Showing a11y hidden elements</h3>
-<div class="codeBlock">
-  <div class="highlight">
-    <pre>@include a11yVisibility('visibile');</pre>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"borderedTable"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>State<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Number of escalators<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>State bird<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>New York<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>7,674<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Wyoming<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Oregon<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>400<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Florida<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>n/a<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></pre>
+    </div>
   </div>
-</div><p class="styleguide">When applied to an element hidden with <code class="styleguide">a11yHide()</code>,
-the element is forced to unclip and returned to the
-document flow.</p>
-<h1 id="align" class="styleguide">Alignment Utilities</h1>
+</div>
 
-<h2 id="valign" class="styleguide">Vertical-align children</h2>
-<p class="styleguide"><strong>Try to avoid using for essential, non-decorative things</strong>
-Aligns children of selected element using flexbox.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %valignChildren;
-@extend %valignChildren--bottom;</pre>
-  </div>
-</div>
-<h1 id="animation" class="styleguide">Animation</h1>
+<h1 id="resetTable" class="styleguide">Reset table</h1>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table class="resetTable">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Number of escalators</th>
+            <th>State bird</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>New York</th>
+            <td>7,674</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Wyoming</th>
+            <td>2</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Oregon</th>
+            <td>400</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Florida</th>
+            <td>n/a</td>
+            <td>Cardinal</td>
+        </tr>
+    </tbody>
+</table>
 
-<h2 id="bounce-in-subtle" class="styleguide">Subtle bounce-in</h2>
-<p class="styleguide">Subtle bounce effect using keyframes, provided via simple mixin
-<em>original keyframes generated with <a class="styleguide" href="http://goo.gl/tT4jnp" title="http://goo.gl/tT4jnp">Bounce.js</a></em></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include animate--bounce-in-subtle($time: 750ms);</pre>
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"resetTable"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>State<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Number of escalators<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>State bird<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>New York<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>7,674<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Wyoming<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Oregon<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>400<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Florida<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>n/a<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></pre>
+    </div>
   </div>
 </div>
-<h2 id="spin" class="styleguide">Infinite spin</h2>
-<p class="styleguide">Infinite 2d rotation; 0-360deg.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include animate--spin($time: 0.8s);</pre>
-  </div>
-</div>
-<h1 id="background" class="styleguide">Background Utilities</h1>
 
-<h2 id="backgroundClip" class="styleguide">Background clip mixin</h2>
-<p class="styleguide">Sets background-clip property</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include background-clip($value: padding);
-@include background-clip('border');</pre>
-  </div>
-</div>
-<h2 id="imgFill" class="styleguide">Image fill placeholder</h2>
-<p class="styleguide">Sets background properties that center
-background image, set size to &#39;cover&#39;,
-and overflow hidden.</p><p class="styleguide"><em><a class="styleguide" href="ui_components.html#avatar" title="ui_components.html#avatar">ie. avatars</a></em></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %imgFill;</pre>
-  </div>
-</div>
-<h1 id="breakpoints" class="styleguide">Media Query Breakpoints</h1>
+<h1 id="stripedTable" class="styleguide">Striped table</h1>
+<p class="styleguide">Apply the <code class="styleguide">stripedTable</code> class to add a background
+stripe to every other row of the table.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <table class="stripedTable">
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Number of escalators</th>
+            <th>State bird</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>New York</th>
+            <td>7,674</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Wyoming</th>
+            <td>2</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Oregon</th>
+            <td>400</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Florida</th>
+            <td>n/a</td>
+            <td>Cardinal</td>
+        </tr>
+    </tbody>
+</table>
 
-<h3>Mobile first mixin</h3>
-<p class="styleguide">This breakpoint mixin uses a <strong>mobile first</strong>
-strategy, meaning the <code class="styleguide">medium</code> breakpoint, for
-example, applies to <em>medium screens and larger</em>.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include atMediaUp(medium) {
-        body::after {
-            content: "medium screens and larger can see me";
-        }
-    }</pre>
   </div>
-</div><table class="styleguide"> <tr>
-<th>Breakpoint name</th>
-<th>Description</th>
-</tr>
- <tr>
-<td><code class="styleguide">atMediaUp(small)</code></td>
-<td>Small sreens and up</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaUp(medium)</code></td>
-<td>Landscape on most phones and up; portrait on some phablets</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaUp(large)</code></td>
-<td>Landscape on phabelts and up; portrait on most tablets or old desktops</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaUp(huge)</code></td>
-<td>Modern desktop viewports and up or <a class="styleguide" href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg" title="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a></td>
-</tr>
- </table>
-<h1 id="browserUtils" class="styleguide">Browser filter mixin (IE only)</h1>
-<p class="styleguide">Targets styles to specific IE versions using
-the root class method (applying classes to the
-<code class="styleguide">body</code> tag with IE conditional comments).</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>.myClass {
-    @include browser-lessThanIE( 10 ) { ...styles for all IE versions below 10... }
-    @include browser-lessThanIE( 9 ) { ...styles for all IE versions below 9... }
-}</pre>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"stripedTable"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>State<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Number of escalators<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>State bird<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>New York<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>7,674<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Wyoming<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Oregon<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>400<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Florida<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>n/a<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></pre>
+    </div>
   </div>
 </div>
-<h1 id="button" class="styleguide">Button utilities</h1>
 
-<h2 id="buttonPersonality" class="styleguide">Button personality placeholder</h2>
-<p class="styleguide">Disables user-select, sets cursor, and resets text-decoration.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %buttonPersonality;</pre>
-  </div>
-</div>
-<h1 id="colorUtil" class="styleguide">Color</h1>
+<h1 id="tableDefault" class="styleguide">Default table styles</h1>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table>
+    <thead>
+        <tr>
+            <th>State</th>
+            <th>Number of escalators</th>
+            <th>State bird</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>New York</th>
+            <td>7,674</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Wyoming</th>
+            <td>2</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Oregon</th>
+            <td>400</td>
+            <td>Cardinal</td>
+        </tr>
+        <tr>
+            <th>Florida</th>
+            <td>n/a</td>
+            <td>Cardinal</td>
+        </tr>
+    </tbody>
+</table>
 
-<h2 id="colorAllMixin" class="styleguide">SVG + Text color</h2>
-<p class="styleguide">Sets properties to apply color to SVG icons
-<em>and</em> text.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@mixin color-all($color: black);</pre>
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>State<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Number of escalators<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>State bird<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>New York<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>7,674<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Wyoming<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Oregon<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>400<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Florida<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>n/a<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Cardinal<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></pre>
+    </div>
   </div>
 </div>
-<h2 id="svgColorMixin" class="styleguide">SVG color</h2>
-<p class="styleguide">Sets properties to color SVG icons</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@mixin color-svg($color: black);</pre>
-  </div>
-</div>
-<h1 id="datauri" class="styleguide">data uri images</h1>
-<p class="styleguide">Sassquatch image dependencies are stored
-as data uris in a Sass map.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>map-get($data-img-map, "orgBadge") // raw data uri
-
-// OR
-
-.elWithImgBackground {
-    @extend %backgroundImg--orgBadge; // sets background-image property
-}</pre>
-  </div>
-</div><table class="styleguide"> <tr>
-<th>Img Name</th>
-<th>Description</th>
-</tr>
- <tr>
-<td><code class="styleguide">orgBadge</code></td>
-<td>Organizer badge</td>
-</tr>
-<tr>
-<td><code class="styleguide">launcher</code></td>
-<td>Form launcher input icon</td>
-</tr>
- </table>
-<h1 id="display" class="styleguide">Display utils</h1>
-
-<h2 id="pseudoDisplay" class="styleguide">Pseudo-element display mixin</h2>
-<p class="styleguide">Sets display property for psuedo-elements</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include pseudoDisplay($value: block);</pre>
-  </div>
-</div>
-<h1 id="flexboxUtil" class="styleguide">Flexbox</h1>
-
-<h2 id="flexChildUtil" class="styleguide">Flex child</h2>
-<p class="styleguide">Sets flexbox properties for a flex children.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include flexChild('grow'); // sets element to grow to fill remaining space in flex parent
-@include flexChild('shrink'); // sets element to shirnk to the width of its content</pre>
-  </div>
-</div>
-<h2 id="flexParentUtil" class="styleguide">Flex parent</h2>
-<p class="styleguide">Sets flexbox properties for a flex parent (<code class="styleguide">display: flex;</code>)</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include flexParent('row'); // displays element as flex with children in row orientation
-@include flexParent('column'); // displays element as flex with children in column orientation</pre>
-  </div>
-</div>
-<h1 id="float" class="styleguide">Float utils</h1>
-
-<h2 id="clearfix" class="styleguide">Clearfix placeholder</h2>
-<p class="styleguide">Clears floated children.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %clearfix;</pre>
-  </div>
-</div>
-<h1 id="modalUtils" class="styleguide">Modal mixins</h1>
-<p class="styleguide">Description here</p>
-<h2 id="Modal_Dialog_Mixin" class="styleguide">Modal Dialog Mixin</h2>
-<p class="styleguide">Use this mixin to get the behavior of a <a class="styleguide" href="views.html#snapModalView" title="views.html#snapModalView">Snap Modal View</a>,
-a view that snaps to full page on small screens and a dialog on larger formats.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include modal-dialog;</pre>
-  </div>
-</div>
-<h2 id="Modal_Full_Mixin" class="styleguide">Modal Full Mixin</h2>
-<p class="styleguide">Use this mixin to get behavior of a full page modal.
-See <a class="styleguide" href="views.html#fullModalView" title="views.html#fullModalView">the Full Modal View documentation</a></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include modal-full;</pre>
-  </div>
-</div>
-<h1 id="shadow" class="styleguide">Shadow utilities</h1>
-
-<h2 id="shadowPlaceholder" class="styleguide">Shadow placeholder</h2>
-<p class="styleguide">Applies standard box-shadow</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %shadow;</pre>
-  </div>
-</div>
-<h1 id="shape" class="styleguide">Shapes</h1>
-
-<h2 id="circleMixin" class="styleguide">Circle mixin</h2>
-<p class="styleguide">Makes selected element a circle with border-radius</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@mixin circle($color: black, $size: 12px)</pre>
-  </div>
-</div>
-<h1 id="text" class="styleguide">Text utils</h1>
-
-<h2 id="linkColorPlaceholder" class="styleguide">Link color</h2>
-<p class="styleguide">Forces an element to use link-like styling.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %link;</pre>
-  </div>
-</div>
-<h2 id="textProtection" class="styleguide">Text protection shim</h2>
-<p class="styleguide">Adds a pseudo-element gradient</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el</pre>
-  </div>
-</div>
-<h2 id="textWrapUtil" class="styleguide">Text wrap</h2>
-<p class="styleguide">Nice hyphenation and wrapping for running text.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %link;</pre>
-  </div>
-</div>	</main>
+	</main>
 	</section>
 
 <!-- lunr.js search index -->
