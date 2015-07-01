@@ -1627,12 +1627,10 @@ Error text is set explicitly with `text--error`.
 
 /*doc
 ---
-title: Tables
-name: tables
+title: Default table styles
+name: tableDefault
 category: Tables
 ---
-
-## Default table styles
 
 ```html_example
 <table>
@@ -1690,18 +1688,15 @@ caption {
   padding-left: 0; }
 
 thead th {
+  color: rgba(0, 0, 0, 0.87);
   font-weight: 700;
-  text-transform: uppercase;
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.87); }
-  .inverted thead th {
-    color: white; }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
 
 /*doc
 ---
 title: Reset table
 name: resetTable
-parent: tables
+category: Tables
 ---
 
 ```html_example
@@ -1746,7 +1741,6 @@ parent: tables
   padding: 0;
   font-size: 16px;
   font-weight: normal;
-  text-transform: none;
   border-width: 0;
   vertical-align: top;
   color: rgba(0, 0, 0, 0.87); }
@@ -1761,7 +1755,7 @@ parent: tables
 ---
 title: Bordered table
 name: borderedTable
-parent: tables
+category: Tables
 ---
 Apply the `borderedTable` class to apply borders to table cells.
 
@@ -1805,16 +1799,16 @@ Apply the `borderedTable` class to apply borders to table cells.
   border-color: rgba(0, 0, 0, 0.12); }
   .borderedTable td:last-child, .borderedTable tbody th:last-child {
     border-right: 1px solid rgba(0, 0, 0, 0.12); }
+.borderedTable thead th {
+  border-width: 0; }
 .borderedTable tbody tr:last-child td, .borderedTable tbody tr:last-child th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-.borderedTable thead th {
-  padding-left: 4px; }
 
 /*doc
 ---
 title: Striped table
 name: stripedTable
-parent: tables
+category: Tables
 ---
 Apply the `stripedTable` class to add a background
 stripe to every other row of the table.

@@ -1,11 +1,9 @@
 /*doc
 ---
-title: Tables
-name: tables
+title: Default table styles
+name: tableDefault
 category: Tables
 ---
-
-## Default table styles
 
 ```html_example
 <table>
@@ -65,11 +63,7 @@ caption {
 }
 
 thead th {
-	font-weight: $W_bold;
-	text-transform: uppercase;
-	font-size: $font-size-small;
 	color: $C_textPrimary;
-	.inverted & {
-		color: $C_textPrimaryInverted;
-	}
+	font-weight: $W_bold;
+	border-bottom: 1px solid $C_border;
 }

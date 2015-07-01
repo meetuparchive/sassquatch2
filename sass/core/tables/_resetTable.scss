@@ -2,7 +2,7 @@
 ---
 title: Reset table
 name: resetTable
-parent: tables
+category: Tables
 ---
 
 ```html_example
@@ -48,7 +48,6 @@ parent: tables
 		padding: 0;
 		font-size: $font-size;
 		font-weight: normal;
-		text-transform: none;
 		border-width: 0;
 		vertical-align: top;
 		color: $C_textPrimary;
