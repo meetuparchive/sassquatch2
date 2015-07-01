@@ -47,7 +47,7 @@ table {
 }
 
 caption, td, th {
-	padding: $space/2;
+	padding: $space-half;
 	text-align: left;
 	vertical-align: middle;
 }
@@ -56,11 +56,22 @@ caption {
 	padding-left: 0;
 }
 
-th {
+thead th {
 	font-weight: $W_bold;
+	text-transform: uppercase;
+	font-size: $font-size-small;
 }
 
 td, tbody th {
-	vertical-align: top;
-	border-top: 1px solid $C_border;
+	border-width: 1px 0 0 1px;
+	border-style: solid;
+	border-color: $C_border;
+	&:last-child {
+		border-right: 1px solid $C_border;
+	}
+}
+tr:last-child {
+	td, th {
+		border-bottom: 1px solid $C_border;
+	}
 }

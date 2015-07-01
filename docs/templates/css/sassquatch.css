@@ -1680,12 +1680,20 @@ caption, td, th {
 caption {
   padding-left: 0; }
 
-th {
-  font-weight: 700; }
+thead th {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px; }
 
 td, tbody th {
-  vertical-align: top;
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12); }
+  td:last-child, tbody th:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.12); }
+
+tr:last-child td, tr:last-child th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
 
 .collection-header {
   height: 48px;
