@@ -54,12 +54,10 @@ _Includes `table-cell` fallback for IE8._
 ```
 */
 .row {
-	@extend %flexParent;
-	@extend %flexParent--row;
-	@include flex-wrap(nowrap);
+	@include flexParent('row');
 }
 .row-item {
-	@extend %flexChild--grow;
+	@include flexChild('grow');
 	padding-left: $space;
 	&:first-child {
 		padding-left: 0;
@@ -123,7 +121,7 @@ Class                   | Description
 `.row-item--alignMiddle`| Vertically aligns content to middle
 */
 .row-item--shrink {
-	@extend %flexChild--shrink;
+	@include flexChild('shrink');
 }
 .row-item--alignMiddle {
 	@include align-self(center);
