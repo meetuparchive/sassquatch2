@@ -124,8 +124,7 @@ category: UI Components
 
 .pagination {
 	@extend %list--reset;
-	@extend %flexParent;
-	@extend %flexParent--row;
+	@include flexParent('row');
 	@include justify-content(space-between);
 }
 
@@ -136,7 +135,7 @@ category: UI Components
 	border-radius: $defaultRadius;
 
 	&:not(.pagination-page--control){
-		@extend %flexChild--shrink;
+		@include flexChild('shrink');
 		padding: $space-half;
 	}
 
@@ -152,7 +151,7 @@ category: UI Components
 }
 
 .pagination-page--control {
-	@extend %flexChild--grow;
+	@include flexChild('grow');
 
 	&:first-child {
 		@extend %align--left;

@@ -499,41 +499,19 @@ as data uris in a Sass map.</p><div class="codeBlock">
 <h1 id="flexboxUtil" class="styleguide">Flexbox</h1>
 
 <h2 id="flexChildUtil" class="styleguide">Flex child</h2>
-<p class="styleguide">Sets flexbox properties for a flex children.</p><table class="styleguide"> <tr>
-<th>Placeholder Variant</th>
-<th>Description</th>
-</tr>
- <tr>
-<td><code class="styleguide">%flexChild--grow</code></td>
-<td>sets flex child to fill remaining space of the flex parent</td>
-</tr>
-<tr>
-<td><code class="styleguide">%flexChild--shrink</code></td>
-<td>sets flex child to shrink to the width of its content</td>
-</tr>
- </table>
+<p class="styleguide">Sets flexbox properties for a flex children.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include flexChild('grow'); // sets element to grow to fill remaining space in flex parent
+@include flexChild('shrink'); // sets element to shirnk to the width of its content</pre>
+  </div>
+</div>
 <h2 id="flexParentUtil" class="styleguide">Flex parent</h2>
 <p class="styleguide">Sets flexbox properties for a flex parent (<code class="styleguide">display: flex;</code>)</p><div class="codeBlock">
   <div class="highlight">
-    <pre>@extend %flexParent;</pre>
+    <pre>@include flexParent('row'); // displays element as flex with children in row orientation
+@include flexParent('column'); // displays element as flex with children in column orientation</pre>
   </div>
-</div><table class="styleguide"> <tr>
-<th>Placeholder Variant</th>
-<th>Description</th>
-</tr>
- <tr>
-<td><code class="styleguide">%flexParent</code></td>
-<td>sets <code class="styleguide">display</code> to <code class="styleguide">flex</code>, aligns items to <code class="styleguide">flex-start</code></td>
-</tr>
-<tr>
-<td><code class="styleguide">%flexParent--column</code></td>
-<td>sets <code class="styleguide">flex-direction</code> to <code class="styleguide">column</code></td>
-</tr>
-<tr>
-<td><code class="styleguide">%flexParent--row</code></td>
-<td>sets <code class="styleguide">flex-direction</code> to <code class="styleguide">row</code></td>
-</tr>
- </table>
+</div>
 <h1 id="float" class="styleguide">Float utils</h1>
 
 <h2 id="clearfix" class="styleguide">Clearfix placeholder</h2>
