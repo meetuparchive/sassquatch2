@@ -42,14 +42,22 @@ category: Tables
 ```
 */
 table {
+	display: table;
 	width: 100%;
 	border-collapse: collapse;
+	table-layout: auto;
 }
 
-caption, td, th {
-	padding: $space-half;
+caption,
+td,
+th {
+	padding: $space-half $space;
 	text-align: left;
 	vertical-align: middle;
+	color: $C_textSecondary;
+	.inverted & {
+		color: $C_textSecondaryInverted;
+	}
 }
 
 caption {
@@ -60,18 +68,8 @@ thead th {
 	font-weight: $W_bold;
 	text-transform: uppercase;
 	font-size: $font-size-small;
-}
-
-td, tbody th {
-	border-width: 1px 0 0 1px;
-	border-style: solid;
-	border-color: $C_border;
-	&:last-child {
-		border-right: 1px solid $C_border;
-	}
-}
-tr:last-child {
-	td, th {
-		border-bottom: 1px solid $C_border;
+	color: $C_textPrimary;
+	.inverted & {
+		color: $C_textPrimaryInverted;
 	}
 }

@@ -41,6 +41,9 @@
 
 	// Tables
 	@import "core/tables/base";
+	@import "core/tables/resetTable";
+	@import "core/tables/borderedTable";
+	@import "core/tables/stripedTable";
 
 	// temporary cruft
 	@import "core/unorganized"; // <- TODO: split this out into logical layout partials

@@ -1669,13 +1669,22 @@ category: Tables
 ```
 */
 table {
+  display: table;
   width: 100%;
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  table-layout: auto; }
 
-caption, td, th {
-  padding: 8px;
+caption,
+td,
+th {
+  padding: 8px 16px;
   text-align: left;
-  vertical-align: middle; }
+  vertical-align: middle;
+  color: rgba(0, 0, 0, 0.54); }
+  .inverted caption, .inverted
+  td, .inverted
+  th {
+    color: rgba(255, 255, 255, 0.7); }
 
 caption {
   padding-left: 0; }
@@ -1683,17 +1692,174 @@ caption {
 thead th {
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 13px; }
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.87); }
+  .inverted thead th {
+    color: white; }
 
-td, tbody th {
+/*doc
+---
+title: Reset table
+name: resetTable
+parent: tables
+---
+
+```html_example
+<table class="resetTable">
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>Number of escalators</th>
+			<th>State bird</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>New York</th>
+			<td>7,674</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Wyoming</th>
+			<td>2</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Oregon</th>
+			<td>400</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Florida</th>
+			<td>n/a</td>
+			<td>Cardinal</td>
+		</tr>
+	</tbody>
+</table>
+```
+*/
+.resetTable caption,
+.resetTable tbody,
+.resetTable thead,
+.resetTable td,
+.resetTable th {
+  padding: 0;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: none;
+  border-width: 0;
+  vertical-align: top;
+  color: rgba(0, 0, 0, 0.87); }
+  .inverted .resetTable caption, .inverted
+  .resetTable tbody, .inverted
+  .resetTable thead, .inverted
+  .resetTable td, .inverted
+  .resetTable th {
+    color: white; }
+
+/*doc
+---
+title: Bordered table
+name: borderedTable
+parent: tables
+---
+Apply the `borderedTable` class to apply borders to table cells.
+
+```html_example
+<table class="borderedTable">
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>Number of escalators</th>
+			<th>State bird</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>New York</th>
+			<td>7,674</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Wyoming</th>
+			<td>2</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Oregon</th>
+			<td>400</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Florida</th>
+			<td>n/a</td>
+			<td>Cardinal</td>
+		</tr>
+	</tbody>
+</table>
+```
+*/
+.borderedTable td, .borderedTable tbody th {
   border-width: 1px 0 0 1px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.12); }
-  td:last-child, tbody th:last-child {
+  .borderedTable td:last-child, .borderedTable tbody th:last-child {
     border-right: 1px solid rgba(0, 0, 0, 0.12); }
-
-tr:last-child td, tr:last-child th {
+.borderedTable tbody tr:last-child td, .borderedTable tbody tr:last-child th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+.borderedTable thead th {
+  padding-left: 4px; }
+
+/*doc
+---
+title: Striped table
+name: stripedTable
+parent: tables
+---
+Apply the `stripedTable` class to add a background
+stripe to every other row of the table.
+
+```html_example
+<table class="stripedTable">
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>Number of escalators</th>
+			<th>State bird</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>New York</th>
+			<td>7,674</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Wyoming</th>
+			<td>2</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Oregon</th>
+			<td>400</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Florida</th>
+			<td>n/a</td>
+			<td>Cardinal</td>
+		</tr>
+	</tbody>
+</table>
+```
+
+*/
+.stripedTable tbody tr:nth-child(odd) td,
+.stripedTable tbody tr:nth-child(odd) th {
+  background-color: #f3f6f9; }
+  .inverted .stripedTable tbody tr:nth-child(odd) td, .inverted
+  .stripedTable tbody tr:nth-child(odd) th {
+    background-color: rgba(0, 0, 0, 0.26); }
 
 .collection-header {
   height: 48px;
