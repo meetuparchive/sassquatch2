@@ -356,11 +356,12 @@ document flow.</p>
 <h1 id="align" class="styleguide">Alignment Utilities</h1>
 
 <h2 id="valign" class="styleguide">Vertical-align children</h2>
-<p class="styleguide"><strong>Try to avoid using for essential, non-decorative things</strong>
-Aligns children of selected element using flexbox.</p><div class="codeBlock">
+<p class="styleguide">Aligns children of selected element using flexbox
+with a table-cell fallback for old IE.</p><div class="codeBlock">
   <div class="highlight">
-    <pre>@extend %valignChildren;
-@extend %valignChildren--bottom;</pre>
+    <pre>@include valignChildren(center); // centers children in element
+@include valignChildren(top); // positions children to top of element
+@include valignChildren(bottom); // positions children to bottom of element</pre>
   </div>
 </div>
 <h1 id="animation" class="styleguide">Animation</h1>
