@@ -23,15 +23,15 @@ with a table-cell fallback for old IE.
 ```
 */
 
-
 @mixin _valignIE($alignment) {
 	display: table-cell;
 	vertical-align: $alignment;
 }
 
 @mixin valignChildren($alignment: center) {
-	@include flexParent('column');
-	@include justify-content(map-get($flexAlignMap, $alignment));
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(map-get($flexAlignMap, "#{$alignment}"));
 
 	@include browser-lessThanIE( 10 ) {
 		@include _valignIE($alignment);

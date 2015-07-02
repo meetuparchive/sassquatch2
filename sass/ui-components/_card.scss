@@ -216,6 +216,7 @@ $_eventStripes: (
 	@extend %text--small;
 	border-radius: 0;
 	padding: $space;
+	height: $block-4;
 }
 .card--group-content {
 	position: relative;

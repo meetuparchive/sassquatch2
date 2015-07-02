@@ -1874,6 +1874,13 @@ Uses the `stripe--photoHero` variant.
 ```
 */
 .stripe--hero, .stripe--photoHero {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #d55741;
   background-size: cover;
   background-position: center 20%;
@@ -1906,20 +1913,10 @@ Uses the `stripe--photoHero` variant.
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -ms-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex;
   -webkit-box-orient: vertical;
   box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
@@ -1934,8 +1931,6 @@ Uses the `stripe--photoHero` variant.
   text-align: center;
   max-width: 1100px;
   padding-top: 56px; }
-  .ieRoot_lt_IE10 .stripe-heroContent {
-    display: block; }
   .ieRoot_lt_IE10 .stripe-heroContent {
     display: table-cell;
     vertical-align: bottom; }
@@ -2775,6 +2770,8 @@ _Includes `table-cell` fallback for IE8._
   -ms-flex-align: flex;
   -webkit-box-orient: horizontal;
   box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: row;
   flex-direction: row;
   -ms-flex-direction: row;
@@ -2982,6 +2979,8 @@ Class                   | Description
   -ms-flex-align: flex;
   -webkit-box-orient: vertical;
   box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column; }
@@ -3021,6 +3020,8 @@ Class                   | Description
     -ms-flex-align: flex;
     -webkit-box-orient: horizontal;
     box-orient: horizontal;
+    -webkit-box-direction: normal;
+    box-direction: normal;
     -webkit-flex-direction: row;
     flex-direction: row;
     -ms-flex-direction: row;
@@ -3087,6 +3088,8 @@ Class                   | Description
     -ms-flex-align: flex;
     -webkit-box-orient: horizontal;
     box-orient: horizontal;
+    -webkit-box-direction: normal;
+    box-direction: normal;
     -webkit-flex-direction: row;
     flex-direction: row;
     -ms-flex-direction: row;
@@ -3880,6 +3883,8 @@ Class                   | Description
   flex-wrap: nowrap;
   -webkit-box-orient: horizontal;
   box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: row;
   flex-direction: row;
   -ms-flex-direction: row;
@@ -4147,20 +4152,10 @@ _(The inline style on the card element is for documentation purposes only)_
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -ms-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex;
   -webkit-box-orient: vertical;
   box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column;
@@ -4171,9 +4166,8 @@ _(The inline style on the card element is for documentation purposes only)_
   justify-content: flex-end;
   -ms-flex-pack: end;
   border-radius: 0;
-  padding: 16px; }
-  .ieRoot_lt_IE10 .card--group {
-    display: block; }
+  padding: 16px;
+  height: 160px; }
   .ieRoot_lt_IE10 .card--group {
     display: table-cell;
     vertical-align: bottom; }
@@ -4538,6 +4532,8 @@ category: UI Components
   -ms-flex-align: flex;
   -webkit-box-orient: horizontal;
   box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: row;
   flex-direction: row;
   -ms-flex-direction: row;
