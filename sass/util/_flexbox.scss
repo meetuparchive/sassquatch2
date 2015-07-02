@@ -29,7 +29,7 @@ Sets flexbox properties for a flex parent (`display: flex;`)
 		@include flex-direction(row);
 		@include flex-wrap(nowrap);
 		@include browser-lessThanIE( 10 ) {
-			@include box-sizing(border-box);
+			box-sizing: border-box;
 			display: table;
 			table-layout: auto;
 			width: 100%;

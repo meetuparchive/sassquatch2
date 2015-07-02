@@ -2024,7 +2024,6 @@ better docs TK
     padding: 0 16px 16px 0;
     vertical-align: top;
     width: 50%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
 
 /*doc
@@ -2781,7 +2780,6 @@ _Includes `table-cell` fallback for IE8._
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap; }
   .ieRoot_lt_IE10 .row {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: table;
     table-layout: auto;
@@ -3031,7 +3029,6 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .ieRoot_lt_IE10 .atMedium_stack--spread {
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       display: table;
       table-layout: auto;
@@ -3099,7 +3096,6 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .ieRoot_lt_IE10 .atLarge_stack--spread {
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       display: table;
       table-layout: auto;
@@ -3193,7 +3189,6 @@ the "detail" responsibility.
 ```
 */
 .view {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: white;
   width: 100%;
@@ -3252,7 +3247,6 @@ Class                      | Description
 
 */
 .view-head {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: #d55741;
   color: white;
@@ -3780,7 +3774,6 @@ Class                   | Description
 `.button--icon`         | button with icon
 */
 .button, .toggleButton-label {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
@@ -3895,7 +3888,6 @@ Class                   | Description
   justify-content: flex-end;
   -ms-flex-pack: end; }
   .ieRoot_lt_IE10 .button--icon {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: table;
     table-layout: auto; }
@@ -4132,7 +4124,6 @@ _(The inline style on the card element is for documentation purposes only)_
 ```
 */
 .card {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   background: white;
@@ -4549,7 +4540,6 @@ category: UI Components
   justify-content: space-between;
   -ms-flex-pack: justify; }
   .ieRoot_lt_IE10 .pagination {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: table;
     table-layout: auto;
