@@ -233,8 +233,8 @@ document flow.
 */
 /*doc
 ---
-title: il8n
-name: il8nHelper
+title: i18n
+name: i18nHelper
 category: Sass Utils | Mixins & Placeholders
 ---
 
@@ -244,36 +244,36 @@ classes on the `body` element.
 */
 /*doc
 ---
-title: il8n-only
+title: i18n-only
 name: onlyLnag
-parent: il8nHelper
+parent: i18nHelper
 ---
 To set a style rule for one language only,
-use `il8n-only`.
+use `i18n-only`.
 
 ```
-@include il8n-only('en') {
+@include i18n-only('en') {
 	text-transform: uppercase; // only upercasse for English
 }
 
-@include il8n-only('en', 'it') { ... } // multiple languages supported
+@include i18n-only('en', 'it') { ... } // multiple languages supported
 ```
 */
 /*doc
 ---
-title: il8n-exclude
+title: i18n-exclude
 name: excludeLang
-parent: il8nHelper
+parent: i18nHelper
 ---
 To ensure a style rule is __not__ applied to
-a language, use `il8n-exclude`.
+a language, use `i18n-exclude`.
 
 ```
-@include il8n-exclude('de') {
+@include i18n-exclude('de') {
 	text-transform: uppercase; // uppercase every language except German
 }
 
-@include il8n-exclude('ja', 'es', 'de') { ... } // multiple languages supported
+@include i18n-exclude('ja', 'es', 'de') { ... } // multiple languages supported
 ```
 */
 /*doc
