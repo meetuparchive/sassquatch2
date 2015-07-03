@@ -224,6 +224,11 @@
 		"spaceBetween": space-between,
 		"spaceAround": space-around
 	);
+	$flexAlignMap: (
+		"top": flex-start,
+		"bottom": flex-end,
+		"center": center
+	);
 
 
 // ---------------------------
