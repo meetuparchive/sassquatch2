@@ -233,10 +233,14 @@ document flow.
 */
 /*doc
 ---
-title: il8n Helper
+title: il8n
 name: il8nHelper
 category: Sass Utils | Mixins & Placeholders
 ---
+
+Filter styles for specific languages using language
+classes on the `body` element.
+
 */
 /*doc
 ---
@@ -252,7 +256,7 @@ use `il8n-only`.
 	text-transform: uppercase; // only upercasse for English
 }
 
-@include il8n-only('en', 'it') { ... } // multiple langs supported
+@include il8n-only('en', 'it') { ... } // multiple languages supported
 ```
 */
 /*doc
@@ -266,10 +270,10 @@ a language, use `il8n-exclude`.
 
 ```
 @include il8n-exclude('de') {
-	text-transform: uppercase; // uppercase every lang except for German
+	text-transform: uppercase; // uppercase every language except German
 }
 
-@include il8n-exclude('ja', 'es', 'de') { ... } // multiple langs supported
+@include il8n-exclude('ja', 'es', 'de') { ... } // multiple languages supported
 ```
 */
 /*doc

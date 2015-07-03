@@ -218,7 +218,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#il8nHelper">il8n Helper</a>
+											<a class="followLink" href="#il8nHelper">il8n</a>
 										</li>
 									
 
@@ -540,17 +540,18 @@ as data uris in a Sass map.</p><div class="codeBlock">
     <pre>@extend %clearfix;</pre>
   </div>
 </div>
-<h1 id="il8nHelper" class="styleguide">il8n Helper</h1>
-
+<h1 id="il8nHelper" class="styleguide">il8n</h1>
+<p class="styleguide">Filter styles for specific languages using language
+classes on the <code class="styleguide">body</code> element.</p>
 <h2 id="excludeLang" class="styleguide">il8n-exclude</h2>
 <p class="styleguide">To ensure a style rule is <strong>not</strong> applied to
 a language, use <code class="styleguide">il8n-exclude</code>.</p><div class="codeBlock">
   <div class="highlight">
     <pre>@include il8n-exclude('de') {
-    text-transform: uppercase; // uppercase every lang except for German
+    text-transform: uppercase; // uppercase every language except German
 }
 
-@include il8n-exclude('ja', 'es', 'de') { ... } // multiple langs supported</pre>
+@include il8n-exclude('ja', 'es', 'de') { ... } // multiple languages supported</pre>
   </div>
 </div>
 <h2 id="onlyLnag" class="styleguide">il8n-only</h2>
@@ -561,7 +562,7 @@ use <code class="styleguide">il8n-only</code>.</p><div class="codeBlock">
     text-transform: uppercase; // only upercasse for English
 }
 
-@include il8n-only('en', 'it') { ... } // multiple langs supported</pre>
+@include il8n-only('en', 'it') { ... } // multiple languages supported</pre>
   </div>
 </div>
 <h1 id="modalUtils" class="styleguide">Modal mixins</h1>
@@ -914,8 +915,8 @@ $(function() {
 				
 
 				index.add({
-					"title": "il8n Helper",
-					"breadcrumb": "Sass Utils | Mixins & Placeholders > il8n Helper",
+					"title": "il8n",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > il8n",
 					"path": "sass_utils_|_mixins_&_placeholders.html#il8nHelper"
 				});
 
