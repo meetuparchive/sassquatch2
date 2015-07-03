@@ -233,6 +233,47 @@ document flow.
 */
 /*doc
 ---
+title: il8n Helper
+name: il8nHelper
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+/*doc
+---
+title: il8n-only
+name: onlyLnag
+parent: il8nHelper
+---
+To set a style rule for one language only,
+use `il8n-only`.
+
+```
+@include il8n-only('en') {
+	text-transform: uppercase; // only upercasse for English
+}
+
+@include il8n-only('en', 'it') { ... } // multiple langs supported
+```
+*/
+/*doc
+---
+title: il8n-exclude
+name: excludeLang
+parent: il8nHelper
+---
+To ensure a style rule is __not__ applied to
+a language, use `il8n-exclude`.
+
+```
+@include il8n-exclude('de') {
+	text-transform: uppercase; // uppercase every lang except for German
+}
+
+@include il8n-exclude('ja', 'es', 'de') { ... } // multiple langs supported
+```
+*/
+/*doc
+---
 title: Animation
 name: animation
 category: Sass Utils | Mixins & Placeholders

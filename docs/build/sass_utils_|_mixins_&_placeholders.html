@@ -218,6 +218,25 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#il8nHelper">il8n Helper</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#modalUtils">Modal mixins</a>
 										</li>
 									
@@ -519,6 +538,30 @@ as data uris in a Sass map.</p><div class="codeBlock">
 <p class="styleguide">Clears floated children.</p><div class="codeBlock">
   <div class="highlight">
     <pre>@extend %clearfix;</pre>
+  </div>
+</div>
+<h1 id="il8nHelper" class="styleguide">il8n Helper</h1>
+
+<h2 id="excludeLang" class="styleguide">il8n-exclude</h2>
+<p class="styleguide">To ensure a style rule is <strong>not</strong> applied to
+a language, use <code class="styleguide">il8n-exclude</code>.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include il8n-exclude('de') {
+    text-transform: uppercase; // uppercase every lang except for German
+}
+
+@include il8n-exclude('ja', 'es', 'de') { ... } // multiple langs supported</pre>
+  </div>
+</div>
+<h2 id="onlyLnag" class="styleguide">il8n-only</h2>
+<p class="styleguide">To set a style rule for one language only,
+use <code class="styleguide">il8n-only</code>.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include il8n-only('en') {
+    text-transform: uppercase; // only upercasse for English
+}
+
+@include il8n-only('en', 'it') { ... } // multiple langs supported</pre>
   </div>
 </div>
 <h1 id="modalUtils" class="styleguide">Modal mixins</h1>
@@ -864,6 +907,36 @@ $(function() {
 					"title": "Clearfix placeholder",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Clearfix placeholder",
 					"path": "sass_utils_|_mixins_&_placeholders.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "il8n Helper",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > il8n Helper",
+					"path": "sass_utils_|_mixins_&_placeholders.html#il8nHelper"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "il8n-exclude",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > il8n-exclude",
+					"path": "sass_utils_|_mixins_&_placeholders.html#excludeLang"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "il8n-only",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > il8n-only",
+					"path": "sass_utils_|_mixins_&_placeholders.html#onlyLnag"
 				});
 
 			

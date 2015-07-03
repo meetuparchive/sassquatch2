@@ -235,3 +235,15 @@
 // VIEW
 // ---------------------------
 	$view-minWidth: 320px;
+
+
+// ---------------------------
+// il8n
+// ---------------------------
+$languageClasses: (
+	"en": '.lang_en',
+	"it": '.lang_it',
+	"es": '.lang_es',
+	"de": '.lang_es',
+	"ja": '.lang_ja'
+);
