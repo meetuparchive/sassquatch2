@@ -1,0 +1,8 @@
+*.swp
+*.sass-cache
+*.ruby-version
+*.lock
+.grunt/
+node_modules/
+bower_components/
+sassdoc/

@@ -17,7 +17,7 @@
   "dependencies": {
     "meetup-swatches": ">0.6.0",
     "bourbon": "4.2.3",
-    "julep": "0.0.1"
+    "julep": "0.1.0"
   },
   "license": "MIT"
 }
