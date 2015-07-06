@@ -13,83 +13,22 @@
  * GITHUB: https://github.com/meetup/sassquatch2
  * EMAIL: <adamd@meetup.com>, <mikep@meetup.com>, <richard@meetup.com>
  */
-/*doc
----
-title: String utils
-name: string
-category: Sass Utils | Functions
----
-*/
-/*doc
----
-title: str-firstCharToUpper
-name: str-firstCharToUpper
-parent: string
----
-Capitalizes first letter of a given string. Useful as a camelCase converter.
+/*
+-----------------------------------------
 
-_returns string_
+/\___ \         /\_ \
+\/__/\ \  __  __\//\ \      __   _____
+   _\ \ \/\ \/\ \ \ \ \   /'__`\/\ '__`\
+  /\ \_\ \ \ \_\ \ \_\ \_/\  __/\ \ \L\ \
+  \ \____/\ \____/ /\____\ \____\ \ ,__/
+   \/___/  \/___/  \/____/\/____/ \ \ \/
+                                   \ \_\
 
-```
-str-firstCharToUpper('snowflake') // -> 'Snowflake'
+-----------------------------------------
 
-.specialstr-firstCharToUpper("snowflake") // -> .specialSnowflake
-```
-*/
-/*doc
----
-title: str-replace
-name: str-replace
-parent: string
----
-Search and replace on strings.
+Meetup Sass utilities
 
-_returns string_
-
-```
-str-replace('inline-block', '-', '') // -> 'inlineblock'
-
-.display--str-replace("inline-block", "-block", "Block") -> .display--inlineBlock
-```
-*/
-/*doc
----
-title: Contrast/brightness utils
-name: brightness
-category: Sass Utils | Functions
----
-*/
-/*doc
----
-title: Perceived brightness value
-name: getPerceivedBrightness
-parent: brightness
----
-Gets brightness of a color on a scale of 0-255 based on a yiq color space.
-_Calculates green-weighted sum of RGB channels (green is perceived as brighter
-on additive color screens)._
-
-_returns int_
-
-```
-getPerceivedBrightness(#000) // -> 0
-```
-*/
-/*doc
----
-title: isDark/isLight
-name: isDarkisLight
-parent: brightness
----
-Checks a given color for brightness and returns a boolean.
-Our default dark/light threshold is 160 on a scale of 0-255
-
-_returns boolean_
-
-```
-isDark(#000) // -> true
-isLight(#000) // -> false
-```
+https://github.com/meetup/julep
 */
 /*doc
 ---
@@ -110,52 +49,51 @@ color: getPrimaryTextColor(#000);
 color: getPrimaryTextColor(#FFF);
 ```
 */
+.avatar--person,
+.avatar, .imgFill {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden; }
+
+.floatingAction > a,
+.floatingAction .floatingAction-content,
+.chunk, .bounds {
+  /**
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
+  *zoom: 1; }
+  .floatingAction > a:before,
+  .floatingAction .floatingAction-content:before,
+  .chunk:before, .bounds:before, .floatingAction > a:after,
+  .floatingAction .floatingAction-content:after,
+  .chunk:after, .bounds:after {
+    content: " ";
+    display: table; }
+  .floatingAction > a:after,
+  .floatingAction .floatingAction-content:after,
+  .chunk:after, .bounds:after {
+    clear: both; }
+
 /*doc
 ---
-title: Browser filter mixin (IE only)
-name: browserUtils
+title: Shapes
+name: shape
 category: Sass Utils | Mixins & Placeholders
 ---
-
-Targets styles to specific IE versions using
-the root class method (applying classes to the
-`body` tag with IE conditional comments).
-
-
-```
-.myClass {
-	@include browser-lessThanIE( 10 ) { ...styles for all IE versions below 10... }
-	@include browser-lessThanIE( 9 ) { ...styles for all IE versions below 9... }
-}
-```
 */
 /*doc
 ---
-title: Media Query Breakpoints
-name: breakpoints
-category: Sass Utils | Mixins & Placeholders
+title: Circle mixin
+name: circleMixin
+parent: shape
 ---
+Makes selected element a circle with border-radius
 
-### Mobile first mixin
-This breakpoint mixin uses a **mobile first**
-strategy, meaning the `medium` breakpoint, for
-example, applies to _medium screens and larger_.
-
-```scss
-	@include atMediaUp(medium) {
-		body::after {
-			content: "medium screens and larger can see me";
-		}
-	}
 ```
-
-Breakpoint name      | Description
----------------------| ---------------------------------------------
-`atMediaUp(small)`   | Small sreens and up
-`atMediaUp(medium)`  | Landscape on most phones and up; portrait on some phablets
-`atMediaUp(large)`   | Landscape on phabelts and up; portrait on most tablets or old desktops
-`atMediaUp(huge)`    | Modern desktop viewports and up or [ridiculous huge tablets](http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg)
-
+@mixin circle($color: black, $size: 12px)
+```
 */
 /*doc
 ---
@@ -191,45 +129,6 @@ Sets flexbox properties for a flex children.
 @include flexChild('grow'); // sets element to grow to fill remaining space in flex parent
 @include flexChild('shrink'); // sets element to shirnk to the width of its content
 ```
-*/
-/*doc
----
-title: Accessibility utils
-name: a11yUtil
-category: Sass Utils | Mixins & Placeholders
----
-
-Accessibility utilities based on the [a11y project](http://a11yproject.com/about.html)
-*/
-/*doc
----
-title: a11y Visibility
-name: a11yVisibilityMixin
-parent: a11yUtil
----
-
-### Hiding elements
-
-```
-@include a11yVisibility('hidden');
-```
-
-Takes element out of document flow and hides it
-by clipping to a 1x1 pixel. Allows content to be
-visually hidden but [available to screen readers](http://a11yproject.com/posts/how-to-hide-content/).
-
-
-### Showing a11y hidden elements
-
-```
-@include a11yVisibility('visibile');
-```
-
-When applied to an element hidden with `a11yHide()`,
-the element is forced to unclip and returned to the
-document flow.
-
-
 */
 /*doc
 ---
@@ -328,49 +227,6 @@ with a table-cell fallback for old IE.
 */
 /*doc
 ---
-title: Background Utilities
-name: background
-category: Sass Utils | Mixins & Placeholders
----
-*/
-/*doc
----
-title: Background clip mixin
-name: backgroundClip
-parent: background
----
-Sets background-clip property
-
-```
-@include background-clip($value: padding);
-@include background-clip('border');
-```
-*/
-/*doc
----
-title: Image fill placeholder
-name: imgFill
-parent: background
----
-Sets background properties that center
-background image, set size to 'cover',
-and overflow hidden.
-
-_[ie. avatars][avatar]_
-
-```
-@extend %imgFill;
-```
-*/
-.avatar--person,
-.avatar, .imgFill {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  overflow: hidden; }
-
-/*doc
----
 title: Button utilities
 name: button
 category: Sass Utils | Mixins & Placeholders
@@ -395,38 +251,6 @@ Disables user-select, sets cursor, and resets text-decoration.
   cursor: pointer;
   text-decoration: none !important; }
 
-/*doc
----
-title: Color
-name: colorUtil
-category: Sass Utils | Mixins & Placeholders
----
-*/
-/*doc
----
-title: SVG color
-name: svgColorMixin
-parent: colorUtil
----
-Sets properties to color SVG icons
-
-```
-@mixin color-svg($color: black);
-```
-*/
-/*doc
----
-title: SVG + Text color
-name: colorAllMixin
-parent: colorUtil
----
-Sets properties to apply color to SVG icons
-_and_ text.
-
-```
-@mixin color-all($color: black);
-```
-*/
 /*doc
 ---
 title: data uri images
@@ -477,45 +301,6 @@ Sets display property for psuedo-elements
 @include pseudoDisplay($value: block);
 ```
 */
-/*doc
----
-title: Float utils
-name: float
-category: Sass Utils | Mixins & Placeholders
----
-*/
-/*doc
----
-title: Clearfix placeholder
-name: clearfix
-parent: float
----
-Clears floated children.
-
-```
-@extend %clearfix;
-```
-*/
-.floatingAction > a,
-.floatingAction .floatingAction-content,
-.chunk, .bounds {
-  /**
-  * For IE 6/7 only
-  * Include this rule to trigger hasLayout and contain floats.
-  */
-  *zoom: 1; }
-  .floatingAction > a:before,
-  .floatingAction .floatingAction-content:before,
-  .chunk:before, .bounds:before, .floatingAction > a:after,
-  .floatingAction .floatingAction-content:after,
-  .chunk:after, .bounds:after {
-    content: " ";
-    display: table; }
-  .floatingAction > a:after,
-  .floatingAction .floatingAction-content:after,
-  .chunk:after, .bounds:after {
-    clear: both; }
-
 /*doc
 ---
 title: Modal mixins
@@ -576,25 +361,6 @@ Applies standard box-shadow
 .floatingAction:before, .hasJS .menu-actions {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
 
-/*doc
----
-title: Shapes
-name: shape
-category: Sass Utils | Mixins & Placeholders
----
-*/
-/*doc
----
-title: Circle mixin
-name: circleMixin
-parent: shape
----
-Makes selected element a circle with border-radius
-
-```
-@mixin circle($color: black, $size: 12px)
-```
-*/
 /*doc
 ---
 title: Text utils
