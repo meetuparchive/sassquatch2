@@ -194,6 +194,90 @@ Sets flexbox properties for a flex children.
 */
 /*doc
 ---
+title: Accessibility utils
+name: a11yUtil
+category: Sass Utils | Mixins & Placeholders
+---
+
+Accessibility utilities based on the [a11y project](http://a11yproject.com/about.html)
+*/
+/*doc
+---
+title: a11y Visibility
+name: a11yVisibilityMixin
+parent: a11yUtil
+---
+
+### Hiding elements
+
+```
+@include a11yVisibility('hidden');
+```
+
+Takes element out of document flow and hides it
+by clipping to a 1x1 pixel. Allows content to be
+visually hidden but [available to screen readers](http://a11yproject.com/posts/how-to-hide-content/).
+
+
+### Showing a11y hidden elements
+
+```
+@include a11yVisibility('visibile');
+```
+
+When applied to an element hidden with `a11yHide()`,
+the element is forced to unclip and returned to the
+document flow.
+
+
+*/
+/*doc
+---
+title: i18n
+name: i18nHelper
+category: Sass Utils | Mixins & Placeholders
+---
+
+Filter styles for specific languages using language
+classes on the `body` element.
+
+*/
+/*doc
+---
+title: i18n-only
+name: onlyLnag
+parent: i18nHelper
+---
+To set a style rule for one language only,
+use `i18n-only`.
+
+```
+@include i18n-only('en') {
+	text-transform: uppercase; // only upercasse for English
+}
+
+@include i18n-only('en', 'it') { ... } // multiple languages supported
+```
+*/
+/*doc
+---
+title: i18n-exclude
+name: excludeLang
+parent: i18nHelper
+---
+To ensure a style rule is __not__ applied to
+a language, use `i18n-exclude`.
+
+```
+@include i18n-exclude('de') {
+	text-transform: uppercase; // uppercase every language except German
+}
+
+@include i18n-exclude('ja', 'es', 'de') { ... } // multiple languages supported
+```
+*/
+/*doc
+---
 title: Animation
 name: animation
 category: Sass Utils | Mixins & Placeholders
@@ -278,86 +362,15 @@ title: Vertical-align children
 name: valign
 parent: align
 ---
-__Try to avoid using for essential, non-decorative things__
-Aligns children of selected element using flexbox.
+Aligns children of selected element using flexbox
+with a table-cell fallback for old IE.
 
 ```
-@extend %valignChildren;
-@extend %valignChildren--bottom;
+@include valignChildren(center); // centers children in element
+@include valignChildren(top); // positions children to top of element
+@include valignChildren(bottom); // positions children to bottom of element
 ```
 */
-.ieRoot_lt_IE10 .collection-header, .ieRoot_lt_IE10 .stripe-heroContent, .ieRoot_lt_IE10 .card--group {
-  display: table-cell;
-  vertical-align: center; }
-
-.collection-header {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -ms-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex;
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center; }
-  .ieRoot_lt_IE10 .collection-header {
-    display: block; }
-
-.stripe-heroContent, .card--group {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  -ms-flex-pack: start;
-  -webkit-box-align: flex;
-  box-align: flex;
-  -webkit-align-items: flex;
-  -ms-align-items: flex;
-  align-items: flex;
-  -ms-flex-align: flex;
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: end;
-  box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  justify-content: flex-end;
-  -ms-flex-pack: end; }
-  .ieRoot_lt_IE10 .stripe-heroContent, .ieRoot_lt_IE10 .card--group {
-    display: block; }
-
 /*doc
 ---
 title: Background Utilities
@@ -857,13 +870,15 @@ Display text for header hero elements.
 <h1 class="text--display">The hero gotham deserves</h1>
 ```
 */
-.text--headline, .text--graphic,
+.text--headline,
+.text--graphic,
 .text--display {
   color: rgba(0, 0, 0, 0.87);
   font-size: 32px;
   font-weight: normal;
   line-height: 1.25; }
-  .inverted .text--headline, .inverted .text--graphic, .inverted
+  .inverted .text--headline,
+  .inverted .text--graphic, .inverted
   .text--display {
     color: white; }
 
@@ -938,7 +953,8 @@ parent: bodyText
   stroke: transparent;
   fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
-  .inverted .text--hint {
+  .inverted
+  .text--hint {
     stroke: transparent;
     fill: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.3); }
@@ -957,7 +973,8 @@ parent: bodyText
   stroke: transparent;
   fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
-  .inverted .text--secondary {
+  .inverted
+  .text--secondary {
     stroke: transparent;
     fill: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
@@ -976,7 +993,8 @@ parent: bodyText
   stroke: transparent;
   fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
-  .inverted .text--tertiary {
+  .inverted
+  .text--tertiary {
     stroke: transparent;
     fill: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.3); }
@@ -1004,7 +1022,13 @@ parent: bodyText
 <p class="text--small">Small text is small</p>
 ```
 */
-.text--caption, .text--error, .card--group, .text--caption h1, .text--error h1, .card--group h1, .text--caption h2, .text--error h2, .card--group h2, .text--caption h3, .text--error h3, .card--group h3, .text--caption h4, .text--error h4, .card--group h4, .text--caption h5, .text--error h5, .card--group h5, .text--caption h6, .text--error h6, .card--group h6,
+.text--caption, .text--error, .card--group,
+.text--caption h1, .text--error h1, .card--group h1,
+.text--caption h2, .text--error h2, .card--group h2,
+.text--caption h3, .text--error h3, .card--group h3,
+.text--caption h4, .text--error h4, .card--group h4,
+.text--caption h5, .text--error h5, .card--group h5,
+.text--caption h6, .text--error h6, .card--group h6,
 .text--small,
 .text--small h1,
 .text--small h2,
@@ -1029,7 +1053,8 @@ parent: bodyText
   stroke: transparent;
   fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
-  .inverted .text--caption {
+  .inverted
+  .text--caption {
     stroke: transparent;
     fill: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
@@ -1164,6 +1189,54 @@ ul.bullets, .runningText ul {
 
 ol.bullets, .runningText ol {
   list-style-type: decimal; }
+
+/*doc
+---
+title: Debug text
+name: debugText
+category: Typography
+---
+
+Sometimes you just need to dump some text into a document
+to debug.
+
+By default, the `debug` element is hidden. Apply the `enableDebug` class
+to a parent element to display `debug` elements.
+
+_Setting the `enableDebug` class on `body` for dev only is recommended._
+
+```html_example
+<p class="debug">Invisible debug</p>
+
+<div class="enableDebug">
+<p class="debug">
+	Visible debug [ ChapterProto =>
+	chapterId=530569
+	parentChapterId=0
+	transitionalVenueId=0
+	relocatedZip=
+	name=Foreign Androids Feel Frustrated
+</p>
+</div>
+```
+*/
+.debug {
+  display: none; }
+  .enableDebug .debug {
+    display: block;
+    padding: 0.25em 0.5em;
+    margin-bottom: 16px;
+    font-family: Monaco, "Andale Mono", "Courier New", monospace;
+    font-size: 13px;
+    color: purple;
+    background: pink;
+    outline: 1px dotted red; }
+    .enableDebug .debug:before {
+      display: inline;
+      content: "DEBUG:";
+      color: red;
+      font-weight: 700;
+      padding-right: 0.25em; }
 
 /*doc
 ---
@@ -1526,115 +1599,235 @@ Error text is set explicitly with `text--error`.
   color: #d55741;
   margin-top: 4px; }
 
-.collection-header {
-  height: 48px;
-  margin-bottom: 0; }
-  .collection-header .collection-header-actions {
-    white-space: nowrap; }
-    .collection-header .collection-header-actions a {
-      box-sizing: border-box;
-      display: inline-block;
-      padding: 0 8px; }
-      .collection-header .collection-header-actions a:last-child {
-        padding-right: 0; }
+/*doc
+---
+title: Default table styles
+name: tableDefault
+category: Tables
+---
 
-.hscroll-wrap {
-  -webkit-overflow-scrolling: touch;
-  overflow: scroll;
-  overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none; }
-  .hscroll-wrap .hscroll {
-    box-sizing: content-box;
-    padding-left: 16px;
-    padding-right: 16px;
-    white-space: nowrap; }
-    .hscroll-wrap .hscroll li {
-      white-space: normal; }
-
-.hscroll-wrap::-webkit-scrollbar {
-  display: none; }
-
-.hscroll-wrap-wrap {
-  position: relative;
-  margin-left: -16px;
-  margin-right: -16px; }
-  .hscroll-wrap-wrap:before, .hscroll-wrap-wrap:after {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 16px;
-    top: 0; }
-  .hscroll-wrap-wrap:before {
-    left: 0;
-    background-image: -webkit-linear-gradient( left , #fff, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0)); }
-  .hscroll-wrap-wrap:after {
-    right: 0;
-    background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
-
-.hscroll-arrow {
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1; }
-  .is-hovered .hscroll-arrow, .hscroll-arrow:hover {
-    opacity: 1; }
-
-.hscroll-next {
-  right: 0; }
-
-.hscroll-prev {
-  left: 0; }
-
-.stripe--collection .hscroll-wrap-wrap:before {
-  background-image: -webkit-linear-gradient( left , #f3f6f9, rgba(243, 246, 249, 0));
-  background-image: linear-gradient(to right, #f3f6f9, rgba(243, 246, 249, 0)); }
-.stripe--collection .hscroll-wrap-wrap:after {
-  background-image: -webkit-linear-gradient( right , #f3f6f9, rgba(243, 246, 249, 0));
-  background-image: linear-gradient(to left, #f3f6f9, rgba(243, 246, 249, 0)); }
-
-.stripe--inverted .hscroll-wrap-wrap:before {
-  background-image: -webkit-linear-gradient( left , #353e48, rgba(53, 62, 72, 0));
-  background-image: linear-gradient(to right, #353e48, rgba(53, 62, 72, 0)); }
-.stripe--inverted .hscroll-wrap-wrap:after {
-  background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
-  background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
-
-/* INLINE FORM */
-.inline-form {
-  margin-left: -4px;
-  margin-right: -4px; }
-
-.small-input {
-  min-width: 72px; }
-
-.view--dimmed {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
+```html_example
+<table>
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>Number of escalators</th>
+			<th>State bird</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>New York</th>
+			<td>7,674</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Wyoming</th>
+			<td>2</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Oregon</th>
+			<td>400</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Florida</th>
+			<td>n/a</td>
+			<td>Cardinal</td>
+		</tr>
+	</tbody>
+</table>
+```
+*/
+table {
+  display: table;
   width: 100%;
-  z-index: 20;
-  -webkit-transition: all 0.15s;
-  transition: all 0.15s;
-  background: rgba(0, 0, 0, 0.75);
-  opacity: 1; }
+  border-collapse: collapse;
+  table-layout: auto; }
 
-.view--dimmed-close {
-  -webkit-transition: all 0.15s 0.15s;
-  transition: all 0.15s 0.15s;
-  display: block;
-  height: 100vh;
-  left: 0;
-  line-height: 100vh;
-  position: fixed;
-  text-align: center;
-  top: 0;
+caption,
+td,
+th {
+  padding: 8px 16px;
+  text-align: left;
   vertical-align: middle;
-  width: 100%; }
+  color: rgba(0, 0, 0, 0.54); }
+  .inverted caption, .inverted
+  td, .inverted
+  th {
+    color: rgba(255, 255, 255, 0.7); }
+
+caption {
+  padding-left: 0; }
+
+thead th {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+/*doc
+---
+title: Reset table
+name: resetTable
+category: Tables
+---
+
+```html_example
+<table class="resetTable">
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>Number of escalators</th>
+			<th>State bird</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>New York</th>
+			<td>7,674</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Wyoming</th>
+			<td>2</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Oregon</th>
+			<td>400</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Florida</th>
+			<td>n/a</td>
+			<td>Cardinal</td>
+		</tr>
+	</tbody>
+</table>
+```
+*/
+.resetTable caption,
+.resetTable tbody,
+.resetTable thead,
+.resetTable td,
+.resetTable th {
+  padding: 0;
+  font-size: 16px;
+  font-weight: normal;
+  border-width: 0;
+  vertical-align: top;
+  color: rgba(0, 0, 0, 0.87); }
+  .inverted .resetTable caption, .inverted
+  .resetTable tbody, .inverted
+  .resetTable thead, .inverted
+  .resetTable td, .inverted
+  .resetTable th {
+    color: white; }
+
+/*doc
+---
+title: Bordered table
+name: borderedTable
+category: Tables
+---
+Apply the `borderedTable` class to apply borders to table cells.
+
+```html_example
+<table class="borderedTable">
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>Number of escalators</th>
+			<th>State bird</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>New York</th>
+			<td>7,674</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Wyoming</th>
+			<td>2</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Oregon</th>
+			<td>400</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Florida</th>
+			<td>n/a</td>
+			<td>Cardinal</td>
+		</tr>
+	</tbody>
+</table>
+```
+*/
+.borderedTable td, .borderedTable tbody th {
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12); }
+  .borderedTable td:last-child, .borderedTable tbody th:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.12); }
+.borderedTable thead th {
+  border-width: 0; }
+.borderedTable tbody tr:last-child td, .borderedTable tbody tr:last-child th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+/*doc
+---
+title: Striped table
+name: stripedTable
+category: Tables
+---
+Apply the `stripedTable` class to add a background
+stripe to every other row of the table.
+
+```html_example
+<table class="stripedTable">
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>Number of escalators</th>
+			<th>State bird</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>New York</th>
+			<td>7,674</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Wyoming</th>
+			<td>2</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Oregon</th>
+			<td>400</td>
+			<td>Cardinal</td>
+		</tr>
+		<tr>
+			<th>Florida</th>
+			<td>n/a</td>
+			<td>Cardinal</td>
+		</tr>
+	</tbody>
+</table>
+```
+
+*/
+.stripedTable tbody tr:nth-child(odd) td,
+.stripedTable tbody tr:nth-child(odd) th {
+  background-color: #f3f6f9; }
+  .inverted .stripedTable tbody tr:nth-child(odd) td, .inverted
+  .stripedTable tbody tr:nth-child(odd) th {
+    background-color: rgba(0, 0, 0, 0.26); }
 
 /*doc
 ---
@@ -1726,6 +1919,13 @@ Uses the `stripe--photoHero` variant.
 ```
 */
 .stripe--hero, .stripe--photoHero {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #d55741;
   background-size: cover;
   background-position: center 20%;
@@ -1751,11 +1951,34 @@ Uses the `stripe--photoHero` variant.
   top: 0; }
 
 .stripe-heroContent {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end;
   min-height: 240px;
   position: relative;
   text-align: center;
   max-width: 1100px;
   padding-top: 56px; }
+  .ieRoot_lt_IE10 .stripe-heroContent {
+    display: table-cell;
+    vertical-align: bottom; }
   @media only screen and (min-width: 640px) {
     .stripe-heroContent {
       min-height: 384px; } }
@@ -1789,7 +2012,7 @@ Bottom spacing is provided with `chunk`.
 ```
 
 */
-ul, ol, .list, .menu-actions,
+ul, ol, .list, .menu-actions, .pagination,
 .list--reset {
   list-style: none;
   padding-left: 0; }
@@ -1846,7 +2069,6 @@ better docs TK
     padding: 0 16px 16px 0;
     vertical-align: top;
     width: 50%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
 
 /*doc
@@ -2036,6 +2258,9 @@ each list item and right gutters between items.
   .inlineblockList > li {
     display: inline-block;
     padding-right: 8px; }
+    .hscroll-content > li:last-child,
+    .inlineblockList > li:last-child {
+      padding-right: 0; }
 
 /*doc
 ---
@@ -2044,6 +2269,8 @@ name: hscroll
 category: Layout
 ---
 Applies styles for horizontal scrolling lists.
+
+## Basic `hscroll`
 
 ```html_example
 <div class="hscroll">
@@ -2099,6 +2326,8 @@ Applies styles for horizontal scrolling lists.
 	</ul>
 </div>
 ```
+
+## Group cards `hscroll`
 
 ```html_example
 <div class="hscroll">
@@ -2203,6 +2432,66 @@ Applies styles for horizontal scrolling lists.
 </div>
 ```
 
+## Gradient `hscroll`
+Wrap the `hscroll` element with `hscrollGradientWrap` to add
+gradient overlays to both sides of the `hscroll`.
+
+```html_example
+<div class="hscrollGradientWrap">
+	<div class="hscroll">
+		<ul class="hscroll-content">
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+		</ul>
+	</div>
+</div>
+```
 ## Media-conditional `hscroll`
 It's possible to create an `hscroll` for small screens that expands
 into a non-scrolling list in the document flow for larger screens.
@@ -2271,6 +2560,36 @@ Class                       | Description
 `atLarge_hscroll--unclip`  | Allows visible overflow (as inline block list) at large & up
 
 */
+.hscrollGradientWrap {
+  position: relative; }
+  .hscrollGradientWrap:before, .hscrollGradientWrap:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 16px;
+    top: 0; }
+  .hscrollGradientWrap:before {
+    left: 0;
+    background-image: -webkit-linear-gradient( left , #fff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, #fff, rgba(255, 255, 255, 0)); }
+  .hscrollGradientWrap:after {
+    right: 0;
+    background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
+  .stripe--collection .hscrollGradientWrap:before {
+    background-image: -webkit-linear-gradient( left , #f3f6f9, rgba(243, 246, 249, 0));
+    background-image: linear-gradient(to right, #f3f6f9, rgba(243, 246, 249, 0)); }
+  .stripe--collection .hscrollGradientWrap:after {
+    background-image: -webkit-linear-gradient( right , #f3f6f9, rgba(243, 246, 249, 0));
+    background-image: linear-gradient(to left, #f3f6f9, rgba(243, 246, 249, 0)); }
+  .hscrollGradientWrap .stripe--inverted:before {
+    background-image: -webkit-linear-gradient( left , #353e48, rgba(53, 62, 72, 0));
+    background-image: linear-gradient(to right, #353e48, rgba(53, 62, 72, 0)); }
+  .hscrollGradientWrap .stripe--inverted:after {
+    background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
+    background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
+
 .hscroll {
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll; }
@@ -2495,6 +2814,8 @@ _Includes `table-cell` fallback for IE8._
   -ms-flex-align: flex;
   -webkit-box-orient: horizontal;
   box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: row;
   flex-direction: row;
   -ms-flex-direction: row;
@@ -2504,7 +2825,6 @@ _Includes `table-cell` fallback for IE8._
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap; }
   .ieRoot_lt_IE10 .row {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: table;
     table-layout: auto;
@@ -2702,6 +3022,8 @@ Class                   | Description
   -ms-flex-align: flex;
   -webkit-box-orient: vertical;
   box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column; }
@@ -2741,6 +3063,8 @@ Class                   | Description
     -ms-flex-align: flex;
     -webkit-box-orient: horizontal;
     box-orient: horizontal;
+    -webkit-box-direction: normal;
+    box-direction: normal;
     -webkit-flex-direction: row;
     flex-direction: row;
     -ms-flex-direction: row;
@@ -2750,7 +3074,6 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .ieRoot_lt_IE10 .atMedium_stack--spread {
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       display: table;
       table-layout: auto;
@@ -2807,6 +3130,8 @@ Class                   | Description
     -ms-flex-align: flex;
     -webkit-box-orient: horizontal;
     box-orient: horizontal;
+    -webkit-box-direction: normal;
+    box-direction: normal;
     -webkit-flex-direction: row;
     flex-direction: row;
     -ms-flex-direction: row;
@@ -2816,7 +3141,6 @@ Class                   | Description
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     .ieRoot_lt_IE10 .atLarge_stack--spread {
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       display: table;
       table-layout: auto;
@@ -2910,7 +3234,6 @@ the "detail" responsibility.
 ```
 */
 .view {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: white;
   width: 100%;
@@ -2969,7 +3292,6 @@ Class                      | Description
 
 */
 .view-head {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: #d55741;
   color: white;
@@ -3497,7 +3819,6 @@ Class                   | Description
 `.button--icon`         | button with icon
 */
 .button, .toggleButton-label {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
@@ -3600,6 +3921,8 @@ Class                   | Description
   flex-wrap: nowrap;
   -webkit-box-orient: horizontal;
   box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
   -webkit-flex-direction: row;
   flex-direction: row;
   -ms-flex-direction: row;
@@ -3610,7 +3933,6 @@ Class                   | Description
   justify-content: flex-end;
   -ms-flex-pack: end; }
   .ieRoot_lt_IE10 .button--icon {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: table;
     table-layout: auto; }
@@ -3847,7 +4169,6 @@ _(The inline style on the card element is for documentation purposes only)_
 ```
 */
 .card {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   background: white;
@@ -3867,8 +4188,25 @@ _(The inline style on the card element is for documentation purposes only)_
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-pack: end;
+  box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: end;
   border-radius: 0;
-  padding: 16px; }
+  padding: 16px;
+  height: 160px; }
+  .ieRoot_lt_IE10 .card--group {
+    display: table-cell;
+    vertical-align: bottom; }
   .card--group:before {
     background-color: rgba(15, 20, 31, 0);
     background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 25%, rgba(15, 20, 31, 0.9) 100%);
@@ -4038,12 +4376,12 @@ Use as a guide for markup.
 <div class="menu">
 	<a class="menu-toggle" href="#">(icon)</a>
 
-	<ul class="menu-actions">
+	<ul role="menu" class="menu-actions">
 		<li class="menu-actions-item">
-			<a href="#">Select All</a>
+			<a role="menuitem" href="#">Select All</a>
 		</li>
 		<li class="menu-actions-item">
-			<a href="#">Select None</a>
+			<a role="menuitem" href="#">Select None</a>
 		</li>
 	</ul>
 </div>
@@ -4084,6 +4422,240 @@ Use as a guide for markup.
 
 .menu-actions--active {
   display: block !important; }
+
+/*doc
+---
+title: Pagination
+name: uiPager
+category: UI Components
+---
+
+```html_example
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>2 <em class="text--hide">Current page</em></span>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>3</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>4</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>5</a>
+	</li>
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>6</a>
+	</li>
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>7</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
+
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>11</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>12</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>13</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>14 <em class="text--hide">Current page</em></span>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>15</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>16</a>
+	</li>
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>17</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
+
+<div class="chunk"><ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="prev">←</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<span class="text--hint">&hellip;</span>
+	</li>
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>19</a>
+	</li>
+	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
+		<a href="#" class="link"><span class="text--hide">Page </span>20</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>21</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>22</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="link"><span class="text--hide">Page </span>23</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
+		<span>24 <em class="text--hide">Current page</em></span>
+	</li>
+	<li class="pagination-page pagination-page--persist">
+		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	</li>
+	<li class="pagination-page pagination-page--persist pagination-page--control">
+		<a href="#" class="link" rel="next">→</a>
+	</li>
+</ul></div>
+```
+*/
+.pagination {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-lines: single;
+  box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify; }
+  .ieRoot_lt_IE10 .pagination {
+    box-sizing: border-box;
+    display: table;
+    table-layout: auto;
+    width: 100%; }
+
+.pagination-page {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border-radius: 3px; }
+  .pagination-page:not(.pagination-page--control) {
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -ms-flex-positive: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    -ms-flex-negative: 0;
+    -webkit-flex-basis: auto;
+    flex-basis: auto;
+    -ms-flex-preferred-size: auto;
+    width: initial;
+    padding: 8px; }
+    .ieRoot_lt_IE10 .pagination-page:not(.pagination-page--control) {
+      width: auto; }
+  @media only screen and (min-width: 440px) {
+    .pagination-page {
+      clip: auto;
+      clip: rect(auto auto auto auto);
+      position: static;
+      overflow: visible;
+      margin: 0;
+      width: auto;
+      height: auto;
+      min-width: 24px; } }
+
+.pagination-page--persist {
+  clip: auto;
+  clip: rect(auto auto auto auto);
+  position: static;
+  overflow: visible;
+  margin: 0;
+  width: auto;
+  height: auto;
+  min-width: 24px; }
+
+.pagination-page--control {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  width: auto;
+  min-width: 0; }
+  .ieRoot_lt_IE10 .pagination-page--control {
+    display: table-cell;
+    width: 50%;
+    /* for rows with two items, stop at 50% */ }
+
+.pagination-page--current {
+  background: #3987cb;
+  font-weight: bold;
+  margin: 0 8px; }
+  @media only screen and (min-width: 440px) {
+    .pagination-page--current {
+      margin: 0; } }
 
 /*doc
 ---
@@ -4353,18 +4925,21 @@ Class                    | Description
 `.valign--top`           | vertically centers element to top
 
 */
+.pagination-page--control:first-child,
 .align--left {
   -webkit-align-self: left;
   align-self: left;
   -ms-flex-item-align: left;
   text-align: left !important; }
 
+.pagination-page--control:last-child,
 .align--right {
   -webkit-align-self: right;
   align-self: right;
   -ms-flex-item-align: right;
   text-align: right !important; }
 
+.pagination-page,
 .align--center {
   -webkit-align-self: center;
   align-self: center;
@@ -4383,6 +4958,7 @@ Class                    | Description
   -ms-flex-item-align: end;
   vertical-align: bottom !important; }
 
+.pagination-page,
 .valign--middle {
   -webkit-align-self: center;
   align-self: center;
@@ -4535,7 +5111,6 @@ Class                   | Description
 `.display--block`       | sets `display` to `block`
 `.display--inline`      | sets `display` to `inline`
 `.display--inlineBlock` | sets `display` to `inlineblock`
-
 */
 .display--none {
   display: none; }
@@ -4645,105 +5220,6 @@ Class                        | Description
 .hasJS .hasJS_display--inlineBlock {
   display: inline-block; }
 
-/*doc
----
-title: Media-conditional modifiers
-name: mediaMod
-category: Modifier Classes
----
-
-Media-conditional modifiers allow us to apply
-a modification at a specific breakpoint.
-
-_Uses atMediaUp_
-
-### Example
-
-```html_example
-	<p class="atLarge_align--center">
-		This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
-	</p>
-```
-
-### Supported modifications
-Using this signature: `.at[Breakpoint]_[property]--[variant]`
-
-Breakpoints        | Property       | Variants
------------------- | -------------- | ---------------------------
-`medium`, `large`  | `align`        | `center`, `right`, `left`
-`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
-`medium`, `large`  | `padding`      | `none`
-`medium`, `large`  | `margin`       | `center`
-`medium`, `large`  | `border`       | `top`, `none`
-*/
-@media only screen and (min-width: 640px) {
-  .atMedium_align--center {
-    text-align: center !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_align--center {
-    text-align: center !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_align--right {
-    text-align: right !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_align--right {
-    text-align: right !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_align--left {
-    text-align: left !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_align--left {
-    text-align: left !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--none {
-    display: none !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--none {
-    display: none !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--block {
-    display: block !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--block {
-    display: block !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--inline {
-    display: inline !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--inline {
-    display: inline !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_display--inlineBlock {
-    display: inline-block !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_display--inlineBlock {
-    display: inline-block !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_padding--none {
-    padding: 0 !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_padding--none {
-    padding: 0 !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_margin--center {
-    margin-left: auto;
-    margin-right: auto; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_margin--center {
-    margin-left: auto;
-    margin-right: auto; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_border--top {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_border--top {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
-@media only screen and (min-width: 640px) {
-  .atMedium_border--none {
-    border-width: 0 !important; } }
-@media only screen and (min-width: 840px) {
-  .atLarge_border--none {
-    border-width: 0 !important; } }
 /*doc
 ---
 title: Media Sizing
@@ -4969,5 +5445,178 @@ Sets background cover and position for photo thumbnails.
     content: '';
     display: block;
     padding-top: 100%; }
+
+/*doc
+---
+title: Visibility
+name: visibilityMod
+category: Modifier Classes
+---
+Modifies `visibility` property of an element __or__
+in the case of `a11y` classes, visually hides an element
+that will [not be ignored by screen readers](http://a11yproject.com/posts/how-to-hide-content/).
+
+Class                    | Description
+------------------------ | --------------------------------
+`.visibility--a11yHide`  | takes element out of document flow and hides it (screen readers will NOT ignore the element)
+`.visibility--a11yShow`  | reveals a a11y hidden element for sighted users
+*/
+.visibility--a11yHide {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px; }
+
+.visibility--a11yShow {
+  clip: auto;
+  clip: rect(auto auto auto auto);
+  position: static;
+  overflow: visible;
+  margin: 0;
+  width: auto;
+  height: auto; }
+
+/*doc
+---
+title: Media-conditional modifiers
+name: mediaMod
+category: Modifier Classes
+---
+
+Media-conditional modifiers allow us to apply
+a modification at a specific breakpoint.
+
+_Uses atMediaUp_
+
+### Example
+
+```html_example
+	<p class="atLarge_align--center">
+		This text inherits the default left alignment by default, but at `large` viewports and up, the text should center
+	</p>
+```
+
+### Supported modifications
+Using this signature: `.at[Breakpoint]_[property]--[variant]`
+
+Breakpoints        | Property       | Variants
+------------------ | -------------- | ---------------------------
+`medium`, `large`  | `align`        | `center`, `right`, `left`
+`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `padding`      | `none`
+`medium`, `large`  | `margin`       | `center`
+`medium`, `large`  | `border`       | `top`, `none`
+`medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
+*/
+@media only screen and (min-width: 640px) {
+  .atMedium_align--center {
+    text-align: center !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_align--center {
+    text-align: center !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_align--right {
+    text-align: right !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_align--right {
+    text-align: right !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_align--left {
+    text-align: left !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_align--left {
+    text-align: left !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--none {
+    display: none !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--none {
+    display: none !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--block {
+    display: block !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--block {
+    display: block !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--inline {
+    display: inline !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--inline {
+    display: inline !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--inlineBlock {
+    display: inline-block !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--inlineBlock {
+    display: inline-block !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_visibility--a11yHide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_visibility--a11yHide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_visibility--a11yShow {
+    clip: auto;
+    clip: rect(auto auto auto auto);
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_visibility--a11yShow {
+    clip: auto;
+    clip: rect(auto auto auto auto);
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_padding--none {
+    padding: 0 !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_padding--none {
+    padding: 0 !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_margin--center {
+    margin-left: auto;
+    margin-right: auto; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_margin--center {
+    margin-left: auto;
+    margin-right: auto; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_border--top {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_border--top {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_border--none {
+    border-width: 0 !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_border--none {
+    border-width: 0 !important; } }
 
 /*# sourceMappingURL=sassquatch.css.map */

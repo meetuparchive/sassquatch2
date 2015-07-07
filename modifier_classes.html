@@ -211,6 +211,15 @@
 									
 
 								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#visibilityMod">Visibility</a>
+										</li>
+									
+
+								
 							</ul>
 						
 					</li>
@@ -222,6 +231,11 @@
 				
 					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="typography.html">Typography</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="tables.html">Tables</a>
 						
 					</li>
 				
@@ -511,6 +525,11 @@ a modification at a specific breakpoint.</p><p class="styleguide"><em>Uses atMed
 <td><code class="styleguide">border</code></td>
 <td><code class="styleguide">top</code>, <code class="styleguide">none</code></td>
 </tr>
+<tr>
+<td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
+<td><code class="styleguide">visibility</code></td>
+<td><code class="styleguide">a11yHide</code>, <code class="styleguide">a11yShow</code></td>
+</tr>
  </table>
 <h1 id="sizeMod" class="styleguide">Media Sizing</h1>
 <p class="styleguide">Classes for applying dimensions to an element.</p><table class="styleguide"> <tr>
@@ -686,7 +705,23 @@ SVG icon (use descriptive text for screen readers).</p><p class="styleguide"><em
     </div>
   </div>
 </div>
-	</main>
+
+<h1 id="visibilityMod" class="styleguide">Visibility</h1>
+<p class="styleguide">Modifies <code class="styleguide">visibility</code> property of an element <strong>or</strong>
+in the case of <code class="styleguide">a11y</code> classes, visually hides an element
+that will <a class="styleguide" href="http://a11yproject.com/posts/how-to-hide-content/" title="http://a11yproject.com/posts/how-to-hide-content/">not be ignored by screen readers</a>.</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.visibility--a11yHide</code></td>
+<td>takes element out of document flow and hides it (screen readers will NOT ignore the element)</td>
+</tr>
+<tr>
+<td><code class="styleguide">.visibility--a11yShow</code></td>
+<td>reveals a a11y hidden element for sighted users</td>
+</tr>
+ </table>	</main>
 	</section>
 
 <!-- lunr.js search index -->
@@ -730,6 +765,26 @@ $(function() {
 
 	
 		
+			
+				
+				
+
+				index.add({
+					"title": "Accessibility utils",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > Accessibility utils",
+					"path": "sass_utils_|_mixins_&_placeholders.html#a11yUtil"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "a11y Visibility",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > a11y Visibility",
+					"path": "sass_utils_|_mixins_&_placeholders.html#a11yVisibilityMixin"
+				});
+
 			
 				
 				
@@ -958,6 +1013,36 @@ $(function() {
 					"title": "Clearfix placeholder",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Clearfix placeholder",
 					"path": "sass_utils_|_mixins_&_placeholders.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "i18n",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > i18n",
+					"path": "sass_utils_|_mixins_&_placeholders.html#i18nHelper"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "i18n-exclude",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > i18n-exclude",
+					"path": "sass_utils_|_mixins_&_placeholders.html#excludeLang"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "i18n-only",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > i18n-only",
+					"path": "sass_utils_|_mixins_&_placeholders.html#onlyLnag"
 				});
 
 			
@@ -1285,6 +1370,16 @@ $(function() {
 				});
 
 			
+				
+				
+
+				index.add({
+					"title": "Visibility",
+					"breadcrumb": "Modifier Classes > Visibility",
+					"path": "modifier_classes.html#visibilityMod"
+				});
+
+			
 		
 	
 		
@@ -1396,6 +1491,16 @@ $(function() {
 					"title": "Cards",
 					"breadcrumb": "UI Components > Cards",
 					"path": "ui_components.html#uiCard"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Pagination",
+					"breadcrumb": "UI Components > Pagination",
+					"path": "ui_components.html#uiPager"
 				});
 
 			
@@ -1537,6 +1642,16 @@ $(function() {
 				
 
 				index.add({
+					"title": "Debug text",
+					"breadcrumb": "Typography > Debug text",
+					"path": "typography.html#debugText"
+				});
+
+			
+				
+				
+
+				index.add({
 					"title": "Headings",
 					"breadcrumb": "Typography > Headings",
 					"path": "typography.html#headings"
@@ -1560,6 +1675,50 @@ $(function() {
 					"title": "Headline text",
 					"breadcrumb": "Typography > Headline text",
 					"path": "typography.html#headlineText"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				index.add({
+					"title": "Bordered table",
+					"breadcrumb": "Tables > Bordered table",
+					"path": "tables.html#borderedTable"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Reset table",
+					"breadcrumb": "Tables > Reset table",
+					"path": "tables.html#resetTable"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Striped table",
+					"breadcrumb": "Tables > Striped table",
+					"path": "tables.html#stripedTable"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Default table styles",
+					"breadcrumb": "Tables > Default table styles",
+					"path": "tables.html#tableDefault"
 				});
 
 			
