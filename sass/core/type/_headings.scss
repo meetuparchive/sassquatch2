@@ -46,7 +46,9 @@ h2 {
 	font-size: $font-size;
 	font-weight: $W_bold;
 	line-height: 1.5;
-	text-transform: uppercase;
+	@include i18n-only('en') {
+		text-transform: uppercase;
+	}
 }
 
 // H3 - H6

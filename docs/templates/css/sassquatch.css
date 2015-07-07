@@ -847,8 +847,9 @@ h2 {
   color: #d55741;
   font-size: 16px;
   font-weight: 700;
-  line-height: 1.5;
-  text-transform: uppercase; }
+  line-height: 1.5; }
+  .lang_en h2 {
+    text-transform: uppercase; }
 
 h3, h4, h5, h6 {
   color: rgba(0, 0, 0, 0.87);
@@ -4376,12 +4377,12 @@ Use as a guide for markup.
 <div class="menu">
 	<a class="menu-toggle" href="#">(icon)</a>
 
-	<ul class="menu-actions">
+	<ul role="menu" class="menu-actions">
 		<li class="menu-actions-item">
-			<a href="#">Select All</a>
+			<a role="menuitem" href="#">Select All</a>
 		</li>
 		<li class="menu-actions-item">
-			<a href="#">Select None</a>
+			<a role="menuitem" href="#">Select None</a>
 		</li>
 	</ul>
 </div>
@@ -4686,8 +4687,9 @@ Class                | Description
   border-radius: 3px;
   color: white;
   display: inline-block;
-  padding: 4px;
-  text-transform: capitalize; }
+  padding: 4px; }
+  .lang_en .rsvpTag {
+    text-transform: capitalize; }
 
 .rsvpTag--yes {
   background: #8cbf6a; }
