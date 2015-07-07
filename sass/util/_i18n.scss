@@ -1,0 +1,70 @@
+/*doc
+---
+title: i18n
+name: i18nHelper
+category: Sass Utils | Mixins & Placeholders
+---
+
+Filter styles for specific languages using language
+classes on the `body` element.
+
+*/
+
+/*doc
+---
+title: i18n-only
+name: onlyLnag
+parent: i18nHelper
+---
+To set a style rule for one language only,
+use `i18n-only`.
+
+```
+@include i18n-only('en') {
+	text-transform: uppercase; // only upercasse for English
+}
+
+@include i18n-only('en', 'it') { ... } // multiple languages supported
+```
+*/
+@mixin i18n-only($langs...) {
+	@each $lang in $langs {
+		$class: map-get($languageClasses, $lang);
+
+		@if $class {
+			.#{$class} & {
+				@content;
+			}
+		}
+	}
+}
+
+/*doc
+---
+title: i18n-exclude
+name: excludeLang
+parent: i18nHelper
+---
+To ensure a style rule is __not__ applied to
+a language, use `i18n-exclude`.
+
+```
+@include i18n-exclude('de') {
+	text-transform: uppercase; // uppercase every language except German
+}
+
+@include i18n-exclude('ja', 'es', 'de') { ... } // multiple languages supported
+```
+*/
+@mixin i18n-exclude($langs...) {
+	@each $lang in $langs {
+		$class: map-get($languageClasses, $lang);
+
+		@if $class {
+			body:not(.#{$class}) & {
+				@content;
+			}
+		}
+	}
+}
+

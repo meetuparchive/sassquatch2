@@ -218,6 +218,25 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#i18nHelper">i18n</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#modalUtils">Modal mixins</a>
 										</li>
 									
@@ -519,6 +538,31 @@ as data uris in a Sass map.</p><div class="codeBlock">
 <p class="styleguide">Clears floated children.</p><div class="codeBlock">
   <div class="highlight">
     <pre>@extend %clearfix;</pre>
+  </div>
+</div>
+<h1 id="i18nHelper" class="styleguide">i18n</h1>
+<p class="styleguide">Filter styles for specific languages using language
+classes on the <code class="styleguide">body</code> element.</p>
+<h2 id="excludeLang" class="styleguide">i18n-exclude</h2>
+<p class="styleguide">To ensure a style rule is <strong>not</strong> applied to
+a language, use <code class="styleguide">i18n-exclude</code>.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include i18n-exclude('de') {
+    text-transform: uppercase; // uppercase every language except German
+}
+
+@include i18n-exclude('ja', 'es', 'de') { ... } // multiple languages supported</pre>
+  </div>
+</div>
+<h2 id="onlyLnag" class="styleguide">i18n-only</h2>
+<p class="styleguide">To set a style rule for one language only,
+use <code class="styleguide">i18n-only</code>.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include i18n-only('en') {
+    text-transform: uppercase; // only upercasse for English
+}
+
+@include i18n-only('en', 'it') { ... } // multiple languages supported</pre>
   </div>
 </div>
 <h1 id="modalUtils" class="styleguide">Modal mixins</h1>
@@ -864,6 +908,36 @@ $(function() {
 					"title": "Clearfix placeholder",
 					"breadcrumb": "Sass Utils | Mixins & Placeholders > Clearfix placeholder",
 					"path": "sass_utils_|_mixins_&_placeholders.html#clearfix"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "i18n",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > i18n",
+					"path": "sass_utils_|_mixins_&_placeholders.html#i18nHelper"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "i18n-exclude",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > i18n-exclude",
+					"path": "sass_utils_|_mixins_&_placeholders.html#excludeLang"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "i18n-only",
+					"breadcrumb": "Sass Utils | Mixins & Placeholders > i18n-only",
+					"path": "sass_utils_|_mixins_&_placeholders.html#onlyLnag"
 				});
 
 			
