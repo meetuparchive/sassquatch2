@@ -41,6 +41,7 @@
 // TYPOGRAPHY
 // ---------------------------
 	$font : "Whitney", helvetica, arial, sans-serif;
+	$font--mono : Monaco, "Andale Mono", "Courier New", monospace;
 
 	// Sizes
 	$font-size-small    : 13px;
@@ -129,8 +130,15 @@
 
 
 // ---------------------------
+// ROOT CLASSES
+// ---------------------------
+	$root-browserIEPrefix: 'ieRoot_lt_IE'; // _[versionNumber] is appended
+	$root-debugEnable: 'enableDebug';
+
+// ---------------------------
 // EXTENDED COLORS
 // ---------------------------
+	// TODO: move to swatches?
 	$C_accentDark            : darken($C_red, 8%);
 
 
@@ -216,9 +224,28 @@
 		"spaceBetween": space-between,
 		"spaceAround": space-around
 	);
+	$flexAlignMap: (
+		"top": flex-start,
+		"bottom": flex-end,
+		"center": center
+	);
 
 
 // ---------------------------
 // VIEW
 // ---------------------------
 	$view-minWidth: 320px;
+
+
+// ---------------------------
+// il8n
+// ---------------------------
+$languageClasses: (
+	"en": '.lang_en',
+	"es": '.lang_es',
+	"de": '.lang_es',
+	"fr": '.lang_fr',
+	"it": '.lang_it',
+	"ja": '.lang_ja',
+	"pt": '.lang_pt'
+);

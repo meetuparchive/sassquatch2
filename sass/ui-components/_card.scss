@@ -198,7 +198,7 @@ $_eventStripes: (
 );
 
 .card {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 	display: block;
 	background: $C_contentBG;
 	border: 1px solid $C_border;
@@ -211,12 +211,12 @@ $_eventStripes: (
 }
 
 .card--group {
-	@extend %valignChildren--bottom;
-	@extend %text--small;
-	@include display(flex);
+	@include valignChildren(bottom);
 	@include textProtectionScrim();
+	@extend %text--small;
 	border-radius: 0;
 	padding: $space;
+	height: $block-4;
 }
 .card--group-content {
 	position: relative;

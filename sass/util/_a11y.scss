@@ -1,0 +1,61 @@
+/*doc
+---
+title: Accessibility utils
+name: a11yUtil
+category: Sass Utils | Mixins & Placeholders
+---
+
+Accessibility utilities based on the [a11y project](http://a11yproject.com/about.html)
+*/
+
+
+/*doc
+---
+title: a11y Visibility
+name: a11yVisibilityMixin
+parent: a11yUtil
+---
+
+### Hiding elements
+
+```
+@include a11yVisibility('hidden');
+```
+
+Takes element out of document flow and hides it
+by clipping to a 1x1 pixel. Allows content to be
+visually hidden but [available to screen readers](http://a11yproject.com/posts/how-to-hide-content/).
+
+
+### Showing a11y hidden elements
+
+```
+@include a11yVisibility('visibile');
+```
+
+When applied to an element hidden with `a11yHide()`,
+the element is forced to unclip and returned to the
+document flow.
+
+
+*/
+@mixin a11yVisibility( $val ) {
+	@if '#{$val}' == 'hidden' {
+		border: 0;
+		clip: rect(0 0 0 0);
+		position: absolute;
+		overflow: hidden;
+		margin: -1px;
+		padding: 0;
+		width: 1px;
+		height: 1px;
+	} @else {
+		clip: auto;
+		clip: rect(auto auto auto auto);
+		position: static;
+		overflow: visible;
+		margin: 0;
+		width: auto;
+		height: auto;
+	}
+}
