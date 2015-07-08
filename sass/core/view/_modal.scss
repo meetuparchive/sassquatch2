@@ -28,14 +28,12 @@ Modal that is presented full screen on all sizes
 <a class="link" href="pages/modal-full.html">Demo</a>
 
 <div class="view view--modalFull display--none">
-	<header class="view-head">
-		<div class="row inverted">
-			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
-				<img src="style/img/logo.svg" width="35" height="24"></a>
-			</a>
-			<div class="row-item row-item--alignMiddle viewHead-heading">
-				<h1 class="wrap--singleLine--truncate">This is a header</h1>
-			</div>
+	<header class="view-head row">
+		<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+			<img src="style/img/logo.svg" width="35" height="24"></a>
+		</a>
+		<div class="row-item row-item--alignMiddle viewHead-heading">
+			<h1 class="wrap--singleLine--truncate">This is a header</h1>
 		</div>
 	</header>
 	<div id="modal_body" class="view-body">
@@ -73,14 +71,12 @@ lays out as a dialog on background content on larger screens.
 <a class="link" href="pages/modal-snap.html">Demo</a>
 
 <div class="view view--modalSnap display--none">
-	<header class="view-head">
-		<div class="row inverted">
-			<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
-				Close
-			</a>
-			<div class="row-item row-item--alignMiddle viewHead-heading">
-				<h1 class="wrap--singleLine--truncate">Change your setting</h1>
-			</div>
+	<header class="view-head row inverted">
+		<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+			Close
+		</a>
+		<div class="row-item row-item--alignMiddle viewHead-heading">
+			<h1 class="wrap--singleLine--truncate">Change your setting</h1>
 		</div>
 	</header>
 	<div id="modal_body" class="view-body">
