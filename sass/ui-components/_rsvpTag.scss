@@ -29,7 +29,10 @@ Class                | Description
 	color: $C_textPrimaryInverted;
 	display: inline-block;
 	padding: $space-quarter;
-	text-transform: capitalize;
+
+	@include i18n-only('en') {
+		text-transform: capitalize;
+	}
 }
 
 .rsvpTag--yes {
