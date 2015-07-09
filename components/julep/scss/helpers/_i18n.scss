@@ -4,6 +4,10 @@
 
 /// Filter style rules to a specific language or set of languages
 /// using classes applied to the `body` element of a document
+///
+/// *i18n helpers assume your document has a `lang_{lang}` class on
+/// the `body` element.*
+///
 /// @access public
 ///
 /// @param {String | String...} $langs - ISO 639-1 language codes (ie. 'en')
@@ -21,7 +25,7 @@
 		$class: map-get($languageClasses, $lang);
 
 		@if $class {
-			.#{$class} & {
+			#{$class} & {
 				@content;
 			}
 		}
@@ -31,6 +35,10 @@
 
 /// Excludes styles from a specific language or set of languages
 /// using classes applied to the `body` element of a document
+///
+/// *i18n helpers assume your document has a `lang_{lang}` class on
+/// the `body` element.*
+///
 /// @access public
 ///
 /// @param {String | String...} $langs - ISO 639-1 language codes (ie. 'en')
@@ -48,7 +56,7 @@
 		$class: map-get($languageClasses, $lang);
 
 		@if $class {
-			body:not(.#{$class}) & {
+			body:not(#{$class}) & {
 				@content;
 			}
 		}
