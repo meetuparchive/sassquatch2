@@ -31,7 +31,10 @@ module.exports = function(grunt) {
 			},
 			src: ['**']
 		},
-		'clean': [DIR_BUILD],
+		'clean': {
+			docs: [DIR_BUILD],
+			css: [DIR_DOC_SRC + 'templates/css/sassquatch.css']
+		},
 		'preprocess': {
 			inline: {
 				src: [ 'docs/build/*.html' ],
