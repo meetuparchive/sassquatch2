@@ -4257,6 +4257,8 @@ class of `collapsible` is __required__.
 
 To collapse the element, add the `collapsible--close` class.
 
+__NOTE:__ to hide the collapsible content from screen readers, use `display--none` when the collapsible is closed.
+
 ```html_example
 <a id="cTrigger" class="button button--primary chunk followLink">Toggle</a>
 
