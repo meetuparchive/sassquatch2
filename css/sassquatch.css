@@ -660,6 +660,8 @@ Forces an element to use link-like styling.
 ```
 */
 a.link, .runningText a {
+  stroke: transparent;
+  fill: #3987cb;
   color: #3987cb; }
   a.link:hover, .runningText a:hover, a.link:focus, .runningText a:focus, a.link:active, .runningText a:active {
     text-decoration: underline; }
@@ -808,6 +810,13 @@ var {
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none; }
+
+code, pre {
+  font-family: Monaco, "Andale Mono", "Courier New", monospace; }
+
+pre {
+  white-space: pre;
+  word-wrap: normal !important; }
 
 /*doc
 ---
@@ -1039,6 +1048,25 @@ parent: bodyText
 .text--small h6 {
   font-size: 13px;
   line-height: 1.5; }
+
+/*doc
+---
+title: Monospaced text
+name: monoText
+parent: bodyText
+---
+The `code` and `pre` elements use a monospaced
+font by default. To apply monospaced type rules
+to any other element, use `text--mono`.
+
+```html_example
+<p class="text--mono">Is this code? What is this?</p>
+<code>This is code</code>
+<pre>We can safely assume a pre tag on Meetup is also code</pre>
+```
+*/
+.text--mono {
+  font-family: Monaco, "Andale Mono", "Courier New", monospace; }
 
 /*doc
 ---

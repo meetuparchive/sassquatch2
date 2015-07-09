@@ -9,21 +9,13 @@ a.styleguide {
 }
 
 /* CODE EXAMPLES */
-code, pre {
-  font-family: "Monaco", "Consolas", "OpenSans", monospace; font-size: 13px;
-}
 
-code {
+.styleguide > code {
   padding: 3px 6px;
   color: #d01040;
   white-space: nowrap;
   background-color: rgb(243, 246, 249);
   border-radius: 2px;
-}
-
-pre {
-	white-space: pre;
-	word-wrap: normal !important;
 }
 
 /* CODE EXAMPLES */

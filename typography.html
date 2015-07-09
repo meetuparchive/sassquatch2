@@ -28,7 +28,7 @@
 	<header class="stripe--inverted inverted">
 		<div class="bounds bounds--wide">
 			<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
-			<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v0.21.1</a>
+			<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v0.21.2</a>
 		</div>
 	</header>
 
@@ -62,6 +62,11 @@
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#bodyText">Body/primary text</a>
 										</li>
+									
+
+								
+
+									
 									
 
 								
@@ -313,6 +318,25 @@ elements to inveted colors.</p><div class="codeExample">
       <pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background: #353E48;"</span> <span class="na">class=</span><span class="s">"inverted"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="monoText" class="styleguide">Monospaced text</h2>
+<p class="styleguide">The <code class="styleguide">code</code> and <code class="styleguide">pre</code> elements use a monospaced
+font by default. To apply monospaced type rules
+to any other element, use <code class="styleguide">text--mono</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <p class="text--mono">Is this code? What is this?</p>
+<code>This is code</code>
+<pre>We can safely assume a pre tag on Meetup is also code</pre>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--mono"</span><span class="nt">&gt;</span>Is this code? What is this?<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;code&gt;</span>This is code<span class="nt">&lt;/code&gt;</span>
+<span class="nt">&lt;pre&gt;</span>We can safely assume a pre tag on Meetup is also code<span class="nt">&lt;/pre&gt;</span></pre>
     </div>
   </div>
 </div>
@@ -1389,6 +1413,16 @@ $(function() {
 					"title": "Inverted text",
 					"breadcrumb": "Typography > Inverted text",
 					"path": "typography.html#invertedText"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Monospaced text",
+					"breadcrumb": "Typography > Monospaced text",
+					"path": "typography.html#monoText"
 				});
 
 			
