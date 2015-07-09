@@ -10,17 +10,17 @@ module.exports = function(grunt) {
 		'sass': {
 			dist: {
 				files: {
-					"scss/julep.css": "scss/julep.scss"
+					"sass/julep.css": "sass/julep.scss"
 				}
 			}
 		},
 		'sassdoc': {
 			default: {
-				src: 'scss/**/*.scss'
+				src: 'sass/**/*.scss'
 			}
 		},
 		'clean': {
-			css: ["scss/*.css", "scss/*.css.map", "!scss/*.scss"]
+			css: ["sass/*.css", "sass/*.css.map", "!sass/*.scss"]
 		},
 		'gh-pages': {
 			options: {

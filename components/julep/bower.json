@@ -1,9 +1,9 @@
 {
   "name": "julep",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Meetup Sass Utilities",
   "main": [
-    "./scss"
+    "./sass"
   ],
   "ignore": [
     "Gemfile",

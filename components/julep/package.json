@@ -1,6 +1,6 @@
 {
 	"name": "julep",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"description": "Sass utility add-on for Bourbon",
 	"repository": {
 		"type": "git",
