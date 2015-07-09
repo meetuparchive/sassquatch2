@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<title>Sassquatch 2 : Typography</title>
+	<title>Sassquatch 2 : Forms</title>
 
 	<!-- Whitney -->
 	<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
@@ -54,107 +54,6 @@
 					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="typography.html">Typography</a>
 						
-							<ul class="display--none atMedium_display--block">
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#bodyText">Body/primary text</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#debugText">Debug text</a>
-										</li>
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#headings">Headings</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-							</ul>
-						
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
@@ -175,6 +74,55 @@
 					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="forms.html">Forms</a>
 						
+							<ul class="display--none atMedium_display--block">
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#checkbox">Checkboxes</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#forms">Basic Inputs</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#formValidation">Validation errors</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#launcher">Launcher</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#radio">Radios</a>
+										</li>
+									
+
+								
+							</ul>
+						
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
@@ -186,347 +134,207 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="bodyText" class="styleguide">Body/primary text</h1>
+<h1 id="checkbox" class="styleguide">Checkboxes</h1>
+<p class="styleguide">A label variant class of <code class="styleguide">label--switch</code> is
+used for side-by-side inputs and labels.</p><p class="styleguide">For radios and checkboxes, we put the <code class="styleguide">input</code>
+element inside the <code class="styleguide">label</code> element.</p><p class="styleguide">A class of <code class="styleguide">checkbox</code> is <strong>required</strong> on checkbox
+input elements.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <label for="check1" class="label--switch chunk">
+    <input id="check1" class="checkbox" value="green" type="checkbox" />
+    Green
+</label>
+<label for="check2" class="label--switch chunk">
+    <input id="check2" class="checkbox" value="blue" type="checkbox" />
+    Blue
+</label>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"check1"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"green"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span>
+    Green
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"check2"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"check2"</span> <span class="na">class=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"blue"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="nt">/&gt;</span>
+    Blue
+<span class="nt">&lt;/label&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="forms" class="styleguide">Basic Inputs</h1>
+
+<h2>Text inputs</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
+    <div class="chunk">
+    <label for="test-textinput">I'm a label</label>
+    <input id="test-textinput" type="text" value="Text input with value" />
+</div>
 
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span></pre>
+<div class="chunk">
+    <label for="test-textinput2">Just another label</label>
+    <input id="test-textinput2" type="text" placeholder="Text input with placeholder" />
+</div>
+
+<div class="chunk">
+    <label for="test-textarea"l>Here's an area for your text</label>
+    <textarea id="test-textarea"></textarea>
+</div>
+
+<div class="chunk">
+    <label for="test-select">What is this?</label>
+    <select id="text-select">
+        <option value="One">One</option>
+        <option value="Two">Two</option>
+        <option value="Three">Three</option>
+        <option value="Four">Four</option>
+    </select>
+</div>
+
+<div class="row">
+    <div class="row-item chunk">
+        <label for="split1">Unicorn name</label>
+        <input id="split1" type="text" placeholder="ie. Fluffy, Resplendent" />
     </div>
-  </div>
-</div>
-
-<h2 id="boldText" class="styleguide">Bold text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--bold">Bold text is bold</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>Bold text is bold<span class="nt">&lt;/p&gt;</span></pre>
+    <div class="row-item chunk">
+        <label for="split2">Unicorn color</label>
+        <select id="split2">
+            <option value="clear">Transparent</option>
+            <option value="green">Toasted clove saffron</option>
+            <option value="brown">Midnight brown</option>
+            <option value="black">Seabreeze black</option>
+        </select>
     </div>
-  </div>
-</div>
-
-<h2 id="bulletedList" class="styleguide">Bulleted lists</h2>
-<p class="styleguide"><code class="styleguide">&lt;ul&gt;</code> and <code class="styleguide">&lt;ol&gt;</code> element list styles are
-reset by default.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <ul>
-    <li>Eggs</li>
-    <li>More Eggs</li>
-</ul>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></pre>
-    </div>
-  </div>
-</div>
-<p class="styleguide">List style bullets are applied when list
-elements are inside a <code class="styleguide">.runningText</code> container.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <div class="runningText">
-    <ul>
-        <li>Eggs</li>
-        <li>More Eggs</li>
-    </ul>
 </div>
 
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"runningText"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-        <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
-  </div>
-</div>
-<p class="styleguide">You may also use the <code class="styleguide">.bullets</code> class to apply
-numbers/bullets to a list.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <ul class="bullets">
-    <li>Eggs</li>
-    <li>More Eggs</li>
-</ul>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"test-textinput"</span><span class="nt">&gt;</span>I'm a label<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"test-textinput"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">"Text input with value"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"bullets"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></pre>
-    </div>
-  </div>
-</div>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"test-textinput2"</span><span class="nt">&gt;</span>Just another label<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"test-textinput2"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Text input with placeholder"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<h2 id="captionText" class="styleguide">Caption text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--caption">I'm captioning all the things</p>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"test-textarea"</span><span class="na">l</span><span class="nt">&gt;</span>Here's an area for your text<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">"test-textarea"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>I'm captioning all the things<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"test-select"</span><span class="nt">&gt;</span>What is this?<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"text-select"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"One"</span><span class="nt">&gt;</span>One<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Two"</span><span class="nt">&gt;</span>Two<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Three"</span><span class="nt">&gt;</span>Three<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Four"</span><span class="nt">&gt;</span>Four<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 
-<h2 id="hintText" class="styleguide">Hint text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--hint">This is hint text</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>This is hint text<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="invertedText" class="styleguide">Inverted text</h2>
-<p class="styleguide">Apply the <code class="styleguide">inverted</code> class to a container with
-a dark background color or photo to flip all text
-elements to inveted colors.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <div style="background: #353E48;" class="inverted">
-    <p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
-</div>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background: #353E48;"</span> <span class="na">class=</span><span class="s">"inverted"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item chunk"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"split1"</span><span class="nt">&gt;</span>Unicorn name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"split1"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"ie. Fluffy, Resplendent"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item chunk"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"split2"</span><span class="nt">&gt;</span>Unicorn color<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"split2"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"clear"</span><span class="nt">&gt;</span>Transparent<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"green"</span><span class="nt">&gt;</span>Toasted clove saffron<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"brown"</span><span class="nt">&gt;</span>Midnight brown<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"black"</span><span class="nt">&gt;</span>Seabreeze black<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
     </div>
   </div>
 </div>
 
-<h2 id="runningText" class="styleguide">Running text</h2>
-<p class="styleguide">By default, paragraphs and headings are not styled
-with any bottom spacing. Links are not blue by default,
-as the most common case on Meetup will be block-level
-anchors with large touch targets.</p><p class="styleguide">However, there will be instaces where you want the blue
-links and properly spaced paragraphs of running text (ie.
-event descriptions).</p><div class="codeExample">
+<h1 id="formValidation" class="styleguide">Validation errors</h1>
+<p class="styleguide">Field errors set explicitly with <code class="styleguide">field--error</code>.</p><p class="styleguide">Error text is set explicitly with <code class="styleguide">text--error</code>.</p><div class="codeExample">
   <div class="exampleOutput">
-    <p>The robot is partially dressed in waterproof surgical garb.</p>
-<p>"Bruce Springsteen" is a terrible name for a <a href="#">cat</a>.</p>
-
-<hr style="margin: 8px;" /> <!-- lol, hr -->
-
-<div class="runningText">
-    <p>The robot is partially dressed in waterproof surgical garb.</p>
-    <p>"Bruce Springsteen" is a terrible name for a <a href="#">cat</a>.</p>
+    <div class="chunk">
+    <label for="test-textinput">First name</label>
+    <input class="field--error" id="test-textinput" type="text" value="" />
+    <p class="text--error">First name can't be empty</p>
 </div>
 
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>"Bruce Springsteen" is a terrible name for a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>cat<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;hr</span> <span class="na">style=</span><span class="s">"margin: 8px;"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- lol, hr --&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"runningText"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p&gt;</span>"Bruce Springsteen" is a terrible name for a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>cat<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"test-textinput"</span><span class="nt">&gt;</span>First name<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"field--error"</span> <span class="na">id=</span><span class="s">"test-textinput"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--error"</span><span class="nt">&gt;</span>First name can't be empty<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
     </div>
   </div>
 </div>
 
-<h3 id="linkColor" class="styleguide">Link color</h3>
-<p class="styleguide">You can always force an anchor to apply a
-linky blue color by applying the <code class="styleguide">.link</code> class.</p><div class="codeExample">
+<h1 id="launcher" class="styleguide">Launcher</h1>
+<p class="styleguide">Applies form field styles to an anchor, for use
+in launching custom input (ie. date/location pickers).</p><div class="codeExample">
   <div class="exampleOutput">
-    <p>Let's force this <a class="link" href="#">link</a> to be blue</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>Let's force this <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>link<span class="nt">&lt;/a&gt;</span> to be blue<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="secondaryText" class="styleguide">Secondary text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--secondary">Secondary text is secondary</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--secondary"</span><span class="nt">&gt;</span>Secondary text is secondary<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="smallText" class="styleguide">Small text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--small">Small text is small</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text is small<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="tertiaryText" class="styleguide">Tertiary text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--tertiary">Tertiary text is tertiary</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--tertiary"</span><span class="nt">&gt;</span>Tertiary text is tertiary<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="textGraphic" class="styleguide">Graphic text</h2>
-<p class="styleguide">Useful when using large text in a graphical way.
-Cuts line height to give the glyph spacing similar to that of an image or icon.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--graphic">102</p>
-<p>Miles per hour</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--graphic"</span><span class="nt">&gt;</span>102<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>Miles per hour<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="textLabel" class="styleguide">Label text</h2>
-<p class="styleguide">Applies form label styling</p><div class="codeExample">
-  <div class="exampleOutput">
-        <p class="text--label">I share styling with the `label` element</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--label"</span><span class="nt">&gt;</span>I share styling with the `label` element<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h1 id="debugText" class="styleguide">Debug text</h1>
-<p class="styleguide">Sometimes you just need to dump some text into a document
-to debug.</p><p class="styleguide">By default, the <code class="styleguide">debug</code> element is hidden. Apply the <code class="styleguide">enableDebug</code> class
-to a parent element to display <code class="styleguide">debug</code> elements.</p><p class="styleguide"><em>Setting the <code class="styleguide">enableDebug</code> class on <code class="styleguide">body</code> for dev only is recommended.</em></p><div class="codeExample">
-  <div class="exampleOutput">
-    <p class="debug">Invisible debug</p>
-
-<div class="enableDebug">
-<p class="debug">
-    Visible debug [ ChapterProto =>
-    chapterId=530569
-    parentChapterId=0
-    transitionalVenueId=0
-    relocatedZip=
-    name=Foreign Androids Feel Frustrated
-</p>
+    <div class="chunk">
+    <label for="specialPicker2">Pick a location</label>
+    <a id="specialPicker2" class="launcher" href="#">Boise, Idaho</a>
 </div>
 
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"debug"</span><span class="nt">&gt;</span>Invisible debug<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"enableDebug"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"debug"</span><span class="nt">&gt;</span>
-    Visible debug [ ChapterProto =&gt;
-    chapterId=530569
-    parentChapterId=0
-    transitionalVenueId=0
-    relocatedZip=
-    name=Foreign Androids Feel Frustrated
-<span class="nt">&lt;/p&gt;</span>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"specialPicker2"</span><span class="nt">&gt;</span>Pick a location<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"specialPicker2"</span> <span class="na">class=</span><span class="s">"launcher"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Boise, Idaho<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
     </div>
   </div>
 </div>
 
-<h1 id="headings" class="styleguide">Headings</h1>
-<p class="styleguide">TK - notes about UI text vs. body text</p><div class="codeExample">
+<h2>Launcher variants</h2>
+<p class="styleguide">A class of <code class="styleguide">launcher</code> is <strong>required</strong> for launcher
+anchors. The following classes are optional variants</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">launcher--placeholder</code></td>
+<td>Applies placeholder-like text styles for &quot;unselected&quot; values</td>
+</tr>
+ </table>
+<h1 id="radio" class="styleguide">Radios</h1>
+<p class="styleguide">A label variant class of <code class="styleguide">label--switch</code> is
+used for side-by-side inputs and labels.</p><p class="styleguide">For radios and checkboxes, we put the <code class="styleguide">input</code>
+element inside the <code class="styleguide">label</code> element.</p><p class="styleguide">A class of <code class="styleguide">radio</code> is <strong>required</strong> on radio input
+elements.</p><div class="codeExample">
   <div class="exampleOutput">
-    <h1 class="text--display">Heading 1 Display</h1>
-<h1>Heading 1 (white by default for use in navbar)</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
-<p>Body text</p>
-<p class="text--heading">Fake heading</p>
-<p class="text--hint">Hint text</p>
-<p class="text--small">Small text</p>
-<p class="text--caption">Caption text</p>
+    <label for="radio1" class="label--switch chunk">
+    <input id="radio1" class="radio" name="radioExample" value="green" type="radio" />
+    Green
+</label>
+<label for="radio2" class="label--switch chunk">
+    <input id="radio2" class="radio" name="radioExample" value="red" type="radio" />
+    Red
+</label>
 
   </div>
   <div class="codeBlock">
     <div class="highlight">
-      <pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>Heading 1 Display<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;h1&gt;</span>Heading 1 (white by default for use in navbar)<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;h2&gt;</span>Heading 2<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;h3&gt;</span>Heading 3<span class="nt">&lt;/h3&gt;</span>
-<span class="nt">&lt;h4&gt;</span>Heading 4<span class="nt">&lt;/h4&gt;</span>
-<span class="nt">&lt;h5&gt;</span>Heading 5<span class="nt">&lt;/h5&gt;</span>
-<span class="nt">&lt;h6&gt;</span>Heading 6<span class="nt">&lt;/h6&gt;</span>
-<span class="nt">&lt;p&gt;</span>Body text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--heading"</span><span class="nt">&gt;</span>Fake heading<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>Hint text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Caption text<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="displayText" class="styleguide">Display text</h2>
-<p class="styleguide">Display text for header hero elements.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <h1 class="text--display">The hero gotham deserves</h1>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>The hero gotham deserves<span class="nt">&lt;/h1&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="headlineText" class="styleguide">Headline text</h2>
-<p class="styleguide">Headline text for when something between display and normal text is needed. Use sparingly and with caution.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <h2 class="text--headline">If display text is Batman, I'm Robin</h2>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"text--headline"</span><span class="nt">&gt;</span>If display text is Batman, I'm Robin<span class="nt">&lt;/h2&gt;</span></pre>
+      <pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"radio1"</span> <span class="na">class=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radioExample"</span> <span class="na">value=</span><span class="s">"green"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="nt">/&gt;</span>
+    Green
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radio2"</span> <span class="na">class=</span><span class="s">"label--switch chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"radio2"</span> <span class="na">class=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radioExample"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="nt">/&gt;</span>
+    Red
+<span class="nt">&lt;/label&gt;</span></pre>
     </div>
   </div>
 </div>

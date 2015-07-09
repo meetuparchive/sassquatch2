@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<title>Sassquatch 2 : Typography</title>
+	<title>Sassquatch 2 : Sass Utils | Mixins & Placeholders</title>
 
 	<!-- Whitney -->
 	<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
@@ -39,28 +39,13 @@
 					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="sass_utils_|_mixins_&_placeholders.html">Sass Utils | Mixins & Placeholders</a>
 						
-					</li>
-				
-					<li class="display--inlineBlock--mediumDown">
-						<a class="followLink" href="modifier_classes.html">Modifier Classes</a>
-						
-					</li>
-				
-					<li class="display--inlineBlock--mediumDown">
-						<a class="followLink" href="ui_components.html">UI Components</a>
-						
-					</li>
-				
-					<li class="display--inlineBlock--mediumDown">
-						<a class="followLink" href="typography.html">Typography</a>
-						
 							<ul class="display--none atMedium_display--block">
 								
 
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#bodyText">Body/primary text</a>
+											<a class="followLink" href="#a11yUtil">Accessibility utils</a>
 										</li>
 									
 
@@ -73,15 +58,9 @@
 
 									
 									
-
-								
-
-									
-									
-
-								
-
-									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#align">Alignment Utilities</a>
+										</li>
 									
 
 								
@@ -93,25 +72,9 @@
 
 									
 									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#animation">Animation</a>
+										</li>
 									
 
 								
@@ -129,7 +92,26 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#debugText">Debug text</a>
+											<a class="followLink" href="#background">Background Utilities</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#breakpoints">Media Query Breakpoints</a>
 										</li>
 									
 
@@ -138,8 +120,177 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#headings">Headings</a>
+											<a class="followLink" href="#browserUtils">Browser filter mixin (IE only)</a>
 										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#button">Button utilities</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#colorUtil">Color</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#datauri">data uri images</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#display">Display utils</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#flexboxUtil">Flexbox</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#float">Float utils</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#i18nHelper">i18n</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#modalUtils">Modal mixins</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#shadow">Shadow utilities</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#shape">Shapes</a>
+										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#text">Text utils</a>
+										</li>
+									
+
+								
+
+									
 									
 
 								
@@ -154,6 +305,21 @@
 
 								
 							</ul>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="modifier_classes.html">Modifier Classes</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="ui_components.html">UI Components</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="typography.html">Typography</a>
 						
 					</li>
 				
@@ -186,351 +352,271 @@
 		</nav>
 
 	 	<main id="content" class="stack-item">
-<h1 id="bodyText" class="styleguide">Body/primary text</h1>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
+<h1 id="a11yUtil" class="styleguide">Accessibility utils</h1>
+<p class="styleguide">Accessibility utilities based on the <a class="styleguide" href="http://a11yproject.com/about.html" title="http://a11yproject.com/about.html">a11y project</a></p>
+<h2 id="a11yVisibilityMixin" class="styleguide">a11y Visibility</h2>
 
+<h3>Hiding elements</h3>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>@include a11yVisibility('hidden');</pre>
   </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span></pre>
-    </div>
+</div><p class="styleguide">Takes element out of document flow and hides it
+by clipping to a 1x1 pixel. Allows content to be
+visually hidden but <a class="styleguide" href="http://a11yproject.com/posts/how-to-hide-content/" title="http://a11yproject.com/posts/how-to-hide-content/">available to screen readers</a>.</p>
+<h3>Showing a11y hidden elements</h3>
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>@include a11yVisibility('visibile');</pre>
   </div>
-</div>
+</div><p class="styleguide">When applied to an element hidden with <code class="styleguide">a11yHide()</code>,
+the element is forced to unclip and returned to the
+document flow.</p>
+<h1 id="align" class="styleguide">Alignment Utilities</h1>
 
-<h2 id="boldText" class="styleguide">Bold text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--bold">Bold text is bold</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>Bold text is bold<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="bulletedList" class="styleguide">Bulleted lists</h2>
-<p class="styleguide"><code class="styleguide">&lt;ul&gt;</code> and <code class="styleguide">&lt;ol&gt;</code> element list styles are
-reset by default.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <ul>
-    <li>Eggs</li>
-    <li>More Eggs</li>
-</ul>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></pre>
-    </div>
+<h2 id="valign" class="styleguide">Vertical-align children</h2>
+<p class="styleguide">Aligns children of selected element using flexbox
+with a table-cell fallback for old IE.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include valignChildren(center); // centers children in element
+@include valignChildren(top); // positions children to top of element
+@include valignChildren(bottom); // positions children to bottom of element</pre>
   </div>
 </div>
-<p class="styleguide">List style bullets are applied when list
-elements are inside a <code class="styleguide">.runningText</code> container.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <div class="runningText">
-    <ul>
-        <li>Eggs</li>
-        <li>More Eggs</li>
-    </ul>
-</div>
+<h1 id="animation" class="styleguide">Animation</h1>
 
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"runningText"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-        <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
+<h2 id="bounce-in-subtle" class="styleguide">Subtle bounce-in</h2>
+<p class="styleguide">Subtle bounce effect using keyframes, provided via simple mixin
+<em>original keyframes generated with <a class="styleguide" href="http://goo.gl/tT4jnp" title="http://goo.gl/tT4jnp">Bounce.js</a></em></p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include animate--bounce-in-subtle($time: 750ms);</pre>
   </div>
 </div>
-<p class="styleguide">You may also use the <code class="styleguide">.bullets</code> class to apply
-numbers/bullets to a list.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <ul class="bullets">
-    <li>Eggs</li>
-    <li>More Eggs</li>
-</ul>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"bullets"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li&gt;</span>Eggs<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>More Eggs<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span></pre>
-    </div>
+<h2 id="spin" class="styleguide">Infinite spin</h2>
+<p class="styleguide">Infinite 2d rotation; 0-360deg.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include animate--spin($time: 0.8s);</pre>
   </div>
 </div>
+<h1 id="background" class="styleguide">Background Utilities</h1>
 
-<h2 id="captionText" class="styleguide">Caption text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--caption">I'm captioning all the things</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>I'm captioning all the things<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
+<h2 id="backgroundClip" class="styleguide">Background clip mixin</h2>
+<p class="styleguide">Sets background-clip property</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include background-clip($value: padding);
+@include background-clip('border');</pre>
   </div>
 </div>
-
-<h2 id="hintText" class="styleguide">Hint text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--hint">This is hint text</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>This is hint text<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
+<h2 id="imgFill" class="styleguide">Image fill placeholder</h2>
+<p class="styleguide">Sets background properties that center
+background image, set size to &#39;cover&#39;,
+and overflow hidden.</p><p class="styleguide"><em><a class="styleguide" href="ui_components.html#avatar" title="ui_components.html#avatar">ie. avatars</a></em></p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %imgFill;</pre>
   </div>
 </div>
+<h1 id="breakpoints" class="styleguide">Media Query Breakpoints</h1>
 
-<h2 id="invertedText" class="styleguide">Inverted text</h2>
-<p class="styleguide">Apply the <code class="styleguide">inverted</code> class to a container with
-a dark background color or photo to flip all text
-elements to inveted colors.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <div style="background: #353E48;" class="inverted">
-    <p>This is default body text, inheritied from type styles applied to &lt;body&gt;</p>
-</div>
-
+<h3>Mobile first mixin</h3>
+<p class="styleguide">This breakpoint mixin uses a <strong>mobile first</strong>
+strategy, meaning the <code class="styleguide">medium</code> breakpoint, for
+example, applies to <em>medium screens and larger</em>.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include atMediaUp(medium) {
+        body::after {
+            content: "medium screens and larger can see me";
+        }
+    }</pre>
   </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background: #353E48;"</span> <span class="na">class=</span><span class="s">"inverted"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>This is default body text, inheritied from type styles applied to <span class="ni">&amp;lt;</span>body<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="runningText" class="styleguide">Running text</h2>
-<p class="styleguide">By default, paragraphs and headings are not styled
-with any bottom spacing. Links are not blue by default,
-as the most common case on Meetup will be block-level
-anchors with large touch targets.</p><p class="styleguide">However, there will be instaces where you want the blue
-links and properly spaced paragraphs of running text (ie.
-event descriptions).</p><div class="codeExample">
-  <div class="exampleOutput">
-    <p>The robot is partially dressed in waterproof surgical garb.</p>
-<p>"Bruce Springsteen" is a terrible name for a <a href="#">cat</a>.</p>
-
-<hr style="margin: 8px;" /> <!-- lol, hr -->
-
-<div class="runningText">
-    <p>The robot is partially dressed in waterproof surgical garb.</p>
-    <p>"Bruce Springsteen" is a terrible name for a <a href="#">cat</a>.</p>
-</div>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>"Bruce Springsteen" is a terrible name for a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>cat<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;hr</span> <span class="na">style=</span><span class="s">"margin: 8px;"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- lol, hr --&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"runningText"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>The robot is partially dressed in waterproof surgical garb.<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p&gt;</span>"Bruce Springsteen" is a terrible name for a <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>cat<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
+</div><table class="styleguide"> <tr>
+<th>Breakpoint name</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">atMediaUp(small)</code></td>
+<td>Small sreens and up</td>
+</tr>
+<tr>
+<td><code class="styleguide">atMediaUp(medium)</code></td>
+<td>Landscape on most phones and up; portrait on some phablets</td>
+</tr>
+<tr>
+<td><code class="styleguide">atMediaUp(large)</code></td>
+<td>Landscape on phabelts and up; portrait on most tablets or old desktops</td>
+</tr>
+<tr>
+<td><code class="styleguide">atMediaUp(huge)</code></td>
+<td>Modern desktop viewports and up or <a class="styleguide" href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg" title="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a></td>
+</tr>
+ </table>
+<h1 id="browserUtils" class="styleguide">Browser filter mixin (IE only)</h1>
+<p class="styleguide">Targets styles to specific IE versions using
+the root class method (applying classes to the
+<code class="styleguide">body</code> tag with IE conditional comments).</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>.myClass {
+    @include browser-lessThanIE( 10 ) { ...styles for all IE versions below 10... }
+    @include browser-lessThanIE( 9 ) { ...styles for all IE versions below 9... }
+}</pre>
   </div>
 </div>
+<h1 id="button" class="styleguide">Button utilities</h1>
 
-<h3 id="linkColor" class="styleguide">Link color</h3>
-<p class="styleguide">You can always force an anchor to apply a
-linky blue color by applying the <code class="styleguide">.link</code> class.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <p>Let's force this <a class="link" href="#">link</a> to be blue</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>Let's force this <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>link<span class="nt">&lt;/a&gt;</span> to be blue<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
+<h2 id="buttonPersonality" class="styleguide">Button personality placeholder</h2>
+<p class="styleguide">Disables user-select, sets cursor, and resets text-decoration.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %buttonPersonality;</pre>
   </div>
 </div>
+<h1 id="colorUtil" class="styleguide">Color</h1>
 
-<h2 id="secondaryText" class="styleguide">Secondary text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--secondary">Secondary text is secondary</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--secondary"</span><span class="nt">&gt;</span>Secondary text is secondary<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
+<h2 id="colorAllMixin" class="styleguide">SVG + Text color</h2>
+<p class="styleguide">Sets properties to apply color to SVG icons
+<em>and</em> text.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@mixin color-all($color: black);</pre>
   </div>
 </div>
-
-<h2 id="smallText" class="styleguide">Small text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--small">Small text is small</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text is small<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
+<h2 id="svgColorMixin" class="styleguide">SVG color</h2>
+<p class="styleguide">Sets properties to color SVG icons</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@mixin color-svg($color: black);</pre>
   </div>
 </div>
+<h1 id="datauri" class="styleguide">data uri images</h1>
+<p class="styleguide">Sassquatch image dependencies are stored
+as data uris in a Sass map.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>map-get($data-img-map, "orgBadge") // raw data uri
 
-<h2 id="tertiaryText" class="styleguide">Tertiary text</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--tertiary">Tertiary text is tertiary</p>
+// OR
 
+.elWithImgBackground {
+    @extend %backgroundImg--orgBadge; // sets background-image property
+}</pre>
   </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--tertiary"</span><span class="nt">&gt;</span>Tertiary text is tertiary<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
+</div><table class="styleguide"> <tr>
+<th>Img Name</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">orgBadge</code></td>
+<td>Organizer badge</td>
+</tr>
+<tr>
+<td><code class="styleguide">launcher</code></td>
+<td>Form launcher input icon</td>
+</tr>
+ </table>
+<h1 id="display" class="styleguide">Display utils</h1>
 
-<h2 id="textGraphic" class="styleguide">Graphic text</h2>
-<p class="styleguide">Useful when using large text in a graphical way.
-Cuts line height to give the glyph spacing similar to that of an image or icon.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <p class="text--graphic">102</p>
-<p>Miles per hour</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--graphic"</span><span class="nt">&gt;</span>102<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>Miles per hour<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2 id="textLabel" class="styleguide">Label text</h2>
-<p class="styleguide">Applies form label styling</p><div class="codeExample">
-  <div class="exampleOutput">
-        <p class="text--label">I share styling with the `label` element</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--label"</span><span class="nt">&gt;</span>I share styling with the `label` element<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
+<h2 id="pseudoDisplay" class="styleguide">Pseudo-element display mixin</h2>
+<p class="styleguide">Sets display property for psuedo-elements</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include pseudoDisplay($value: block);</pre>
   </div>
 </div>
+<h1 id="flexboxUtil" class="styleguide">Flexbox</h1>
 
-<h1 id="debugText" class="styleguide">Debug text</h1>
-<p class="styleguide">Sometimes you just need to dump some text into a document
-to debug.</p><p class="styleguide">By default, the <code class="styleguide">debug</code> element is hidden. Apply the <code class="styleguide">enableDebug</code> class
-to a parent element to display <code class="styleguide">debug</code> elements.</p><p class="styleguide"><em>Setting the <code class="styleguide">enableDebug</code> class on <code class="styleguide">body</code> for dev only is recommended.</em></p><div class="codeExample">
-  <div class="exampleOutput">
-    <p class="debug">Invisible debug</p>
-
-<div class="enableDebug">
-<p class="debug">
-    Visible debug [ ChapterProto =>
-    chapterId=530569
-    parentChapterId=0
-    transitionalVenueId=0
-    relocatedZip=
-    name=Foreign Androids Feel Frustrated
-</p>
-</div>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"debug"</span><span class="nt">&gt;</span>Invisible debug<span class="nt">&lt;/p&gt;</span>
-
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"enableDebug"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"debug"</span><span class="nt">&gt;</span>
-    Visible debug [ ChapterProto =&gt;
-    chapterId=530569
-    parentChapterId=0
-    transitionalVenueId=0
-    relocatedZip=
-    name=Foreign Androids Feel Frustrated
-<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
+<h2 id="flexChildUtil" class="styleguide">Flex child</h2>
+<p class="styleguide">Sets flexbox properties for a flex children.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include flexChild('grow'); // sets element to grow to fill remaining space in flex parent
+@include flexChild('shrink'); // sets element to shirnk to the width of its content</pre>
   </div>
 </div>
-
-<h1 id="headings" class="styleguide">Headings</h1>
-<p class="styleguide">TK - notes about UI text vs. body text</p><div class="codeExample">
-  <div class="exampleOutput">
-    <h1 class="text--display">Heading 1 Display</h1>
-<h1>Heading 1 (white by default for use in navbar)</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
-<p>Body text</p>
-<p class="text--heading">Fake heading</p>
-<p class="text--hint">Hint text</p>
-<p class="text--small">Small text</p>
-<p class="text--caption">Caption text</p>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>Heading 1 Display<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;h1&gt;</span>Heading 1 (white by default for use in navbar)<span class="nt">&lt;/h1&gt;</span>
-<span class="nt">&lt;h2&gt;</span>Heading 2<span class="nt">&lt;/h2&gt;</span>
-<span class="nt">&lt;h3&gt;</span>Heading 3<span class="nt">&lt;/h3&gt;</span>
-<span class="nt">&lt;h4&gt;</span>Heading 4<span class="nt">&lt;/h4&gt;</span>
-<span class="nt">&lt;h5&gt;</span>Heading 5<span class="nt">&lt;/h5&gt;</span>
-<span class="nt">&lt;h6&gt;</span>Heading 6<span class="nt">&lt;/h6&gt;</span>
-<span class="nt">&lt;p&gt;</span>Body text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--heading"</span><span class="nt">&gt;</span>Fake heading<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--hint"</span><span class="nt">&gt;</span>Hint text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--small"</span><span class="nt">&gt;</span>Small text<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Caption text<span class="nt">&lt;/p&gt;</span></pre>
-    </div>
+<h2 id="flexParentUtil" class="styleguide">Flex parent</h2>
+<p class="styleguide">Sets flexbox properties for a flex parent (<code class="styleguide">display: flex;</code>)</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include flexParent('row'); // displays element as flex with children in row orientation
+@include flexParent('column'); // displays element as flex with children in column orientation</pre>
   </div>
 </div>
+<h1 id="float" class="styleguide">Float utils</h1>
 
-<h2 id="displayText" class="styleguide">Display text</h2>
-<p class="styleguide">Display text for header hero elements.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <h1 class="text--display">The hero gotham deserves</h1>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text--display"</span><span class="nt">&gt;</span>The hero gotham deserves<span class="nt">&lt;/h1&gt;</span></pre>
-    </div>
+<h2 id="clearfix" class="styleguide">Clearfix placeholder</h2>
+<p class="styleguide">Clears floated children.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %clearfix;</pre>
   </div>
 </div>
+<h1 id="i18nHelper" class="styleguide">i18n</h1>
+<p class="styleguide">Filter styles for specific languages using language
+classes on the <code class="styleguide">body</code> element.</p>
+<h2 id="excludeLang" class="styleguide">i18n-exclude</h2>
+<p class="styleguide">To ensure a style rule is <strong>not</strong> applied to
+a language, use <code class="styleguide">i18n-exclude</code>.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include i18n-exclude('de') {
+    text-transform: uppercase; // uppercase every language except German
+}
 
-<h2 id="headlineText" class="styleguide">Headline text</h2>
-<p class="styleguide">Headline text for when something between display and normal text is needed. Use sparingly and with caution.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <h2 class="text--headline">If display text is Batman, I'm Robin</h2>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"text--headline"</span><span class="nt">&gt;</span>If display text is Batman, I'm Robin<span class="nt">&lt;/h2&gt;</span></pre>
-    </div>
+@include i18n-exclude('ja', 'es', 'de') { ... } // multiple languages supported</pre>
   </div>
 </div>
-	</main>
+<h2 id="onlyLnag" class="styleguide">i18n-only</h2>
+<p class="styleguide">To set a style rule for one language only,
+use <code class="styleguide">i18n-only</code>.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include i18n-only('en') {
+    text-transform: uppercase; // only upercasse for English
+}
+
+@include i18n-only('en', 'it') { ... } // multiple languages supported</pre>
+  </div>
+</div>
+<h1 id="modalUtils" class="styleguide">Modal mixins</h1>
+<p class="styleguide">Description here</p>
+<h2 id="Modal_Dialog_Mixin" class="styleguide">Modal Dialog Mixin</h2>
+<p class="styleguide">Use this mixin to get the behavior of a <a class="styleguide" href="views.html#snapModalView" title="views.html#snapModalView">Snap Modal View</a>,
+a view that snaps to full page on small screens and a dialog on larger formats.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include modal-dialog;</pre>
+  </div>
+</div>
+<h2 id="Modal_Full_Mixin" class="styleguide">Modal Full Mixin</h2>
+<p class="styleguide">Use this mixin to get behavior of a full page modal.
+See <a class="styleguide" href="views.html#fullModalView" title="views.html#fullModalView">the Full Modal View documentation</a></p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@include modal-full;</pre>
+  </div>
+</div>
+<h1 id="shadow" class="styleguide">Shadow utilities</h1>
+
+<h2 id="shadowPlaceholder" class="styleguide">Shadow placeholder</h2>
+<p class="styleguide">Applies standard box-shadow</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %shadow;</pre>
+  </div>
+</div>
+<h1 id="shape" class="styleguide">Shapes</h1>
+
+<h2 id="circleMixin" class="styleguide">Circle mixin</h2>
+<p class="styleguide">Makes selected element a circle with border-radius</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@mixin circle($color: black, $size: 12px)</pre>
+  </div>
+</div>
+<h1 id="text" class="styleguide">Text utils</h1>
+
+<h2 id="linkColorPlaceholder" class="styleguide">Link color</h2>
+<p class="styleguide">Forces an element to use link-like styling.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %link;</pre>
+  </div>
+</div>
+<h2 id="textProtection" class="styleguide">Text protection shim</h2>
+<p class="styleguide">Adds a pseudo-element gradient</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el</pre>
+  </div>
+</div>
+<h2 id="textWrapUtil" class="styleguide">Text wrap</h2>
+<p class="styleguide">Nice hyphenation and wrapping for running text.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@extend %link;</pre>
+  </div>
+</div>	</main>
 	</section>
 
 <!-- lunr.js search index -->
