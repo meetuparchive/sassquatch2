@@ -19,12 +19,12 @@ Use as a guide for markup.
 <div class="menu">
 	<a class="menu-toggle" href="#">(icon)</a>
 
-	<ul class="menu-actions">
+	<ul role="menu" class="menu-actions">
 		<li class="menu-actions-item">
-			<a href="#">Select All</a>
+			<a role="menuitem" href="#">Select All</a>
 		</li>
 		<li class="menu-actions-item">
-			<a href="#">Select None</a>
+			<a role="menuitem" href="#">Select None</a>
 		</li>
 	</ul>
 </div>
