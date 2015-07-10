@@ -170,3 +170,49 @@ category: UI Components
 		margin: 0;
 	}
 }
+
+
+/* TODO: organize and doc ellipses classes */
+/* see: in chapstick, templates/handlebars/util/pagination.hbs */
+$_pageSpacing: 25px;
+$_ellipsesOffset: -28px;
+%_psuedoEllipses {
+	position: relative;
+	&:before,
+	&:after {
+		@extend %text--hint;
+		position: absolute;
+		bottom: 9px;
+	}
+}
+
+.pagination-page--ellipsesBefore {
+	@extend %_psuedoEllipses;
+	margin-left: $_pageSpacing;
+	&:before {
+		display: block;
+		content: "\2026";
+		left: $_ellipsesOffset;
+	}
+}
+
+.pagination-page--ellipsesAfter {
+	@extend %_psuedoEllipses;
+	margin-right: $_pageSpacing;
+	&:after {
+		display: block;
+		content: "\2026";
+		right: $_pageSpacing * -1;
+	}
+}
+
+@include atMediaUp(small) {
+	.pagination-page--ellipsesBefore,
+	.pagination-page--ellipsesAfter {
+		margin: 0;
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+}
