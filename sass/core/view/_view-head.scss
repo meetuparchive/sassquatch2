@@ -29,7 +29,7 @@ Class                      | Description
 
 */
 .view-head {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 	background: $C_accent;
 	color: $C_textPrimaryInverted;
 	left: 0;

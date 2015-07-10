@@ -4,22 +4,18 @@
  * it's enough to make generated documentation presentable.
  */
 
-/* CODE EXAMPLES */
-code, pre {
-  font-family: "Monaco", "Consolas", "OpenSans", monospace; font-size: 13px;
+a.styleguide {
+	color: rgb(57,135,203);
 }
 
-code {
+/* CODE EXAMPLES */
+
+.styleguide > code {
   padding: 3px 6px;
   color: #d01040;
   white-space: nowrap;
   background-color: rgb(243, 246, 249);
   border-radius: 2px;
-}
-
-pre {
-	white-space: pre;
-	word-wrap: normal !important;
 }
 
 /* CODE EXAMPLES */
@@ -85,21 +81,30 @@ main > table {
 	margin-bottom: 18px;
 }
 
-/* TABLES */
+/*
+ * repeating borderedTable rules
+ * because hologram doesn't let us
+ * add classes in docs (yet)
+ */
 main > table td,
-main > table th {
-	padding: 8px;
-	text-align: left;
+main > table tbody th {
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.12);
 }
+main > table td:last-child,
+main > table tbody th:last-child {
+ border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+main > table tbody tr:last-child td,
+main > table tbody tr:last-child th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+main > table tr:first-child th { border-width: 0; }
+
+/* TABLES */
 main > table td:first-child {
   background-color: rgb(243, 246, 249);
-}
-main > table td {
-	border-top: 1px solid rgba(0,0,0,.12);
-}
-main > table th:first-child,
-main > table td:first-child {
-	border-right: 1px solid rgba(0,0,0,.12);
 }
 
 /* LAYOUT */

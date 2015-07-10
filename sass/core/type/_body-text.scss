@@ -35,7 +35,6 @@ elements to inveted colors.
 </div>
 ```
 */
-%inverted,
 .inverted {
 	color: $C_textPrimaryInverted;
 }
@@ -51,7 +50,7 @@ parent: bodyText
 <p class="text--hint">This is hint text</p>
 ```
 */
-.text--hint {
+@include _modifier(text, hint) {
 	@include color-all($C_textTertiary);
 	.inverted & {
 		@include color-all($C_textTertiaryInverted);
@@ -69,7 +68,7 @@ parent: bodyText
 <p class="text--secondary">Secondary text is secondary</p>
 ```
 */
-.text--secondary {
+@include _modifier(text, secondary) {
 	@include color-all($C_textSecondary);
 	.inverted & {
 		@include color-all($C_textSecondaryInverted)
@@ -87,7 +86,7 @@ parent: bodyText
 <p class="text--tertiary">Tertiary text is tertiary</p>
 ```
 */
-.text--tertiary {
+@include _modifier(text, tertiary) {
 	@include color-all($C_textTertiary);
 	.inverted & {
 		@include color-all($C_textTertiaryInverted);
@@ -105,7 +104,7 @@ parent: bodyText
 <p class="text--bold">Bold text is bold</p>
 ```
 */
-.text--bold {
+@include _modifier(text, bold) {
 	font-weight: $W_bold;
 }
 
@@ -120,12 +119,31 @@ parent: bodyText
 <p class="text--small">Small text is small</p>
 ```
 */
-%text--small,
-.text--small {
+@include _modifier(text, small) {
 	@include _headingDescendant() {
 		font-size: $font-size-small;
 		line-height: $line-height-small;
 	}
+}
+
+/*doc
+---
+title: Monospaced text
+name: monoText
+parent: bodyText
+---
+The `code` and `pre` elements use a monospaced
+font by default. To apply monospaced type rules
+to any other element, use `text--mono`.
+
+```html_example
+<p class="text--mono">Is this code? What is this?</p>
+<code>This is code</code>
+<pre>We can safely assume a pre tag on Meetup is also code</pre>
+```
+*/
+.text--mono {
+	font-family: $font--mono;
 }
 
 
@@ -139,7 +157,7 @@ parent: bodyText
 <p class="text--caption">I'm captioning all the things</p>
 ```
 */
-.text--caption {
+@include _modifier(text, caption) {
 	@extend %text--small;
 	@include color-all($C_textSecondary);
 	.inverted & {
@@ -159,7 +177,7 @@ Applies form label styling
 	<p class="text--label">I share styling with the `label` element</p>
 ```
 */
-.text--label {
+@include _modifier(text, label) {
 	@extend %label;
 }
 
@@ -177,7 +195,7 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.
 <p>Miles per hour</p>
 ```
 */
-.text--graphic {
+@include _modifier(text, graphic) {
 	@extend %text--display;
 	line-height: .9;
 }

@@ -28,6 +28,7 @@ Breakpoints        | Property       | Variants
 `medium`, `large`  | `padding`      | `none`
 `medium`, `large`  | `margin`       | `center`
 `medium`, `large`  | `border`       | `top`, `none`
+`medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
 */
 
 // text align
@@ -42,6 +43,15 @@ Breakpoints        | Property       | Variants
 	@include _bpModifier('display', str-replace($display, '-block', 'Block')) {
 		display: $display !important;
 	}
+}
+
+// a11y display hide and show
+@include _bpModifier( 'visibility', 'a11yHide' ) {
+	@include a11yVisibility('hidden');
+}
+
+@include _bpModifier( 'visibility', 'a11yShow') {
+	@include a11yVisibility('visible');
 }
 
 // padding

@@ -39,8 +39,11 @@
 	@import "core/forms/launcher";
 	@import "core/forms/validation";
 
-	// temporary cruft
-	@import "core/unorganized"; // <- TODO: split this out into logical layout partials
+	// Tables
+	@import "core/tables/base";
+	@import "core/tables/resetTable";
+	@import "core/tables/borderedTable";
+	@import "core/tables/stripedTable";
 
 	// Layout
 	@import "core/layout/stripe";
@@ -71,6 +74,7 @@
 	@import "ui-components/collapsible";
 	@import "ui-components/floatingAction";
 	@import "ui-components/menu";
+	@import "ui-components/pagination";
 	@import "ui-components/rsvpTag";
 	@import "ui-components/tabs";
 	@import "ui-components/tearsheet";
@@ -90,8 +94,9 @@
 	@import "modifiers/float";
 	@import "modifiers/flush";
 	@import "modifiers/js-conditional";
-	@import "modifiers/media-conditional";
 	@import "modifiers/size";
 	@import "modifiers/spacing";
 	@import "modifiers/text";
 	@import "modifiers/thumb";
+	@import "modifiers/visibility";
+	@import "modifiers/media-conditional"; // Must come last; extends other modifiers

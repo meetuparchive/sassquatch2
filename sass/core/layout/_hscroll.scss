@@ -6,6 +6,8 @@ category: Layout
 ---
 Applies styles for horizontal scrolling lists.
 
+## Basic `hscroll`
+
 ```html_example
 <div class="hscroll">
 	<ul class="hscroll-content">
@@ -60,6 +62,8 @@ Applies styles for horizontal scrolling lists.
 	</ul>
 </div>
 ```
+
+## Group cards `hscroll`
 
 ```html_example
 <div class="hscroll">
@@ -164,6 +168,66 @@ Applies styles for horizontal scrolling lists.
 </div>
 ```
 
+## Gradient `hscroll`
+Wrap the `hscroll` element with `hscrollGradientWrap` to add
+gradient overlays to both sides of the `hscroll`.
+
+```html_example
+<div class="hscrollGradientWrap">
+	<div class="hscroll">
+		<ul class="hscroll-content">
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+			<li>
+				<p>This is some content in an hscroll list. It can be almost anything.</p>
+				<a class="button">Button</a>
+			</li>
+		</ul>
+	</div>
+</div>
+```
 ## Media-conditional `hscroll`
 It's possible to create an `hscroll` for small screens that expands
 into a non-scrolling list in the document flow for larger screens.
@@ -232,6 +296,44 @@ Class                       | Description
 `atLarge_hscroll--unclip`  | Allows visible overflow (as inline block list) at large & up
 
 */
+.hscrollGradientWrap {
+	position: relative;
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: $space;
+		top: 0;
+	}
+	&:before {
+		left: 0;
+		@include background-image(linear-gradient(to right, #fff, transparentize(#ffffff, 1)));
+	}
+	&:after {
+		right: 0;
+		@include background-image(linear-gradient(to left, #fff, transparentize(#ffffff, 1)));
+	}
+
+	.stripe--collection & {
+		&:before {
+			@include background-image(linear-gradient(to right, $C-collectionBGLight, transparentize($C-collectionBGLight, 1)));
+		}
+		&:after {
+			@include background-image(linear-gradient(to left, $C-collectionBGLight, transparentize($C-collectionBGLight, 1)));
+		}
+	}
+
+	.stripe--inverted {
+		&:before {
+			@include background-image(linear-gradient(to right, $C-contentBGInverted, transparentize($C-contentBGInverted, 1)));
+		}
+		&:after {
+			@include background-image(linear-gradient(to left, $C-contentBGInverted, transparentize($C-contentBGInverted, 1)));
+		}
+	}
+}
+
 .hscroll {
 	-webkit-overflow-scrolling: touch;
 	overflow-x: scroll;
