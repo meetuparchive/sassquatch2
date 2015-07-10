@@ -24,5 +24,8 @@ each list item and right gutters between items.
 	> li {
 		display: inline-block;
 		padding-right: $space-half;
+		&:last-child {
+			padding-right: 0;
+		}
 	}
 }

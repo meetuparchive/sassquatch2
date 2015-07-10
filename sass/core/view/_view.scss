@@ -60,7 +60,7 @@ the "detail" responsibility.
 
 
 .view {
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 	background: white;
 	width: 100%;
 	min-height: 100vh;

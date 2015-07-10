@@ -40,8 +40,7 @@ Class                   | Description
 
 */
 .spreadable {
-	@extend %flexParent;
-	@extend %flexParent--column;
+	@include flexParent('column');
 
 	@include browser-lessThanIE( 10 ) {
 		display: block;
@@ -59,33 +58,11 @@ Class                   | Description
 	}
 }
 
-//
-// repeating rules from sass/util/_flexbox.scss
-// because you can't @extend from within a @media
-// directive
-//
-@include _bpModifier(spreadable, spread) {
-	@include flex-direction(row);
-	@include flex-wrap(nowrap);
-
-	@include browser-lessThanIE( 10 ) {
-		@include box-sizing(border-box);
-		display: table;
-		table-layout: auto;
-		width: 100%;
-	}
+@include _bpModifier(stack, spread) {
+	@include flexParent('row');
 
 	> .spreadable-item {
-		@include flex-grow(1);
-		@include flex-basis(0);
-
-		@include browser-lessThanIE( 10 ) {
-			display: table-cell;
-			width: 100%;
-		}
-
-		width: auto;
-		min-width: 0;
+		@include flexChild('grow');
 		padding-left: $space;
 
 		&:first-child {
@@ -94,13 +71,6 @@ Class                   | Description
 	}
 
 	.spreadable-item--shrink {
-		@include flex-grow(0);
-		@include flex-shrink(0);
-		@include flex-basis(auto);
-		width: initial;
-
-		@include browser-lessThanIE( 10 ) {
-			width: auto;
-		}
+		@include flexChild('shrink');
 	}
 }

@@ -13,7 +13,7 @@
 //
 @mixin _bpModifier($base, $modification) {
 
-	@each $breakpoint in (medium, large) {
+	@each $breakpoint in (small, medium, large) {
 
 		@include atMediaUp($breakpoint) {
 			.at#{str-firstCharToUpper($breakpoint)}_#{$base}--#{$modification} {
