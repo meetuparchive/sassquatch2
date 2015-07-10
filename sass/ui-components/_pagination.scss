@@ -174,15 +174,15 @@ category: UI Components
 
 /* TODO: organize and doc ellipses classes */
 /* see: in chapstick, templates/handlebars/util/pagination.hbs */
-$_pageSpacing: 25px;
-$_ellipsesOffset: -28px;
+$_pageSpacing: 32px;
+$_ellipsesOffset: -32px;
 %_psuedoEllipses {
 	position: relative;
 	&:before,
 	&:after {
 		@extend %text--hint;
 		position: absolute;
-		bottom: 9px;
+		bottom: 7px;
 	}
 }
 
