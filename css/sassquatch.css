@@ -959,11 +959,12 @@ parent: bodyText
 <p class="text--hint">This is hint text</p>
 ```
 */
+.pagination-page--ellipsesBefore:before, .pagination-page--ellipsesAfter:before, .pagination-page--ellipsesBefore:after, .pagination-page--ellipsesAfter:after,
 .text--hint {
   stroke: transparent;
   fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
-  .inverted
+  .inverted .pagination-page--ellipsesBefore:before, .inverted .pagination-page--ellipsesAfter:before, .inverted .pagination-page--ellipsesBefore:after, .inverted .pagination-page--ellipsesAfter:after, .inverted
   .text--hint {
     stroke: transparent;
     fill: rgba(255, 255, 255, 0.3);
@@ -2157,60 +2158,90 @@ Class                         | Description
 .gridList--has10 > li {
   width: 10%; }
 
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has1 > li {
+    width: 100%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has1 > li {
     width: 100%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has1 > li {
     width: 100%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has2 > li {
+    width: 50%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has2 > li {
     width: 50%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has2 > li {
     width: 50%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has3 > li {
+    width: 33.33333%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has3 > li {
     width: 33.33333%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has3 > li {
     width: 33.33333%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has4 > li {
+    width: 25%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has4 > li {
     width: 25%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has4 > li {
     width: 25%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has5 > li {
+    width: 20%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has5 > li {
     width: 20%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has5 > li {
     width: 20%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has6 > li {
+    width: 16.66667%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has6 > li {
     width: 16.66667%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has6 > li {
     width: 16.66667%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has7 > li {
+    width: 14.28571%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has7 > li {
     width: 14.28571%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has7 > li {
     width: 14.28571%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has8 > li {
+    width: 12.5%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has8 > li {
     width: 12.5%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has8 > li {
     width: 12.5%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has9 > li {
+    width: 11.11111%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has9 > li {
     width: 11.11111%; } }
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has9 > li {
     width: 11.11111%; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_gridList--has10 > li {
+    width: 10%; } }
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has10 > li {
     width: 10%; } }
@@ -2632,6 +2663,13 @@ Class                       | Description
 .hscroll-content--cards > li {
   width: 240px; }
 
+@media only screen and (min-width: 440px) {
+  .atSmall_hscroll--unclip {
+    -webkit-overflow-scrolling: auto;
+    -ms-overflow-style: auto;
+    overflow-x: visible; }
+    .atSmall_hscroll--unclip .hscroll-content {
+      white-space: normal; } }
 @media only screen and (min-width: 640px) {
   .atMedium_hscroll--unclip {
     -webkit-overflow-scrolling: auto;
@@ -3069,6 +3107,73 @@ Class                   | Description
     display: block;
     padding-left: 0 !important; }
 
+@media only screen and (min-width: 440px) {
+  .atSmall_stack--spread {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-align: flex;
+    box-align: flex;
+    -webkit-align-items: flex;
+    -ms-align-items: flex;
+    align-items: flex;
+    -ms-flex-align: flex;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-lines: single;
+    box-lines: single;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap; }
+    .ieRoot_lt_IE10 .atSmall_stack--spread {
+      box-sizing: border-box;
+      display: table;
+      table-layout: auto;
+      width: 100%; }
+    .atSmall_stack--spread > .stack-item {
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+      -ms-flex-positive: 1;
+      -webkit-flex-basis: 0;
+      flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+      width: auto;
+      min-width: 0;
+      padding-left: 16px; }
+      .ieRoot_lt_IE10 .atSmall_stack--spread > .stack-item {
+        display: table-cell;
+        width: 50%;
+        /* for rows with two items, stop at 50% */ }
+      .atSmall_stack--spread > .stack-item:first-child {
+        padding-left: 0; }
+    .atSmall_stack--spread .stack-item--shrink {
+      -webkit-flex-grow: 0;
+      flex-grow: 0;
+      -ms-flex-positive: 0;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+      width: initial; }
+      .ieRoot_lt_IE10 .atSmall_stack--spread .stack-item--shrink {
+        width: auto; } }
 @media only screen and (min-width: 640px) {
   .atMedium_stack--spread {
     display: -webkit-box;
@@ -4684,6 +4789,36 @@ category: UI Components
     .pagination-page--current {
       margin: 0; } }
 
+/* TODO: organize and doc ellipses classes */
+/* see: in chapstick, templates/handlebars/util/pagination.hbs */
+.pagination-page--ellipsesBefore, .pagination-page--ellipsesAfter {
+  position: relative; }
+  .pagination-page--ellipsesBefore:before, .pagination-page--ellipsesAfter:before, .pagination-page--ellipsesBefore:after, .pagination-page--ellipsesAfter:after {
+    position: absolute;
+    bottom: 7px; }
+
+.pagination-page--ellipsesBefore {
+  margin-left: 32px; }
+  .pagination-page--ellipsesBefore:before {
+    display: block;
+    content: "\2026";
+    left: -32px; }
+
+.pagination-page--ellipsesAfter {
+  margin-right: 32px; }
+  .pagination-page--ellipsesAfter:after {
+    display: block;
+    content: "\2026";
+    right: -32px; }
+
+@media only screen and (min-width: 440px) {
+  .pagination-page--ellipsesBefore,
+  .pagination-page--ellipsesAfter {
+    margin: 0; }
+    .pagination-page--ellipsesBefore:before, .pagination-page--ellipsesBefore:after,
+    .pagination-page--ellipsesAfter:before,
+    .pagination-page--ellipsesAfter:after {
+      display: none; } }
 /*doc
 ---
 title: RSVP Tags
@@ -5540,48 +5675,79 @@ Breakpoints        | Property       | Variants
 `medium`, `large`  | `border`       | `top`, `none`
 `medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
 */
+@media only screen and (min-width: 440px) {
+  .atSmall_align--center {
+    text-align: center !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_align--center {
     text-align: center !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_align--center {
     text-align: center !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_align--right {
+    text-align: right !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_align--right {
     text-align: right !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_align--right {
     text-align: right !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_align--left {
+    text-align: left !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_align--left {
     text-align: left !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_align--left {
     text-align: left !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_display--none {
+    display: none !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_display--none {
     display: none !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_display--none {
     display: none !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_display--block {
+    display: block !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_display--block {
     display: block !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_display--block {
     display: block !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_display--inline {
+    display: inline !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_display--inline {
     display: inline !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_display--inline {
     display: inline !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_display--inlineBlock {
+    display: inline-block !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_display--inlineBlock {
     display: inline-block !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_display--inlineBlock {
     display: inline-block !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_visibility--a11yHide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px; } }
 @media only screen and (min-width: 640px) {
   .atMedium_visibility--a11yHide {
     border: 0;
@@ -5602,6 +5768,15 @@ Breakpoints        | Property       | Variants
     padding: 0;
     width: 1px;
     height: 1px; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_visibility--a11yShow {
+    clip: auto;
+    clip: rect(auto auto auto auto);
+    position: static;
+    overflow: visible;
+    margin: 0;
+    width: auto;
+    height: auto; } }
 @media only screen and (min-width: 640px) {
   .atMedium_visibility--a11yShow {
     clip: auto;
@@ -5620,12 +5795,19 @@ Breakpoints        | Property       | Variants
     margin: 0;
     width: auto;
     height: auto; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_padding--none {
+    padding: 0 !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_padding--none {
     padding: 0 !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_padding--none {
     padding: 0 !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_margin--center {
+    margin-left: auto;
+    margin-right: auto; } }
 @media only screen and (min-width: 640px) {
   .atMedium_margin--center {
     margin-left: auto;
@@ -5634,12 +5816,18 @@ Breakpoints        | Property       | Variants
   .atLarge_margin--center {
     margin-left: auto;
     margin-right: auto; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_border--top {
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_border--top {
     border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
 @media only screen and (min-width: 840px) {
   .atLarge_border--top {
     border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_border--none {
+    border-width: 0 !important; } }
 @media only screen and (min-width: 640px) {
   .atMedium_border--none {
     border-width: 0 !important; } }
