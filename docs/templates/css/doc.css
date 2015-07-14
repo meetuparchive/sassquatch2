@@ -157,12 +157,33 @@ main > table td:first-child {
 	color: rgba(0,0,0,.54);
 }
 
-/* HEADER */
-body > header .bounds {
+/* SEARCH */
+header.hasJS {
+	overflow: visible;
+}
+
+#docSearch {
 	position: relative;
 }
-.software-version {
+
+#searchResults {
 	position: absolute;
-	top: 24px;
-	right: 24px;
+	width: 248px;
+	top: 41px;
+	left: 0px;
+}
+
+.result-title,
+.result-breadcrumb {
+	display: block;
+}
+
+.result-title {
+	color: rgb(57, 135, 203) !important;
+	padding-bottom: 4px;
+}
+
+.result-breadcrumb {
+	color: rgba(0, 0, 0, 0.541176) !important;
+	font-size: 10px;
 }

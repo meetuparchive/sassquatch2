@@ -25,10 +25,24 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <body class="lang_en"> <!--<![endif]-->
 
 	<!-- HOTDOGS -->
-	<header class="stripe--inverted inverted">
+	<header class="stripe--inverted inverted hasJS">
 		<div class="bounds bounds--wide">
-			<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
-			<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v<!-- @echo VERSION --></a>
+			<div class="stack stack--spaceBetween atLarge_stack--spread">
+				<div class="stack-item">
+					<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
+				</div>
+				<div class="stack-item stack-item--shrink">
+					<div class="row margin--top" style="align-items: baseline;">
+						<div id="docSearch" class="row-item">
+							<input autocomplete="off" id="search" name="search" style="min-width: 250px;" class="chunk" type="text" placeholder="Search" />
+							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
+						</div>
+						<div class="row-item row-item--shrink align--right">
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v<!-- @echo VERSION --></a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</header>
 
