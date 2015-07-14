@@ -175,7 +175,7 @@ $_iconGutter: $space/2;
 	@include display(inline-flex);
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
-	@include justify-content(flex-end);
+	@include justify-content(space-between);
 
 	@include browser-lessThanIE( 10 ) {
 		box-sizing: border-box;
