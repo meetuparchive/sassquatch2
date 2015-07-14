@@ -17,6 +17,10 @@ a.styleguide {
   background-color: rgb(243, 246, 249);
   border-radius: 2px;
 }
+code.styleguide {
+  color: #d01040;
+  white-space: nowrap;
+}
 
 /* CODE EXAMPLES */
 .codeExample {
