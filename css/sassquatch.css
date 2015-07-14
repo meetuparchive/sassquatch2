@@ -3028,6 +3028,178 @@ Class                   | Description
 
 /*doc
 ---
+title: Column
+name: flexColumn
+category: Layout
+---
+Vertically stacked content using `display: flex` to
+allow source order independent display and `flex-grow` items
+for columns inside elements with a fixed height.
+
+The `.column` element is the flex parent, and `.column-item` elements
+are flex children.
+
+__Columns are only necessary when you need to use flex alignment, source
+order reversing, or shrink/grow flexing of column items__
+
+_See also: `.row`._
+
+```html_example
+<div class="chunk" style="height: 160px;">
+	<div class="column">
+		<div class="_DOC-SHADE column-item">
+			column-item 1
+		</div>
+		<div class="_DOC-SHADE column-item column-item--shrink">
+			column-item 2 (shrink)
+		</div>
+		<div class="_DOC-SHADE column-item">
+			column-item 3 (shrink)
+		</div>
+	</div>
+</div>
+
+<div class="chunk" style="height: 160px;">
+	<div class="column column--reverse">
+		<div class="_DOC-SHADE column-item">
+			column-item 1
+		</div>
+		<div class="_DOC-SHADE column-item column-item--shrink">
+			column-item 2 (shrink)
+		</div>
+		<div class="_DOC-SHADE column-item">
+			column-item 3 (shrink)
+		</div>
+	</div>
+</div>
+
+<div class="chunk" style="height: 240px; outline: 1px dotted red;">
+	<div class="column">
+		<div class="column-item">
+			<section class="stripe">
+				<div class="bounds">
+					<h2>Example</h2>
+					<p>Columns are a great solution for sticky footers</p>
+					<p>The content area is a `column-item` that grows</p>
+				</div>
+			</section>
+		</div>
+		<div class="column-item column-item--shrink">
+			<section class="stripe stripe--inverted inverted">
+				<div class="bounds">
+					<p>And the `column-item--shrink` gets pushed to the bottom</p>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+```
+*/
+.column {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-lines: single;
+  box-lines: single;
+  -webkit-flex-wrap: "nowrap";
+  -ms-flex-wrap: "nowrap";
+  flex-wrap: "nowrap";
+  height: 100%; }
+  .ieRoot_lt_IE10 .column {
+    display: table;
+    table-layout: auto;
+    width: 100%;
+    height: 100%; }
+  .ieRoot_lt_IE10 .column {
+    display: table;
+    table-layout: auto;
+    width: 100%; }
+
+/*doc
+---
+title: Column variants
+name: columnParent
+parent: flexColumn
+---
+
+A class of `.column` is __required__ on the flex column parent. The
+following classes are optional variants:
+
+Class                      | Description
+-------------------------- | -------------------------------
+`.column--reverse`         | reverses display order of column items
+*/
+.column--reverse {
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: reverse;
+  box-direction: reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse; }
+
+/*doc
+---
+title: Column Item variants
+name: columnChild
+parent: flexColumn
+---
+
+A class of `.column-item` is __required__ on column items.
+The following classes are optional variants:
+
+Class                      | Description
+-------------------------- | -------------------------------
+`.column-item--shrink`     | Item shrinks to fit content AKA height auto
+*/
+.column-item, .column-item--shrink {
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  box-sizing: border-box;
+  height: initial; }
+
+.column-item {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1; }
+  .ieRoot_lt_IE10 .column-item {
+    display: table-row;
+    height: auto; }
+
+.column-item--shrink {
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0; }
+  .ieRoot_lt_IE10 .column-item--shrink {
+    height: 1%; }
+
+/*doc
+---
 title: Stack
 name: stack
 category: Layout
