@@ -10,4 +10,5 @@ components/
 node_modules/
 .grunt/
 docs/build/
+docs/templates/css/sassquatch.css
 !README*

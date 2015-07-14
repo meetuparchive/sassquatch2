@@ -28,12 +28,12 @@
 	<header class="stripe--inverted inverted">
 		<div class="bounds bounds--wide">
 			<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
-			<a href="https://github.com/meetup/sassquatch2/releases" class="followLink software-version">v<!-- @echo VERSION --></a>
+			<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v<!-- @echo VERSION --></a>
 		</div>
 	</header>
 
-	<section id="hologramBody" class="bounds bounds--wide stack atLarge_stack--spread">
-		<nav id="navigation" class="stack-item stack-item--shrink">
+	<section id="hologramBody" class="bounds bounds--wide spreadable atLarge_spreadable--spread">
+		<nav id="navigation" class="spreadable-item spreadable-item--shrink">
 			<ul>
 				<% @categories.each do |category, file_name| %>
 					<li class="display--inlineBlock--mediumDown">
@@ -57,4 +57,4 @@
 			</ul>
 		</nav>
 
-	 	<main id="content" class="stack-item">
+	 	<main id="content" class="spreadable-item">

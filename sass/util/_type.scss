@@ -19,7 +19,7 @@ Forces an element to use link-like styling.
 ```
 */
 %link {
-	color: $C_link;
+	@include color-all($C_link);
 	&:hover, &:focus, &:active {
 		text-decoration: underline;
 	}
