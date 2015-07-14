@@ -1,4 +1,5 @@
 *.swp
+*.swo
 *.sass-cache
 *.ruby-version
 *.lock
