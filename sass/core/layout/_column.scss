@@ -11,8 +11,8 @@ for columns inside elements with a fixed height.
 The `.column` element is the flex parent, and `.column-item` elements
 are flex children.
 
-__Columns are not necessary for laying out elements vertically unless
-you need to use flex alignment, or flex grow/shirnk for column items__
+__Columns are only necessary when you need to use flex alignment, source
+order reversing, or shrink/grow flexing of column items__
 
 _See also: `.row`._
 
