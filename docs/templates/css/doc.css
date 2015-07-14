@@ -108,6 +108,10 @@ main > table td:first-child {
 }
 
 /* LAYOUT */
+#content {
+	display: block;
+}
+
 #hologramBody {
 	overflow: scroll;
 }
