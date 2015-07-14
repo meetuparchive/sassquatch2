@@ -71,6 +71,12 @@ _See also: `.row`._
 	@include flexParent('column');
 	@include flex-wrap('nowrap');
 	height: 100%;
+
+	@include browser-lessThanIE(10) {
+		display: table;
+		table-layout: auto;
+		width: 100%;
+	}
 }
 
 
@@ -114,8 +120,17 @@ Class                      | Description
 .column-item {
 	@extend %_columnItemBase;
 	@include flex-grow(1);
+
+	@include browser-lessThanIE(10) {
+		display: table-row;
+		height: auto;
+	}
 }
 .column-item--shrink {
 	@extend %_columnItemBase;
 	@include flex-grow(0);
+
+	@include browser-lessThanIE(10) {
+		height: 1%;
+	}
 }
