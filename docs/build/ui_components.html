@@ -136,6 +136,15 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#thumbContent">Thumb content</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#togglePills">Toggle Pills</a>
 										</li>
 									
@@ -453,7 +462,7 @@ classes are optional variants:</p><table class="styleguide"> <tr>
  </table>
 <h1 id="collapsible" class="styleguide">Collapsible</h1>
 <p class="styleguide">Collapses elements using class toggling. A base
-class of <code class="styleguide">collapsible</code> is <strong>required</strong>.</p><p class="styleguide">To collapse the element, add the <code class="styleguide">collapsible--close</code> class.</p><div class="codeExample">
+class of <code class="styleguide">collapsible</code> is <strong>required</strong>.</p><p class="styleguide">To collapse the element, add the <code class="styleguide">collapsible--close</code> class.</p><p class="styleguide"><strong>NOTE:</strong> to hide the collapsible content from screen readers, use <code class="styleguide">display--none</code> when the collapsible is closed.</p><div class="codeExample">
   <div class="exampleOutput">
     <a id="cTrigger" class="button button--primary chunk followLink">Toggle</a>
 
@@ -662,6 +671,65 @@ Variant classes:</p><table class="styleguide"> <tr>
   </div>
 </div>
 
+<h1 id="thumbContent" class="styleguide">Thumb content</h1>
+<p class="styleguide">Used for placing content (like icons or labels) on top of a thumbnail</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul class="inlineblockList">
+    <li>
+        <div class="thumb media--l inverted" style="background-image: url('https://placekitten.com/g/72/72');">
+            <span class="thumb-content inverted">Default</span>
+        </div>
+    </li>
+    <li>
+        <div class="thumb media--l inverted" style="background-image: url('https://placekitten.com/g/72/72');">
+            <span class="thumb-content thumb-content--middle inverted">Middle</span>
+        </div>
+    </li>
+    <li>
+        <div class="thumb media--l inverted" style="background-image: url('https://placekitten.com/g/72/72');">
+            <span class="thumb-content thumb-content--top inverted">Top</span>
+        </div>
+    </li>
+</ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"thumb media--l inverted"</span> <span class="na">style=</span><span class="s">"background-image: url('https://placekitten.com/g/72/72');"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"thumb-content inverted"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"thumb media--l inverted"</span> <span class="na">style=</span><span class="s">"background-image: url('https://placekitten.com/g/72/72');"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"thumb-content thumb-content--middle inverted"</span><span class="nt">&gt;</span>Middle<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"thumb media--l inverted"</span> <span class="na">style=</span><span class="s">"background-image: url('https://placekitten.com/g/72/72');"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"thumb-content thumb-content--top inverted"</span><span class="nt">&gt;</span>Top<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3>Thumb content position variants</h3>
+<p class="styleguide">Vertical alignment of the thumb content can be adjusted</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">thumb-content--top</code></td>
+<td>Flushes content to the top of the thumb</td>
+</tr>
+<tr>
+<td><code class="styleguide">thumb-content--middle</code></td>
+<td>Vertically centers content in the thumb</td>
+</tr>
+ </table>
 <h1 id="togglePills" class="styleguide">Toggle Pills</h1>
 <p class="styleguide">Checkbox form elements styled as toggle buttons.</p>
 <h2>&quot;unchecked&quot; state</h2>
@@ -2047,6 +2115,16 @@ $(function() {
 					"title": "Tearsheet",
 					"breadcrumb": "UI Components > Tearsheet",
 					"path": "ui_components.html#tearsheet"
+				});
+
+			
+				
+				
+
+				index.add({
+					"title": "Thumb content",
+					"breadcrumb": "UI Components > Thumb content",
+					"path": "ui_components.html#thumbContent"
 				});
 
 			
