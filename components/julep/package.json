@@ -1,6 +1,6 @@
 {
 	"name": "julep",
-	"version": "1.0.2",
+	"version": "1.1.2",
 	"description": "Sass utility add-on for Bourbon",
 	"directories": {
 		"doc": "sassdoc/",
@@ -16,6 +16,7 @@
 		"grunt-cli": "",
 		"grunt-contrib-sass": "0.8.1",
 		"grunt-sassdoc": "",
+		"grunt-wiredep": "2.0.0",
 		"grunt-gh-pages": "0.10.0",
 		"grunt-contrib-clean": "0.6.0"
 	},

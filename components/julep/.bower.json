@@ -1,6 +1,6 @@
 {
   "name": "julep",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "Meetup Sass Utilities",
   "main": [
     "sass/julep.scss"
@@ -13,15 +13,18 @@
     "**/*.txt",
     "**/*.lock"
   ],
+  "dependencies": {
+    "bourbon": "4.2.3"
+  },
   "license": "MIT",
   "homepage": "https://github.com/meetup/julep",
-  "_release": "1.0.2",
+  "_release": "1.1.2",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.2",
-    "commit": "8cd4204252343cdaadd9d75f8d3e7b9b05c5c300"
+    "tag": "v1.1.2",
+    "commit": "655ed4072f94024997860668ccac5ff613291fda"
   },
   "_source": "git://github.com/meetup/julep.git",
-  "_target": "1.0.2",
+  "_target": "1.1.2",
   "_originalSource": "julep"
 }

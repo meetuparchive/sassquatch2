@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-sassdoc');
 	grunt.loadNpmTasks('grunt-gh-pages');
+	grunt.loadNpmTasks('grunt-wiredep');
 
 	grunt.initConfig({
 		bower: grunt.file.readJSON('bower.json'),
@@ -22,6 +23,11 @@ module.exports = function(grunt) {
 		'clean': {
 			css: ["sass/*.css", "sass/*.css.map", "!sass/*.scss"]
 		},
+		'wiredep': {
+			'sass': {
+				src: ["sass/julep.scss"]
+			}
+		},
 		'gh-pages': {
 			options: {
 				base: 'sassdoc/'
@@ -30,6 +36,7 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['sass', 'sassdoc', 'clean']);
-	grunt.registerTask('ghpages', ['sass', 'sassdoc', 'gh-pages', 'clean']);
+	grunt.registerTask('compile', ['clean', 'wiredep', 'sass', 'sassdoc']);
+	grunt.registerTask('default', ['compile', 'clean']);
+	grunt.registerTask('ghpages', ['compile', 'gh-pages', 'clean']);
 };
