@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CSS foundation and framework for Meetup",
   "main": [
-    "./dist"
+    "./sass/sassquatch.scss"
   ],
   "ignore": [
     "Gemfile",
