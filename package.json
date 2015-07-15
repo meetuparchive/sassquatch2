@@ -23,6 +23,7 @@
 		"grunt-hologram": "0.0.7",
 		"grunt-gh-pages": "0.9.1",
 		"grunt-contrib-clean": "0.6.0",
+		"grunt-wiredep": "2.0.0",
 		"grunt-preprocess": "4.1.0"
 	},
 	"bugs": {
