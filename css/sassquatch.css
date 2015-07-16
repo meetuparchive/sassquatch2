@@ -2895,8 +2895,7 @@ _Includes `table-cell` fallback for IE8._
   .ieRoot_lt_IE10 .row {
     display: table;
     table-layout: auto;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
 
 .row-item {
   -webkit-flex-grow: 1;
@@ -3132,8 +3131,7 @@ _See also: `.row`._
   .ieRoot_lt_IE10 .column {
     display: table;
     table-layout: auto;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
   .ieRoot_lt_IE10 .column {
     display: table;
     table-layout: auto;
@@ -3270,8 +3268,7 @@ Class                   | Description
   .ieRoot_lt_IE10 .stack {
     display: table;
     table-layout: auto;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
 
 .stack-item {
   -webkit-flex-grow: 1;
@@ -3320,8 +3317,7 @@ Class                   | Description
     .ieRoot_lt_IE10 .atSmall_stack--spread {
       display: table;
       table-layout: auto;
-      width: 100%;
-      height: 100%; }
+      width: 100%; }
     .atSmall_stack--spread > .stack-item {
       -webkit-flex-grow: 1;
       flex-grow: 1;
@@ -3387,8 +3383,7 @@ Class                   | Description
     .ieRoot_lt_IE10 .atMedium_stack--spread {
       display: table;
       table-layout: auto;
-      width: 100%;
-      height: 100%; }
+      width: 100%; }
     .atMedium_stack--spread > .stack-item {
       -webkit-flex-grow: 1;
       flex-grow: 1;
@@ -3454,8 +3449,7 @@ Class                   | Description
     .ieRoot_lt_IE10 .atLarge_stack--spread {
       display: table;
       table-layout: auto;
-      width: 100%;
-      height: 100%; }
+      width: 100%; }
     .atLarge_stack--spread > .stack-item {
       -webkit-flex-grow: 1;
       flex-grow: 1;
@@ -4896,8 +4890,7 @@ category: UI Components
   .ieRoot_lt_IE10 .pagination {
     display: table;
     table-layout: auto;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
 
 .pagination-page {
   border: 0;
