@@ -3129,6 +3129,8 @@ _See also: `.row`._
   flex-wrap: "nowrap";
   height: 100%; }
   .ieRoot_lt_IE10 .column {
+    height: 100%; }
+  .ieRoot_lt_IE10 .column {
     display: table;
     table-layout: auto;
     width: 100%; }
@@ -3265,6 +3267,8 @@ Class                   | Description
   -webkit-flex-direction: column;
   flex-direction: column;
   -ms-flex-direction: column; }
+  .ieRoot_lt_IE10 .stack {
+    height: 100%; }
   .ieRoot_lt_IE10 .stack {
     display: table;
     table-layout: auto;
