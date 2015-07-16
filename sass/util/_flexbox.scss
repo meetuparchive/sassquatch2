@@ -31,6 +31,9 @@ Sets flexbox properties for a flex parent (`display: flex;`)
 		@include flex-wrap(nowrap);
 	} @else {
 		@include flex-direction(column);
+		@include browser-lessThanIE( 10 ) {
+			height: 100%;
+		}
 	}
 	@include browser-lessThanIE( 10 ) {
 		display: table;
