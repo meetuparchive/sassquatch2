@@ -1,0 +1,51 @@
+/*doc
+---
+title: Media View
+name: mediaView
+category: Views
+---
+
+docs TK
+
+<a class="link followLink" href="pages/media-view.html">Demo</a>
+*/
+
+$_spreadAt: large;
+
+.view--mediaContent {
+	min-height: 0;
+
+}
+
+.bounds--mediaMeta {
+	@include atMediaUp($_spreadAt) {
+		width: 320px;
+	}
+}
+
+.view-head--media {
+	background-color: #000;
+}
+
+.view-body--media {
+	background-color: #000;
+
+	.bounds {
+		@include align-items(center);
+		@include display(flex);
+		@include justify-content(center);
+		padding: 0;
+		position: relative;
+		@include atMediaUp($_spreadAt) {
+				min-height: 100vh;
+		}
+
+		img {
+			max-width: 100%;
+			// adjust centering on large screens
+			@include atMediaUp($_spreadAt) {
+				margin-bottom: 20vh;
+			}
+		}
+	}
+}
