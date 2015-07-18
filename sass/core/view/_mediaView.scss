@@ -9,24 +9,18 @@ docs TK
 
 <a class="link followLink" href="pages/media-view.html">Demo</a>
 */
-
 $_spreadAt: large;
 
+//
+// media content view
+//
 .view--mediaContent {
 	min-height: 0;
 
 }
-
-.bounds--mediaMeta {
-	@include atMediaUp($_spreadAt) {
-		width: 320px;
-	}
-}
-
 .view-head--media {
 	background-color: #000;
 }
-
 .view-body--media {
 	background-color: #000;
 	position: relative;
@@ -57,24 +51,17 @@ $_spreadAt: large;
 	}
 }
 
-// Photo modal navigation
-.mediaNav-icon {
-	@include transition(opacity 50ms ease-in, transform 50ms ease-in);
-	@include color-all(#fff);
-	opacity: .5;
-	position: absolute;
-	top: 50%;
-
-	.mediaNav--prev & {
-		@include transform(translate(-$space*2, 0));
-		left: $space;
-	}
-	.mediaNav--next & {
-		@include transform(translate($space*2, 0));
-		right: $space;
+//
+// media meta view
+//
+.bounds--mediaMeta {
+	@include atMediaUp($_spreadAt) {
+		width: 320px;
 	}
 }
 
+
+// Photo modal navigation
 .mediaNav {
 	height: 100%;
 	position: absolute;
@@ -94,3 +81,21 @@ $_spreadAt: large;
 		}
 	}
 }
+
+.mediaNav-icon {
+	@include transition(opacity 50ms ease-in, transform 50ms ease-in);
+	@include color-all(#fff);
+	opacity: .5;
+	position: absolute;
+	top: 50%;
+
+	.mediaNav--prev & {
+		@include transform(translate(-$space*2, 0));
+		left: $space;
+	}
+	.mediaNav--next & {
+		@include transform(translate($space*2, 0));
+		right: $space;
+	}
+}
+
