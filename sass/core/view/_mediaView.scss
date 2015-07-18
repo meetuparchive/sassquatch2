@@ -42,6 +42,8 @@ $_spreadAt: large;
 		}
 
 		img {
+			display: block;
+			margin: 0 auto;
 			max-width: 100%;
 			// adjust centering on large screens
 			@include atMediaUp($_spreadAt) {
