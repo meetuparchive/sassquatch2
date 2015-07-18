@@ -29,28 +29,29 @@ $_spreadAt: large;
 
 .view-body--media {
 	background-color: #000;
+	position: relative;
+
+	&:hover {
+		.mediaNav-icon {
+			@include transform(translate(0, 0));
+			opacity: .5;
+		}
+	}
 
 	.bounds {
 		@include align-items(center);
 		@include display(flex);
 		@include justify-content(center);
 		padding: 0;
-		position: relative;
 		@include atMediaUp($_spreadAt) {
 				min-height: 100vh;
-		}
-
-		&:hover {
-			.mediaNav-icon {
-				opacity: .5;
-			}
 		}
 
 		img {
 			max-width: 100%;
 			// adjust centering on large screens
 			@include atMediaUp($_spreadAt) {
-				margin-bottom: 20vh;
+				margin-bottom: $view-head-height-tablet;
 			}
 		}
 	}
@@ -59,15 +60,18 @@ $_spreadAt: large;
 // Photo modal navigation
 .mediaNav-icon {
 	@include transition(opacity 50ms ease-in, transform 50ms ease-in);
+	@include color-all(#fff);
 	opacity: .5;
 	position: absolute;
 	top: 50%;
 
 	.mediaNav--prev & {
-		left: 0;
+		@include transform(translate(-$space*2, 0));
+		left: $space;
 	}
 	.mediaNav--next & {
-		right: 0;
+		@include transform(translate($space*2, 0));
+		right: $space;
 	}
 }
 
