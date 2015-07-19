@@ -68,6 +68,7 @@ $_spreadAt: large;
 	height: 100%;
 	position: absolute;
 	width: 50%;
+	z-index: map-get($zindex-map, popup);
 
 	&--prev {
 		left: 0;
