@@ -96,19 +96,16 @@ $_spreadAt: large;
 }
 
 .mediaNav-icon {
-	@include transition(opacity 50ms ease-in, transform 50ms ease-in);
+	@include transition(opacity 50ms ease-in);
 	@include color-all(#fff);
 	opacity: .5;
 	position: absolute;
 	top: 50%;
 
 	.mediaNav--prev & {
-		@include transform(translate(-$space*2, 0));
 		left: $space;
 	}
 	.mediaNav--next & {
-		@include transform(translate($space*2, 0));
 		right: $space;
 	}
 }
-
