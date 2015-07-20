@@ -14,16 +14,17 @@ $_spreadAt: large;
 //
 // media content view
 //
+.view--mediaMeta,
 .view--mediaContent {
 	min-height: 0;
-	position: relative;
+
+	@include atMediaUp($_spreadAt) {
+		height: 100vh;
+	}
 }
 
 .view-head--mediaContent {
 	background-color: #000;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 
 .view-body--mediaContent {
@@ -36,7 +37,6 @@ $_spreadAt: large;
 
 	@include atMediaUp($_spreadAt) {
 		background-position: center center;
-		min-height: 100vh;
 	}
 
 	&:hover {
@@ -51,7 +51,6 @@ $_spreadAt: large;
 // media meta view
 //
 .view--mediaMeta {
-	min-height: 0;
 	position: relative;
 	z-index: map-get($zindex-map, popup) + 1; // cover mediaNav controls
 	overflow-y: scroll;
