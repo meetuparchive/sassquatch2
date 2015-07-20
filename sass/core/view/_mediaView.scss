@@ -46,6 +46,7 @@ $_spreadAt: large;
 		@include align-items(center);
 		@include display(flex);
 		@include justify-content(center);
+		padding: 0;
 
 		// fixes horizontal alignment of image
 		// within bounds for IE10, IE11, IE Edge
