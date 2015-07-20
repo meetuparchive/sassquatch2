@@ -28,6 +28,7 @@ with one of the following classes.
 
 Class                       | Description
 --------------------------- | ----------------------------------
+`.row--noGutters`           | removes padding from all `.stack-item` children when spread
 `atMedium_stack--spread`    | Spreads out the stack elements horizontally at `medium` breakpoint
 `atLarge_stack--spread`     | Spreads out the stack elements horizontally at `large` breakpoint
 
@@ -51,6 +52,10 @@ Class                   | Description
 	@include browser-lessThanIE( 10 ) {
 		display: block;
 		padding-left: 0 !important;
+	}
+
+	.stack--noGutters & {
+		padding: 0;
 	}
 }
 

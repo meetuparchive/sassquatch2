@@ -78,4 +78,7 @@ Sets flexbox properties for a flex children.
 			width: 1%;
 		}
 	}
+	@include browser-lessThanIE( 10 ) {
+		vertical-align: top;
+	}
 }

@@ -47,6 +47,11 @@ $_spreadAt: large;
 		@include display(flex);
 		@include justify-content(center);
 		padding: 0;
+
+		// fixes horizontal alignment of image
+		// within bounds for IE10, IE11, IE Edge
+		-ms-flex-pack: start;
+
 		@include atMediaUp($_spreadAt) {
 			min-height: 100vh;
 		}
