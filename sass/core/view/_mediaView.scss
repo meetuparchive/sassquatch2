@@ -32,11 +32,11 @@ $_spreadAt: large;
 	background-repeat: no-repeat;
 	background-size: contain;
 	min-height: $block-6;
-	background-position: center $view-head-height;
+	background-position: center center;
+	@include transform(translateY($view-head-height));
 
 	@include atMediaUp($_spreadAt) {
 		min-height: 100vh;
-		background-position: center $view-head-height-tablet;
 	}
 
 	&:hover {
