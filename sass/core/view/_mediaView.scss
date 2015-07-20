@@ -56,6 +56,10 @@ $_spreadAt: large;
 //
 // media meta view
 //
+.view--mediaMeta {
+	position: relative;
+	z-index: map-get($zindex-map, popup) + 1; // cover mediaNav controls
+}
 .bounds--mediaMeta {
 	@include atMediaUp($_spreadAt) {
 		width: 320px;
