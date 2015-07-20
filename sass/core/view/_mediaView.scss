@@ -11,19 +11,29 @@ docs TK
 */
 $_spreadAt: large;
 
+.view--mediaContent,
+.view--mediaMeta {
+	min-height: 0;
+}
+
 //
 // media content view
 //
-.view--mediaContent {
-	min-height: 0;
-
-}
 .view-head--mediaContent {
+	position: absolute;
+	top: 0;
+	left: 0;
 	background-color: #000;
 }
 .view-body--mediaContent {
 	background-color: #000;
 	position: relative;
+
+	// make room for view-head at smaller sizes
+	padding-top: $view-head-height;
+	@include atMediaUp($_spreadAt) {
+		padding-top: 0;
+	}
 
 	&:hover {
 		.mediaNav-icon {
@@ -38,17 +48,13 @@ $_spreadAt: large;
 		@include justify-content(center);
 		padding: 0;
 		@include atMediaUp($_spreadAt) {
-				min-height: 100vh;
+			min-height: 100vh;
 		}
 
 		img {
 			display: block;
 			margin: 0 auto;
 			max-width: 100%;
-			// adjust centering on large screens
-			@include atMediaUp($_spreadAt) {
-				margin-bottom: $view-head-height-tablet;
-			}
 		}
 	}
 }
