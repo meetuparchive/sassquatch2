@@ -30,12 +30,12 @@ $_spreadAt: large;
 	background-color: #000;
 	position: relative;
 	background-repeat: no-repeat;
-	background-size: contain;
 	min-height: $block-6;
-	background-position: center center;
-	@include transform(translateY($view-head-height));
+	background-size: contain;
+	background-position: bottom center;
 
 	@include atMediaUp($_spreadAt) {
+		background-position: center center;
 		min-height: 100vh;
 	}
 
@@ -54,6 +54,7 @@ $_spreadAt: large;
 	min-height: 0;
 	position: relative;
 	z-index: map-get($zindex-map, popup) + 1; // cover mediaNav controls
+	overflow-y: scroll;
 }
 .bounds--mediaMeta {
 	@include atMediaUp($_spreadAt) {
