@@ -15,28 +15,33 @@ $_spreadAt: large;
 // media content view
 //
 .view--mediaContent {
+	@include flexParent('column');
 	min-height: 0;
 	position: relative;
+	@include atMediaUp($_spreadAt) {
+		min-height: 100vh;
+	}
 }
 
 .view-head--mediaContent {
+	@include flexChild('shrink');
 	background-color: #000;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 
 .view-body--mediaContent {
+	@include flexChild('grow');
 	background-color: #000;
 	position: relative;
 	background-repeat: no-repeat;
-	min-height: $block-6;
 	background-size: contain;
-	background-position: bottom center;
+	background-position: center center;
+	min-height: $block-4;
 
-	@include atMediaUp($_spreadAt) {
-		background-position: center center;
-		min-height: 100vh;
+	@include atMediaUp(small) {
+		min-height: $block-7;
+	}
+	@include atMediaUp(small) {
+		min-height: $block-6;
 	}
 
 	&:hover {
@@ -54,9 +59,9 @@ $_spreadAt: large;
 	min-height: 0;
 	position: relative;
 	z-index: map-get($zindex-map, popup) + 1; // cover mediaNav controls
-	overflow-y: scroll;
 }
 .bounds--mediaMeta {
+	max-width: 400px;
 	@include atMediaUp($_spreadAt) {
 		width: 320px;
 	}
