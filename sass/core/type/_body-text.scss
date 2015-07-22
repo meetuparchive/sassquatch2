@@ -126,6 +126,26 @@ parent: bodyText
 	}
 }
 
+/*doc
+---
+title: Monospaced text
+name: monoText
+parent: bodyText
+---
+The `code` and `pre` elements use a monospaced
+font by default. To apply monospaced type rules
+to any other element, use `text--mono`.
+
+```html_example
+<p class="text--mono">Is this code? What is this?</p>
+<code>This is code</code>
+<pre>We can safely assume a pre tag on Meetup is also code</pre>
+```
+*/
+.text--mono {
+	font-family: $font--mono;
+}
+
 
 /*doc
 ---

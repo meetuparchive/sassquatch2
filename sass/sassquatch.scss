@@ -55,6 +55,7 @@
 	@import "core/layout/chunk";
 	@import "core/layout/bounds";
 	@import "core/layout/row";
+	@import "core/layout/column";
 	@import "core/layout/stack";
 
 	// Views
@@ -62,6 +63,7 @@
 	@import "core/view/view-head";
 	@import "core/view/view-body";
 	@import "core/view/modal";
+	@import "core/view/mediaView";
 
 
 // ---------------------------
