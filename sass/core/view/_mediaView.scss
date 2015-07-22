@@ -35,13 +35,10 @@ $_spreadAt: large;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	min-height: $block-4;
+	min-height: $block-6;
 
-	@include atMediaUp(small) {
+	@include atMediaUp(medium) {
 		min-height: $block-7;
-	}
-	@include atMediaUp(small) {
-		min-height: $block-6;
 	}
 
 	&:hover {
