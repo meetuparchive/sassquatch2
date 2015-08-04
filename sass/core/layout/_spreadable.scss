@@ -58,7 +58,7 @@ Class                   | Description
 	}
 }
 
-@include _bpModifier(stack, spread) {
+@include _bpModifier(spreadable, spread) {
 	@include flexParent('row');
 
 	> .spreadable-item {
