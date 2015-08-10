@@ -1915,21 +1915,6 @@ Class                | Description
 .stripe--inverted {
   background-color: #353e48; }
 
-.stripe--overlap:before {
-  border-bottom: 24px solid white;
-  bottom: 0;
-  box-sizing: border-box;
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%; }
-
-.stripe--overlap--collection:before {
-  border-bottom: 24px solid #f3f6f9; }
-
-.stripe--overlap--inverted:before {
-  border-bottom: 24px solid #353e48; }
-
 /*doc
 ---
 title: Hero Stripes
@@ -1960,41 +1945,6 @@ Uses the `stripe--photoHero` variant.
 <section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
 	<div class="bounds stripe-heroContent">
 		<h1 class="text--display">Manitoba Yoga Meetup</h1>
-	</div>
-</section>
-```
-*/
-/*doc
----
-title: Overlapping Stripe
-name: overlappingStripe
-parent: stripe
----
-Uses the `stripe--overlap` variant. Allows content from one appear as if it's overlapping onto the next stripe.
-
-Use `stripe--overlap--collection` to overlap onto a collection stripe, and `stripe--overlap--inverted` to overlap onto an inverted stripe.
-
-**Note:** No difference is seen unless the backgrounds of the adjacent stripes are different colors.
-
-```html_example
-<section class="stripe stripe--photoHero stripe--overlap" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
-	<div class="bounds stripe-heroContent">
-		<h1 class="text--display align--left inverted">Photo Hero Stripe</h1>
-
-		<div class="attachment text--small align--left">
-			<a href="#" class="card card--event" style="min-height: 0; max-width: 440px;">
-				<div class="chunk">
-					<p class="wrap--singleLine--truncate chunk"><span class="text--secondary">Saturday Jan 01 at 12:00 am</span></p>
-					<p class="text--secondary">123 Chapter Who went</p>
-					<p class="text--bold">Let's get together and have a Meetup</p>
-				</div>
-			</a>
-		</div>
-	</div>
-</section>
-<section class="stripe">
-	<div class="bounds">
-		<p>... default stripe ...</p>
 	</div>
 </section>
 ```
@@ -2067,6 +2017,41 @@ Use `stripe--overlap--collection` to overlap onto a collection stripe, and `stri
     .stripe-heroContent {
       padding-top: 64px; } }
 
+/*doc
+---
+title: Overlapping Stripe
+name: overlappingStripe
+parent: stripe
+---
+Uses the `stripe--overlap` variant. Allows content from one appear as if it's overlapping onto the next stripe.
+
+Use `stripe--overlap--collection` to overlap onto a collection stripe, and `stripe--overlap--inverted` to overlap onto an inverted stripe.
+
+**Note:** No difference is seen unless the backgrounds of the adjacent stripes are different colors.
+
+```html_example
+<section class="stripe stripe--photoHero stripe--overlap" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
+	<div class="bounds stripe-heroContent">
+		<h1 class="text--display align--left inverted">Photo Hero Stripe</h1>
+
+		<div class="attachment text--small align--left">
+			<a href="#" class="card card--event" style="min-height: 0; max-width: 440px;">
+				<div class="chunk">
+					<p class="wrap--singleLine--truncate chunk"><span class="text--secondary">Saturday Jan 01 at 12:00 am</span></p>
+					<p class="text--secondary">123 Chapter Who went</p>
+					<p class="text--bold">Let's get together and have a Meetup</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+<section class="stripe">
+	<div class="bounds">
+		<p>... default stripe ...</p>
+	</div>
+</section>
+```
+*/
 .stripe--overlap:before {
   border-bottom: 24px solid white;
   bottom: 0;
@@ -2075,6 +2060,8 @@ Use `stripe--overlap--collection` to overlap onto a collection stripe, and `stri
   display: block;
   position: absolute;
   width: 100%; }
+.stripe--overlap + .stripe {
+  border-width: 0 !important; }
 
 .stripe--overlap--collection:before {
   border-bottom: 24px solid #f3f6f9; }
@@ -5681,7 +5668,6 @@ Class                   | Description
 .border--top {
   border-top: 1px solid rgba(0, 0, 0, 0.12) !important; }
 
-.stripe--overlap + .stripe,
 .border--none {
   border-width: 0 !important; }
 
