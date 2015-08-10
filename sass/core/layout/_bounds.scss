@@ -92,6 +92,7 @@ $sideHeadergutter: $bounds-wide - $bounds;
 		top: $space-bounds;
 		left: $space;
 		width: $sideHeadergutter - $space-bounds;
+		text-align: right;
 	}
 }
 

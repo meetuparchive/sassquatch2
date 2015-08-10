@@ -23,6 +23,9 @@
 // ---------------------------
 // Core
 // ---------------------------
+	// Animation (keyframes are not silent)
+	@import "util/animation";
+
 	// Tag Defaults / Reset
 	@import "core/tag-defaults";
 
