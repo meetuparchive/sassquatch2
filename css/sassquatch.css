@@ -278,79 +278,6 @@ a language, use `i18n-exclude`.
 */
 /*doc
 ---
-title: Animation
-name: animation
-category: Sass Utils | Mixins & Placeholders
----
-*/
-.toggleButton-input:checked + .toggleButton-label,
-.animate--bounceInSubtle,
-.animate--spin {
-  -webkit-transform-origin: center center;
-  -ms-transform-origin: center center;
-  transform-origin: center center; }
-
-/*doc
----
-title: Subtle bounce-in
-name: bounce-in-subtle
-parent: animation
----
-Subtle bounce effect using keyframes, provided via simple mixin
-_original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
-
-```
-@include animate--bounce-in-subtle($time: 750ms);
-```
-*/
-@-webkit-keyframes bounce-in-subtle {
-  0% {
-    -webkit-transform: scale(1); }
-  35% {
-    -webkit-transform: scale(1.15); }
-  75% {
-    -webkit-transform: scale(1); } }
-@keyframes bounce-in-subtle {
-  0% {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); }
-  35% {
-    -webkit-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    transform: scale(1.15); }
-  75% {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); } }
-/*doc
----
-title: Infinite spin
-name: spin
-parent: animation
----
-Infinite 2d rotation; 0-360deg.
-
-```
-@include animate--spin($time: 0.8s);
-```
-*/
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg); } }
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-/*doc
----
 title: Alignment Utilities
 name: align
 category: Sass Utils | Mixins & Placeholders
@@ -703,6 +630,79 @@ Adds a pseudo-element gradient
 @mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
 ```
 */
+/*doc
+---
+title: Animation
+name: animation
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+.toggleButton-input:checked + .toggleButton-label,
+.animate--bounceInSubtle,
+.animate--spin {
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center; }
+
+/*doc
+---
+title: Subtle bounce-in
+name: bounce-in-subtle
+parent: animation
+---
+Subtle bounce effect using keyframes, provided via simple mixin
+_original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
+
+```
+@include animate--bounce-in-subtle($time: 750ms);
+```
+*/
+@-webkit-keyframes bounce-in-subtle {
+  0% {
+    -webkit-transform: scale(1); }
+  35% {
+    -webkit-transform: scale(1.15); }
+  75% {
+    -webkit-transform: scale(1); } }
+@keyframes bounce-in-subtle {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  35% {
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15); }
+  75% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+/*doc
+---
+title: Infinite spin
+name: spin
+parent: animation
+---
+Infinite 2d rotation; 0-360deg.
+
+```
+@include animate--spin($time: 0.8s);
+```
+*/
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 html {
   overflow-y: scroll;
   font-size: 100%;
@@ -1900,12 +1900,13 @@ Class                | Description
 `.stripe--collection`|  applies a light gray background; for use with card collections
 `.stripe--hero`      |  for hero sections without a photo (see below)
 `.stripe--photoHero` |  for hero sections with a photo (see below)
+`.stripe--overlap`   |  for sections that have content that visually overlaps into the next stripe (see below)
 */
 .stripe--collection, .stripe--inverted, .stripe--hero, .stripe--photoHero,
 .stripe {
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  background-color: #fff;
+  background-color: white;
   margin-bottom: 0; }
 
 .stripe--collection {
@@ -1913,6 +1914,21 @@ Class                | Description
 
 .stripe--inverted {
   background-color: #353e48; }
+
+.stripe--overlap:before {
+  border-bottom: 24px solid white;
+  bottom: 0;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%; }
+
+.stripe--overlap--collection:before {
+  border-bottom: 24px solid #f3f6f9; }
+
+.stripe--overlap--inverted:before {
+  border-bottom: 24px solid #353e48; }
 
 /*doc
 ---
@@ -1944,6 +1960,41 @@ Uses the `stripe--photoHero` variant.
 <section class="stripe stripe--photoHero inverted" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
 	<div class="bounds stripe-heroContent">
 		<h1 class="text--display">Manitoba Yoga Meetup</h1>
+	</div>
+</section>
+```
+*/
+/*doc
+---
+title: Overlapping Stripe
+name: overlappingStripe
+parent: stripe
+---
+Uses the `stripe--overlap` variant. Allows content from one appear as if it's overlapping onto the next stripe.
+
+Use `stripe--overlap--collection` to overlap onto a collection stripe, and `stripe--overlap--inverted` to overlap onto an inverted stripe.
+
+**Note:** No difference is seen unless the backgrounds of the adjacent stripes are different colors.
+
+```html_example
+<section class="stripe stripe--photoHero stripe--overlap" style="background-image: url(http://photos2.meetupstatic.com/photos/event/4/a/2/9/600_434238985.jpeg);">
+	<div class="bounds stripe-heroContent">
+		<h1 class="text--display align--left inverted">Photo Hero Stripe</h1>
+
+		<div class="attachment text--small align--left">
+			<a href="#" class="card card--event" style="min-height: 0; max-width: 440px;">
+				<div class="chunk">
+					<p class="wrap--singleLine--truncate chunk"><span class="text--secondary">Saturday Jan 01 at 12:00 am</span></p>
+					<p class="text--secondary">123 Chapter Who went</p>
+					<p class="text--bold">Let's get together and have a Meetup</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+<section class="stripe">
+	<div class="bounds">
+		<p>... default stripe ...</p>
 	</div>
 </section>
 ```
@@ -2015,6 +2066,21 @@ Uses the `stripe--photoHero` variant.
   @media only screen and (min-width: 840px) {
     .stripe-heroContent {
       padding-top: 64px; } }
+
+.stripe--overlap:before {
+  border-bottom: 24px solid white;
+  bottom: 0;
+  box-sizing: border-box;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%; }
+
+.stripe--overlap--collection:before {
+  border-bottom: 24px solid #f3f6f9; }
+
+.stripe--overlap--inverted:before {
+  border-bottom: 24px solid #353e48; }
 
 /*doc
 ---
@@ -2803,7 +2869,8 @@ of the bounds on wide screens (`large` breakpoint), and linearizes on small scre
     position: absolute;
     top: 24px;
     left: 16px;
-    width: 236px; } }
+    width: 236px;
+    text-align: right; } }
 /*doc
 ---
 title: Row
@@ -5614,6 +5681,7 @@ Class                   | Description
 .border--top {
   border-top: 1px solid rgba(0, 0, 0, 0.12) !important; }
 
+.stripe--overlap + .stripe,
 .border--none {
   border-width: 0 !important; }
 
