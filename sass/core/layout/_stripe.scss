@@ -60,9 +60,7 @@ Class                | Description
 	background-color: $C_contentBGInverted;
 }
 
-// If this gets into SQ2 somehow, make sure Adam D takes a look and cleans it up
 .stripe--overlap {
-
 	&:before {
 		border-bottom: ($space-half+$space) solid $C_contentBG;
 		bottom: 0;
