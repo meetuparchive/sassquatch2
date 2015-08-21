@@ -55,7 +55,7 @@ $_spreadAt: large;
 .view--mediaMeta {
 	min-height: 0;
 	position: relative;
-	z-index: map-get($zindex-map, popup) + 1; // cover mediaNav controls
+	z-index: map-get($zindex-map, shade) - 1; // cover mediaNav controls
 }
 .bounds--mediaMeta {
 	max-width: 400px;
@@ -70,7 +70,7 @@ $_spreadAt: large;
 	height: 100%;
 	position: absolute;
 	width: 50%;
-	z-index: map-get($zindex-map, popup);
+	z-index: map-get($zindex-map, shade) - 2; // below mediaMeta AND shade itself
 
 	&--prev {
 		left: 0;
