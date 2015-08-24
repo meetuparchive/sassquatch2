@@ -15,7 +15,7 @@ $_spreadAt: large;
 // media content view
 //
 .view--mediaContent {
-	@include flexParent('column');
+	@include flexParent('column', false);
 	min-height: 0;
 	position: relative;
 	@include atMediaUp($_spreadAt) {
@@ -24,12 +24,12 @@ $_spreadAt: large;
 }
 
 .view-head--mediaContent {
-	@include flexChild('shrink');
+	@include flexChild('shrink', false);
 	background-color: #000;
 }
 
 .view-body--mediaContent {
-	@include flexChild('grow');
+	@include flexChild('grow', false);
 	background-color: #000;
 	position: relative;
 	background-repeat: no-repeat;
