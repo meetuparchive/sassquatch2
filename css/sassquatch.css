@@ -3700,7 +3700,7 @@ Class                      | Description
   border-bottom: none;
   color: white;
   position: absolute; }
-  .view-head--transparent h1 {
+  .view-head--transparent h1, .view-head--transparent h2, .view-head--transparent p {
     opacity: 0; }
 
 .view-head--transparent.view-head--photoOverlay {
@@ -4011,7 +4011,7 @@ docs TK
 .view--mediaMeta {
   min-height: 0;
   position: relative;
-  z-index: 51; }
+  z-index: 19; }
 
 .bounds--mediaMeta {
   max-width: 400px; }
@@ -4023,7 +4023,7 @@ docs TK
   height: 100%;
   position: absolute;
   width: 50%;
-  z-index: 50; }
+  z-index: 18; }
   .mediaNav--prev {
     left: 0; }
   .mediaNav--next {
