@@ -15,7 +15,7 @@ $_spreadAt: large;
 // media content view
 //
 .view--mediaContent {
-	@include flexParent('column');
+	@include flexParent('column', false);
 	min-height: 0;
 	position: relative;
 	@include atMediaUp($_spreadAt) {
@@ -24,12 +24,12 @@ $_spreadAt: large;
 }
 
 .view-head--mediaContent {
-	@include flexChild('shrink');
+	@include flexChild('shrink', false);
 	background-color: #000;
 }
 
 .view-body--mediaContent {
-	@include flexChild('grow');
+	@include flexChild('grow', false);
 	background-color: #000;
 	position: relative;
 	background-repeat: no-repeat;
@@ -55,7 +55,7 @@ $_spreadAt: large;
 .view--mediaMeta {
 	min-height: 0;
 	position: relative;
-	z-index: map-get($zindex-map, popup) + 1; // cover mediaNav controls
+	z-index: map-get($zindex-map, shade) - 1; // -1 to allow overlay shims to cover it
 }
 .bounds--mediaMeta {
 	max-width: 400px;
@@ -70,7 +70,6 @@ $_spreadAt: large;
 	height: 100%;
 	position: absolute;
 	width: 50%;
-	z-index: map-get($zindex-map, popup);
 
 	&--prev {
 		left: 0;
