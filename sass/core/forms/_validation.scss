@@ -20,8 +20,3 @@ Error text is set explicitly with `text--error`.
 .field--error {
 	border-color: $C_red;
 }
-
-.text--error {
-	@extend %text--small;
-	color: $C_red;
-}
