@@ -4,9 +4,6 @@ title: Modal mixins
 name: modalUtils
 category: Sass Utils | Mixins & Placeholders
 ---
-
-Description here
-
 */
 
 /*doc
@@ -27,12 +24,10 @@ a view that snaps to full page on small screens and a dialog on larger formats.
 @mixin modal-dialog{
 	@include transform( translate3d(0, 0, 0) );
 	@include transition(transform .2s ease);
-	left: 50%;
-	margin-left: -($modal-width/2);
-	margin-top: 10vh; // Can we do this kind of thing on native?
+	@include centerAbsolute($modal-width);
 	min-height: 0;
-	position: absolute;
 	width: $modal-width;
+	margin-top: 10vh;
 
 	&.off{
 	  @include transform( translateY(100vh) );

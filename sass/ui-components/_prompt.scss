@@ -1,0 +1,49 @@
+/*doc
+---
+title: Prompt
+name: prompt
+category: UI Components
+---
+Description TK
+
+```html_example
+<a class="link" href="pages/modal-snap.html">Demo</a>
+
+<div id="examplePrompt" class="prompt">
+	<h3 class="chunk text--bold">Are you sure?</h3>
+	<div class="chunk">
+		<a class="button button--primary button--fullWidth">Delete the internet</a>
+	</div>
+	<div class="chunk">
+		<a class="button button--borderless button--fullWidth">Cancel</a>
+	</div>
+</div>
+```
+
+TODO: doc variants
+*/
+$_promptWidth: $breakpoint-s;
+
+.prompt {
+	@extend %bounds;
+	@include transform( translateY(100vh) );
+	@include transition(transform .2s ease);
+	display: none;
+	text-align: center;
+	z-index: map-get($zindex-map, popup);
+}
+
+.prompt--active {
+	@include transform( translate3d(0, 0, 0) );
+	display: block;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+
+	@include atMediaUp(medium) {
+		@include centerAbsolute($_promptWidth);
+		top: 0;
+		margin-top: 10vh;
+		max-width: $_promptWidth;
+	}
+}
