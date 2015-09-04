@@ -176,6 +176,8 @@ Sets flexbox properties for a flex parent (`display: flex;`)
 ```
 @include flexParent('row'); // displays element as flex with children in row orientation
 @include flexParent('column'); // displays element as flex with children in column orientation
+
+@include flexParent('row', false); // optional second argument allows disabling of IE table display fallbacks
 ```
 */
 /*doc
@@ -190,6 +192,8 @@ Sets flexbox properties for a flex children.
 ```
 @include flexChild('grow'); // sets element to grow to fill remaining space in flex parent
 @include flexChild('shrink'); // sets element to shirnk to the width of its content
+
+@include flexChild('shrink', false); // optional second argument allows disabling of IE table display fallbacks
 ```
 */
 /*doc
@@ -3952,12 +3956,6 @@ docs TK
   -ms-flex-direction: column;
   min-height: 0;
   position: relative; }
-  .ieRoot_lt_IE10 .view--mediaContent {
-    height: 100%; }
-  .ieRoot_lt_IE10 .view--mediaContent {
-    display: table;
-    table-layout: auto;
-    width: 100%; }
   @media only screen and (min-width: 840px) {
     .view--mediaContent {
       min-height: 100vh; } }
@@ -3974,10 +3972,6 @@ docs TK
   -ms-flex-preferred-size: auto;
   width: initial;
   background-color: #000; }
-  .ieRoot_lt_IE10 .view-head--mediaContent {
-    width: 1%; }
-  .ieRoot_lt_IE10 .view-head--mediaContent {
-    vertical-align: top; }
 
 .view-body--mediaContent {
   -webkit-flex-grow: 1;
@@ -3995,10 +3989,6 @@ docs TK
   background-size: contain;
   background-position: center center;
   min-height: 384px; }
-  .ieRoot_lt_IE10 .view-body--mediaContent {
-    display: table-cell; }
-  .ieRoot_lt_IE10 .view-body--mediaContent {
-    vertical-align: top; }
   @media only screen and (min-width: 640px) {
     .view-body--mediaContent {
       min-height: 544px; } }
@@ -4022,8 +4012,7 @@ docs TK
 .mediaNav {
   height: 100%;
   position: absolute;
-  width: 50%;
-  z-index: 18; }
+  width: 50%; }
   .mediaNav--prev {
     left: 0; }
   .mediaNav--next {

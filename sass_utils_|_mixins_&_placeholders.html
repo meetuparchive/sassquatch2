@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v0.22.3</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v0.22.5</a>
 						</div>
 					</div>
 				</div>
@@ -536,14 +536,18 @@ as data uris in a Sass map.</p><div class="codeBlock">
 <p class="styleguide">Sets flexbox properties for a flex children.</p><div class="codeBlock">
   <div class="highlight">
     <pre>@include flexChild('grow'); // sets element to grow to fill remaining space in flex parent
-@include flexChild('shrink'); // sets element to shirnk to the width of its content</pre>
+@include flexChild('shrink'); // sets element to shirnk to the width of its content
+
+@include flexChild('shrink', false); // optional second argument allows disabling of IE table display fallbacks</pre>
   </div>
 </div>
 <h2 id="flexParentUtil" class="styleguide">Flex parent</h2>
 <p class="styleguide">Sets flexbox properties for a flex parent (<code class="styleguide">display: flex;</code>)</p><div class="codeBlock">
   <div class="highlight">
     <pre>@include flexParent('row'); // displays element as flex with children in row orientation
-@include flexParent('column'); // displays element as flex with children in column orientation</pre>
+@include flexParent('column'); // displays element as flex with children in column orientation
+
+@include flexParent('row', false); // optional second argument allows disabling of IE table display fallbacks</pre>
   </div>
 </div>
 <h1 id="float" class="styleguide">Float utils</h1>
