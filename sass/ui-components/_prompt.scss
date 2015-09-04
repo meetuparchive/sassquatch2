@@ -32,7 +32,9 @@ $_promptWidth: $breakpoint-s;
 	background-color: $C_white;
 	display: none;
 	text-align: center;
-	z-index: map-get($zindex-map, popup);
+
+	// popup layer +1 to override floatingAction
+	z-index: map-get($zindex-map, popup) + 1;
 }
 
 .prompt--active {
