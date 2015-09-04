@@ -10,12 +10,14 @@ Description TK
 <a class="link" href="pages/modal-snap.html">Demo</a>
 
 <div id="examplePrompt" class="prompt">
-	<h3 class="chunk text--bold">Are you sure?</h3>
-	<div class="chunk">
-		<a class="button button--primary button--fullWidth">Delete the internet</a>
-	</div>
-	<div class="chunk">
-		<a class="button button--borderless button--fullWidth">Cancel</a>
+	<div class="bounds">
+		<h3 class="chunk text--bold">Are you sure?</h3>
+		<div class="chunk">
+			<a class="button button--primary button--fullWidth">Delete the internet</a>
+		</div>
+		<div class="chunk">
+			<a class="button button--borderless button--fullWidth">Cancel</a>
+		</div>
 	</div>
 </div>
 ```
@@ -25,9 +27,9 @@ TODO: doc variants
 $_promptWidth: $breakpoint-s;
 
 .prompt {
-	@extend %bounds;
 	@include transform( translateY(100vh) );
 	@include transition(transform .2s ease);
+	background-color: $C_white;
 	display: none;
 	text-align: center;
 	z-index: map-get($zindex-map, popup);
@@ -42,8 +44,9 @@ $_promptWidth: $breakpoint-s;
 
 	@include atMediaUp(medium) {
 		@include centerAbsolute($_promptWidth);
+		bottom: auto;
 		top: 0;
-		margin-top: 10vh;
+		margin-top: 30vh;
 		max-width: $_promptWidth;
 	}
 }
