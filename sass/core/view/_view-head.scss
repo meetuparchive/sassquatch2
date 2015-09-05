@@ -47,7 +47,7 @@ Class                      | Description
 @include atMediaUp(medium){
 	.view-head {
 		.view--splitList & {
-			border-right: 1px solid $C_border;
+			@include standardBorder('right');
 			width: $view-minWidth;
 		}
 		.view--splitDetail & {

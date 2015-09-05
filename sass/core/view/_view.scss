@@ -80,6 +80,7 @@ the "detail" responsibility.
 
 @include atMediaUp(medium){
 	.view--splitList {
+		@include standardBorder('right');
 		// NOTE: uses fixed position
 		// try not to put forms in the split part
 		// usually the split view will be a list
@@ -88,7 +89,6 @@ the "detail" responsibility.
 		left: 0;
 		height: 100vh;
 		width: $view-minWidth;
-		border-right: 1px solid $C_border;
 		display: block;
 	}
 

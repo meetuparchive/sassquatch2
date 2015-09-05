@@ -57,11 +57,11 @@ $btn-color-map: (
 ) !default;
 
 %buttonBase {
-	box-sizing: border-box;
 	@include transition(background .15s);
+	@include standardBorder();
+	box-sizing: border-box;
 	-webkit-appearance: none;
 	background: transparent;
-	border: $border-standard;
 	border-radius: 50px;
 	cursor: pointer;
 	display: inline-block;
