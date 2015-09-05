@@ -13,8 +13,8 @@ title: Standard border mixin
 name: borderMixin
 parent: borderUtils
 ---
-Applies standard border, including rules
-for inverted context.
+Applies standard border using default `border-color`,
+including rules for inverted context.
 
 ```
 @import standardBorder(); // default = top
@@ -25,9 +25,11 @@ for inverted context.
 
 // apply a custom size (default = 1px)
 @import standardBorder('all', 4px);
+```
+
 */
 @mixin standardBorder( $side: 'top', $size: 1px ) {
-	@if #{$side} == 'all' {
+	@if '#{$side}' == 'all' {
 		border: $size solid $C_border;
 		.inverted & {
 			border: $size solid $C_borderInverted;
