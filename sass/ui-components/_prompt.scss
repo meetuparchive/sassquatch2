@@ -4,7 +4,7 @@ title: Prompt
 name: prompt
 category: UI Components
 ---
-Description TK
+A `prompt` is used to prompt for user input before continuing an action.
 
 ```html_example
 <a class="link" href="pages/modal-snap.html">Demo</a>
@@ -22,7 +22,12 @@ Description TK
 </div>
 ```
 
-TODO: doc variants
+## Active state
+A class of `prompt` is required. Add the `prompt--active` class to open the prompt.
+
+Class                     | Description
+------------------------- | ---------------------------
+`.prompt--active`         | Sets display to `block` and applies positioning rules
 */
 $_promptWidth: $breakpoint-s;
 
