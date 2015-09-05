@@ -20,7 +20,7 @@ including rules for inverted context.
 @import standardBorder(); // default = top
 
 // apply border to bottom OR
-// 'top', 'left', 'right', 'bottom', 'all'
+// 'top', 'left', 'right', 'bottom', 'all', 'none'
 @import standardBorder('bottom');
 
 // apply a custom size (default = 1px)
@@ -34,6 +34,8 @@ including rules for inverted context.
 		.inverted & {
 			border: $size solid $C_borderInverted;
 		}
+	} @else if '#{$side}' == 'none' {
+		border: none !important; // override inverted selector specificity
 	} @else {
 		border-#{$side}: $size solid $C_border;
 		.inverted & {
