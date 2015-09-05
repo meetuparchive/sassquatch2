@@ -60,6 +60,24 @@ Class                  | Description
 
 /*doc
 ---
+title: No Hyphens
+name: textNoHyphens
+parent: textMod
+---
+Don't allow hyphens on line breaks
+
+Class              | Description
+-------------------| ----------------------------
+`.text--noHyphens` | Don't allow hyphens on line breaks
+*/
+.text--noHyphens {
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/*doc
+---
 title: Nice Hyphenation
 name: wrapNiceUtil
 parent: textMod
