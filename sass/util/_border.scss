@@ -37,7 +37,7 @@ including rules for inverted context.
 	} @else {
 		border-#{$side}: $size solid $C_border;
 		.inverted & {
-			border-#{$side}: $size solid $C_border;
+			border-#{$side}: $size solid $C_borderInverted;
 		}
 	}
 }
