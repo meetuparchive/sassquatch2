@@ -29,7 +29,6 @@ Class                     | Description
 ------------------------- | ---------------------------
 `.prompt--active`         | Sets display to `block` and applies positioning rules
 */
-$_promptWidth: $breakpoint-s;
 
 .prompt {
 	@include transform( translateY(100vh) );
@@ -44,16 +43,15 @@ $_promptWidth: $breakpoint-s;
 
 .prompt--active {
 	@include transform( translate3d(0, 0, 0) );
+	@include centerAbsolute($block-5);
+	width: $block-5;
 	display: block;
-	width: 100%;
-	position: fixed;
-	bottom: 0;
+	top: 0;
+	margin-top: 10vh;
 
 	@include atMediaUp(medium) {
-		@include centerAbsolute($_promptWidth);
-		bottom: auto;
-		top: 0;
-		margin-top: 30vh;
-		max-width: $_promptWidth;
+		@include centerAbsolute($block-6);
+		width: $block-6;
+		margin-top: 20vh;
 	}
 }
