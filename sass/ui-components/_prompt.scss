@@ -43,8 +43,9 @@ Class                     | Description
 
 .prompt--active {
 	@include transform( translate3d(0, 0, 0) );
-	@include centerAbsolute($block-5);
-	width: $block-5;
+	position: absolute;
+	width: 90%;
+	margin: auto 5%; // + width = 100%
 	display: block;
 	top: 0;
 	margin-top: 10vh;
