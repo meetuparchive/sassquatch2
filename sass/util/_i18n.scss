@@ -32,7 +32,6 @@ use `i18n-only`.
 		$class: map-get($languageClasses, $lang);
 
 		@if $class {
-			// TODO: fix in julep
 			.lang_#{$lang} & {
 				@content;
 			}
