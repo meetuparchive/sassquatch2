@@ -64,6 +64,7 @@ of the bounds on wide screens (`large` breakpoint), and linearizes on small scre
 $space-bounds: $space * 1.5;
 $sideHeadergutter: $bounds-wide - $bounds;
 
+%bounds,
 .bounds {
 	@extend %clearfix;
 	box-sizing: border-box;
