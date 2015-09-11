@@ -167,6 +167,21 @@ parent: bodyText
 
 /*doc
 ---
+title: Error text
+name: errorText
+parent: bodyText
+---
+```html_example
+<p class="text--error">I'm erroring all the things</p>
+```
+*/
+@include _modifier(text, error) {
+	@extend %text--small;
+	@include color-all($C_red);
+}
+
+/*doc
+---
 title: Label text
 name: textLabel
 parent: bodyText

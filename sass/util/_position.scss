@@ -1,0 +1,25 @@
+/*doc
+---
+title: Position mixins
+name: posUtils
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+
+/*doc
+---
+title: Absolute centering
+name: centerAbsolute
+parent: posUtils
+---
+
+```
+	@include centerAbsolute($elementWidth);
+```
+*/
+@mixin centerAbsolute( $elementWidth ) {
+	position: absolute;
+	left: 50%;
+	margin-left: -($elementWidth/2);
+}
+

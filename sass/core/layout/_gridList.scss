@@ -4,24 +4,35 @@ title: Grid List
 name: gridList
 category: Layout
 ---
-A grid layout with breakpoint specific numbers of items in each row.
+A grid layout with breakpoint-specific configurable columns.
+Useful for collections of photos, group cards, or event cards.
 
-better docs TK
+For a layout with a fixed number of columns, use `row`.
 
 ```html_example
 <ul class="gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4">
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
 </ul>
 ```
 */
 $glColumns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+%_gridList--item {
+	font-size: 1rem;
+	display: inline-block;
+	margin: 0;
+	padding: 0 $space $space 0;
+	vertical-align: top;
+	width: 50%;
+	box-sizing: border-box;
+}
 
 .gridList {
 	margin: 0 #{-$space} 0 0;
@@ -29,14 +40,12 @@ $glColumns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 	list-style: none;
 	font-size: 0;
 	> li {
-		font-size: 1rem;
-		display: inline-block;
-		margin: 0;
-		padding: 0 $space $space 0;
-		vertical-align: top;
-		width: 50%;
-		box-sizing: border-box;
+		@extend %_gridList--item;
 	}
+}
+
+.gridList-item {
+	@extend %_gridList--item;
 }
 
 /*doc
