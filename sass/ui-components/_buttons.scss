@@ -50,31 +50,6 @@ Class                   | Description
 `.button--icon`         | button with icon
 */
 
-$btn-color-map: (
-	default: transparent,
-	primary: $C_link,
-	contrast: $C_textPrimaryInverted
-) !default;
-
-%buttonBase {
-	box-sizing: border-box;
-	@include transition(background .15s);
-	-webkit-appearance: none;
-	background: transparent;
-	border: $border-standard;
-	border-radius: 50px;
-	cursor: pointer;
-	display: inline-block;
-	font-size: $font-size;
-	font-weight: $W_bold;
-	margin: 0;
-	padding: $space-half $space;
-	text-align: center;
-	&:focus {
-		outline: 0;
-	}
-}
-
 %button,
 .button {
 	@extend %buttonBase;

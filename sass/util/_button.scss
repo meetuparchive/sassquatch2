@@ -24,3 +24,43 @@ Disables user-select, sets cursor, and resets text-decoration.
 	cursor: pointer;
 	text-decoration: none !important;
 }
+
+// TODO: doc these button utils
+$btn-color-map: (
+	default: transparent,
+	primary: $C_link,
+	contrast: $C_textPrimaryInverted
+) !default;
+
+%buttonBase {
+	box-sizing: border-box;
+	@include transition(background .15s);
+	-webkit-appearance: none;
+	background: transparent;
+	border: $border-standard;
+	border-radius: 50px;
+	cursor: pointer;
+	display: inline-block;
+	font-size: $font-size;
+	font-weight: $W_bold;
+	margin: 0;
+	padding: $space-half $space;
+	text-align: center;
+	&:focus {
+		outline: 0;
+	}
+}
+
+//
+// Button border modifiers
+//
+%button--bordered {
+	@include color-all( map-get($btn-color-map, "primary") );
+	border: $btn-border;
+	font-weight: $W_normal;
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparentize(map-get($btn-color-map, "primary"), .8);
+	}
+}
