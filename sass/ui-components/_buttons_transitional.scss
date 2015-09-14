@@ -48,6 +48,7 @@ $_hoverChange: 8%;
 
 %_buttonBaseSQ1 {
 	@extend %buttonPersonality;
+	@include color-all($C_textSecondary);
 	box-sizing: border-box;
 	display: inline-block;
 	padding: 10px $space $space-half $space;
@@ -56,7 +57,6 @@ $_hoverChange: 8%;
 	line-height: 1;
 	text-decoration: none;
 	text-align: center;
-	color: $C_textSecondary;
 	font-weight: $W_bold;
 	border-width: 0; // reset `button` element
 	border-bottom: 3px solid $C_textSecondary;
@@ -74,7 +74,7 @@ $_hoverChange: 8%;
 @mixin primaryButton( $color: $C_red ) {
 	$_borderColor: darken($color, 25%);
 	@extend %_buttonBaseSQ1;
-	color: getPrimaryTextColor($color);
+	@include color-all(getPrimaryTextColor($color));
 	border-color: $_borderColor;
 
 	&, &:active {
