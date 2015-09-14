@@ -41,6 +41,10 @@ Class                   | Description
 `.button--icon`         | button with icon
 */
 
+// TODO: highlight color of buttons
+// TODO: support new style bordered buttons? how?
+// TODO: support color variants for transitional primary buttons?
+
 
 %_buttonBaseSQ1 {
 	@include box-sizing(border-box);
