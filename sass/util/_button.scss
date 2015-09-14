@@ -34,7 +34,7 @@ $btn-color-map: (
 	contrast: $C_textPrimaryInverted
 ) !default;
 
-%buttonBase {
+@mixin buttonBase() { // for specificity accuracy in transitional buttons
 	box-sizing: border-box;
 	@include transition(background .15s);
 	-webkit-appearance: none;
@@ -51,17 +51,23 @@ $btn-color-map: (
 		outline: 0;
 	}
 }
+%buttonBase {
+	@include buttonBase;
+}
 
 //
 // Button border modifiers
 //
-%button--bordered {
+@mixin button--bordered() {
 	@include color-all( map-get($btn-color-map, "primary") );
 	border: $btn-border;
 	font-weight: $W_normal;
 	&:hover,
 	&:active,
 	&:focus {
-		background: transparentize(map-get($btn-color-map, "primary"), .8);
+		background: transparentize(map-get($btn-color-map, "primary"), .8) !important;
 	}
+}
+%button--bordered {
+	@include button--bordered;
 }

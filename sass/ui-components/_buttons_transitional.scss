@@ -16,6 +16,8 @@ framework, making them suitable for the transition of Meetup from legacy to "fou
 	<span class="button-label">Button with right Icon</span>
 	<span class="button-icon">X</span>
 </a>
+<a class="button button--bordered button--fullWidth" href="#">Full width bordered button</a>
+<a class="button button--bordered" href="#">bordered button</a>
 <a class="button button--icon button--primary" href="#">
 	<span class="button-icon">X</span>
 	<span class="button-label">Primary button with left Icon</span>
@@ -37,10 +39,11 @@ Class                   | Description
 `.button--small`        | decreases size of button
 `.button--icon`         | button with icon
 `.button--fullWidth`    | increases button width to 100% of its parent container
+`.button--bordered`     | foundation design style rounded bordered buttons
 */
 
 // map sq2 variants to "primary" button style from sq1
-$_primaryButtonVariants: primary, contrast, bordered, borderless;
+$_primaryButtonVariants: primary, contrast;
 $_hoverChange: 8%;
 
 %_buttonBaseSQ1 {
@@ -106,6 +109,20 @@ $_hoverChange: 8%;
 .button--fullWidth {
 	display: block;
 	width: 100%;
+}
+
+//
+// Bordered button
+//
+.button--bordered {
+	@include buttonBase;
+	@include button--bordered;
+	font-weight: $W_bold;
+}
+
+// use base button styles for "borderless" buttons
+.button--borderless {
+	@extend %_buttonBaseSQ1;
 }
 
 //
