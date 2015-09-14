@@ -36,13 +36,49 @@ classes are optional variants:
 
 Class                   | Description
 ----------------------- | ----------------------------------------
-`.button--primary`      | rounded button with dark background; for primary actions
-`.button--contrast`     | bold, dark text; use on dark backgrounds or photos (ie. top nav bar)
-`.button--bordered`     | rounded bordered button
-`.button--borderless`   | borderless button
+`.button--primary`      | button with $C_red background; for primary actions
 `.button--small`        | decreases size of button
 `.button--icon`         | button with icon
 */
+
+
+%_buttonBaseSQ1 {
+	@include box-sizing(border-box);
+	@extend %buttonPersonality;
+	display: inline-block;
+	padding: 10px $space;
+	border-radius: 5px;
+	font-size: $font-size;
+	line-height: 1;
+	text-decoration: none;
+	text-align: center;
+	color: $C_textSecondary;
+	background: $C_mediumGray;
+	font-weight: $W_bold;
+	border-bottom: 3px solid $C_textSecondary;
+	margin-bottom: 1px;
+}
+
+@mixin primaryButton( $color: $C_red ) {
+	@extend %_buttonBaseSQ1;
+	background: $color;
+	color: getPrimaryTextColor($color);
+	border-color: darken($color, 25%);
+}
+
+// map sq2 variants to "primary" button style from sq1
+$_primaryButtonVariants: primary, contrast, bordered, borderless;
+
+@each $variant in $_primaryButtonVariants {
+	%button--#{$variant},
+	.button--#{$variant} {
+		@include primaryButton;
+	}
+}
+
+.button {
+	@extend %_buttonBaseSQ1;
+}
 
 //
 // Button size modifiers
