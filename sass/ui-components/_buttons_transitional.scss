@@ -118,6 +118,7 @@ $_hoverChange: 8%;
 	@include buttonBase;
 	@include button--bordered;
 	font-weight: $W_bold;
+	padding: 12px $space !important;
 }
 
 // use base button styles for "borderless" buttons
@@ -166,6 +167,10 @@ $_iconGutter: $space/2;
 	}
 	&:last-child {
 		margin-left: $_iconGutter;
+	}
+
+	&.button--primary svg {
+		@include color-all($C_textPrimaryInverted);
 	}
 
 	@include browser-lessThanIE( 10 ) {
