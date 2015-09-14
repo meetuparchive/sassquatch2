@@ -55,6 +55,7 @@ $_hoverChange: 8%;
 	text-align: center;
 	color: $C_textSecondary;
 	font-weight: $W_bold;
+	border-width: 0; // reset `button` element
 	border-bottom: 3px solid $C_textSecondary;
 	margin-bottom: 1px;
 
