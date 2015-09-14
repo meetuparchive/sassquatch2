@@ -20,10 +20,7 @@ framework, making them suitable for the transition of Meetup from legacy to "fou
 	<span class="button-icon">X</span>
 	<span class="button-label">Primary button with left Icon</span>
 </a>
-<a class="button button--borderless" href="#">Borderless Button</a>
-<a class="button button--primary button--contrast" href="#">Contrast Button</a>
 <a class="button button--small" href="#">Small Button</a>
-<a class="button button--bordered button--fullWidth" href="#">Full width button</a>
 <a class="button button--primary button--icon button--fullWidth" href="#">
 	<span class="button-icon">ヘ(◕。◕ヘ)</span>
 	<span class="button-label">Full width primary button with left Icon</span>
@@ -39,11 +36,11 @@ Class                   | Description
 `.button--primary`      | button with $C_red background; for primary actions
 `.button--small`        | decreases size of button
 `.button--icon`         | button with icon
+`.button--fullWidth`    | increases button width to 100% of its parent container
 */
 
-// TODO: support new style bordered buttons? how?
-// TODO: support color variants for transitional primary buttons?
-
+// map sq2 variants to "primary" button style from sq1
+$_primaryButtonVariants: primary, contrast, bordered, borderless;
 $_hoverChange: 8%;
 
 %_buttonBaseSQ1 {
@@ -84,9 +81,6 @@ $_hoverChange: 8%;
 		background: darken($color, $_hoverChange);
 	}
 }
-
-// map sq2 variants to "primary" button style from sq1
-$_primaryButtonVariants: primary, contrast, bordered, borderless;
 
 @each $variant in $_primaryButtonVariants {
 	.button--#{$variant} {
