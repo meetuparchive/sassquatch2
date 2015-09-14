@@ -46,7 +46,7 @@ Class                   | Description
 	@include box-sizing(border-box);
 	@extend %buttonPersonality;
 	display: inline-block;
-	padding: 10px $space;
+	padding: 10px $space $space-half $space;
 	border-radius: 5px;
 	font-size: $font-size;
 	line-height: 1;
