@@ -25,7 +25,9 @@ Disables user-select, sets cursor, and resets text-decoration.
 	text-decoration: none !important;
 }
 
+//
 // TODO: doc these button utils
+//
 $btn-color-map: (
 	default: transparent,
 	primary: $C_link,

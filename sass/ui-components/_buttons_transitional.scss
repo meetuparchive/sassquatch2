@@ -41,40 +41,54 @@ Class                   | Description
 `.button--icon`         | button with icon
 */
 
-// TODO: highlight color of buttons
 // TODO: support new style bordered buttons? how?
 // TODO: support color variants for transitional primary buttons?
 
+$_hoverChange: 8%;
 
 %_buttonBaseSQ1 {
-	@include box-sizing(border-box);
 	@extend %buttonPersonality;
+	box-sizing: border-box;
 	display: inline-block;
 	padding: 10px $space $space-half $space;
-	border-radius: 5px;
+	border-radius: 3px;
 	font-size: $font-size;
 	line-height: 1;
 	text-decoration: none;
 	text-align: center;
 	color: $C_textSecondary;
-	background: $C_mediumGray;
 	font-weight: $W_bold;
 	border-bottom: 3px solid $C_textSecondary;
 	margin-bottom: 1px;
+
+	&, &:active {
+		background: $C_mediumGray;
+	}
+
+	&:hover {
+		background: darken($C_mediumGray, $_hoverChange);
+	}
 }
 
 @mixin primaryButton( $color: $C_red ) {
+	$_borderColor: darken($color, 25%);
 	@extend %_buttonBaseSQ1;
-	background: $color;
 	color: getPrimaryTextColor($color);
-	border-color: darken($color, 25%);
+	border-color: $_borderColor;
+
+	&, &:active {
+		background: $color;
+	}
+
+	&:hover {
+		background: darken($color, $_hoverChange);
+	}
 }
 
 // map sq2 variants to "primary" button style from sq1
 $_primaryButtonVariants: primary, contrast, bordered, borderless;
 
 @each $variant in $_primaryButtonVariants {
-	%button--#{$variant},
 	.button--#{$variant} {
 		@include primaryButton;
 	}
