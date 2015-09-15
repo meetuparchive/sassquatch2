@@ -21,7 +21,6 @@ content container for the view.
 		@include flex-basis(auto);
 		@include flex-grow(1);
 		box-sizing: border-box;
-		overflow: auto;
 		height: auto;
 
 		@include browser-lessThanIE(10) {

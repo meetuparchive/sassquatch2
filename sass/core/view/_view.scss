@@ -78,6 +78,10 @@ the "detail" responsibility.
   }
 }
 
+.view--splitList {
+	overflow: scroll;
+}
+
 @include atMediaUp(medium){
 	.view--splitList {
 		@include flexParent('column');
