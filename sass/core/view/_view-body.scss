@@ -18,7 +18,6 @@ content container for the view.
 */
 .view-body {
 	.view--splitList & {
-		height: 100vh;  // might have trouble on iOS7
 		overflow: auto;
 	}
 }
