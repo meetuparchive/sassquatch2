@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v0.22.5</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v0.23.0</a>
 						</div>
 					</div>
 				</div>
@@ -696,31 +696,32 @@ following classes are optional variants:</p><table class="styleguide"> <tr>
 </tr>
  </table>
 <h1 id="gridList" class="styleguide">Grid List</h1>
-<p class="styleguide">A grid layout with breakpoint specific numbers of items in each row.</p><p class="styleguide">better docs TK</p><div class="codeExample">
+<p class="styleguide">A grid layout with breakpoint-specific configurable columns.
+Useful for collections of photos, group cards, or event cards.</p><p class="styleguide">For a layout with a fixed number of columns, use <code class="styleguide">row</code>.</p><div class="codeExample">
   <div class="exampleOutput">
     <ul class="gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4">
-    <li class="_DOC-SHADE">grid cell</li>
-    <li class="_DOC-SHADE">grid cell</li>
-    <li class="_DOC-SHADE">grid cell</li>
-    <li class="_DOC-SHADE">grid cell</li>
-    <li class="_DOC-SHADE">grid cell</li>
-    <li class="_DOC-SHADE">grid cell</li>
-    <li class="_DOC-SHADE">grid cell</li>
-    <li class="_DOC-SHADE">grid cell</li>
+    <li class="gridList-item _DOC-SHADE">grid cell</li>
+    <li class="gridList-item _DOC-SHADE">grid cell</li>
+    <li class="gridList-item _DOC-SHADE">grid cell</li>
+    <li class="gridList-item _DOC-SHADE">grid cell</li>
+    <li class="gridList-item _DOC-SHADE">grid cell</li>
+    <li class="gridList-item _DOC-SHADE">grid cell</li>
+    <li class="gridList-item _DOC-SHADE">grid cell</li>
+    <li class="gridList-item _DOC-SHADE">grid cell</li>
 </ul>
 
   </div>
   <div class="codeBlock">
     <div class="highlight">
       <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"_DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"gridList-item _DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"gridList-item _DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"gridList-item _DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"gridList-item _DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"gridList-item _DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"gridList-item _DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"gridList-item _DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"gridList-item _DOC-SHADE"</span><span class="nt">&gt;</span>grid cell<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span></pre>
     </div>
   </div>
@@ -2016,6 +2017,28 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "Position mixins",
+					"name": "posUtils",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#posUtils"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Absolute centering",
+					"name": "centerAbsolute",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#centerAbsolute"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Shadow utilities",
 					"name": "shadow",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -2306,6 +2329,17 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "No Hyphens",
+					"name": "textNoHyphens",
+					"category": "Modifier Classes",
+					"url": "modifier_classes.html#textNoHyphens"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Type wrap/whitespace",
 					"name": "typespaceMod",
 					"category": "Modifier Classes",
@@ -2413,6 +2447,17 @@ $(function() {
 					"name": "menu",
 					"category": "UI Components",
 					"url": "ui_components.html#menu"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Prompt",
+					"name": "prompt",
+					"category": "UI Components",
+					"url": "ui_components.html#prompt"
 				});
 
 			
@@ -2538,6 +2583,17 @@ $(function() {
 					"name": "captionText",
 					"category": "Typography",
 					"url": "typography.html#captionText"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Error text",
+					"name": "errorText",
+					"category": "Typography",
+					"url": "typography.html#errorText"
 				});
 
 			

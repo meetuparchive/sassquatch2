@@ -198,6 +198,24 @@ Sets flexbox properties for a flex children.
 */
 /*doc
 ---
+title: Position mixins
+name: posUtils
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+/*doc
+---
+title: Absolute centering
+name: centerAbsolute
+parent: posUtils
+---
+
+```
+	@include centerAbsolute($elementWidth);
+```
+*/
+/*doc
+---
 title: Accessibility utils
 name: a11yUtil
 category: Sass Utils | Mixins & Placeholders
@@ -474,7 +492,8 @@ Clears floated children.
 */
 .floatingAction > a,
 .floatingAction .floatingAction-content,
-.chunk, .bounds {
+.chunk,
+.bounds {
   /**
   * For IE 6/7 only
   * Include this rule to trigger hasLayout and contain floats.
@@ -482,14 +501,17 @@ Clears floated children.
   *zoom: 1; }
   .floatingAction > a:before,
   .floatingAction .floatingAction-content:before,
-  .chunk:before, .bounds:before, .floatingAction > a:after,
+  .chunk:before,
+  .bounds:before, .floatingAction > a:after,
   .floatingAction .floatingAction-content:after,
-  .chunk:after, .bounds:after {
+  .chunk:after,
+  .bounds:after {
     content: " ";
     display: table; }
   .floatingAction > a:after,
   .floatingAction .floatingAction-content:after,
-  .chunk:after, .bounds:after {
+  .chunk:after,
+  .bounds:after {
     clear: both; }
 
 /*doc
@@ -498,9 +520,6 @@ title: Modal mixins
 name: modalUtils
 category: Sass Utils | Mixins & Placeholders
 ---
-
-Description here
-
 */
 /*doc
 ---
@@ -1037,13 +1056,20 @@ parent: bodyText
 <p class="text--small">Small text is small</p>
 ```
 */
-.text--caption, .text--error, .card--group,
-.text--caption h1, .text--error h1, .card--group h1,
-.text--caption h2, .text--error h2, .card--group h2,
-.text--caption h3, .text--error h3, .card--group h3,
-.text--caption h4, .text--error h4, .card--group h4,
-.text--caption h5, .text--error h5, .card--group h5,
-.text--caption h6, .text--error h6, .card--group h6,
+.text--caption,
+.text--error, .card--group,
+.text--caption h1,
+.text--error h1, .card--group h1,
+.text--caption h2,
+.text--error h2, .card--group h2,
+.text--caption h3,
+.text--error h3, .card--group h3,
+.text--caption h4,
+.text--error h4, .card--group h4,
+.text--caption h5,
+.text--error h5, .card--group h5,
+.text--caption h6,
+.text--error h6, .card--group h6,
 .text--small,
 .text--small h1,
 .text--small h2,
@@ -1092,6 +1118,21 @@ parent: bodyText
     stroke: transparent;
     fill: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
+
+/*doc
+---
+title: Error text
+name: errorText
+parent: bodyText
+---
+```html_example
+<p class="text--error">I'm erroring all the things</p>
+```
+*/
+.text--error {
+  stroke: transparent;
+  fill: #d55741;
+  color: #d55741; }
 
 /*doc
 ---
@@ -1354,7 +1395,7 @@ select,
   box-shadow: none;
   box-sizing: border-box;
   display: block;
-  margin: 0;
+  margin: 0 0 4px 0;
   max-width: 100%;
   padding: 8px;
   width: 100%; }
@@ -1628,10 +1669,6 @@ Error text is set explicitly with `text--error`.
 */
 .field--error {
   border-color: #d55741; }
-
-.text--error {
-  color: #d55741;
-  margin-top: 4px; }
 
 /*doc
 ---
@@ -2127,36 +2164,38 @@ title: Grid List
 name: gridList
 category: Layout
 ---
-A grid layout with breakpoint specific numbers of items in each row.
+A grid layout with breakpoint-specific configurable columns.
+Useful for collections of photos, group cards, or event cards.
 
-better docs TK
+For a layout with a fixed number of columns, use `row`.
 
 ```html_example
 <ul class="gridList gridList--has1 atMedium_gridList--has3 atLarge_gridList--has4">
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
-	<li class="_DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
+	<li class="gridList-item _DOC-SHADE">grid cell</li>
 </ul>
 ```
 */
+.gridList > li, .gridList-item {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0;
+  padding: 0 16px 16px 0;
+  vertical-align: top;
+  width: 50%;
+  box-sizing: border-box; }
+
 .gridList {
   margin: 0 -16px 0 0;
   padding: 0;
   list-style: none;
   font-size: 0; }
-  .gridList > li {
-    font-size: 1rem;
-    display: inline-block;
-    margin: 0;
-    padding: 0 16px 16px 0;
-    vertical-align: top;
-    width: 50%;
-    box-sizing: border-box; }
 
 /*doc
 ---
@@ -3196,10 +3235,6 @@ _See also: `.row`._
     display: table;
     table-layout: auto;
     width: 100%; }
-  .ieRoot_lt_IE10 .column {
-    display: table;
-    table-layout: auto;
-    width: 100%; }
 
 /*doc
 ---
@@ -3634,8 +3669,43 @@ the "detail" responsibility.
   .view--splitList.focus, .view--splitDetail.focus {
     display: block; }
 
+.view--splitList {
+  overflow: scroll; }
+
 @media only screen and (min-width: 640px) {
   .view--splitList {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-align: flex;
+    box-align: flex;
+    -webkit-align-items: flex;
+    -ms-align-items: flex;
+    align-items: flex;
+    -ms-flex-align: flex;
+    box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-lines: single;
+    box-lines: single;
+    -webkit-flex-wrap: "nowrap";
+    -ms-flex-wrap: "nowrap";
+    flex-wrap: "nowrap";
     position: fixed;
     top: 0;
     left: 0;
@@ -3643,6 +3713,12 @@ the "detail" responsibility.
     width: 320px;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
     display: block; }
+    .ieRoot_lt_IE10 .view--splitList {
+      height: 100%; }
+    .ieRoot_lt_IE10 .view--splitList {
+      display: table;
+      table-layout: auto;
+      width: 100%; }
 
   .view--splitDetail {
     display: block;
@@ -3693,6 +3769,13 @@ Class                      | Description
 
 @media only screen and (min-width: 640px) {
   .view--splitList .view-head {
+    -webkit-flex-basis: 56px;
+    flex-basis: 56px;
+    -ms-flex-preferred-size: 56px;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -ms-flex-positive: 0;
+    box-sizing: border-box;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
     width: 320px; }
   .view--splitDetail .view-head {
@@ -3730,8 +3813,16 @@ content container for the view.
 ```
 */
 .view--splitList .view-body {
-  height: 100vh;
-  overflow: auto; }
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  box-sizing: border-box;
+  height: auto; }
+  .ieRoot_lt_IE10 .view--splitList .view-body {
+    display: table-row; }
 
 /*doc
 ---
@@ -3861,12 +3952,12 @@ lays out as a dialog on background content on larger screens.
       -webkit-transition: -webkit-transform 0.2s ease;
       -moz-transition: -moz-transform 0.2s ease;
       transition: transform 0.2s ease;
+      position: absolute;
       left: 50%;
       margin-left: -220px;
-      margin-top: 10vh;
       min-height: 0;
-      position: absolute;
-      width: 440px; }
+      width: 440px;
+      margin-top: 10vh; }
       .view--modalSnap.off {
         -webkit-transform: translateY(100vh);
         -ms-transform: translateY(100vh);
@@ -5195,6 +5286,69 @@ category: UI Components
       display: none; } }
 /*doc
 ---
+title: Prompt
+name: prompt
+category: UI Components
+---
+A `prompt` is used to prompt for user input before continuing an action.
+
+```html_example
+<a class="link" href="pages/modal-snap.html">Demo</a>
+
+<div id="examplePrompt" class="prompt">
+	<div class="bounds">
+		<h3 class="chunk text--bold">Are you sure?</h3>
+		<div class="chunk">
+			<a class="button button--primary button--fullWidth">Delete the internet</a>
+		</div>
+		<div class="chunk">
+			<a class="button button--borderless button--fullWidth">Cancel</a>
+		</div>
+	</div>
+</div>
+```
+
+## Active state
+A class of `prompt` is required. Add the `prompt--active` class to open the prompt.
+
+Class                     | Description
+------------------------- | ---------------------------
+`.prompt--active`         | Sets display to `block` and applies positioning rules
+*/
+.prompt {
+  -webkit-transform: translateY(100vh);
+  -ms-transform: translateY(100vh);
+  transform: translateY(100vh);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  -moz-transition: -moz-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  background-color: white;
+  display: none;
+  text-align: center;
+  z-index: 51; }
+
+.prompt--active {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  width: 90%;
+  margin: auto 5%;
+  display: block;
+  top: 0;
+  margin-top: 10vh; }
+  @media only screen and (min-width: 440px) {
+    .prompt--active {
+      position: absolute;
+      left: 50%;
+      margin-left: -192px;
+      width: 384px; } }
+  @media only screen and (min-width: 640px) {
+    .prompt--active {
+      margin-top: 20vh; } }
+
+/*doc
+---
 title: RSVP Tags
 name: tag
 category: UI Components
@@ -5973,6 +6127,23 @@ Class                  | Description
 */
 .text--strikethrough {
   text-decoration: line-through; }
+
+/*doc
+---
+title: No Hyphens
+name: textNoHyphens
+parent: textMod
+---
+Don't allow hyphens on line breaks
+
+Class              | Description
+-------------------| ----------------------------
+`.text--noHyphens` | Don't allow hyphens on line breaks
+*/
+.text--noHyphens {
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
 
 /*doc
 ---
