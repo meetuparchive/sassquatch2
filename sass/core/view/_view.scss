@@ -79,7 +79,7 @@ the "detail" responsibility.
 }
 
 .view--splitList {
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 @include atMediaUp(medium){
