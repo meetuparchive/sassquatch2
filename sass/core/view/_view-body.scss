@@ -18,6 +18,7 @@ content container for the view.
 */
 .view-body {
 	.view--splitList & {
+		@extend %column-item;
 		overflow: auto;
 	}
 }

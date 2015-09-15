@@ -80,6 +80,8 @@ the "detail" responsibility.
 
 @include atMediaUp(medium){
 	.view--splitList {
+		@extend %column;
+
 		// NOTE: uses fixed position
 		// try not to put forms in the split part
 		// usually the split view will be a list
