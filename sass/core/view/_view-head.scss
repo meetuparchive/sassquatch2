@@ -47,7 +47,9 @@ Class                      | Description
 @include atMediaUp(medium){
 	.view-head {
 		.view--splitList & {
-			@extend %column-item--shrink;
+			@include flex-basis($view-head-height);
+			@include flex-grow(0);
+			box-sizing: border-box;
 			border-right: 1px solid $C_border;
 			width: $view-minWidth;
 		}

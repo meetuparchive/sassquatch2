@@ -80,7 +80,8 @@ the "detail" responsibility.
 
 @include atMediaUp(medium){
 	.view--splitList {
-		@extend %column;
+		@include flexParent('column');
+		@include flex-wrap('nowrap');
 
 		// NOTE: uses fixed position
 		// try not to put forms in the split part

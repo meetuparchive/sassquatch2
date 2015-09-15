@@ -18,7 +18,14 @@ content container for the view.
 */
 .view-body {
 	.view--splitList & {
-		@extend %column-item;
+		@include flex-basis(auto);
+		@include flex-grow(1);
+		box-sizing: border-box;
 		overflow: auto;
+		height: auto;
+
+		@include browser-lessThanIE(10) {
+			display: table-row;
+		}
 	}
 }

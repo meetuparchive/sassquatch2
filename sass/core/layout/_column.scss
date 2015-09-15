@@ -67,17 +67,10 @@ _See also: `.row`._
 </div>
 ```
 */
-%column,
 .column {
 	@include flexParent('column');
 	@include flex-wrap('nowrap');
 	height: 100%;
-
-	@include browser-lessThanIE(10) {
-		display: table;
-		table-layout: auto;
-		width: 100%;
-	}
 }
 
 
@@ -118,7 +111,6 @@ Class                      | Description
 	box-sizing: border-box;
 	height: initial;
 }
-%column-item,
 .column-item {
 	@extend %_columnItemBase;
 	@include flex-grow(1);
@@ -128,7 +120,6 @@ Class                      | Description
 		height: auto;
 	}
 }
-%column-item--shrink,
 .column-item--shrink {
 	@extend %_columnItemBase;
 	@include flex-grow(0);
