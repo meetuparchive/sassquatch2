@@ -4,7 +4,14 @@ title: Browser filter mixin (IE only)
 name: browserUtils
 category: Sass Utils | Mixins & Placeholders
 ---
+*/
 
+/*doc
+---
+title: lessThanIE
+name: lessThanIE
+parent: browserUtils
+---
 Targets styles to specific IE versions using
 the root class method (applying classes to the
 `body` tag with IE conditional comments).
@@ -17,7 +24,6 @@ the root class method (applying classes to the
 }
 ```
 */
-
 @mixin browser-lessThanIE( $IE_version ) {
 	@if $IE_version == 10 or $IE_version == 9 {
 		.ieRoot_lt_IE#{$IE_version} & {
@@ -25,6 +31,31 @@ the root class method (applying classes to the
 		}
 	} @else {
 		@error "invalid argument for mixin 'browser-lessThanIE'; must be a number, 9 or 10";
+	}
+}
+
+
+/*doc
+---
+title: 'modern'
+name: modernBrowser
+parent: browserUtils
+---
+Applies styles contained in content directive
+to "modern" browsers only (excludes IE versions less than 10).
+
+
+```
+.myClass {
+	@include browser-modern() { ...applies to all browsers except IE 9 and below... }
+}
+```
+*/
+@mixin browser-modern() {
+	@each $version in $IE_version {
+		.ieRoot_modern & {
+			@content;
+		}
 	}
 }
 
