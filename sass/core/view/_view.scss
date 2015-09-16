@@ -84,7 +84,7 @@ the "detail" responsibility.
 }
 
 @include atMediaUp(medium){
-	.view--splitList {
+	.ieRoot_modern .view--splitList {
 		@include flexParent('column');
 		@include flex-wrap('nowrap');
 
@@ -100,7 +100,7 @@ the "detail" responsibility.
 		display: block;
 	}
 
-	.view--splitDetail {
+	.ieRoot_modern .view--splitDetail {
 		display: block;
 		padding-left: $view-minWidth;
 	}

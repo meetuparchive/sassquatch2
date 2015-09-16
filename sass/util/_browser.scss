@@ -52,10 +52,8 @@ to "modern" browsers only (excludes IE versions less than 10).
 ```
 */
 @mixin browser-modern() {
-	@each $version in $IE_version {
-		.ieRoot_modern & {
-			@content;
-		}
+	.ieRoot_modern & {
+		@content;
 	}
 }
 
