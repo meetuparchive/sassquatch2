@@ -14,8 +14,22 @@ each list item and right gutters between items.
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 </ul>
+
+<ul class="inlineblockList inlineblockList--overlap">
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+</ul>
 ```
 
+### Variants
+A class of `inlineblockList` is required; the following classes are
+optional variants:
+
+Class                        | Description
+---------------------------- | ------------------------------------------------------------
+`.inlineblockList--overlap`  | Creates an inline block list with overlapping list items
 */
 %inlineblockList,
 .inlineblockList {
@@ -27,5 +41,21 @@ each list item and right gutters between items.
 		&:last-child {
 			padding-right: 0;
 		}
+	}
+}
+
+.inlineblockList--overlap {
+	> li {
+		padding: 0;
+		margin-right: -$space-half;
+		border: 3px solid $C_contentBG;
+	}
+
+	.stripe--collection & > li {
+		border-color: $C_collectionBGLight;
+	}
+
+	.inverted & > li {
+		border-color: $C_contentBGInverted;
 	}
 }
