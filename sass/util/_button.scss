@@ -26,7 +26,11 @@ Disables user-select, sets cursor, and resets text-decoration.
 }
 
 //
-// TODO: doc these button utils
+// Various button utils follow this comment...
+// they support `sass/ui-components/_buttons.scss`,
+// but have been temporarily moved to this file
+// while we use transitional style buttons
+// (`sass/ui-components/_buttons_transitional.scss`)
 //
 $btn-color-map: (
 	default: transparent,
