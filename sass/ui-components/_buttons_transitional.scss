@@ -45,21 +45,24 @@ Class                   | Description
 // map sq2 variants to "primary" button style from sq1
 $_primaryButtonVariants: primary, contrast;
 $_hoverChange: 8%;
+$_shadowWidth: 3px;
+$_radius: 3px;
+$_padding: 10px $space $space-half $space;
 
 %_buttonBaseSQ1 {
 	@extend %buttonPersonality;
 	@include color-all($C_textSecondary);
 	box-sizing: border-box;
 	display: inline-block;
-	padding: 10px $space $space-half $space;
-	border-radius: 3px;
+	padding: $_padding;
+	border-radius: $_radius;
 	font-size: $font-size;
 	line-height: 1;
 	text-decoration: none;
 	text-align: center;
 	font-weight: $W_bold;
 	border-width: 0; // reset `button` element
-	border-bottom: 3px solid $C_textSecondary;
+	border-bottom: $_shadowWidth solid $C_textSecondary;
 	margin-bottom: 1px;
 
 	&, &:active {
@@ -117,8 +120,9 @@ $_hoverChange: 8%;
 .button--bordered {
 	@include buttonBase;
 	@include button--bordered;
+	border-radius: $_radius;
 	font-weight: $W_bold;
-	padding: 12px $space !important;
+	padding: $_padding;
 }
 
 // use base button styles for "borderless" buttons
