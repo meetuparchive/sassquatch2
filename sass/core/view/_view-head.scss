@@ -45,7 +45,7 @@ Class                      | Description
 }
 
 @include atMediaUp(medium){
-	.view-head {
+	.ieRoot_modern .view-head {
 		.view--splitList & {
 			@include flex-basis($view-head-height);
 			@include flex-grow(0);
