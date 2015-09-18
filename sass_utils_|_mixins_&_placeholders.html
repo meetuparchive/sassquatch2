@@ -27,18 +27,18 @@
 	<!-- HOTDOGS -->
 	<header class="stripe--inverted inverted hasJS">
 		<div class="bounds bounds--wide">
-			<div class="stack stack--spaceBetween atLarge_stack--spread">
-				<div class="stack-item">
+			<div class="spreadable spreadable--spaceBetween atLarge_spreadable--spread">
+				<div class="spreadable-item">
 					<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
 				</div>
-				<div class="stack-item stack-item--shrink">
+				<div class="spreadable-item spreadable-item--shrink">
 					<div class="row margin--top" style="align-items: baseline;">
 						<div id="docSearch" class="row-item">
 							<input autocomplete="off" id="search" name="search" style="min-width: 250px;" class="chunk" type="text" placeholder="Search" />
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v0.23.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.0.0</a>
 						</div>
 					</div>
 				</div>
@@ -46,28 +46,14 @@
 		</div>
 	</header>
 
-	<section id="hologramBody" class="bounds bounds--wide stack atLarge_stack--spread">
-		<nav id="navigation" class="stack-item stack-item--shrink">
+	<section id="hologramBody" class="bounds bounds--wide spreadable atLarge_spreadable--spread">
+		<nav id="navigation" class="spreadable-item spreadable-item--shrink">
 			<ul>
 				
 					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="sass_utils_|_mixins_&_placeholders.html">Sass Utils | Mixins & Placeholders</a>
 						
 							<ul class="display--none atMedium_display--block">
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#a11yUtil">Accessibility utils</a>
-										</li>
-									
-
-								
-
-									
-									
-
 								
 
 									
@@ -106,64 +92,8 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#background">Background Utilities</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#breakpoints">Media Query Breakpoints</a>
-										</li>
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#browserUtils">Browser filter mixin (IE only)</a>
-										</li>
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#button">Button utilities</a>
 										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#colorUtil">Color</a>
-										</li>
-									
-
-								
-
-									
 									
 
 								
@@ -218,39 +148,6 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#float">Float utils</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#i18nHelper">i18n</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#modalUtils">Modal mixins</a>
 										</li>
 									
@@ -270,35 +167,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#posUtils">Position mixins</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#shadow">Shadow utilities</a>
-										</li>
-									
-
-								
-
-									
-									
-
-								
-
-									
-									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#shape">Shapes</a>
 										</li>
 									
 
@@ -362,11 +231,6 @@
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a class="followLink" href="sass_utils_|_functions.html">Sass Utils | Functions</a>
-						
-					</li>
-				
-					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="forms.html">Forms</a>
 						
 					</li>
@@ -379,27 +243,7 @@
 			</ul>
 		</nav>
 
-	 	<main id="content" class="stack-item">
-<h1 id="a11yUtil" class="styleguide">Accessibility utils</h1>
-<p class="styleguide">Accessibility utilities based on the <a class="styleguide" href="http://a11yproject.com/about.html" title="http://a11yproject.com/about.html">a11y project</a></p>
-<h2 id="a11yVisibilityMixin" class="styleguide">a11y Visibility</h2>
-
-<h3>Hiding elements</h3>
-<div class="codeBlock">
-  <div class="highlight">
-    <pre>@include a11yVisibility('hidden');</pre>
-  </div>
-</div><p class="styleguide">Takes element out of document flow and hides it
-by clipping to a 1x1 pixel. Allows content to be
-visually hidden but <a class="styleguide" href="http://a11yproject.com/posts/how-to-hide-content/" title="http://a11yproject.com/posts/how-to-hide-content/">available to screen readers</a>.</p>
-<h3>Showing a11y hidden elements</h3>
-<div class="codeBlock">
-  <div class="highlight">
-    <pre>@include a11yVisibility('visibile');</pre>
-  </div>
-</div><p class="styleguide">When applied to an element hidden with <code class="styleguide">a11yHide()</code>,
-the element is forced to unclip and returned to the
-document flow.</p>
+	 	<main id="content" class="spreadable-item">
 <h1 id="align" class="styleguide">Alignment Utilities</h1>
 
 <h2 id="valign" class="styleguide">Vertical-align children</h2>
@@ -426,89 +270,12 @@ with a table-cell fallback for old IE.</p><div class="codeBlock">
     <pre>@include animate--spin($time: 0.8s);</pre>
   </div>
 </div>
-<h1 id="background" class="styleguide">Background Utilities</h1>
-
-<h2 id="backgroundClip" class="styleguide">Background clip mixin</h2>
-<p class="styleguide">Sets background-clip property</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include background-clip($value: padding);
-@include background-clip('border');</pre>
-  </div>
-</div>
-<h2 id="imgFill" class="styleguide">Image fill placeholder</h2>
-<p class="styleguide">Sets background properties that center
-background image, set size to &#39;cover&#39;,
-and overflow hidden.</p><p class="styleguide"><em><a class="styleguide" href="ui_components.html#avatar" title="ui_components.html#avatar">ie. avatars</a></em></p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %imgFill;</pre>
-  </div>
-</div>
-<h1 id="breakpoints" class="styleguide">Media Query Breakpoints</h1>
-
-<h3>Mobile first mixin</h3>
-<p class="styleguide">This breakpoint mixin uses a <strong>mobile first</strong>
-strategy, meaning the <code class="styleguide">medium</code> breakpoint, for
-example, applies to <em>medium screens and larger</em>.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include atMediaUp(medium) {
-        body::after {
-            content: "medium screens and larger can see me";
-        }
-    }</pre>
-  </div>
-</div><table class="styleguide"> <tr>
-<th>Breakpoint name</th>
-<th>Description</th>
-</tr>
- <tr>
-<td><code class="styleguide">atMediaUp(small)</code></td>
-<td>Small sreens and up</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaUp(medium)</code></td>
-<td>Landscape on most phones and up; portrait on some phablets</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaUp(large)</code></td>
-<td>Landscape on phabelts and up; portrait on most tablets or old desktops</td>
-</tr>
-<tr>
-<td><code class="styleguide">atMediaUp(huge)</code></td>
-<td>Modern desktop viewports and up or <a class="styleguide" href="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg" title="http://liliputing.com/wp-content/uploads/2013/10/fox-big-tablets.jpg">ridiculous huge tablets</a></td>
-</tr>
- </table>
-<h1 id="browserUtils" class="styleguide">Browser filter mixin (IE only)</h1>
-<p class="styleguide">Targets styles to specific IE versions using
-the root class method (applying classes to the
-<code class="styleguide">body</code> tag with IE conditional comments).</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>.myClass {
-    @include browser-lessThanIE( 10 ) { ...styles for all IE versions below 10... }
-    @include browser-lessThanIE( 9 ) { ...styles for all IE versions below 9... }
-}</pre>
-  </div>
-</div>
 <h1 id="button" class="styleguide">Button utilities</h1>
 
 <h2 id="buttonPersonality" class="styleguide">Button personality placeholder</h2>
 <p class="styleguide">Disables user-select, sets cursor, and resets text-decoration.</p><div class="codeBlock">
   <div class="highlight">
     <pre>@extend %buttonPersonality;</pre>
-  </div>
-</div>
-<h1 id="colorUtil" class="styleguide">Color</h1>
-
-<h2 id="colorAllMixin" class="styleguide">SVG + Text color</h2>
-<p class="styleguide">Sets properties to apply color to SVG icons
-<em>and</em> text.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@mixin color-all($color: black);</pre>
-  </div>
-</div>
-<h2 id="svgColorMixin" class="styleguide">SVG color</h2>
-<p class="styleguide">Sets properties to color SVG icons</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@mixin color-svg($color: black);</pre>
   </div>
 </div>
 <h1 id="datauri" class="styleguide">data uri images</h1>
@@ -564,39 +331,6 @@ as data uris in a Sass map.</p><div class="codeBlock">
 @include flexParent('row', false); // optional second argument allows disabling of IE table display fallbacks</pre>
   </div>
 </div>
-<h1 id="float" class="styleguide">Float utils</h1>
-
-<h2 id="clearfix" class="styleguide">Clearfix placeholder</h2>
-<p class="styleguide">Clears floated children.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %clearfix;</pre>
-  </div>
-</div>
-<h1 id="i18nHelper" class="styleguide">i18n</h1>
-<p class="styleguide">Filter styles for specific languages using language
-classes on the <code class="styleguide">body</code> element.</p>
-<h2 id="excludeLang" class="styleguide">i18n-exclude</h2>
-<p class="styleguide">To ensure a style rule is <strong>not</strong> applied to
-a language, use <code class="styleguide">i18n-exclude</code>.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include i18n-exclude('de') {
-    text-transform: uppercase; // uppercase every language except German
-}
-
-@include i18n-exclude('ja', 'es', 'de') { ... } // multiple languages supported</pre>
-  </div>
-</div>
-<h2 id="onlyLnag" class="styleguide">i18n-only</h2>
-<p class="styleguide">To set a style rule for one language only,
-use <code class="styleguide">i18n-only</code>.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@include i18n-only('en') {
-    text-transform: uppercase; // only upercasse for English
-}
-
-@include i18n-only('en', 'it') { ... } // multiple languages supported</pre>
-  </div>
-</div>
 <h1 id="modalUtils" class="styleguide">Modal mixins</h1>
 
 <h2 id="Modal_Dialog_Mixin" class="styleguide">Modal Dialog Mixin</h2>
@@ -613,28 +347,12 @@ See <a class="styleguide" href="views.html#fullModalView" title="views.html#full
     <pre>@include modal-full;</pre>
   </div>
 </div>
-<h1 id="posUtils" class="styleguide">Position mixins</h1>
-
-<h2 id="centerAbsolute" class="styleguide">Absolute centering</h2>
-<div class="codeBlock">
-  <div class="highlight">
-    <pre>@include centerAbsolute($elementWidth);</pre>
-  </div>
-</div>
 <h1 id="shadow" class="styleguide">Shadow utilities</h1>
 
 <h2 id="shadowPlaceholder" class="styleguide">Shadow placeholder</h2>
 <p class="styleguide">Applies standard box-shadow</p><div class="codeBlock">
   <div class="highlight">
     <pre>@extend %shadow;</pre>
-  </div>
-</div>
-<h1 id="shape" class="styleguide">Shapes</h1>
-
-<h2 id="circleMixin" class="styleguide">Circle mixin</h2>
-<p class="styleguide">Makes selected element a circle with border-radius</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@mixin circle($color: black, $size: 12px)</pre>
   </div>
 </div>
 <h1 id="text" class="styleguide">Text utils</h1>
@@ -716,28 +434,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Accessibility utils",
-					"name": "a11yUtil",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#a11yUtil"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "a11y Visibility",
-					"name": "a11yVisibilityMixin",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#a11yVisibilityMixin"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Alignment Utilities",
 					"name": "align",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -793,61 +489,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Background Utilities",
-					"name": "background",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#background"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Background clip mixin",
-					"name": "backgroundClip",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#backgroundClip"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Image fill placeholder",
-					"name": "imgFill",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#imgFill"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Media Query Breakpoints",
-					"name": "breakpoints",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#breakpoints"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Browser filter mixin (IE only)",
-					"name": "browserUtils",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#browserUtils"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Button utilities",
 					"name": "button",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -863,39 +504,6 @@ $(function() {
 					"name": "buttonPersonality",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#buttonPersonality"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Color",
-					"name": "colorUtil",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#colorUtil"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "SVG + Text color",
-					"name": "colorAllMixin",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#colorAllMixin"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "SVG color",
-					"name": "svgColorMixin",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#svgColorMixin"
 				});
 
 			
@@ -969,61 +577,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Float utils",
-					"name": "float",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#float"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Clearfix placeholder",
-					"name": "clearfix",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#clearfix"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "i18n",
-					"name": "i18nHelper",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#i18nHelper"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "i18n-exclude",
-					"name": "excludeLang",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#excludeLang"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "i18n-only",
-					"name": "onlyLnag",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#onlyLnag"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Modal mixins",
 					"name": "modalUtils",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -1057,28 +610,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Position mixins",
-					"name": "posUtils",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#posUtils"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Absolute centering",
-					"name": "centerAbsolute",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#centerAbsolute"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Shadow utilities",
 					"name": "shadow",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -1094,28 +625,6 @@ $(function() {
 					"name": "shadowPlaceholder",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#shadowPlaceholder"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Shapes",
-					"name": "shape",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#shape"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Circle mixin",
-					"name": "circleMixin",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#circleMixin"
 				});
 
 			
@@ -1450,7 +959,7 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Buttons",
+					"title": "Buttons (transitional styles)",
 					"name": "buttons",
 					"category": "UI Components",
 					"url": "ui_components.html#buttons"
@@ -2001,10 +1510,10 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Stack",
-					"name": "stack",
+					"title": "Spreadable",
+					"name": "spreadable",
 					"category": "Layout",
-					"url": "layout.html#stack"
+					"url": "layout.html#spreadable"
 				});
 
 			
@@ -2038,87 +1547,6 @@ $(function() {
 					"name": "overlappingStripe",
 					"category": "Layout",
 					"url": "layout.html#overlappingStripe"
-				});
-
-			
-		
-	
-		
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Contrast/brightness utils",
-					"name": "brightness",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#brightness"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Perceived brightness value",
-					"name": "getPerceivedBrightness",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#getPerceivedBrightness"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Programmatic contrast text",
-					"name": "getPrimaryTextColor",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#getPrimaryTextColor"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "isDark/isLight",
-					"name": "isDarkisLight",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#isDarkisLight"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "String utils",
-					"name": "string",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#string"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "str-firstCharToUpper",
-					"name": "str-firstCharToUpper",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#str-firstCharToUpper"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "str-replace",
-					"name": "str-replace",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#str-replace"
 				});
 
 			
