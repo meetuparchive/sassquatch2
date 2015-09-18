@@ -16,9 +16,11 @@ content container for the view.
 </div>
 ```
 */
-.view-body {
+.ieRoot_modern .view-body {
 	.view--splitList & {
-		height: 100vh;  // might have trouble on iOS7
-		overflow: auto;
+		@include flex-basis(auto);
+		@include flex-grow(1);
+		box-sizing: border-box;
+		height: auto;
 	}
 }

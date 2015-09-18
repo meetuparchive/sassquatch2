@@ -45,8 +45,11 @@ Class                      | Description
 }
 
 @include atMediaUp(medium){
-	.view-head {
+	.ieRoot_modern .view-head {
 		.view--splitList & {
+			@include flex-basis($view-head-height);
+			@include flex-grow(0);
+			box-sizing: border-box;
 			border-right: 1px solid $C_border;
 			width: $view-minWidth;
 		}
