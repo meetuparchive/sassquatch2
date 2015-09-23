@@ -2945,10 +2945,6 @@ _See also: `.row`._
     display: table;
     table-layout: auto;
     width: 100%; }
-  .ieRoot_lt_IE10 .column {
-    display: table;
-    table-layout: auto;
-    width: 100%; }
 
 /*doc
 ---
@@ -3381,8 +3377,45 @@ the "detail" responsibility.
   .view--splitList.focus, .view--splitDetail.focus {
     display: block; }
 
+.view--splitList {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 15; }
+
 @media only screen and (min-width: 640px) {
-  .view--splitList {
+  .ieRoot_modern .view--splitList {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+    -webkit-box-align: flex;
+    box-align: flex;
+    -webkit-align-items: flex;
+    -ms-align-items: flex;
+    align-items: flex;
+    -ms-flex-align: flex;
+    box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-lines: single;
+    box-lines: single;
+    -webkit-flex-wrap: "nowrap";
+    -ms-flex-wrap: "nowrap";
+    flex-wrap: "nowrap";
     position: fixed;
     top: 0;
     left: 0;
@@ -3390,8 +3423,14 @@ the "detail" responsibility.
     width: 320px;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
     display: block; }
+    .ieRoot_lt_IE10 .ieRoot_modern .view--splitList {
+      height: 100%; }
+    .ieRoot_lt_IE10 .ieRoot_modern .view--splitList {
+      display: table;
+      table-layout: auto;
+      width: 100%; }
 
-  .view--splitDetail {
+  .ieRoot_modern .view--splitDetail {
     display: block;
     padding-left: 320px; } }
 /*doc
@@ -3439,10 +3478,17 @@ Class                      | Description
       height: 64px; } }
 
 @media only screen and (min-width: 640px) {
-  .view--splitList .view-head {
+  .view--splitList .ieRoot_modern .view-head {
+    -webkit-flex-basis: 56px;
+    flex-basis: 56px;
+    -ms-flex-preferred-size: 56px;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+    -ms-flex-positive: 0;
+    box-sizing: border-box;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
     width: 320px; }
-  .view--splitDetail .view-head {
+  .view--splitDetail .ieRoot_modern .view-head {
     left: 320px;
     right: 0;
     width: auto; } }
@@ -3476,9 +3522,15 @@ content container for the view.
 </div>
 ```
 */
-.view--splitList .view-body {
-  height: 100vh;
-  overflow: auto; }
+.view--splitList .ieRoot_modern .view-body {
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  box-sizing: border-box;
+  height: auto; }
 
 /*doc
 ---
@@ -5871,6 +5923,7 @@ Sets background cover and position for photo thumbnails.
 .thumb {
   background-position: center;
   background-size: cover;
+  background-color: #e6e9ec;
   display: block;
   position: relative; }
   .thumb:before {
