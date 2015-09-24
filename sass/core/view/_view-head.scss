@@ -45,15 +45,15 @@ Class                      | Description
 }
 
 @include atMediaUp(medium){
-	.ieRoot_modern .view-head {
-		.view--splitList & {
+	.ieRoot_modern {
+		.view--splitList .view-head {
 			@include flex-basis($view-head-height);
 			@include flex-grow(0);
 			box-sizing: border-box;
 			border-right: 1px solid $C_border;
 			width: $view-minWidth;
 		}
-		.view--splitDetail & {
+		.view--splitDetail .view-head {
 			left: $view-minWidth;
 			right: 0;
 			width: auto;
