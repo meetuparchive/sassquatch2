@@ -22,7 +22,6 @@ Bottom spacing is provided with `chunk`.
 	</li>
 </ul>
 ```
-
 */
 
 %list--reset,
@@ -36,7 +35,7 @@ Bottom spacing is provided with `chunk`.
 	display: block;
 	border-top: 1px solid $C_border;
 	padding-top: $space;
-	&:first-child{
+	&:first-child:not(a) {
 		border-top: none;
 		padding-top: 0;
 	}
@@ -50,7 +49,66 @@ Bottom spacing is provided with `chunk`.
 	list-style: none;
 }
 
+/*doc
+---
+title: List item variants
+name: listItemVariants
+parent: list
+---
+
+A class of `.list-item` is __required__ on list items. The
+following classes are optional variants:
+
+Class                   | Description
+----------------------- | -------------------------------
+`.list-item--active`    | adds a background color to denote selected/active state
+`.list-item--gutters`   | adds left and right padding to list item
+
+
+```html_example
+<div class="chunk">
+	<h2>Touchable list items with selection</h2>
+	<p>The <code>list-item</code> class can be applied to anchors instead for a touchable list</p>
+</div>
+<ul class="list">
+	<li>
+		<a href="#" class="list-item list-item--gutters">
+			<div class="chunk">
+				<h3 class="text--bold">Member Name</h3>
+				<p class="text--caption">Something blah blah</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="#" class="list-item list-item--gutters list-item--active">
+			<div class="chunk">
+				<h3 class="text--bold">Member Name</h3>
+				<p class="text--caption">Something blah blah</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="#" class="list-item list-item--gutters">
+			<div class="chunk">
+				<h3 class="text--bold">Member Name</h3>
+				<p class="text--caption">Something blah blah</p>
+			</div>
+		</a>
+	</li>
+</ul>
+```
+*/
 .list-item {
 	@extend %listBorders;
 	margin: 0;
+	border-bottom: 1px solid transparent; // prevents margin collapse
+}
+
+.list-item--gutters {
+	padding-left: $space;
+	padding-right: $space;
+}
+
+.list-item--active {
+	background-color: $C_lightGray;
 }
