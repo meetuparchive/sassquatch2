@@ -46,6 +46,9 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 	& .row-item {
 		padding-left: $space/2;
 	}
+	& .row--noGutters > .row-item {
+		padding: 0;
+	}
 
 	// this gets tricky for `stack`, because padding
 	// is only present on items in a "spread" stack
