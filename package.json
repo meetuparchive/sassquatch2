@@ -1,6 +1,6 @@
 {
 	"name": "sassquatch",
-	"version": "0.24.0",
+	"version": "0.25.0",
 	"description": "Front end framework for Meetup",
 	"directories": {
 		"doc": "docs/build",
