@@ -89,7 +89,7 @@
 	$form-min-width  : $block;
 	$form-max-width  : 550px; // Come up with something smarter for this
 
-	$modal-width     : $breakpoint-s;
+	$modal-width     : 440px; // matches default $breakpoint-s value from julep
 
 	$defaultRadius   : 3px;
 
