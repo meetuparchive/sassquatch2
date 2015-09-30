@@ -81,6 +81,7 @@ the "detail" responsibility.
 .view--splitList {
 	overflow-y: scroll;
 	overflow-x: hidden;
+	height: 100vh;
 	z-index: map-get($zindex-map, splitList-view);
 }
 
@@ -95,7 +96,6 @@ the "detail" responsibility.
 		position: fixed;
 		top: 0;
 		left: 0;
-		height: 100vh;
 		width: $view-minWidth;
 		border-right: 1px solid $C_border;
 		display: block;
