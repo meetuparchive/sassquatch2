@@ -126,8 +126,9 @@ $_padding: 10px $space $space-half $space;
 //
 %button--small,
 .button--small {
-	font-size: $font-size-small;
-	padding: $space-quarter $space-half;
+	// important during transitional phase
+	font-size: $font-size-small !important;
+	padding: $space-quarter $space-half !important;
 }
 
 %button--fullWidth,
@@ -210,5 +211,5 @@ $_iconGutter: $space/2;
 }
 
 .button--small .button-icon {
-	height: $font-size;
+	height: $font-size !important;
 }
