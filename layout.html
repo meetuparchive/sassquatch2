@@ -189,6 +189,11 @@
 
 									
 									
+
+								
+
+									
+									
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#stack">Stack</a>
 										</li>
@@ -1339,10 +1344,24 @@ each list item and right gutters between items.</p><div class="codeExample">
     <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 </ul>
 
+<ul class="inlineblockList inlineblockList--overlap">
+    <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+    <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+    <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+    <li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+</ul>
+
   </div>
   <div class="codeBlock">
     <div class="highlight">
       <pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"inlineblockList inlineblockList--overlap"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;&lt;img</span> <span class="na">src=</span><span class="s">"https://placekitten.com/g/72/72"</span> <span class="na">alt=</span><span class="s">"fluffy kitten"</span> <span class="nt">/&gt;&lt;/li&gt;</span>
@@ -1352,6 +1371,17 @@ each list item and right gutters between items.</p><div class="codeExample">
   </div>
 </div>
 
+<h3>Variants</h3>
+<p class="styleguide">A class of <code class="styleguide">inlineblockList</code> is required; the following classes are
+optional variants:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.inlineblockList--overlap</code></td>
+<td>Creates an inline block list with overlapping list items</td>
+</tr>
+ </table>
 <h1 id="list" class="styleguide">Divided list</h1>
 <p class="styleguide">Standard divided/spaced list; similar to
 an iOS table view.</p><p class="styleguide">Bottom spacing is provided with <code class="styleguide">chunk</code>.</p><div class="codeExample">
@@ -1380,6 +1410,90 @@ an iOS table view.</p><p class="styleguide">Bottom spacing is provided with <cod
     <span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-item"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>Just a list item<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="listItemVariants" class="styleguide">List item variants</h2>
+<p class="styleguide">A class of <code class="styleguide">.list-item</code> is <strong>required</strong> on list items. The
+following classes are optional variants:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.list-item--active</code></td>
+<td>adds a background color to denote selected/active state</td>
+</tr>
+<tr>
+<td><code class="styleguide">.list-item--gutters</code></td>
+<td>adds left and right padding to list item</td>
+</tr>
+ </table><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="chunk">
+    <h2>Touchable list items with selection</h2>
+    <p>The <code>list-item</code> class can be applied to anchors instead for a touchable list</p>
+</div>
+<ul class="list">
+    <li>
+        <a href="#" class="list-item list-item--gutters">
+            <div class="chunk">
+                <h3 class="text--bold">Member Name</h3>
+                <p class="text--caption">Something blah blah</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="#" class="list-item list-item--gutters list-item--active">
+            <div class="chunk">
+                <h3 class="text--bold">Member Name</h3>
+                <p class="text--caption">Something blah blah</p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="#" class="list-item list-item--gutters">
+            <div class="chunk">
+                <h3 class="text--bold">Member Name</h3>
+                <p class="text--caption">Something blah blah</p>
+            </div>
+        </a>
+    </li>
+</ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Touchable list items with selection<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>The <span class="nt">&lt;code&gt;</span>list-item<span class="nt">&lt;/code&gt;</span> class can be applied to anchors instead for a touchable list<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"list-item list-item--gutters"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>Member Name<span class="nt">&lt;/h3&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Something blah blah<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"list-item list-item--gutters list-item--active"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>Member Name<span class="nt">&lt;/h3&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Something blah blah<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"list-item list-item--gutters"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"chunk"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"text--bold"</span><span class="nt">&gt;</span>Member Name<span class="nt">&lt;/h3&gt;</span>
+                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text--caption"</span><span class="nt">&gt;</span>Something blah blah<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span></pre>
     </div>
@@ -2976,6 +3090,17 @@ $(function() {
 					"name": "list",
 					"category": "Layout",
 					"url": "layout.html#list"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "List item variants",
+					"name": "listItemVariants",
+					"category": "Layout",
+					"url": "layout.html#listItemVariants"
 				});
 
 			

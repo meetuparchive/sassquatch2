@@ -2156,7 +2156,6 @@ Bottom spacing is provided with `chunk`.
 	</li>
 </ul>
 ```
-
 */
 ul, ol, .list, .menu-actions, .pagination,
 .list--reset {
@@ -2167,7 +2166,7 @@ ul, ol, .list, .menu-actions, .pagination,
   display: block;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
   padding-top: 16px; }
-  .list-item:first-child, .hasJS .menu-actions-item:first-child {
+  .list-item:first-child:not(a), .hasJS .menu-actions-item:first-child:not(a) {
     border-top: none;
     padding-top: 0; }
 
@@ -2177,8 +2176,65 @@ ul, ol, .list, .menu-actions, .pagination,
   margin: 0;
   list-style: none; }
 
+/*doc
+---
+title: List item variants
+name: listItemVariants
+parent: list
+---
+
+A class of `.list-item` is __required__ on list items. The
+following classes are optional variants:
+
+Class                   | Description
+----------------------- | -------------------------------
+`.list-item--active`    | adds a background color to denote selected/active state
+`.list-item--gutters`   | adds left and right padding to list item
+
+
+```html_example
+<div class="chunk">
+	<h2>Touchable list items with selection</h2>
+	<p>The <code>list-item</code> class can be applied to anchors instead for a touchable list</p>
+</div>
+<ul class="list">
+	<li>
+		<a href="#" class="list-item list-item--gutters">
+			<div class="chunk">
+				<h3 class="text--bold">Member Name</h3>
+				<p class="text--caption">Something blah blah</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="#" class="list-item list-item--gutters list-item--active">
+			<div class="chunk">
+				<h3 class="text--bold">Member Name</h3>
+				<p class="text--caption">Something blah blah</p>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a href="#" class="list-item list-item--gutters">
+			<div class="chunk">
+				<h3 class="text--bold">Member Name</h3>
+				<p class="text--caption">Something blah blah</p>
+			</div>
+		</a>
+	</li>
+</ul>
+```
+*/
 .list-item {
-  margin: 0; }
+  margin: 0;
+  border-bottom: 1px solid transparent; }
+
+.list-item--gutters {
+  padding-left: 16px;
+  padding-right: 16px; }
+
+.list-item--active {
+  background-color: #f3f6f9; }
 
 /*doc
 ---
@@ -2425,8 +2481,22 @@ each list item and right gutters between items.
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 </ul>
+
+<ul class="inlineblockList inlineblockList--overlap">
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
+</ul>
 ```
 
+### Variants
+A class of `inlineblockList` is required; the following classes are
+optional variants:
+
+Class                        | Description
+---------------------------- | ------------------------------------------------------------
+`.inlineblockList--overlap`  | Creates an inline block list with overlapping list items
 */
 .hscroll-content,
 .inlineblockList {
@@ -2439,6 +2509,15 @@ each list item and right gutters between items.
     .hscroll-content > li:last-child,
     .inlineblockList > li:last-child {
       padding-right: 0; }
+
+.inlineblockList--overlap > li {
+  padding: 0;
+  margin-right: -8px;
+  border: 3px solid white; }
+.stripe--collection .inlineblockList--overlap > li {
+  border-color: #f3f6f9; }
+.inverted .inlineblockList--overlap > li {
+  border-color: #353e48; }
 
 /*doc
 ---
@@ -4374,6 +4453,8 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 */
 .attachment .row-item {
   padding-left: 8px; }
+.attachment .row--noGutters > .row-item {
+  padding: 0; }
 @media only screen and (min-width: 640px) {
   .attachment.atMedium_stack--spread .stack-item,
   .attachment .atMedium_stack--spread .stack-item {
