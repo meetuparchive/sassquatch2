@@ -27,18 +27,18 @@
 	<!-- HOTDOGS -->
 	<header class="stripe--inverted inverted hasJS">
 		<div class="bounds bounds--wide">
-			<div class="stack stack--spaceBetween atLarge_stack--spread">
-				<div class="stack-item">
+			<div class="spreadable spreadable--spaceBetween atLarge_spreadable--spread">
+				<div class="spreadable-item">
 					<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
 				</div>
-				<div class="stack-item stack-item--shrink">
+				<div class="spreadable-item spreadable-item--shrink">
 					<div class="row margin--top" style="align-items: baseline;">
 						<div id="docSearch" class="row-item">
 							<input autocomplete="off" id="search" name="search" style="min-width: 250px;" class="chunk" type="text" placeholder="Search" />
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v0.24.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.0.0</a>
 						</div>
 					</div>
 				</div>
@@ -46,8 +46,8 @@
 		</div>
 	</header>
 
-	<section id="hologramBody" class="bounds bounds--wide stack atLarge_stack--spread">
-		<nav id="navigation" class="stack-item stack-item--shrink">
+	<section id="hologramBody" class="bounds bounds--wide spreadable atLarge_spreadable--spread">
+		<nav id="navigation" class="spreadable-item spreadable-item--shrink">
 			<ul>
 				
 					<li class="display--inlineBlock--mediumDown">
@@ -87,7 +87,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#buttons">Buttons</a>
+											<a class="followLink" href="#buttons">Buttons (transitional styles)</a>
 										</li>
 									
 
@@ -211,11 +211,6 @@
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
-						<a class="followLink" href="sass_utils_|_functions.html">Sass Utils | Functions</a>
-						
-					</li>
-				
-					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="forms.html">Forms</a>
 						
 					</li>
@@ -228,7 +223,7 @@
 			</ul>
 		</nav>
 
-	 	<main id="content" class="stack-item">
+	 	<main id="content" class="spreadable-item">
 <h1 id="attachment" class="styleguide">Attachment</h1>
 <p class="styleguide">Adding the <code class="styleguide">attachment</code> class to an elemeent
 creates a context in which layout classes (<code class="styleguide">row-item</code>,
@@ -403,8 +398,9 @@ optional variants:</p><table class="styleguide"> <tr>
 <td>For icons in avatars (might move this in a later version)</td>
 </tr>
  </table>
-<h1 id="buttons" class="styleguide">Buttons</h1>
-
+<h1 id="buttons" class="styleguide">Buttons (transitional styles)</h1>
+<p class="styleguide">These buttons match the visual styles of the original <a class="styleguide" href="http://meetup.github.io/sassquatch" title="http://meetup.github.io/sassquatch">Sassquatch</a>
+framework, making them suitable for the transition of Meetup from legacy to &quot;foundation&quot; design.</p>
 <h4>Example</h4>
 <div class="codeExample">
   <div class="exampleOutput">
@@ -414,14 +410,13 @@ optional variants:</p><table class="styleguide"> <tr>
     <span class="button-label">Button with right Icon</span>
     <span class="button-icon">X</span>
 </a>
+<a class="button button--bordered button--fullWidth" href="#">Full width bordered button</a>
+<a class="button button--bordered" href="#">bordered button</a>
 <a class="button button--icon button--primary" href="#">
     <span class="button-icon">X</span>
     <span class="button-label">Primary button with left Icon</span>
 </a>
-<a class="button button--borderless" href="#">Borderless Button</a>
-<a class="button button--primary button--contrast" href="#">Contrast Button</a>
 <a class="button button--small" href="#">Small Button</a>
-<a class="button button--bordered button--fullWidth" href="#">Full width button</a>
 <a class="button button--primary button--icon button--fullWidth" href="#">
     <span class="button-icon">ヘ(◕。◕ヘ)</span>
     <span class="button-label">Full width primary button with left Icon</span>
@@ -436,14 +431,13 @@ optional variants:</p><table class="styleguide"> <tr>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"button-label"</span><span class="nt">&gt;</span>Button with right Icon<span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"button-icon"</span><span class="nt">&gt;</span>X<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--bordered button--fullWidth"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Full width bordered button<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--bordered"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>bordered button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--icon button--primary"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"button-icon"</span><span class="nt">&gt;</span>X<span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"button-label"</span><span class="nt">&gt;</span>Primary button with left Icon<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--borderless"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Borderless Button<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--primary button--contrast"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Contrast Button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--small"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Small Button<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--bordered button--fullWidth"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Full width button<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--primary button--icon button--fullWidth"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"button-icon"</span><span class="nt">&gt;</span>ヘ(◕。◕ヘ)<span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"button-label"</span><span class="nt">&gt;</span>Full width primary button with left Icon<span class="nt">&lt;/span&gt;</span>
@@ -460,19 +454,7 @@ classes are optional variants:</p><table class="styleguide"> <tr>
 </tr>
  <tr>
 <td><code class="styleguide">.button--primary</code></td>
-<td>rounded button with dark background; for primary actions</td>
-</tr>
-<tr>
-<td><code class="styleguide">.button--contrast</code></td>
-<td>bold, dark text; use on dark backgrounds or photos (ie. top nav bar)</td>
-</tr>
-<tr>
-<td><code class="styleguide">.button--bordered</code></td>
-<td>rounded bordered button</td>
-</tr>
-<tr>
-<td><code class="styleguide">.button--borderless</code></td>
-<td>borderless button</td>
+<td>button with $C_red background; for primary actions</td>
 </tr>
 <tr>
 <td><code class="styleguide">.button--small</code></td>
@@ -481,6 +463,14 @@ classes are optional variants:</p><table class="styleguide"> <tr>
 <tr>
 <td><code class="styleguide">.button--icon</code></td>
 <td>button with icon</td>
+</tr>
+<tr>
+<td><code class="styleguide">.button--fullWidth</code></td>
+<td>increases button width to 100% of its parent container</td>
+</tr>
+<tr>
+<td><code class="styleguide">.button--bordered</code></td>
+<td>foundation design style rounded bordered buttons</td>
 </tr>
  </table>
 <h1 id="collapsible" class="styleguide">Collapsible</h1>
@@ -1495,28 +1485,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Accessibility utils",
-					"name": "a11yUtil",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#a11yUtil"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "a11y Visibility",
-					"name": "a11yVisibilityMixin",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#a11yVisibilityMixin"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Alignment Utilities",
 					"name": "align",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -1572,83 +1540,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Background Utilities",
-					"name": "background",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#background"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Background clip mixin",
-					"name": "backgroundClip",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#backgroundClip"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Image fill placeholder",
-					"name": "imgFill",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#imgFill"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Media Query Breakpoints",
-					"name": "breakpoints",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#breakpoints"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Browser filter mixin (IE only)",
-					"name": "browserUtils",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#browserUtils"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "lessThanIE",
-					"name": "lessThanIE",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#lessThanIE"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "modern",
-					"name": "modernBrowser",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#modernBrowser"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Button utilities",
 					"name": "button",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -1664,39 +1555,6 @@ $(function() {
 					"name": "buttonPersonality",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#buttonPersonality"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Color",
-					"name": "colorUtil",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#colorUtil"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "SVG + Text color",
-					"name": "colorAllMixin",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#colorAllMixin"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "SVG color",
-					"name": "svgColorMixin",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#svgColorMixin"
 				});
 
 			
@@ -1770,61 +1628,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Float utils",
-					"name": "float",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#float"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Clearfix placeholder",
-					"name": "clearfix",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#clearfix"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "i18n",
-					"name": "i18nHelper",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#i18nHelper"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "i18n-exclude",
-					"name": "excludeLang",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#excludeLang"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "i18n-only",
-					"name": "onlyLnag",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#onlyLnag"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Modal mixins",
 					"name": "modalUtils",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -1858,28 +1661,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Position mixins",
-					"name": "posUtils",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#posUtils"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Absolute centering",
-					"name": "centerAbsolute",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#centerAbsolute"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Shadow utilities",
 					"name": "shadow",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -1895,28 +1676,6 @@ $(function() {
 					"name": "shadowPlaceholder",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#shadowPlaceholder"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Shapes",
-					"name": "shape",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#shape"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Circle mixin",
-					"name": "circleMixin",
-					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#circleMixin"
 				});
 
 			
@@ -2251,7 +2010,7 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Buttons",
+					"title": "Buttons (transitional styles)",
 					"name": "buttons",
 					"category": "UI Components",
 					"url": "ui_components.html#buttons"
@@ -2813,10 +2572,10 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Stack",
-					"name": "stack",
+					"title": "Spreadable",
+					"name": "spreadable",
 					"category": "Layout",
-					"url": "layout.html#stack"
+					"url": "layout.html#spreadable"
 				});
 
 			
@@ -2850,87 +2609,6 @@ $(function() {
 					"name": "overlappingStripe",
 					"category": "Layout",
 					"url": "layout.html#overlappingStripe"
-				});
-
-			
-		
-	
-		
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Contrast/brightness utils",
-					"name": "brightness",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#brightness"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Perceived brightness value",
-					"name": "getPerceivedBrightness",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#getPerceivedBrightness"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Programmatic contrast text",
-					"name": "getPrimaryTextColor",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#getPrimaryTextColor"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "isDark/isLight",
-					"name": "isDarkisLight",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#isDarkisLight"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "String utils",
-					"name": "string",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#string"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "str-firstCharToUpper",
-					"name": "str-firstCharToUpper",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#str-firstCharToUpper"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "str-replace",
-					"name": "str-replace",
-					"category": "Sass Utils | Functions",
-					"url": "sass_utils_|_functions.html#str-replace"
 				});
 
 			
