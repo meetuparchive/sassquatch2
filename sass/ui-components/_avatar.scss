@@ -20,23 +20,8 @@ category: UI Components
 		<a href="#" class="avatar avatar--person avatar--fbFriend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
 	</li>
 	<li>
-		<a href="#" class="avatar avatar--person">
-			<abbr title="Member name" class="avatar-initial">M</abbr>
-		</a>
-	</li>
-	<li>
-		<a href="#" class="avatar avatar--big avatar--person">
-			<abbr title="Teresa Wall" class="avatar-initial">T</abbr>
-		</a>
-	</li>
-	<li>
-		<a href="#" class="avatar avatar--small avatar--person">
-			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
-		</a>
-	</li>
-	<li>
-		<a href="#" class="avatar avatar--person avatar--org">
-			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
+		<a href="#" class="avatar avatar--person avatar--noPhoto">
+			<p>no photo</p>
 		</a>
 	</li>
 </ul>
@@ -54,6 +39,7 @@ Class                     | Description
 `avatar--org`             | Variant for organizers
 `avatar--fbFriend`        | Variant for facebook friends
 `avatar--icon`            | For icons in avatars (might move this in a later version)
+`avatar--noPhoto`         | Resets `text-indent` for avatars without photos, allowing display of fallback content
 */
 
 %avatarCharm {
@@ -107,56 +93,25 @@ Class                     | Description
 .avatar--small {
 	height: $media-xs;
 	width: $media-xs;
-
-	.avatar-initial {
-		width: $media-xs;
-		line-height: $media-xs;
-		font-size: $font-size;
-	}
 }
 .avatar--big {
 	height: $media-xl;
 	width: $media-xl;
-
-	.avatar-initial {
-		width: $media-xl;
-		line-height: $media-xl;
-		font-size: $block-3;
-		font-weight: normal;
-	}
-}
-
-//
-// Avatar children
-//
-.avatar-initial {
-	color: $C_textTertiary;
-	font-weight: bold;
-	font-size: $font-size-navbar;
-	text-indent: 0%;
-	text-align: center;
-	vertical-align: middle;
-	display: table-cell;
-	width: $media-s;
-	line-height: $media-s;
-
-	@include atMediaUp(small) {
-		width: $media-m;
-		line-height: $media-m;
-		font-size: $font-size-display3;
-	}
 }
 
 //
 // Type variants
 //
+.avatar--noPhoto {
+	text-indent: initial;
+}
+
 .avatar--person {
 	@extend %avatar;
 	vertical-align: middle;
 	border-radius: 999px;
 	box-sizing: border-box;
 }
-
 
 .avatar--fbFriend {
 	@extend %avatarCharm;
