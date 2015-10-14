@@ -198,10 +198,10 @@ $_eventStripes: (
 );
 
 .card {
+	@include standardBorder();
 	box-sizing: border-box;
 	display: block;
 	background: $C_contentBG;
-	border: 1px solid $C_border;
 	border-radius: $defaultRadius;
 	padding: $space $space 0;
 	position: relative;

@@ -1,0 +1,45 @@
+/*doc
+---
+title: Border utilities
+name: borderUtils
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+
+
+/*doc
+---
+title: Standard border mixin
+name: borderMixin
+parent: borderUtils
+---
+Applies standard border using default `border-color`,
+including rules for inverted context.
+
+```
+@import standardBorder(); // default = top
+
+// apply border to bottom OR
+// 'top', 'left', 'right', 'bottom', 'all', 'none'
+@import standardBorder('bottom');
+
+// apply a custom size (default = 1px)
+@import standardBorder('all', 4px);
+```
+
+*/
+@mixin standardBorder( $side: 'top', $size: 1px ) {
+	@if '#{$side}' == 'all' {
+		border: $size solid $C_border;
+		.inverted & {
+			border: $size solid $C_borderInverted;
+		}
+	} @else if '#{$side}' == 'none' {
+		border: none !important; // override inverted selector specificity
+	} @else {
+		border-#{$side}: $size solid $C_border;
+		.inverted & {
+			border-#{$side}: $size solid $C_borderInverted;
+		}
+	}
+}

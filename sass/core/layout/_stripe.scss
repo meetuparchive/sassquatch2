@@ -44,8 +44,8 @@ Class                | Description
 
 %stripe,
 .stripe {
+	@include standardBorder();
 	overflow: hidden;
-	border-top: 1px solid $C_border;
 	background-color: $C_contentBG;
 	margin-bottom: 0;
 }

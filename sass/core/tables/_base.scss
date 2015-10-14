@@ -63,7 +63,7 @@ caption {
 }
 
 thead th {
+	@include standardBorder('bottom');
 	color: $C_textPrimary;
 	font-weight: $W_bold;
-	border-bottom: 1px solid $C_border;
 }

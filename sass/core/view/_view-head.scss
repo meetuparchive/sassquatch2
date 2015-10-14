@@ -49,8 +49,8 @@ Class                      | Description
 		.view--splitList .view-head {
 			@include flex-basis($view-head-height);
 			@include flex-grow(0);
+			@include standardBorder('right');
 			box-sizing: border-box;
-			border-right: 1px solid $C_border;
 			width: $view-minWidth;
 		}
 		.view--splitDetail .view-head {

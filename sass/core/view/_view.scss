@@ -89,6 +89,7 @@ the "detail" responsibility.
 	.ieRoot_modern .view--splitList {
 		@include flexParent('column');
 		@include flex-wrap('nowrap');
+		@include standardBorder('right');
 
 		// NOTE: uses fixed position
 		// try not to put forms in the split part
@@ -97,7 +98,6 @@ the "detail" responsibility.
 		top: 0;
 		left: 0;
 		width: $view-minWidth;
-		border-right: 1px solid $C_border;
 		display: block;
 	}
 
