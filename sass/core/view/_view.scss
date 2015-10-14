@@ -78,21 +78,30 @@ the "detail" responsibility.
   }
 }
 
+.view--splitList {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100vh;
+	z-index: map-get($zindex-map, splitList-view);
+}
+
 @include atMediaUp(medium){
-	.view--splitList {
+	.ieRoot_modern .view--splitList {
+		@include flexParent('column');
+		@include flex-wrap('nowrap');
 		@include standardBorder('right');
+
 		// NOTE: uses fixed position
 		// try not to put forms in the split part
 		// usually the split view will be a list
 		position: fixed;
 		top: 0;
 		left: 0;
-		height: 100vh;
 		width: $view-minWidth;
 		display: block;
 	}
 
-	.view--splitDetail {
+	.ieRoot_modern .view--splitDetail {
 		display: block;
 		padding-left: $view-minWidth;
 	}

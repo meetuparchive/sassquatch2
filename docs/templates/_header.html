@@ -27,11 +27,11 @@
 	<!-- HOTDOGS -->
 	<header class="stripe--inverted inverted hasJS">
 		<div class="bounds bounds--wide">
-			<div class="stack stack--spaceBetween atLarge_stack--spread">
-				<div class="stack-item">
+			<div class="spreadable spreadable--spaceBetween atLarge_spreadable--spread">
+				<div class="spreadable-item">
 					<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
 				</div>
-				<div class="stack-item stack-item--shrink">
+				<div class="spreadable-item spreadable-item--shrink">
 					<div class="row margin--top" style="align-items: baseline;">
 						<div id="docSearch" class="row-item">
 							<input autocomplete="off" id="search" name="search" style="min-width: 250px;" class="chunk" type="text" placeholder="Search" />
@@ -46,8 +46,8 @@
 		</div>
 	</header>
 
-	<section id="hologramBody" class="bounds bounds--wide stack atLarge_stack--spread">
-		<nav id="navigation" class="stack-item stack-item--shrink">
+	<section id="hologramBody" class="bounds bounds--wide spreadable atLarge_spreadable--spread">
+		<nav id="navigation" class="spreadable-item spreadable-item--shrink">
 			<ul>
 				<% @categories.each do |category, file_name| %>
 					<li class="display--inlineBlock--mediumDown">
@@ -71,4 +71,4 @@
 			</ul>
 		</nav>
 
-	 	<main id="content" class="stack-item">
+	 	<main id="content" class="spreadable-item">

@@ -14,27 +14,10 @@
 
 
 // ---------------------------
-// BREAKPOINTS
-// ---------------------------
-	$breakpoint-s  : 440px;
-	$breakpoint-m  : 640px;
-	$breakpoint-l  : 840px;
-	$breakpoint-xl : 1024px;
-
-	$breakpoint-map: (
-		s: $breakpoint-s,
-		m: $breakpoint-m,
-		l: $breakpoint-l,
-		xl: $breakpoint-xl,
-	);
-
-
-// ---------------------------
 // BOUNDS
 // ---------------------------
 	$bounds-wide	: 1100px;
 	$bounds			: 840px;
-
 
 
 // ---------------------------
@@ -106,7 +89,7 @@
 	$form-min-width  : $block;
 	$form-max-width  : 550px; // Come up with something smarter for this
 
-	$modal-width     : $breakpoint-s;
+	$modal-width     : 440px; // matches default $breakpoint-s value from julep
 
 	$defaultRadius   : 3px;
 
@@ -132,8 +115,8 @@
 // ---------------------------
 // ROOT CLASSES
 // ---------------------------
-	$root-browserIEPrefix: 'ieRoot_lt_IE'; // _[versionNumber] is appended
 	$root-debugEnable: 'enableDebug';
+
 
 // ---------------------------
 // EXTENDED COLORS
@@ -148,6 +131,7 @@
 	$zindex-map: (
 		main: 0,
 		main-header: 10,
+		splitList-view: 15,
 		shade: 20,
 		shade-content: 25,
 		modal: 30,
@@ -159,6 +143,7 @@
 // ---------------------------
 // FORMS
 // ---------------------------
+	// TODO: replace with bourbon vars
 	$inputs-list: 'input[type="email"]',
 					  'input[type="number"]',
 					  'input[type="password"]',
@@ -229,17 +214,3 @@
 // VIEW
 // ---------------------------
 	$view-minWidth: 320px;
-
-
-// ---------------------------
-// il8n
-// ---------------------------
-$languageClasses: (
-	"en": '.lang_en',
-	"es": '.lang_es',
-	"de": '.lang_es',
-	"fr": '.lang_fr',
-	"it": '.lang_it',
-	"ja": '.lang_ja',
-	"pt": '.lang_pt'
-);

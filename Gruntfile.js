@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-wiredep');
 	grunt.loadNpmTasks('grunt-preprocess');
 
 	var DIR_DOC_SRC = 'docs/',
@@ -35,6 +36,11 @@ module.exports = function(grunt) {
 			docs: [DIR_BUILD],
 			css: [DIR_DOC_SRC + 'templates/css/sassquatch.css']
 		},
+		'wiredep': {
+			'sass': {
+				src: ["sass/_util.scss"]
+			}
+		},
 		'preprocess': {
 			inline: {
 				src: [ 'docs/build/*.html' ],
@@ -49,6 +55,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['clean', 'sass', 'hologram', 'preprocess']);
+	grunt.registerTask('default', ['clean', 'wiredep', 'sass', 'hologram', 'preprocess']);
 	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };

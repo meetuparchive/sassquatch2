@@ -6,6 +6,9 @@
 *.swo
 *.css.map
 *.lock
+.bower.json
+components/
+bower_components/
 node_modules/
 .grunt/
 docs/build/
