@@ -60,6 +60,7 @@ the "detail" responsibility.
 
 
 .view {
+	@include flexParent('column', false);
 	box-sizing: border-box;
 	background: white;
 	width: 100%;

@@ -29,6 +29,7 @@ Class                      | Description
 
 */
 .view-head {
+	@include flexChild('shrink', false);
 	box-sizing: border-box;
 	background: $C_accent;
 	color: $C_textPrimaryInverted;

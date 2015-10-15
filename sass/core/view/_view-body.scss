@@ -16,11 +16,9 @@ content container for the view.
 </div>
 ```
 */
-.ieRoot_modern .view-body {
-	.view--splitList & {
-		@include flex-basis(auto);
-		@include flex-grow(1);
-		box-sizing: border-box;
-		height: auto;
-	}
+.view-body {
+	@include flexChild('grow', false);
+	@include flex-basis(auto);
+	box-sizing: border-box;
+	height: auto;
 }
