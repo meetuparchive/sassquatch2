@@ -27,13 +27,13 @@ Modal that is presented full screen on all sizes
 ```html_example
 <a class="link" href="pages/modal-full.html">Demo</a>
 
-<div class="view view--modalFull display--none">
-	<header class="view-head row">
-		<a href="http://meetup.com/" class="row-item row-item--shrink valign--middle">
-			<img src="style/img/logo.svg" width="35" height="24"></a>
-		</a>
+<div id="myModal" class="view view--modalFull" style="display:none;">
+	<header id="modal_header" class="view-head row row-inverted">
 		<div class="row-item valign--middle viewHead-heading">
-			<h1 class="wrap--singleLine--truncate">This is a header</h1>
+			<h1 class="wrap--singleLine--truncate">Group Settings</h1>
+		</div>
+		<div class="viewHead-actions row row-item row-item--shrink valign--middle">
+			<a href="#" class="j-close">Close</a>
 		</div>
 	</header>
 	<div id="modal_body" class="view-body">
