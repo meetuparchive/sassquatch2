@@ -86,7 +86,7 @@ Enables breaking all words and auto-hyphenation.
 
 Class              | Description
 ------------------ | ----------------------------
-`.text--wrapNice`  | Visually hides text; removes text from document flow
+`.text--wrapNice`  | Auto hyphenation and nice wrapping for running text
 */
 .text--wrapNice {
 	@extend %wrapNice;
