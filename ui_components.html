@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.0.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.1.0</a>
 						</div>
 					</div>
 				</div>
@@ -305,23 +305,8 @@ content in the feed attached to a parent item
         <a href="#" class="avatar avatar--person avatar--fbFriend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
     </li>
     <li>
-        <a href="#" class="avatar avatar--person">
-            <abbr title="Member name" class="avatar-initial">M</abbr>
-        </a>
-    </li>
-    <li>
-        <a href="#" class="avatar avatar--big avatar--person">
-            <abbr title="Teresa Wall" class="avatar-initial">T</abbr>
-        </a>
-    </li>
-    <li>
-        <a href="#" class="avatar avatar--small avatar--person">
-            <abbr title="Jake Levine" class="avatar-initial">J</abbr>
-        </a>
-    </li>
-    <li>
-        <a href="#" class="avatar avatar--person avatar--org">
-            <abbr title="Jake Levine" class="avatar-initial">J</abbr>
+        <a href="#" class="avatar avatar--person avatar--noPhoto">
+            <p>no photo</p> <!-- our person.hbs handlebars template handles this -->
         </a>
     </li>
 </ul>
@@ -343,23 +328,8 @@ content in the feed attached to a parent item
         <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--fbFriend"</span> <span class="na">style=</span><span class="s">"background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);"</span><span class="nt">&gt;</span>Member Name<span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">"Member name"</span> <span class="na">class=</span><span class="s">"avatar-initial"</span><span class="nt">&gt;</span>M<span class="nt">&lt;/abbr&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--big avatar--person"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">"Teresa Wall"</span> <span class="na">class=</span><span class="s">"avatar-initial"</span><span class="nt">&gt;</span>T<span class="nt">&lt;/abbr&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--small avatar--person"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">"Jake Levine"</span> <span class="na">class=</span><span class="s">"avatar-initial"</span><span class="nt">&gt;</span>J<span class="nt">&lt;/abbr&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--org"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">"Jake Levine"</span> <span class="na">class=</span><span class="s">"avatar-initial"</span><span class="nt">&gt;</span>J<span class="nt">&lt;/abbr&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"avatar avatar--person avatar--noPhoto"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>no photo<span class="nt">&lt;/p&gt;</span> <span class="c">&lt;!-- our person.hbs handlebars template handles this --&gt;</span>
         <span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span></pre>
@@ -397,6 +367,10 @@ optional variants:</p><table class="styleguide"> <tr>
 <td><code class="styleguide">avatar--icon</code></td>
 <td>For icons in avatars (might move this in a later version)</td>
 </tr>
+<tr>
+<td><code class="styleguide">avatar--noPhoto</code></td>
+<td>Resets <code class="styleguide">text-indent</code> for avatars without photos, allowing display of fallback content</td>
+</tr>
  </table>
 <h1 id="buttons" class="styleguide">Buttons (transitional styles)</h1>
 <p class="styleguide">These buttons match the visual styles of the original <a class="styleguide" href="http://meetup.github.io/sassquatch" title="http://meetup.github.io/sassquatch">Sassquatch</a>
@@ -421,6 +395,9 @@ framework, making them suitable for the transition of Meetup from legacy to &quo
     <span class="button-icon">ヘ(◕。◕ヘ)</span>
     <span class="button-label">Full width primary button with left Icon</span>
 </a>
+<a class="button button--disabled" href="#">Stop</a>
+<button class="button button--primary" disabled>Can't touch this</button>
+<input type="submit" class="button button--bordered" value="Disabled" disabled />
 
   </div>
   <div class="codeBlock">
@@ -441,7 +418,10 @@ framework, making them suitable for the transition of Meetup from legacy to &quo
 <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--primary button--icon button--fullWidth"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"button-icon"</span><span class="nt">&gt;</span>ヘ(◕。◕ヘ)<span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"button-label"</span><span class="nt">&gt;</span>Full width primary button with left Icon<span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;/a&gt;</span></pre>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button button--disabled"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Stop<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"button button--primary"</span> <span class="na">disabled</span><span class="nt">&gt;</span>Can't touch this<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"button button--bordered"</span> <span class="na">value=</span><span class="s">"Disabled"</span> <span class="na">disabled</span> <span class="nt">/&gt;</span></pre>
     </div>
   </div>
 </div>
@@ -471,6 +451,10 @@ classes are optional variants:</p><table class="styleguide"> <tr>
 <tr>
 <td><code class="styleguide">.button--bordered</code></td>
 <td>foundation design style rounded bordered buttons</td>
+</tr>
+<tr>
+<td><code class="styleguide">.button--disabled</code></td>
+<td>disabled button (also works with boolean attribute <code class="styleguide">.button[disabled]</code>)</td>
 </tr>
  </table>
 <h1 id="collapsible" class="styleguide">Collapsible</h1>
@@ -1431,10 +1415,10 @@ Variant classes:</p><table class="styleguide"> <tr>
 	<footer class="stripe stripe--collection">
 		<div class="bounds bounds--wide">
 			<div class="chunk row text--small">
-				<p class="row-item row-item--alignMiddle">
+				<p class="row-item valign--middle">
 					Built by <a class="text--bold" style="color:rgb(213,87,65)!important;" href="http://www.meetup.com">Meetup</a>
 				</p>
-				<p class="row-item row-item--alignMiddle align--right">
+				<p class="row-item valign--middle align--right">
 					<a class="button button--bordered button--small" href="https://github.com/meetup/sassquatch2">Fork on github</a>
 				</p>
 			</div>
@@ -1533,6 +1517,28 @@ $(function() {
 					"name": "spin",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#spin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Border utilities",
+					"name": "borderUtils",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#borderUtils"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Standard border mixin",
+					"name": "borderMixin",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#borderMixin"
 				});
 
 			

@@ -143,6 +143,34 @@ with a table-cell fallback for old IE.
 */
 /*doc
 ---
+title: Border utilities
+name: borderUtils
+category: Sass Utils | Mixins & Placeholders
+---
+*/
+/*doc
+---
+title: Standard border mixin
+name: borderMixin
+parent: borderUtils
+---
+Applies standard border using default `border-color`,
+including rules for inverted context.
+
+```
+@import standardBorder(); // default = top
+
+// apply border to bottom OR
+// 'top', 'left', 'right', 'bottom', 'all', 'none'
+@import standardBorder('bottom');
+
+// apply a custom size (default = 1px)
+@import standardBorder('all', 4px);
+```
+
+*/
+/*doc
+---
 title: Button utilities
 name: button
 category: Sass Utils | Mixins & Placeholders
@@ -171,9 +199,9 @@ Disables user-select, sets cursor, and resets text-decoration.
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   -webkit-appearance: none;
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 50px;
   display: inline-block;
   font-size: 16px;
@@ -181,6 +209,8 @@ Disables user-select, sets cursor, and resets text-decoration.
   margin: 0;
   padding: 8px 16px;
   text-align: center; }
+  .inverted .toggleButton-label {
+    border: 1px solid rgba(255, 255, 255, 0.2); }
   .toggleButton-label:focus {
     outline: 0; }
 
@@ -1034,7 +1064,7 @@ category: Forms
 
 ```html_example
 <div class="chunk">
-	<label for="test-textinput">I'm a label</label>
+	<label for="test-textinput" class="required">I'm a label</label>
 	<input id="test-textinput" type="text" value="Text input with value" />
 </div>
 
@@ -1064,7 +1094,7 @@ category: Forms
 		<input id="split1" type="text" placeholder="ie. Fluffy, Resplendent" />
 	</div>
 	<div class="row-item chunk">
-		<label for="split2">Unicorn color</label>
+		<label class="required" for="split2">Unicorn color</label>
 		<select id="split2">
 			<option value="clear">Transparent</option>
 			<option value="green">Toasted clove saffron</option>
@@ -1079,6 +1109,15 @@ category: Forms
 .text--label,
 label {
   font-size: 13px; }
+  .required.text--label:after,
+  label.required:after {
+    content: "*";
+    color: #e2373c;
+    font-size: 18px;
+    line-height: 0;
+    margin-left: 4px;
+    position: relative;
+    top: 3px; }
 
 fieldset {
   border: 0;
@@ -1181,6 +1220,10 @@ input elements.
 	<input id="check2" class="checkbox" value="blue" type="checkbox" />
 	Blue
 </label>
+<label for="check2" class="label--switch chunk">
+	<input id="check2" class="checkbox" value="blue" type="checkbox" checked />
+	Already checked
+</label>
 ```
 */
 /* CHECKBOXES */
@@ -1212,7 +1255,7 @@ input elements.
     border: 2px solid white;
     border-top-style: none;
     border-right-style: none; }
-  .checkbox:checked:before {
+  .checkbox[checked]:before, .checkbox:checked:before {
     -webkit-transform: rotate(-45deg) scale(1, 1);
     -ms-transform: rotate(-45deg) scale(1, 1);
     transform: rotate(-45deg) scale(1, 1); }
@@ -1227,7 +1270,7 @@ input elements.
     border: 1px solid rgba(0, 0, 0, 0.26);
     border-radius: 3px;
     cursor: pointer; }
-  .checkbox:checked:after, .checkbox:active:after {
+  .checkbox[checked]:after, .checkbox:checked:after, .checkbox:active:after {
     background: #3987cb; }
   .checkbox:hover, .checkbox:focus {
     outline: none; }
@@ -1241,7 +1284,7 @@ input elements.
 .inverted .checkbox:hover:after, .inverted .checkbox:focus:after {
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.12);
   border: 1px solid white; }
-.inverted .checkbox:checked:after, .inverted .checkbox:active:after {
+.inverted .checkbox[checked]:after, .inverted .checkbox:checked:after, .inverted .checkbox:active:after {
   background: #3987cb; }
 
 /*doc
@@ -1443,9 +1486,11 @@ caption {
   padding-left: 0; }
 
 thead th {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
-  font-weight: 700;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  font-weight: 700; }
+  .inverted thead th {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
 
 /*doc
 ---
@@ -1554,10 +1599,14 @@ Apply the `borderedTable` class to apply borders to table cells.
   border-color: rgba(0, 0, 0, 0.12); }
   .borderedTable td:last-child, .borderedTable tbody th:last-child {
     border-right: 1px solid rgba(0, 0, 0, 0.12); }
+  .inverted .borderedTable td, .inverted .borderedTable tbody th {
+    border-color: rgba(255, 255, 255, 0.2); }
 .borderedTable thead th {
   border-width: 0; }
 .borderedTable tbody tr:last-child td, .borderedTable tbody tr:last-child th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  .inverted .borderedTable tbody tr:last-child td, .inverted .borderedTable tbody tr:last-child th {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
 
 /*doc
 ---
@@ -1655,10 +1704,13 @@ Class                | Description
 */
 .stripe--collection, .stripe--inverted, .stripe--hero, .stripe--photoHero,
 .stripe {
-  overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
+  overflow: hidden;
   background-color: white;
   margin-bottom: 0; }
+  .inverted .stripe--collection, .inverted .stripe--inverted, .inverted .stripe--hero, .inverted .stripe--photoHero, .inverted
+  .stripe {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); }
 
 .stripe--collection {
   background-color: #f3f6f9; }
@@ -1851,9 +1903,11 @@ ul, ol, .list, .menu-actions, .pagination,
   padding-left: 0; }
 
 .list-item, .hasJS .menu-actions-item {
-  display: block;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
+  display: block;
   padding-top: 16px; }
+  .inverted .list-item, .inverted .hasJS .menu-actions-item, .hasJS .inverted .menu-actions-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); }
   .list-item:first-child:not(a), .hasJS .menu-actions-item:first-child:not(a) {
     border-top: none;
     padding-top: 0; }
@@ -2891,7 +2945,6 @@ The following classes are optional variants:
 Class                   | Description
 ----------------------- | -------------------------------
 `.row-item--shrink`     | Item shrinks to fit content
-`.row-item--alignMiddle`| Vertically aligns content to middle
 */
 .row-item--shrink {
   -webkit-flex-grow: 0;
@@ -3443,6 +3496,33 @@ the "detail" responsibility.
 ```
 */
 .view {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
   box-sizing: border-box;
   background: white;
   width: 100%;
@@ -3497,11 +3577,11 @@ the "detail" responsibility.
     -webkit-flex-wrap: "nowrap";
     -ms-flex-wrap: "nowrap";
     flex-wrap: "nowrap";
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
     position: fixed;
     top: 0;
     left: 0;
     width: 320px;
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
     display: block; }
     .ieRoot_lt_IE10 .ieRoot_modern .view--splitList {
       height: 100%; }
@@ -3509,6 +3589,8 @@ the "detail" responsibility.
       display: table;
       table-layout: auto;
       width: 100%; }
+    .inverted .ieRoot_modern .view--splitList {
+      border-right: 1px solid rgba(255, 255, 255, 0.2); }
 
   .ieRoot_modern .view--splitDetail {
     display: block;
@@ -3525,9 +3607,9 @@ fixed top nav bar) within every view.
 ```
 <div class="view">
 	<header class="view-head row inverted">
-		<a href="#" class="row-item row-item--shrink row-item--alignMiddle">[...]</a>
-		<a href="#" class="row-item row-item--alignMiddle">Page Title</a>
-		<a href="#" class="row-item row-item--shrink row-item--alignMiddle">[...]</a>
+		<a href="#" class="row-item row-item--shrink valign--middle">[...]</a>
+		<a href="#" class="row-item valign--middle">Page Title</a>
+		<a href="#" class="row-item row-item--shrink valign--middle">[...]</a>
 	</header>
 </div>
 ```
@@ -3544,6 +3626,16 @@ Class                      | Description
 
 */
 .view-head {
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  width: initial;
   box-sizing: border-box;
   background: #e2373c;
   color: white;
@@ -3565,9 +3657,11 @@ Class                      | Description
     -webkit-flex-grow: 0;
     flex-grow: 0;
     -ms-flex-positive: 0;
-    box-sizing: border-box;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
     width: 320px; }
+    .inverted .ieRoot_modern .view--splitList .view-head {
+      border-right: 1px solid rgba(255, 255, 255, 0.2); }
   .ieRoot_modern .view--splitDetail .view-head {
     left: 320px;
     right: 0;
@@ -3602,13 +3696,19 @@ content container for the view.
 </div>
 ```
 */
-.view--splitList .ieRoot_modern .view-body {
-  -webkit-flex-basis: auto;
-  flex-basis: auto;
-  -ms-flex-preferred-size: auto;
+.view-body {
   -webkit-flex-grow: 1;
   flex-grow: 1;
   -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
   box-sizing: border-box;
   height: auto; }
 
@@ -3640,13 +3740,13 @@ Modal that is presented full screen on all sizes
 ```html_example
 <a class="link" href="pages/modal-full.html">Demo</a>
 
-<div class="view view--modalFull display--none">
-	<header class="view-head row">
-		<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
-			<img src="style/img/logo.svg" width="35" height="24"></a>
-		</a>
-		<div class="row-item row-item--alignMiddle viewHead-heading">
-			<h1 class="wrap--singleLine--truncate">This is a header</h1>
+<div id="myModal" class="view view--modalFull" style="display:none;">
+	<header id="modal_header" class="view-head row row-inverted">
+		<div class="row-item valign--middle viewHead-heading">
+			<h1 class="wrap--singleLine--truncate">Group Settings</h1>
+		</div>
+		<div class="viewHead-actions row row-item row-item--shrink valign--middle">
+			<a href="#" class="j-close">Close</a>
 		</div>
 	</header>
 	<div id="modal_body" class="view-body">
@@ -3695,10 +3795,10 @@ lays out as a dialog on background content on larger screens.
 
 <div class="view view--modalSnap display--none">
 	<header class="view-head row inverted">
-		<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+		<a href="http://meetup.com/" class="row-item row-item--shrink valign--middle">
 			Close
 		</a>
-		<div class="row-item row-item--alignMiddle viewHead-heading">
+		<div class="row-item valign--middle viewHead-heading">
 			<h1 class="wrap--singleLine--truncate">Change your setting</h1>
 		</div>
 	</header>
@@ -3935,23 +4035,8 @@ category: UI Components
 		<a href="#" class="avatar avatar--person avatar--fbFriend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
 	</li>
 	<li>
-		<a href="#" class="avatar avatar--person">
-			<abbr title="Member name" class="avatar-initial">M</abbr>
-		</a>
-	</li>
-	<li>
-		<a href="#" class="avatar avatar--big avatar--person">
-			<abbr title="Teresa Wall" class="avatar-initial">T</abbr>
-		</a>
-	</li>
-	<li>
-		<a href="#" class="avatar avatar--small avatar--person">
-			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
-		</a>
-	</li>
-	<li>
-		<a href="#" class="avatar avatar--person avatar--org">
-			<abbr title="Jake Levine" class="avatar-initial">J</abbr>
+		<a href="#" class="avatar avatar--person avatar--noPhoto">
+			<p>no photo</p> <!-- our person.hbs handlebars template handles this -->
 		</a>
 	</li>
 </ul>
@@ -3969,6 +4054,7 @@ Class                     | Description
 `avatar--org`             | Variant for organizers
 `avatar--fbFriend`        | Variant for facebook friends
 `avatar--icon`            | For icons in avatars (might move this in a later version)
+`avatar--noPhoto`         | Resets `text-indent` for avatars without photos, allowing display of fallback content
 */
 .avatar--fbFriend, .avatar--org {
   overflow: visible; }
@@ -3993,7 +4079,7 @@ Class                     | Description
 .avatar--person,
 .avatar {
   position: relative;
-  background-color: #f3f6f9;
+  background-color: #e6e9ec;
   background-position: center 42%;
   color: transparent;
   display: inline-block;
@@ -4012,35 +4098,15 @@ Class                     | Description
 .avatar--small {
   height: 24px;
   width: 24px; }
-  .avatar--small .avatar-initial {
-    width: 24px;
-    line-height: 24px;
-    font-size: 16px; }
 
 .avatar--big {
   height: 160px;
   width: 160px; }
-  .avatar--big .avatar-initial {
-    width: 160px;
-    line-height: 160px;
-    font-size: 108px;
-    font-weight: normal; }
 
-.avatar-initial {
-  color: rgba(0, 0, 0, 0.26);
-  font-weight: bold;
-  font-size: 18px;
-  text-indent: 0%;
-  text-align: center;
-  vertical-align: middle;
-  display: table-cell;
-  width: 36px;
-  line-height: 36px; }
-  @media only screen and (min-width: 440px) {
-    .avatar-initial {
-      width: 48px;
-      line-height: 48px;
-      font-size: 24px; } }
+.avatar--noPhoto {
+  position: relative;
+  text-indent: initial;
+  border: 3px solid; }
 
 .avatar--person {
   vertical-align: middle;
@@ -4187,6 +4253,9 @@ framework, making them suitable for the transition of Meetup from legacy to "fou
 	<span class="button-icon">ヘ(◕。◕ヘ)</span>
 	<span class="button-label">Full width primary button with left Icon</span>
 </a>
+<a class="button button--disabled" href="#">Stop</a>
+<button class="button button--primary" disabled>Can't touch this</button>
+<input type="submit" class="button button--bordered" value="Disabled" disabled />
 ```
 
 #### Button variants
@@ -4200,6 +4269,7 @@ Class                   | Description
 `.button--icon`         | button with icon
 `.button--fullWidth`    | increases button width to 100% of its parent container
 `.button--bordered`     | foundation design style rounded bordered buttons
+`.button--disabled`     | disabled button (also works with boolean attribute `.button[disabled]`)
 */
 .button--primary, .button--contrast, .button, .button--borderless {
   position: relative; }
@@ -4241,23 +4311,23 @@ Class                   | Description
   stroke: transparent;
   fill: #fff;
   color: #fff;
-  background: #e2373c;
-  box-shadow: 0 3px 0 0 #861317; }
+  background: #e2373c !important;
+  box-shadow: 0 3px 0 0 #861317 !important; }
   .button--primary:active {
-    box-shadow: 0 1px 0 0 #861317; }
+    box-shadow: 0 1px 0 0 #861317 !important; }
   .button--primary:hover {
-    background: #d21e24; }
+    background: #d21e24 !important; }
 
 .button--contrast {
   stroke: transparent;
   fill: #fff;
   color: #fff;
-  background: #e2373c;
-  box-shadow: 0 3px 0 0 #861317; }
+  background: #e2373c !important;
+  box-shadow: 0 3px 0 0 #861317 !important; }
   .button--contrast:active {
-    box-shadow: 0 1px 0 0 #861317; }
+    box-shadow: 0 1px 0 0 #861317 !important; }
   .button--contrast:hover {
-    background: #d21e24; }
+    background: #d21e24 !important; }
 
 .toggleButton-label,
 .button--small {
@@ -4272,9 +4342,9 @@ Class                   | Description
   box-sizing: border-box;
   -webkit-transition: background 0.15s;
   transition: background 0.15s;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   -webkit-appearance: none;
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 50px;
   display: inline-block;
   font-size: 16px;
@@ -4291,6 +4361,8 @@ Class                   | Description
   box-shadow: 0 0 0 0 transparent !important;
   font-weight: 700;
   padding: 10px 16px 8px 16px; }
+  .inverted .button--bordered {
+    border: 1px solid rgba(255, 255, 255, 0.2); }
   .button--bordered:focus {
     outline: 0; }
   .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
@@ -4299,6 +4371,31 @@ Class                   | Description
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0); }
+
+.button[disabled],
+.button--disabled {
+  opacity: 0.4;
+  cursor: default; }
+  .button[disabled], .button[disabled]:hover, .button[disabled]:active,
+  .button--disabled,
+  .button--disabled:hover,
+  .button--disabled:active {
+    stroke: transparent;
+    fill: rgba(0, 0, 0, 0.54);
+    color: rgba(0, 0, 0, 0.54);
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    background: #f3f6f9 !important;
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.54) !important; }
+    .button[disabled].button--bordered, .button[disabled].button--borderless, .button[disabled]:hover.button--bordered, .button[disabled]:hover.button--borderless, .button[disabled]:active.button--bordered, .button[disabled]:active.button--borderless,
+    .button--disabled.button--bordered,
+    .button--disabled.button--borderless,
+    .button--disabled:hover.button--bordered,
+    .button--disabled:hover.button--borderless,
+    .button--disabled:active.button--bordered,
+    .button--disabled:active.button--borderless {
+      box-shadow: 0 0 0 0 transparent !important; }
 
 .button--icon {
   display: -webkit-inline-box;
@@ -4567,16 +4664,18 @@ _(The inline style on the card element is for documentation purposes only)_
 ```
 */
 .card {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   display: block;
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 3px;
   padding: 16px 16px 0;
   position: relative;
   background-size: cover;
   background-clip: padding-box;
   min-height: 160px; }
+  .inverted .card {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); }
 
 .card--group {
   display: -webkit-box;
@@ -5614,14 +5713,17 @@ Class                   | Description
 `.border--none`         | removes all borders from element
 `.bordered`             | sets a standard top border AND top padding
 */
+.bordered,
 .border--top {
-  border-top: 1px solid rgba(0, 0, 0, 0.12) !important; }
+  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+  .inverted .bordered, .inverted
+  .border--top {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); }
 
 .border--none {
   border-width: 0 !important; }
 
 .bordered {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
   padding-top: 16px; }
 
 /*doc
@@ -5961,7 +6063,7 @@ Enables breaking all words and auto-hyphenation.
 
 Class              | Description
 ------------------ | ----------------------------
-`.text--wrapNice`  | Visually hides text; removes text from document flow
+`.text--wrapNice`  | Auto hyphenation and nice wrapping for running text
 */
 /*doc
 ---
@@ -6222,13 +6324,19 @@ Breakpoints        | Property       | Variants
     margin-right: auto; } }
 @media only screen and (min-width: 440px) {
   .atSmall_border--top {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+    border-top: 1px solid rgba(0, 0, 0, 0.12); }
+    .inverted .atSmall_border--top {
+      border-top: 1px solid rgba(255, 255, 255, 0.2); } }
 @media only screen and (min-width: 640px) {
   .atMedium_border--top {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+    border-top: 1px solid rgba(0, 0, 0, 0.12); }
+    .inverted .atMedium_border--top {
+      border-top: 1px solid rgba(255, 255, 255, 0.2); } }
 @media only screen and (min-width: 840px) {
   .atLarge_border--top {
-    border-top: 1px solid rgba(0, 0, 0, 0.12) !important; } }
+    border-top: 1px solid rgba(0, 0, 0, 0.12); }
+    .inverted .atLarge_border--top {
+      border-top: 1px solid rgba(255, 255, 255, 0.2); } }
 @media only screen and (min-width: 440px) {
   .atSmall_border--none {
     border-width: 0 !important; } }

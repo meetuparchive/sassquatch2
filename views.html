@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.0.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.1.0</a>
 						</div>
 					</div>
 				</div>
@@ -181,13 +181,13 @@
   <div class="exampleOutput">
     <a class="link" href="pages/modal-full.html">Demo</a>
 
-<div class="view view--modalFull display--none">
-    <header class="view-head row">
-        <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
-            <img src="style/img/logo.svg" width="35" height="24"></a>
-        </a>
-        <div class="row-item row-item--alignMiddle viewHead-heading">
-            <h1 class="wrap--singleLine--truncate">This is a header</h1>
+<div id="myModal" class="view view--modalFull" style="display:none;">
+    <header id="modal_header" class="view-head row row-inverted">
+        <div class="row-item valign--middle viewHead-heading">
+            <h1 class="wrap--singleLine--truncate">Group Settings</h1>
+        </div>
+        <div class="viewHead-actions row row-item row-item--shrink valign--middle">
+            <a href="#" class="j-close">Close</a>
         </div>
     </header>
     <div id="modal_body" class="view-body">
@@ -204,13 +204,13 @@
     <div class="highlight">
       <pre><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"link"</span> <span class="na">href=</span><span class="s">"pages/modal-full.html"</span><span class="nt">&gt;</span>Demo<span class="nt">&lt;/a&gt;</span>
 
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modalFull display--none"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head row"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"style/img/logo.svg"</span> <span class="na">width=</span><span class="s">"35"</span> <span class="na">height=</span><span class="s">"24"</span><span class="nt">&gt;&lt;/a&gt;</span>
-        <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--alignMiddle viewHead-heading"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>This is a header<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"myModal"</span> <span class="na">class=</span><span class="s">"view view--modalFull"</span> <span class="na">style=</span><span class="s">"display:none;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">id=</span><span class="s">"modal_header"</span> <span class="na">class=</span><span class="s">"view-head row row-inverted"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item valign--middle viewHead-heading"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>Group Settings<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"viewHead-actions row row-item row-item--shrink valign--middle"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"j-close"</span><span class="nt">&gt;</span>Close<span class="nt">&lt;/a&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/header&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"modal_body"</span> <span class="na">class=</span><span class="s">"view-body"</span><span class="nt">&gt;</span>
@@ -246,10 +246,10 @@ lays out as a dialog on background content on larger screens.</p><div class="cod
 
 <div class="view view--modalSnap display--none">
     <header class="view-head row inverted">
-        <a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+        <a href="http://meetup.com/" class="row-item row-item--shrink valign--middle">
             Close
         </a>
-        <div class="row-item row-item--alignMiddle viewHead-heading">
+        <div class="row-item valign--middle viewHead-heading">
             <h1 class="wrap--singleLine--truncate">Change your setting</h1>
         </div>
     </header>
@@ -271,10 +271,10 @@ lays out as a dialog on background content on larger screens.</p><div class="cod
 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"view view--modalSnap display--none"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"view-head row inverted"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink row-item--alignMiddle"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://meetup.com/"</span> <span class="na">class=</span><span class="s">"row-item row-item--shrink valign--middle"</span><span class="nt">&gt;</span>
             Close
         <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item row-item--alignMiddle viewHead-heading"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row-item valign--middle viewHead-heading"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"wrap--singleLine--truncate"</span><span class="nt">&gt;</span>Change your setting<span class="nt">&lt;/h1&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/header&gt;</span>
@@ -372,9 +372,9 @@ fixed top nav bar) within every view.</p><div class="codeBlock">
   <div class="highlight">
     <pre>&lt;div class="view"&gt;
     &lt;header class="view-head row inverted"&gt;
-        &lt;a href="#" class="row-item row-item--shrink row-item--alignMiddle"&gt;[...]&lt;/a&gt;
-        &lt;a href="#" class="row-item row-item--alignMiddle"&gt;Page Title&lt;/a&gt;
-        &lt;a href="#" class="row-item row-item--shrink row-item--alignMiddle"&gt;[...]&lt;/a&gt;
+        &lt;a href="#" class="row-item row-item--shrink valign--middle"&gt;[...]&lt;/a&gt;
+        &lt;a href="#" class="row-item valign--middle"&gt;Page Title&lt;/a&gt;
+        &lt;a href="#" class="row-item row-item--shrink valign--middle"&gt;[...]&lt;/a&gt;
     &lt;/header&gt;
 &lt;/div&gt;</pre>
   </div>
@@ -400,10 +400,10 @@ hero headers).</p><table class="styleguide"> <tr>
 	<footer class="stripe stripe--collection">
 		<div class="bounds bounds--wide">
 			<div class="chunk row text--small">
-				<p class="row-item row-item--alignMiddle">
+				<p class="row-item valign--middle">
 					Built by <a class="text--bold" style="color:rgb(213,87,65)!important;" href="http://www.meetup.com">Meetup</a>
 				</p>
-				<p class="row-item row-item--alignMiddle align--right">
+				<p class="row-item valign--middle align--right">
 					<a class="button button--bordered button--small" href="https://github.com/meetup/sassquatch2">Fork on github</a>
 				</p>
 			</div>
@@ -502,6 +502,28 @@ $(function() {
 					"name": "spin",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#spin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Border utilities",
+					"name": "borderUtils",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#borderUtils"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Standard border mixin",
+					"name": "borderMixin",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#borderMixin"
 				});
 
 			

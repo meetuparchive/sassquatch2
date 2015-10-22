@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.0.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.1.0</a>
 						</div>
 					</div>
 				</div>
@@ -80,6 +80,20 @@
 								
 
 									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#borderUtils">Border utilities</a>
+										</li>
 									
 
 								
@@ -270,6 +284,22 @@ with a table-cell fallback for old IE.</p><div class="codeBlock">
     <pre>@include animate--spin($time: 0.8s);</pre>
   </div>
 </div>
+<h1 id="borderUtils" class="styleguide">Border utilities</h1>
+
+<h2 id="borderMixin" class="styleguide">Standard border mixin</h2>
+<p class="styleguide">Applies standard border using default <code class="styleguide">border-color</code>,
+including rules for inverted context.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>@import standardBorder(); // default = top
+
+// apply border to bottom OR
+// 'top', 'left', 'right', 'bottom', 'all', 'none'
+@import standardBorder('bottom');
+
+// apply a custom size (default = 1px)
+@import standardBorder('all', 4px);</pre>
+  </div>
+</div>
 <h1 id="button" class="styleguide">Button utilities</h1>
 
 <h2 id="buttonPersonality" class="styleguide">Button personality placeholder</h2>
@@ -380,10 +410,10 @@ See <a class="styleguide" href="views.html#fullModalView" title="views.html#full
 	<footer class="stripe stripe--collection">
 		<div class="bounds bounds--wide">
 			<div class="chunk row text--small">
-				<p class="row-item row-item--alignMiddle">
+				<p class="row-item valign--middle">
 					Built by <a class="text--bold" style="color:rgb(213,87,65)!important;" href="http://www.meetup.com">Meetup</a>
 				</p>
-				<p class="row-item row-item--alignMiddle align--right">
+				<p class="row-item valign--middle align--right">
 					<a class="button button--bordered button--small" href="https://github.com/meetup/sassquatch2">Fork on github</a>
 				</p>
 			</div>
@@ -482,6 +512,28 @@ $(function() {
 					"name": "spin",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#spin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Border utilities",
+					"name": "borderUtils",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#borderUtils"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Standard border mixin",
+					"name": "borderMixin",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#borderMixin"
 				});
 
 			
