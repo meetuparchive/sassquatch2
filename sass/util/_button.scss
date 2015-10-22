@@ -20,7 +20,7 @@ Disables user-select, sets cursor, and resets text-decoration.
 ```
 */
 %buttonPersonality {
-	@include user-select(none) ;
+	@include user-select(none);
 	cursor: pointer;
 	text-decoration: none !important;
 }

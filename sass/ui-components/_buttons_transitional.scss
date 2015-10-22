@@ -27,6 +27,9 @@ framework, making them suitable for the transition of Meetup from legacy to "fou
 	<span class="button-icon">ヘ(◕。◕ヘ)</span>
 	<span class="button-label">Full width primary button with left Icon</span>
 </a>
+<a class="button button--disabled" href="#">Stop</a>
+<button class="button button--primary" disabled>Can't touch this</button>
+<input type="submit" class="button button--bordered" value="Disabled" disabled />
 ```
 
 #### Button variants
@@ -40,6 +43,7 @@ Class                   | Description
 `.button--icon`         | button with icon
 `.button--fullWidth`    | increases button width to 100% of its parent container
 `.button--bordered`     | foundation design style rounded bordered buttons
+`.button--disabled`     | disabled button (also works with boolean attribute `.button[disabled]`)
 */
 
 $_primaryButtonVariants: primary, contrast; // map sq2 variants to "primary" button style from sq1
@@ -157,6 +161,27 @@ $_padding: 10px $space $space-half $space;
 // use base button styles for "borderless" buttons
 .button--borderless {
 	@extend %_buttonBaseSQ1;
+}
+
+// Disabled buttons
+.button[disabled],
+.button--disabled {
+	opacity: 0.4;
+	cursor: default;
+
+	&,
+	&:hover,
+	&:active {
+		@include color-all($C_textSecondary);
+		@include transform(none);
+		background: $C_lightGray !important;
+		box-shadow: 0 $_shadowWidth 0 0 $C_textSecondary !important;
+
+		&.button--bordered,
+		&.button--borderless {
+			box-shadow: 0 0 0 0 transparent !important;
+		}
+	}
 }
 
 //
