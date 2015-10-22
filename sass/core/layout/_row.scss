@@ -118,11 +118,13 @@ The following classes are optional variants:
 Class                   | Description
 ----------------------- | -------------------------------
 `.row-item--shrink`     | Item shrinks to fit content
-`.row-item--alignMiddle`| Vertically aligns content to middle
 */
 .row-item--shrink {
 	@include flexChild('shrink');
 }
+
+// {{{ DEPRECATED
+// use `.valign--middle`
 .row-item--alignMiddle {
 	@include align-self(center);
 
@@ -130,3 +132,4 @@ Class                   | Description
 		vertical-align: middle;
 	}
 }
+// }}}

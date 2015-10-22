@@ -29,10 +29,10 @@ Modal that is presented full screen on all sizes
 
 <div class="view view--modalFull display--none">
 	<header class="view-head row">
-		<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+		<a href="http://meetup.com/" class="row-item row-item--shrink valign--middle">
 			<img src="style/img/logo.svg" width="35" height="24"></a>
 		</a>
-		<div class="row-item row-item--alignMiddle viewHead-heading">
+		<div class="row-item valign--middle viewHead-heading">
 			<h1 class="wrap--singleLine--truncate">This is a header</h1>
 		</div>
 	</header>
@@ -72,10 +72,10 @@ lays out as a dialog on background content on larger screens.
 
 <div class="view view--modalSnap display--none">
 	<header class="view-head row inverted">
-		<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+		<a href="http://meetup.com/" class="row-item row-item--shrink valign--middle">
 			Close
 		</a>
-		<div class="row-item row-item--alignMiddle viewHead-heading">
+		<div class="row-item valign--middle viewHead-heading">
 			<h1 class="wrap--singleLine--truncate">Change your setting</h1>
 		</div>
 	</header>
