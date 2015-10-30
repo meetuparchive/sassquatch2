@@ -41,6 +41,7 @@ _Setting the `enableDebug` class on `body` for dev only is recommended._
 		color: purple;
 		background: pink;
 		outline: 1px dotted red;
+		white-space: pre-wrap;
 
 		&:before {
 			display: inline;
