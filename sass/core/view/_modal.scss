@@ -131,12 +131,8 @@ _See `.view--modalSnap` demo page for example_
 ```
 */
 .overlayShim {
+	@include fullScreenAbsolute();
 	text-align: center;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 	background-color: rgba(0,0,0,0.7);
 	z-index: map-get($zindex-map, shade);
 }
