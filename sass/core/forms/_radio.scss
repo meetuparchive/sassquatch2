@@ -29,62 +29,69 @@ elements.
 /* RADIOS */
 //
 .radio {
-	-webkit-appearance: none;
 	cursor: pointer;
 	display: inline-block;
 	font-size: $font-size;
-	height: $font-size;
 	margin: 0 $inputGutter 0 0;
 	position: relative;
-	top: 0;
-	width: $font-size;
-	z-index: 0;
 
-	&:before {
-		@include transition (transform, 100ms, $ease-out-quad);
-		@include transform(scale(0,0));
-
-		content: "";
-
-		position: absolute;
-		top: em(3);
-		left: em(2);
-		z-index: 1;
-
-		width: em(12);
-		height: em(12);
-
-		background: $C_link;
-
-		border-radius: 999px;
+	@include browser-lessThanIE(10) {
+		top: $space/2;
 	}
 
-	&:checked, &:active {
-		&:before {
-			@include transform(scale(1,1));
-		}
-	}
-
-	&:after {
-		content: "";
-
-		position: absolute;
+	@include browser-modern() {
+		-webkit-appearance: none;
+		height: $font-size;
+		width: $font-size;
 		top: 0;
-		left: em(-1);
+		z-index: 0;
 
-		width: 100%;
-		height: 100%;
+		&:before {
+			@include transition (transform, 100ms, $ease-out-quad);
+			@include transform(scale(0,0));
 
-		background: $C_contentBG;
+			content: "";
 
-		border: 1px solid $C_textTertiary;
-		border-radius: 999px;
-	}
+			position: absolute;
+			top: em(3);
+			left: em(2);
+			z-index: 1;
 
-	&:checked, &:hover, &:focus {
-		outline: none;
+			width: em(12);
+			height: em(12);
+
+			background: $C_link;
+
+			border-radius: 999px;
+		}
+
+		&:checked, &:active {
+			&:before {
+				@include transform(scale(1,1));
+			}
+		}
+
 		&:after {
-			border: 1px solid $C_link;
+			content: "";
+
+			position: absolute;
+			top: 0;
+			left: em(-1);
+
+			width: 100%;
+			height: 100%;
+
+			background: $C_contentBG;
+
+			border: 1px solid $C_textTertiary;
+			border-radius: 999px;
+		}
+
+		&:checked, &:hover, &:focus {
+			outline: none;
+			&:after {
+				border: 1px solid $C_link;
+			}
 		}
 	}
 }
@@ -92,13 +99,15 @@ elements.
 // INVERTED RADIO INPUT
 .inverted {
 	.radio {
-		&:after {
-			background: $C_contentBGInverted;
-			border: 1px solid $C_textSecondaryInverted;
-		}
-		&:hover, &:focus {
+		@include browser-modern() {
 			&:after {
-				border: 1px solid $C_textPrimaryInverted;
+				background: $C_contentBGInverted;
+				border: 1px solid $C_textSecondaryInverted;
+			}
+			&:hover, &:focus {
+				&:after {
+					border: 1px solid $C_textPrimaryInverted;
+				}
 			}
 		}
 	}

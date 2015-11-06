@@ -33,92 +33,64 @@ input elements.
 /* CHECKBOXES */
 //
 .checkbox {
-	-webkit-appearance: none;
 	cursor: pointer;
 	display: inline-block;
 	font-size: $font-size;
-	height: $font-size;
 	margin: 0 $inputGutter 0 0;
 	position: relative;
-	top: em(1);
-	width: $font-size;
-	z-index: 0;
-	&:before {
-		@include transition (transform, 100ms, $ease-out-quad);
-		@include transform(rotate(-45deg) scale(0, 0));
 
-		content: "";
-
-		position: absolute;
-		left: em(4);
-		top: em(3);
-		z-index: 1;
-
-		width: em(8);
-		height: em(4);
-
-		border: 2px solid $C_textPrimaryInverted;
-		border-top-style: none;
-		border-right-style: none;
+	@include browser-lessThanIE(10) {
+		top: $space/2;
 	}
 
-	&[checked],
-	&:checked {
+	@include browser-modern() {
+		-webkit-appearance: none;
+		height: $font-size;
+		width: $font-size;
+		top: em(1);
+		z-index: 0;
 		&:before {
-			@include transform(rotate(-45deg) scale(1, 1));
-		}
-	}
+			@include transition (transform, 100ms, $ease-out-quad);
+			@include transform(rotate(-45deg) scale(0, 0));
 
-	&:after {
-		content: "";
+			content: "";
 
-		position: absolute;
-		top: em(-2);
-		left: 0;
+			position: absolute;
+			left: em(4);
+			top: em(3);
+			z-index: 1;
 
-		width: 100%;
-		height: 100%;
+			width: em(8);
+			height: em(4);
 
-		background: $C_contentBG;
-
-		border: 1px solid $C_textTertiary;
-		border-radius: $defaultRadius;
-
-		cursor: pointer;
-	}
-
-	&[checked],
-	&:checked,
-	&:active {
-		&:after {
-			background: $C_link;
-		}
-	}
-
-	&:hover,
-	&:focus {
-		outline: none;
-		&:after {
-			box-shadow: inset 2px 2px 4px $C_border;
-			border: 1px solid $C_textSecondary;
-		}
-	}
-}
-
-// INVERTED CHECKBOX INPUT
-.inverted {
-	.checkbox {
-		&:after {
-			background: $C_contentBGInverted;
-			border: 1px solid $C_textSecondaryInverted;
+			border: 2px solid $C_textPrimaryInverted;
+			border-top-style: none;
+			border-right-style: none;
 		}
 
-		&:hover,
-		&:focus {
-			&:after {
-				box-shadow: inset 2px 2px 4px $C_border;
-				border: 1px solid $C_textPrimaryInverted;
+		&[checked],
+		&:checked {
+			&:before {
+				@include transform(rotate(-45deg) scale(1, 1));
 			}
+		}
+
+		&:after {
+			content: "";
+
+			position: absolute;
+			top: em(-2);
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+
+			background: $C_contentBG;
+
+			border: 1px solid $C_textTertiary;
+			border-radius: $defaultRadius;
+
+			cursor: pointer;
 		}
 
 		&[checked],
@@ -126,6 +98,43 @@ input elements.
 		&:active {
 			&:after {
 				background: $C_link;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			&:after {
+				box-shadow: inset 2px 2px 4px $C_border;
+				border: 1px solid $C_textSecondary;
+			}
+		}
+	}
+}
+
+// INVERTED CHECKBOX INPUT
+.inverted {
+	.checkbox {
+		@include browser-modern() {
+			&:after {
+				background: $C_contentBGInverted;
+				border: 1px solid $C_textSecondaryInverted;
+			}
+
+			&:hover,
+			&:focus {
+				&:after {
+					box-shadow: inset 2px 2px 4px $C_border;
+					border: 1px solid $C_textPrimaryInverted;
+				}
+			}
+
+			&[checked],
+			&:checked,
+			&:active {
+				&:after {
+					background: $C_link;
+				}
 			}
 		}
 	}
