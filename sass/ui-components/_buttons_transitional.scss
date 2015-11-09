@@ -75,6 +75,7 @@ $_padding: 10px $space $space-half $space;
 	@extend %_chrome_button_fix;
 	@extend %buttonPersonality;
 	@include color-all($C_textSecondary);
+	-webkit-appearance: none; // for ios "input" elements
 	box-sizing: border-box;
 	display: inline-block;
 	padding: $_padding;
