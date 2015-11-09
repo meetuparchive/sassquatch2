@@ -1045,7 +1045,8 @@ _Setting the `enableDebug` class on `body` for dev only is recommended._
     font-size: 13px;
     color: purple;
     background: pink;
-    outline: 1px dotted red; }
+    outline: 1px dotted red;
+    white-space: pre-wrap; }
     .enableDebug .debug:before {
       display: inline;
       content: "DEBUG:";
@@ -1182,7 +1183,8 @@ textarea {
 .radio {
   border: none;
   background: transparent;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  width: auto; }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -1228,63 +1230,66 @@ input elements.
 */
 /* CHECKBOXES */
 .checkbox {
-  -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  height: 16px;
   margin: 0 8px 0 0;
-  position: relative;
-  top: 0.0625em;
-  width: 16px;
-  z-index: 0; }
-  .checkbox:before {
-    -webkit-transition: -webkit-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -moz-transition: -moz-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -webkit-transform: rotate(-45deg) scale(0, 0);
-    -ms-transform: rotate(-45deg) scale(0, 0);
-    transform: rotate(-45deg) scale(0, 0);
-    content: "";
-    position: absolute;
-    left: 0.25em;
-    top: 0.1875em;
-    z-index: 1;
-    width: 0.5em;
-    height: 0.25em;
-    border: 2px solid white;
-    border-top-style: none;
-    border-right-style: none; }
-  .checkbox[checked]:before, .checkbox:checked:before {
-    -webkit-transform: rotate(-45deg) scale(1, 1);
-    -ms-transform: rotate(-45deg) scale(1, 1);
-    transform: rotate(-45deg) scale(1, 1); }
-  .checkbox:after {
-    content: "";
-    position: absolute;
-    top: -0.125em;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.26);
-    border-radius: 3px;
-    cursor: pointer; }
-  .checkbox[checked]:after, .checkbox:checked:after, .checkbox:active:after {
-    background: #3987cb; }
-  .checkbox:hover, .checkbox:focus {
-    outline: none; }
-    .checkbox:hover:after, .checkbox:focus:after {
-      box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.12);
-      border: 1px solid rgba(0, 0, 0, 0.54); }
+  position: relative; }
+  .ieRoot_lt_IE10 .checkbox {
+    top: 8px; }
+  .ieRoot_modern .checkbox {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    top: 0.0625em;
+    z-index: 0; }
+    .ieRoot_modern .checkbox:before {
+      -webkit-transition: -webkit-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      -moz-transition: -moz-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      -webkit-transform: rotate(-45deg) scale(0, 0);
+      -ms-transform: rotate(-45deg) scale(0, 0);
+      transform: rotate(-45deg) scale(0, 0);
+      content: "";
+      position: absolute;
+      left: 0.25em;
+      top: 0.1875em;
+      z-index: 1;
+      width: 0.5em;
+      height: 0.25em;
+      border: 2px solid white;
+      border-top-style: none;
+      border-right-style: none; }
+    .ieRoot_modern .checkbox[checked]:before, .ieRoot_modern .checkbox:checked:before {
+      -webkit-transform: rotate(-45deg) scale(1, 1);
+      -ms-transform: rotate(-45deg) scale(1, 1);
+      transform: rotate(-45deg) scale(1, 1); }
+    .ieRoot_modern .checkbox:after {
+      content: "";
+      position: absolute;
+      top: -0.125em;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.26);
+      border-radius: 3px;
+      cursor: pointer; }
+    .ieRoot_modern .checkbox[checked]:after, .ieRoot_modern .checkbox:checked:after, .ieRoot_modern .checkbox:active:after {
+      background: #3987cb; }
+    .ieRoot_modern .checkbox:hover, .ieRoot_modern .checkbox:focus {
+      outline: none; }
+      .ieRoot_modern .checkbox:hover:after, .ieRoot_modern .checkbox:focus:after {
+        box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(0, 0, 0, 0.54); }
 
-.inverted .checkbox:after {
+.ieRoot_modern .inverted .checkbox:after {
   background: #353e48;
   border: 1px solid rgba(255, 255, 255, 0.7); }
-.inverted .checkbox:hover:after, .inverted .checkbox:focus:after {
+.ieRoot_modern .inverted .checkbox:hover:after, .ieRoot_modern .inverted .checkbox:focus:after {
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.12);
   border: 1px solid white; }
-.inverted .checkbox[checked]:after, .inverted .checkbox:checked:after, .inverted .checkbox:active:after {
+.ieRoot_modern .inverted .checkbox[checked]:after, .ieRoot_modern .inverted .checkbox:checked:after, .ieRoot_modern .inverted .checkbox:active:after {
   background: #3987cb; }
 
 /*doc
@@ -1315,55 +1320,58 @@ elements.
 */
 /* RADIOS */
 .radio {
-  -webkit-appearance: none;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  height: 16px;
   margin: 0 8px 0 0;
-  position: relative;
-  top: 0;
-  width: 16px;
-  z-index: 0; }
-  .radio:before {
-    -webkit-transition: -webkit-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -moz-transition: -moz-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    -webkit-transform: scale(0, 0);
-    -ms-transform: scale(0, 0);
-    transform: scale(0, 0);
-    content: "";
-    position: absolute;
-    top: 0.1875em;
-    left: 0.125em;
-    z-index: 1;
-    width: 0.75em;
-    height: 0.75em;
-    background: #3987cb;
-    border-radius: 999px; }
-  .radio:checked:before, .radio:active:before {
-    -webkit-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    transform: scale(1, 1); }
-  .radio:after {
-    content: "";
-    position: absolute;
+  position: relative; }
+  .ieRoot_lt_IE10 .radio {
+    top: 8px; }
+  .ieRoot_modern .radio {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
     top: 0;
-    left: -0.0625em;
-    width: 100%;
-    height: 100%;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.26);
-    border-radius: 999px; }
-  .radio:checked, .radio:hover, .radio:focus {
-    outline: none; }
-    .radio:checked:after, .radio:hover:after, .radio:focus:after {
-      border: 1px solid #3987cb; }
+    z-index: 0; }
+    .ieRoot_modern .radio:before {
+      -webkit-transition: -webkit-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      -moz-transition: -moz-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      -webkit-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+      transform: scale(0, 0);
+      content: "";
+      position: absolute;
+      top: 0.1875em;
+      left: 0.125em;
+      z-index: 1;
+      width: 0.75em;
+      height: 0.75em;
+      background: #3987cb;
+      border-radius: 999px; }
+    .ieRoot_modern .radio:checked:before, .ieRoot_modern .radio:active:before {
+      -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      transform: scale(1, 1); }
+    .ieRoot_modern .radio:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -0.0625em;
+      width: 100%;
+      height: 100%;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.26);
+      border-radius: 999px; }
+    .ieRoot_modern .radio:checked, .ieRoot_modern .radio:hover, .ieRoot_modern .radio:focus {
+      outline: none; }
+      .ieRoot_modern .radio:checked:after, .ieRoot_modern .radio:hover:after, .ieRoot_modern .radio:focus:after {
+        border: 1px solid #3987cb; }
 
-.inverted .radio:after {
+.ieRoot_modern .inverted .radio:after {
   background: #353e48;
   border: 1px solid rgba(255, 255, 255, 0.7); }
-.inverted .radio:hover:after, .inverted .radio:focus:after {
+.ieRoot_modern .inverted .radio:hover:after, .ieRoot_modern .inverted .radio:focus:after {
   border: 1px solid white; }
 
 /*doc
@@ -3878,12 +3886,12 @@ _See `.view--modalSnap` demo page for example_
 ```
 */
 .overlayShim {
-  text-align: center;
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 20; }
 
@@ -4286,6 +4294,7 @@ Class                   | Description
   stroke: transparent;
   fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
+  -webkit-appearance: none;
   box-sizing: border-box;
   display: inline-block;
   padding: 10px 16px 8px 16px;
