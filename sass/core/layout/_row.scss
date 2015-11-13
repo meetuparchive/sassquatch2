@@ -9,7 +9,7 @@ Arranges content in rows using `display: flex`.
 The `.row` class is applied to a wrapping element.
 
 Direct children of `.row` are flex children, and require
-a class of `.row-item` with an optional `.row-item--shirnk`
+a class of `.row-item` with an optional `.row-item--shrink`
 for a flex-shrink item.
 
 The flex children in flex row do not have a `flex-basis` set; a
