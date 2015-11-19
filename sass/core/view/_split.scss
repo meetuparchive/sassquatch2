@@ -8,6 +8,9 @@ A "split view" is a pair of `view` elements, each with a special variant
 class applied to set the responsiblity of each view as either the "list" component
 or the "detail" component.
 
+The **list** view acts as a scrollable list of selectable items (list of members), while the **detail**
+view acts as a viewing area for the selected item (selected member profile).
+
 A `flexParent--row` parent is required in order to treat `view--splitList` and
 `view--splitDetail` as flex children.
 
