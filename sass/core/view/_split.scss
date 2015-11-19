@@ -8,28 +8,30 @@ A "split view" is a pair of `view` elements, each with a special variant
 class applied to set the responsiblity of each view as either the "list" component
 or the "detail" component.
 
-A `splitViewContainer` parent is required in order to treat `view--splitList` and
+A `flexParent--row` parent is required in order to treat `view--splitList` and
 `view--splitDetail` as flex children.
 
 <a class="link" href="pages/split-view.html">Demo</a>
 
 ```
-<div class="view view--splitList">
-	<header class="view-head">
-		... view-head ...
-	</header>
-	<main class="view-body">
-		... view-body ...
-	</main>
-</div>
+<div class="flexParent--row">
+	<div class="view view--splitList">
+		<header class="view-head">
+			... view-head ...
+		</header>
+		<main class="view-body">
+			... view-body ...
+		</main>
+	</div>
 
-<div class="view view--splitDetail">
-	<header class="view-head">
-		... view-head ...
-	</header>
-	<main class="view-body">
-		... view-body ...
-	</main>
+	<div class="view view--splitDetail">
+		<header class="view-head">
+			... view-head ...
+		</header>
+		<main class="view-body">
+			... view-body ...
+		</main>
+	</div>
 </div>
 ```
 
@@ -41,10 +43,6 @@ Class                  | Description
 `view--splitList`      | Sets view to "list style" when viewport is wide enough
 `view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
 */
-
-.splitViewContainer {
-	@include flexParent('row');
-}
 
 %_splitViewBase {
 	height: 100vh;
