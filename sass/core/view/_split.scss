@@ -8,6 +8,9 @@ A "split view" is a pair of `view` elements, each with a special variant
 class applied to set the responsiblity of each view as either the "list" component
 or the "detail" component.
 
+A `splitViewContainer` parent is required in order to treat `view--splitList` and
+`view--splitDetail` as flex children.
+
 <a class="link" href="pages/split-view.html">Demo</a>
 
 ```
@@ -39,45 +42,28 @@ Class                  | Description
 `view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
 */
 
+.splitViewContainer {
+	@include flexParent('row');
+}
 
 %_splitViewBase {
-  display: none;
-  &.focus{
-	  display: block;
-  }
+	height: 100vh;
+	display: none;
+	&.focus {
+		display: block;
+	}
 }
 
 .view--splitList {
 	@extend %_splitViewBase;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	height: 100vh;
-	z-index: map-get($zindex-map, splitList-view);
 
 	@include browser-modern() {
 		@include atMediaUp(medium) {
-			@include flexParent('column');
-			@include flex-wrap('nowrap');
+			@include flexChild('shrink');
+			@include flex-basis($view-minWidth);
 			@include standardBorder('right');
-
-			// NOTE: uses fixed position
-			// try not to put forms in the split part
-			// usually the split view will be a list
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: $view-minWidth;
-			display: block;
-		}
-	}
-
-	@include browser-modern() {
-		.view-head {
-			@include flex-basis($view-head-height);
-			@include flex-grow(0);
-			@include standardBorder('right');
-			box-sizing: border-box;
-			width: $view-minWidth;
 		}
 	}
 }
@@ -87,16 +73,8 @@ Class                  | Description
 
 	@include browser-modern() {
 		@include atMediaUp(medium) {
+			@include flexChild('grow');
 			display: block;
-			padding-left: $view-minWidth;
-		}
-	}
-
-	@include browser-modern() {
-		.view-head {
-			left: $view-minWidth;
-			right: 0;
-			width: auto;
 		}
 	}
 }
