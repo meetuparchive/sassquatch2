@@ -1,0 +1,102 @@
+/*doc
+---
+title: Split View
+name: splitView
+category: Views
+---
+A "split view" is a pair of `view` elements, each with a special variant
+class applied to set the responsiblity of each view as either the "list" component
+or the "detail" component.
+
+<a class="link" href="pages/split-view.html">Demo</a>
+
+```
+<div class="view view--splitList">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<main class="view-body">
+		... view-body ...
+	</main>
+</div>
+
+<div class="view view--splitDetail">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<main class="view-body">
+		... view-body ...
+	</main>
+</div>
+```
+
+Each view in the split view pair requires the `view` class. The following
+variant classes assign the view role:
+
+Class                  | Description
+---------------------- | ---------------------------
+`view--splitList`      | Sets view to "list style" when viewport is wide enough
+`view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
+*/
+
+
+%_splitViewBase {
+  display: none;
+  &.focus{
+	  display: block;
+  }
+}
+
+.view--splitList {
+	@extend %_splitViewBase;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100vh;
+	z-index: map-get($zindex-map, splitList-view);
+
+	@include browser-modern() {
+		@include atMediaUp(medium) {
+			@include flexParent('column');
+			@include flex-wrap('nowrap');
+			@include standardBorder('right');
+
+			// NOTE: uses fixed position
+			// try not to put forms in the split part
+			// usually the split view will be a list
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: $view-minWidth;
+			display: block;
+		}
+	}
+
+	@include browser-modern() {
+		.view-head {
+			@include flex-basis($view-head-height);
+			@include flex-grow(0);
+			@include standardBorder('right');
+			box-sizing: border-box;
+			width: $view-minWidth;
+		}
+	}
+}
+
+.view--splitDetail {
+	@extend %_splitViewBase;
+
+	@include browser-modern() {
+		@include atMediaUp(medium) {
+			display: block;
+			padding-left: $view-minWidth;
+		}
+	}
+
+	@include browser-modern() {
+		.view-head {
+			left: $view-minWidth;
+			right: 0;
+			width: auto;
+		}
+	}
+}
