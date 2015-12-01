@@ -68,7 +68,6 @@ input elements.
 			border-right-style: none;
 		}
 
-		&[checked],
 		&:checked {
 			&:before {
 				@include transform(rotate(-45deg) scale(1, 1));
@@ -93,7 +92,6 @@ input elements.
 			cursor: pointer;
 		}
 
-		&[checked],
 		&:checked,
 		&:active {
 			&:after {
@@ -129,7 +127,6 @@ input elements.
 				}
 			}
 
-			&[checked],
 			&:checked,
 			&:active {
 				&:after {
