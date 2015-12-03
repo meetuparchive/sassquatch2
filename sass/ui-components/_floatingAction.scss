@@ -26,32 +26,13 @@ $_containerHeight: $space*2 + $_buttonHeight;
 
 .floatingAction {
 	box-sizing: border-box;
-	padding: 0 $space;
+	padding: $space;
+	position: fixed;
 	bottom: 0;
 	left: 0;
-	position: fixed;
-	width: 100%;
+	right: 0;
 	z-index: 1;
-
-	&:before {
-		@extend %shadow;
-		display: block;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		content: "";
-		background-color: $C_contentBG;
-		z-index: 2;
-		height: $_containerHeight;
-		width: 100%;
-	}
-
-	> a, /* TODO: remove this; requires chapstick changes */
-	.floatingAction-content {
-		@extend %chunk;
-		position: relative;
-		z-index: map-get($zindex-map, modal);
-	}
+	background-color: $C_contentBG;
 }
 
 // for `body` tag
@@ -62,15 +43,9 @@ $_containerHeight: $space*2 + $_buttonHeight;
 
 @include atMediaUp(medium) {
 	.floatingAction {
+		padding: initial;
 		position: static;
-		&:before {
-			position: static;
-			height: 0;
-			width: 0;
-		}
-		> a {
-			z-index: map-get($zindex-map, main);
-		}
+		background-color: transparent;
 	}
 	.hasFloatingAction {
 		background-color: transparent;
