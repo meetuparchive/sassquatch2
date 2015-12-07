@@ -107,6 +107,6 @@ Headline text for when something between display and normal text is needed. Use 
 %text--headline,
 .text--headline {
 	@extend %text--display;
-	text-transform: none;
+	text-transform: none !important; // !important overrides lang-specific styles
 }
 
