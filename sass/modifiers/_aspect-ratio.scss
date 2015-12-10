@@ -36,6 +36,7 @@ $_aspectRatios: (
 }
 
 // 1:1 default
+%keepAspect,
 .keepAspect {
 	@include _aspect(percentage(1/1));
 }

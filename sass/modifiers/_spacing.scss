@@ -55,7 +55,7 @@ Class                    | Description
 
 }
 
-.margin--center {
+@include _modifier(margin, center) {
 	margin-left: auto;
 	margin-right: auto;
 }
