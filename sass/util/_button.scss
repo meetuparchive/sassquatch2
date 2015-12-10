@@ -66,10 +66,15 @@ $btn-color-map: (
 	@include color-all( map-get($btn-color-map, "primary") );
 	border: $btn-border;
 	font-weight: $W_normal;
+
 	&:hover,
 	&:active,
 	&:focus {
 		background: transparentize(map-get($btn-color-map, "primary"), .8) !important;
+	}
+
+	.inverted & {
+		@include color-all( map-get($btn-color-map, "contrast") );
 	}
 }
 %button--bordered {
