@@ -28,6 +28,7 @@
 	// TODO: consider moving some of these to julep
 	// if they're generic enough
 	//
+	@import "util/type";
 	@import "util/align";
 	@import "util/border";
 	@import "util/button";
@@ -35,4 +36,3 @@
 	@import "util/display";
 	@import "util/modal";
 	@import "util/shadow";
-	@import "util/type";

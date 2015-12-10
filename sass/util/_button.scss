@@ -25,53 +25,47 @@ Disables user-select, sets cursor, and resets text-decoration.
 	text-decoration: none !important;
 }
 
-//
-// Various button utils follow this comment...
-// they support `sass/ui-components/_buttons.scss`,
-// but have been temporarily moved to this file
-// while we use transitional style buttons
-// (`sass/ui-components/_buttons_transitional.scss`)
-//
-$btn-color-map: (
-	default: transparent,
-	primary: $C_link,
-	contrast: $C_textPrimaryInverted
-) !default;
-
-@mixin buttonBase() { // for specificity accuracy in transitional buttons
+@mixin buttonBase() {
+	@extend %text--bold;
+	@extend %buttonPersonality;
+	@include display(inline-flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
 	box-sizing: border-box;
-	@include transition(background .15s);
-	@include standardBorder('all');
-	-webkit-appearance: none;
-	background: transparent;
-	border-radius: 50px;
-	display: inline-block;
-	font-size: $font-size;
 	font-weight: $W_bold;
-	margin: 0;
-	padding: $space-half $space;
-	text-align: center;
-	&:focus {
-		outline: 0;
-	}
-}
-%buttonBase {
-	@include buttonBase;
+	border-radius: $defaultRadius;
+	-webkit-appearance: none; // kill iOS input styles
+	min-width: $block-3;
+	min-height: $space*2;
 }
 
-//
-// Button border modifiers
-//
-@mixin button--bordered() {
-	@include color-all( map-get($btn-color-map, "primary") );
-	border: $btn-border;
-	font-weight: $W_normal;
-	&:hover,
-	&:active,
-	&:focus {
-		background: transparentize(map-get($btn-color-map, "primary"), .8) !important;
-	}
+@mixin button--solid( $color: $defaultButtonColor ) {
+	color: getPrimaryTextColor($color);
+	background: $color;
+	border: 1px solid $color;
+	background-clip: padding-box;
 }
+
+@mixin button--bordered( $color: $defaultButtonColor ) {
+	color: $color;
+	border: 1px solid $color;
+}
+
+
+//
+// Legacy placeholder/mixin support
+// (later, remove these one at a time and fix what breaks)
+//
+%buttonBase {
+	@include buttonBase();
+}
+
 %button--bordered {
-	@include button--bordered;
+	@include button--bordered();
+}
+
+%button--small {
+	font-size: $font-size-small;
+	padding: $space/4 0;
 }

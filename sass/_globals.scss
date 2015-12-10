@@ -362,7 +362,14 @@ Variable                | Value
 
 Variable                | Value
 ----------------------- | --------------------------------
-`$defaultRadius`        | `3px`
+`$defaultRadius`        | `4px`
+
+
+## Buttons
+
+Variable                | Value
+----------------------- | --------------------------------
+`$defaultButtonColor`   | `$C_red`
 
 */
 $view-minWidth: 320px;
@@ -371,7 +378,8 @@ $view-head-height-tablet: 64px;
 $modal-width: 440px;
 $bounds-wide: 1100px;
 $bounds: 840px;
-$defaultRadius: 3px;
+$defaultRadius: 4px;
+$defaultButtonColor: $C_red;
 
 
 //
