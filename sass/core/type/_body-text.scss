@@ -142,7 +142,7 @@ to any other element, use `text--mono`.
 <pre>We can safely assume a pre tag on Meetup is also code</pre>
 ```
 */
-.text--mono {
+@include _modifier(text, mono) {
 	font-family: $font--mono;
 }
 
