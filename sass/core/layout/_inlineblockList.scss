@@ -7,6 +7,13 @@ category: Layout
 Resets list styles; adds `display: inline-block` to
 each list item and right gutters between items.
 
+## Inline block list variants
+
+Class                        | Description
+---------------------------- | -------------------------------------
+`.inlineblockList`           | adds `display: inline-block` to each list item and right gutters between items
+`.inlineblockList--bulleted` | puts a bullet between each list item. Used for thinks like lists of links
+
 ```html_example
 <ul class="inlineblockList">
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
@@ -28,4 +35,19 @@ each list item and right gutters between items.
 			padding-right: 0;
 		}
 	}
+}
+
+.inlineblockList--bulletedList li {
+
+	&:after {
+		content: '·';
+		padding-left: $space-half;
+	}
+
+	&:last-child {
+		&:after {
+			display: none;
+		}
+	}
+
 }
