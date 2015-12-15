@@ -247,6 +247,7 @@ event descriptions).
 .runningText p {
 	@extend %wrapNice;
 	margin-bottom: $space;
+	max-width: 40em;
 	&:last-child {
 		margin-bottom: 0;
 	}
