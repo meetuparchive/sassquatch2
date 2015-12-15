@@ -125,12 +125,16 @@ textarea {
 	min-height: (3 * $font-size * $line-height) + $space;
 }
 
-.checkbox,
-.radio {
-	border: none; // iOS Safari shows weird black area around checkbox without this
-	background: transparent; // iOS Safari shows weird black area around checkbox without this
-	-webkit-appearance: none;
-	width: auto; // override `input` 100% rule above for IE9 and below
+// hack alert:
+// override default `input` styles
+input.checkbox,
+input.radio {
+	background: transparent;
+	border-radius: 0;
+	border-width: 0;
+	padding: 0;
+	height: auto;
+	width: auto;
 }
 
 input::-webkit-input-placeholder,
