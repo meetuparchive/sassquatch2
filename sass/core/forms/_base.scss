@@ -84,7 +84,7 @@ textarea {
 }
 
 %_formDecoration,
-input,
+#{$all-text-inputs},
 textarea,
 select,
 .launcher {
@@ -123,18 +123,6 @@ select {
 
 textarea {
 	min-height: (3 * $font-size * $line-height) + $space;
-}
-
-// hack alert:
-// override default `input` styles
-input.checkbox,
-input.radio {
-	background: transparent;
-	border-radius: 0;
-	border-width: 0;
-	padding: 0;
-	height: auto;
-	width: auto;
 }
 
 input::-webkit-input-placeholder,
