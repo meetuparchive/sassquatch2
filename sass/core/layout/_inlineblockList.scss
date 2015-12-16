@@ -7,12 +7,12 @@ category: Layout
 Resets list styles; adds `display: inline-block` to
 each list item and right gutters between items.
 
-## Inline block list variants
+A class of `inlineblockList` is __required__. The following classes are
+optional variants:
 
 Class                        | Description
 ---------------------------- | -------------------------------------
-`.inlineblockList`           | adds `display: inline-block` to each list item and right gutters between items
-`.inlineblockList--bulleted` | puts a bullet between each list item. Used for thinks like lists of links
+`inlineblockList--bulleted`  | puts a bullet between each list item. Used for thinks like lists of links
 
 ```html_example
 <ul class="inlineblockList">
@@ -37,7 +37,7 @@ Class                        | Description
 	}
 }
 
-.inlineblockList--bulletedList li {
+.inlineblockList--bulletedList > li {
 
 	&:after {
 		content: '·';
