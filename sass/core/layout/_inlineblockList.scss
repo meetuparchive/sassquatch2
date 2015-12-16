@@ -21,6 +21,13 @@ Class                        | Description
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 </ul>
+<ul class="inlineblockList inlineblockList--bulleted">
+	<li>These</li>
+	<li>list</li>
+	<li>items</li>
+	<li>are</li>
+	<li>bulleted</li>
+</ul>
 ```
 
 */
@@ -37,7 +44,7 @@ Class                        | Description
 	}
 }
 
-.inlineblockList--bulletedList li {
+.inlineblockList--bulleted li {
 
 	&:after {
 		content: '·';
