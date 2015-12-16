@@ -27,13 +27,13 @@ Modal that is presented full screen on all sizes
 ```html_example
 <a class="link" href="pages/modal-full.html">Demo</a>
 
-<div class="view view--modalFull display--none">
-	<header class="view-head row">
-		<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
-			<img src="style/img/logo.svg" width="35" height="24"></a>
-		</a>
-		<div class="row-item row-item--alignMiddle viewHead-heading">
-			<h1 class="wrap--singleLine--truncate">This is a header</h1>
+<div id="myModal" class="view view--modalFull" style="display:none;">
+	<header id="modal_header" class="view-head row row-inverted">
+		<div class="row-item valign--middle viewHead-heading">
+			<h1 class="wrap--singleLine--truncate">Group Settings</h1>
+		</div>
+		<div class="viewHead-actions row row-item row-item--shrink valign--middle">
+			<a href="#" class="j-close">Close</a>
 		</div>
 	</header>
 	<div id="modal_body" class="view-body">
@@ -72,10 +72,10 @@ lays out as a dialog on background content on larger screens.
 
 <div class="view view--modalSnap display--none">
 	<header class="view-head row inverted">
-		<a href="http://meetup.com/" class="row-item row-item--shrink row-item--alignMiddle">
+		<a href="http://meetup.com/" class="row-item row-item--shrink valign--middle">
 			Close
 		</a>
-		<div class="row-item row-item--alignMiddle viewHead-heading">
+		<div class="row-item valign--middle viewHead-heading">
 			<h1 class="wrap--singleLine--truncate">Change your setting</h1>
 		</div>
 	</header>
@@ -131,12 +131,8 @@ _See `.view--modalSnap` demo page for example_
 ```
 */
 .overlayShim {
+	@include fullScreenAbsolute();
 	text-align: center;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 	background-color: rgba(0,0,0,0.7);
 	z-index: map-get($zindex-map, shade);
 }

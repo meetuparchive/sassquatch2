@@ -67,7 +67,7 @@ Breakpoints        | Property       | Variants
 
 // border
 @include _bpModifier('border', 'top') {
-	border-top: $border-standard !important;
+	@include standardBorder();
 }
 @include _bpModifier('border', 'none') {
 	border-width: 0 !important;

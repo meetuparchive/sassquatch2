@@ -9,7 +9,7 @@ category: Forms
 
 ```html_example
 <div class="chunk">
-	<label for="test-textinput">I'm a label</label>
+	<label for="test-textinput" class="required">I'm a label</label>
 	<input id="test-textinput" type="text" value="Text input with value" />
 </div>
 
@@ -39,7 +39,7 @@ category: Forms
 		<input id="split1" type="text" placeholder="ie. Fluffy, Resplendent" />
 	</div>
 	<div class="row-item chunk">
-		<label for="split2">Unicorn color</label>
+		<label class="required" for="split2">Unicorn color</label>
 		<select id="split2">
 			<option value="clear">Transparent</option>
 			<option value="green">Toasted clove saffron</option>
@@ -54,6 +54,16 @@ category: Forms
 %label,
 label {
 	font-size: $font-size-small;
+
+	&.required:after {
+		content: "*";
+		color: $C_red;
+		font-size: $font-size-navbar;
+		line-height: 0;
+		margin-left: $space/4;
+		position: relative;
+		top: 3px;
+	}
 }
 
 fieldset {
@@ -120,6 +130,7 @@ textarea {
 	border: none; // iOS Safari shows weird black area around checkbox without this
 	background: transparent; // iOS Safari shows weird black area around checkbox without this
 	-webkit-appearance: none;
+	width: auto; // override `input` 100% rule above for IE9 and below
 }
 
 input::-webkit-input-placeholder,

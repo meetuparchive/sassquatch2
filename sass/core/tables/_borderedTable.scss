@@ -48,13 +48,16 @@ Apply the `borderedTable` class to apply borders to table cells.
 		&:last-child {
 			border-right: 1px solid $C_border;
 		}
+		.inverted & {
+			border-color: $C_borderInverted;
+		}
 	}
 	thead th {
 		border-width: 0;
 	}
 	tbody tr:last-child {
 		td, th {
-			border-bottom: 1px solid $C_border;
+			@include standardBorder('bottom');
 		}
 	}
 }

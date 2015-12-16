@@ -11,9 +11,11 @@ Sets background cover and position for photo thumbnails.
 ```
 
 */
+%thumb,
 .thumb {
   background-position: center;
   background-size: cover;
+  background-color: $C_mediumGray;
   display: block;
   position: relative;
   &:before {

@@ -71,12 +71,6 @@ _See also: `.row`._
 	@include flexParent('column');
 	@include flex-wrap('nowrap');
 	height: 100%;
-
-	@include browser-lessThanIE(10) {
-		display: table;
-		table-layout: auto;
-		width: 100%;
-	}
 }
 
 

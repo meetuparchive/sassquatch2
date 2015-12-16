@@ -30,6 +30,7 @@ Checkbox form elements styled as toggle buttons.
 }
 
 .toggleButton-label {
+	@extend %buttonPersonality;
 	@extend %buttonBase;
 	@extend %button--bordered;
 	@extend %button--small;
@@ -40,7 +41,7 @@ Checkbox form elements styled as toggle buttons.
 	display: none;
 	&:checked + .toggleButton-label {
 		@include animate--bounceInSubtle();
-		background: $C_blue;
+		background: $C_blue !important;
 		border-color: transparent;
 		color: $C_textPrimaryInverted;
 		font-weight: $W_bold;

@@ -1,6 +1,6 @@
 /*doc
 ---
-title: View
+title: View Base
 name: view
 category: Views
 ---
@@ -13,9 +13,6 @@ following classes are optional variants:
 
 Class                  | Description
 ---------------------- | ---------------------------
-`view--splitList`      | Sets view to "list style" when viewport is wide enough
-`view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
-`view--dimmed`         | Dims view (for use with modal overlays)
 `view--collection`     | Sets the style for views that are primarily "collections"
 
 ## Basic view (<a class="link followLink" href="pages/full-view.html">Demo</a>)
@@ -31,35 +28,9 @@ Basic example of a single view in a document:
 	</main>
 </div>
 ```
-
-## Split view (DEMO)
-Basic example of two views in one document, where we specify
-which view has the "list" responsibility, and which view has
-the "detail" responsibility.
-
-```
-<div class="view view--splitList">
-	<header class="view-head">
-		... view-head ...
-	</header>
-	<main class="view-body">
-		... view-body ...
-	</main>
-</div>
-
-<div class="view view--splitDetail">
-	<header class="view-head">
-		... view-head ...
-	</header>
-	<main class="view-body">
-		... view-body ...
-	</main>
-</div>
-```
 */
-
-
 .view {
+	@include flexParent('column', false);
 	box-sizing: border-box;
 	background: white;
 	width: 100%;
@@ -67,33 +38,102 @@ the "detail" responsibility.
 	position: relative;
 }
 
-.view--collection {
+.view--collection,
+.view--collection .view-body {
 	background-color: $C_collectionBGLight;
 }
 
-.view--splitList, .view--splitDetail{
-  display: none;
-  &.focus{
-	  display: block;
-  }
+
+/*doc
+---
+title: View Body
+name: viewBody
+parent: view
+---
+The `view-body` element is our main
+content container for the view.
+
+```
+<div class="view">
+	<main class="view-body">
+		... stripes, bounds, etc ...
+		... all content ...
+	</main>
+</div>
+```
+*/
+.view-body {
+	@include flexChild('grow', false);
+	@include flex-basis(auto);
+	box-sizing: border-box;
+	height: auto;
 }
 
-@include atMediaUp(medium){
-	.view--splitList {
-		// NOTE: uses fixed position
-		// try not to put forms in the split part
-		// usually the split view will be a list
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100vh;
-		width: $view-minWidth;
-		border-right: 1px solid $C_border;
-		display: block;
-	}
 
-	.view--splitDetail {
-		display: block;
-		padding-left: $view-minWidth;
+/*doc
+---
+title: View Head
+name: viewHead
+parent: view
+---
+The `view-head` element is the first child (the
+fixed top nav bar) within every view.
+
+```
+<div class="view">
+	<header class="view-head row inverted">
+		<a href="#" class="row-item row-item--shrink valign--middle">[...]</a>
+		<a href="#" class="row-item valign--middle">Page Title</a>
+		<a href="#" class="row-item row-item--shrink valign--middle">[...]</a>
+	</header>
+</div>
+```
+
+## view-head variants
+A class of `.view-head` is required for view headers. The following classes
+are optional variants (most likely added/removed with javascript to accommodate
+hero headers).
+
+Class                      | Description
+-------------------------- | ---------------------------
+`.view-head--transparent`  | Makes view header transparent; hides `h1` heading
+`.view-head--photoOverlay` | Adds text protext gradient (`view-head--trasnparent` required with this class)
+
+*/
+.view-head {
+	@include flexChild('shrink', false);
+	box-sizing: border-box;
+	background: $C_accent;
+	color: $C_textPrimaryInverted;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: map-get($zindex-map, "main-header");
+	height: $view-head-height;
+	padding: 0 $space;
+
+	@include atMediaUp(large){
+		height: $view-head-height-tablet;
 	}
+}
+
+//
+// view-head variants
+//
+.view-head--transparent {
+	background: transparent;
+	border-bottom: none;
+	color: $C_textPrimaryInverted;
+	position: absolute;
+	h1, h2, p { // hide text content in view-head title
+		opacity: 0;
+	}
+}
+
+//
+// photoOverlay adds gradient to transparent
+// view-head (both classes required)
+//
+.view-head--transparent.view-head--photoOverlay {
+	@include background(linear-gradient(transparentize($C_scrimGradient, .2), transparentize($C_scrimGradient, 1) ));
 }

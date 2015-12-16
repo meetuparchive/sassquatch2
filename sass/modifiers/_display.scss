@@ -19,3 +19,24 @@ Class                   | Description
 		display: $display;
 	}
 }
+
+
+/*doc
+---
+title: Flex Parent
+name: flexParentMod
+parent: displayMod
+---
+Sets `display: flex` rules for selected element as well as
+orientation rules for `row` or `column`.
+
+Class                   | Description
+----------------------- | --------------------------------
+`.flexParent--row`      | sets `display` to `flex` with row orientation for children
+`.flexParent--column`   | sets `display` to `flex` with column orientation for children
+*/
+@each $orientation in ('row', 'column') {
+	@include _modifier('flexParent', $orientation) {
+		@include flexParent($orientation);
+	}
+}

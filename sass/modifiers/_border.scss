@@ -14,14 +14,15 @@ Class                   | Description
 */
 
 @include _modifier(border, top) {
-	border-top: $border-standard !important;
+	@include standardBorder();
 }
 
 @include _modifier(border, none) {
 	border-width: 0 !important;
 }
 
+%bordered,
 .bordered {
-	border-top: 1px solid $C-border;
+	@extend %border--top;
 	padding-top: $space;
 }
