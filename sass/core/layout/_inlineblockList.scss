@@ -15,6 +15,14 @@ each list item and right gutters between items.
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 </ul>
 
+<ul class="inlineblockList inlineblockList--bulleted">
+	<li>These</li>
+	<li>list</li>
+	<li>items</li>
+	<li>are</li>
+	<li>bulleted</li>
+</ul>
+
 <ul class="inlineblockList inlineblockList--overlap">
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
@@ -30,6 +38,7 @@ optional variants:
 Class                        | Description
 ---------------------------- | ------------------------------------------------------------
 `.inlineblockList--overlap`  | Creates an inline block list with overlapping list items
+`inlineblockList--bulleted`  | puts a bullet between each list item. Used for thinks like lists of links
 */
 %inlineblockList,
 .inlineblockList {
@@ -43,6 +52,19 @@ Class                        | Description
 		}
 	}
 }
+
+.inlineblockList--bulleted > li {
+
+	&:after {
+		content: '·';
+		padding-left: $space-half;
+	}
+
+	&:last-child {
+		&:after {
+			display: none;
+		}
+	}
 
 .inlineblockList--overlap {
 	> li {
