@@ -53,11 +53,8 @@ color: getPrimaryTextColor(#FFF);
 .avatar, .imgFill {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  overflow: hidden; }
+  background-size: cover; }
 
-.floatingAction > a,
-.floatingAction .floatingAction-content,
 .chunk,
 .bounds {
   /**
@@ -65,21 +62,262 @@ color: getPrimaryTextColor(#FFF);
   * Include this rule to trigger hasLayout and contain floats.
   */
   *zoom: 1; }
-  .floatingAction > a:before,
-  .floatingAction .floatingAction-content:before,
   .chunk:before,
-  .bounds:before, .floatingAction > a:after,
-  .floatingAction .floatingAction-content:after,
+  .bounds:before,
   .chunk:after,
   .bounds:after {
     content: " ";
     display: table; }
-  .floatingAction > a:after,
-  .floatingAction .floatingAction-content:after,
   .chunk:after,
   .bounds:after {
     clear: both; }
 
+/*doc
+---
+title: Vendor Prefixing
+name: globPrefixer
+category: Sass Globals
+---
+
+## Bourbon prefixer mixin
+The [prefixer](http://bourbon.io/docs/#prefixer) mixin
+from [Broubon](http://bourbon.io/) accepts an argument
+that determines which vendor prefixes to output.
+
+For convenience, Sassquatch2 defines two global variables
+for this argument:
+
+Variable                | Value
+----------------------- | --------------------------------
+`$prefixes`             | `webkit ms spec`
+`$prefixes-edge`        | `ms spec`
+
+
+## Broubon global prefixer
+The [global prefixer](http://bourbon.io/docs/#global-prefixer) in
+Bourbon is used for property mixins like `transform()`. In Sassquatch2,
+we use the following variables to explicitly set the global prefixer
+defaults:
+
+Variable                | Value
+----------------------- | --------------------------------
+`$prefix-for-webkit`     | `true`
+`$prefix-for-mozilla`    | `false`
+`$prefix-for-microsoft`  | `true`
+`$prefix-for-opera`      | `false`
+`$prefix-for-spec`       | `true`
+
+*/
+/*doc
+---
+title: Typography
+name: globType
+category: Sass Globals
+---
+
+## Font sizes
+
+Variable                 | Value
+------------------------ | --------------------------------
+`$font-size-small`       | `13px`
+`$font-size`             | `16px`
+`$font-size-navbar`      | `18px`
+`$font-size-display3`    | `24px`
+`$font-size-display2`    | `32px`
+`$font-size-display1`    | `56px`
+
+
+## Font weights
+
+Variable                | Value
+----------------------- | --------------------------------
+`$W_normal`              | `400`
+`$W_bold`                | `700`
+
+
+## Leading
+
+Variable                | Value
+----------------------- | --------------------------------
+`$line-height`          | `1.5`
+`$line-height-small`    | `1.5`
+
+*/
+/*doc
+---
+title: Size scale
+name: globScale
+category: Sass Globals
+---
+We use a double-stranded
+[modular scale](http://alistapart.com/article/more-meaningful-typography)
+loosely based on a perfect-fifths scale.
+
+```
+$block   : 48px @ 1:1.5
+$space   : 16px @ 1:1.5
+```
+
+_See also: ["Don't compose without a scale"](http://webtypography.net/3.1.1)_
+*/
+/*doc
+---
+title: Block
+name: globBlock
+parent: globScale
+---
+"Block" variables contain size values in pixels starting from
+`48px`, moving up the `1:1.5` type scale.
+
+These sizes represent one strand of our double-stranded type scale.
+
+Variable                | Value
+----------------------- | --------------------------------
+`$block`                | `48px`
+`$block-2`              | `72px`
+`$block-3`             | `108px`
+`$block-4`             | `160px`
+`$block-5`             | `240px`
+`$block-6`             | `384px`
+`$block-7`             | `544px`
+*/
+/*doc
+---
+title: Space
+name: globSpace
+parent: globScale
+---
+"Space" variables contain size values in pixels starting from
+`16px`, moving up the `1:1.5` type scale.
+
+These sizes represent one strand of our double-stranded type scale.
+
+Variable                | Value
+----------------------- | --------------------------------
+`$space`                | `16px`
+`$space-2`             | `24px`
+`$space-3`             | `36px`
+`$space-4`             | `56px`
+`$space-5`             | `80px`
+`$space-6`             | `120px`
+`$space-7`             | `184px`
+`$space-8`             | `280px`
+*/
+/*doc
+---
+title: Media
+name: globMedia
+parent: globScale
+---
+Elements like images, icons, avatars, and illustrations
+can be thought of as "media". The following variables
+set media sizes based on our modular scale:
+
+Variable                | Value
+----------------------- | --------------------------------
+`$media-xs`              | `$space-2` (`24px`)
+`$media-s`               | `$space-3` (`36px`)
+`$media-m`               | `$block`   (`48px`)
+`$media-l`               | `$block-2` (`72px`)
+`$media-xl`              | `$block-4` (`160px`)
+
+```
+$media-map: (
+	xs: $media-xs,
+	s: $media-s,
+	m: $media-m,
+	l: $media-l,
+	xl: $media-xl
+);
+```
+*/
+/*doc
+---
+title: Root classes
+name: rootClasses
+category: Sass Globals
+---
+"Root classes" are classes that we expect the
+`html` or `body` elements to contain. These classes can be
+used to target [specific languages](http://meetup.github.io/julep/#mixin-i18n-only),
+[versions of IE](http://meetup.github.io/julep/#mixin-browser-lessThanIE),
+and more.
+
+Most root classes are defined in [Julep](http://meetup.github.io/julep/), our
+custom Sass utility library. The root classes defined in Sassquatch2 are:
+
+Variable                | Value                | Description
+----------------------- | -------------------- | ---------------------------------
+`$root-debugEnable`     | `'enableDebug'`      | Enables `.debug` styles
+*/
+/*doc
+---
+title: z-index
+name: globZindex
+category: Sass Globals
+---
+A map is provided for `z-index` values:
+
+```
+$zindex-map: (
+	main: 0,
+	main-header: 10,
+	splitList-view: 15,
+	shade: 20,
+	shade-content: 25,
+	modal: 30,
+	modal-header: 40,
+	popup: 50
+);
+```
+*/
+/*doc
+---
+title: Forms
+name: globForms
+category: Sass Globals
+---
+
+Variable                | Value
+----------------------- | --------------------------------
+`$form-min-height`      | `$block`
+`$form-min-width`       | `$block`
+`$form-max-width`       | `$block-7`
+`$inputGutter`          | `$space/2` - used in checkbox/radio gutters
+
+*/
+/*doc
+---
+title: Layout
+name: globLayout
+category: Sass Globals
+---
+
+## Views
+
+Variable                     | Value
+---------------------------- | --------------------------------
+`$view-minWidth`             | `320px`
+`$view-head-height`          | `56px`
+`$view-head-height-tablet`   | `64px`
+`$modal-width`               | `440px`
+
+
+## Bounds
+
+Variable                | Value
+----------------------- | --------------------------------
+`$bounds-wide`          | `1100px`
+`$bounds`               | `840px`
+
+
+## Border radius
+
+Variable                | Value
+----------------------- | --------------------------------
+`$defaultRadius`        | `3px`
+
+*/
 /*doc
 ---
 title: Flexbox
@@ -188,7 +426,7 @@ Disables user-select, sets cursor, and resets text-decoration.
 @extend %buttonPersonality;
 ```
 */
-.button--primary, .button--contrast, .button, .button--borderless, .hasJS .menu-actions-item a, .buttonPersonality {
+.button--primary, .button--contrast, .button, .button--borderless, .hasJS .menu-actions-item a, .toggleButton-label, .buttonPersonality {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -327,7 +565,7 @@ Applies standard box-shadow
 @extend %shadow;
 ```
 */
-.floatingAction:before, .hasJS .menu-actions {
+.hasJS .menu-actions {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
 
 /*doc
@@ -1135,7 +1373,7 @@ textarea {
   line-height: 1.5; }
 
 .launcher,
-input,
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 textarea,
 select,
 .launcher {
@@ -1150,7 +1388,7 @@ select,
   padding: 8px;
   width: 100%; }
   .launcher:focus,
-  input:focus,
+  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   textarea:focus,
   select:focus,
   .launcher:focus {
@@ -1158,7 +1396,7 @@ select,
     box-shadow: none;
     outline: none; }
   .inverted .launcher, .inverted
-  input, .inverted
+  input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
   textarea, .inverted
   select, .inverted
   .launcher {
@@ -1166,7 +1404,7 @@ select,
     border-color: rgba(255, 255, 255, 0.2);
     color: white; }
   .shaded .launcher, .shaded
-  input, .shaded
+  input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
   textarea, .shaded
   select, .shaded
   .launcher {
@@ -1178,13 +1416,6 @@ select {
 
 textarea {
   min-height: 88px; }
-
-.checkbox,
-.radio {
-  border: none;
-  background: transparent;
-  -webkit-appearance: none;
-  width: auto; }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -1222,8 +1453,8 @@ input elements.
 	<input id="check2" class="checkbox" value="blue" type="checkbox" />
 	Blue
 </label>
-<label for="check2" class="label--switch chunk">
-	<input id="check2" class="checkbox" value="blue" type="checkbox" checked />
+<label for="check3" class="label--switch chunk">
+	<input id="check3" class="checkbox" value="blue" type="checkbox" checked />
 	Already checked
 </label>
 ```
@@ -1233,64 +1464,11 @@ input elements.
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  margin: 0 8px 0 0;
-  position: relative; }
+  height: 16px;
+  line-height: 1.5;
+  margin: 0 8px 0 0; }
   .ieRoot_lt_IE10 .checkbox {
     top: 8px; }
-  .ieRoot_modern .checkbox {
-    -webkit-appearance: none;
-    height: 16px;
-    width: 16px;
-    top: 0.0625em;
-    z-index: 0; }
-    .ieRoot_modern .checkbox:before {
-      -webkit-transition: -webkit-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      -moz-transition: -moz-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      transition: transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      -webkit-transform: rotate(-45deg) scale(0, 0);
-      -ms-transform: rotate(-45deg) scale(0, 0);
-      transform: rotate(-45deg) scale(0, 0);
-      content: "";
-      position: absolute;
-      left: 0.25em;
-      top: 0.1875em;
-      z-index: 1;
-      width: 0.5em;
-      height: 0.25em;
-      border: 2px solid white;
-      border-top-style: none;
-      border-right-style: none; }
-    .ieRoot_modern .checkbox[checked]:before, .ieRoot_modern .checkbox:checked:before {
-      -webkit-transform: rotate(-45deg) scale(1, 1);
-      -ms-transform: rotate(-45deg) scale(1, 1);
-      transform: rotate(-45deg) scale(1, 1); }
-    .ieRoot_modern .checkbox:after {
-      content: "";
-      position: absolute;
-      top: -0.125em;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.26);
-      border-radius: 3px;
-      cursor: pointer; }
-    .ieRoot_modern .checkbox[checked]:after, .ieRoot_modern .checkbox:checked:after, .ieRoot_modern .checkbox:active:after {
-      background: #3987cb; }
-    .ieRoot_modern .checkbox:hover, .ieRoot_modern .checkbox:focus {
-      outline: none; }
-      .ieRoot_modern .checkbox:hover:after, .ieRoot_modern .checkbox:focus:after {
-        box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.12);
-        border: 1px solid rgba(0, 0, 0, 0.54); }
-
-.ieRoot_modern .inverted .checkbox:after {
-  background: #353e48;
-  border: 1px solid rgba(255, 255, 255, 0.7); }
-.ieRoot_modern .inverted .checkbox:hover:after, .ieRoot_modern .inverted .checkbox:focus:after {
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.12);
-  border: 1px solid white; }
-.ieRoot_modern .inverted .checkbox[checked]:after, .ieRoot_modern .inverted .checkbox:checked:after, .ieRoot_modern .inverted .checkbox:active:after {
-  background: #3987cb; }
 
 /*doc
 ---
@@ -1323,56 +1501,12 @@ elements.
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  margin: 0 8px 0 0;
-  position: relative; }
+  height: 16px;
+  line-height: 1;
+  line-height: 1.5;
+  margin: 0 8px 0 0; }
   .ieRoot_lt_IE10 .radio {
     top: 8px; }
-  .ieRoot_modern .radio {
-    -webkit-appearance: none;
-    height: 16px;
-    width: 16px;
-    top: 0;
-    z-index: 0; }
-    .ieRoot_modern .radio:before {
-      -webkit-transition: -webkit-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      -moz-transition: -moz-transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      transition: transform, 100ms, cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      -webkit-transform: scale(0, 0);
-      -ms-transform: scale(0, 0);
-      transform: scale(0, 0);
-      content: "";
-      position: absolute;
-      top: 0.1875em;
-      left: 0.125em;
-      z-index: 1;
-      width: 0.75em;
-      height: 0.75em;
-      background: #3987cb;
-      border-radius: 999px; }
-    .ieRoot_modern .radio:checked:before, .ieRoot_modern .radio:active:before {
-      -webkit-transform: scale(1, 1);
-      -ms-transform: scale(1, 1);
-      transform: scale(1, 1); }
-    .ieRoot_modern .radio:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -0.0625em;
-      width: 100%;
-      height: 100%;
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.26);
-      border-radius: 999px; }
-    .ieRoot_modern .radio:checked, .ieRoot_modern .radio:hover, .ieRoot_modern .radio:focus {
-      outline: none; }
-      .ieRoot_modern .radio:checked:after, .ieRoot_modern .radio:hover:after, .ieRoot_modern .radio:focus:after {
-        border: 1px solid #3987cb; }
-
-.ieRoot_modern .inverted .radio:after {
-  background: #353e48;
-  border: 1px solid rgba(255, 255, 255, 0.7); }
-.ieRoot_modern .inverted .radio:hover:after, .ieRoot_modern .inverted .radio:focus:after {
-  border: 1px solid white; }
 
 /*doc
 ---
@@ -2660,8 +2794,6 @@ _Can be used in combination with any other component
 </div>
 ```
 */
-.floatingAction > a,
-.floatingAction .floatingAction-content,
 .chunk {
   display: block;
   margin-bottom: 16px !important; }
@@ -3446,7 +3578,7 @@ Class                   | Description
         vertical-align: top; } }
 /*doc
 ---
-title: View
+title: View Base
 name: view
 category: Views
 ---
@@ -3459,9 +3591,6 @@ following classes are optional variants:
 
 Class                  | Description
 ---------------------- | ---------------------------
-`view--splitList`      | Sets view to "list style" when viewport is wide enough
-`view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
-`view--dimmed`         | Dims view (for use with modal overlays)
 `view--collection`     | Sets the style for views that are primarily "collections"
 
 ## Basic view (<a class="link followLink" href="pages/full-view.html">Demo</a>)
@@ -3469,31 +3598,6 @@ Basic example of a single view in a document:
 
 ```
 <div class="view">
-	<header class="view-head">
-		... view-head ...
-	</header>
-	<main class="view-body">
-		... view-body ...
-	</main>
-</div>
-```
-
-## Split view (DEMO)
-Basic example of two views in one document, where we specify
-which view has the "list" responsibility, and which view has
-the "detail" responsibility.
-
-```
-<div class="view view--splitList">
-	<header class="view-head">
-		... view-head ...
-	</header>
-	<main class="view-body">
-		... view-body ...
-	</main>
-</div>
-
-<div class="view view--splitDetail">
 	<header class="view-head">
 		... view-head ...
 	</header>
@@ -3537,77 +3641,49 @@ the "detail" responsibility.
   min-height: 100vh;
   position: relative; }
 
-.view--collection {
+.view--collection,
+.view--collection .view-body {
   background-color: #f3f6f9; }
 
-.view--splitList, .view--splitDetail {
-  display: none; }
-  .view--splitList.focus, .view--splitDetail.focus {
-    display: block; }
+/*doc
+---
+title: View Body
+name: viewBody
+parent: view
+---
+The `view-body` element is our main
+content container for the view.
 
-.view--splitList {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 100vh;
-  z-index: 15; }
+```
+<div class="view">
+	<main class="view-body">
+		... stripes, bounds, etc ...
+		... all content ...
+	</main>
+</div>
+```
+*/
+.view-body {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-basis: 0;
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 0;
+  -webkit-flex-basis: auto;
+  flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  box-sizing: border-box;
+  height: auto; }
 
-@media only screen and (min-width: 640px) {
-  .ieRoot_modern .view--splitList {
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-    box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-justify-content: flex-start;
-    justify-content: flex-start;
-    -ms-flex-pack: start;
-    -webkit-box-align: flex;
-    box-align: flex;
-    -webkit-align-items: flex;
-    -ms-align-items: flex;
-    align-items: flex;
-    -ms-flex-align: flex;
-    box-sizing: border-box;
-    -webkit-box-orient: vertical;
-    box-orient: vertical;
-    -webkit-box-direction: normal;
-    box-direction: normal;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-direction: column;
-    -webkit-box-lines: single;
-    box-lines: single;
-    -webkit-flex-wrap: "nowrap";
-    -ms-flex-wrap: "nowrap";
-    flex-wrap: "nowrap";
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 320px;
-    display: block; }
-    .ieRoot_lt_IE10 .ieRoot_modern .view--splitList {
-      height: 100%; }
-    .ieRoot_lt_IE10 .ieRoot_modern .view--splitList {
-      display: table;
-      table-layout: auto;
-      width: 100%; }
-    .inverted .ieRoot_modern .view--splitList {
-      border-right: 1px solid rgba(255, 255, 255, 0.2); }
-
-  .ieRoot_modern .view--splitDetail {
-    display: block;
-    padding-left: 320px; } }
 /*doc
 ---
 title: View Head
 name: viewHead
-category: Views
+parent: view
 ---
 The `view-head` element is the first child (the
 fixed top nav bar) within every view.
@@ -3647,8 +3723,6 @@ Class                      | Description
   box-sizing: border-box;
   background: #e2373c;
   color: white;
-  left: 0;
-  top: 0;
   width: 100%;
   z-index: 10;
   height: 56px;
@@ -3657,23 +3731,6 @@ Class                      | Description
     .view-head {
       height: 64px; } }
 
-@media only screen and (min-width: 640px) {
-  .ieRoot_modern .view--splitList .view-head {
-    -webkit-flex-basis: 56px;
-    flex-basis: 56px;
-    -ms-flex-preferred-size: 56px;
-    -webkit-flex-grow: 0;
-    flex-grow: 0;
-    -ms-flex-positive: 0;
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    width: 320px; }
-    .inverted .ieRoot_modern .view--splitList .view-head {
-      border-right: 1px solid rgba(255, 255, 255, 0.2); }
-  .ieRoot_modern .view--splitDetail .view-head {
-    left: 320px;
-    right: 0;
-    width: auto; } }
 .view-head--transparent {
   background: transparent;
   border-bottom: none;
@@ -3688,37 +3745,101 @@ Class                      | Description
 
 /*doc
 ---
-title: View Body
-name: viewBody
+title: Split View
+name: splitView
 category: Views
 ---
-The `view-body` element is our main
-content container for the view.
+A "split view" is a pair of `view` elements, each with a special variant
+class applied to set the responsiblity of each view as either the "list" component
+or the "detail" component.
+
+The **list** view acts as a scrollable list of selectable items (list of members), while the **detail**
+view acts as a viewing area for the selected item (selected member profile).
+
+A `flexParent--row` parent is required in order to treat `view--splitList` and
+`view--splitDetail` as flex children.
+
+<a class="link" href="pages/split-view.html">Demo</a>
 
 ```
-<div class="view">
-	<main class="view-body">
-		... stripes, bounds, etc ...
-		... all content ...
-	</main>
+<div class="flexParent--row">
+	<div class="view view--splitList">
+		<header class="view-head">
+			... view-head ...
+		</header>
+		<main class="view-body">
+			... view-body ...
+		</main>
+	</div>
+
+	<div class="view view--splitDetail">
+		<header class="view-head">
+			... view-head ...
+		</header>
+		<main class="view-body">
+			... view-body ...
+		</main>
+	</div>
 </div>
 ```
+
+Each view in the split view pair requires the `view` class. The following
+variant classes assign the view role:
+
+Class                  | Description
+---------------------- | ---------------------------
+`view--splitList`      | Sets view to "list style" when viewport is wide enough
+`view--splitDetail`    | Sets view to "detail style" when viewport is wide enough
 */
-.view-body {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  -ms-flex-positive: 1;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  box-sizing: border-box;
-  width: auto;
-  min-width: 0;
-  -webkit-flex-basis: auto;
-  flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  box-sizing: border-box;
-  height: auto; }
+.view--splitList, .view--splitDetail {
+  height: 100vh;
+  display: none; }
+  .focus.view--splitList, .focus.view--splitDetail {
+    display: block; }
+
+.view--splitList {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  @media only screen and (min-width: 640px) {
+    .ieRoot_modern .view--splitList {
+      -webkit-flex-grow: 0;
+      flex-grow: 0;
+      -ms-flex-positive: 0;
+      -webkit-flex-shrink: 0;
+      flex-shrink: 0;
+      -ms-flex-negative: 0;
+      -webkit-flex-basis: auto;
+      flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+      width: initial;
+      -webkit-flex-basis: 320px;
+      flex-basis: 320px;
+      -ms-flex-preferred-size: 320px;
+      border-right: 1px solid rgba(0, 0, 0, 0.12);
+      display: block; }
+      .ieRoot_lt_IE10 .ieRoot_modern .view--splitList {
+        width: 1%; }
+      .ieRoot_lt_IE10 .ieRoot_modern .view--splitList {
+        vertical-align: top; }
+      .inverted .ieRoot_modern .view--splitList {
+        border-right: 1px solid rgba(255, 255, 255, 0.2); } }
+
+@media only screen and (min-width: 640px) {
+  .ieRoot_modern .view--splitDetail {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+    -webkit-flex-basis: 0;
+    flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    box-sizing: border-box;
+    width: auto;
+    min-width: 0;
+    display: block; }
+    .ieRoot_lt_IE10 .ieRoot_modern .view--splitDetail {
+      display: table-cell; }
+    .ieRoot_lt_IE10 .ieRoot_modern .view--splitDetail {
+      vertical-align: top; } }
 
 /*doc
 ---
@@ -4818,33 +4939,20 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 	<div class="bounds">
 		<p class="chunk">The button below will fix to the bottom of the viewport at small sizes</p>
 		<div class="floatingAction">
-			<a href="#" class="floatingAction-content button button--primary button--fullWidth">Floating Action</a>
+			<a href="#" class="button button--primary button--fullWidth">Floating Action</a>
 		</div>
 	</div>
 ```
 */
 .floatingAction {
   box-sizing: border-box;
-  padding: 0 16px;
+  padding: 16px;
+  position: fixed;
   bottom: 0;
   left: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 1; }
-  .floatingAction:before {
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    content: "";
-    background-color: white;
-    z-index: 2;
-    height: 72px;
-    width: 100%; }
-  .floatingAction > a,
-  .floatingAction .floatingAction-content {
-    position: relative;
-    z-index: 30; }
+  right: 0;
+  z-index: 1;
+  background-color: white; }
 
 .hasFloatingAction {
   background-color: #353e48;
@@ -4852,13 +4960,9 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 
 @media only screen and (min-width: 640px) {
   .floatingAction {
-    position: static; }
-    .floatingAction:before {
-      position: static;
-      height: 0;
-      width: 0; }
-    .floatingAction > a {
-      z-index: 0; }
+    padding: initial;
+    position: static;
+    background-color: transparent; }
 
   .hasFloatingAction {
     background-color: transparent;
@@ -5515,7 +5619,7 @@ Checkbox form elements styled as toggle buttons.
   .toggleButton-input:checked + .toggleButton-label {
     -webkit-animation: bounce-in-subtle 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: bounce-in-subtle 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background: #3987cb;
+    background: #3987cb !important;
     border-color: transparent;
     color: white;
     font-weight: 700; }
@@ -5782,6 +5886,96 @@ Class                   | Description
 
 .display--inlineBlock {
   display: inline-block; }
+
+/*doc
+---
+title: Flex Parent
+name: flexParentMod
+parent: displayMod
+---
+Sets `display: flex` rules for selected element as well as
+orientation rules for `row` or `column`.
+
+Class                   | Description
+----------------------- | --------------------------------
+`.flexParent--row`      | sets `display` to `flex` with row orientation for children
+`.flexParent--column`   | sets `display` to `flex` with column orientation for children
+*/
+.flexParent--row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  box-sizing: border-box;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-lines: single;
+  box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap; }
+  .ieRoot_lt_IE10
+  .flexParent--row {
+    display: table;
+    table-layout: auto;
+    width: 100%; }
+
+.flexParent--column {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start;
+  -webkit-box-align: flex;
+  box-align: flex;
+  -webkit-align-items: flex;
+  -ms-align-items: flex;
+  align-items: flex;
+  -ms-flex-align: flex;
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column; }
+  .ieRoot_lt_IE10
+  .flexParent--column {
+    height: 100%; }
+  .ieRoot_lt_IE10
+  .flexParent--column {
+    display: table;
+    table-layout: auto;
+    width: 100%; }
 
 /*doc
 ---

@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.2.3</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.3.0</a>
 						</div>
 					</div>
 				</div>
@@ -86,6 +86,11 @@
 					</li>
 				
 					<li class="display--inlineBlock--mediumDown">
+						<a class="followLink" href="sass_globals.html">Sass Globals</a>
+						
+					</li>
+				
+					<li class="display--inlineBlock--mediumDown">
 						<a class="followLink" href="views.html">Views</a>
 						
 							<ul class="display--none atMedium_display--block">
@@ -127,7 +132,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#view">View</a>
+											<a class="followLink" href="#splitView">Split View</a>
 										</li>
 									
 
@@ -136,7 +141,7 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#viewBody">View Body</a>
+											<a class="followLink" href="#view">View Base</a>
 										</li>
 									
 
@@ -144,9 +149,10 @@
 
 									
 									
-										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#viewHead">View Head</a>
-										</li>
+
+								
+
+									
 									
 
 								
@@ -292,11 +298,35 @@ lays out as a dialog on background content on larger screens.</p><div class="cod
   </div>
 </div>
 
-<h1 id="view" class="styleguide">View</h1>
-<p class="styleguide">A &quot;view&quot; contains all layout and content for a given screen.
-Typically, a document only has a single view. Split views,
-where a document contains two view elements are possible (see below).</p><p class="styleguide">A class of <code class="styleguide">.view</code> is required for view elements; the
-following classes are optional variants:</p><table class="styleguide"> <tr>
+<h1 id="splitView" class="styleguide">Split View</h1>
+<p class="styleguide">A &quot;split view&quot; is a pair of <code class="styleguide">view</code> elements, each with a special variant
+class applied to set the responsiblity of each view as either the &quot;list&quot; component
+or the &quot;detail&quot; component.</p><p class="styleguide">The <strong>list</strong> view acts as a scrollable list of selectable items (list of members), while the <strong>detail</strong>
+view acts as a viewing area for the selected item (selected member profile).</p><p class="styleguide">A <code class="styleguide">flexParent--row</code> parent is required in order to treat <code class="styleguide">view--splitList</code> and
+<code class="styleguide">view--splitDetail</code> as flex children.</p><p class="styleguide"><a class="link" href="pages/split-view.html">Demo</a></p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="flexParent--row"&gt;
+    &lt;div class="view view--splitList"&gt;
+        &lt;header class="view-head"&gt;
+            ... view-head ...
+        &lt;/header&gt;
+        &lt;main class="view-body"&gt;
+            ... view-body ...
+        &lt;/main&gt;
+    &lt;/div&gt;
+
+    &lt;div class="view view--splitDetail"&gt;
+        &lt;header class="view-head"&gt;
+            ... view-head ...
+        &lt;/header&gt;
+        &lt;main class="view-body"&gt;
+            ... view-body ...
+        &lt;/main&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div><p class="styleguide">Each view in the split view pair requires the <code class="styleguide">view</code> class. The following
+variant classes assign the view role:</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
@@ -308,11 +338,16 @@ following classes are optional variants:</p><table class="styleguide"> <tr>
 <td><code class="styleguide">view--splitDetail</code></td>
 <td>Sets view to &quot;detail style&quot; when viewport is wide enough</td>
 </tr>
-<tr>
-<td><code class="styleguide">view--dimmed</code></td>
-<td>Dims view (for use with modal overlays)</td>
+ </table>
+<h1 id="view" class="styleguide">View Base</h1>
+<p class="styleguide">A &quot;view&quot; contains all layout and content for a given screen.
+Typically, a document only has a single view. Split views,
+where a document contains two view elements are possible (see below).</p><p class="styleguide">A class of <code class="styleguide">.view</code> is required for view elements; the
+following classes are optional variants:</p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
 </tr>
-<tr>
+ <tr>
 <td><code class="styleguide">view--collection</code></td>
 <td>Sets the style for views that are primarily &quot;collections&quot;</td>
 </tr>
@@ -330,31 +365,7 @@ following classes are optional variants:</p><table class="styleguide"> <tr>
 &lt;/div&gt;</pre>
   </div>
 </div>
-<h2>Split view (DEMO)</h2>
-<p class="styleguide">Basic example of two views in one document, where we specify
-which view has the &quot;list&quot; responsibility, and which view has
-the &quot;detail&quot; responsibility.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>&lt;div class="view view--splitList"&gt;
-    &lt;header class="view-head"&gt;
-        ... view-head ...
-    &lt;/header&gt;
-    &lt;main class="view-body"&gt;
-        ... view-body ...
-    &lt;/main&gt;
-&lt;/div&gt;
-
-&lt;div class="view view--splitDetail"&gt;
-    &lt;header class="view-head"&gt;
-        ... view-head ...
-    &lt;/header&gt;
-    &lt;main class="view-body"&gt;
-        ... view-body ...
-    &lt;/main&gt;
-&lt;/div&gt;</pre>
-  </div>
-</div>
-<h1 id="viewBody" class="styleguide">View Body</h1>
+<h2 id="viewBody" class="styleguide">View Body</h2>
 <p class="styleguide">The <code class="styleguide">view-body</code> element is our main
 content container for the view.</p><div class="codeBlock">
   <div class="highlight">
@@ -366,7 +377,7 @@ content container for the view.</p><div class="codeBlock">
 &lt;/div&gt;</pre>
   </div>
 </div>
-<h1 id="viewHead" class="styleguide">View Head</h1>
+<h2 id="viewHead" class="styleguide">View Head</h2>
 <p class="styleguide">The <code class="styleguide">view-head</code> element is the first child (the
 fixed top nav bar) within every view.</p><div class="codeBlock">
   <div class="highlight">
@@ -803,6 +814,17 @@ $(function() {
 					"name": "displayMod",
 					"category": "Modifier Classes",
 					"url": "modifier_classes.html#displayMod"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Flex Parent",
+					"name": "flexParentMod",
+					"category": "Modifier Classes",
+					"url": "modifier_classes.html#flexParentMod"
 				});
 
 			
@@ -1670,6 +1692,120 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "Forms",
+					"name": "globForms",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globForms"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Layout",
+					"name": "globLayout",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globLayout"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Vendor Prefixing",
+					"name": "globPrefixer",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globPrefixer"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Size scale",
+					"name": "globScale",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globScale"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Block",
+					"name": "globBlock",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globBlock"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Media",
+					"name": "globMedia",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globMedia"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Space",
+					"name": "globSpace",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globSpace"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Typography",
+					"name": "globType",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globType"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "z-index",
+					"name": "globZindex",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#globZindex"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Root classes",
+					"name": "rootClasses",
+					"category": "Sass Globals",
+					"url": "sass_globals.html#rootClasses"
+				});
+
+			
+		
+	
+		
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Media View",
 					"name": "mediaView",
 					"category": "Views",
@@ -1725,7 +1861,18 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "View",
+					"title": "Split View",
+					"name": "splitView",
+					"category": "Views",
+					"url": "views.html#splitView"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "View Base",
 					"name": "view",
 					"category": "Views",
 					"url": "views.html#view"
