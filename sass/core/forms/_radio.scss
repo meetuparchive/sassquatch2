@@ -32,83 +32,12 @@ elements.
 	cursor: pointer;
 	display: inline-block;
 	font-size: $font-size;
+	height: $font-size;
+	line-height: 1;
+	line-height: $line-height;
 	margin: 0 $inputGutter 0 0;
-	position: relative;
 
 	@include browser-lessThanIE(10) {
 		top: $space/2;
-	}
-
-	@include browser-modern() {
-		-webkit-appearance: none;
-		height: $font-size;
-		width: $font-size;
-		top: 0;
-		z-index: 0;
-
-		&:before {
-			@include transition (transform, 100ms, $ease-out-quad);
-			@include transform(scale(0,0));
-
-			content: "";
-
-			position: absolute;
-			top: em(3);
-			left: em(2);
-			z-index: 1;
-
-			width: em(12);
-			height: em(12);
-
-			background: $C_link;
-
-			border-radius: 999px;
-		}
-
-		&:checked, &:active {
-			&:before {
-				@include transform(scale(1,1));
-			}
-		}
-
-		&:after {
-			content: "";
-
-			position: absolute;
-			top: 0;
-			left: em(-1);
-
-			width: 100%;
-			height: 100%;
-
-			background: $C_contentBG;
-
-			border: 1px solid $C_textTertiary;
-			border-radius: 999px;
-		}
-
-		&:checked, &:hover, &:focus {
-			outline: none;
-			&:after {
-				border: 1px solid $C_link;
-			}
-		}
-	}
-}
-
-// INVERTED RADIO INPUT
-.inverted {
-	.radio {
-		@include browser-modern() {
-			&:after {
-				background: $C_contentBGInverted;
-				border: 1px solid $C_textSecondaryInverted;
-			}
-			&:hover, &:focus {
-				&:after {
-					border: 1px solid $C_textPrimaryInverted;
-				}
-			}
-		}
 	}
 }

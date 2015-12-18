@@ -84,7 +84,7 @@ textarea {
 }
 
 %_formDecoration,
-input,
+#{$all-text-inputs},
 textarea,
 select,
 .launcher {
@@ -123,14 +123,6 @@ select {
 
 textarea {
 	min-height: (3 * $font-size * $line-height) + $space;
-}
-
-.checkbox,
-.radio {
-	border: none; // iOS Safari shows weird black area around checkbox without this
-	background: transparent; // iOS Safari shows weird black area around checkbox without this
-	-webkit-appearance: none;
-	width: auto; // override `input` 100% rule above for IE9 and below
 }
 
 input::-webkit-input-placeholder,

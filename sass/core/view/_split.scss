@@ -65,6 +65,7 @@ Class                  | Description
 			@include flexChild('shrink');
 			@include flex-basis($view-minWidth);
 			@include standardBorder('right');
+			display: block;
 		}
 	}
 }

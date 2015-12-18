@@ -105,8 +105,6 @@ Class                      | Description
 	box-sizing: border-box;
 	background: $C_accent;
 	color: $C_textPrimaryInverted;
-	left: 0;
-	top: 0;
 	width: 100%;
 	z-index: map-get($zindex-map, "main-header");
 	height: $view-head-height;
