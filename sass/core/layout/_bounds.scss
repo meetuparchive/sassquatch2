@@ -36,7 +36,7 @@ Class                  | Description
 `.bounds`              | standard (narrow) bounds for any type of content
 `.bounds--wide`        | bounds for wrapping wider content, such as gridList
 `.bounds--sideHeader`  | bounds for wrapping standard (narrow) content, offset by labels to the side at wide widths
-
+`.bounds--roomy`       | bounds for content that requires extra whitespace, such as a marketting page
 
 ## Side Header example
 
@@ -77,6 +77,15 @@ $sideHeadergutter: $bounds-wide - $bounds;
 
 .bounds--wide{
 	max-width: $bounds-wide;
+}
+
+.bounds--roomy {
+	padding: $space-bounds*2 $space ($space-bounds*2 - $space-double); // subtract for .chunk at bottom
+
+	> .chunk {
+		margin-bottom: $space-double;
+	}
+
 }
 
 // side headers
