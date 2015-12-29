@@ -219,6 +219,39 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.
 
 /*doc
 ---
+title: Hulk text
+name: textHulk
+parent: bodyText
+---
+Gets angry when the viewport size increases.
+
+```html_example
+<p class="text--hulk">Text angry!!!!!!!!!!!!!</p>
+```
+*/
+@include _modifier(text, hulk) {
+	color: $C_hulkNormal;
+
+	@include atMediaUp(medium) {
+		font-size: $font-size-display2;
+		font-weight: $W_bold;
+		color: $C_hulkAngry;
+	}
+
+	@include atMediaUp(large) {
+		font-size: $font-size-display1;
+		color: $C_hulkVeryAngry;
+
+		@include i18n-only('en') {
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+
+/*doc
+---
 title: Running text
 name: runningText
 parent: bodyText
