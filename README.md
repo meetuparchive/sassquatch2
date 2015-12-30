@@ -53,7 +53,7 @@ Until I write the script for creating a release, the process is unfortunately ma
 Because we're using the git-flow branching model, all fix and feature commits flow into
 the `develop` branch. The `master` branch is our "production" branch.
 
-#### To create a release:
+#### Beginning the release
 We begin all releases with a _release branch_ and a _release tag_.
 
 1. from `develop`, checkout a `release/X.X.X` branch
