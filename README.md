@@ -54,6 +54,7 @@ Because we're using the git-flow branching model, all fix and feature commits fl
 the `develop` branch. The `master` branch is our "production" branch.
 
 #### To create a release:
+We begin all releases with a _release branch_ and a _release tag_.
 
 1. from `develop`, checkout a `release/X.X.X` branch
 2. in `release/X.X.X`, increment the version number in `bower.json` and `package.json`
@@ -61,16 +62,17 @@ the `develop` branch. The `master` branch is our "production" branch.
 4. `git tag -a vX.X.X -m "tag message"`
 5. git push origin vX.X.X
 
-Once the tag ref is pushed to origin the version is available to install in chapstick or elsewhere.
+Once the tag ref is pushed to origin the version is available to install via bower in chapstick or elsewhere.
 
-#### Finishing a release without chapstick dependencies:
-If the changes in your `release/X.X.X` branch appear stable and do not require updates in chapstick...
+#### Finishing a release without chapstick dependencies
+If the changes in your `release/X.X.X` branch appear stable and **do not** require updates in chapstick:
 
 1. merge the release branch, `release/X.X.X` to `master`
 2. merge `master` into `develop`
 3. _don't forget to rebuild docs!_ (run `grunt ghpages` in `master`)
 
-#### Finishing a release with chapstick dependencies:
+#### Finishing a release with chapstick dependencies
+If your release includes breaking changes and requires code changes in chapstick, follow these steps:
 
 1. start a chapstick branch for your sq2 release
 2. set the `bower.json` version for `sassquatch2` in chapstick to match your release number
@@ -79,8 +81,8 @@ If the changes in your `release/X.X.X` branch appear stable and do not require u
 5. _don't forget to rebuild docs!_ (run `grunt ghpages` in `master`)
 
 
-#### Retagging a release:
-Sometimes you need to retag a release to incorporate new commits.
+#### Retagging a release
+Sometimes you need to retag a release to incorporate new commits. Here are the steps for retagging a "1.5.0" release after you make a few fix commits to the release branch:
 
 1. `git pull` - fetches tag refs from origin
 2. `git tag -d v1.5.0` - deletes the git tag ref
