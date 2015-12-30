@@ -85,9 +85,9 @@ If your release includes breaking changes and requires code changes in chapstick
 Sometimes you need to retag a release to incorporate new commits. Here are the steps for retagging a "1.5.0" release after you make a few fix commits to the release branch:
 
 1. `git pull` - fetches tag refs from origin
-2. `git tag -d v1.5.0` - deletes the git tag ref
-3. `git push origin :refs/tags/v1.5.0` - pushes your delete of the ref
-4. `git tag -a v1.5.0 -m "My new and improved release 1.5.0"` - create new v1.5.0 tag
-5. `git push origin v1.5.0` - push the new 1.5.0 tag to origin
+2. `git tag -d v1.5.0` - deletes the **old** v1.5.0 tag ref
+3. `git push origin :refs/tags/v1.5.0` - pushes your delete of the ref to origin
+4. `git tag -a v1.5.0 -m "My new and improved release 1.5.0"` - create **new** v1.5.0 tag
+5. `git push origin v1.5.0` - push the **new** v1.5.0 tag to origin
 6. in chapstick, just `bower cache clean` and `rm -rf static/components/sassquatch2` then reinstall `sassquatch2` to get updated commits for the tag
 
