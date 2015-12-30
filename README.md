@@ -53,13 +53,39 @@ Until I write the script for creating a release, the process is unfortunately ma
 Because we're using the git-flow branching model, all fix and feature commits flow into
 the `develop` branch. The `master` branch is our "production" branch.
 
-To create a release:
+#### To create a release:
 
-1. merge changes from `develop` into `master`
-2. increment the version number in `bower.json`
+1. from `develop`, checkout a `release/X.X.X` branch
+2. in `release/X.X.X`, increment the version number in `bower.json` and `package.json`
 3. commit the result & push
 4. `git tag -a vX.X.X -m "tag message"`
 5. git push origin vX.X.X
 
-Once the tag ref is pushed to origin the version is available to install in
-chapstick or elsewhere.
+Once the tag ref is pushed to origin the version is available to install in chapstick or elsewhere.
+
+#### Finishing a release without chapstick dependencies:
+If the changes in your `release/X.X.X` branch appear stable and do not require updates in chapstick...
+
+1. merge the release branch, `release/X.X.X` to `master`
+2. merge `master` into `develop`
+3. _don't forget to rebuild docs!_ (run `grunt ghpages` in `master`)
+
+#### Finishing a release with chapstick dependencies:
+
+1. start a chapstick branch for your sq2 release
+2. set the `bower.json` version for `sassquatch2` in chapstick to match your release number
+3. if you need to make fixes to the `release/X.X.X` branch, you can retag the release to include your fixes (see below)
+4. when your chapstick branch with the sq2 update releases to production, you can follow normal steps for finishing a sq2 release (merge the release branch to `master`)
+5. _don't forget to rebuild docs!_ (run `grunt ghpages` in `master`)
+
+
+#### Retagging a release:
+Sometimes you need to retag a release to incorporate new commits.
+
+1. `git pull` - fetches tag refs from origin
+2. `git tag -d v1.5.0` - deletes the git tag ref
+3. `git push origin :refs/tags/v1.5.0` - pushes your delete of the ref
+4. `git tag -a v1.5.0 -m "My new and improved release 1.5.0"` - create new v1.5.0 tag
+5. `git push origin v1.5.0` - push the new 1.5.0 tag to origin
+6. in chapstick, just `bower cache clean` and `rm -rf static/components/sassquatch2` then reinstall `sassquatch2` to get updated commits for the tag
+
