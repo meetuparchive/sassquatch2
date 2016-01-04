@@ -73,27 +73,26 @@ fieldset {
 }
 
 
-%_formFont,
+%_formBase,
 button,
 input,
 select,
 textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.5;
+	display: block;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.5;
 }
 
-%_formDecoration,
+%_formTextField,
 #{$all-text-inputs},
 textarea,
-select,
-.launcher {
+select {
 	background-color: $C_shade;
 	border-radius: $defaultRadius;
 	border: 1px solid $C_border;
 	box-shadow: none;
 	box-sizing: border-box;
-	display: block;
 	margin: 0 0 $space-quarter 0;
 	max-width: 100%;
 	padding: $space-half;
