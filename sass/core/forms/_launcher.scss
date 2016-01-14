@@ -27,8 +27,8 @@ Class                    | Description
 
 // TODO: can these styles be merged?
 .launcher {
-	@extend %_formFont;
-	@extend %_formDecoration;
+	@extend %_formBase;
+	@extend %_formTextField;
 	@extend %backgroundImg--launcher;
 	background-position: center right #{$space-quarter};
 	background-repeat: no-repeat;

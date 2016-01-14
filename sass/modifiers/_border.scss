@@ -21,6 +21,7 @@ Class                   | Description
 	border-width: 0 !important;
 }
 
+%bordered,
 .bordered {
 	@extend %border--top;
 	padding-top: $space;

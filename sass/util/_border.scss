@@ -17,14 +17,14 @@ Applies standard border using default `border-color`,
 including rules for inverted context.
 
 ```
-@import standardBorder(); // default = top
+@include standardBorder(); // default = top
 
 // apply border to bottom OR
 // 'top', 'left', 'right', 'bottom', 'all', 'none'
-@import standardBorder('bottom');
+@include standardBorder('bottom');
 
 // apply a custom size (default = 1px)
-@import standardBorder('all', 4px);
+@include standardBorder('all', 4px);
 ```
 
 */

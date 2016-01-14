@@ -23,9 +23,9 @@ Basic example of a single view in a document:
 	<header class="view-head">
 		... view-head ...
 	</header>
-	<main class="view-body">
+	<div class="view-body">
 		... view-body ...
-	</main>
+	</div>
 </div>
 ```
 */
@@ -55,10 +55,10 @@ content container for the view.
 
 ```
 <div class="view">
-	<main class="view-body">
+	<div class="view-body">
 		... stripes, bounds, etc ...
 		... all content ...
-	</main>
+	</div>
 </div>
 ```
 */

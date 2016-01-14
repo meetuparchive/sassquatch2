@@ -31,7 +31,7 @@ Class          | Description
 -------------- | ----------------------------
 `.text--hide`  | Visually hides text; removes text from document flow
 */
-.text--hide {
+@include _modifier(text, hide) {
 	display: block;
 	width: 0;
 	height: 0;
@@ -54,7 +54,7 @@ Class                  | Description
 ---------------------- | ----------------------------
 `.text--strikethrough` | strikethrough/strikeout/line-through
 */
-.text--strikethrough {
+@include _modifier(text, strikethrough) {
 	text-decoration: line-through;
 }
 
@@ -70,7 +70,7 @@ Class              | Description
 -------------------| ----------------------------
 `.text--noHyphens` | Don't allow hyphens on line breaks
 */
-.text--noHyphens {
+@include _modifier(text, noHyphens) {
 	-webkit-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
@@ -88,7 +88,7 @@ Class              | Description
 ------------------ | ----------------------------
 `.text--wrapNice`  | Auto hyphenation and nice wrapping for running text
 */
-.text--wrapNice {
+@include _modifier(text, wrapNice) {
 	@extend %wrapNice;
 }
 
