@@ -396,14 +396,14 @@ Applies standard border using default `border-color`,
 including rules for inverted context.
 
 ```
-@import standardBorder(); // default = top
+@include standardBorder(); // default = top
 
 // apply border to bottom OR
 // 'top', 'left', 'right', 'bottom', 'all', 'none'
-@import standardBorder('bottom');
+@include standardBorder('bottom');
 
 // apply a custom size (default = 1px)
-@import standardBorder('all', 4px);
+@include standardBorder('all', 4px);
 ```
 
 */
@@ -460,6 +460,10 @@ Disables user-select, sets cursor, and resets text-decoration.
   font-weight: 400; }
   .toggleButton-label:hover, .toggleButton-label:active, .toggleButton-label:focus {
     background: rgba(57, 135, 203, 0.2) !important; }
+  .inverted .toggleButton-label {
+    stroke: transparent;
+    fill: white;
+    color: white; }
 
 /*doc
 ---
@@ -606,7 +610,8 @@ Nice hyphenation and wrapping for running text.
 @extend %link;
 ```
 */
-.runningText p, .text--wrapNice {
+.runningText p,
+.text--wrapNice {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
@@ -909,7 +914,7 @@ Headline text for when something between display and normal text is needed. Use 
 ```
 */
 .text--headline {
-  text-transform: none; }
+  text-transform: none !important; }
 
 /*doc
 ---
@@ -1074,6 +1079,7 @@ to any other element, use `text--mono`.
 <pre>We can safely assume a pre tag on Meetup is also code</pre>
 ```
 */
+.enableDebug .debug,
 .text--mono {
   font-family: Monaco, "Andale Mono", "Courier New", monospace; }
 
@@ -1169,7 +1175,8 @@ event descriptions).
 ```
 */
 .runningText p {
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+  max-width: 40em; }
   .runningText p:last-child {
     margin-bottom: 0; }
 
@@ -1279,7 +1286,6 @@ _Setting the `enableDebug` class on `body` for dev only is recommended._
     display: block;
     padding: 0.25em 0.5em;
     margin-bottom: 16px;
-    font-family: Monaco, "Andale Mono", "Courier New", monospace;
     font-size: 13px;
     color: purple;
     background: pink;
@@ -1368,6 +1374,7 @@ button,
 input,
 select,
 textarea {
+  display: block;
   font-family: inherit;
   font-size: 100%;
   line-height: 1.5; }
@@ -1375,14 +1382,12 @@ textarea {
 .launcher,
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 textarea,
-select,
-.launcher {
+select {
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: none;
   box-sizing: border-box;
-  display: block;
   margin: 0 0 4px 0;
   max-width: 100%;
   padding: 8px;
@@ -1390,24 +1395,21 @@ select,
   .launcher:focus,
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   textarea:focus,
-  select:focus,
-  .launcher:focus {
+  select:focus {
     border-color: #3987cb;
     box-shadow: none;
     outline: none; }
   .inverted .launcher, .inverted
   input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
   textarea, .inverted
-  select, .inverted
-  .launcher {
+  select {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
     color: white; }
   .shaded .launcher, .shaded
   input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
   textarea, .shaded
-  select, .shaded
-  .launcher {
+  select {
     background-color: white; }
 
 input,
@@ -2145,7 +2147,13 @@ For a layout with a fixed number of columns, use `row`.
 </ul>
 ```
 */
-.gridList > li, .gridList-item {
+.gridList {
+  margin: 0 -16px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0; }
+
+.gridList-item {
   font-size: 1rem;
   display: inline-block;
   margin: 0;
@@ -2153,12 +2161,6 @@ For a layout with a fixed number of columns, use `row`.
   vertical-align: top;
   width: 50%;
   box-sizing: border-box; }
-
-.gridList {
-  margin: 0 -16px 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0; }
 
 /*doc
 ---
@@ -2184,128 +2186,128 @@ Class                         | Description
 .gridList--photoGrid {
   margin: 0 -24px 0 -16px;
   padding: 0; }
-  .gridList--photoGrid > li {
+  .gridList--photoGrid > .gridList-item {
     padding: 0 4px 4px 0; }
 
-.gridList--has1 > li {
+.gridList--has1 > .gridList-item {
   width: 100%; }
 
-.gridList--has2 > li {
+.gridList--has2 > .gridList-item {
   width: 50%; }
 
-.gridList--has3 > li {
+.gridList--has3 > .gridList-item {
   width: 33.33333%; }
 
-.gridList--has4 > li {
+.gridList--has4 > .gridList-item {
   width: 25%; }
 
-.gridList--has5 > li {
+.gridList--has5 > .gridList-item {
   width: 20%; }
 
-.gridList--has6 > li {
+.gridList--has6 > .gridList-item {
   width: 16.66667%; }
 
-.gridList--has7 > li {
+.gridList--has7 > .gridList-item {
   width: 14.28571%; }
 
-.gridList--has8 > li {
+.gridList--has8 > .gridList-item {
   width: 12.5%; }
 
-.gridList--has9 > li {
+.gridList--has9 > .gridList-item {
   width: 11.11111%; }
 
-.gridList--has10 > li {
+.gridList--has10 > .gridList-item {
   width: 10%; }
 
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has1 > li {
+  .atSmall_gridList--has1 > .gridList-item {
     width: 100%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has1 > li {
+  .atMedium_gridList--has1 > .gridList-item {
     width: 100%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has1 > li {
+  .atLarge_gridList--has1 > .gridList-item {
     width: 100%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has2 > li {
+  .atSmall_gridList--has2 > .gridList-item {
     width: 50%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has2 > li {
+  .atMedium_gridList--has2 > .gridList-item {
     width: 50%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has2 > li {
+  .atLarge_gridList--has2 > .gridList-item {
     width: 50%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has3 > li {
+  .atSmall_gridList--has3 > .gridList-item {
     width: 33.33333%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has3 > li {
+  .atMedium_gridList--has3 > .gridList-item {
     width: 33.33333%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has3 > li {
+  .atLarge_gridList--has3 > .gridList-item {
     width: 33.33333%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has4 > li {
+  .atSmall_gridList--has4 > .gridList-item {
     width: 25%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has4 > li {
+  .atMedium_gridList--has4 > .gridList-item {
     width: 25%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has4 > li {
+  .atLarge_gridList--has4 > .gridList-item {
     width: 25%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has5 > li {
+  .atSmall_gridList--has5 > .gridList-item {
     width: 20%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has5 > li {
+  .atMedium_gridList--has5 > .gridList-item {
     width: 20%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has5 > li {
+  .atLarge_gridList--has5 > .gridList-item {
     width: 20%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has6 > li {
+  .atSmall_gridList--has6 > .gridList-item {
     width: 16.66667%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has6 > li {
+  .atMedium_gridList--has6 > .gridList-item {
     width: 16.66667%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has6 > li {
+  .atLarge_gridList--has6 > .gridList-item {
     width: 16.66667%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has7 > li {
+  .atSmall_gridList--has7 > .gridList-item {
     width: 14.28571%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has7 > li {
+  .atMedium_gridList--has7 > .gridList-item {
     width: 14.28571%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has7 > li {
+  .atLarge_gridList--has7 > .gridList-item {
     width: 14.28571%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has8 > li {
+  .atSmall_gridList--has8 > .gridList-item {
     width: 12.5%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has8 > li {
+  .atMedium_gridList--has8 > .gridList-item {
     width: 12.5%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has8 > li {
+  .atLarge_gridList--has8 > .gridList-item {
     width: 12.5%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has9 > li {
+  .atSmall_gridList--has9 > .gridList-item {
     width: 11.11111%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has9 > li {
+  .atMedium_gridList--has9 > .gridList-item {
     width: 11.11111%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has9 > li {
+  .atLarge_gridList--has9 > .gridList-item {
     width: 11.11111%; } }
 @media only screen and (min-width: 440px) {
-  .atSmall_gridList--has10 > li {
+  .atSmall_gridList--has10 > .gridList-item {
     width: 10%; } }
 @media only screen and (min-width: 640px) {
-  .atMedium_gridList--has10 > li {
+  .atMedium_gridList--has10 > .gridList-item {
     width: 10%; } }
 @media only screen and (min-width: 840px) {
-  .atLarge_gridList--has10 > li {
+  .atLarge_gridList--has10 > .gridList-item {
     width: 10%; } }
 /*doc
 ---
@@ -2367,6 +2369,14 @@ each list item and right gutters between items.
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 </ul>
 
+<ul class="inlineblockList inlineblockList--bulleted">
+	<li>These</li>
+	<li>list</li>
+	<li>items</li>
+	<li>are</li>
+	<li>bulleted</li>
+</ul>
+
 <ul class="inlineblockList inlineblockList--overlap">
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
 	<li><img src="https://placekitten.com/g/72/72" alt="fluffy kitten" /></li>
@@ -2382,6 +2392,7 @@ optional variants:
 Class                        | Description
 ---------------------------- | ------------------------------------------------------------
 `.inlineblockList--overlap`  | Creates an inline block list with overlapping list items
+`inlineblockList--bulleted`  | puts a bullet between each list item. Used for thinks like lists of links
 */
 .hscroll-content,
 .inlineblockList {
@@ -2394,6 +2405,12 @@ Class                        | Description
     .hscroll-content > li:last-child,
     .inlineblockList > li:last-child {
       padding-right: 0; }
+
+.inlineblockList--bulleted > li:after {
+  content: '·';
+  padding-left: 8px; }
+.inlineblockList--bulleted > li:last-child:after {
+  display: none; }
 
 .inlineblockList--overlap > li {
   padding: 0;
@@ -3601,9 +3618,9 @@ Basic example of a single view in a document:
 	<header class="view-head">
 		... view-head ...
 	</header>
-	<main class="view-body">
+	<div class="view-body">
 		... view-body ...
-	</main>
+	</div>
 </div>
 ```
 */
@@ -3656,10 +3673,10 @@ content container for the view.
 
 ```
 <div class="view">
-	<main class="view-body">
+	<div class="view-body">
 		... stripes, bounds, etc ...
 		... all content ...
-	</main>
+	</div>
 </div>
 ```
 */
@@ -3767,18 +3784,18 @@ A `flexParent--row` parent is required in order to treat `view--splitList` and
 		<header class="view-head">
 			... view-head ...
 		</header>
-		<main class="view-body">
+		<div class="view-body">
 			... view-body ...
-		</main>
+		</div>
 	</div>
 
 	<div class="view view--splitDetail">
 		<header class="view-head">
 			... view-head ...
 		</header>
-		<main class="view-body">
+		<div class="view-body">
 			... view-body ...
-		</main>
+		</div>
 	</div>
 </div>
 ```
@@ -4497,6 +4514,10 @@ Class                   | Description
     outline: 0; }
   .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
     background: rgba(57, 135, 203, 0.2) !important; }
+  .inverted .button--bordered {
+    stroke: transparent;
+    fill: white;
+    color: white; }
   .button--bordered:active {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
@@ -6351,6 +6372,47 @@ Class                    | Description
   margin: 0;
   width: auto;
   height: auto; }
+
+/*doc
+---
+title: Width
+name: widthModifier
+category: Modifier Classes
+---
+Sets element width in percentage.
+
+`span--[width%]`
+
+```html_example
+<p class="span--100" style="background: pink;">100% width</p>
+<p class="span--80" style="background: pink;">80% width</p>
+<p class="span--75" style="background: pink;">75% width</p>
+<p class="span--60" style="background: pink;">60% width</p>
+<p class="span--50" style="background: pink;">50% width</p>
+<p class="span--30" style="background: pink;">30% width</p>
+<p class="span--25" style="background: pink;">25% width</p>
+```
+*/
+.span--100 {
+  width: 100%; }
+
+.span--80 {
+  width: 80%; }
+
+.span--75 {
+  width: 75%; }
+
+.span--60 {
+  width: 60%; }
+
+.span--50 {
+  width: 50%; }
+
+.span--30 {
+  width: 30%; }
+
+.span--25 {
+  width: 25%; }
 
 /*doc
 ---
