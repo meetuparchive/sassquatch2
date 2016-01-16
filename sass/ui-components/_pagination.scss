@@ -33,7 +33,7 @@ category: UI Components
 	@extend %list--reset;
 	@extend %chunk;
 	@include flexParent('row');
-	@include justify-content(space-between);
+	@include justify-content(space-around);
 }
 
 .pagination-page {
