@@ -8,19 +8,19 @@ category: UI Components
 ```html_example
 <ul role="navigation" class="pagination">
 	<li class="pagination-page">
-		<span class="text--hide">No previous pages</span>
+		<span class="visibility--a11yHide">No previous pages</span>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>1</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>1</a>
 	</li>
 	<li class="pagination-page pagination-page--current">
-		<span class="page-label">2 <em class="text--hide">Current page</em></span>
+		<span class="page-label">2 <em class="visibility--a11yHide">Current page</em></span>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>3</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>3</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>4</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>4</a>
 	</li>
 	<li class="pagination-page">
 		<a href="#" class="page-label" rel="next">→</a>
@@ -32,16 +32,16 @@ category: UI Components
 		<a href="#" class="page-label" rel="prev">←</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>6</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>6</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>7</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>7</a>
 	</li>
 	<li class="pagination-page pagination-page--current">
-		<span class="page-label">8 <em class="text--hide">Current page</em></span>
+		<span class="page-label">8 <em class="visibility--a11yHide">Current page</em></span>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>9</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>9</a>
 	</li>
 	<li class="pagination-page">
 		<a href="#" class="page-label" rel="next">→</a>
@@ -53,19 +53,19 @@ category: UI Components
 		<a href="#" class="page-label" rel="prev">←</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>10</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>10</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>11</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>11</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="page-label"><span class="text--hide">Page </span>12</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>12</a>
 	</li>
 	<li class="pagination-page pagination-page--current">
-		<span class="page-label">13 <em class="text--hide">Current page</em></span>
+		<span class="page-label">13 <em class="visibility--a11yHide">Current page</em></span>
 	</li>
 	<li class="pagination-page">
-		<span class="text--hide">End of pages</span>
+		<span class="visibility--a11yHide">End of pages</span>
 	</li>
 </ul>
 ```
