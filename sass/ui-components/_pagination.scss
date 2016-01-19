@@ -7,64 +7,111 @@ category: UI Components
 
 ```html_example
 <ul role="navigation" class="pagination">
-	<li class="pagination-page pagination-page--control">
-		<a href="#" class="link" rel="prev">←</a>
+	<li class="pagination-page">
+		<a href="#" class="page-label"><span class="text--hide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--current">
+		<span class="page-label">2 <em class="text--hide">Current page</em></span>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
-	</li>
-	<li class="pagination-page pagination-page--current inverted">
-		<span>2 <em class="text--hide">Current page</em></span>
+		<a href="#" class="page-label"><span class="text--hide">Page </span>3</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>3</a>
+		<a href="#" class="page-label"><span class="text--hide">Page </span>4</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>4</a>
+		<a href="#" class="page-label" rel="next">→</a>
 	</li>
-	<li class="pagination-page pagination-page--control">
-		<a href="#" class="link" rel="next">→</a>
+</ul>
+
+<ul role="navigation" class="pagination">
+	<li class="pagination-page">
+		<a href="#" class="page-label" rel="pref">&larr;</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="page-label"><span class="text--hide">Page </span>6</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="page-label"><span class="text--hide">Page </span>7</a>
+	</li>
+	<li class="pagination-page pagination-page--current">
+		<span class="page-label">8 <em class="text--hide">Current page</em></span>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="page-label"><span class="text--hide">Page </span>9</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="page-label" rel="next">→</a>
+	</li>
+</ul>
+
+<ul role="navigation" class="pagination">
+	<li class="pagination-page">
+		<a href="#" class="page-label" rel="prev">←</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="page-label"><span class="text--hide">Page </span>10</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="page-label"><span class="text--hide">Page </span>11</a>
+	</li>
+	<li class="pagination-page">
+		<a href="#" class="page-label"><span class="text--hide">Page </span>12</a>
+	</li>
+	<li class="pagination-page pagination-page--current">
+		<span class="page-label">13 <em class="text--hide">Current page</em></span>
 	</li>
 </ul>
 ```
+
+## Page item variants
+A class of `pagination-page` is **required** for pagination list items. The following
+classes are optional variants:
+
+Class                        | Description
+---------------------------- | ------------------------------------------------------------
+`.pagination-page--current`  | use to indicate current page
 */
 
 .pagination {
 	@extend %list--reset;
 	@extend %chunk;
+	@extend %align--center;
 	@include flexParent('row');
 	@include justify-content(space-around);
 }
 
 .pagination-page {
-	@extend %align--center;
-	@extend %valign--middle;
-	border-radius: $defaultRadius;
+	@include flexChild('shrink');
 
-	&:not(.pagination-page--control){
-		@include flexChild('shrink');
+	// for vertical text alignment of `page-label`
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+}
+
+.page-label {
+	display: block;
+	color: $C_textSecondary;
+	border-radius: $space-2;
+	padding: $space-quarter;
+	min-width: $media-xs;
+
+	&:hover,
+	&:active {
+		background: $C_lightGray;
+	}
+
+	.pagination-page--current & {
+		@extend %inverted;
+		background: $C_link;
+	}
+
+	.inverted & {
+		color: $C_textSecondaryInverted;
+	}
+
+	@include atMediaUp(medium) {
 		padding: $space-half;
-		min-width: $media-xs;
-	}
-}
-
-.pagination-page--control {
-	@include flexChild('grow');
-
-	&:first-child {
-		@extend %align--left;
-	}
-	&:last-child {
-		@extend %align--right;
-	}
-}
-
-.pagination-page--current {
-	background: $C_link;
-	font-weight: bold; // @extend %text--bold gives me an error
-	margin: 0 $space-half;
-
-	@include atMediaUp(small) {
-		margin: 0;
 	}
 }
