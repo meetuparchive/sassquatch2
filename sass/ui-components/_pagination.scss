@@ -7,9 +7,12 @@ category: UI Components
 Please review the pagination markup examples carefully;
 the markup patterns presented here encourage accessibility.
 
+Unicode arrows are for demonstration only; in production,
+use a suitable SVG icon for "previous" and "next" controls.
+
 ```html_example
 <ul role="navigation" class="pagination">
-	<li class="pagination-page">
+	<li class="pagination-page pagination-page--control">
 		<span class="visibility--a11yHide">No previous pages</span>
 	</li>
 	<li class="pagination-page">
@@ -24,13 +27,13 @@ the markup patterns presented here encourage accessibility.
 	<li class="pagination-page">
 		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>4</a>
 	</li>
-	<li class="pagination-page">
+	<li class="pagination-page pagination-page--control">
 		<a href="#" class="page-label" rel="next">→</a>
 	</li>
 </ul>
 
 <ul role="navigation" class="pagination">
-	<li class="pagination-page">
+	<li class="pagination-page pagination-page--control">
 		<a href="#" class="page-label" rel="prev">←</a>
 	</li>
 	<li class="pagination-page">
@@ -45,13 +48,13 @@ the markup patterns presented here encourage accessibility.
 	<li class="pagination-page">
 		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>9</a>
 	</li>
-	<li class="pagination-page">
+	<li class="pagination-page pagination-page--control">
 		<a href="#" class="page-label" rel="next">→</a>
 	</li>
 </ul>
 
 <ul role="navigation" class="pagination">
-	<li class="pagination-page">
+	<li class="pagination-page pagination-page--control">
 		<a href="#" class="page-label" rel="prev">←</a>
 	</li>
 	<li class="pagination-page">
@@ -66,7 +69,7 @@ the markup patterns presented here encourage accessibility.
 	<li class="pagination-page pagination-page--current">
 		<span class="page-label">13 <em class="visibility--a11yHide">Current page</em></span>
 	</li>
-	<li class="pagination-page">
+	<li class="pagination-page pagination-page--control">
 		<span class="visibility--a11yHide">End of pages</span>
 	</li>
 </ul>
@@ -78,7 +81,8 @@ classes are optional variants:
 
 Class                        | Description
 ---------------------------- | ------------------------------------------------------------
-`.pagination-page--current`  | use to indicate current page
+`.pagination-page--current`  | used to indicate current page
+`.pagination-page--control`  | used to indicate the page item as a "previous" or "next" control
 */
 
 .pagination {
@@ -90,21 +94,36 @@ Class                        | Description
 }
 
 .pagination-page {
+	min-width: $media-s;
+
 	// set even distribution of space for all items
 	@include flex-grow(0);
 	@include flex-shrink(0);
 
 	// for vertical text alignment of `page-label`
-	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
+
+	// hide all items by default on small sizes;
+	// show everything at `medium` & up
+	display: none;
+	@include atMediaUp(medium) {
+		@include display(flex);
+	}
+}
+
+.pagination-page--current,
+.pagination-page--control {
+	// always show the current page
+	// and prev/next controls
+	@include display(flex);
 }
 
 .page-label {
 	display: block;
 	color: $C_textSecondary;
 	border-radius: $space-2;
-	padding: $space-quarter;
+	padding: $space-half;
 	min-width: $media-xs;
 
 	&:hover,
@@ -119,9 +138,5 @@ Class                        | Description
 
 	.inverted & {
 		color: $C_textSecondaryInverted;
-	}
-
-	@include atMediaUp(medium) {
-		padding: $space-half;
 	}
 }
