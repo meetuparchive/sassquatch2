@@ -54,7 +54,7 @@ $_tabBorder: 4px;
 }
 
 .tabs-tab {
-	color: $C-textTertiary;
+	color: $C_textSecondary;
 	padding: 0;
 	margin: 0 0 0 $space;
 	cursor: pointer;
@@ -65,13 +65,13 @@ $_tabBorder: 4px;
 	}
 
 	.inverted & {
-		color: $C-textTertiaryInverted;
+		color: $C_textSecondaryInverted;
 		&:hover {
-			color: $C-textSecondaryInverted;
+			color: $C_textSecondaryInverted;
 		}
 		&.tabs-tab--selected {
-			color: $C-textPrimaryInverted;
-			border-bottom-color: $C-textPrimaryInverted;
+			color: $C_textPrimaryInverted;
+			border-bottom-color: $C_textPrimaryInverted;
 		}
 	}
 }
