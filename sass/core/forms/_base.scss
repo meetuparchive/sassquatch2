@@ -35,6 +35,10 @@ category: Forms
 
 <div class="row">
 	<div class="row-item chunk">
+		<label for="split1">Favorite number</label>
+		<input id="split0" type="number" />
+	</div>
+	<div class="row-item chunk">
 		<label for="split1">Unicorn name</label>
 		<input id="split1" type="text" placeholder="ie. Fluffy, Resplendent" />
 	</div>
