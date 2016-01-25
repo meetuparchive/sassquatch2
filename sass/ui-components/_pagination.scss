@@ -85,6 +85,8 @@ Class                        | Description
 `.pagination-page--control`  | used to indicate the page item as a "previous" or "next" control
 */
 
+$_bpPagination: medium;
+
 .pagination {
 	@extend %list--reset;
 	@extend %chunk;
@@ -105,9 +107,8 @@ Class                        | Description
 	@include justify-content(center);
 
 	// hide all items by default on small sizes;
-	// show everything at `medium` & up
 	display: none;
-	@include atMediaUp(medium) {
+	@include atMediaUp($_bpPagination) {
 		@include display(flex);
 	}
 }
@@ -130,13 +131,16 @@ Class                        | Description
 	&:active {
 		background: $C_lightGray;
 	}
-
-	.pagination-page--current & {
-		@extend %inverted;
-		background: $C_link;
-	}
-
 	.inverted & {
 		color: $C_textSecondaryInverted;
 	}
+
+	@include atMediaUp($_bpPagination) {
+		.pagination-page--current & {
+			color: $C_textPrimaryInverted;
+			background: $C_link;
+		}
+	}
 }
+
+
