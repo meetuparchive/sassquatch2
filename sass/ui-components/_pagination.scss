@@ -121,6 +121,7 @@ $_bpPagination: medium;
 }
 
 .page-label {
+	@extend %buttonPersonality;
 	@include color-all($C_textSecondary);
 	display: block;
 	color: $C_textSecondary;
