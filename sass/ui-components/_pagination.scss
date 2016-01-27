@@ -121,6 +121,7 @@ $_bpPagination: medium;
 }
 
 .page-label {
+	@include color-all($C_textSecondary);
 	display: block;
 	color: $C_textSecondary;
 	border-radius: $space-2;
@@ -132,7 +133,7 @@ $_bpPagination: medium;
 		background: $C_lightGray;
 	}
 	.inverted & {
-		color: $C_textSecondaryInverted;
+		@include color-all($C_textSecondaryInverted);
 	}
 
 	@include atMediaUp($_bpPagination) {
