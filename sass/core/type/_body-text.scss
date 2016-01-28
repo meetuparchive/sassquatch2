@@ -96,6 +96,20 @@ parent: bodyText
 
 /*doc
 ---
+title: Heavy text
+name: heavyText
+parent: bodyText
+---
+```html_example
+<p class="text--bold">Heavy text is heavy</p>
+```
+*/
+@include _modifier(text, heavy) {
+	font-weight: $W_bold;
+}
+
+/*doc
+---
 title: Bold text
 name: boldText
 parent: bodyText
@@ -105,9 +119,8 @@ parent: bodyText
 ```
 */
 @include _modifier(text, bold) {
-	font-weight: $W_bold;
+	font-weight: $W_medium;
 }
-
 
 /*doc
 ---
