@@ -92,7 +92,7 @@ textarea {
 #{$all-text-inputs},
 textarea,
 select {
-	background-color: $C_textTertiary;
+	background-color: $C_lightGray;
 	border-radius: $defaultRadius;
 	border: 1px solid $C_border;
 	box-shadow: none;
@@ -105,12 +105,6 @@ select {
 		border-color: $C_lightPurple;
 		box-shadow: none;
 		outline: none;
-	}
-
-	.inverted & {
-		background-color: $C_textTertiaryInverted;
-		border-color: $C_borderInverted;
-		color: $C_textPrimaryInverted;
 	}
 
 	.shaded & {
