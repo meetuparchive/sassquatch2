@@ -89,6 +89,7 @@ $_padding: 10px $space $space-half $space;
 	box-shadow: 0 $_shadowWidth 0 0 $C_textSecondary;
 	margin-bottom: $_shadowWidth + 1px;
 	background: $C_mediumGray;
+	height: auto; // override `input` element defaults
 
 	&:active {
 		@include transform(translate(0, $_translate));

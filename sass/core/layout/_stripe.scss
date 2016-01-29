@@ -45,7 +45,6 @@ Class                | Description
 %stripe,
 .stripe {
 	@include standardBorder();
-	overflow: hidden;
 	background-color: $C_contentBG;
 	margin-bottom: 0;
 }

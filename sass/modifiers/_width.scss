@@ -6,6 +6,9 @@ category: Modifier Classes
 ---
 Sets element width in percentage.
 
+**Includes `!important` directive** in order to override
+input attribute selectors.
+
 `span--[width%]`
 
 ```html_example
@@ -28,6 +31,6 @@ Sets element width in percentage.
 	25
 ) {
 	@include _modifier(span, $pct) {
-		width: $pct#{"%"};
+		width: $pct#{"%"} !important;
 	}
 }
