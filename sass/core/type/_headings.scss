@@ -105,22 +105,22 @@ Headline text for when something between display and normal text is needed.
 
 /*doc
 ---
-title: Kicker text
-name: kickerText
+title: Header
+name: header
 parent: headings
 ---
-Graphic text element used to label content. For example, it's used in the redesign to label a MUP with a MUG name.
+Graphic text element used to label content. For example, it's used to display dates.
 
 ```html_example
-<h2 class="text--kicker">Foreign Androids Feeling Frustrated</h2>
-<p class="text--bold">Building with Sassquatch2</p>
+<p class="text--headline">03</p>
+<h2 class="header">Nov</h2>
 ```
 */
-%text--kicker,
-.text--kicker {
-	color: $C_textSecondary;
+%header,
+.header {
+	color: $C_textPrimary;
 	font-size: $font-size-small;
-	font-weight: $W_medium;
+	font-weight: $W_bold;
 	@include i18n-only('en') {
 		text-transform: uppercase;
 	}
@@ -128,23 +128,19 @@ Graphic text element used to label content. For example, it's used in the redesi
 
 /*doc
 ---
-title: Kicker text bold
-name: kickerTextBold
+title: Secondary header
+name: secondaryHeader
 parent: headings
 ---
-Bold variant for `.text--kicker`. For example, it's used to display dates.
+Lighter variant of `header`. For example, it's used in the redesign to label a MUP with a MUG name.
 
 ```html_example
-<p class="text--headline">03</p>
-<h2 class="text--kickerBold">Nov</h2>
+<h2 class="header--secondary">Foreign Androids Feeling Frustrated</h2>
+<p class="text--bold">Building with Sassquatch2</p>
 ```
 */
-%text--kickerBold,
-.text--kickerBold {
-	color: $C_textPrimary;
-	font-size: $font-size-small;
-	font-weight: $W_bold;
-	@include i18n-only('en') {
-		text-transform: uppercase;
-	}
+%header--secondary,
+.header--secondary {
+	color: $C_textSecondary;
+	font-weight: $W_medium;
 }
