@@ -40,7 +40,7 @@ Basic example of a single view in a document:
 
 .view--collection,
 .view--collection .view-body {
-	background-color: $C_collectionBGLight;
+	background-color: $C_collectionBG;
 }
 
 
@@ -103,7 +103,7 @@ Class                      | Description
 .view-head {
 	@include flexChild('shrink', false);
 	box-sizing: border-box;
-	background: $C_accent;
+	background: $C_purple;
 	color: $C_textPrimaryInverted;
 	width: 100%;
 	z-index: map-get($zindex-map, "main-header");

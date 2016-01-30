@@ -87,7 +87,7 @@ Use as a guide for markup.
 		color: $C_textSecondary !important;
 		&:hover,
 		&:active {
-			background-color: $C_overlayPressed;
+			background-color: $C_highlight;
 		}
 	}
 }
