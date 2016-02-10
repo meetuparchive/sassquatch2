@@ -76,6 +76,6 @@ $_tabBorder: 4px;
 	}
 }
 .tabs-tab--selected {
-	color: $C-red;
-	border-bottom: $_tabBorder solid $C-red;
+	color: $C_lightPurple;
+	border-bottom: $_tabBorder solid $C_lighPurple;
 }
