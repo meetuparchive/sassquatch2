@@ -110,3 +110,45 @@ Headline text for when something between display and normal text is needed. Use 
 	text-transform: none !important; // !important overrides lang-specific styles
 }
 
+
+/*doc
+---
+title: Header
+name: header
+parent: headings
+---
+Graphic text element used to label content. For example, used to display dates.
+
+```html_example
+<p class="text--headline">03</p>
+<h2 class="header">Nov</h2>
+```
+*/
+%header,
+.header {
+	color: $C_textPrimary;
+	font-size: $font-size-small;
+	font-weight: $W_bold;
+	@include i18n-only('en') {
+		text-transform: uppercase;
+	}
+}
+
+/*doc
+---
+title: Secondary header
+name: secondaryHeader
+parent: headings
+---
+Lighter variant of `header`. For example, used in the redesign to label a MUP with a MUG name.
+
+```html_example
+<h2 class="header--secondary">Foreign Androids Feeling Frustrated</h2>
+<p class="text--bold">Building with Sassquatch2</p>
+```
+*/
+%header--secondary,
+.header--secondary {
+	color: $C_textSecondary;
+	font-weight: $W_medium;
+}

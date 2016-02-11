@@ -72,6 +72,7 @@ Variable                 | Value
 Variable                | Value
 ----------------------- | --------------------------------
 `$W_normal`              | `400`
+`$W_medium`              | `500`
 `$W_bold`                | `700`
 
 
@@ -87,15 +88,18 @@ $font : "Whitney", helvetica, arial, sans-serif;
 $font--mono : Monaco, "Andale Mono", "Courier New", monospace;
 
 // Sizes
-$font-size-small    : 13px;
-$font-size          : 16px;
+$font-size-small     : 13px;
+$font-size           : 16px;
 $font-size-navbar   : 18px;
 $font-size-display3 : 24px;
-$font-size-display2 : 32px;
-$font-size-display1 : 56px;
+$font-size-headline  : 20px;
+$font-size-tearsheet : 24px;
+$font-size-display2  : 28px;
+$font-size-display1  : 56px;
 
 // Weights
 $W_normal : 400;
+$W_medium : 500;
 $W_bold   : 700;
 
 // Leading
