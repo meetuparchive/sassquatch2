@@ -198,7 +198,7 @@ $_eventStripes: (
 );
 
 .card {
-	@include standardBorder();
+	@include standardBorder('all');
 	box-sizing: border-box;
 	display: block;
 	background: $C_contentBG;
