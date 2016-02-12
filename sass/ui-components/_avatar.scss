@@ -69,7 +69,7 @@ Class                     | Description
 .avatar {
 	@extend %imgFill;
 	position: relative;
-	background-color: $C_collectionBGDark;
+	background-color: $C_collectionBG;
 	background-position: center 42%;
 	color: transparent;
 	display: inline-block;
@@ -137,7 +137,7 @@ Class                     | Description
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
-	background: $C_collectionBGLight;
+	background: $C_collectionBG;
 	border-radius: 999px;
 	box-sizing: border-box;
 	height: $media-s;
