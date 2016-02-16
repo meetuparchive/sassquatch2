@@ -31,7 +31,8 @@ Class          | Description
 -------------- | ----------------------------
 `.text--hide`  | Visually hides text; removes text from document flow
 */
-@include _modifier(text, hide) {
+%text--hide,
+.text--hide {
 	display: block;
 	width: 0;
 	height: 0;
@@ -54,7 +55,8 @@ Class                  | Description
 ---------------------- | ----------------------------
 `.text--strikethrough` | strikethrough/strikeout/line-through
 */
-@include _modifier(text, strikethrough) {
+%text--strikethrough,
+.text--strikethrough {
 	text-decoration: line-through;
 }
 
@@ -70,7 +72,8 @@ Class              | Description
 -------------------| ----------------------------
 `.text--noHyphens` | Don't allow hyphens on line breaks
 */
-@include _modifier(text, noHyphens) {
+%text--noHyphens,
+.text--noHyphens {
 	-webkit-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
@@ -88,7 +91,8 @@ Class              | Description
 ------------------ | ----------------------------
 `.text--wrapNice`  | Auto hyphenation and nice wrapping for running text
 */
-@include _modifier(text, wrapNice) {
+%text--wrapNice,
+.text--wrapNice {
 	@extend %wrapNice;
 }
 
@@ -107,7 +111,8 @@ Class                         | Description
 `.matchLineHeight`            | adds a small amount of top and bottom margin to a non-text element to match line height of nearby text
 
 */
-@include _modifier(wrap, singleLine) {
+%wrap--singleLine,
+.wrap--singleLine {
 	white-space: nowrap !important;
 }
 

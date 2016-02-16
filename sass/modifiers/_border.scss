@@ -13,11 +13,13 @@ Class                   | Description
 `.bordered`             | sets a standard top border AND top padding
 */
 
-@include _modifier(border, top) {
+%border--top,
+.border--top {
 	@include standardBorder();
 }
 
-@include _modifier(border, none) {
+%border--none,
+.border--none {
 	border-width: 0 !important;
 }
 

@@ -15,7 +15,8 @@ Class                   | Description
 */
 @each $display in $display-values {
 	$modifierVariant: str-replace($display, '-block', 'Block'); // camelCase inline-block
-	@include _modifier(display, $modifierVariant) {
+	%display--#{$modifierVariant},
+	.display--#{$modifierVariant} {
 		display: $display;
 	}
 }
@@ -36,7 +37,8 @@ Class                   | Description
 `.flexParent--column`   | sets `display` to `flex` with column orientation for children
 */
 @each $orientation in ('row', 'column') {
-	@include _modifier('flexParent', $orientation) {
+	%flexParent--#{$orientation},
+	.flexParent--#{$orientation} {
 		@include flexParent($orientation);
 	}
 }
