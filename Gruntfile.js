@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -13,6 +13,9 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		bower: grunt.file.readJSON('bower.json'),
 		'sass': {
+			options: {
+				sourceMap: false
+			},
 			dist: {
 				files: {
 					"docs/templates/css/sassquatch.css": "sass/sassquatch.scss"
