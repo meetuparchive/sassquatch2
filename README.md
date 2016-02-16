@@ -26,7 +26,7 @@ Manage installation via bower:
 
 ## Development
 
-Clone this repo and run `./setup.sh`.
+Clone this repo and run `sudo ./setup.sh`.
 
 Code guidelines and standards are [documented on the wiki](https://github.com/meetup/sassquatch2/wiki/Code-standards-&-guidelines)
 
