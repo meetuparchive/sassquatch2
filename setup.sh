@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo "~~~~~~~~ using correct ruby..."
-rbenv install
-
 echo "~~~~~~~~ getting gem system latest..."
 gem update --system
 
