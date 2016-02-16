@@ -19,13 +19,15 @@ Class               | Description
 `.flush--left`      | removes `padding` and `margin` from the left side of an element
 */
 
-@include _modifier(flush, all) {
+%flush--all,
+.flush--all {
 	padding: 0 !important;
 	margin: 0 !important;
 }
 
 @each $direction in (top, right, left, bottom) {
-	@include _modifier(flush, $direction) {
+	%flush--#{$direction},
+	.flush--#{$direction} {
 		padding-#{$direction}: 0 !important;
 		margin-#{$direction}: 0 !important;
 	}

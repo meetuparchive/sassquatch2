@@ -43,14 +43,16 @@ $_verticalAlign-to-selfAlign: (
 );
 
 @each $alignment in (left, right, center) {
-	@include _modifier(align, $alignment) {
+	%align--#{$alignment},
+	.align--#{$alignment} {
 		@include align-self($alignment);
 		text-align: $alignment !important;
 	}
 }
 
 @each $valignment in (baseline, bottom, middle, top) {
-	@include _modifier(valign, $valignment) {
+	%valign--#{$valignment},
+	.valign--#{$valignment} {
 		@include align-self( map-get($_verticalAlign-to-selfAlign, $valignment) );
 		vertical-align: $valignment !important;
 	}

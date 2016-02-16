@@ -43,7 +43,8 @@ $_aspectRatios: (
 
 // other ratio variants
 @each $dividend, $divisor in $_aspectRatios {
-	@include _modifier(keepAspect, #{$divisor}-#{$dividend}) {
+	%keepAspect--#{$divisor}-#{$dividend},
+	.keepAspect--#{$divisor}-#{$dividend} {
 		@include _aspect(percentage($dividend/$divisor))
 	}
 }

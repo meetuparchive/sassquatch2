@@ -24,7 +24,8 @@ Bottom spacing is provided with `chunk`.
 ```
 */
 
-@include _modifier(list, reset) {
+%list--reset,
+.list--reset {
   list-style: none;
   padding-left: 0;
 }

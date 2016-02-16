@@ -38,24 +38,28 @@ Class                    | Description
 
 	// directional
 	@each $direction in (top, right, left, bottom) {
-		@include _modifier($property, $direction) {
+		%#{$property}--#{$direction},
+		.#{$property}--#{$direction} {
 			#{$property}-#{$direction}: $space;
 		}
 	}
 
 	// all sides
-	@include _modifier($property, all) {
+	%#{$property}--all,
+	.#{$property}--all {
 		#{$property}: $space;
 	}
 
 	// reset
-	@include _modifier($property, none) {
+	%#{$property}--none,
+	.#{$property}--none {
 		#{$property}: 0;
 	}
 
 }
 
-@include _modifier(margin, center) {
+%margin--center,
+.margin--center {
 	margin-left: auto;
 	margin-right: auto;
 }

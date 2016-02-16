@@ -51,7 +51,8 @@ parent: bodyText
 <p class="text--hint">This is hint text</p>
 ```
 */
-@include _modifier(text, hint) {
+%text--hint,
+.text--hint {
 	@include color-all($C_textTertiary);
 	.inverted & {
 		@include color-all($C_textTertiaryInverted);
@@ -69,7 +70,8 @@ parent: bodyText
 <p class="text--secondary">Secondary text is secondary</p>
 ```
 */
-@include _modifier(text, secondary) {
+%text--secondary,
+.text--secondary {
 	@include color-all($C_textSecondary);
 	.inverted & {
 		@include color-all($C_textSecondaryInverted)
@@ -87,7 +89,8 @@ parent: bodyText
 <p class="text--tertiary">Tertiary text is tertiary</p>
 ```
 */
-@include _modifier(text, tertiary) {
+%text--tertiary,
+.text--tertiary {
 	@include color-all($C_textTertiary);
 	.inverted & {
 		@include color-all($C_textTertiaryInverted);
@@ -105,7 +108,8 @@ parent: bodyText
 <p class="text--bold">Bold text is bold</p>
 ```
 */
-@include _modifier(text, bold) {
+%text--bold,
+.text--bold {
 	font-weight: $W_bold;
 }
 
@@ -120,7 +124,8 @@ parent: bodyText
 <p class="text--small">Small text is small</p>
 ```
 */
-@include _modifier(text, small) {
+%text--small,
+.text--small {
 	@include _headingDescendant() {
 		font-size: $font-size-small;
 		line-height: $line-height-small;
@@ -143,7 +148,8 @@ to any other element, use `text--mono`.
 <pre>We can safely assume a pre tag on Meetup is also code</pre>
 ```
 */
-@include _modifier(text, mono) {
+%text--mono,
+.text--mono {
 	font-family: $font--mono;
 }
 
@@ -158,7 +164,8 @@ parent: bodyText
 <p class="text--caption">I'm captioning all the things</p>
 ```
 */
-@include _modifier(text, caption) {
+%text--caption,
+.text--caption {
 	@extend %text--small;
 	@include color-all($C_textSecondary);
 	.inverted & {
@@ -176,7 +183,8 @@ parent: bodyText
 <p class="text--error">I'm erroring all the things</p>
 ```
 */
-@include _modifier(text, error) {
+%text--error,
+.text--error {
 	@extend %text--small;
 	@include color-all($C_red);
 }
@@ -193,7 +201,8 @@ Applies form label styling
 	<p class="text--label">I share styling with the `label` element</p>
 ```
 */
-@include _modifier(text, label) {
+%text--label,
+.text--label {
 	@extend %label;
 }
 
@@ -211,7 +220,8 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.
 <p>Miles per hour</p>
 ```
 */
-@include _modifier(text, graphic) {
+%text--graphic,
+.text--graphic {
 	@extend %text--display;
 	line-height: .9;
 }

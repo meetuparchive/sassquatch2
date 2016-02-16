@@ -30,7 +30,8 @@ input attribute selectors.
 	30,
 	25
 ) {
-	@include _modifier(span, $pct) {
+	%span--#{$pct},
+	.span--#{$pct} {
 		width: $pct#{"%"} !important;
 	}
 }
