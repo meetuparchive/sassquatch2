@@ -19,7 +19,27 @@ category: Forms
 </div>
 
 <div class="chunk">
-	<label for="test-textarea"l>Here's an area for your text</label>
+	<fieldset class="stackedInputs">
+		<h3 class="stackedInputs-label">Stacked inputs label</h3>
+		<div class="stackedInputs-input">
+			<label for="stackedInput-input1">Just another label</label>
+			<input id="stackedInput-input1" type="text" placeholder="Title" />
+		</div>
+
+		<div class="stackedInputs-input">
+			<label for="stackedInput-input2">Just another label</label>
+			<input id="stackedInput-input2" type="text" placeholder="Location" />
+		</div>
+
+		<div class="stackedInputs-input">
+			<label for="stackedInput-textarea">Here's an area for your text</label>
+			<textarea id="stackedInput-textarea" placeholder="Description"></textarea>
+		</div>
+	</fieldset>
+</div>
+
+<div class="chunk">
+	<label for="test-textarea">Here's an area for your text</label>
 	<textarea id="test-textarea"></textarea>
 </div>
 
@@ -58,6 +78,7 @@ category: Forms
 %label,
 label {
 	font-size: $font-size-small;
+	font-weight: $W_bold;
 
 	&.required:after {
 		content: "*";
@@ -85,7 +106,7 @@ textarea {
 	display: block;
 	font-family: inherit;
 	font-size: 100%;
-	line-height: 1.5;
+	line-height: $line-height;
 }
 
 %_formTextField,
@@ -102,14 +123,10 @@ select {
 	padding: $space-half;
 	width: 100%;
 	&:focus {
+		background: $C_contentBG;
 		border-color: $C_lightPurple;
 		box-shadow: none;
 		outline: none;
-	}
-
-	.shaded & {
-		// when on an already gray background, don't get gray-er
-		background-color: white;
 	}
 }
 
@@ -126,14 +143,12 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
 	font-style: normal;
 	color: $C_textTertiary;
-	.inverted &{
-		color: $C_textTertiaryInverted;
-	}
 }
 
 // switch labels
 .label--switch {
   font-size: $font-size;
+	font-weight: $W_normal;
   position: relative;
 }
 

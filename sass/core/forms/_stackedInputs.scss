@@ -1,0 +1,42 @@
+.stackedInputs {
+
+	label {
+		@include a11yVisibility('hidden');
+	}
+
+	input,
+	textarea {
+		border-bottom-width: 0;
+		border-radius: 0;
+		margin-bottom: 0;
+
+		&:focus {
+			border-bottom-width: 1px;
+		}
+	}
+
+}
+
+.stackedInputs-label {
+	font-size: $font-size-small;
+	font-weight: $W_bold;
+}
+
+.stackedInputs-input {
+
+	&:first-of-type {
+		input,
+		textarea {
+			border-radius: $defaultRadius $defaultRadius 0 0;
+		}
+	}
+
+	&:last-child {
+		input,
+		textarea {
+			border-bottom-width: 1px;
+			border-radius: 0 0 $defaultRadius $defaultRadius;
+		}
+	}
+
+}

@@ -17,6 +17,10 @@ Error text is set explicitly with `text--error`.
 ```
 
 */
-.field--error {
+input.field--error {
 	border-color: $C_red;
+
+	&:focus {
+		border-color: $C_red;
+	}
 }
