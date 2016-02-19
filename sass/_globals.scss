@@ -125,7 +125,7 @@ _See also: ["Don't compose without a scale"](http://webtypography.net/3.1.1)_
 ---
 title: Block
 name: globBlock
-parent: globScale
+category: Sass Globals
 ---
 "Block" variables contain size values in pixels starting from
 `48px`, moving up the `1:1.5` type scale.
@@ -154,7 +154,7 @@ $block-7         : 544px;
 ---
 title: Space
 name: globSpace
-parent: globScale
+category: Sass Globals
 ---
 "Space" variables contain size values in pixels starting from
 `16px`, moving up the `1:1.5` type scale.
@@ -191,7 +191,7 @@ $space-quarter   : $space/4;
 ---
 title: Media
 name: globMedia
-parent: globScale
+category: Sass Globals
 ---
 Elements like images, icons, avatars, and illustrations
 can be thought of as "media". The following variables

@@ -1,16 +1,8 @@
 /*doc
 ---
-title: Text Modifiers
-name: textMod
-category: Modifier Classes
----
-*/
-
-/*doc
----
 title: Hiding Text
 name: textHideUtil
-parent: textMod
+category: Text Modifiers
 ---
 To hide just the text node of an element, use
 the `text--hide` modifier.
@@ -47,7 +39,7 @@ Class          | Description
 ---
 title: Text decoration
 name: textDecoration
-parent: textMod
+category: Text Modifiers
 ---
 Basic text decoration
 
@@ -64,7 +56,7 @@ Class                  | Description
 ---
 title: No Hyphens
 name: textNoHyphens
-parent: textMod
+category: Text Modifiers
 ---
 Don't allow hyphens on line breaks
 
@@ -83,7 +75,7 @@ Class              | Description
 ---
 title: Nice Hyphenation
 name: wrapNiceUtil
-parent: textMod
+category: Text Modifiers
 ---
 Enables breaking all words and auto-hyphenation.
 
@@ -100,7 +92,7 @@ Class              | Description
 ---
 title: Type wrap/whitespace
 name: typespaceMod
-parent: textMod
+category: Text Modifiers
 ---
 Sets type wrapping, witespace, and overflow properties on element
 
