@@ -1,0 +1,35 @@
+/*doc
+---
+title: Token
+name: token
+category: UI Components
+---
+Label for a small piece of information. Can be a link or just for display
+
+## Just for display
+```html_example
+<span class="token">Hiking</span>
+```
+
+## Linked
+```html_example
+<a href="#" class="token token--link">Hiking</a>
+```
+*/
+.token {
+	@extend %buttonPersonality;
+	@extend %buttonBase;
+	@extend %button--small;
+	background: $C_lightGray;
+	color: $C_textSecondary;
+	cursor: default;
+	display: inline-block;
+	margin: $space-quarter 0;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.token--link {
+	background: $C_contentBG;
+	color: $C_link;
+	cursor: pointer;
+}
