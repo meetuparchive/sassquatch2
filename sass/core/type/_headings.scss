@@ -35,25 +35,13 @@ h1 {
 	color: $C_textPrimaryInverted;
 	font-size: $font-size;
 	font-weight: $W_bold;
-	line-height: 1.25;
+	line-height: $line-height-small;
 }
 
 
-// H2
-// Used to divide sections
-h2 {
-	color: $C_accent;
-	font-size: $font-size;
-	font-weight: $W_bold;
-	line-height: 1.5;
-	@include i18n-only('en') {
-		text-transform: uppercase;
-	}
-}
-
-// H3 - H6
+// H2 - H6
 // We're sticking to limited visual hierarchy
-h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
 	color: $C_textPrimary;
 	font-size: $font-size;
 	font-weight: $W_normal;
@@ -79,8 +67,8 @@ Display text for header hero elements.
 .text--display {
 	color: $C_textPrimary;
 	font-size: $font-size-display2;
-	font-weight: normal;
-	line-height: 1.25;
+	font-weight: $W_bold;
+	line-height: $line-height-small;
 	.inverted &{
 		color: $C_textPrimaryInverted;
 	}
@@ -98,7 +86,7 @@ title: Headline text
 name: headlineText
 parent: headings
 ---
-Headline text for when something between display and normal text is needed. Use sparingly and with caution.
+Headline text for when something between display and normal text is needed.
 
 ```html_example
 <h2 class="text--headline">If display text is Batman, I'm Robin</h2>
@@ -106,10 +94,37 @@ Headline text for when something between display and normal text is needed. Use 
 */
 %text--headline,
 .text--headline {
-	@extend %text--display;
-	text-transform: none !important; // !important overrides lang-specific styles
+	color: $C_textPrimary;
+	font-size: $font-size-headline;
+	font-weight: $W_bold;
+	line-height: $line-height;
+	.inverted &{
+		color: $C_textPrimaryInverted;
+	}
 }
 
+/*doc
+---
+title: Header text
+name: headerText
+parent: headings
+---
+Graphic text element used to label content. For example, used to display dates.
+
+```html_example
+<p class="text--headline">03</p>
+<h2 class="text--header">Nov</h2>
+```
+*/
+%text--header,
+.text--header {
+	color: $C_textPrimary;
+	font-size: $font-size-small;
+	font-weight: $W_bold;
+	@include i18n-only('en') {
+		text-transform: uppercase;
+	}
+}
 
 /*doc
 ---
@@ -136,8 +151,8 @@ Graphic text element used to label content. For example, used to display dates.
 
 /*doc
 ---
-title: Secondary header
-name: secondaryHeader
+title: Secondary header text
+name: secondaryHeaderText
 parent: headings
 ---
 Lighter variant of `header`. For example, used in the redesign to label a MUP with a MUG name.

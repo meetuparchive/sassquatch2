@@ -61,9 +61,8 @@ Variable                 | Value
 ------------------------ | --------------------------------
 `$font-size-small`       | `13px`
 `$font-size`             | `16px`
-`$font-size-navbar`      | `18px`
-`$font-size-display3`    | `24px`
-`$font-size-display2`    | `32px`
+`$font-size-headline`    | `20px`
+`$font-size-display2`    | `28px`
 `$font-size-display1`    | `56px`
 
 
@@ -80,8 +79,8 @@ Variable                | Value
 
 Variable                | Value
 ----------------------- | --------------------------------
-`$line-height`          | `1.5`
-`$line-height-small`    | `1.5`
+`$line-height`          | `1.25`
+`$line-height-small`    | `1.25`
 
 */
 $font : "Whitney", helvetica, arial, sans-serif;
@@ -103,8 +102,8 @@ $W_medium : 500;
 $W_bold   : 700;
 
 // Leading
-$line-height       : 1.5;
-$line-height-small : 1.5;
+$line-height       : 1.25;
+$line-height-small : 1;
 
 
 /*doc
