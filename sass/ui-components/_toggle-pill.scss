@@ -6,7 +6,7 @@ category: UI Components
 ---
 Checkbox form elements styled as toggle buttons.
 
-## "unchecked" state
+## Token toggle "unchecked" state
 ```html_example
 <div class="toggleButton">
 	<input class="toggleButton-input" type="checkbox" name="topic-dining" id="topic-dining" value="ToggleBtn" />
@@ -14,11 +14,82 @@ Checkbox form elements styled as toggle buttons.
 </div>
 ```
 
-## "checked" state
+## Token toggle "checked" state
 ```html_example
 <div class="toggleButton">
 	<input checked class="toggleButton-input" type="checkbox" name="topic-hiking" id="topic-hiking" value="ToggleBtn" />
 	<label class="toggleButton-label" for="topic-hiking">Hiking</label>
+</div>
+```
+
+## Topic token toggle "unchecked" state
+```html_example
+<div class="toggleButton">
+	<input class="toggleButton-input" type="checkbox" name="topic-dining2" id="topic-dining2" value="ToggleBtn" />
+	<label class="toggleButton-label" for="topic-dining2">
+		Dining Out
+		<span class="toggleButton-icon toggleButton-icon--inactive">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve" style="vertical-align: middle;">
+			<path d="M13.318,6.928H9.072V2.682C9.072,2.091,8.591,1.61,8,1.61c-0.591,0-1.072,0.481-1.072,1.072v4.246H2.682
+				C2.091,6.928,1.61,7.409,1.61,8s0.481,1.072,1.072,1.072h4.246v4.246c0,0.591,0.48,1.072,1.072,1.072
+				c0.591,0,1.072-0.481,1.072-1.072V9.072h4.246c0.591,0,1.072-0.481,1.072-1.072S13.909,6.928,13.318,6.928"/>
+			</svg>
+		</span>
+		<span class="toggleButton-icon toggleButton-icon--active">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve" style="vertical-align: middle;">
+			<path d="M14.665,5.982c-0.034-1.833-1.585-3.316-3.488-3.316c-1.051,0-1.977,0.522-2.719,1.241L8.183,4.173
+				C8.138,4.218,8.069,4.241,7.999,4.245C7.93,4.241,7.862,4.218,7.815,4.173L7.541,3.908C6.799,3.189,5.873,2.667,4.822,2.667
+				c-1.903,0-3.454,1.482-3.487,3.316c-0.01,0.069,0.025,0.52,0.051,0.638c0.082,0.458,0.26,0.884,0.513,1.259
+				c0.313,0.528,2.198,2.399,2.198,2.399l3.252,2.803h0.002c0.169,0.156,0.396,0.252,0.648,0.252l0,0l0,0l0,0l0,0l0,0
+				c0.252,0,0.48-0.096,0.65-0.252l0,0l3.254-2.803c0,0,1.885-1.871,2.198-2.399c0.251-0.375,0.43-0.801,0.512-1.259
+				C14.638,6.502,14.675,6.051,14.665,5.982z"/>
+			</svg>
+		</span>
+	</label>
+</div>
+```
+
+## Topic token toggle "checked" state
+```html_example
+<div class="toggleButton">
+	<input checked class="toggleButton-input" type="checkbox" name="topic-hiking2" id="topic-hiking2" value="ToggleBtn" />
+
+	<label class="toggleButton-label" for="topic-hiking2">
+		Hiking
+		<span class="toggleButton-icon toggleButton-icon--inactive">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve" style="vertical-align: middle;">
+			<path d="M13.318,6.928H9.072V2.682C9.072,2.091,8.591,1.61,8,1.61c-0.591,0-1.072,0.481-1.072,1.072v4.246H2.682
+				C2.091,6.928,1.61,7.409,1.61,8s0.481,1.072,1.072,1.072h4.246v4.246c0,0.591,0.48,1.072,1.072,1.072
+				c0.591,0,1.072-0.481,1.072-1.072V9.072h4.246c0.591,0,1.072-0.481,1.072-1.072S13.909,6.928,13.318,6.928"/>
+			</svg>
+		</span>
+		<span class="toggleButton-icon toggleButton-icon--active">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve" style="vertical-align: middle;">
+			<path d="M14.665,5.982c-0.034-1.833-1.585-3.316-3.488-3.316c-1.051,0-1.977,0.522-2.719,1.241L8.183,4.173
+				C8.138,4.218,8.069,4.241,7.999,4.245C7.93,4.241,7.862,4.218,7.815,4.173L7.541,3.908C6.799,3.189,5.873,2.667,4.822,2.667
+				c-1.903,0-3.454,1.482-3.487,3.316c-0.01,0.069,0.025,0.52,0.051,0.638c0.082,0.458,0.26,0.884,0.513,1.259
+				c0.313,0.528,2.198,2.399,2.198,2.399l3.252,2.803h0.002c0.169,0.156,0.396,0.252,0.648,0.252l0,0l0,0l0,0l0,0l0,0
+				c0.252,0,0.48-0.096,0.65-0.252l0,0l3.254-2.803c0,0,1.885-1.871,2.198-2.399c0.251-0.375,0.43-0.801,0.512-1.259
+				C14.638,6.502,14.675,6.051,14.665,5.982z"/>
+			</svg>
+		</span>
+	</label>
 </div>
 ```
 */
@@ -32,18 +103,37 @@ Checkbox form elements styled as toggle buttons.
 .toggleButton-label {
 	@extend %buttonPersonality;
 	@extend %buttonBase;
-	@extend %button--bordered;
 	@extend %button--small;
 	margin: 0;
+}
+
+.toggleButton-icon--inactive {
+	display: inline-block;
+}
+
+.toggleButton-icon--active {
+	display: none;
 }
 
 .toggleButton-input {
 	display: none;
 	&:checked + .toggleButton-label {
 		@include animate--bounceInSubtle();
-		background: $C_lightPurple !important;
+		@include color-all($C_textPrimaryInverted);
+		background: $C_success !important;
 		border-color: transparent;
-		color: $C_textPrimaryInverted;
 		font-weight: $W_bold;
+
+		.toggleButton-icon--active {
+			display: inline-block;
+		}
+
+		.toggleButton-icon--inactive {
+			display: none;
+		}
 	}
+}
+
+.toggleButton-icon {
+	margin-left: $space-quarter;
 }
