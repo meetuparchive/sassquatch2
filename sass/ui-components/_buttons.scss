@@ -159,6 +159,7 @@ Class                   | Description
 // Icon buttons
 //
 $_iconGutter: $space/2;
+%button--icon,
 .button--icon {
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
