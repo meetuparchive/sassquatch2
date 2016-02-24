@@ -59,9 +59,8 @@ Adds a pseudo-element gradient
 ```
 */
 $C_scrimGradient: #0F141F; // move to swatches?
-@mixin textProtectionScrim($placement: 'top') {
+@mixin textProtectionScrim($placement: 'bottom') {
 	&:before {
-		@include linear-gradient(transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 25%, transparentize($C_scrimGradient, .1) 100%);
 		content: '';
 		display: block;
 		height: 100%;
@@ -70,10 +69,12 @@ $C_scrimGradient: #0F141F; // move to swatches?
 		z-index: 0;
 		left: 0;
 
-		@if $placement == 'top' {
-			top: 0;
-		} @else {
+		@if $placement == 'bottom' {
+			@include linear-gradient(180deg, transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 25%, transparentize($C_scrimGradient, .1) 100%);
 			bottom: 0;
+		} @else {
+			@include linear-gradient(0deg, transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 25%, transparentize($C_scrimGradient, .3) 100%);
+			top: 0;
 		}
 	}
 }
