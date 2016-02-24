@@ -25,17 +25,42 @@ Disables user-select, sets cursor, and resets text-decoration.
 	text-decoration: none !important;
 }
 
+
+/*doc
+---
+title: Button color mixin
+name: buttonColorMixin
+parent: button
+---
+Sets color properties for a button
+
+```
+.button--myOrangeButton {
+	@include buttonColor(orange);
+}
+```
+*/
+@mixin buttonColor($bgColor: $C_purple) {
+	@include color-all(getPrimaryTextColor($bgColor), true);
+	background: $bgColor;
+	border-color: $bgColor;
+
+	&:hover,
+	&:active,
+	&:focus {
+		@if isDark($bgColor) {
+			background: lighten($bgColor, 10%);
+		} @else {
+			background: darken($bgColor, 8%);
+		}
+	}
+}
+
+$btn-hover: lighten 10% !default;
+$btn-hover-opacity: opacify .1 !default;
+$btn-border: 1px solid !default;
 @mixin buttonBase() { // for specificity accuracy in transitional buttons
-	@include transition(background .15s);
-	@include standardBorder('all');
-	@include user-select(none);
-	box-sizing: border-box;
-	-webkit-appearance: none;
-	background: transparent;
-	border-radius: $defaultRadius;
-	border: $btn-border $C_border;
-	cursor: pointer;
-	display: inline-block;
+	border: $btn-border $C_border; // LATER
 	font-size: $font-size;
 	font-weight: $W_bold;
 	margin: 0;

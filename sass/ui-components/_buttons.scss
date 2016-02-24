@@ -1,10 +1,3 @@
-// TODO: this needs a lot of mixin and selector cleanup
-// 1) avoid outputting selectors from mixins
-// 2) create some clarity around modifiers
-// 3) clean up selectors generated in button color mixin (and see #1)
-// 4) ???
-// 5) PROFIT
-
 /*doc
 ---
 title: Buttons
@@ -50,10 +43,27 @@ Class                   | Description
 `.button--icon`         | button with icon
 */
 
+%_buttonBase {
+	@extend %buttonPersonality;
+	@include transition(background .15s);
+	@include display(inline-flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	border-radius: $defaultRadius;
+	background: transparent;
+	font-size: $font-size;
+	font-weight: $W_bold;
+	text-align: center;
+	border-width: 0;
+	height: $block;
+	padding: 0 $space;
+	line-height: $line-height;
+}
 
-%button,
 .button {
-	@extend %buttonBase;
+	@extend %_buttonBase;
 	@include color-all($C_textPrimary);
 	background: $C_contentBG;
 
@@ -67,28 +77,7 @@ Class                   | Description
 
 %button--primary,
 .button--primary {
-	@include color-all($C_textPrimaryInverted, true);
-	background: $C_button;
-	border-color: $C_button;
-
-	&:hover,
-	&:active,
-	&:focus {
-		background: call(nth($btn-hover, 1), $C_button, nth($btn-hover, 2));
-	}
-
-	&.button--contrast { // TODO (mikep): look into ways to do this without chaining classes
-		@include color-all($C_textPrimary, true);
-		background: $C_contentBG;
-		border-color: $C_contentBG;
-
-		&:hover,
-		&:active,
-		&:focus {
-			background: transparentize($C_contentBG, .1);
-		}
-	}
-
+	@include buttonColor($C_purple);
 }
 
 %button--contrast,
