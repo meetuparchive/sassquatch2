@@ -28,6 +28,17 @@ category: UI Components
 <button class="button button--disabled" href="#">Stop</button>
 <button class="button button--primary" disabled>Can't touch this</button>
 <input type="submit" class="button button--bordered" value="Disabled" disabled />
+<br />
+<hr />
+<br />
+<div class="row">
+	<div class="row-item">
+		<input type="text" placeholder="Field by a button" />
+	</div>
+	<div class="row-item row-item--shrink">
+		<button class="button button--primary">Button by a field</button>
+	</div>
+</div>
 ```
 
 #### Button variants
@@ -57,7 +68,7 @@ Class                   | Description
 	font-weight: $W_bold;
 	text-align: center;
 	border-width: 0;
-	height: $block;
+	height: $space-3;
 	padding: 0 $space;
 	line-height: $line-height;
 }
