@@ -25,6 +25,38 @@ Disables user-select, sets cursor, and resets text-decoration.
 	text-decoration: none !important;
 }
 
+/*doc
+---
+title: Button base placeholder
+name: buttonBasePlaceholder
+parent: buttons
+---
+Applies base button styles
+
+```
+@extend %buttonBase;
+```
+*/
+%buttonBase {
+	@extend %buttonPersonality;
+	@include display(inline-flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
+	@include transition(background .15s);
+	@include standardBorder(all);
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	vertical-align: middle;
+	border-radius: $defaultRadius;
+	background: transparent;
+	font-size: $font-size;
+	font-weight: $W_bold;
+	min-height: $space-3;
+	padding: 0 $space;
+	line-height: $line-height;
+}
+
 
 /*doc
 ---

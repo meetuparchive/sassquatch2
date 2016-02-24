@@ -91,28 +91,8 @@ Class                   | Description
 `.button--icon`         | button with icon (see example for markup pattern)
 */
 
-%_buttonBase {
-	@extend %buttonPersonality;
-	@include display(inline-flex);
-	@include flex-direction(column);
-	@include justify-content(center);
-	@include align-items(center);
-	@include transition(background .15s);
-	@include standardBorder(all);
-	box-sizing: border-box;
-	-webkit-appearance: none;
-	vertical-align: middle;
-	border-radius: $defaultRadius;
-	background: transparent;
-	font-size: $font-size;
-	font-weight: $W_bold;
-	min-height: $space-3;
-	padding: 0 $space;
-	line-height: $line-height;
-}
-
 .button {
-	@extend %_buttonBase;
+	@extend %buttonBase;
 	@include color-all($C_textPrimary);
 	background: $C_contentBG;
 
@@ -148,14 +128,14 @@ Class                   | Description
 .button[disabled],
 .button--disabled {
 	@include color-all($C_textSecondary, true);
-	border: $btn-border $C_border;
+	@include standardBorder(all);
 	background: transparentize($C_mediumGray, .88) !important;
 	cursor: default;
 
 	&,
 	&:hover,
 	&:active {
-		border: $btn-border $C_border;
+		@include standardBorder(all);
 	}
 
 }
