@@ -8,51 +8,28 @@ Standard display for dates.
 
 #### Tearsheet example
 ```html_example
-<div class="tearsheet">13</div>
-```
-
-#### Tearsheet with date detail
-```html_example
-<div class="dateTime">
-	<div class="dateTime-tearsheet">13</div>
-	<p class="dateTime-detail">Tomorrow at 7:00 PM</p>
-</div>
+<time datetime="2016-12-31" class="tearsheet">
+	<span class="tearsheet-date">13</span>
+	<span class="tearsheet-month">Jan</span>
+</time>
 ```
 */
 
-%tearsheet,
 .tearsheet {
-	display: block;
-	background: $C_contentBG;
-	border: 1px solid $C_border;
-	box-sizing: border-box;
-	color: $C_textPrimary;
-	font-size: $font-size-small;
-	font-weight: $W_bold;
-	height: $space-2;
-	padding-top: $space-quarter;
-	position: relative;
-	text-align: center;
-	width: $space-2;
-
-	&:before {
-	 background: $C_accent;
-	 content: '';
-	 display: block;
-	 height: 6px;
-	 left: -1px;
-	 position: absolute;
-	 right: -1px;
-	 top: -1px;
-	}
-}
-
-// dateTime
-.dateTime-tearsheet,
-.dateTime-detail {
 	display: inline-block;
+	text-align: center;
 }
-.dateTime-tearsheet {
-	@extend %tearsheet;
-	margin-right: $space-half;
+
+.tearsheet-date,
+.tearsheet-month {
+	display: block;
+}
+
+.tearsheet-date {
+	font-size: $font-size-tearsheet;
+	font-weight: $W_bold;
+}
+
+.tearsheet-month {
+	@extend %header;
 }

@@ -83,7 +83,7 @@ label {
 	&.required:after {
 		content: "*";
 		color: $C_red;
-		font-size: $font-size-navbar;
+		font-size: $font-size-headline;
 		line-height: 0;
 		margin-left: $space/4;
 		position: relative;
