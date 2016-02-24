@@ -62,7 +62,7 @@ category: UI Components
 		<h3>Disabled buttons</h3>
 		<button class="button button--disabled" href="#">Stop</button>
 		<button class="button button--primary" disabled>Can't touch this</button>
-		<input type="submit" class="button button--bordered" value="Disabled" disabled />
+		<input type="submit" class="button" value="Disabled" disabled />
 	</li>
 	<li class="list-item chunk">
 		<h3>Buttons with form fields</h3>
@@ -100,13 +100,13 @@ Class                   | Description
 	@include transition(background .15s);
 	@include standardBorder(all);
 	box-sizing: border-box;
-	vertical-align: middle;
 	-webkit-appearance: none;
+	vertical-align: middle;
 	border-radius: $defaultRadius;
 	background: transparent;
 	font-size: $font-size;
 	font-weight: $W_bold;
-	height: $space-3;
+	min-height: $space-3;
 	padding: 0 $space;
 	line-height: $line-height;
 }
@@ -141,33 +141,6 @@ Class                   | Description
 	background: transparent !important;
 }
 
-//
-// Button border modifiers
-//
-%button--bordered {
-	@include color-all($C_button);
-	background: transparent;
-	border-color: $C_button;
-	font-weight: $W_bold;
-	&:hover,
-	&:active,
-	&:focus {
-		border: $btn-border $C_button;
-		background: transparentize($C_button, .8);
-	}
-}
-
-// %button--borderless,
-// .button--borderless {
-// 	border: none;
-
-// 	&:hover,
-// 	&:active,
-// 	&:focus {
-// 		border: none;
-// 	}
-
-// }
 
 //
 // Disabled buttons
@@ -193,7 +166,7 @@ Class                   | Description
 %button--small,
 .button--small {
 	font-size: $font-size-small;
-	height: $space-2;
+	min-height: $space-2;
 	padding: 0 $space-half;
 }
 
@@ -239,5 +212,13 @@ $_iconGutter: $space/2;
 }
 
 .button--small .button-icon {
-	height: $font-size;
+	min-height: $font-size;
+}
+
+//
+// DEPRECATED
+// .button--borderless => .button--contrast
+//
+.button--borderless {
+	@extend %button--contrast;
 }
