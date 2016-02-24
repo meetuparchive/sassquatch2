@@ -55,22 +55,3 @@ Sets color properties for a button
 		}
 	}
 }
-
-$btn-hover: lighten 10% !default;
-$btn-hover-opacity: opacify .1 !default;
-$btn-border: 1px solid !default;
-@mixin buttonBase() { // for specificity accuracy in transitional buttons
-	border: $btn-border $C_border; // LATER
-	font-size: $font-size;
-	font-weight: $W_bold;
-	margin: 0;
-	padding: $space-half $space;
-	text-align: center;
-	text-decoration: none !important;
-	&:focus {
-		outline: 0;
-	}
-}
-%buttonBase {
-	@include buttonBase;
-}
