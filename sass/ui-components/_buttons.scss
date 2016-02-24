@@ -8,37 +8,57 @@ category: UI Components
 #### Example
 
 ```html_example
-<button class="button" href="#">Button</button>
-<button class="button button--primary" href="#">Primary Button</button>
-<button class="button button--icon" href="#">
-	<span class="button-label">Button with right Icon</span>
-	<span class="button-icon">X</span>
-</button>
-<button class="button button--icon button--primary" href="#">
-	<span class="button-icon">X</span>
-	<span class="button-label">Primary button with left Icon</span>
-</button>
-<button class="button button--primary button--contrast" href="#">Contrast Button</button>
-<button class="button button--small" href="#">Small Button</button>
-<button class="button button--bordered button--fullWidth" href="#">Full width button</button>
-<button class="button button--primary button--icon button--fullWidth" href="#">
-	<span class="button-icon">ヘ(◕。◕ヘ)</span>
-	<span class="button-label">Full width primary button with left Icon</span>
-</button>
-<button class="button button--disabled" href="#">Stop</button>
-<button class="button button--primary" disabled>Can't touch this</button>
-<input type="submit" class="button button--bordered" value="Disabled" disabled />
-<br />
-<hr />
-<br />
-<div class="row">
-	<div class="row-item">
-		<input type="text" placeholder="Field by a button" />
-	</div>
-	<div class="row-item row-item--shrink">
-		<button class="button button--primary">Button by a field</button>
-	</div>
-</div>
+<ul class="list">
+	<li class="list-item chunk">
+		<h3>Primary and secondary buttons</h3>
+		<button class="button" href="#">Button</button>
+		<button class="button button--primary" href="#">Primary Button</button>
+	</li>
+	<li class="list-item chunk">
+		<h3>Small buttons</h3>
+		<button class="button button--small" href="#">Small Button</button>
+		<button class="button button--primary button--small" href="#">Small Button</button>
+		<button class="button button--contrast button--small" href="#">Small Button</button>
+	</li>
+	<li class="list-item chunk">
+		<h3>Full width button</h3>
+		<button class="button button--fullWidth" href="#">Wide load</button>
+		<button class="button button--primary button--fullWidth" href="#">Wide load</button>
+		<button class="button button--contrast button--fullWidth" href="#">Wide load</button>
+	</li>
+	<li class="list-item chunk">
+		<h3>Icon buttons</h3>
+		<button class="button button--icon" href="#">
+			<span class="button-label">Button with right Icon</span>
+			<span class="button-icon">X</span>
+		</button>
+		<button class="button button--icon button--primary" href="#">
+			<span class="button-icon">X</span>
+			<span class="button-label">Primary button with left Icon</span>
+		</button>
+		<button class="button button--primary button--icon button--fullWidth" href="#">
+			<span class="button-icon">ヘ(◕。◕ヘ)</span>
+			<span class="button-label">Full width primary button with left Icon</span>
+		</button>
+	</li>
+	<li class="list-item chunk">
+		<h3>Disabled buttons</h3>
+		<button class="button button--disabled" href="#">Stop</button>
+		<button class="button button--primary" disabled>Can't touch this</button>
+		<input type="submit" class="button button--bordered" value="Disabled" disabled />
+	</li>
+	<li class="list-item chunk">
+		<h3>Buttons with form fields</h3>
+		<div class="row">
+			<div class="row-item">
+				<input type="text" placeholder="Field by a button" />
+			</div>
+			<div class="row-item row-item--shrink">
+				<button class="button button--primary">Button by a field</button>
+			</div>
+		</div>
+	</li>
+</ul>
 ```
 
 #### Button variants
@@ -60,6 +80,7 @@ Class                   | Description
 	@include display(inline-flex);
 	@include flex-direction(column);
 	@include justify-content(center);
+	@include standardBorder(all);
 	box-sizing: border-box;
 	-webkit-appearance: none;
 	border-radius: $defaultRadius;
@@ -67,7 +88,6 @@ Class                   | Description
 	font-size: $font-size;
 	font-weight: $W_bold;
 	text-align: center;
-	border-width: 0;
 	height: $space-3;
 	padding: 0 $space;
 	line-height: $line-height;
@@ -162,7 +182,6 @@ Class                   | Description
 
 %button--fullWidth,
 .button--fullWidth {
-	display: block;
 	width: 100%;
 }
 
