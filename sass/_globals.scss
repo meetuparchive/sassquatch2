@@ -316,6 +316,7 @@ $inputs-list: 'input[type="email"]',
 				  'input[type="tel"]',
 				  'input[type="text"]',
 				  'input[type="url"]',
+			  	  'input:not([type])',
 
 				  // Webkit & Gecko may change the display of these in the future
 				  'input[type="color"]',
