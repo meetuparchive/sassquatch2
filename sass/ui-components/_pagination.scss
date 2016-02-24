@@ -121,11 +121,14 @@ $_bpPagination: medium;
 }
 
 .page-label {
-	display: block;
+	@extend %buttonBase;
 	color: $C_textSecondary;
-	border-radius: $space-2;
-	padding: $space-half;
-	min-width: $media-xs;
+	padding: 0;
+	min-width: $media-s;
+	min-height: $media-s;
+	font-weight: $W_normal;
+	border-radius: $media-xl;
+	border-width: 0;
 
 	&:hover,
 	&:active {
@@ -138,7 +141,7 @@ $_bpPagination: medium;
 	@include atMediaUp($_bpPagination) {
 		.pagination-page--current & {
 			color: $C_textPrimaryInverted;
-			background: $C_link;
+			background: $C_teal;
 		}
 	}
 }
