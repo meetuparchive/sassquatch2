@@ -39,7 +39,6 @@ Use as a guide for markup.
 
 	.hasJS & {
 		@extend %shadow;
-		border: 1px solid $C_border;
 		border-radius: $defaultRadius;
 		background-color: $C_white;
 		display: none;
