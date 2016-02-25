@@ -22,7 +22,7 @@ category: UI Components
 			<button class="button button--primary button--small" href="#">Small Button</button>
 		</div>
 		<div class="chunk">
-			<span>Inline text with button</span><button class="button button--primary button--small margin--left" href="#">Inline button with text</button>
+			<span class="text--small">Inline text with button</span><button class="button button--primary button--small margin--left" href="#">Inline button with text</button>
 		</div>
 	</li>
 	<li class="list-item chunk">
@@ -129,6 +129,7 @@ Class                   | Description
 .button--disabled {
 	@include color-all($C_textSecondary, true);
 	@include standardBorder(all);
+	outline: none;
 	background: transparentize($C_mediumGray, .88) !important;
 	cursor: default;
 
