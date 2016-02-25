@@ -13,4 +13,5 @@ node_modules/
 .grunt/
 docs/build/
 docs/templates/css/sassquatch.css
+docs/templates/css/font/*.ttf
 !README*
