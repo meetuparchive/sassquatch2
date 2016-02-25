@@ -137,7 +137,7 @@ $_bpPagination: medium;
 	}
 
 	.inverted & {
-		color: $C_textSecondaryInverted;
+		@include color-all($C_textSecondaryInverted);
 	}
 
 	@include atMediaUp($_bpPagination) {
