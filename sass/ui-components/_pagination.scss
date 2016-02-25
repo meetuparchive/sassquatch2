@@ -141,7 +141,7 @@ $_bpPagination: medium;
 	@include atMediaUp($_bpPagination) {
 		.pagination-page--current & {
 			color: $C_textPrimaryInverted;
-			background: $C_teal;
+			background: $C_contentBGInverted;
 		}
 	}
 }
