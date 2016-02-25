@@ -83,7 +83,7 @@ Variable                | Value
 `$line-height-small`    | `1.25`
 
 */
-$font : "Whitney", helvetica, arial, sans-serif;
+$font : "Graphik", helvetica, arial, sans-serif;
 $font--mono : Monaco, "Andale Mono", "Courier New", monospace;
 
 // Sizes
@@ -98,8 +98,8 @@ $font-size-display1  : 56px;
 
 // Weights
 $W_normal : 400;
-$W_medium : 500;
-$W_bold   : 700;
+$W_medium : 600;
+$W_bold   : 800;
 
 // Leading
 $line-height       : 1.25;
@@ -387,13 +387,6 @@ $defaultRadius: 3px;
 // ---------------------------
 // TODO: move to swatches?
 $C_accentDark            : darken($C_red, 8%);
-
-// ---------------------------
-// BUTTONS
-// ---------------------------
-	$btn-hover: lighten 10% !default;
-	$btn-hover-opacity: opacify .1 !default;
-	$btn-border: 1px solid !default;
 
 // ---------------------------
 // DISPLAY

@@ -25,27 +25,87 @@ Disables user-select, sets cursor, and resets text-decoration.
 	text-decoration: none !important;
 }
 
-@mixin buttonBase() { // for specificity accuracy in transitional buttons
+/*doc
+---
+title: Button base placeholder
+name: buttonBasePlaceholder
+parent: buttons
+---
+Applies base button styles
+
+```
+@extend %buttonBase;
+```
+*/
+%buttonBase {
+	@extend %buttonPersonality;
+	@include display(inline-flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
 	@include transition(background .15s);
-	@include standardBorder('all');
-	@include user-select(none);
+	@include standardBorder(all);
 	box-sizing: border-box;
 	-webkit-appearance: none;
-	background: transparent;
+	vertical-align: middle;
 	border-radius: $defaultRadius;
-	border: $btn-border $C_border;
-	cursor: pointer;
-	display: inline-block;
+	background: transparent;
 	font-size: $font-size;
 	font-weight: $W_bold;
-	margin: 0;
-	padding: $space-half $space;
-	text-align: center;
-	text-decoration: none !important;
+	min-height: $space-3;
+	padding: 0 $space;
+	line-height: $line-height;
+}
+
+/*doc
+---
+title: Button hover placeholder
+name: buttonHoverPlaceholder
+parent: buttons
+---
+Applies default button `:hover`,
+`:active`, and `:focus` styles
+
+```
+@extend %buttonHover;
+```
+*/
+%buttonHover {
+	&:hover,
+	&:active,
 	&:focus {
-		outline: 0;
+		background: transparentize($C_textPrimary, .8);
+		border-color: transparent;
 	}
 }
-%buttonBase {
-	@include buttonBase;
+
+
+/*doc
+---
+title: Button color mixin
+name: buttonColorMixin
+parent: button
+---
+Sets color properties for a button
+
+```
+.button--myOrangeButton {
+	@include buttonColor(orange);
+}
+```
+*/
+@mixin buttonColor($bgColor: $C_purple) {
+	@include color-all(getPrimaryTextColor($bgColor), true);
+	background: $bgColor;
+	border-color: $bgColor;
+
+	&:hover,
+	&:active,
+	&:focus {
+		@if isDark($bgColor) {
+			background: lighten($bgColor, 10%);
+		} @else {
+			background: darken($bgColor, 8%);
+		}
+	}
 }
