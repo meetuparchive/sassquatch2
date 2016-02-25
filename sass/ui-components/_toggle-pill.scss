@@ -103,12 +103,14 @@ Checkbox form elements styled as toggle buttons.
 .toggleButton-label {
 	@extend %buttonPersonality;
 	@extend %buttonBase;
+	@extend %buttonHover;
 	@extend %button--small;
+	@extend %button--icon;
 	margin: 0;
 }
 
 .toggleButton-icon--inactive {
-	display: inline-block;
+	@include display(inline-flex);
 }
 
 .toggleButton-icon--active {
@@ -125,7 +127,7 @@ Checkbox form elements styled as toggle buttons.
 		font-weight: $W_bold;
 
 		.toggleButton-icon--active {
-			display: inline-block;
+			@include display(inline-flex);
 		}
 
 		.toggleButton-icon--inactive {

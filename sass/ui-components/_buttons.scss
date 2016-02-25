@@ -1,10 +1,3 @@
-// TODO: this needs a lot of mixin and selector cleanup
-// 1) avoid outputting selectors from mixins
-// 2) create some clarity around modifiers
-// 3) clean up selectors generated in button color mixin (and see #1)
-// 4) ???
-// 5) PROFIT
-
 /*doc
 ---
 title: Buttons
@@ -15,26 +8,74 @@ category: UI Components
 #### Example
 
 ```html_example
-<button class="button" href="#">Button</button>
-<button class="button button--primary" href="#">Primary Button</button>
-<button class="button button--icon" href="#">
-	<span class="button-label">Button with right Icon</span>
-	<span class="button-icon">X</span>
-</button>
-<button class="button button--icon button--primary" href="#">
-	<span class="button-icon">X</span>
-	<span class="button-label">Primary button with left Icon</span>
-</button>
-<button class="button button--primary button--contrast" href="#">Contrast Button</button>
-<button class="button button--small" href="#">Small Button</button>
-<button class="button button--bordered button--fullWidth" href="#">Full width button</button>
-<button class="button button--primary button--icon button--fullWidth" href="#">
-	<span class="button-icon">ヘ(◕。◕ヘ)</span>
-	<span class="button-label">Full width primary button with left Icon</span>
-</button>
-<button class="button button--disabled" href="#">Stop</button>
-<button class="button button--primary" disabled>Can't touch this</button>
-<input type="submit" class="button button--bordered" value="Disabled" disabled />
+<ul class="list">
+	<li class="list-item chunk">
+		<h3>Standard Buttons</h3>
+		<button class="button" href="#">Button</button>
+		<button class="button button--primary" href="#">Primary Button</button>
+		<button class="button button--contrast" href="#">Contrast Button</button>
+	</li>
+	<li class="list-item chunk">
+		<h3>Small buttons</h3>
+		<div class="chunk">
+			<button class="button button--small" href="#">Small Button</button>
+			<button class="button button--primary button--small" href="#">Small Button</button>
+		</div>
+		<div class="chunk">
+			<span class="text--small">Inline text with button</span><button class="button button--primary button--small margin--left" href="#">Inline button with text</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Full width button</h3>
+		<div class="chunk">
+			<button class="button button--fullWidth" href="#">Wide load</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--primary button--fullWidth" href="#">Wide load</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--contrast button--fullWidth" href="#">Wide load</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Icon buttons</h3>
+		<div class="chunk">
+			<button class="button button--icon" href="#">
+				<span class="button-label">Button with right Icon</span>
+				<span class="button-icon">X</span>
+			</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--icon button--primary" href="#">
+				<span class="button-icon">X</span>
+				<span class="button-label">Primary button with left Icon</span>
+			</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--primary button--icon button--fullWidth" href="#">
+				<span class="button-icon">ヘ(◕。◕ヘ)</span>
+				<span class="button-label">Full width primary button with left Icon</span>
+			</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Disabled buttons</h3>
+		<button class="button button--disabled" href="#">Stop</button>
+		<button class="button button--primary" disabled>Can't touch this</button>
+		<input type="submit" class="button" value="Disabled" disabled />
+	</li>
+	<li class="list-item chunk">
+		<h3>Buttons with form fields</h3>
+		<div class="row">
+			<div class="row-item">
+				<input type="text" placeholder="Field by a button" />
+			</div>
+			<div class="row-item row-item--shrink">
+				<button class="button button--primary">Button by a field</button>
+			</div>
+		</div>
+	</li>
+</ul>
 ```
 
 #### Button variants
@@ -47,91 +88,33 @@ Class                   | Description
 `.button--contrast`     | bold, dark text; use on dark backgrounds or photos (ie. top nav bar)
 `.button--small`        | decreases size of button
 `.button--fullWidth`    | makes button fill width
-`.button--icon`         | button with icon
+`.button--icon`         | button with icon (see example for markup pattern)
 */
 
-
-%button,
 .button {
 	@extend %buttonBase;
+	@extend %buttonHover;
 	@include color-all($C_textPrimary);
 	background: $C_contentBG;
-
-	&:hover,
-	&:active,
-	&:focus {
-		background: transparentize($C_textPrimary, .8);
-		border-color: transparent;
-	}
 }
 
 %button--primary,
 .button--primary {
-	@include color-all($C_textPrimaryInverted, true);
-	background: $C_button;
-	border-color: $C_button;
-
-	&:hover,
-	&:active,
-	&:focus {
-		background: call(nth($btn-hover, 1), $C_button, nth($btn-hover, 2));
-	}
-
-	&.button--contrast { // TODO (mikep): look into ways to do this without chaining classes
-		@include color-all($C_textPrimary, true);
-		background: $C_contentBG;
-		border-color: $C_contentBG;
-
-		&:hover,
-		&:active,
-		&:focus {
-			background: transparentize($C_contentBG, .1);
-		}
-	}
-
+	@include buttonColor($C_purple);
 }
 
 %button--contrast,
 .button--contrast {
-	@include color-all( $C_textPrimaryInverted );
-	background: $C_textTertiary;
-	border-color: $C_textPrimaryInverted;
-
-	&:hover,
-	&:active,
-	&:focus {
-		background: $C_textSecondary;
-		border-color: $C_textPrimaryInverted;
+	@include color-all( $C_textPrimary );
+	.inverted & {
+		@include color-all( $C_textPrimaryInverted );
 	}
+	border-color: transparent;
+
+	// override default botton hover/active/focus states
+	background: transparent !important;
 }
 
-//
-// Button border modifiers
-//
-%button--bordered {
-	@include color-all($C_button);
-	background: transparent;
-	border-color: $C_button;
-	font-weight: $W_bold;
-	&:hover,
-	&:active,
-	&:focus {
-		border: $btn-border $C_button;
-		background: transparentize($C_button, .8);
-	}
-}
-
-// %button--borderless,
-// .button--borderless {
-// 	border: none;
-
-// 	&:hover,
-// 	&:active,
-// 	&:focus {
-// 		border: none;
-// 	}
-
-// }
 
 //
 // Disabled buttons
@@ -139,14 +122,15 @@ Class                   | Description
 .button[disabled],
 .button--disabled {
 	@include color-all($C_textSecondary, true);
-	border: $btn-border $C_border;
+	@include standardBorder(all);
+	outline: none;
 	background: transparentize($C_mediumGray, .88) !important;
 	cursor: default;
 
 	&,
 	&:hover,
 	&:active {
-		border: $btn-border $C_border;
+		@include standardBorder(all);
 	}
 
 }
@@ -157,12 +141,12 @@ Class                   | Description
 %button--small,
 .button--small {
 	font-size: $font-size-small;
-	padding: $space-quarter $space-half;
+	min-height: $space-2;
+	padding: 0 $space-half;
 }
 
 %button--fullWidth,
 .button--fullWidth {
-	display: block;
 	width: 100%;
 }
 
@@ -170,27 +154,16 @@ Class                   | Description
 // Icon buttons
 //
 $_iconGutter: $space/2;
+%button--icon,
 .button--icon {
-	@include display(inline-flex);
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
 	@include justify-content(space-between);
-
-	@include browser-lessThanIE( 10 ) {
-		box-sizing: border-box;
-		display: table;
-		table-layout: auto;
-	}
 }
 
 .button-label,
 .button-icon {
 	@include align-self(center);
-
-	@include browser-lessThanIE( 10 ) {
-		display: table-cell;
-		width: 100%;
-	}
 }
 
 .button-label {
@@ -212,12 +185,16 @@ $_iconGutter: $space/2;
 	&:last-child {
 		margin-left: $_iconGutter;
 	}
-
-	@include browser-lessThanIE( 10 ) {
-		width: auto;
-	}
 }
 
 .button--small .button-icon {
-	height: $font-size;
+	min-height: $font-size;
+}
+
+//
+// DEPRECATED
+// .button--borderless => .button--contrast
+//
+.button--borderless {
+	@extend %button--contrast;
 }
