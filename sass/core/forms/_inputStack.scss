@@ -8,18 +8,19 @@ Creates a "stack" of inptus grouped together
 
 ```html_example
 <fieldset class="inputStack">
-	<h3 class="inputStack-label">Stacked inputs label</h3>
-	<div class="inputStack-input">
+	<legend>Stacked inputs label</legend>
+
+	<div class="inputStack-field">
 		<label for="stackedInput-input1">Just another label</label>
 		<input id="stackedInput-input1" type="text" placeholder="Title" />
 	</div>
 
-	<div class="inputStack-input">
+	<div class="inputStack-field">
 		<label for="stackedInput-input2">Just another label</label>
 		<input id="stackedInput-input2" type="text" placeholder="Location" />
 	</div>
 
-	<div class="inputStack-input">
+	<div class="inputStack-field">
 		<label for="stackedInput-textarea">Here's an area for your text</label>
 		<textarea id="stackedInput-textarea" placeholder="Description"></textarea>
 	</div>
@@ -27,7 +28,13 @@ Creates a "stack" of inptus grouped together
 ```
 */
 .inputStack {
+	& > legend {
+		@extend %label;
+	}
 
+}
+
+.inputStack-field {
 	label {
 		@include a11yVisibility('hidden');
 	}
@@ -43,15 +50,6 @@ Creates a "stack" of inptus grouped together
 		}
 	}
 
-}
-
-.inputStack-label {
-	font-size: $font-size-small;
-	font-weight: $W_bold;
-}
-
-.inputStack-input {
-
 	&:first-of-type {
 		input,
 		textarea {
@@ -66,5 +64,4 @@ Creates a "stack" of inptus grouped together
 			border-radius: 0 0 $defaultRadius $defaultRadius;
 		}
 	}
-
 }
