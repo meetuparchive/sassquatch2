@@ -28,6 +28,7 @@ Label for a small piece of information. Can be a link or just for display
 }
 
 .token--link {
+	@extend %buttonHover;
 	background: $C_contentBG;
 	color: $C_link;
 	cursor: pointer;

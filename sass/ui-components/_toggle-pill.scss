@@ -103,6 +103,7 @@ Checkbox form elements styled as toggle buttons.
 .toggleButton-label {
 	@extend %buttonPersonality;
 	@extend %buttonBase;
+	@extend %buttonHover;
 	@extend %button--small;
 	@extend %button--icon;
 	margin: 0;

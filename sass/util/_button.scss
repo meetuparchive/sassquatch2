@@ -57,6 +57,28 @@ Applies base button styles
 	line-height: $line-height;
 }
 
+/*doc
+---
+title: Button hover placeholder
+name: buttonHoverPlaceholder
+parent: buttons
+---
+Applies default button `:hover`,
+`:active`, and `:focus` styles
+
+```
+@extend %buttonHover;
+```
+*/
+%buttonHover {
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparentize($C_textPrimary, .8);
+		border-color: transparent;
+	}
+}
+
 
 /*doc
 ---

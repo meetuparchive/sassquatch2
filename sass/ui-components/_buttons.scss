@@ -93,15 +93,9 @@ Class                   | Description
 
 .button {
 	@extend %buttonBase;
+	@extend %buttonHover;
 	@include color-all($C_textPrimary);
 	background: $C_contentBG;
-
-	&:hover,
-	&:active,
-	&:focus {
-		background: transparentize($C_textPrimary, .8);
-		border-color: transparent;
-	}
 }
 
 %button--primary,
