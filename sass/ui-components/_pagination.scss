@@ -126,14 +126,16 @@ $_bpPagination: medium;
 	padding: 0;
 	min-width: $media-s;
 	min-height: $media-s;
-	font-weight: $W_normal;
+	font-weight: $W_bold;
 	border-radius: $media-xl;
 	border-width: 0;
 
 	&:hover,
 	&:active {
+		color: $C_textPrimary;
 		background: $C_lightGray;
 	}
+
 	.inverted & {
 		color: $C_textSecondaryInverted;
 	}
