@@ -19,26 +19,6 @@ category: Forms
 </div>
 
 <div class="chunk">
-	<fieldset class="stackedInputs">
-		<h3 class="stackedInputs-label">Stacked inputs label</h3>
-		<div class="stackedInputs-input">
-			<label for="stackedInput-input1">Just another label</label>
-			<input id="stackedInput-input1" type="text" placeholder="Title" />
-		</div>
-
-		<div class="stackedInputs-input">
-			<label for="stackedInput-input2">Just another label</label>
-			<input id="stackedInput-input2" type="text" placeholder="Location" />
-		</div>
-
-		<div class="stackedInputs-input">
-			<label for="stackedInput-textarea">Here's an area for your text</label>
-			<textarea id="stackedInput-textarea" placeholder="Description"></textarea>
-		</div>
-	</fieldset>
-</div>
-
-<div class="chunk">
 	<label for="test-textarea">Here's an area for your text</label>
 	<textarea id="test-textarea"></textarea>
 </div>
