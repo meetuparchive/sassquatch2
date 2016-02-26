@@ -72,9 +72,13 @@ Applies default button `:hover`,
 */
 %buttonHover {
 	&:hover,
-	&:active,
 	&:focus {
 		background: transparentize($C_textPrimary, .8);
+		border-color: transparent;
+	}
+
+	&:active {
+		background: transparentize($C_textPrimary, .75);
 		border-color: transparent;
 	}
 }
@@ -100,12 +104,15 @@ Sets color properties for a button
 	border-color: $bgColor;
 
 	&:hover,
-	&:active,
 	&:focus {
 		@if isDark($bgColor) {
 			background: lighten($bgColor, 10%);
 		} @else {
 			background: darken($bgColor, 8%);
 		}
+	}
+
+	&:active {
+		background: darken($bgColor, 8%);
 	}
 }
