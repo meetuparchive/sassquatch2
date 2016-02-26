@@ -27,11 +27,20 @@ TK - notes about UI text vs. body text
   http://alistapart.com/article/more-meaningful-typography
 */
 
+
+h1, h2, h3 {
+	font-weight: $W_bold;
+	letter-spacing: -0.02em;
+}
+
+h4, h5, h6 {
+	font-weight: $W_medium;
+}
+
 // H1
 // Main header, in the header bar
 h1 {
 	font-size: $font-size-display1;
-	font-weight: $W_bold;
 	line-height: $line-height-small;
 
 	.view-head & {
@@ -45,7 +54,6 @@ h1 {
 // Defaults - use tags semantically, style w/ classes
 h2, h3, h4, h5, h6 {
 	color: $C_textPrimary;
-	font-weight: $W_bold;
 	line-height: $line-height;
 
 	.inverted & {
