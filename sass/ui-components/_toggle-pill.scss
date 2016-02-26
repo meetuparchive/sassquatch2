@@ -105,13 +105,8 @@ Checkbox form elements styled as toggle buttons.
 	@extend %buttonBase;
 	@extend %button--small;
 	@extend %button--icon;
+	@include buttonHover($C_success);
 	margin: 0;
-	&:hover,
-	&:active,
-	&:focus {
-		background: transparentize($C_success, .9);
-		border-color: $C_success;
-	}
 }
 
 .toggleButton-icon--inactive {

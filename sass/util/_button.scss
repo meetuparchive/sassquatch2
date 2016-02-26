@@ -67,10 +67,11 @@ Applies default button `:hover`,
 `:active`, and `:focus` styles
 
 ```
-@extend %buttonHover;
+// lightens "bgColor" on hover
+@mixin buttonHover($bgColor: $C_textPrimary);
 ```
 */
-%buttonHover {
+@mixin buttonHover($bgColor: $C_textPrimary) {
 	&:hover,
 	&:focus {
 		background: transparentize($C_textPrimary, .8);
