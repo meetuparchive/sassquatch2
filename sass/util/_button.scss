@@ -74,12 +74,12 @@ Applies default button `:hover`,
 @mixin buttonHover($bgColor: $C_textPrimary) {
 	&:hover,
 	&:focus {
-		background: transparentize($C_textPrimary, .8);
+		background: transparentize($bgColor, .8);
 		border-color: transparent;
 	}
 
 	&:active {
-		background: transparentize($C_textPrimary, .75);
+		background: transparentize($bgColor, .75);
 		border-color: transparent;
 	}
 }
