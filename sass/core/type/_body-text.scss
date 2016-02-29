@@ -210,26 +210,6 @@ Applies form label styling
 	@extend %label;
 }
 
-/*doc
----
-title: Graphic text
-name: textGraphic
-parent: bodyText
----
-Useful when using large text in a graphical way.
-Cuts line height to give the glyph spacing similar to that of an image or icon.
-
-```html_example
-<p class="text--graphic">102</p>
-<p>Miles per hour</p>
-```
-*/
-@include _modifier(text, graphic) {
-	@extend %text--display;
-	line-height: .9;
-}
-
-
 
 /*doc
 ---
