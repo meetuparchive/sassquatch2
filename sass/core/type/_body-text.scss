@@ -139,6 +139,7 @@ parent: bodyText
 		line-height: $line-height-small;
 	}
 }
+small { @extend %text--small; }
 
 /*doc
 ---

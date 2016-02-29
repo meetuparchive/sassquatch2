@@ -129,6 +129,7 @@ Headline text for when something between display and normal text is needed.
 		color: $C_textPrimaryInverted;
 	}
 }
+big { @extend %text--headline; }
 
 /*doc
 ---
