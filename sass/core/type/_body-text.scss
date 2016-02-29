@@ -102,7 +102,7 @@ name: heavyText
 parent: bodyText
 ---
 ```html_example
-<p class="text--bold">Heavy text is heavy</p>
+<p class="text--heavy">Heavy text is heavy</p>
 ```
 */
 @include _modifier(text, heavy) {
