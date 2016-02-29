@@ -55,6 +55,7 @@ color: getPrimaryTextColor(#FFF);
   background-position: center;
   background-size: cover; }
 
+.pagination,
 .chunk,
 .bounds {
   /**
@@ -62,12 +63,14 @@ color: getPrimaryTextColor(#FFF);
   * Include this rule to trigger hasLayout and contain floats.
   */
   *zoom: 1; }
+  .pagination:before,
   .chunk:before,
-  .bounds:before,
+  .bounds:before, .pagination:after,
   .chunk:after,
   .bounds:after {
     content: " ";
     display: table; }
+  .pagination:after,
   .chunk:after,
   .bounds:after {
     clear: both; }
@@ -426,7 +429,7 @@ Disables user-select, sets cursor, and resets text-decoration.
 @extend %buttonPersonality;
 ```
 */
-.button--primary, .button--contrast, .button, .button--borderless, .hasJS .menu-actions-item a, .toggleButton-label, .buttonPersonality {
+.button--primary, .button--contrast, .button, .button--borderless, .hasJS .menu-actions-item a, .page-label, .toggleButton-label, .buttonPersonality {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -965,12 +968,11 @@ parent: bodyText
 <p class="text--hint">This is hint text</p>
 ```
 */
-.pagination-page--ellipsesBefore:before, .pagination-page--ellipsesAfter:before, .pagination-page--ellipsesBefore:after, .pagination-page--ellipsesAfter:after,
 .text--hint {
   stroke: transparent;
   fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
-  .inverted .pagination-page--ellipsesBefore:before, .inverted .pagination-page--ellipsesAfter:before, .inverted .pagination-page--ellipsesBefore:after, .inverted .pagination-page--ellipsesAfter:after, .inverted
+  .inverted
   .text--hint {
     stroke: transparent;
     fill: rgba(255, 255, 255, 0.3);
@@ -1853,7 +1855,6 @@ Class                | Description
 .stripe--collection, .stripe--inverted, .stripe--hero, .stripe--photoHero,
 .stripe {
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  overflow: hidden;
   background-color: white;
   margin-bottom: 0; }
   .inverted .stripe--collection, .inverted .stripe--inverted, .inverted .stripe--hero, .inverted .stripe--photoHero, .inverted
@@ -2815,6 +2816,7 @@ _Can be used in combination with any other component
 </div>
 ```
 */
+.pagination,
 .chunk {
   display: block;
   margin-bottom: 16px !important; }
@@ -4449,7 +4451,8 @@ Class                   | Description
   border-width: 0;
   box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.54);
   margin-bottom: 4px;
-  background: #e6e9ec; }
+  background: #e6e9ec;
+  height: auto; }
   .button--primary:active, .button--contrast:active, .button:active, .button--borderless:active {
     -webkit-transform: translate(0, 2px);
     -ms-transform: translate(0, 2px);
@@ -4460,8 +4463,8 @@ Class                   | Description
 
 .button--primary {
   stroke: transparent;
-  fill: #fff;
-  color: #fff;
+  fill: #fff !important;
+  color: #fff !important;
   background: #e2373c !important;
   box-shadow: 0 3px 0 0 #861317 !important; }
   .button--primary:active {
@@ -4471,8 +4474,8 @@ Class                   | Description
 
 .button--contrast {
   stroke: transparent;
-  fill: #fff;
-  color: #fff;
+  fill: #fff !important;
+  color: #fff !important;
   background: #e2373c !important;
   box-shadow: 0 3px 0 0 #861317 !important; }
   .button--contrast:active {
@@ -4536,8 +4539,8 @@ Class                   | Description
   .button--disabled:hover,
   .button--disabled:active {
     stroke: transparent;
-    fill: rgba(0, 0, 0, 0.54);
-    color: rgba(0, 0, 0, 0.54);
+    fill: rgba(0, 0, 0, 0.54) !important;
+    color: rgba(0, 0, 0, 0.54) !important;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
@@ -4819,7 +4822,7 @@ _(The inline style on the card element is for documentation purposes only)_
 ```
 */
 .card {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   display: block;
   background: white;
@@ -4830,7 +4833,7 @@ _(The inline style on the card element is for documentation purposes only)_
   background-clip: padding-box;
   min-height: 160px; }
   .inverted .card {
-    border-top: 1px solid rgba(255, 255, 255, 0.2); }
+    border: 1px solid rgba(255, 255, 255, 0.2); }
 
 .card--group {
   display: -webkit-box;
@@ -5066,122 +5069,85 @@ title: Pagination
 name: uiPager
 category: UI Components
 ---
+Please review the pagination markup examples carefully;
+the markup patterns presented here encourage accessibility.
+
+Unicode arrows are for demonstration only; in production,
+use a suitable SVG icon for "previous" and "next" controls.
 
 ```html_example
-<div class="chunk"><ul role="navigation" class="pagination">
-	<li class="pagination-page pagination-page--persist pagination-page--control">
-		<a href="#" class="link" rel="prev">←</a>
-	</li>
-	<li class="pagination-page pagination-page--persist">
-		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
-	</li>
-	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
-		<span>2 <em class="text--hide">Current page</em></span>
+<ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--control">
+		<span class="visibility--a11yHide">No previous pages</span>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>3</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>1</a>
+	</li>
+	<li class="pagination-page pagination-page--current">
+		<span class="page-label">2 <em class="visibility--a11yHide">Current page</em></span>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>4</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>3</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>5</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>4</a>
 	</li>
-	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
-		<a href="#" class="link"><span class="text--hide">Page </span>6</a>
+	<li class="pagination-page pagination-page--control">
+		<a href="#" class="page-label" rel="next">→</a>
 	</li>
-	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
-		<a href="#" class="link"><span class="text--hide">Page </span>7</a>
-	</li>
-	<li class="pagination-page pagination-page--persist">
-		<span class="text--hint">&hellip;</span>
-	</li>
-	<li class="pagination-page pagination-page--persist">
-		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
-	</li>
-	<li class="pagination-page pagination-page--persist pagination-page--control">
-		<a href="#" class="link" rel="next">→</a>
-	</li>
-</ul></div>
+</ul>
 
-<div class="chunk"><ul role="navigation" class="pagination">
-	<li class="pagination-page pagination-page--persist pagination-page--control">
-		<a href="#" class="link" rel="prev">←</a>
-	</li>
-	<li class="pagination-page pagination-page--persist">
-		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
-	</li>
-	<li class="pagination-page pagination-page--persist">
-		<span class="text--hint">&hellip;</span>
-	</li>
-	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
-		<a href="#" class="link"><span class="text--hide">Page </span>11</a>
+<ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--control">
+		<a href="#" class="page-label" rel="prev">←</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>12</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>6</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>13</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>7</a>
 	</li>
-	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
-		<span>14 <em class="text--hide">Current page</em></span>
-	</li>
-	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>15</a>
+	<li class="pagination-page pagination-page--current">
+		<span class="page-label">8 <em class="visibility--a11yHide">Current page</em></span>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>16</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>9</a>
 	</li>
-	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
-		<a href="#" class="link"><span class="text--hide">Page </span>17</a>
+	<li class="pagination-page pagination-page--control">
+		<a href="#" class="page-label" rel="next">→</a>
 	</li>
-	<li class="pagination-page pagination-page--persist">
-		<span class="text--hint">&hellip;</span>
-	</li>
-	<li class="pagination-page pagination-page--persist">
-		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
-	</li>
-	<li class="pagination-page pagination-page--persist pagination-page--control">
-		<a href="#" class="link" rel="next">→</a>
-	</li>
-</ul></div>
+</ul>
 
-<div class="chunk"><ul role="navigation" class="pagination">
-	<li class="pagination-page pagination-page--persist pagination-page--control">
-		<a href="#" class="link" rel="prev">←</a>
-	</li>
-	<li class="pagination-page pagination-page--persist">
-		<a href="#" class="link"><span class="text--hide">Page </span>1</a>
-	</li>
-	<li class="pagination-page pagination-page--persist">
-		<span class="text--hint">&hellip;</span>
-	</li>
-	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
-		<a href="#" class="link"><span class="text--hide">Page </span>19</a>
-	</li>
-	<li class="pagination-page visibility--a11yHide atMedium_visibility--a11yShow">
-		<a href="#" class="link"><span class="text--hide">Page </span>20</a>
+<ul role="navigation" class="pagination">
+	<li class="pagination-page pagination-page--control">
+		<a href="#" class="page-label" rel="prev">←</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>21</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>10</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>22</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>11</a>
 	</li>
 	<li class="pagination-page">
-		<a href="#" class="link"><span class="text--hide">Page </span>23</a>
+		<a href="#" class="page-label"><span class="visibility--a11yHide">Page </span>12</a>
 	</li>
-	<li class="pagination-page pagination-page--persist pagination-page--current inverted">
-		<span>24 <em class="text--hide">Current page</em></span>
+	<li class="pagination-page pagination-page--current">
+		<span class="page-label">13 <em class="visibility--a11yHide">Current page</em></span>
 	</li>
-	<li class="pagination-page pagination-page--persist">
-		<a href="#" class="link"><span class="text--hide">Page </span>25</a>
+	<li class="pagination-page pagination-page--control">
+		<span class="visibility--a11yHide">End of pages</span>
 	</li>
-	<li class="pagination-page pagination-page--persist pagination-page--control">
-		<a href="#" class="link" rel="next">→</a>
-	</li>
-</ul></div>
+</ul>
 ```
+
+## Page item variants
+A class of `pagination-page` is **required** for pagination list items. The following
+classes are optional variants:
+
+Class                        | Description
+---------------------------- | ------------------------------------------------------------
+`.pagination-page--current`  | used to indicate current page
+`.pagination-page--control`  | used to indicate the page item as a "previous" or "next" control
 */
 .pagination {
   display: -webkit-box;
@@ -5216,117 +5182,78 @@ category: UI Components
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-  box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-justify-content: space-between;
-  justify-content: space-between;
-  -ms-flex-pack: justify; }
+  -webkit-box-pack: distribute;
+  box-pack: distribute;
+  -webkit-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: distribute; }
   .ieRoot_lt_IE10 .pagination {
     display: table;
     table-layout: auto;
     width: 100%; }
 
 .pagination-page {
-  border: 0;
-  clip: rect(0 0 0 0);
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border-radius: 3px; }
-  .pagination-page:not(.pagination-page--control) {
-    -webkit-flex-grow: 0;
-    flex-grow: 0;
-    -ms-flex-positive: 0;
-    -webkit-flex-shrink: 0;
-    flex-shrink: 0;
-    -ms-flex-negative: 0;
-    -webkit-flex-basis: auto;
-    flex-basis: auto;
-    -ms-flex-preferred-size: auto;
-    width: initial;
-    padding: 8px; }
-    .ieRoot_lt_IE10 .pagination-page:not(.pagination-page--control) {
-      width: 1%; }
-    .ieRoot_lt_IE10 .pagination-page:not(.pagination-page--control) {
-      vertical-align: top; }
-  @media only screen and (min-width: 440px) {
+  min-width: 36px;
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  -ms-flex-positive: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -ms-flex-negative: 0;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  display: none; }
+  @media only screen and (min-width: 640px) {
     .pagination-page {
-      clip: auto;
-      clip: rect(auto auto auto auto);
-      position: static;
-      overflow: visible;
-      margin: 0;
-      width: auto;
-      height: auto;
-      min-width: 24px; } }
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex; } }
 
-.pagination-page--persist {
-  clip: auto;
-  clip: rect(auto auto auto auto);
-  position: static;
-  overflow: visible;
-  margin: 0;
-  width: auto;
-  height: auto;
-  min-width: 24px; }
-
+.pagination-page--current,
 .pagination-page--control {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  -ms-flex-positive: 1;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
-  -ms-flex-preferred-size: 0;
-  box-sizing: border-box;
-  width: auto;
-  min-width: 0; }
-  .ieRoot_lt_IE10 .pagination-page--control {
-    display: table-cell; }
-  .ieRoot_lt_IE10 .pagination-page--control {
-    vertical-align: top; }
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
-.pagination-page--current {
-  background: #3987cb;
-  font-weight: bold;
-  margin: 0 8px; }
-  @media only screen and (min-width: 440px) {
-    .pagination-page--current {
-      margin: 0; } }
+.page-label {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.54);
+  display: block;
+  color: rgba(0, 0, 0, 0.54);
+  border-radius: 24px;
+  padding: 8px;
+  min-width: 24px; }
+  .page-label:hover, .page-label:active {
+    background: #f3f6f9; }
+  .inverted .page-label {
+    stroke: transparent;
+    fill: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); }
+  @media only screen and (min-width: 640px) {
+    .pagination-page--current .page-label {
+      color: white;
+      background: #3987cb; } }
 
-/* TODO: organize and doc ellipses classes */
-/* see: in chapstick, templates/handlebars/util/pagination.hbs */
-.pagination-page--ellipsesBefore, .pagination-page--ellipsesAfter {
-  position: relative; }
-  .pagination-page--ellipsesBefore:before, .pagination-page--ellipsesAfter:before, .pagination-page--ellipsesBefore:after, .pagination-page--ellipsesAfter:after {
-    position: absolute;
-    bottom: 7px; }
-
-.pagination-page--ellipsesBefore {
-  margin-left: 32px; }
-  .pagination-page--ellipsesBefore:before {
-    display: block;
-    content: "\2026";
-    left: -32px; }
-
-.pagination-page--ellipsesAfter {
-  margin-right: 32px; }
-  .pagination-page--ellipsesAfter:after {
-    display: block;
-    content: "\2026";
-    right: -32px; }
-
-@media only screen and (min-width: 440px) {
-  .pagination-page--ellipsesBefore,
-  .pagination-page--ellipsesAfter {
-    margin: 0; }
-    .pagination-page--ellipsesBefore:before, .pagination-page--ellipsesBefore:after,
-    .pagination-page--ellipsesAfter:before,
-    .pagination-page--ellipsesAfter:after {
-      display: none; } }
 /*doc
 ---
 title: Prompt
@@ -5483,7 +5410,7 @@ Class                 | Description
     text-align: center; }
 
 .tabs-tab {
-  color: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.54);
   padding: 0;
   margin: 0 0 0 16px;
   cursor: pointer;
@@ -5492,7 +5419,7 @@ Class                 | Description
   .tabs-tab:first-child {
     margin-left: 0; }
   .inverted .tabs-tab {
-    color: rgba(255, 255, 255, 0.3); }
+    color: rgba(255, 255, 255, 0.7); }
     .inverted .tabs-tab:hover {
       color: rgba(255, 255, 255, 0.7); }
     .inverted .tabs-tab.tabs-tab--selected {
@@ -5710,21 +5637,19 @@ Class                    | Description
 `.valign--top`           | vertically centers element to top
 
 */
-.pagination-page--control:first-child,
 .align--left {
   -webkit-align-self: left;
   align-self: left;
   -ms-flex-item-align: left;
   text-align: left !important; }
 
-.pagination-page--control:last-child,
 .align--right {
   -webkit-align-self: right;
   align-self: right;
   -ms-flex-item-align: right;
   text-align: right !important; }
 
-.pagination-page,
+.pagination,
 .align--center {
   -webkit-align-self: center;
   align-self: center;
@@ -5743,7 +5668,6 @@ Class                    | Description
   -ms-flex-item-align: end;
   vertical-align: bottom !important; }
 
-.pagination-page,
 .valign--middle {
   -webkit-align-self: center;
   align-self: center;
@@ -6385,6 +6309,9 @@ category: Modifier Classes
 ---
 Sets element width in percentage.
 
+**Includes `!important` directive** in order to override
+input attribute selectors.
+
 `span--[width%]`
 
 ```html_example
@@ -6398,25 +6325,25 @@ Sets element width in percentage.
 ```
 */
 .span--100 {
-  width: 100%; }
+  width: 100% !important; }
 
 .span--80 {
-  width: 80%; }
+  width: 80% !important; }
 
 .span--75 {
-  width: 75%; }
+  width: 75% !important; }
 
 .span--60 {
-  width: 60%; }
+  width: 60% !important; }
 
 .span--50 {
-  width: 50%; }
+  width: 50% !important; }
 
 .span--30 {
-  width: 30%; }
+  width: 30% !important; }
 
 .span--25 {
-  width: 25%; }
+  width: 25% !important; }
 
 /*doc
 ---
