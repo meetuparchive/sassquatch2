@@ -44,8 +44,14 @@ Basic example of a single view in a document:
 	background-color: $C_collectionBGLight;
 }
 
-/*
-## View Loading  (<a class="link followLink" href="pages/view-loading.html">Demo</a>)
+/*doc
+---
+title: Loading state
+name: viewLoading
+parent: view
+---
+
+<a class="link followLink" href="pages/view-loading.html">Demo</a>
 Basic example of a single view in a document:
 
 ```
@@ -59,31 +65,20 @@ Basic example of a single view in a document:
 </div>
 ```
 */
-
-@keyframes spin-circle {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-$Z_top : 1000;
-
 .view--loading {
 	&:before {
+		@include animate--spin(.5s);
 		content: " ";
 		position: absolute;
 		top:50%;
 		left:50%;
-		//background: $C_blue;
-		//border-radius: 100%;
 		height: $space-3;
 		width: $space-3;
-		z-index: $Z_top - 1;
+		z-index: map-get($zindex-map, 'shade-content');
 		border-radius: 999px;
 		box-sizing: border-box;
 		border: solid 3px rgba(0, 0, 0, 0.2);
 		border-top-color: black;
-		animation: spin-circle .5s infinite linear;
 		margin: 0 auto;
 	}
 	&:after {
@@ -95,7 +90,7 @@ $Z_top : 1000;
 		top: 0;
 		bottom: 0;
 		background-color: rgba(255,255,255,0.7);
-		z-index: $Z_top - 2;
+		z-index: map-get($zindex-map, 'shade');
 	}
 
 }
