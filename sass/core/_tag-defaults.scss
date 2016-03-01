@@ -24,7 +24,12 @@ abbr, strong, acronym, span, small, time, strike, sub, sup, a {
 abbr, acronym {
 	border-width: 0;
 }
-b,strong { font-weight: $W_bold; }
+b,strong {
+	font-weight: $W_medium;
+	.inverted & {
+		font-weight: $W_bold;
+	}
+}
 sup, sub {
 	font-size: 75%;
 	line-height: 0;

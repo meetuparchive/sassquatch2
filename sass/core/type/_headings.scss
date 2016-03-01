@@ -31,6 +31,9 @@ TK - notes about UI text vs. body text
 h1, h2, h3 {
 	font-weight: $W_bold;
 	letter-spacing: -0.02em;
+	.inverted & {
+		font-weight: $W_medium;
+	}
 }
 
 h4, h5, h6 {
@@ -41,7 +44,7 @@ h4, h5, h6 {
 // Main header, in the header bar
 h1 {
 	font-size: $font-size-display1;
-	line-height: $line-height-small;
+	line-height: $line-height-large;
 
 	.view-head & {
 		color: $C_textPrimaryInverted;
@@ -64,14 +67,17 @@ h2, h3, h4, h5, h6 {
 
 h2 {
 	font-size: $font-size-display2;
+	line-height: $line-height-large;
 }
 
 h3 {
 	font-size: $font-size-display3;
+	line-height: $line-height-large;
 }
 
 h4 {
 	font-size: $font-size-headline;
+	line-height: $line-height-large;
 }
 
 h5, h6 {
@@ -95,15 +101,46 @@ Display text for header hero elements.
 	color: $C_textPrimary;
 	font-size: $font-size-display2;
 	font-weight: $W_bold;
-	line-height: $line-height-small;
+	line-height: $line-height-large;
 	.inverted &{
 		color: $C_textPrimaryInverted;
+		font-weight: $W_medium;
 	}
 }
 
 @include atMediaUp(medium) {
 	.text--display {
 		font-size: $font-size-display1;
+	}
+}
+
+%text--display2,
+.text--display2 {
+	color: $C_textPrimary;
+	font-size: $font-size-display3;
+	font-weight: $W_bold;
+	line-height: $line-height-large;
+	.inverted &{
+		color: $C_textPrimaryInverted;
+		font-weight: $W_medium;
+	}
+}
+
+@include atMediaUp(medium) {
+	.text--display2 {
+		font-size: $font-size-display2;
+	}
+}
+
+%text--display3,
+.text--display3 {
+	color: $C_textPrimary;
+	font-size: $font-size-display3;
+	font-weight: $W_bold;
+	line-height: $line-height-large;
+	.inverted &{
+		color: $C_textPrimaryInverted;
+		font-weight: $W_medium;
 	}
 }
 
@@ -124,9 +161,10 @@ Headline text for when something between display and normal text is needed.
 	color: $C_textPrimary;
 	font-size: $font-size-headline;
 	font-weight: $W_bold;
-	line-height: $line-height;
-	.inverted &{
+	line-height: $line-height-large;
+	.inverted & {
 		color: $C_textPrimaryInverted;
+		font-weight: $W_medium;
 	}
 }
 
@@ -148,6 +186,12 @@ Graphic text element used to label content. For example, used to display dates.
 	color: $C_textPrimary;
 	font-size: $font-size-small;
 	font-weight: $W_bold;
+	letter-spacing: -0.02em;
+	line-height: $line-height-small;
+	word-spacing: 0.1em;
+	.inverted & {
+		color: $C_textPrimaryInverted;
+	}
 	@include i18n-only('en') {
 		text-transform: uppercase;
 	}
@@ -170,4 +214,5 @@ Lighter variant of `header`. For example, used in the redesign to label a MUP wi
 .text--headerSecondary {
 	color: $C_textSecondary;
 	font-weight: $W_medium;
+	line-height: $line-height-small;
 }
