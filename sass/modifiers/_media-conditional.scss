@@ -29,6 +29,7 @@ Breakpoints        | Property       | Variants
 `medium`, `large`  | `margin`       | `center`
 `medium`, `large`  | `border`       | `top`, `none`
 `medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
+`medium`, `large`  | `width`        | `auto`, `full`
 */
 
 // text align
@@ -49,9 +50,16 @@ Breakpoints        | Property       | Variants
 @include _bpModifier( 'visibility', 'a11yHide' ) {
 	@include a11yVisibility('hidden');
 }
-
 @include _bpModifier( 'visibility', 'a11yShow') {
 	@include a11yVisibility('visible');
+}
+
+// width
+@include _bpModifier('width', 'auto') {
+	width: auto !important;
+}
+@include _bpModifier('width', 'full') {
+	width: 100% !important;
 }
 
 // padding
