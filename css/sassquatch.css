@@ -646,7 +646,7 @@ name: animation
 category: Sass Utils | Mixins & Placeholders
 ---
 */
-.toggleButton-input:checked + .toggleButton-label,
+.view--loading:before, .toggleButton-input:checked + .toggleButton-label,
 .animate--bounceInSubtle,
 .animate--spin {
   -webkit-transform-origin: center center;
@@ -1386,7 +1386,7 @@ textarea {
   line-height: 1.5; }
 
 .launcher,
-input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
+input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input:not([type]), input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 textarea,
 select {
   background-color: rgba(0, 0, 0, 0.05);
@@ -1399,21 +1399,21 @@ select {
   padding: 8px;
   width: 100%; }
   .launcher:focus,
-  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
+  input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input:not([type]):focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   textarea:focus,
   select:focus {
     border-color: #3987cb;
     box-shadow: none;
     outline: none; }
   .inverted .launcher, .inverted
-  input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
+  input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input:not([type]), .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
   textarea, .inverted
   select {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
     color: white; }
   .shaded .launcher, .shaded
-  input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
+  input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input:not([type]), .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
   textarea, .shaded
   select {
     background-color: white; }
@@ -1571,7 +1571,7 @@ Error text is set explicitly with `text--error`.
 
 */
 .field--error {
-  border-color: #e2373c; }
+  border-color: #e2373c !important; }
 
 /*doc
 ---
@@ -3615,6 +3615,7 @@ following classes are optional variants:
 Class                  | Description
 ---------------------- | ---------------------------
 `view--collection`     | Sets the style for views that are primarily "collections"
+`view--loading`        | Displays loading overlay
 
 ## Basic view (<a class="link followLink" href="pages/full-view.html">Demo</a>)
 Basic example of a single view in a document:
@@ -3667,6 +3668,55 @@ Basic example of a single view in a document:
 .view--collection,
 .view--collection .view-body {
   background-color: #f3f6f9; }
+
+/*doc
+---
+title: Loading state
+name: viewLoading
+parent: view
+---
+
+<a class="link followLink" href="pages/view-loading.html">Demo</a>
+Basic example of a single view in a document:
+
+```
+<div class="view view-loading">
+	<header class="view-head">
+		... view-head ...
+	</header>
+	<div class="view-body">
+		... view-body ...
+	</div>
+</div>
+```
+*/
+.view--loading:before {
+  -webkit-animation: spin 0.5s linear;
+  animation: spin 0.5s linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 36px;
+  width: 36px;
+  z-index: 25;
+  border-radius: 999px;
+  box-sizing: border-box;
+  border: solid 3px rgba(0, 0, 0, 0.2);
+  border-top-color: black;
+  margin: 0 auto; }
+.view--loading:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 20; }
 
 /*doc
 ---
@@ -5772,6 +5822,7 @@ Sets border properties on element
 Class                   | Description
 ----------------------- | --------------------------------
 `.border--top`          | sets a standard top border on the element
+`.border--left`         | sets a standard left border on the element
 `.border--none`         | removes all borders from element
 `.bordered`             | sets a standard top border AND top padding
 */
@@ -5781,6 +5832,12 @@ Class                   | Description
   .inverted .bordered, .inverted
   .border--top {
     border-top: 1px solid rgba(255, 255, 255, 0.2); }
+
+.border--left {
+  border-left: 1px solid rgba(0, 0, 0, 0.12); }
+  .inverted
+  .border--left {
+    border-left: 1px solid rgba(255, 255, 255, 0.2); }
 
 .border--none {
   border-width: 0 !important; }
@@ -6376,6 +6433,7 @@ Breakpoints        | Property       | Variants
 `medium`, `large`  | `margin`       | `center`
 `medium`, `large`  | `border`       | `top`, `none`
 `medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
+`medium`, `large`  | `width`        | `auto`, `full`
 */
 @media only screen and (min-width: 440px) {
   .atSmall_align--center {
@@ -6497,6 +6555,24 @@ Breakpoints        | Property       | Variants
     margin: 0;
     width: auto;
     height: auto; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_width--auto {
+    width: auto !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_width--auto {
+    width: auto !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_width--auto {
+    width: auto !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_width--full {
+    width: 100% !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_width--full {
+    width: 100% !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_width--full {
+    width: 100% !important; } }
 @media only screen and (min-width: 440px) {
   .atSmall_padding--none {
     padding: 0 !important; } }

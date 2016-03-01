@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.5.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.5.1</a>
 						</div>
 					</div>
 				</div>
@@ -143,6 +143,11 @@
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#view">View Base</a>
 										</li>
+									
+
+								
+
+									
 									
 
 								
@@ -351,6 +356,10 @@ following classes are optional variants:</p><table class="styleguide"> <tr>
 <td><code class="styleguide">view--collection</code></td>
 <td>Sets the style for views that are primarily &quot;collections&quot;</td>
 </tr>
+<tr>
+<td><code class="styleguide">view--loading</code></td>
+<td>Displays loading overlay</td>
+</tr>
  </table>
 <h2>Basic view (<a class="link followLink" href="pages/full-view.html">Demo</a>)</h2>
 <p class="styleguide">Basic example of a single view in a document:</p><div class="codeBlock">
@@ -405,7 +414,21 @@ hero headers).</p><table class="styleguide"> <tr>
 <td><code class="styleguide">.view-head--photoOverlay</code></td>
 <td>Adds text protext gradient (<code class="styleguide">view-head--trasnparent</code> required with this class)</td>
 </tr>
- </table>	</main>
+ </table>
+<h2 id="viewLoading" class="styleguide">Loading state</h2>
+<p class="styleguide"><a class="link followLink" href="pages/view-loading.html">Demo</a>
+Basic example of a single view in a document:</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>&lt;div class="view view-loading"&gt;
+    &lt;header class="view-head"&gt;
+        ... view-head ...
+    &lt;/header&gt;
+    &lt;div class="view-body"&gt;
+        ... view-body ...
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div>	</main>
 	</section>
 
 	<footer class="stripe stripe--collection">
@@ -1909,6 +1932,17 @@ $(function() {
 					"name": "viewHead",
 					"category": "Views",
 					"url": "views.html#viewHead"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Loading state",
+					"name": "viewLoading",
+					"category": "Views",
+					"url": "views.html#viewLoading"
 				});
 
 			

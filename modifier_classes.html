@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.5.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.5.1</a>
 						</div>
 					</div>
 				</div>
@@ -371,6 +371,10 @@ and overflow hidden.</p><p class="styleguide">Extends <code class="styleguide">%
 <td>sets a standard top border on the element</td>
 </tr>
 <tr>
+<td><code class="styleguide">.border--left</code></td>
+<td>sets a standard left border on the element</td>
+</tr>
+<tr>
 <td><code class="styleguide">.border--none</code></td>
 <td>removes all borders from element</td>
 </tr>
@@ -577,6 +581,11 @@ a modification at a specific breakpoint.</p><p class="styleguide"><em>Uses atMed
 <td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
 <td><code class="styleguide">visibility</code></td>
 <td><code class="styleguide">a11yHide</code>, <code class="styleguide">a11yShow</code></td>
+</tr>
+<tr>
+<td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
+<td><code class="styleguide">width</code></td>
+<td><code class="styleguide">auto</code>, <code class="styleguide">full</code></td>
 </tr>
  </table>
 <h1 id="sizeMod" class="styleguide">Media Sizing</h1>
@@ -2309,6 +2318,17 @@ $(function() {
 					"name": "viewHead",
 					"category": "Views",
 					"url": "views.html#viewHead"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Loading state",
+					"name": "viewLoading",
+					"category": "Views",
+					"url": "views.html#viewLoading"
 				});
 
 			
