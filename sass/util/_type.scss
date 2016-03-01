@@ -1,99 +1,185 @@
 /*doc
 ---
 title: Text utils
-name: text
+name: textUtil
 category: Sass Utils | Mixins & Placeholders
 ---
 */
 
-/*doc
----
-title: Link color
-name: linkColorPlaceholder
-parent: text
----
-Forces an element to use link-like styling.
-
-```
-@extend %link;
-```
-*/
-%link {
-	@include color-all($C_link);
-	&:hover, &:focus, &:active {
-		text-decoration: underline;
-	}
-}
-
-/*doc
----
-title: Text wrap
-name: textWrapUtil
-parent: text
----
-Nice hyphenation and wrapping for running text.
-
-```
-@extend %link;
-```
-*/
-%wrapNice {
-	@include hyphens(auto);
-	@include prefixer(hyphenate-limit-chars, 5 3 2, ms);
-	@include prefixer(hyphenate-limit-after, 2, webkit moz spec);
-	@include prefixer(hyphenate-limit-before, 3, webkit moz spec);
-	@include prefixer(hyphenate-limit-lines, 2, webkit ms spec);
-}
-
-
-/*doc
----
-title: Text protection shim
-name: textProtection
-parent: text
----
-Adds a pseudo-element gradient
-
-```
-@mixin textProtectionScrim($placement: 'top'); // 'bottom' will place gradent on bottom of el
-```
-*/
-$C_scrimGradient: #0F141F; // move to swatches?
-@mixin textProtectionScrim($placement: 'bottom') {
-	&:before {
-		content: '';
-		display: block;
-		height: 100%;
-		position: absolute;
-		width: 100%;
-		z-index: 0;
-		left: 0;
-
-		@if $placement == 'bottom' {
-			@include linear-gradient(180deg, transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 25%, transparentize($C_scrimGradient, .1) 100%);
-			bottom: 0;
-		} @else {
-			@include linear-gradient(0deg, transparentize($C_scrimGradient, 1) 0%, transparentize($C_scrimGradient, .9) 25%, transparentize($C_scrimGradient, .3) 100%);
-			top: 0;
-		}
-	}
-}
-
 
 //
 // PRIVATE
-// support for heading descendant specificity in
-// text variants (useful for applying a class to a
-// container instead of each individual element)
+// standard breakpoint for
+// text style changes
 //
-@mixin _headingDescendant() {
-	&,
-	& h1,
-	& h2,
-	& h3,
-	& h4,
-	& h5,
-	& h6 {
-		@content;
+@mixin _textBp() {
+	@include atMediaUp(medium) {
+		@content
 	}
+}
+
+
+/*doc
+---
+title: Heading placeholders
+name: headingPlaceholders
+parent: textUtil
+---
+
+Placeholder             | Description
+----------------------- | --------------------------------
+`%text--display1`       | Top level display heading
+`%text--display2`       | Second level display heading
+`%text--display3`       | Third level display heading
+`%text--display4`       | Fourth level display heading
+*/
+%text--display1,
+%text--display2,
+%text--display3,
+%text--display4 {
+	@include color-all($C_textPrimary);
+
+	.inverted & {
+		@include color-all($C_textPrimaryInverted);
+		font-weight: $W_medium;
+	}
+}
+%text--display1,
+%text--display2,
+%text--display3 {
+	font-weight: $W_bold;
+	letter-spacing: -0.02em;
+	line-height: $line-height-large;
+}
+%text--display2,
+%text--display3,
+%text--display4 {
+	line-height: $line-height;
+}
+%text--display1 {
+	font-size: $font-size-display2;
+
+	@include _textBp() {
+		font-size: $font-size-display1;
+	}
+}
+%text--display2 {
+	font-size: $font-size-display2;
+}
+%text--display3 {
+	font-size: $font-size-display3;
+}
+%text--display4 {
+	font-size: $font-size-display4;
+}
+
+
+/*doc
+---
+title: Label placeholders
+name: labelPlaceholder
+parent: textUtil
+---
+
+Placeholder          | Description
+-------------------- | --------------------------------
+`%text--label`       | Styles for list headers and form field labels
+*/
+%text--label {
+	@include color-all($C_textPrimary);
+	font-size: $font-size-small;
+	font-weight: $W_bold;
+	line-height: $line-height-small;
+	letter-spacing: -0.02em;
+	word-spacing: 0.1em;
+
+	.inverted & {
+		@include color-all($C_textPrimaryInverted);
+	}
+
+	@include i18n-only('en') {
+		text-transform: uppercase;
+	}
+}
+
+
+/*doc
+---
+title: Weight placeholders
+name: weightPlaceholders
+parent: textUtil
+---
+
+Placeholder             | Description
+----------------------- | --------------------------------
+`%text--bold`           | Bold text (Medium weight)
+`%text--heavy`          | Bolder text (Semibold weight)
+*/
+%text--bold {
+	font-weight: $W_medium;
+}
+%text--heavy {
+	font-weight: $W_bold;
+}
+
+
+/*doc
+---
+title: Color placeholders
+name: colorPlaceholders
+parent: textUtil
+---
+
+Placeholder           | Description
+--------------------- | --------------------------------
+`%text--secondary`    | Secondary gray text color
+`%text--tertiary`     | Tertiary gray text color
+*/
+%text--secondary {
+	@include color-all($C_textSecondary);
+
+	.inverted & {
+		@include color-all($C_textSecondaryInverted);
+	}
+}
+%text--tertiary {
+	@include color-all($C_textTertiary);
+
+	.inverted & {
+		@include color-all($C_textTertiaryInverted);
+	}
+}
+
+
+/*doc
+---
+title: Other text placeholders
+name: otherTextPlaceholders
+parent: textUtil
+---
+
+Placeholder           | Description
+--------------------- | --------------------------------
+`%text--small`        | Sets styles for small text
+`%text--hint`         | "hint" text
+`%text--link`         | Link text color
+`%text--caption`      | Small secondary text for captions
+`%text--attention`    | Small text to draw attention (ie. error text)
+*/
+%text--small {
+	font-size: $font-size-small;
+}
+%text--hint {
+	@extend %text--tertiary;
+}
+%text--link {
+	@include color-all($C_link);
+}
+%text--caption {
+	@extend %text--small;
+	@extend %text--secondary;
+}
+%text--attention {
+	@extend %text--small;
+	@include color-all($C_attention);
 }
