@@ -1,0 +1,575 @@
+	<!-- Styleguide CSS -->
+	<link rel="stylesheet" href="../css/font/font.css">
+	<link rel="stylesheet" href="../css/doc.css">
+	<link rel="stylesheet" href="../css/github.css">
+
+	<!-- CSS to be documented -->
+	<link rel="stylesheet" href="../css/sassquatch.css">
+	<style>
+		td, td p, th, th p {
+			color: rgba(0,0,0,.87);
+			font-weight: 400;
+		}
+		thead th {
+			color: rgba(0,0,0,.54);
+		}
+		.inverted thead th {
+			color: rgba(255,255,255,.7);
+		}
+		.inverted td, .inverted td p, .inverted th, .inverted th p {
+			color: rgba(255,255,255,1);
+		}
+		.inverted td.text--secondary, .inverted td p.text--secondary, .inverted th.text--secondary, .inverted th p.text--secondary,
+		.inverted td.text--headerSecondary, .inverted td p.text--headerSecondary, .inverted th.text--headerSecondary, .inverted th p.text--headerSecondary {
+			color: rgba(255,255,255,.7);
+		}
+		.inverted td.text--error, .inverted td p.text--error, .inverted th.text--error, .inverted th p.text--error {
+			color: #ff911a;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="view lang_en">
+		<header class="view-head" style="display: flex;">
+			<span class="valign--middle text--bold">Meetup Type Specimen</span>
+		</header>
+		<main class="view-body">
+			<div class="stripe"><div class="bounds bounds--wide">
+				<div class="chunk">
+					<table>
+				    <thead>
+							<tr>
+								<th>Name</th>
+								<th>Metrics</th>
+								<th>Weight</th>
+							</tr>
+				    </thead>
+
+						<tbody>
+
+							<!-- Headings -->
+							<tr>
+								<th class="valign--top text--display">Display 1</th>
+								<td class="valign--top">
+									<h1 class="text--display">42px/1.25</h1><p>tracking: -0.03em</p>
+								</td>
+								<td class="valign--top text--display">Semibold</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--display2">Display 2</th>
+								<td class="valign--top">
+									<h2 class="text--display2">34px/1.25</h2><p>tracking: -0.03em</p>
+								</td>
+								<td class="valign--top text--display2">Semibold</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--display3">Display 3</th>
+								<td class="valign--top">
+									<h3 class="text--display3">28px/1.25</h3><p>tracking: -0.03em</p>
+								</td>
+								<td class="valign--top text--display3">Semibold</td>
+							</tr>
+							<tr>
+								<th class="valign--top tearsheet-date">Tearsheet</th>
+								<td class="valign--top">
+									<h4 class="tearsheet-date">24px/1</h4>
+								</td>
+								<td class="valign--top tearsheet-date">Semibold</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--headline">Headline</th>
+								<td class="valign--top">
+									<h4 class="text--headline">20px/1.25</h4>
+								</td>
+								<td class="valign--top text--headline">Semibold</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--header">Header</th>
+								<td class="valign--top">
+									<h4 class="text--small text--heavy display--inlineBlock">13px/1.6</h4>
+									<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
+								</td>
+								<td class="valign--top text--header">Semibold</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--header text--headerSecondary">Header Secondary</th>
+								<td class="valign--top">
+									<h4 class="text--bold text--small text--secondary display--inlineBlock">13px/1.6</h4>
+									<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
+								</td>
+								<td class="valign--top text--header text--headerSecondary">Medium</td>
+							</tr>
+
+							<!-- Body text -->
+							<tr>
+								<td class="valign--top text--heavy">Heavy text</td>
+								<td class="valign--top text--heavy">16px/1.45</td>
+								<td class="valign--top text--heavy">Semibold</td>
+							</tr>
+
+							<tr>
+								<td class="valign--top text--bold">Bold text</td>
+								<td class="valign--top text--bold">16px/1.45</td>
+								<td class="valign--top text--bold">Medium</td>
+							</tr>
+							<tr>
+								<td class="valign--top"><p>Default text</p></td>
+								<td class="valign--top">16px/1.45</td>
+								<td class="valign--top">Regular</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--secondary">Secondary text</th>
+								<td class="valign--top text--secondary">16px/1.45</td>
+								<td class="valign--top text--secondary">Regular</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--hint">Hint text</th>
+								<td class="valign--top text--hint">16px/1.45</td>
+								<td class="valign--top text--hint">Regular</td>
+							</tr>
+							<tr>
+								<th class="valign--top"><a href="#" class="link">Link text</a></th>
+								<td class="valign--top"><a href="#" class="link">16px/1.45</a></td>
+								<td class="valign--top"><a href="#" class="link">Regular</a></td>
+							</tr>
+
+							<!-- Small text -->
+							<tr>
+								<th class="valign--top text--small">Small text</th>
+								<td class="valign--top text--small">13px/1.6</td>
+								<td class="valign--top text--small">Regular</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--caption">Caption text</th>
+								<td class="valign--top text--caption">13px/1.6</td>
+								<td class="valign--top text--caption">Regular</td>
+							</tr>
+							<tr>
+								<th class="valign--top text--error">Error/warning text</th>
+								<td class="valign--top text--error">13px/1.6</td>
+								<td class="valign--top text--error">Regular</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<div class="bounds">
+				<div class="runningText chunk">
+					<h5 class="text--bold">Running body text paragraphs</h5>
+					<p>Complete with inline <strong>bold</strong> and <a href="#" class="link">link</a> text. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+
+					<ul class="chunk">
+						<li>I am a default</li>
+						<li>unordered list</li>
+						<li>inside running text</li>
+					</ul>
+
+					<ol class="chunk">
+						<li>I am a default</li>
+						<li>ordered list</li>
+						<li>inside running text</li>
+					</ol>
+
+
+					<p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+					<p class="text--small">Here's an example of small text being set. Notice the beefier line-height? If not, that's fine, as long as this is readable.</p>
+				</div>
+
+				<div class="chunk">
+					<label for="test-textinput" class="required">I'm a label</label>
+					<input id="test-textinput" type="text" value="Text input with value" />
+				</div>
+
+				<div class="chunk">
+					<label for="test-textinput2">Just another label</label>
+					<input id="test-textinput2" type="text" placeholder="Text input with placeholder" class="field--error" />
+					<p class="text--error">This one can't be empty</p>
+				</div>
+
+				<div class="row">
+					<div class="row-item chunk">
+						<label for="split1">Favorite number</label>
+						<input id="split0" type="number" />
+					</div>
+					<div class="row-item chunk">
+						<label for="split1">Unicorn name</label>
+						<input id="split1" type="text" placeholder="ie. Fluffy, Resplendent" />
+					</div>
+					<div class="row-item chunk">
+						<label class="required" for="split2">Unicorn color</label>
+						<select id="split2">
+							<option value="clear">Transparent</option>
+							<option value="green">Toasted clove saffron</option>
+							<option value="brown">Midnight brown</option>
+							<option value="black">Seabreeze black</option>
+						</select>
+					</div>
+				</div>
+
+				<ul class="gridList gridList--has1 atMedium_gridList--has3">
+						<li class="gridList-item">
+							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+								<div class="card--group-content">
+									<h4 class="text--headline">Some Meetup Group Name</h4>
+									<p>457 [chapter.who]</p>
+								</div>
+							</div>
+						</li>
+
+						<li class="gridList-item">
+							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+								<div class="card--group-content">
+									<h4 class="text--headline">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
+									<p>457 [chapter.who]</p>
+								</div>
+							</div>
+						</li>
+
+						<li class="gridList-item">
+							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+								<div class="card--group-content">
+									<h4 class="text--headline">Some Meetup Group Name</h4>
+									<p>457 [chapter.who]</p>
+								</div>
+							</div>
+						</li>
+				</ul>
+
+				<ul>
+					<li class="row chunk">
+						<div class="row-item row-item--shrink">
+							<time datetime="2016-12-31" class="tearsheet">
+								<span class="tearsheet-date">13</span>
+								<span class="tearsheet-month">Jan</span>
+							</time>
+						</div>
+						<div class="row-item">
+							<h5 class="text--bold">5.5 Mile Three Bridges Hike</h5>
+							<p class="text--caption chunk">Sunday 11:30am · Three Bridges Park</p>
+							<ul class="inlineblockList">
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+    					</ul>
+						</div>
+					</li>
+
+					<li class="row chunk border--top padding--top">
+						<div class="row-item row-item--shrink">
+							<time datetime="2016-12-31" class="tearsheet">
+								<span class="tearsheet-date">13</span>
+								<span class="tearsheet-month">Jan</span>
+							</time>
+						</div>
+						<div class="row-item">
+							<h5 class="text--bold">5.5 Mile Three Bridges Hike</h5>
+							<p class="text--caption chunk">Sunday 11:30am · Three Bridges Park</p>
+							<ul class="inlineblockList">
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+    					</ul>
+						</div>
+					</li>
+
+					<li class="row chunk border--top padding--top">
+						<div class="row-item row-item--shrink">
+							<time datetime="2016-12-31" class="tearsheet">
+								<span class="tearsheet-date">13</span>
+								<span class="tearsheet-month">Jan</span>
+							</time>
+						</div>
+						<div class="row-item">
+							<h5 class="text--bold">5.5 Mile Three Bridges Hike</h5>
+							<p class="text--caption chunk">Sunday 11:30am · Three Bridges Park</p>
+							<ul class="inlineblockList">
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><p class="text--caption">+5</p></li>
+    					</ul>
+						</div>
+					</li>
+				</ul>
+
+			</div></div>
+
+			<div class="stripe stripe--inverted inverted"><div class="bounds bounds--wide">
+				<table>
+			    <thead>
+						<tr>
+							<th>Name</th>
+							<th>Metrics</th>
+							<th>Weight</th>
+						</tr>
+			    </thead>
+
+					<tbody>
+
+						<!-- Headings -->
+						<tr>
+							<th class="valign--top text--display">Display 1</th>
+							<td class="valign--top">
+								<h1 class="text--display">42px/1.25</h1><p>tracking: -0.03em</p>
+							</td>
+							<td class="valign--top text--display">Medium</td>
+						</tr>
+						<tr>
+							<th class="valign--top text--display2">Display 2</th>
+							<td class="valign--top">
+								<h2 class="text--display2">34px/1.25</h2><p>tracking: -0.03em</p>
+							</td>
+							<td class="valign--top text--display2">Medium</td>
+						</tr>
+						<tr>
+							<th class="valign--top text--display3">Display 3</th>
+							<td class="valign--top">
+								<h3 class="text--display3">28px/1.25</h3><p>tracking: -0.03em</p>
+							</td>
+							<td class="valign--top text--display3">Medium</td>
+						</tr>
+							<tr>
+								<th class="valign--top tearsheet-date">Tearsheet</th>
+								<td class="valign--top">
+									<h4 class="tearsheet-date">24px/1</h4>
+								</td>
+								<td class="valign--top tearsheet-date">Semibold</td>
+							</tr>
+						<tr>
+							<th class="valign--top text--headline">Headline</th>
+							<td class="valign--top">
+								<h4 class="text--headline">20px/1.25</h4>
+							</td>
+							<td class="valign--top text--headline">Medium</td>
+						</tr>
+						<tr>
+							<th class="valign--top text--header">Header</th>
+							<td class="valign--top">
+								<h4 class="text--small text--heavy display--inlineBlock">13px/1.4</h4>
+								<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
+							</td>
+							<td class="valign--top text--header">Semibold</td>
+						</tr>
+						<tr>
+							<th class="valign--top text--header text--headerSecondary">Header Secondary</th>
+							<td class="valign--top">
+								<h4 class="text--bold text--small text--secondary display--inlineBlock">13px/1.4</h4>
+								<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
+							</td>
+							<td class="valign--top text--header text--headerSecondary">Medium</td>
+						</tr>
+
+						<!-- Body text -->
+						<tr>
+							<td class="valign--top text--heavy">Heavy text</td>
+							<td class="valign--top text--heavy">16px/1.45</td>
+							<td class="valign--top text--heavy">Semibold</td>
+						</tr>
+
+						<tr>
+							<td class="valign--top text--bold">Bold text</td>
+							<td class="valign--top text--bold">16px/1.45</td>
+							<td class="valign--top text--bold">Medium</td>
+						</tr>
+						<tr>
+							<td class="valign--top"><p>Default text</p></td>
+							<td class="valign--top">16px/1.45</td>
+							<td class="valign--top">Regular</td>
+						</tr>
+						<tr>
+							<th class="valign--top text--secondary">Secondary text</th>
+							<td class="valign--top text--secondary">16px/1.45</td>
+							<td class="valign--top text--secondary">Regular</td>
+						</tr>
+						<tr>
+							<th class="valign--top text--hint">Hint text</th>
+							<td class="valign--top text--hint">16px/1.45</td>
+							<td class="valign--top text--hint">Regular</td>
+						</tr>
+						<tr>
+							<th class="valign--top"><a href="#" class="link">Link text</a></th>
+							<td class="valign--top"><a href="#" class="link">16px/1.45</a></td>
+							<td class="valign--top"><a href="#" class="link">Regular</a></td>
+						</tr>
+
+						<!-- Small text -->
+						<tr>
+							<th class="valign--top text--small">Small text</th>
+							<td class="valign--top text--small">13px/1.6</td>
+							<td class="valign--top text--small">Regular</td>
+						</tr>
+						<tr>
+							<th class="valign--top text--caption">Caption text</th>
+							<td class="valign--top text--caption">13px/1.6</td>
+							<td class="valign--top text--caption">Regular</td>
+						</tr>
+						<tr>
+							<th class="valign--top"><p class="text--error">Error/warning text</p></th>
+							<td class="valign--top"><p class="text--error">13px/1.6</p></td>
+							<td class="valign--top"><p class="text--error">Regular</p></td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+			<div class="bounds">
+				<div class="runningText chunk">
+					<h5 class="text--bold">Running body text paragraphs</h5>
+					<p>Complete with inline <strong>bold</strong> and <a href="#" class="link">link</a> text. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+
+					<ul class="chunk">
+						<li>I am a default</li>
+						<li>unordered list</li>
+						<li>inside running text</li>
+					</ul>
+
+					<ol class="chunk">
+						<li>I am a default</li>
+						<li>ordered list</li>
+						<li>inside running text</li>
+					</ol>
+
+
+					<p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+					<p class="text--small">Here's an example of small text being set. Notice the beefier line-height? If not, that's fine, as long as this is readable.</p>
+				</div>
+
+				<div class="chunk">
+					<label for="test-textinput" class="required">I'm a label</label>
+					<input id="test-textinput" type="text" value="Text input with value" />
+				</div>
+
+				<div class="chunk">
+					<label for="test-textinput2">Just another label</label>
+					<input id="test-textinput2" type="text" placeholder="Text input with placeholder" class="field--error" />
+					<p class="text--error">This one can't be empty</p>
+				</div>
+
+				<div class="row">
+					<div class="row-item chunk">
+						<label for="split1">Favorite number</label>
+						<input id="split0" type="number" />
+					</div>
+					<div class="row-item chunk">
+						<label for="split1">Unicorn name</label>
+						<input id="split1" type="text" placeholder="ie. Fluffy, Resplendent" />
+					</div>
+					<div class="row-item chunk">
+						<label class="required" for="split2">Unicorn color</label>
+						<select id="split2">
+							<option value="clear">Transparent</option>
+							<option value="green">Toasted clove saffron</option>
+							<option value="brown">Midnight brown</option>
+							<option value="black">Seabreeze black</option>
+						</select>
+					</div>
+				</div>
+
+				<ul class="gridList gridList--has1 atMedium_gridList--has3">
+						<li class="gridList-item">
+							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+								<div class="card--group-content">
+									<h4 class="text--headline">Some Meetup Group Name</h4>
+									<p>457 [chapter.who]</p>
+								</div>
+							</div>
+						</li>
+
+						<li class="gridList-item">
+							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+								<div class="card--group-content">
+									<h4 class="text--headline">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
+									<p>457 [chapter.who]</p>
+								</div>
+							</div>
+						</li>
+
+						<li class="gridList-item">
+							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+								<div class="card--group-content">
+									<h4 class="text--headline">Some Meetup Group Name</h4>
+									<p>457 [chapter.who]</p>
+								</div>
+							</div>
+						</li>
+				</ul>
+
+				<ul>
+					<li class="row chunk">
+						<div class="row-item row-item--shrink">
+							<time datetime="2016-12-31" class="tearsheet">
+								<span class="tearsheet-date">13</span>
+								<span class="tearsheet-month">Jan</span>
+							</time>
+						</div>
+						<div class="row-item">
+							<h5 class="text--bold">5.5 Mile Three Bridges Hike</h5>
+							<p class="text--caption chunk">Sunday 11:30am · Three Bridges Park</p>
+							<ul class="inlineblockList">
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+    					</ul>
+						</div>
+					</li>
+
+					<li class="row chunk border--top padding--top">
+						<div class="row-item row-item--shrink">
+							<time datetime="2016-12-31" class="tearsheet">
+								<span class="tearsheet-date">13</span>
+								<span class="tearsheet-month">Jan</span>
+							</time>
+						</div>
+						<div class="row-item">
+							<h5 class="text--bold">5.5 Mile Three Bridges Hike</h5>
+							<p class="text--caption chunk">Sunday 11:30am · Three Bridges Park</p>
+							<ul class="inlineblockList">
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+    					</ul>
+						</div>
+					</li>
+
+					<li class="row chunk border--top padding--top">
+						<div class="row-item row-item--shrink">
+							<time datetime="2016-12-31" class="tearsheet">
+								<span class="tearsheet-date">13</span>
+								<span class="tearsheet-month">Jan</span>
+							</time>
+						</div>
+						<div class="row-item">
+							<h5 class="text--bold">5.5 Mile Three Bridges Hike</h5>
+							<p class="text--caption chunk">Sunday 11:30am · Three Bridges Park</p>
+							<ul class="inlineblockList">
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+								<li><a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);">Member Name</a></li>
+    					</ul>
+						</div>
+					</li>
+				</ul>
+
+			</div></div>
+		</main>
+	</div>
+</body>
+</html>

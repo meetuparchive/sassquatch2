@@ -123,6 +123,12 @@ parent: bodyText
 	font-weight: $W_medium;
 }
 
+.inverted .runningText {
+	.text--bold {
+		font-weight: $W_bold;
+	}
+}
+
 /*doc
 ---
 title: Small text
@@ -192,7 +198,7 @@ parent: bodyText
 */
 @include _modifier(text, error) {
 	@extend %text--small;
-	@include color-all($C_red);
+	@include color-all($C_attention);
 }
 
 /*doc
@@ -317,6 +323,9 @@ numbers/bullets to a list.
 %_listStyleBase {
 	list-style-position: outside;
 	padding-left: 1.33em; /* indent by default */
+	@include atMediaUp(huge){
+		padding-left: inherit; /* indent by default */
+	}
 }
 ul {
 	&.bullets,
