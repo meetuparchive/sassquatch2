@@ -167,6 +167,7 @@ Headline text for when something between display and normal text is needed.
 		font-weight: $W_medium;
 	}
 }
+big { @extend %text--headline; }
 
 /*doc
 ---
