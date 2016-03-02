@@ -188,22 +188,6 @@ parent: bodyText
 }
 
 
-/*doc
----
-title: Label text
-name: textLabel
-parent: bodyText
----
-Matches form label styling (useful for list headers)
-
-```html_example
-	<p class="text--label">I share styling with the `label` element</p>
-```
-*/
-.text--label {
-	@extend %text--label;
-}
-
 
 /*doc
 ---
