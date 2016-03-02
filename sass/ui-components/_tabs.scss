@@ -32,31 +32,14 @@ Class                 | Description
 --------------------- | -----------------------------
 `tabs-tab--selected`  | Applies styles for tab selected state
 */
+$_tabBorder: 4px;
 
 .tabs {
-	display: block;
 	list-style: none;
 	margin: 0;
-	overflow: hidden;
 	padding: 0;
-	position: relative;
-
-	&:before {
-		border-bottom: 1px solid $C_border;
-		bottom: 0;
-		content: '';
-		position: absolute;
-		width: 100%;
-		z-index: 1;
-
-		.inverted & {
-			border-bottom: 1px solid $C_borderInverted;
-		}
-
-	}
-
+	display: block;
 }
-
 .tabs--full {
 	display: table;
 	table-layout: fixed;
@@ -67,77 +50,32 @@ Class                 | Description
 		margin: 0;
 		text-align: center;
 	}
-
 }
 
 .tabs-tab {
-	background-color: $C_collectionBG;
 	color: $C_textSecondary;
+	padding: 0;
+	margin: 0 0 0 $space;
 	cursor: pointer;
 	display: inline-block;
-	padding: $space-half $space;
-	position: relative;
-
+	border-bottom: $_tabBorder solid transparent;
 	&:first-child {
-		border-top-left-radius: $defaultRadius;
+		margin-left: 0;
 	}
-
-	&:last-child {
-		border-top-right-radius: $defaultRadius;
-	}
-
-	&:hover {
-		background-color: darken($C_collectionBG, 2%);
-		color: $C_textPrimary;
-	}
-
-
-	//TODO: come up with a $C_collectionBGInverted
-	$C_colletionBGInverted: lighten($C_contentBGInverted, 5%);
 
 	.inverted & {
-		background-color: $C_colletionBGInverted;
 		color: $C_textSecondaryInverted;
-
 		&:hover {
-			background-color: darken($C_colletionBGInverted, 2%);
-			color: $C_textPrimaryInverted;
+			color: $C_textSecondaryInverted;
 		}
-
+		&.tabs-tab--selected {
+			color: $C_textPrimaryInverted;
+			border-bottom-color: $C_textPrimaryInverted;
+		}
 	}
-
 }
-
 .tabs-tab--selected {
-	background-color: $C_contentBG;
-	box-shadow: 0 0 3px 1px $C_border;
-	border-radius: $defaultRadius $defaultRadius 0 0;
-	border-top: 1px solid $C_border;
-	color: $C_lightPurple;
-	font-weight: $W_bold;
-	z-index: 2;
-
-	&:hover {
-		background-color: $C_contentBG;
-		color: $C_lightPurple;
-	}
-
-	&:first-child {
-		box-shadow: 2px -2px 3px -1px $C_border;
-		border-left: 1px solid $C_border;
-	}
-
-	.inverted & {
-		background-color: $C_contentBGInverted;
-		border: 1px solid $C_borderInverted;
-		border-bottom: 0;
-		color: $C_textPrimaryInverted;
-
-		&:hover {
-			background-color: $C_contentBGInverted;
-			color: $C_textPrimaryInverted;
-		}
-
-	}
-
+	color: $C_link;
+	font-weight: $W_medium;
+	border-bottom: $_tabBorder solid $C_link;
 }
