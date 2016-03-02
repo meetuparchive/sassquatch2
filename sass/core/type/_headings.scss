@@ -56,9 +56,6 @@ the tag as a heading.
 <h2 class="text--display1">Display text is for headings</h2>
 <h2 class="text--display2">Display text is for headings</h2>
 <h2 class="text--display3">Display text is for headings</h2>
-<h2 class="text--display4">Display text is for headings</h2>
-<br /><hr /><br /> <!-- lol, hr -->
-<big>Big tags use <code>text--display4</code> styles by default</big>
 ```
 */
 .text--display1 {
@@ -72,10 +69,6 @@ the tag as a heading.
 }
 .text--display3 {
 	@extend %text--display3;
-}
-big,
-.text--display4 {
-	@extend %text--display4;
 }
 
 

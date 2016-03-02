@@ -132,6 +132,22 @@ small,
 	@extend %text--small;
 }
 
+/*doc
+---
+title: Big text
+name: bigText
+parent: bodyText
+---
+```html_example
+<p class="text--big">Big text is big</p>
+<big>Big text is big</big>
+```
+*/
+big,
+.text--big {
+	@extend %text--big;
+}
+
 
 /*doc
 ---

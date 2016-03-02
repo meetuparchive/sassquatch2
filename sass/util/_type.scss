@@ -31,7 +31,6 @@ Placeholder             | Description
 `%text--display1`       | Top level display heading
 `%text--display2`       | Second level display heading
 `%text--display3`       | Third level display heading
-`%text--display4`       | Fourth level display heading
 */
 %text--display1,
 %text--display2,
@@ -61,16 +60,6 @@ Placeholder             | Description
 	font-size: $font-size-display3;
 	line-height: $line-height-largeText;
 	line-height: $line-height;
-}
-%text--display4 {
-	@include color-all($C_textPrimary);
-	font-size: $font-size-display4;
-	line-height: $line-height;
-	font-weight: $W_bold;
-
-	.inverted & {
-		@include color-all($C_textPrimaryInverted);
-	}
 }
 
 
@@ -172,6 +161,7 @@ parent: textUtil
 
 Placeholder           | Description
 --------------------- | --------------------------------
+`%text--big`          | Sets styles for big text
 `%text--small`        | Sets styles for small text
 `%text--hint`         | "hint" text
 `%text--link`         | Link text color
@@ -179,6 +169,11 @@ Placeholder           | Description
 `%text--attention`    | Small text to draw attention (ie. error text)
 `%text--mono`         | Monospaced text
 */
+%text--big {
+	font-size: $font-size-big;
+	line-height: $line-height;
+	font-weight: $W_bold;
+}
 %text--small {
 	font-size: $font-size-small;
 	line-height: $line-height-smallText;
