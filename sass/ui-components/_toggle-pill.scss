@@ -145,3 +145,45 @@ Checkbox form elements styled as toggle buttons.
 .toggleButton-icon {
 	margin-left: $space-quarter;
 }
+
+.quickJoin {
+	box-sizing: content-box;
+	height: $media-xs;
+	width: $media-xs;
+}
+
+.toggleButton--join {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	text-shadow: none;
+
+	.toggleButton-label {
+		border-radius: 999px;
+		border: 1px solid $C_textPrimaryInverted;
+		height: $media-xs;
+		width: $media-xs;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: transparent;
+		}
+	}
+
+	.toggleButton-input {
+
+		&:checked + .toggleButton-label {
+			background: $C_textPrimaryInverted;
+			color: $C_textPrimary;
+			height: auto;
+			width: auto;
+		}
+
+	}
+}
+
+.quickJoin {
+	position: relative;
+}
