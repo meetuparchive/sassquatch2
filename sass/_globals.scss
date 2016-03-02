@@ -79,10 +79,11 @@ Variable                | Value
 
 ## Leading
 
-Variable                | Value
------------------------ | --------------------------------
-`$line-height`          | `1.25`
-`$line-height-small`    | `1.4`
+Variable                    | Value
+--------------------------- | --------------------------------
+`$line-height-largeText`    | `1.25`
+`$line-height`              | `1.45`
+`$line-height-smallText`    | `1.6`
 
 */
 $font : "Graphik", helvetica, arial, sans-serif;
@@ -103,9 +104,9 @@ $W_medium : 600;
 $W_bold   : 800;
 
 // Leading
-$line-height-large : 1.25;
-$line-height       : 1.45;
-$line-height-small : 1.6;
+$line-height-largeText : 1.25;
+$line-height           : 1.45;
+$line-height-smallText : 1.6;
 
 
 /*doc

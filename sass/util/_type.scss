@@ -47,7 +47,7 @@ Placeholder             | Description
 }
 %text--display1 {
 	font-size: $font-size-display2;
-	line-height: $line-height-large;
+	line-height: $line-height-largeText;
 
 	@include _textBp() {
 		font-size: $font-size-display1;
@@ -59,7 +59,7 @@ Placeholder             | Description
 }
 %text--display3 {
 	font-size: $font-size-display3;
-	line-height: $line-height-large;
+	line-height: $line-height-largeText;
 	line-height: $line-height;
 }
 %text--display4 {
@@ -89,7 +89,7 @@ Placeholder          | Description
 	@include color-all($C_textPrimary);
 	font-size: $font-size-small;
 	font-weight: $W_bold;
-	line-height: $line-height-small;
+	line-height: $line-height-smallText;
 	letter-spacing: -0.02em;
 	word-spacing: 0.1em;
 
@@ -181,7 +181,7 @@ Placeholder           | Description
 */
 %text--small {
 	font-size: $font-size-small;
-	line-height: $line-height-small;
+	line-height: $line-height-smallText;
 }
 %text--hint {
 	@extend %text--tertiary;
