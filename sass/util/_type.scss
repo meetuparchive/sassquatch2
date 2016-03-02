@@ -18,24 +18,6 @@ category: Sass Utils | Mixins & Placeholders
 	}
 }
 
-//
-// PRIVATE
-// support for heading descendant specificity in
-// text variants (useful for applying a class to a
-// container instead of each individual element)
-//
-@mixin _headingDescendant() {
-	&,
-	& h1,
-	& h2,
-	& h3,
-	& h4,
-	& h5,
-	& h6 {
-		@content;
-	}
-}
-
 
 /*doc
 ---
@@ -198,10 +180,8 @@ Placeholder           | Description
 `%text--mono`         | Monospaced text
 */
 %text--small {
-	@include _headingDescendant() {
-		font-size: $font-size-small;
-		line-height: $line-height-small;
-	}
+	font-size: $font-size-small;
+	line-height: $line-height-small;
 }
 %text--hint {
 	@extend %text--tertiary;
