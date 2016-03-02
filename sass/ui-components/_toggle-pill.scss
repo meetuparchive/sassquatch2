@@ -24,7 +24,7 @@ Checkbox form elements styled as toggle buttons.
 
 ## Topic token toggle "unchecked" state
 ```html_example
-<div class="toggleButton">
+<div class="toggleButton toggleButton--topic">
 	<input class="toggleButton-input" type="checkbox" name="topic-dining2" id="topic-dining2" value="ToggleBtn" />
 	<label class="toggleButton-label" for="topic-dining2">
 		Dining Out
@@ -59,7 +59,7 @@ Checkbox form elements styled as toggle buttons.
 
 ## Topic token toggle "checked" state
 ```html_example
-<div class="toggleButton">
+<div class="toggleButton toggleButton--topic">
 	<input checked class="toggleButton-input" type="checkbox" name="topic-hiking2" id="topic-hiking2" value="ToggleBtn" />
 
 	<label class="toggleButton-label" for="topic-hiking2">
@@ -144,4 +144,38 @@ Checkbox form elements styled as toggle buttons.
 
 .toggleButton-icon {
 	margin-left: $space-quarter;
+}
+
+//
+// Topic variant
+//
+.toggleButton--topic {
+
+	.toggleButton-icon {
+		@include color-all($C_textHint);
+	}
+
+	.toggleButton-label {
+		&:hover,
+		&:active,
+		&:focus {
+			background: $C_selection;
+		}
+	}
+
+	.toggleButton-input:checked + .toggleButton-label {
+		background: $C_lightGray;
+		border-color: $C_border;
+		color: $C_textPrimary;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: darken($C_lightGray, 5%);
+		}
+
+		.toggleButton-icon {
+			@include color-all($C_red);
+		}
+	}
 }
