@@ -57,10 +57,6 @@ var {
 	@include hyphens(none);
 }
 
-code, pre {
-	font-family: $font--mono;
-}
-
 pre {
 	white-space: pre;
 	word-wrap: normal !important;

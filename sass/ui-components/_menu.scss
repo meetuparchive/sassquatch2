@@ -39,7 +39,6 @@ Use as a guide for markup.
 
 	.hasJS & {
 		@extend %shadow;
-		border: 1px solid $C_border;
 		border-radius: $defaultRadius;
 		background-color: $C_white;
 		display: none;
@@ -87,7 +86,7 @@ Use as a guide for markup.
 		color: $C_textSecondary !important;
 		&:hover,
 		&:active {
-			background-color: $C_overlayPressed;
+			background-color: $C_highlight;
 		}
 	}
 }

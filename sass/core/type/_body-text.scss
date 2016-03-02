@@ -51,11 +51,8 @@ parent: bodyText
 <p class="text--hint">This is hint text</p>
 ```
 */
-@include _modifier(text, hint) {
-	@include color-all($C_textTertiary);
-	.inverted & {
-		@include color-all($C_textTertiaryInverted);
-	}
+.text--hint {
+	@extend %text--hint;
 }
 
 
@@ -69,11 +66,8 @@ parent: bodyText
 <p class="text--secondary">Secondary text is secondary</p>
 ```
 */
-@include _modifier(text, secondary) {
-	@include color-all($C_textSecondary);
-	.inverted & {
-		@include color-all($C_textSecondaryInverted)
-	}
+.text--secondary {
+	@extend %text--secondary;
 }
 
 
@@ -87,11 +81,23 @@ parent: bodyText
 <p class="text--tertiary">Tertiary text is tertiary</p>
 ```
 */
-@include _modifier(text, tertiary) {
-	@include color-all($C_textTertiary);
-	.inverted & {
-		@include color-all($C_textTertiaryInverted);
-	}
+.text--tertiary {
+	@extend %text--tertiary;
+}
+
+
+/*doc
+---
+title: Heavy text
+name: heavyText
+parent: bodyText
+---
+```html_example
+<p class="text--heavy">Heavy text is heavy</p>
+```
+*/
+.text--heavy {
+	@extend %text--heavy;
 }
 
 
@@ -105,8 +111,8 @@ parent: bodyText
 <p class="text--bold">Bold text is bold</p>
 ```
 */
-@include _modifier(text, bold) {
-	font-weight: $W_bold;
+.text--bold {
+	@extend %text--bold;
 }
 
 
@@ -118,14 +124,14 @@ parent: bodyText
 ---
 ```html_example
 <p class="text--small">Small text is small</p>
+<small>Small text is small</small>
 ```
 */
-@include _modifier(text, small) {
-	@include _headingDescendant() {
-		font-size: $font-size-small;
-		line-height: $line-height-small;
-	}
+small,
+.text--small {
+	@extend %text--small;
 }
+
 
 /*doc
 ---
@@ -143,8 +149,10 @@ to any other element, use `text--mono`.
 <pre>We can safely assume a pre tag on Meetup is also code</pre>
 ```
 */
-@include _modifier(text, mono) {
-	font-family: $font--mono;
+code,
+pre,
+.text--mono {
+	@extend %text--mono;
 }
 
 
@@ -158,13 +166,10 @@ parent: bodyText
 <p class="text--caption">I'm captioning all the things</p>
 ```
 */
-@include _modifier(text, caption) {
-	@extend %text--small;
-	@include color-all($C_textSecondary);
-	.inverted & {
-		@include color-all($C_textSecondaryInverted);
-	}
+.text--caption {
+	@extend %text--caption;
 }
+
 
 /*doc
 ---
@@ -174,46 +179,12 @@ parent: bodyText
 ---
 ```html_example
 <p class="text--error">I'm erroring all the things</p>
+<p class="text--attention">Attention!</p>
 ```
 */
-@include _modifier(text, error) {
-	@extend %text--small;
-	@include color-all($C_red);
-}
-
-/*doc
----
-title: Label text
-name: textLabel
-parent: bodyText
----
-Applies form label styling
-
-```html_example
-	<p class="text--label">I share styling with the `label` element</p>
-```
-*/
-@include _modifier(text, label) {
-	@extend %label;
-}
-
-/*doc
----
-title: Graphic text
-name: textGraphic
-parent: bodyText
----
-Useful when using large text in a graphical way.
-Cuts line height to give the glyph spacing similar to that of an image or icon.
-
-```html_example
-<p class="text--graphic">102</p>
-<p>Miles per hour</p>
-```
-*/
-@include _modifier(text, graphic) {
-	@extend %text--display;
-	line-height: .9;
+.text--error,
+.text--attention {
+	@extend %text--attention;
 }
 
 
@@ -273,12 +244,10 @@ a {
 	text-decoration: none;
 	&.link,
 	.runningText & {
-		@extend %link;
-		&.button {
-			text-decoration: none;
-		}
+		@extend %text--link;
 	}
 }
+
 
 /*doc
 ---
@@ -323,6 +292,9 @@ numbers/bullets to a list.
 %_listStyleBase {
 	list-style-position: outside;
 	padding-left: 1.33em; /* indent by default */
+	@include atMediaUp(huge){
+		padding-left: inherit; /* indent by default */
+	}
 }
 ul {
 	&.bullets,

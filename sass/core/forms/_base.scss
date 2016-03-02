@@ -19,7 +19,7 @@ category: Forms
 </div>
 
 <div class="chunk">
-	<label for="test-textarea"l>Here's an area for your text</label>
+	<label for="test-textarea">Here's an area for your text</label>
 	<textarea id="test-textarea"></textarea>
 </div>
 
@@ -58,11 +58,12 @@ category: Forms
 %label,
 label {
 	font-size: $font-size-small;
+	font-weight: $W_bold;
 
 	&.required:after {
 		content: "*";
-		color: $C_red;
-		font-size: $font-size-navbar;
+		color: $C_attention;
+		font-size: $font-size-display4;
 		line-height: 0;
 		margin-left: $space/4;
 		position: relative;
@@ -85,14 +86,14 @@ textarea {
 	display: block;
 	font-family: inherit;
 	font-size: 100%;
-	line-height: 1.5;
+	line-height: $line-height;
 }
 
 %_formTextField,
 #{$all-text-inputs},
 textarea,
 select {
-	background-color: $C_shade;
+	background-color: $C_lightGray;
 	border-radius: $defaultRadius;
 	border: 1px solid $C_border;
 	box-shadow: none;
@@ -102,20 +103,10 @@ select {
 	padding: $space-half;
 	width: 100%;
 	&:focus {
-		border-color: $C_blue;
+		background: $C_contentBG;
+		border-color: $C_lightPurple;
 		box-shadow: none;
 		outline: none;
-	}
-
-	.inverted & {
-		background-color: $C_shadeInverted;
-		border-color: $C_borderInverted;
-		color: $C_textPrimaryInverted;
-	}
-
-	.shaded & {
-		// when on an already gray background, don't get gray-er
-		background-color: white;
 	}
 }
 
@@ -132,14 +123,12 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
 	font-style: normal;
 	color: $C_textTertiary;
-	.inverted &{
-		color: $C_textTertiaryInverted;
-	}
 }
 
 // switch labels
 .label--switch {
   font-size: $font-size;
+	font-weight: $W_normal;
   position: relative;
 }
 
