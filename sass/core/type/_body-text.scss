@@ -51,11 +51,8 @@ parent: bodyText
 <p class="text--hint">This is hint text</p>
 ```
 */
-@include _modifier(text, hint) {
-	@include color-all($C_textTertiary);
-	.inverted & {
-		@include color-all($C_textTertiaryInverted);
-	}
+.text--hint {
+	@extend %text--hint;
 }
 
 
@@ -69,11 +66,8 @@ parent: bodyText
 <p class="text--secondary">Secondary text is secondary</p>
 ```
 */
-@include _modifier(text, secondary) {
-	@include color-all($C_textSecondary);
-	.inverted & {
-		@include color-all($C_textSecondaryInverted)
-	}
+.text--secondary {
+	@extend %text--secondary;
 }
 
 
@@ -87,11 +81,8 @@ parent: bodyText
 <p class="text--tertiary">Tertiary text is tertiary</p>
 ```
 */
-@include _modifier(text, tertiary) {
-	@include color-all($C_textTertiary);
-	.inverted & {
-		@include color-all($C_textTertiaryInverted);
-	}
+.text--tertiary {
+	@extend %text--tertiary;
 }
 
 
@@ -105,9 +96,10 @@ parent: bodyText
 <p class="text--heavy">Heavy text is heavy</p>
 ```
 */
-@include _modifier(text, heavy) {
-	font-weight: $W_bold;
+.text--heavy {
+	@extend %text--heavy;
 }
+
 
 /*doc
 ---
@@ -119,15 +111,10 @@ parent: bodyText
 <p class="text--bold">Bold text is bold</p>
 ```
 */
-@include _modifier(text, bold) {
-	font-weight: $W_medium;
+.text--bold {
+	@extend %text--bold;
 }
 
-.inverted .runningText {
-	.text--bold {
-		font-weight: $W_bold;
-	}
-}
 
 /*doc
 ---
@@ -137,15 +124,14 @@ parent: bodyText
 ---
 ```html_example
 <p class="text--small">Small text is small</p>
+<small>Small text is small</small>
 ```
 */
-@include _modifier(text, small) {
-	@include _headingDescendant() {
-		font-size: $font-size-small;
-		line-height: $line-height-small;
-	}
+small,
+.text--small {
+	@extend %text--small;
 }
-small { @extend %text--small; }
+
 
 /*doc
 ---
@@ -163,8 +149,10 @@ to any other element, use `text--mono`.
 <pre>We can safely assume a pre tag on Meetup is also code</pre>
 ```
 */
-@include _modifier(text, mono) {
-	font-family: $font--mono;
+code,
+pre,
+.text--mono {
+	@extend %text--mono;
 }
 
 
@@ -178,13 +166,10 @@ parent: bodyText
 <p class="text--caption">I'm captioning all the things</p>
 ```
 */
-@include _modifier(text, caption) {
-	@extend %text--small;
-	@include color-all($C_textSecondary);
-	.inverted & {
-		@include color-all($C_textSecondaryInverted);
-	}
+.text--caption {
+	@extend %text--caption;
 }
+
 
 /*doc
 ---
@@ -194,12 +179,14 @@ parent: bodyText
 ---
 ```html_example
 <p class="text--error">I'm erroring all the things</p>
+<p class="text--attention">Attention!</p>
 ```
 */
-@include _modifier(text, error) {
-	@extend %text--small;
-	@include color-all($C_attention);
+.text--error,
+.text--attention {
+	@extend %text--attention;
 }
+
 
 /*doc
 ---
@@ -207,14 +194,14 @@ title: Label text
 name: textLabel
 parent: bodyText
 ---
-Applies form label styling
+Matches form label styling (useful for list headers)
 
 ```html_example
 	<p class="text--label">I share styling with the `label` element</p>
 ```
 */
-@include _modifier(text, label) {
-	@extend %label;
+.text--label {
+	@extend %text--label;
 }
 
 
@@ -273,12 +260,10 @@ a {
 	text-decoration: none;
 	&.link,
 	.runningText & {
-		@extend %link;
-		&.button {
-			text-decoration: none;
-		}
+		@extend %text--link;
 	}
 }
+
 
 /*doc
 ---

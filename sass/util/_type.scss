@@ -53,29 +53,19 @@ Placeholder             | Description
 */
 %text--display1,
 %text--display2,
-%text--display3,
-%text--display4 {
+%text--display3 {
 	@include color-all($C_textPrimary);
+	font-weight: $W_bold;
+	letter-spacing: -0.02em;
 
 	.inverted & {
 		@include color-all($C_textPrimaryInverted);
 		font-weight: $W_medium;
 	}
 }
-%text--display1,
-%text--display2,
-%text--display3 {
-	font-weight: $W_bold;
-	letter-spacing: -0.02em;
-	line-height: $line-height-large;
-}
-%text--display2,
-%text--display3,
-%text--display4 {
-	line-height: $line-height;
-}
 %text--display1 {
 	font-size: $font-size-display2;
+	line-height: $line-height-large;
 
 	@include _textBp() {
 		font-size: $font-size-display1;
@@ -83,12 +73,22 @@ Placeholder             | Description
 }
 %text--display2 {
 	font-size: $font-size-display2;
+	line-height: $line-height;
 }
 %text--display3 {
 	font-size: $font-size-display3;
+	line-height: $line-height-large;
+	line-height: $line-height;
 }
 %text--display4 {
+	@include color-all($C_textPrimary);
 	font-size: $font-size-display4;
+	line-height: $line-height;
+	font-weight: $W_bold;
+
+	.inverted & {
+		@include color-all($C_textPrimaryInverted);
+	}
 }
 
 
@@ -119,6 +119,14 @@ Placeholder          | Description
 		text-transform: uppercase;
 	}
 }
+%text--labelSecondary {
+	@extend %text--label;
+	@include color-all($C_textSecondary);
+
+	.inverted & {
+		@include color-all($C_textSecondaryInverted);
+	}
+}
 
 
 /*doc
@@ -135,6 +143,10 @@ Placeholder             | Description
 */
 %text--bold {
 	font-weight: $W_medium;
+	.inverted .runningText,
+	.inverted.runningText {
+		font-weight: $W_bold;
+	}
 }
 %text--heavy {
 	font-weight: $W_bold;
@@ -183,17 +195,27 @@ Placeholder           | Description
 `%text--link`         | Link text color
 `%text--caption`      | Small secondary text for captions
 `%text--attention`    | Small text to draw attention (ie. error text)
+`%text--mono`         | Monospaced text
 */
 %text--small {
-	font-size: $font-size-small;
+	@include _headingDescendant() {
+		font-size: $font-size-small;
+		line-height: $line-height-small;
+	}
 }
 %text--hint {
 	@extend %text--tertiary;
 }
 %text--link {
 	@include color-all($C_link);
-	&:hover, &:focus, &:active {
+
+	&:hover,
+	&:focus,
+	&:active {
 		text-decoration: underline;
+	}
+	&.button {
+		text-decoration: none;
 	}
 }
 %text--caption {
@@ -204,18 +226,21 @@ Placeholder           | Description
 	@extend %text--small;
 	@include color-all($C_attention);
 }
+%text--mono {
+	font-family: $font--mono;
+}
 
 
 /*doc
 ---
 title: Text wrap
 name: textWrapUtil
-parent: text
+parent: textUtil
 ---
 Nice hyphenation and wrapping for running text.
 
 ```
-@extend %link;
+@extend %wrapNice;
 ```
 */
 %wrapNice {
@@ -231,7 +256,7 @@ Nice hyphenation and wrapping for running text.
 ---
 title: Text protection shim
 name: textProtection
-parent: text
+parent: textUtil
 ---
 Adds a pseudo-element gradient
 

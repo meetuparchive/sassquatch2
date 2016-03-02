@@ -63,7 +63,7 @@ label {
 	&.required:after {
 		content: "*";
 		color: $C_attention;
-		font-size: $font-size-headline;
+		font-size: $font-size-display4;
 		line-height: 0;
 		margin-left: $space/4;
 		position: relative;

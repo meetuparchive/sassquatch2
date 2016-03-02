@@ -30,7 +30,7 @@
 			color: rgba(255,255,255,1);
 		}
 		.inverted td.text--secondary, .inverted td p.text--secondary, .inverted th.text--secondary, .inverted th p.text--secondary,
-		.inverted td.text--headerSecondary, .inverted td p.text--headerSecondary, .inverted th.text--headerSecondary, .inverted th p.text--headerSecondary {
+		.inverted td.text--labelSecondary, .inverted td p.text--labelSecondary, .inverted th.text--labelSecondary, .inverted th p.text--labelSecondary {
 			color: rgba(255,255,255,.7);
 		}
 		.inverted td.text--error, .inverted td p.text--error, .inverted th.text--error, .inverted th p.text--error {
@@ -60,11 +60,11 @@
 
 							<!-- Headings -->
 							<tr>
-								<th class="valign--top text--display">Display 1</th>
+								<th class="valign--top text--display1">Display 1</th>
 								<td class="valign--top">
-									<h1 class="text--display">42px/1.25</h1><p>tracking: -0.03em</p>
+									<h1 class="text--display1">42px/1.25</h1><p>tracking: -0.03em</p>
 								</td>
-								<td class="valign--top text--display">Semibold</td>
+								<td class="valign--top text--display1">Semibold</td>
 							</tr>
 							<tr>
 								<th class="valign--top text--display2">Display 2</th>
@@ -81,6 +81,13 @@
 								<td class="valign--top text--display3">Semibold</td>
 							</tr>
 							<tr>
+								<th class="valign--top text--display4">Display4</th>
+								<td class="valign--top">
+									<h4 class="text--display4">20px/1.25</h4>
+								</td>
+								<td class="valign--top text--display4">Semibold</td>
+							</tr>
+							<tr>
 								<th class="valign--top tearsheet-date">Tearsheet</th>
 								<td class="valign--top">
 									<h4 class="tearsheet-date">24px/1</h4>
@@ -88,27 +95,20 @@
 								<td class="valign--top tearsheet-date">Semibold</td>
 							</tr>
 							<tr>
-								<th class="valign--top text--headline">Headline</th>
-								<td class="valign--top">
-									<h4 class="text--headline">20px/1.25</h4>
-								</td>
-								<td class="valign--top text--headline">Semibold</td>
-							</tr>
-							<tr>
-								<th class="valign--top text--header">Header</th>
+								<th class="valign--top text--label">Label</th>
 								<td class="valign--top">
 									<h4 class="text--small text--heavy display--inlineBlock">13px/1.6</h4>
 									<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
 								</td>
-								<td class="valign--top text--header">Semibold</td>
+								<td class="valign--top text--label">Semibold</td>
 							</tr>
 							<tr>
-								<th class="valign--top text--header text--headerSecondary">Header Secondary</th>
+								<th class="valign--top text--labelSecondary">Label Secondary</th>
 								<td class="valign--top">
 									<h4 class="text--bold text--small text--secondary display--inlineBlock">13px/1.6</h4>
 									<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
 								</td>
-								<td class="valign--top text--header text--headerSecondary">Medium</td>
+								<td class="valign--top text--labelSecondary">Medium</td>
 							</tr>
 
 							<!-- Body text -->
@@ -224,7 +224,7 @@
 						<li class="gridList-item">
 							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
 								<div class="card--group-content">
-									<h4 class="text--headline">Some Meetup Group Name</h4>
+									<h4 class="text--label">Some Meetup Group Name</h4>
 									<p>457 [chapter.who]</p>
 								</div>
 							</div>
@@ -233,7 +233,7 @@
 						<li class="gridList-item">
 							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
 								<div class="card--group-content">
-									<h4 class="text--headline">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
+									<h4 class="text--label">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
 									<p>457 [chapter.who]</p>
 								</div>
 							</div>
@@ -242,7 +242,7 @@
 						<li class="gridList-item">
 							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
 								<div class="card--group-content">
-									<h4 class="text--headline">Some Meetup Group Name</h4>
+									<h4 class="text--label">Some Meetup Group Name</h4>
 									<p>457 [chapter.who]</p>
 								</div>
 							</div>
@@ -328,11 +328,11 @@
 
 						<!-- Headings -->
 						<tr>
-							<th class="valign--top text--display">Display 1</th>
+							<th class="valign--top text--display1">Display 1</th>
 							<td class="valign--top">
-								<h1 class="text--display">42px/1.25</h1><p>tracking: -0.03em</p>
+								<h1 class="text--display1">42px/1.25</h1><p>tracking: -0.03em</p>
 							</td>
-							<td class="valign--top text--display">Medium</td>
+							<td class="valign--top text--display1">Medium</td>
 						</tr>
 						<tr>
 							<th class="valign--top text--display2">Display 2</th>
@@ -348,6 +348,14 @@
 							</td>
 							<td class="valign--top text--display3">Medium</td>
 						</tr>
+						<tr>
+							<th class="valign--top text--display4">Dsiplay 4</th>
+							<td class="valign--top">
+								<h4 class="text--small text--heavy display--inlineBlock">13px/1.4</h4>
+								<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
+							</td>
+							<td class="valign--top text--display4">Semibold</td>
+						</tr>
 							<tr>
 								<th class="valign--top tearsheet-date">Tearsheet</th>
 								<td class="valign--top">
@@ -356,27 +364,19 @@
 								<td class="valign--top tearsheet-date">Semibold</td>
 							</tr>
 						<tr>
-							<th class="valign--top text--headline">Headline</th>
+							<th class="valign--top text--label">Label</th>
 							<td class="valign--top">
-								<h4 class="text--headline">20px/1.25</h4>
+								<h4 class="text--label">20px/1.25</h4>
 							</td>
-							<td class="valign--top text--headline">Medium</td>
+							<td class="valign--top text--label">Medium</td>
 						</tr>
 						<tr>
-							<th class="valign--top text--header">Header</th>
-							<td class="valign--top">
-								<h4 class="text--small text--heavy display--inlineBlock">13px/1.4</h4>
-								<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
-							</td>
-							<td class="valign--top text--header">Semibold</td>
-						</tr>
-						<tr>
-							<th class="valign--top text--header text--headerSecondary">Header Secondary</th>
+							<th class="valign--top text--labelSecondary">Label Secondary</th>
 							<td class="valign--top">
 								<h4 class="text--bold text--small text--secondary display--inlineBlock">13px/1.4</h4>
 								<span class="text--small">tracking: -0.02em, word-spacing: 0.1em</span>
 							</td>
-							<td class="valign--top text--header text--headerSecondary">Medium</td>
+							<td class="valign--top text--labelSecondary">Medium</td>
 						</tr>
 
 						<!-- Body text -->
@@ -491,7 +491,7 @@
 						<li class="gridList-item">
 							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
 								<div class="card--group-content">
-									<h4 class="text--headline">Some Meetup Group Name</h4>
+									<h4 class="text--label">Some Meetup Group Name</h4>
 									<p>457 [chapter.who]</p>
 								</div>
 							</div>
@@ -500,7 +500,7 @@
 						<li class="gridList-item">
 							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
 								<div class="card--group-content">
-									<h4 class="text--headline">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
+									<h4 class="text--label">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
 									<p>457 [chapter.who]</p>
 								</div>
 							</div>
@@ -509,7 +509,7 @@
 						<li class="gridList-item">
 							<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
 								<div class="card--group-content">
-									<h4 class="text--headline">Some Meetup Group Name</h4>
+									<h4 class="text--label">Some Meetup Group Name</h4>
 									<p>457 [chapter.who]</p>
 								</div>
 							</div>

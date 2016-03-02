@@ -61,11 +61,11 @@ Variable                 | Value
 ------------------------ | --------------------------------
 `$font-size-small`       | `13px`
 `$font-size`             | `16px`
-`$font-size-headline`    | `20px`
-`$font-size-tearsheet`   | `24px`
+`$font-size-display4`    | `20px`
 `$font-size-display3`    | `28px`
 `$font-size-display2`    | `34px`
 `$font-size-display1`    | `42px`
+`$font-size-tearsheet`   | `24px`
 
 
 ## Font weights
@@ -91,8 +91,8 @@ $font--mono : Monaco, "Andale Mono", "Courier New", monospace;
 // Sizes
 $font-size-small     : 13px;
 $font-size           : 16px;
-$font-size-headline  : 20px;
 $font-size-tearsheet : 24px;
+$font-size-display4  : 20px;
 $font-size-display3  : 28px;
 $font-size-display2  : 34px;
 $font-size-display1  : 42px;
