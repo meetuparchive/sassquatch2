@@ -13,7 +13,11 @@ category: UI Components
 		<h3>Standard Buttons</h3>
 		<button class="button" href="#">Button</button>
 		<button class="button button--primary" href="#">Primary Button</button>
+	</li>
+	<li class="list-item chunk stripe--inverted inverted padding--all">
+		<h3>Contrast Buttons</h3>
 		<button class="button button--contrast" href="#">Contrast Button</button>
+		<button class="button button--contrast button--primary" href="#">Primary Contrast Button</button>
 	</li>
 	<li class="list-item chunk">
 		<h3>Small buttons</h3>
@@ -32,9 +36,6 @@ category: UI Components
 		</div>
 		<div class="chunk">
 			<button class="button button--primary button--fullWidth" href="#">Wide load</button>
-		</div>
-		<div class="chunk">
-			<button class="button button--contrast button--fullWidth" href="#">Wide load</button>
 		</div>
 	</li>
 	<li class="list-item chunk">
@@ -85,7 +86,7 @@ classes are optional variants:
 Class                   | Description
 ----------------------- | ----------------------------------------
 `.button--primary`      | rounded button with dark background; for primary actions
-`.button--contrast`     | bold, dark text; use on dark backgrounds or photos (ie. top nav bar)
+`.button--contrast`     | bold, dark text; use on colorful backgrounds or photos
 `.button--small`        | decreases size of button
 `.button--fullWidth`    | makes button fill width
 `.button--icon`         | button with icon (see example for markup pattern)
@@ -100,7 +101,18 @@ Class                   | Description
 
 %button--primary,
 .button--primary {
-	@include buttonColor($C_purple);
+	@include buttonColor($C_accent);
+	.inverted & {
+		@include standardBorder(none);
+	}
+	&.button--contrast {
+		@include buttonColor($C_contentBG);
+		&:hover,
+		&:active,
+		&:focus {
+			background: $C_borderDarkInverted;
+		}
+	}
 }
 
 %button--contrast,
@@ -109,10 +121,14 @@ Class                   | Description
 	.inverted & {
 		@include color-all( $C_textPrimaryInverted );
 	}
-	border-color: transparent;
+	background: $C_textHint;
+	border-color: $C_borderInverted;
 
-	// override default botton hover/active/focus states
-	background: transparent !important;
+	&:hover,
+	&:active,
+	&:focus {
+		border-color: $C_borderDarkInverted;
+	}
 }
 
 
