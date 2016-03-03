@@ -238,8 +238,7 @@ $_eventStripes: (
 }
 
 .card--group {
-	@include valignChildren(top);
-	@include textProtectionScrim(all);
+	@include textProtectionScrim(top);
 	border-radius: 0;
 	padding: $space;
 	height: $block-4;
