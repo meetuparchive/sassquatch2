@@ -34,28 +34,10 @@ Card-like boxes.
 
 			<!-- Group card with long name -->
 			<li class="gridList-item">
-				<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
+				<div class="card card--group inverted" style="background-image: url(http://photos3.meetupstatic.com/photo_api/event/rx308x180/cpt/cr308x180/ql90/sgb54c13bc46/226666972.jpeg);">
 					<div class="card--group-content column">
 						<h4 class="column-item text--headline">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
 						<p class="column-item column-item--shrink">457 [chapter.who]</p>
-					</div>
-				</div>
-			</li>
-
-			<!-- Group card with quick-join -->
-			<li class="gridList-item">
-				<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
-					<div class="card--group-content column">
-						<h4 class="column-item text--headline">Some Meetup Group Name</h4>
-						<div class="column-item column-item--shrink row">
-							<p class="row-item valign--middle">457 [chapter.who]</p>
-							<div class="row-item row-item--shrink quickJoin valign--bottom">
-								<span class="toggleButton toggleButton--join">
-							    <input class="toggleButton-input" type="checkbox" name="join-mug" id="join-mug" value="ToggleBtn">
-							    <label class="toggleButton-label" for="join-mug">+</label>
-								</span>
-							</div>
-						</div>
 					</div>
 				</div>
 			</li>
@@ -242,7 +224,7 @@ $_eventStripes: (
 	border-radius: 0;
 	padding: $space;
 	height: $block-4;
-  text-shadow: 1px 1px 1px $C_borderDark;
+  text-shadow: 1px 1px 0 $C_textHint;
 	filter: grayscale(20%) contrast(110%);
 	-webkit-filter: grayscale(20%) contrast(110%);
   .text--headline {
