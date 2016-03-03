@@ -100,7 +100,7 @@ Sets color properties for a button
 }
 ```
 */
-@mixin buttonColor($bgColor: $C_accent) {
+@mixin buttonColor($bgColor: $C_button) {
 	@include color-all(getPrimaryTextColor($bgColor), true);
 	background: $bgColor;
 	border-color: $bgColor;

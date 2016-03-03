@@ -101,7 +101,7 @@ Class                   | Description
 
 %button--primary,
 .button--primary {
-	@include buttonColor($C_accent);
+	@include buttonColor($C_button);
 	.inverted & {
 		@include standardBorder(none);
 	}
