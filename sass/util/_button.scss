@@ -47,14 +47,15 @@ Applies base button styles
 	@include standardBorder(all);
 	box-sizing: border-box;
 	-webkit-appearance: none;
-	vertical-align: middle;
 	border-radius: $defaultRadius;
 	background: transparent;
 	font-size: $font-size;
 	font-weight: $W_medium;
-	min-height: $space-3;
-	padding: 0 $space;
 	line-height: $line-height;
+	min-height: $space-3;
+	outline: 0;
+	padding: 0 $space;
+	vertical-align: middle;
 }
 
 /*doc
@@ -99,21 +100,17 @@ Sets color properties for a button
 }
 ```
 */
-@mixin buttonColor($bgColor: $C_purple) {
+@mixin buttonColor($bgColor: $C_button) {
 	@include color-all(getPrimaryTextColor($bgColor), true);
 	background: $bgColor;
 	border-color: $bgColor;
 
 	&:hover,
 	&:focus {
-		@if isDark($bgColor) {
-			background: lighten($bgColor, 10%);
-		} @else {
 			background: darken($bgColor, 8%);
-		}
 	}
 
 	&:active {
-		background: darken($bgColor, 8%);
+		background: darken($bgColor, 12%);
 	}
 }
