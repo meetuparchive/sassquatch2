@@ -190,8 +190,12 @@ Placeholder           | Description
 	&:active {
 		text-decoration: underline;
 	}
-	&.button {
+	.button {
 		text-decoration: none;
+	}
+
+	.inverted & {
+		@include color-all($C_linkInverted);
 	}
 }
 %text--caption {
