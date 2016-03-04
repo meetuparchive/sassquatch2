@@ -1,0 +1,21 @@
+/*doc
+---
+title: Loader
+name: loader
+category: UI Components
+---
+A `loader` is used to show users that a view is still loading or a transaction is still in progress.
+__Note:__ Final animation and implementation still TBD
+
+```html_example
+<a class="link display--block text--bold" href="http://codepen.io/mperrotti/pen/EKjbmw?editors=1100">Preview the demo</a>
+
+<div class="loader"></div>
+```
+*/
+
+.loader {
+	display: none;
+}
+
+// Mike P: When we finalize this, we should probably have a variant for overlaying the entire screen and blocking user input.
