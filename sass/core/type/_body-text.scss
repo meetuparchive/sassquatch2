@@ -123,8 +123,8 @@ name: smallText
 parent: bodyText
 ---
 ```html_example
-<p class="text--small">Small text is small</p>
-<small>Small text is small</small>
+<p class="text--small">Small text class is small</p>
+<small>Default styling of "small" tag</small>
 ```
 */
 small,
@@ -139,8 +139,8 @@ name: bigText
 parent: bodyText
 ---
 ```html_example
-<p class="text--big">Big text is big</p>
-<big>Big text is big</big>
+<p class="text--big">Big text class is big</p>
+<big>Default styling of "big" tag</big>
 ```
 */
 big,
@@ -286,11 +286,14 @@ List style bullets are applied when list
 elements are inside a `.runningText` container.
 
 ```html_example
-<div class="runningText">
-	<ul>
-		<li>Eggs</li>
-		<li>More Eggs</li>
-	</ul>
+<div class="bounds">
+	<h3 class="text--big">Shopping list</h3>
+	<div class="runningText">
+		<ul>
+			<li>Eggs</li>
+			<li>More Eggs</li>
+		</ul>
+	</div>
 </div>
 ```
 
@@ -298,10 +301,13 @@ You may also use the `.bullets` class to apply
 numbers/bullets to a list.
 
 ```html_example
-<ul class="bullets">
-	<li>Eggs</li>
-	<li>More Eggs</li>
-</ul>
+<div class="bounds">
+	<h3 class="text--big">Shopping list</h3>
+	<ul class="bullets">
+		<li>Eggs</li>
+		<li>More Eggs</li>
+	</ul>
+</div>
 ```
 
 */
