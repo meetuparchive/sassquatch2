@@ -117,6 +117,7 @@ Checkbox form elements styled as toggle buttons.
 	@extend %buttonBase;
 	@extend %button--small;
 	@extend %button--icon;
+	font-weight: $W_normal;
 	margin: 0;
 
 	&:hover,
