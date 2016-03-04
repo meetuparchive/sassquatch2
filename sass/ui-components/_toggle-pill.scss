@@ -133,6 +133,7 @@ Checkbox form elements styled as toggle buttons.
 		}
 
 		.toggleButton-icon--active {
+			@include color-all($C_red);
 			@include display(inline-flex);
 		}
 
