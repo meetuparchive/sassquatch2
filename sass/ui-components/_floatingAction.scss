@@ -43,7 +43,6 @@ $_containerHeight: $space*2 + $_buttonHeight;
 
 @include atMediaUp(medium) {
 	.floatingAction {
-		@extend %shadow;
 		padding: initial;
 		position: static;
 		background-color: transparent;
