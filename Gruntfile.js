@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 		bower: grunt.file.readJSON('bower.json'),
 		'sass': {
 			options: {
+				precision: 3,
 				sourceMap: false
 			},
 			dist: {
