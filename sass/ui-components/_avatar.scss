@@ -22,7 +22,9 @@ You know, for people
 		<a href="#" class="avatar avatar--person avatar--fbFriend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
 	</li>
 	<li>
-		<a href="#" class="avatar avatar--person avatar--noPhoto">
+		<a href="#" class="avatar avatar--person avatar--noPhoto" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDhweCIgaGVpZ2h0PSI0OHB4IiB2aWV3Qm94PSIwIDAgNDggNDgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ4IDQ4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIG9wYWNpdHk9IjAuMjYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjQuMTM3LDI2LjA0MmMtNi4xMjEsMC0xMS4xMDEtNC45OC0xMS4xMDEtMTEuMTAxDQoJUzE4LjAxNiwzLjg0LDI0LjEzNywzLjg0YzYuMTIxLDAsMTEuMTAxLDQuOTgsMTEuMTAxLDExLjEwMVMzMC4yNTgsMjYuMDQyLDI0LjEzNywyNi4wNDIgTTQwLjAwNiw0MC42NzcNCgljLTEuNTg5LTYuNTUyLTguNDUzLTExLjQ5My0xNS45NjUtMTEuNDkzUzkuNjY1LDM0LjEyNSw4LjA3Niw0MC42NzdjLTAuMTkzLDAuNzk3LTAuMDEyLDEuNjQzLDAuNDk3LDIuMjkxDQoJYzAuNTE0LDAuNjUzLDEuMjg0LDEuMDQ1LDIuMTEzLDEuMDQ1aDI2LjcxYzAuODMsMCwxLjYtMC4zOTMsMi4xMTMtMS4wNDVDNDAuMDE5LDQyLjMyLDQwLjIsNDEuNDc0LDQwLjAwNiw0MC42NzciLz4NCjwvc3ZnPg0K);
+    background-position-y: 2px;
+    background-size: 48px;">
 			<p>no photo</p> <!-- our person.hbs handlebars template handles this -->
 		</a>
 	</li>
@@ -71,7 +73,7 @@ Class                     | Description
 .avatar {
 	@extend %imgFill;
 	position: relative;
-	background-color: $C_collectionBGDark;
+	background-color: $C_collectionBG;
 	background-position: center 42%;
 	color: transparent;
 	display: inline-block;
@@ -139,7 +141,7 @@ Class                     | Description
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
-	background: $C_collectionBGLight;
+	background: $C_collectionBG;
 	border-radius: 999px;
 	box-sizing: border-box;
 	height: $media-s;

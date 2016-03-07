@@ -1,6 +1,6 @@
 {
   "name": "sassquatch2",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "CSS foundation and framework for Meetup",
   "main": [
     "./sass/sassquatch.scss"
@@ -15,7 +15,7 @@
     "**/*.lock"
   ],
   "dependencies": {
-    "meetup-swatches": "2.0.1",
+    "meetup-swatches": "git@github.com:meetup/meetup-swatches.git#release/3.0.0",
     "bourbon": "4.2.3",
     "julep": "1.4.3"
   },

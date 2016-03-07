@@ -9,6 +9,7 @@ Sets border properties on element
 Class                   | Description
 ----------------------- | --------------------------------
 `.border--top`          | sets a standard top border on the element
+`.border--left`         | sets a standard left border on the element
 `.border--none`         | removes all borders from element
 `.bordered`             | sets a standard top border AND top padding
 */
@@ -16,6 +17,11 @@ Class                   | Description
 %border--top,
 .border--top {
 	@include standardBorder();
+}
+
+%border--left,
+.border--left {
+	@include standardBorder('left');
 }
 
 %border--none,

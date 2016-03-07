@@ -1,35 +1,82 @@
-// TODO: this needs a lot of mixin and selector cleanup
-// 1) avoid outputting selectors from mixins
-// 2) create some clarity around modifiers
-// 3) clean up selectors generated in button color mixin (and see #1)
-// 4) ???
-// 5) PROFIT
+/*doc
+---
+title: Buttons
+name: buttons
+category: UI Components
+---
 
-
-// TODO: put front matter back in this doc comment
-// when transitional buttons are no longer needed
-/*
 #### Example
 
 ```html_example
-<a class="button" href="#">Button</a>
-<a class="button button--primary" href="#">Primary Button</a>
-<a class="button button--icon" href="#">
-	<span class="button-label">Button with right Icon</span>
-	<span class="button-icon">X</span>
-</a>
-<a class="button button--icon button--primary" href="#">
-	<span class="button-icon">X</span>
-	<span class="button-label">Primary button with left Icon</span>
-</a>
-<a class="button button--borderless" href="#">Borderless Button</a>
-<a class="button button--primary button--contrast" href="#">Contrast Button</a>
-<a class="button button--small" href="#">Small Button</a>
-<a class="button button--bordered button--fullWidth" href="#">Full width button</a>
-<a class="button button--primary button--icon button--fullWidth" href="#">
-	<span class="button-icon">ヘ(◕。◕ヘ)</span>
-	<span class="button-label">Full width primary button with left Icon</span>
-</a>
+<ul class="list">
+	<li class="list-item chunk">
+		<h3>Standard Buttons</h3>
+		<button class="button" href="#">Button</button>
+		<button class="button button--primary" href="#">Primary Button</button>
+	</li>
+	<li class="list-item chunk stripe--inverted inverted padding--all">
+		<h3>Contrast Buttons</h3>
+		<button class="button button--contrast" href="#">Contrast Button</button>
+		<button class="button button--contrast button--primary" href="#">Primary Contrast Button</button>
+	</li>
+	<li class="list-item chunk">
+		<h3>Small buttons</h3>
+		<div class="chunk">
+			<button class="button button--small" href="#">Small Button</button>
+			<button class="button button--primary button--small" href="#">Small Button</button>
+		</div>
+		<div class="chunk">
+			<span class="text--small">Inline text with button</span><button class="button button--primary button--small margin--left" href="#">Inline button with text</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Full width button</h3>
+		<div class="chunk">
+			<button class="button button--fullWidth" href="#">Wide load</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--primary button--fullWidth" href="#">Wide load</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Icon buttons</h3>
+		<div class="chunk">
+			<button class="button button--icon" href="#">
+				<span class="button-label">Button with right Icon</span>
+				<span class="button-icon">X</span>
+			</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--icon button--primary" href="#">
+				<span class="button-icon">X</span>
+				<span class="button-label">Primary button with left Icon</span>
+			</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--primary button--icon button--fullWidth" href="#">
+				<span class="button-icon">ヘ(◕。◕ヘ)</span>
+				<span class="button-label">Full width primary button with left Icon</span>
+			</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Disabled buttons</h3>
+		<button class="button button--disabled" href="#">Stop</button>
+		<button class="button button--primary" disabled>Can't touch this</button>
+		<input type="submit" class="button" value="Disabled" disabled />
+	</li>
+	<li class="list-item chunk">
+		<h3>Buttons with form fields</h3>
+		<div class="row">
+			<div class="row-item">
+				<input type="text" placeholder="Field by a button" />
+			</div>
+			<div class="row-item row-item--shrink">
+				<button class="button button--primary">Button by a field</button>
+			</div>
+		</div>
+	</li>
+</ul>
 ```
 
 #### Button variants
@@ -39,86 +86,67 @@ classes are optional variants:
 Class                   | Description
 ----------------------- | ----------------------------------------
 `.button--primary`      | rounded button with dark background; for primary actions
-`.button--contrast`     | bold, dark text; use on dark backgrounds or photos (ie. top nav bar)
-`.button--bordered`     | rounded bordered button
-`.button--borderless`   | borderless button
+`.button--contrast`     | bold, dark text; use on dark or colorful backgrounds or on photos
 `.button--small`        | decreases size of button
-`.button--icon`         | button with icon
+`.button--fullWidth`    | makes button fill width
+`.button--icon`         | button with icon (see example for markup pattern)
 */
 
-%button,
 .button {
 	@extend %buttonBase;
-	@include color-all( map-get($btn-color-map, "primary") );
-	&:hover,
-	&:active,
-	&:focus {
-		background: transparentize(map-get($btn-color-map, "primary"), .8);
-		border-color: transparent;
-	}
-
+	@include buttonHover();
+	@include color-all($C_textPrimary);
+	background: $C_contentBG;
 }
 
 %button--primary,
 .button--primary {
-	@extend %button--borderless;
-	@include color-all( $C_textPrimaryInverted, true );
-	background: map-get($btn-color-map, "primary");
-
-	&:hover,
-	&:active,
-	&:focus {
-		background: call(nth($btn-hover, 1), map-get($btn-color-map, "primary"), nth($btn-hover, 2));
+	@include buttonColor($C_button);
+	.inverted & {
+		@include standardBorder(none);
 	}
-
-	&.button--contrast { // TODO (mikep): look into ways to do this without chaining classes
-		@include color-all($C_textPrimary, true);
-		background: map-get($btn-color-map, "contrast");
+	&.button--contrast {
+		@include buttonColor($C_contentBG);
 		&:hover,
 		&:active,
 		&:focus {
-			background: transparentize(map-get($btn-color-map, "contrast"), .1);
+			background: $C_borderDarkInverted;
 		}
 	}
-
 }
 
 %button--contrast,
 .button--contrast {
-	@include color-all( map-get($btn-color-map, "contrast") );
-	background: $C_textTertiary;
-	border: $btn-border map-get($btn-color-map, "contrast");
+	@include color-all( $C_textPrimary );
+	.inverted & {
+		@include color-all( $C_textPrimaryInverted );
+	}
+	background: $C_textHint;
+	border-color: $C_borderInverted;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background: $C_textSecondary;
-		border: $btn-border map-get($btn-color-map, "contrast");
+		border-color: $C_borderDarkInverted;
 	}
 }
 
-//
-// Button border modifiers
-//
-%button--bordered {
-	@include color-all( map-get($btn-color-map, "primary") );
-	border: $btn-border;
-	font-weight: $W_normal;
-	&:hover,
-	&:active,
-	&:focus {
-		background: transparentize(map-get($btn-color-map, "primary"), .8);
-	}
-}
 
-%button--borderless,
-.button--borderless {
-	border: none;
+//
+// Disabled buttons
+//
+.button[disabled],
+.button--disabled {
+	@include color-all($C_textSecondary, true);
+	@include standardBorder(all);
+	outline: none;
+	background: transparentize($C_mediumGray, .88) !important;
+	cursor: default;
 
+	&,
 	&:hover,
-	&:active,
-	&:focus {
-		border: none;
+	&:active {
+		@include standardBorder(all);
 	}
 
 }
@@ -129,44 +157,36 @@ Class                   | Description
 %button--small,
 .button--small {
 	font-size: $font-size-small;
-	padding: $space-quarter $space-half;
+	min-height: $space-2;
+	padding: 0 $space-half;
 }
 
 %button--fullWidth,
 .button--fullWidth {
-	display: block;
 	width: 100%;
 }
 
 //
 // Icon buttons
 //
-$_iconGutter: $space/2;
+$_iconGutter: $space;
+%button--icon,
 .button--icon {
-	@include display(inline-flex);
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
 	@include justify-content(space-between);
-
-	@include browser-lessThanIE( 10 ) {
-		box-sizing: border-box;
-		display: table;
-		table-layout: auto;
-	}
 }
+
 .button-label,
 .button-icon {
 	@include align-self(center);
-
-	@include browser-lessThanIE( 10 ) {
-		display: table-cell;
-		width: 100%;
-	}
 }
+
 .button-label {
 	@include flex-grow(1);
 	@include flex-basis(0);
 }
+
 .button-icon {
 	@include flex-grow(0);
 	@include flex-shrink(0);
@@ -177,15 +197,20 @@ $_iconGutter: $space/2;
 	&:first-child {
 		margin-right: $_iconGutter;
 	}
+
 	&:last-child {
 		margin-left: $_iconGutter;
-	}
-
-	@include browser-lessThanIE( 10 ) {
-		width: auto;
 	}
 }
 
 .button--small .button-icon {
-	height: $font-size;
+	min-height: $font-size;
+}
+
+//
+// DEPRECATED
+// .button--borderless => .button--contrast
+//
+.button--borderless {
+	@extend %button--contrast;
 }

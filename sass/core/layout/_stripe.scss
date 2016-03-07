@@ -51,7 +51,7 @@ Class                | Description
 
 .stripe--collection {
 	@extend %stripe;
-	background-color: $C_collectionBGLight;
+	background-color: $C_collectionBG;
 }
 
 .stripe--inverted {
@@ -196,7 +196,7 @@ Use `stripe--overlap--collection` to overlap onto a collection stripe, and `stri
 
 .stripe--overlap--collection {
 	&:before {
-		border-bottom: ($space-half+$space) solid $C_collectionBGLight;
+		border-bottom: ($space-half+$space) solid $C_collectionBG;
 	}
 }
 

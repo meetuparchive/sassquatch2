@@ -51,12 +51,8 @@ parent: bodyText
 <p class="text--hint">This is hint text</p>
 ```
 */
-%text--hint,
 .text--hint {
-	@include color-all($C_textTertiary);
-	.inverted & {
-		@include color-all($C_textTertiaryInverted);
-	}
+	@extend %text--hint;
 }
 
 
@@ -70,12 +66,8 @@ parent: bodyText
 <p class="text--secondary">Secondary text is secondary</p>
 ```
 */
-%text--secondary,
 .text--secondary {
-	@include color-all($C_textSecondary);
-	.inverted & {
-		@include color-all($C_textSecondaryInverted)
-	}
+	@extend %text--secondary;
 }
 
 
@@ -89,12 +81,23 @@ parent: bodyText
 <p class="text--tertiary">Tertiary text is tertiary</p>
 ```
 */
-%text--tertiary,
 .text--tertiary {
-	@include color-all($C_textTertiary);
-	.inverted & {
-		@include color-all($C_textTertiaryInverted);
-	}
+	@extend %text--tertiary;
+}
+
+
+/*doc
+---
+title: Heavy text
+name: heavyText
+parent: bodyText
+---
+```html_example
+<p class="text--heavy">Heavy text is heavy</p>
+```
+*/
+.text--heavy {
+	@extend %text--heavy;
 }
 
 
@@ -108,9 +111,8 @@ parent: bodyText
 <p class="text--bold">Bold text is bold</p>
 ```
 */
-%text--bold,
 .text--bold {
-	font-weight: $W_bold;
+	@extend %text--bold;
 }
 
 
@@ -121,16 +123,31 @@ name: smallText
 parent: bodyText
 ---
 ```html_example
-<p class="text--small">Small text is small</p>
+<p class="text--small">Small text class is small</p>
+<small>Default styling of "small" tag</small>
 ```
 */
-%text--small,
+small,
 .text--small {
-	@include _headingDescendant() {
-		font-size: $font-size-small;
-		line-height: $line-height-small;
-	}
+	@extend %text--small;
 }
+
+/*doc
+---
+title: Big text
+name: bigText
+parent: bodyText
+---
+```html_example
+<p class="text--big">Big text class is big</p>
+<big>Default styling of "big" tag</big>
+```
+*/
+big,
+.text--big {
+	@extend %text--big;
+}
+
 
 /*doc
 ---
@@ -148,9 +165,10 @@ to any other element, use `text--mono`.
 <pre>We can safely assume a pre tag on Meetup is also code</pre>
 ```
 */
-%text--mono,
+code,
+pre,
 .text--mono {
-	font-family: $font--mono;
+	@extend %text--mono;
 }
 
 
@@ -164,14 +182,10 @@ parent: bodyText
 <p class="text--caption">I'm captioning all the things</p>
 ```
 */
-%text--caption,
 .text--caption {
-	@extend %text--small;
-	@include color-all($C_textSecondary);
-	.inverted & {
-		@include color-all($C_textSecondaryInverted);
-	}
+	@extend %text--caption;
 }
+
 
 /*doc
 ---
@@ -181,8 +195,10 @@ parent: bodyText
 ---
 ```html_example
 <p class="text--error">I'm erroring all the things</p>
+<p class="text--attention">Attention!</p>
 ```
 */
+<<<<<<< HEAD
 %text--error,
 .text--error {
 	@extend %text--small;
@@ -220,10 +236,9 @@ Cuts line height to give the glyph spacing similar to that of an image or icon.
 <p>Miles per hour</p>
 ```
 */
-%text--graphic,
-.text--graphic {
-	@extend %text--display;
-	line-height: .9;
+.text--error,
+.text--attention {
+	@extend %text--attention;
 }
 
 
@@ -283,12 +298,10 @@ a {
 	text-decoration: none;
 	&.link,
 	.runningText & {
-		@extend %link;
-		&.button {
-			text-decoration: none;
-		}
+		@extend %text--link;
 	}
 }
+
 
 /*doc
 ---
@@ -311,11 +324,14 @@ List style bullets are applied when list
 elements are inside a `.runningText` container.
 
 ```html_example
-<div class="runningText">
-	<ul>
-		<li>Eggs</li>
-		<li>More Eggs</li>
-	</ul>
+<div class="bounds">
+	<h3 class="text--big">Shopping list</h3>
+	<div class="runningText">
+		<ul>
+			<li>Eggs</li>
+			<li>More Eggs</li>
+		</ul>
+	</div>
 </div>
 ```
 
@@ -323,16 +339,22 @@ You may also use the `.bullets` class to apply
 numbers/bullets to a list.
 
 ```html_example
-<ul class="bullets">
-	<li>Eggs</li>
-	<li>More Eggs</li>
-</ul>
+<div class="bounds">
+	<h3 class="text--big">Shopping list</h3>
+	<ul class="bullets">
+		<li>Eggs</li>
+		<li>More Eggs</li>
+	</ul>
+</div>
 ```
 
 */
 %_listStyleBase {
 	list-style-position: outside;
 	padding-left: 1.33em; /* indent by default */
+	@include atMediaUp(huge){
+		padding-left: inherit; /* indent by default */
+	}
 }
 ul {
 	&.bullets,

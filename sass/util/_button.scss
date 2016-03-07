@@ -25,58 +25,92 @@ Disables user-select, sets cursor, and resets text-decoration.
 	text-decoration: none !important;
 }
 
-//
-// Various button utils follow this comment...
-// they support `sass/ui-components/_buttons.scss`,
-// but have been temporarily moved to this file
-// while we use transitional style buttons
-// (`sass/ui-components/_buttons_transitional.scss`)
-//
-$btn-color-map: (
-	default: transparent,
-	primary: $C_link,
-	contrast: $C_textPrimaryInverted
-) !default;
+/*doc
+---
+title: Button base placeholder
+name: buttonBasePlaceholder
+parent: buttons
+---
+Applies base button styles
 
-@mixin buttonBase() { // for specificity accuracy in transitional buttons
-	box-sizing: border-box;
+```
+@extend %buttonBase;
+```
+*/
+%buttonBase {
+	@extend %buttonPersonality;
+	@include display(inline-flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
 	@include transition(background .15s);
-	@include standardBorder('all');
+	@include standardBorder(all);
+	box-sizing: border-box;
 	-webkit-appearance: none;
+	border-radius: $defaultRadius;
 	background: transparent;
-	border-radius: 50px;
-	display: inline-block;
 	font-size: $font-size;
 	font-weight: $W_bold;
-	margin: 0;
-	padding: $space-half $space;
-	text-align: center;
-	&:focus {
-		outline: 0;
-	}
-}
-%buttonBase {
-	@include buttonBase;
+	line-height: $line-height;
+	min-height: $space-3;
+	outline: 0;
+	padding: 0 $space;
+	vertical-align: middle;
 }
 
-//
-// Button border modifiers
-//
-@mixin button--bordered() {
-	@include color-all( map-get($btn-color-map, "primary") );
-	border: $btn-border;
-	font-weight: $W_normal;
+/*doc
+---
+title: Button hover placeholder
+name: buttonHoverPlaceholder
+parent: buttons
+---
+Applies default button `:hover`,
+`:active`, and `:focus` styles
+
+```
+// lightens "bgColor" on hover
+@mixin buttonHover($bgColor: $C_textPrimary);
+```
+*/
+@mixin buttonHover($bgColor: $C_textPrimary) {
+	&:hover,
+	&:focus {
+		background: transparentize($bgColor, .8);
+		border-color: transparent;
+	}
+
+	&:active {
+		background: transparentize($bgColor, .75);
+		border-color: transparent;
+	}
+}
+
+
+/*doc
+---
+title: Button color mixin
+name: buttonColorMixin
+parent: button
+---
+Sets color properties for a button
+
+```
+.button--myOrangeButton {
+	@include buttonColor(orange);
+}
+```
+*/
+@mixin buttonColor($bgColor: $C_button) {
+	@include color-all(getPrimaryTextColor($bgColor), true);
+	background: $bgColor;
+	border-color: $bgColor;
 
 	&:hover,
-	&:active,
 	&:focus {
-		background: transparentize(map-get($btn-color-map, "primary"), .8) !important;
+			background: darken($bgColor, 8%);
 	}
 
-	.inverted & {
-		@include color-all( map-get($btn-color-map, "contrast") );
+	&:active {
+		background: darken($bgColor, 12%);
 	}
-}
-%button--bordered {
-	@include button--bordered;
 }
