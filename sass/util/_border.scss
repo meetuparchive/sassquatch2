@@ -29,12 +29,12 @@ including rules for inverted context.
 
 */
 @mixin standardBorder( $side: 'top', $size: 1px ) {
-	@if '#{$side}' == 'all' {
+	@if "#{$side}" == "all" {
 		border: $size solid $C_border;
 		.inverted & {
 			border: $size solid $C_borderInverted;
 		}
-	} @else if '#{$side}' == 'none' {
+	} @else if "#{$side}" == "none" {
 		border: none !important; // override inverted selector specificity
 	} @else {
 		border-#{$side}: $size solid $C_border;

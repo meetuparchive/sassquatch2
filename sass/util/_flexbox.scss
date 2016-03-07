@@ -28,20 +28,20 @@ Sets flexbox properties for a flex parent (`display: flex;`)
 	@include align-items(flex);
 	box-sizing: border-box;
 
-	@if '#{$orientation}' == 'row' {
+	@if "#{$orientation}" == "row" {
 		@include flex-direction(row);
 		@include flex-wrap(nowrap);
 	} @else {
 		@include flex-direction(column);
 
-		@if $useFallback {
+		@if $useFallback == true {
 			@include browser-lessThanIE( 10 ) {
 				height: 100%;
 			}
 		}
 	}
 
-	@if $useFallback {
+	@if $useFallback == true {
 		@include browser-lessThanIE( 10 ) {
 			display: table;
 			table-layout: auto;
@@ -75,7 +75,7 @@ Sets flexbox properties for a flex children.
 		width: auto;
 		min-width: 0;
 
-		@if $useFallback {
+		@if $useFallback == true {
 			@include browser-lessThanIE( 10 ) {
 				display: table-cell;
 			}
@@ -86,14 +86,14 @@ Sets flexbox properties for a flex children.
 		@include flex-basis(auto);
 		width: initial;
 
-		@if $useFallback {
+		@if $useFallback == true {
 			@include browser-lessThanIE( 10 ) {
 				width: 1%;
 			}
 		}
 	}
 
-	@if $useFallback {
+	@if $useFallback == true {
 		@include browser-lessThanIE( 10 ) {
 			vertical-align: top;
 		}
