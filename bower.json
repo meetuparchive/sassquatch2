@@ -17,7 +17,7 @@
   "dependencies": {
     "meetup-swatches": "git@github.com:meetup/meetup-swatches.git#release/3.0.0",
     "bourbon": "4.2.3",
-    "julep": "1.4.3"
+    "julep": "1.4.4"
   },
   "license": "MIT"
 }
