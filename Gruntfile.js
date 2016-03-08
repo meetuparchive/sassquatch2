@@ -1,7 +1,20 @@
+var Seldon = require('seldon');
+
+grunt.registerTask('seldon', function(configJSON) {
+	var done = this.async();
+
+	if (arguments.length === 0) {
+		grunt.log.writeln(this.name + ", no args");
+
+	} else {
+		Seldon.compile(configJSON);
+		done();
+	}
+});
+
 module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-wiredep');
@@ -20,13 +33,6 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					"docs/templates/css/sassquatch.css": "sass/sassquatch.scss"
-				}
-			}
-		},
-		'hologram': {
-			generate: {
-				options: {
-					config: DIR_DOC_SRC+'/config.yml'
 				}
 			}
 		},
