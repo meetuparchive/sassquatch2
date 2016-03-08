@@ -1,18 +1,14 @@
 var Seldon = require('seldon');
 
-grunt.registerTask('seldon', function(configJSON) {
-	var done = this.async();
-
-	if (arguments.length === 0) {
-		grunt.log.writeln(this.name + ", no args");
-
-	} else {
-		Seldon.compile(configJSON);
-		done();
-	}
-});
-
 module.exports = function(grunt) {
+
+	grunt.registerTask('seldon', "Compiles documentation", function() {
+		if (arguments.length === 0) {
+			grunt.log.writeln(this.name + ", no args");
+		} else {
+			Seldon.compile(this.options().configPath);
+		}
+	});
 
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-gh-pages');
@@ -34,6 +30,11 @@ module.exports = function(grunt) {
 				files: {
 					"docs/templates/css/sassquatch.css": "sass/sassquatch.scss"
 				}
+			}
+		},
+		'seldon': {
+			options: {
+				configPath: DIR_DOC_SRC + 'config.json'
 			}
 		},
 		'gh-pages': {
@@ -65,6 +66,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['clean', 'wiredep', 'sass', 'hologram', 'preprocess']);
+	grunt.registerTask('default', ['clean', 'wiredep', 'sass', 'seldon', 'preprocess']);
 	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };

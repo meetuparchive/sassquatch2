@@ -1,7 +1,0 @@
-# Hologram config
-
-source: ../sass/
-destination: ./build
-documentation_assets: ./templates
-dependencies:
-  - ./pages
