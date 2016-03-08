@@ -2,12 +2,29 @@ var Seldon = require('seldon');
 
 module.exports = function(grunt) {
 
-	grunt.registerTask('seldon', "Compiles documentation", function() {
-		if (arguments.length === 0) {
-			grunt.log.writeln(this.name + ", no args");
+	// TODO: for a cli, see https://raw.githubusercontent.com/jchild3rs/grunt-hologram/master/tasks/hologram.js
+	grunt.registerMultiTask('seldon', 'Generate Seldon CSS documentation', function () {
+		var done = this.async();
+		var options = this.options();
+		var configPath;
+
+		// Null check config option
+		if (options.config) {
+			configPath = options.config;
 		} else {
-			Seldon.compile(this.options().configPath);
+			return grunt.warn(
+				'\nYou must provide a path to your seldon config file.\n'
+			);
 		}
+
+		// Make sure config file exists
+		if (!grunt.file.exists(configPath)) {
+			return grunt.warn('Config file "' + configPath + '" not found.');
+		}
+
+		// Run seldon
+		Seldon.compile(configPath);
+		done();
 	});
 
 	grunt.loadNpmTasks('grunt-sass');
@@ -34,7 +51,7 @@ module.exports = function(grunt) {
 		},
 		'seldon': {
 			options: {
-				configPath: DIR_DOC_SRC + 'config.json'
+				config: DIR_DOC_SRC + 'config.json'
 			}
 		},
 		'gh-pages': {
