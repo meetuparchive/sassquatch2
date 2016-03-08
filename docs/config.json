@@ -1,0 +1,8 @@
+{
+   "source": "sass/",
+   "destination": "build/",
+   "templates": {
+      "layout": "docs/templates/layout.hbs",
+      "example": "docs/templates/example.hbs"
+   }
+}
