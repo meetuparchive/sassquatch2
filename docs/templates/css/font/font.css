@@ -8,14 +8,14 @@
 @font-face {
 	font-family: 'Graphik';
 	src: url('./GraphikApp-Medium.ttf')  format('truetype');
-	font-weight:600;
+	font-weight:500;
 	font-style:normal;
 	unicode-range:U+0-00FF;
 }
 @font-face {
 	font-family: 'Graphik';
 	src: url('./GraphikApp-Semibold.ttf')  format('truetype');
-	font-weight:800;
+	font-weight:600;
 	font-style:normal;
 	unicode-range:U+0-00FF;
 }
