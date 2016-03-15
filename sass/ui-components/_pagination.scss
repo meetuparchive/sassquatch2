@@ -121,7 +121,7 @@ $_bpPagination: medium;
 }
 
 .page-label {
-	@extend %buttonBase;
+	@include buttonBase();
 	color: $C_textSecondary;
 	padding: 0;
 	min-width: $media-s;

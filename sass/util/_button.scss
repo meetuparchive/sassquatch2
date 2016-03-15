@@ -27,17 +27,19 @@ Disables user-select, sets cursor, and resets text-decoration.
 
 /*doc
 ---
-title: Button base placeholder
-name: buttonBasePlaceholder
+title: Button base mixin
+name: buttonBaseMixin
 parent: buttons
 ---
-Applies base button styles
+Applies base button styles using a mixin.
+
+_(The `extend` directive can cause ugly cascade problems)_
 
 ```
-@extend %buttonBase;
+@include buttonBase();
 ```
 */
-%buttonBase {
+@mixin buttonBase() {
 	@extend %buttonPersonality;
 	@include display(inline-flex);
 	@include flex-direction(column);
