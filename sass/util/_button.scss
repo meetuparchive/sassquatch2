@@ -42,7 +42,7 @@ _(The `extend` directive can cause ugly cascade problems)_
 @mixin buttonBase() {
 	@extend %buttonPersonality;
 	@include display(inline-flex);
-	@include flex-direction(column);
+	@include flex-direction(row);
 	@include justify-content(center);
 	@include align-items(center);
 	@include transition(background .15s);
