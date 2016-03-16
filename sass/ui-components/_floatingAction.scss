@@ -27,7 +27,7 @@ $_containerHeight: $space*2 + $_buttonHeight;
 .floatingAction {
 	background-color: $C_contentBG;
 	box-sizing: border-box;
-	box-shadow: 0 -2px 0 $C_highlight, 0 -2px 4px 0 $C_border;
+	box-shadow: 0 -2px 0 $C_selection, 0 -2px 4px 0 $C_border;
 	padding: $space;
 	position: fixed;
 	bottom: 0;
