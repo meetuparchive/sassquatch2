@@ -18,8 +18,8 @@ Label for a small piece of information. Can be a link or just for display
 */
 .token {
 	@extend %buttonPersonality;
-	@extend %buttonBase;
 	@extend %button--small;
+	@include buttonBase();
 	font-weight: $W_normal;
 	background: $C_lightGray;
 	color: $C_textSecondary;

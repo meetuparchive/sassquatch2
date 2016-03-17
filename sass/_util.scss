@@ -17,7 +17,12 @@
 // ---------------------------
 // Global vars
 // ---------------------------
-@import "globals";
+@import "globals/prefix";
+@import "globals/root-class";
+@import "globals/scale";
+@import "globals/type";
+@import "globals/forms";
+@import "globals/layout";
 
 
 // ---------------------------

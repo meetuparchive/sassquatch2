@@ -59,7 +59,6 @@ Placeholder             | Description
 %text--display3 {
 	font-size: $font-size-display3;
 	line-height: $line-height-largeText;
-	line-height: $line-height;
 }
 
 
@@ -172,7 +171,7 @@ Placeholder           | Description
 %text--big {
 	font-size: $font-size-big;
 	line-height: $line-height;
-	font-weight: $W_bold;
+	font-weight: $W_medium;
 	letter-spacing: -0.02em;
 }
 %text--small {
