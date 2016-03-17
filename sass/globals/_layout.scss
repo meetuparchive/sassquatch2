@@ -82,8 +82,10 @@ $zindex-map: (
 	$display-values: (
 		none,
 		block,
+		flex,
 		inline,
-		inline-block
+		inline-block,
+		inline-flex
 	);
 
 // ---------------------------
