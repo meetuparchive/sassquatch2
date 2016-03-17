@@ -25,25 +25,27 @@ Class                | Description
 */
 
 .rsvpTag {
+	border: 1px solid;
 	border-radius: $defaultRadius;
-	color: $C_textPrimaryInverted;
 	display: inline-block;
-	padding: $space-quarter;
-
-	@include i18n-only('en') {
-		text-transform: capitalize;
-	}
+	font-size: $font-size-small;
+	font-weight: $W_bold;
+	line-height: $line-height-smallText;
+	padding: 0 $space-quarter;
 }
 
 .rsvpTag--yes {
-	background: $C_teal; //probably shouldn't use actual color name for this var..
+	background: transparentize($C_success, .93);
+	color: $C_success;
 }
 
 .rsvpTag--no {
 	background: $C_collectionBG;
+	border-color: $C_border;
 	color: $C_textPrimary;
 }
 
 .rsvpTag--waiting {
 	background: $C_contentBGInverted;
+	color: $C_textPrimaryInverted;
 }
