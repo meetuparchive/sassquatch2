@@ -55,7 +55,7 @@ parent: view
 Basic example of a single view in a document:
 
 ```
-<div class="view view-loading">
+<div class="view view--loading">
 	<header class="view-head">
 		... view-head ...
 	</header>
@@ -66,10 +66,12 @@ Basic example of a single view in a document:
 ```
 */
 .view--loading {
+	$_loaderOffset: -18px; // for vertical centering
+
 	&:before {
 		@include animate--spin(.5s);
 		content: " ";
-		position: absolute;
+		position: fixed;
 		top:50%;
 		left:50%;
 		height: $space-3;
@@ -79,7 +81,7 @@ Basic example of a single view in a document:
 		box-sizing: border-box;
 		border: solid 3px rgba(0, 0, 0, 0.2);
 		border-top-color: black;
-		margin: 0 auto;
+		margin: $_loaderOffset auto auto $_loaderOffset;
 	}
 	&:after {
 		content: " ";
