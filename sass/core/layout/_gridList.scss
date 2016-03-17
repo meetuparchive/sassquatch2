@@ -74,7 +74,7 @@ Class                         | Description
 // small/default
 @each $col in $glColumns {
 	.gridList--has#{$col} > .gridList-item {
-		@include width-columns($col);
+		width: percentage(1 / $col);
 	}
 }
 
