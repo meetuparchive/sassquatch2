@@ -32,6 +32,5 @@ Label for a small piece of information. Can be a link or just for display
 	@include buttonHover();
 	background: $C_contentBG;
 	color: $C_link;
-	font-weight: $W_bold;
 	cursor: pointer;
 }
