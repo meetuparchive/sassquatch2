@@ -105,7 +105,7 @@ $_padding: 10px $space $space-half $space;
 @mixin primaryButton( $color: $C_red ) {
 	$_borderColor: darken($color, 25%);
 	@extend %_buttonBaseSQ1;
-	@include color-all(getPrimaryTextColor($color));
+	@include color-all(getPrimaryTextColor($color), true);
 	background: $color !important;
 	box-shadow: 0 $_shadowWidth 0 0 $_borderColor !important;
 
@@ -174,7 +174,7 @@ $_padding: 10px $space $space-half $space;
 	&,
 	&:hover,
 	&:active {
-		@include color-all($C_textSecondary);
+		@include color-all($C_textSecondary, true);
 		@include transform(none);
 		background: $C_lightGray !important;
 		box-shadow: 0 $_shadowWidth 0 0 $C_textSecondary !important;

@@ -18,5 +18,5 @@ Error text is set explicitly with `text--error`.
 
 */
 .field--error {
-	border-color: $C_red;
+	border-color: $C_red !important;
 }
