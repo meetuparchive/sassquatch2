@@ -35,8 +35,8 @@ Class                | Description
 }
 
 .rsvpTag--yes {
-	background: transparentize($C_success, .93);
-	color: $C_success;
+	background: $C_success;
+	color: getPrimaryTextColor($C_success);
 }
 
 .rsvpTag--no {
