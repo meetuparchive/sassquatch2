@@ -185,6 +185,7 @@ $_iconGutter: $space;
 .button-label {
 	@include flex-grow(1);
 	@include flex-basis(0);
+	text-align: center;
 }
 
 .button-icon {
