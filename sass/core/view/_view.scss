@@ -156,6 +156,7 @@ Class                      | Description
 */
 .view-head {
 	@include flexChild('shrink', false);
+	@include standardBorder('bottom');
 	box-sizing: border-box;
 	background: $C_white;
 	width: 100%;
