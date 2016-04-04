@@ -156,8 +156,9 @@ Class                      | Description
 */
 .view-head {
 	@include flexChild('shrink', false);
+	@include color-all($C_red);
 	box-sizing: border-box;
-	background: $C_accent;
+	background: $C_white;
 	color: $C_textPrimaryInverted;
 	width: 100%;
 	z-index: map-get($zindex-map, "main-header");
