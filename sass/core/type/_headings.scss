@@ -57,6 +57,7 @@ the tag as a heading.
 <h2 class="text--display3">Display text is for headings</h2>
 ```
 */
+.text--display, // map legacy class to display1
 .text--display1 {
 	@extend %text--display1;
 }
