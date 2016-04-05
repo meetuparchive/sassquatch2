@@ -203,7 +203,6 @@ Placeholder           | Description
 	@extend %text--secondary;
 }
 %text--attention {
-	@extend %text--small;
 	@include color-all($C_attention);
 }
 %text--mono {
