@@ -113,18 +113,7 @@ Checkbox form elements styled as toggle buttons.
 }
 
 .toggleButton-label {
-	@extend %buttonPersonality;
-	@extend %button--small;
-	@extend %button--icon;
-	@include buttonBase();
-	font-weight: $W_normal;
-	margin: 0;
-
-	&:hover,
-	&:active,
-	&:focus {
-		background: $C_selection;
-	}
+	@include pillBase();
 }
 
 .toggleButton-icon {

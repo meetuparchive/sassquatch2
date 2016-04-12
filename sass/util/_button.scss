@@ -62,6 +62,47 @@ _(The `extend` directive can cause ugly cascade problems)_
 
 /*doc
 ---
+title: Pill base mixin
+name: pillBaseMixin
+parent: buttons
+---
+Applies base pill styles using a mixin (for tokens and toggle pills)
+
+_(The `extend` directive can cause ugly cascade problems)_
+
+```
+@include pillBase();
+```
+*/
+@mixin pillBase() {
+	@extend %buttonPersonality;
+	@extend %text--small;
+	@include display(inline-flex);
+	@include flex-direction(row);
+	@include justify-content(center);
+	@include align-items(center);
+	@include transition(background .15s);
+	@include standardBorder(all);
+	vertical-align: middle;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	border-radius: $defaultRadius;
+	background: transparent;
+	min-height: $space-2;
+	outline: 0;
+	padding: 0 $space/2;
+	margin: 0;
+	font-weight: normal;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $C_selection;
+	}
+}
+
+/*doc
+---
 title: Button hover placeholder
 name: buttonHoverPlaceholder
 parent: buttons
