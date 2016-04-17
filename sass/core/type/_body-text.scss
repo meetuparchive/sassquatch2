@@ -314,8 +314,10 @@ numbers/bullets to a list.
 %_listStyleBase {
 	list-style-position: outside;
 	padding-left: 1.33em; /* indent by default */
-	@include atMediaUp(huge){
-		padding-left: inherit; /* indent by default */
+	.runningText & {
+		@include atMediaUp(huge){
+			padding-left: inherit;
+		}
 	}
 }
 ul {
