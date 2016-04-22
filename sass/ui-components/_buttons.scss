@@ -195,10 +195,6 @@ $_iconGutter: $space;
 	width: initial;
 	line-height: 0;
 
-	&:first-child {
-		margin-right: $_iconGutter;
-	}
-
 	&:last-child {
 		margin-left: $_iconGutter;
 	}
