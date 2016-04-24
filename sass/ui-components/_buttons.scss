@@ -163,6 +163,7 @@ Class                   | Description
 
 %button--fullWidth,
 .button--fullWidth {
+	@include display(flex);
 	width: 100%;
 }
 
