@@ -58,6 +58,12 @@ _(The `extend` directive can cause ugly cascade problems)_
 	outline: 0;
 	padding: 0 $space;
 	vertical-align: middle;
+
+	@include browser-ie11() {
+		min-height: 0;
+		padding-top: 0.33em;
+		padding-bottom: 0.5em;
+	}
 }
 
 /*doc
