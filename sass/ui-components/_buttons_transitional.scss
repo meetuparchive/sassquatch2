@@ -185,7 +185,7 @@ $_padding: 10px $space $space-half $space;
 		}
 	}
 	.inverted & {
-		@include color-all($C_textSecondaryInverted, true)
+		@include color-all($C_textTertiaryInverted, true)
 	}
 }
 
