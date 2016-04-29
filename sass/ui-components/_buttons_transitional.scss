@@ -184,6 +184,9 @@ $_padding: 10px $space $space-half $space;
 			box-shadow: 0 0 0 0 transparent !important;
 		}
 	}
+	.inverted & {
+		@include color-all($C_textSecondaryInverted, true)
+	}
 }
 
 //
