@@ -161,11 +161,17 @@ Class                   | Description
 	padding: 0 $space-half;
 }
 
+//
+// Full width button
+//
 %button--fullWidth,
 .button--fullWidth,
+.button.button--fullWidth,
 .button.span-100 {
 	display: block;
 	width: 100%;
+	text-align: center;
+	padding: 0.5em;
 }
 
 //
