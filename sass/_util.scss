@@ -28,6 +28,7 @@
 // ---------------------------
 // Sass Mixins & Placeholders
 // ---------------------------
+	@import "util/_ie11";
 	@import "util/flexbox";
 
 	// TODO: consider moving some of these to julep

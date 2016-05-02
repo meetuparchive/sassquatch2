@@ -12,6 +12,7 @@ Class                   | Description
 `.border--left`         | sets a standard left border on the element
 `.border--none`         | removes all borders from element
 `.bordered`             | sets a standard top border AND top padding
+`.focus--none`          | removes user agent focus style
 */
 
 %border--top,
@@ -27,6 +28,10 @@ Class                   | Description
 %border--none,
 .border--none {
 	border-width: 0 !important;
+}
+
+.focus--none {
+	outline: 0;
 }
 
 %bordered,

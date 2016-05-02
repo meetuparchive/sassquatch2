@@ -161,9 +161,16 @@ Class                   | Description
 	padding: 0 $space-half;
 }
 
+//
+// Full width button
+//
 %button--fullWidth,
-.button--fullWidth {
+.button--fullWidth,
+.button.span-100 {
+	display: block;
 	width: 100%;
+	text-align: center;
+	padding: 0.5em;
 }
 
 //
@@ -171,7 +178,7 @@ Class                   | Description
 //
 $_iconGutter: $space;
 %button--icon,
-.button--icon {
+.button.button--icon { /* higher specificity to override full width display block fix */
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
 	@include justify-content(space-between);
@@ -185,6 +192,7 @@ $_iconGutter: $space;
 .button-label {
 	@include flex-grow(1);
 	@include flex-basis(0);
+	text-align: center;
 }
 
 .button-icon {
@@ -193,10 +201,6 @@ $_iconGutter: $space;
 	@include flex-basis(auto);
 	width: initial;
 	line-height: 0;
-
-	&:first-child {
-		margin-right: $_iconGutter;
-	}
 
 	&:last-child {
 		margin-left: $_iconGutter;

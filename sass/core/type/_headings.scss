@@ -34,7 +34,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
 	.view-head & {
-		color: $C_textPrimaryInverted;
 		font-size: $font-size;
 	}
 }
@@ -58,6 +57,7 @@ the tag as a heading.
 <h2 class="text--display3">Display text is for headings</h2>
 ```
 */
+.text--display, // map legacy class to display1
 .text--display1 {
 	@extend %text--display1;
 }

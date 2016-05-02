@@ -101,22 +101,12 @@ Checkbox form elements styled as toggle buttons.
 }
 
 .toggleButton-label {
-	@extend %buttonPersonality;
-	@extend %button--small;
-	@extend %button--icon;
-	@include buttonBase();
-	font-weight: $W_normal;
-	margin: 0;
-
-	&:hover,
-	&:active,
-	&:focus {
-		background: $C_selection;
-	}
+	@include pillBase();
 }
 
 .toggleButton-icon {
 	@include color-all($C_textHint);
+	margin-left: 0.5em; // relative sizing because icon could be 's' or 'xs'
 }
 
 .toggleButton-icon--inactive {
@@ -154,8 +144,4 @@ Checkbox form elements styled as toggle buttons.
 			display: none;
 		}
 	}
-}
-
-.toggleButton-icon {
-	margin-left: $space-quarter;
 }
