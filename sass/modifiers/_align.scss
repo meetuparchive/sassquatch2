@@ -35,8 +35,8 @@ Class                    | Description
 `.valign--top`           | vertically centers element to top
 
 */
-$_verticalAlign-to-selfAlign: (
-	baseline: baseline,
+$_align-to-flexAlign: (
+	baseline: flex-end,
 	bottom: flex-end,
 	middle: center,
 	top: flex-start
@@ -44,14 +44,16 @@ $_verticalAlign-to-selfAlign: (
 
 @each $alignment in (left, right, center) {
 	@include _modifier(align, $alignment) {
-		@include align-self($alignment);
+		@include align-self( map-get($_align-to-flexAlign, $alignment) );
+		@include justify-content( map-get($_align-to-flexAlign, $alignment) );
 		text-align: $alignment !important;
 	}
 }
 
 @each $valignment in (baseline, bottom, middle, top) {
 	@include _modifier(valign, $valignment) {
-		@include align-self( map-get($_verticalAlign-to-selfAlign, $valignment) );
+		@include align-self( map-get($_align-to-flexAlign, $valignment) );
+		@include justify-content( map-get($_align-to-flexAlign, $valignment) );
 		vertical-align: $valignment !important;
 	}
 }
