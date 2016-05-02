@@ -92,6 +92,7 @@ Placeholder          | Description
 %text--labelSecondary {
 	@extend %text--label;
 	@include color-all($C_textSecondary);
+	font-weight: $W_medium;
 
 	.inverted & {
 		@include color-all($C_textSecondaryInverted);
