@@ -162,8 +162,9 @@ Class                   | Description
 }
 
 %button--fullWidth,
-.button--fullWidth {
-	@include display(flex);
+.button--fullWidth,
+.button.span-100 {
+	display: block;
 	width: 100%;
 }
 
