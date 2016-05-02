@@ -8,9 +8,9 @@ category: UI Components
 ```html_example
 <nav>
 	<ul class="tabs">
-		<li class="tabs-tab"><a href="#">Tab One</a></li>
-		<li class="tabs-tab tabs-tab--selected"><a href="#">Tab Two</a></li>
-		<li class="tabs-tab"><a href="#">Tab Three</a></li>
+		<li class="tabs-tab"><a href="#">Tab One</a>
+		<li class="tabs-tab tabs-tab--selected"><a href="#">Tab Two</a>
+		<li class="tabs-tab"><a href="#">Tab Three</a>
 	</ul>
 </nav>
 ```
@@ -32,7 +32,6 @@ Class                 | Description
 --------------------- | -----------------------------
 `tabs-tab--selected`  | Applies styles for tab selected state
 */
-
 $_tabBorder: 4px;
 
 .tabs {
@@ -76,6 +75,7 @@ $_tabBorder: 4px;
 	}
 }
 .tabs-tab--selected {
-	color: $C-red;
-	border-bottom: $_tabBorder solid $C-red;
+	color: $C_link;
+	font-weight: $W_medium;
+	border-bottom: $_tabBorder solid $C_link;
 }

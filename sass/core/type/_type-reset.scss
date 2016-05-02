@@ -13,7 +13,14 @@ button  {
 }
 
 body  {
+	// enable ligatures and kerning with Graphik
 	text-rendering: optimizeLegibility;
+	-moz-font-feature-settings: "liga", "kern";
+	-moz-font-feature-settings:"liga=1, kern=1";
+	-ms-font-feature-settings:"liga", "kern";
+	-o-font-feature-settings:"liga", "kern";
+	-webkit-font-feature-settings:"liga", "kern";
+	font-feature-settings: "liga", "kern";
 }
 
 //
@@ -55,10 +62,6 @@ var {
 	// Eric Meyer
 	// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
 	@include hyphens(none);
-}
-
-code, pre {
-	font-family: $font--mono;
 }
 
 pre {

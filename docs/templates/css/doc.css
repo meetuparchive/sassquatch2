@@ -52,9 +52,6 @@ main > .codeBlock {
 
 /* TYPE OVERRIDES */
 main > h1 {
-	color: #000;
-	font-size: 32px;
-	font-weight: normal;
 	margin-bottom: 12px;
 	padding-top: 8px;
 	border-top: 1px solid rgba(0,0,0,.12);
