@@ -173,7 +173,7 @@ Class                   | Description
 //
 $_iconGutter: $space;
 %button--icon,
-.button--icon {
+.button.button--icon { /* higher specificity to override full width display block fix */
 	@include flex-wrap(nowrap);
 	@include flex-direction(row);
 	@include justify-content(space-between);
