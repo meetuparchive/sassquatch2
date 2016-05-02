@@ -12,20 +12,14 @@ The following classes change the `text-align` of an element.
 
 Class                    | Description
 ------------------------ | --------------------------------
-`.align--left`           | sets `text-align` to `left`
-`.align--right`          | sets `text-align` to `right`
-`.align--center`         | sets `text-align` to `center`
+`.align--left`           | sets `text-align` to `left` (or moves flex children to `flex-start`)
+`.align--right`          | sets `text-align` to `right` (or moves flex children to `flex-end`)
+`.align--center`         | sets `text-align` to `center` (or moves flex children to `center`)
 
 
 ## Vertical alignment
 The following classes adjust vertical centering of element
 contents.
-
-For elements displaying as `inline-block` or `table-cell`,
-the `vertical-align` property is used.
-
-For flex children, these classes set the `align-self` property
-to a value that best matches the `vertical-align` value.
 
 Class                    | Description
 ------------------------ | --------------------------------
@@ -36,6 +30,9 @@ Class                    | Description
 
 */
 $_align-to-flexAlign: (
+	left: flex-start, // assumes ltr
+	right: flex-end,  // assumes ltr
+	center: center,   // assumes ltr
 	baseline: flex-end,
 	bottom: flex-end,
 	middle: center,
