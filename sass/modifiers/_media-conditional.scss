@@ -24,7 +24,7 @@ Using this signature: `.at[Breakpoint]_[property]--[variant]`
 Breakpoints        | Property       | Variants
 ------------------ | -------------- | ---------------------------
 `medium`, `large`  | `align`        | `center`, `right`, `left`
-`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `display`      | `none`, `block`, `flex`, `inline`, `inlineBlock`, `inlineFlex`
 `medium`, `large`  | `padding`      | `none`
 `medium`, `large`  | `margin`       | `center`
 `medium`, `large`  | `border`       | `top`, `none`
@@ -41,7 +41,11 @@ Breakpoints        | Property       | Variants
 
 // display
 @each $display in $display-values {
-	@include _bpModifier('display', str-replace($display, '-block', 'Block')) {
+
+	// convert hyphenated display values to camelCase
+	$_camelValue: str-replace(str-replace($display, '-block', 'Block'), '-flex', 'Flex');
+
+	@include _bpModifier('display', $_camelValue) {
 		display: $display !important;
 	}
 }

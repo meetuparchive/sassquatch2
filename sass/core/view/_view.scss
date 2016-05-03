@@ -41,7 +41,7 @@ Basic example of a single view in a document:
 
 .view--collection,
 .view--collection .view-body {
-	background-color: $C_collectionBGLight;
+	background-color: $C_collectionBG;
 }
 
 /*doc
@@ -135,7 +135,7 @@ fixed top nav bar) within every view.
 
 ```
 <div class="view">
-	<header class="view-head row inverted">
+	<header class="view-head row">
 		<a href="#" class="row-item row-item--shrink valign--middle">[...]</a>
 		<a href="#" class="row-item valign--middle">Page Title</a>
 		<a href="#" class="row-item row-item--shrink valign--middle">[...]</a>
@@ -156,9 +156,9 @@ Class                      | Description
 */
 .view-head {
 	@include flexChild('shrink', false);
+	@include standardBorder('bottom');
 	box-sizing: border-box;
-	background: $C_accent;
-	color: $C_textPrimaryInverted;
+	background: $C_white;
 	width: 100%;
 	z-index: map-get($zindex-map, "main-header");
 	height: $view-head-height;

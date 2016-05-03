@@ -99,6 +99,9 @@ lays out as a dialog on background content on larger screens.
 	@include modal-full;
 	@include atMediaUp(medium){
 		@include modal-dialog;
+		.view-head {
+			background-color: $C_collectionBG;
+		}
 	}
 	z-index: map-get($zindex-map, "modal");
 }

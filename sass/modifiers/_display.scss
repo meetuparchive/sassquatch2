@@ -10,12 +10,17 @@ Class                   | Description
 ----------------------- | --------------------------------
 `.display--none`        | sets `display` to `none`
 `.display--block`       | sets `display` to `block`
+`.display--flex`        | sets `display` to `flex`
 `.display--inline`      | sets `display` to `inline`
-`.display--inlineBlock` | sets `display` to `inlineblock`
+`.display--inlineBlock` | sets `display` to `inline-block`
+`.display--inlineFlex`  | sets `display` to `inline-flex`
 */
 @each $display in $display-values {
-	$modifierVariant: str-replace($display, '-block', 'Block'); // camelCase inline-block
-	@include _modifier(display, $modifierVariant) {
+
+	// convert hyphenated display values to camelCase
+	$_camelValue: str-replace(str-replace($display, '-block', 'Block'), '-flex', 'Flex');
+
+	@include _modifier(display, $_camelValue) {
 		display: $display;
 	}
 }

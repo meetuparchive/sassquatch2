@@ -14,38 +14,32 @@ content in the feed attached to a parent item
 
 _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 
-### Event meta info example
-
-```html_example
-<div class="row attachment">
-	<div class="row-item row-item--shrink">
-		<time class="tearsheet" datetime="2017-01-13">13</time>
-	</div>
-	<div class="row-item">
-		<h4 class="text--caption">Monday Jan 13, 6:30 pm</h4>
-		<h4>Backpacking For Beginners</h4>
-	</div>
-</div>
-```
-
 ### Discussion reply example
 
 ```html_example
-<div class="row attachment">
-	<div class="row-item row-item--shrink">
-		<a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+<div class="attachment">
+	<div class="row chunk">
+		<div class="row-item row-item--shrink">
+			<a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+		</div>
+		<div class="row-item valign--middle">
+			<h4 class="text--bold display--inline">Member Name</h4><p class="display--inline text--secondary"> · 6 mins ago</p>
+		</div>
 	</div>
-	<div class="row-item text--small">
-		<h4 class="text--bold display--inline">Member Name</h4>
-		<p class="display--inline">This is a reply to a post. I'm going to keep writing until the line wraps. Has it wrapped yet? Who cares.</p>
-	</div>
+	<p>This is a reply to a post. I'm going to keep writing a comment in here until the line wraps. Has the line wrapped yet? I think it has, but who cares.</p>
 </div>
 ```
 */
 .attachment {
+
 	& .row-item {
 		padding-left: $space/2;
+
+		&:first-child {
+			padding-left: 0;
+		}
 	}
+
 	& .row--noGutters > .row-item {
 		padding: 0;
 	}
@@ -57,6 +51,10 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 			@include _sel-selfAndChild( at#{str-firstCharToUpper($breakpoint)}_spreadable--spread ) {
 				.spreadable-item {
 					padding-left: $space/2;
+
+					&:first-child {
+						padding-left: 0;
+					}
 				}
 			}
 		}

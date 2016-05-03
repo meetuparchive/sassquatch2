@@ -17,12 +17,18 @@
 // ---------------------------
 // Global vars
 // ---------------------------
-@import "globals";
+@import "globals/prefix";
+@import "globals/root-class";
+@import "globals/scale";
+@import "globals/type";
+@import "globals/forms";
+@import "globals/layout";
 
 
 // ---------------------------
 // Sass Mixins & Placeholders
 // ---------------------------
+	@import "util/_ie11";
 	@import "util/flexbox";
 
 	// TODO: consider moving some of these to julep
