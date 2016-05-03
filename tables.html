@@ -9,8 +9,8 @@
 
 	<title>Sassquatch 2 : Tables</title>
 
-	<!-- Whitney -->
-	<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
+	<!-- font (TODO: reference from meetupstatic after launch) -->
+	<link rel="stylesheet" href="css/font/font.css">
 
 	<!-- Styleguide CSS -->
 	<link rel="stylesheet" href="css/doc.css">
@@ -29,7 +29,7 @@
 		<div class="bounds bounds--wide">
 			<div class="spreadable spreadable--spaceBetween atLarge_spreadable--spread">
 				<div class="spreadable-item">
-					<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
+					<h1 class="text--display1"><a href="index.html">Sassquatch 2</a></h1>
 				</div>
 				<div class="spreadable-item spreadable-item--shrink">
 					<div class="row margin--top" style="align-items: baseline;">
@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.5.1</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v2.0.0</a>
 						</div>
 					</div>
 				</div>
@@ -579,6 +579,17 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "Button color mixin",
+					"name": "buttonColorMixin",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#buttonColorMixin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Button personality placeholder",
 					"name": "buttonPersonality",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -656,6 +667,17 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "IE11 Filter",
+					"name": "ie11mixin",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#ie11mixin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Modal mixins",
 					"name": "modalUtils",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -712,9 +734,9 @@ $(function() {
 
 				fuseIndex.push({
 					"title": "Text utils",
-					"name": "text",
+					"name": "textUtil",
 					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#text"
+					"url": "sass_utils_|_mixins_&_placeholders.html#textUtil"
 				});
 
 			
@@ -722,10 +744,43 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Link color",
-					"name": "linkColorPlaceholder",
+					"title": "Color placeholders",
+					"name": "colorPlaceholders",
 					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#linkColorPlaceholder"
+					"url": "sass_utils_|_mixins_&_placeholders.html#colorPlaceholders"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Heading placeholders",
+					"name": "headingPlaceholders",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#headingPlaceholders"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Label placeholders",
+					"name": "labelPlaceholder",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#labelPlaceholder"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Other text placeholders",
+					"name": "otherTextPlaceholders",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#otherTextPlaceholders"
 				});
 
 			
@@ -748,6 +803,17 @@ $(function() {
 					"name": "textWrapUtil",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#textWrapUtil"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Weight placeholders",
+					"name": "weightPlaceholders",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#weightPlaceholders"
 				});
 
 			
@@ -1060,10 +1126,43 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Buttons (transitional styles)",
+					"title": "Buttons",
 					"name": "buttons",
 					"category": "UI Components",
 					"url": "ui_components.html#buttons"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Button base mixin",
+					"name": "buttonBaseMixin",
+					"category": "UI Components",
+					"url": "ui_components.html#buttonBaseMixin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Button hover placeholder",
+					"name": "buttonHoverPlaceholder",
+					"category": "UI Components",
+					"url": "ui_components.html#buttonHoverPlaceholder"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Pill base mixin",
+					"name": "pillBaseMixin",
+					"category": "UI Components",
+					"url": "ui_components.html#pillBaseMixin"
 				});
 
 			
@@ -1075,6 +1174,17 @@ $(function() {
 					"name": "collapsible",
 					"category": "UI Components",
 					"url": "ui_components.html#collapsible"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Date Display",
+					"name": "dateDisplay",
+					"category": "UI Components",
+					"url": "ui_components.html#dateDisplay"
 				});
 
 			
@@ -1137,7 +1247,7 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Tearsheet",
+					"title": "Tearsheet (deprecated)",
 					"name": "tearsheet",
 					"category": "UI Components",
 					"url": "ui_components.html#tearsheet"
@@ -1163,6 +1273,17 @@ $(function() {
 					"name": "togglePills",
 					"category": "UI Components",
 					"url": "ui_components.html#togglePills"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Token",
+					"name": "token",
+					"category": "UI Components",
+					"url": "ui_components.html#token"
 				});
 
 			
@@ -1207,6 +1328,17 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "Big text",
+					"name": "bigText",
+					"category": "Typography",
+					"url": "typography.html#bigText"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Bold text",
 					"name": "boldText",
 					"category": "Typography",
@@ -1244,6 +1376,17 @@ $(function() {
 					"name": "errorText",
 					"category": "Typography",
 					"url": "typography.html#errorText"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Heavy text",
+					"name": "heavyText",
+					"category": "Typography",
+					"url": "typography.html#heavyText"
 				});
 
 			
@@ -1339,28 +1482,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Graphic text",
-					"name": "textGraphic",
-					"category": "Typography",
-					"url": "typography.html#textGraphic"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Label text",
-					"name": "textLabel",
-					"category": "Typography",
-					"url": "typography.html#textLabel"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Debug text",
 					"name": "debugText",
 					"category": "Typography",
@@ -1394,10 +1515,21 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Headline text",
-					"name": "headlineText",
+					"title": "Heading tags",
+					"name": "headingTags",
 					"category": "Typography",
-					"url": "typography.html#headlineText"
+					"url": "typography.html#headingTags"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Label header",
+					"name": "labelHeader",
+					"category": "Typography",
+					"url": "typography.html#labelHeader"
 				});
 
 			
@@ -1696,6 +1828,17 @@ $(function() {
 					"name": "formValidation",
 					"category": "Forms",
 					"url": "forms.html#formValidation"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Input Stack",
+					"name": "inputStack",
+					"category": "Forms",
+					"url": "forms.html#inputStack"
 				});
 
 			

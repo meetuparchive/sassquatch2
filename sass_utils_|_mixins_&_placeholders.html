@@ -9,8 +9,8 @@
 
 	<title>Sassquatch 2 : Sass Utils | Mixins & Placeholders</title>
 
-	<!-- Whitney -->
-	<link rel="stylesheet" href="http://static1.meetupstatic.com/fonts/whitney.css" type="text/css" />
+	<!-- font (TODO: reference from meetupstatic after launch) -->
+	<link rel="stylesheet" href="css/font/font.css">
 
 	<!-- Styleguide CSS -->
 	<link rel="stylesheet" href="css/doc.css">
@@ -29,7 +29,7 @@
 		<div class="bounds bounds--wide">
 			<div class="spreadable spreadable--spaceBetween atLarge_spreadable--spread">
 				<div class="spreadable-item">
-					<h1 class="text--display"><a href="index.html">Sassquatch 2</a></h1>
+					<h1 class="text--display1"><a href="index.html">Sassquatch 2</a></h1>
 				</div>
 				<div class="spreadable-item spreadable-item--shrink">
 					<div class="row margin--top" style="align-items: baseline;">
@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v1.5.1</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v2.0.0</a>
 						</div>
 					</div>
 				</div>
@@ -119,6 +119,11 @@
 
 									
 									
+
+								
+
+									
+									
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#datauri">data uri images</a>
 										</li>
@@ -162,6 +167,15 @@
 									
 									
 										<li class="display--inline--mediumDown">
+											<a class="followLink" href="#ie11mixin">IE11 Filter</a>
+										</li>
+									
+
+								
+
+									
+									
+										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#modalUtils">Modal mixins</a>
 										</li>
 									
@@ -195,8 +209,28 @@
 									
 									
 										<li class="display--inline--mediumDown">
-											<a class="followLink" href="#text">Text utils</a>
+											<a class="followLink" href="#textUtil">Text utils</a>
 										</li>
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
+									
+
+								
+
+									
 									
 
 								
@@ -307,6 +341,14 @@ including rules for inverted context.</p><div class="codeBlock">
 </div>
 <h1 id="button" class="styleguide">Button utilities</h1>
 
+<h2 id="buttonColorMixin" class="styleguide">Button color mixin</h2>
+<p class="styleguide">Sets color properties for a button</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>.button--myOrangeButton {
+    @include buttonColor(orange);
+}</pre>
+  </div>
+</div>
 <h2 id="buttonPersonality" class="styleguide">Button personality placeholder</h2>
 <p class="styleguide">Disables user-select, sets cursor, and resets text-decoration.</p><div class="codeBlock">
   <div class="highlight">
@@ -366,6 +408,24 @@ as data uris in a Sass map.</p><div class="codeBlock">
 @include flexParent('row', false); // optional second argument allows disabling of IE table display fallbacks</pre>
   </div>
 </div>
+<h1 id="ie11mixin" class="styleguide">IE11 Filter</h1>
+<p class="styleguide">Applies styles to IE10 and IE11 using a vendor-specific
+media query. Because we currently only support IE11, this
+can be treated as an IE11-only filter.</p><div class="codeBlock">
+  <div class="highlight">
+    <pre>// default styles
+.someClass {
+    padding: 0;
+}
+
+// IE11 overrides
+@include browser-ie11() {
+    .someClass {
+        padding-top: $space;
+    }
+}</pre>
+  </div>
+</div>
 <h1 id="modalUtils" class="styleguide">Modal mixins</h1>
 
 <h2 id="Modal_Dialog_Mixin" class="styleguide">Modal Dialog Mixin</h2>
@@ -390,14 +450,88 @@ See <a class="styleguide" href="views.html#fullModalView" title="views.html#full
     <pre>@extend %shadow;</pre>
   </div>
 </div>
-<h1 id="text" class="styleguide">Text utils</h1>
+<h1 id="textUtil" class="styleguide">Text utils</h1>
 
-<h2 id="linkColorPlaceholder" class="styleguide">Link color</h2>
-<p class="styleguide">Forces an element to use link-like styling.</p><div class="codeBlock">
-  <div class="highlight">
-    <pre>@extend %link;</pre>
-  </div>
-</div>
+<h2 id="colorPlaceholders" class="styleguide">Color placeholders</h2>
+<table class="styleguide"> <tr>
+<th>Placeholder</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">%text--secondary</code></td>
+<td>Secondary gray text color</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--tertiary</code></td>
+<td>Tertiary gray text color</td>
+</tr>
+ </table>
+<h2 id="headingPlaceholders" class="styleguide">Heading placeholders</h2>
+<table class="styleguide"> <tr>
+<th>Placeholder</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">%text--display1</code></td>
+<td>Top level display heading</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--display2</code></td>
+<td>Second level display heading</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--display3</code></td>
+<td>Third level display heading</td>
+</tr>
+ </table>
+<h2 id="labelPlaceholder" class="styleguide">Label placeholders</h2>
+<table class="styleguide"> <tr>
+<th>Placeholder</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">%text--label</code></td>
+<td>Styles for list headers and form field labels</td>
+</tr>
+ </table>
+<h2 id="otherTextPlaceholders" class="styleguide">Other text placeholders</h2>
+<table class="styleguide"> <tr>
+<th>Placeholder</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">%text--big</code></td>
+<td>Sets styles for big text</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--small</code></td>
+<td>Sets styles for small text</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--hint</code></td>
+<td>&quot;hint&quot; text</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--link</code></td>
+<td>Link text color</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--caption</code></td>
+<td>Small secondary text for captions</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--attention</code></td>
+<td>Small text to draw attention (ie. error text)</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--mono</code></td>
+<td>Monospaced text</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--disabled</code></td>
+<td>Disabled text</td>
+</tr>
+ </table>
 <h2 id="textProtection" class="styleguide">Text protection shim</h2>
 <p class="styleguide">Adds a pseudo-element gradient</p><div class="codeBlock">
   <div class="highlight">
@@ -407,9 +541,23 @@ See <a class="styleguide" href="views.html#fullModalView" title="views.html#full
 <h2 id="textWrapUtil" class="styleguide">Text wrap</h2>
 <p class="styleguide">Nice hyphenation and wrapping for running text.</p><div class="codeBlock">
   <div class="highlight">
-    <pre>@extend %link;</pre>
+    <pre>@extend %wrapNice;</pre>
   </div>
-</div>	</main>
+</div>
+<h2 id="weightPlaceholders" class="styleguide">Weight placeholders</h2>
+<table class="styleguide"> <tr>
+<th>Placeholder</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">%text--bold</code></td>
+<td>Bold text (Medium weight)</td>
+</tr>
+<tr>
+<td><code class="styleguide">%text--heavy</code></td>
+<td>Bolder text (Semibold weight)</td>
+</tr>
+ </table>	</main>
 	</section>
 
 	<footer class="stripe stripe--collection">
@@ -557,6 +705,17 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "Button color mixin",
+					"name": "buttonColorMixin",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#buttonColorMixin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Button personality placeholder",
 					"name": "buttonPersonality",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -634,6 +793,17 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "IE11 Filter",
+					"name": "ie11mixin",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#ie11mixin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Modal mixins",
 					"name": "modalUtils",
 					"category": "Sass Utils | Mixins & Placeholders",
@@ -690,9 +860,9 @@ $(function() {
 
 				fuseIndex.push({
 					"title": "Text utils",
-					"name": "text",
+					"name": "textUtil",
 					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#text"
+					"url": "sass_utils_|_mixins_&_placeholders.html#textUtil"
 				});
 
 			
@@ -700,10 +870,43 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Link color",
-					"name": "linkColorPlaceholder",
+					"title": "Color placeholders",
+					"name": "colorPlaceholders",
 					"category": "Sass Utils | Mixins & Placeholders",
-					"url": "sass_utils_|_mixins_&_placeholders.html#linkColorPlaceholder"
+					"url": "sass_utils_|_mixins_&_placeholders.html#colorPlaceholders"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Heading placeholders",
+					"name": "headingPlaceholders",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#headingPlaceholders"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Label placeholders",
+					"name": "labelPlaceholder",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#labelPlaceholder"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Other text placeholders",
+					"name": "otherTextPlaceholders",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#otherTextPlaceholders"
 				});
 
 			
@@ -726,6 +929,17 @@ $(function() {
 					"name": "textWrapUtil",
 					"category": "Sass Utils | Mixins & Placeholders",
 					"url": "sass_utils_|_mixins_&_placeholders.html#textWrapUtil"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Weight placeholders",
+					"name": "weightPlaceholders",
+					"category": "Sass Utils | Mixins & Placeholders",
+					"url": "sass_utils_|_mixins_&_placeholders.html#weightPlaceholders"
 				});
 
 			
@@ -1038,10 +1252,43 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Buttons (transitional styles)",
+					"title": "Buttons",
 					"name": "buttons",
 					"category": "UI Components",
 					"url": "ui_components.html#buttons"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Button base mixin",
+					"name": "buttonBaseMixin",
+					"category": "UI Components",
+					"url": "ui_components.html#buttonBaseMixin"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Button hover placeholder",
+					"name": "buttonHoverPlaceholder",
+					"category": "UI Components",
+					"url": "ui_components.html#buttonHoverPlaceholder"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Pill base mixin",
+					"name": "pillBaseMixin",
+					"category": "UI Components",
+					"url": "ui_components.html#pillBaseMixin"
 				});
 
 			
@@ -1053,6 +1300,17 @@ $(function() {
 					"name": "collapsible",
 					"category": "UI Components",
 					"url": "ui_components.html#collapsible"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Date Display",
+					"name": "dateDisplay",
+					"category": "UI Components",
+					"url": "ui_components.html#dateDisplay"
 				});
 
 			
@@ -1115,7 +1373,7 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Tearsheet",
+					"title": "Tearsheet (deprecated)",
 					"name": "tearsheet",
 					"category": "UI Components",
 					"url": "ui_components.html#tearsheet"
@@ -1141,6 +1399,17 @@ $(function() {
 					"name": "togglePills",
 					"category": "UI Components",
 					"url": "ui_components.html#togglePills"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Token",
+					"name": "token",
+					"category": "UI Components",
+					"url": "ui_components.html#token"
 				});
 
 			
@@ -1185,6 +1454,17 @@ $(function() {
 				
 
 				fuseIndex.push({
+					"title": "Big text",
+					"name": "bigText",
+					"category": "Typography",
+					"url": "typography.html#bigText"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
 					"title": "Bold text",
 					"name": "boldText",
 					"category": "Typography",
@@ -1222,6 +1502,17 @@ $(function() {
 					"name": "errorText",
 					"category": "Typography",
 					"url": "typography.html#errorText"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Heavy text",
+					"name": "heavyText",
+					"category": "Typography",
+					"url": "typography.html#heavyText"
 				});
 
 			
@@ -1317,28 +1608,6 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Graphic text",
-					"name": "textGraphic",
-					"category": "Typography",
-					"url": "typography.html#textGraphic"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
-					"title": "Label text",
-					"name": "textLabel",
-					"category": "Typography",
-					"url": "typography.html#textLabel"
-				});
-
-			
-				
-				
-
-				fuseIndex.push({
 					"title": "Debug text",
 					"name": "debugText",
 					"category": "Typography",
@@ -1372,10 +1641,21 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Headline text",
-					"name": "headlineText",
+					"title": "Heading tags",
+					"name": "headingTags",
 					"category": "Typography",
-					"url": "typography.html#headlineText"
+					"url": "typography.html#headingTags"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Label header",
+					"name": "labelHeader",
+					"category": "Typography",
+					"url": "typography.html#labelHeader"
 				});
 
 			
@@ -1674,6 +1954,17 @@ $(function() {
 					"name": "formValidation",
 					"category": "Forms",
 					"url": "forms.html#formValidation"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Input Stack",
+					"name": "inputStack",
+					"category": "Forms",
+					"url": "forms.html#inputStack"
 				});
 
 			

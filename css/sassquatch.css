@@ -113,38 +113,22 @@ Variable                | Value
 */
 /*doc
 ---
-title: Typography
-name: globType
+title: Root classes
+name: rootClasses
 category: Sass Globals
 ---
+"Root classes" are classes that we expect the
+`html` or `body` elements to contain. These classes can be
+used to target [specific languages](http://meetup.github.io/julep/#mixin-i18n-only),
+[versions of IE](http://meetup.github.io/julep/#mixin-browser-lessThanIE),
+and more.
 
-## Font sizes
+Most root classes are defined in [Julep](http://meetup.github.io/julep/), our
+custom Sass utility library. The root classes defined in Sassquatch2 are:
 
-Variable                 | Value
------------------------- | --------------------------------
-`$font-size-small`       | `13px`
-`$font-size`             | `16px`
-`$font-size-navbar`      | `18px`
-`$font-size-display3`    | `24px`
-`$font-size-display2`    | `32px`
-`$font-size-display1`    | `56px`
-
-
-## Font weights
-
-Variable                | Value
------------------------ | --------------------------------
-`$W_normal`              | `400`
-`$W_bold`                | `700`
-
-
-## Leading
-
-Variable                | Value
------------------------ | --------------------------------
-`$line-height`          | `1.5`
-`$line-height-small`    | `1.5`
-
+Variable                | Value                | Description
+----------------------- | -------------------- | ---------------------------------
+`$root-debugEnable`     | `'enableDebug'`      | Enables `.debug` styles
 */
 /*doc
 ---
@@ -236,43 +220,41 @@ $media-map: (
 */
 /*doc
 ---
-title: Root classes
-name: rootClasses
+title: Typography
+name: globType
 category: Sass Globals
 ---
-"Root classes" are classes that we expect the
-`html` or `body` elements to contain. These classes can be
-used to target [specific languages](http://meetup.github.io/julep/#mixin-i18n-only),
-[versions of IE](http://meetup.github.io/julep/#mixin-browser-lessThanIE),
-and more.
 
-Most root classes are defined in [Julep](http://meetup.github.io/julep/), our
-custom Sass utility library. The root classes defined in Sassquatch2 are:
+## Font sizes
 
-Variable                | Value                | Description
------------------------ | -------------------- | ---------------------------------
-`$root-debugEnable`     | `'enableDebug'`      | Enables `.debug` styles
-*/
-/*doc
----
-title: z-index
-name: globZindex
-category: Sass Globals
----
-A map is provided for `z-index` values:
+Variable                 | Value
+------------------------ | --------------------------------
+`$font-size-small`       | `13px`
+`$font-size-big`         | `20px`
+`$font-size`             | `16px`
+`$font-size-display3`    | `28px`
+`$font-size-display2`    | `34px`
+`$font-size-display1`    | `42px`
+`$font-size-tearsheet`   | `24px`
 
-```
-$zindex-map: (
-	main: 0,
-	main-header: 10,
-	splitList-view: 15,
-	shade: 20,
-	shade-content: 25,
-	modal: 30,
-	modal-header: 40,
-	popup: 50
-);
-```
+
+## Font weights
+
+Variable                | Value
+----------------------- | --------------------------------
+`$W_normal`              | `400`
+`$W_medium`              | `500`
+`$W_bold`                | `600`
+
+
+## Leading
+
+Variable                    | Value
+--------------------------- | --------------------------------
+`$line-height-largeText`    | `1.25`
+`$line-height`              | `1.45`
+`$line-height-smallText`    | `1.6`
+
 */
 /*doc
 ---
@@ -320,6 +302,51 @@ Variable                | Value
 ----------------------- | --------------------------------
 `$defaultRadius`        | `3px`
 
+*/
+/*doc
+---
+title: z-index
+name: globZindex
+category: Sass Globals
+---
+A map is provided for `z-index` values:
+
+```
+$zindex-map: (
+	main: 0,
+	main-header: 10,
+	splitList-view: 15,
+	shade: 20,
+	shade-content: 25,
+	modal: 30,
+	modal-header: 40,
+	popup: 50
+);
+```
+*/
+/*doc
+---
+title: IE11 Filter
+name: ie11mixin
+category: Sass Utils | Mixins & Placeholders
+---
+Applies styles to IE10 and IE11 using a vendor-specific
+media query. Because we currently only support IE11, this
+can be treated as an IE11-only filter.
+
+```
+// default styles
+.someClass {
+	padding: 0;
+}
+
+// IE11 overrides
+@include browser-ie11() {
+	.someClass {
+		padding-top: $space;
+	}
+}
+```
 */
 /*doc
 ---
@@ -429,45 +456,69 @@ Disables user-select, sets cursor, and resets text-decoration.
 @extend %buttonPersonality;
 ```
 */
-.button--primary, .button--contrast, .button, .button--borderless, .hasJS .menu-actions-item a, .page-label, .toggleButton-label, .buttonPersonality {
+.button, .hasJS .menu-actions-item a, .page-label, .toggleButton-label, .token, .buttonPersonality {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
   text-decoration: none !important; }
 
-.toggleButton-label {
-  box-sizing: border-box;
-  -webkit-transition: background 0.15s;
-  transition: background 0.15s;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  -webkit-appearance: none;
-  background: transparent;
-  border-radius: 50px;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0;
-  padding: 8px 16px;
-  text-align: center; }
-  .inverted .toggleButton-label {
-    border: 1px solid rgba(255, 255, 255, 0.2); }
-  .toggleButton-label:focus {
-    outline: 0; }
+/*doc
+---
+title: Button base mixin
+name: buttonBaseMixin
+parent: buttons
+---
+Applies base button styles using a mixin.
 
-.toggleButton-label {
-  stroke: transparent;
-  fill: #3987cb;
-  color: #3987cb;
-  border: 1px solid;
-  font-weight: 400; }
-  .toggleButton-label:hover, .toggleButton-label:active, .toggleButton-label:focus {
-    background: rgba(57, 135, 203, 0.2) !important; }
-  .inverted .toggleButton-label {
-    stroke: transparent;
-    fill: white;
-    color: white; }
+_(The `extend` directive can cause ugly cascade problems)_
 
+```
+@include buttonBase();
+```
+*/
+/*doc
+---
+title: Pill base mixin
+name: pillBaseMixin
+parent: buttons
+---
+Applies base pill styles using a mixin (for tokens and toggle pills)
+
+_(The `extend` directive can cause ugly cascade problems)_
+
+```
+@include pillBase();
+```
+*/
+/*doc
+---
+title: Button hover placeholder
+name: buttonHoverPlaceholder
+parent: buttons
+---
+Applies default button `:hover`,
+`:active`, and `:focus` styles
+
+```
+// lightens "bgColor" on hover
+@mixin buttonHover($bgColor: $C_textPrimary);
+```
+*/
+/*doc
+---
+title: Button color mixin
+name: buttonColorMixin
+parent: button
+---
+Sets color properties for a button
+
+```
+.button--myOrangeButton {
+	@include buttonColor(orange);
+}
+```
+*/
 /*doc
 ---
 title: data uri images
@@ -573,44 +624,215 @@ Applies standard box-shadow
 ```
 */
 .hasJS .menu-actions {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.12); }
 
 /*doc
 ---
 title: Text utils
-name: text
+name: textUtil
 category: Sass Utils | Mixins & Placeholders
 ---
 */
 /*doc
 ---
-title: Link color
-name: linkColorPlaceholder
-parent: text
+title: Heading placeholders
+name: headingPlaceholders
+parent: textUtil
 ---
-Forces an element to use link-like styling.
 
-```
-@extend %link;
-```
+Placeholder             | Description
+----------------------- | --------------------------------
+`%text--display1`       | Top level display heading
+`%text--display2`       | Second level display heading
+`%text--display3`       | Third level display heading
 */
+.text--display,
+.text--display1,
+.text--display2,
+.text--display3 {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 600;
+  letter-spacing: -0.02em; }
+  .inverted .text--display,
+  .inverted .text--display1, .inverted
+  .text--display2, .inverted
+  .text--display3 {
+    stroke: transparent;
+    fill: white;
+    color: white;
+    font-weight: 500; }
+
+.text--display,
+.text--display1 {
+  font-size: 34px;
+  line-height: 1.25; }
+  @media only screen and (min-width: 640px) {
+    .text--display,
+    .text--display1 {
+      font-size: 42px; } }
+
+.text--display2 {
+  font-size: 34px;
+  line-height: 1.25; }
+
+.text--display3 {
+  font-size: 28px;
+  line-height: 1.25; }
+
+/*doc
+---
+title: Label placeholders
+name: labelPlaceholder
+parent: textUtil
+---
+
+Placeholder          | Description
+-------------------- | --------------------------------
+`%text--label`       | Styles for list headers and form field labels
+*/
+.text--labelSecondary, .text--label, .dateDisplay-month {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  word-spacing: 0.1em; }
+  .inverted .text--labelSecondary, .inverted .text--label, .inverted .dateDisplay-month {
+    stroke: transparent;
+    fill: white;
+    color: white; }
+  .lang_en .text--labelSecondary, .lang_en .text--label, .lang_en .dateDisplay-month {
+    text-transform: uppercase; }
+
+.text--labelSecondary {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: 500; }
+  .inverted .text--labelSecondary {
+    stroke: transparent;
+    fill: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); }
+
+/*doc
+---
+title: Weight placeholders
+name: weightPlaceholders
+parent: textUtil
+---
+
+Placeholder             | Description
+----------------------- | --------------------------------
+`%text--bold`           | Bold text (Medium weight)
+`%text--heavy`          | Bolder text (Semibold weight)
+*/
+.text--bold {
+  font-weight: 500; }
+  .text--bold .inverted .runningText,
+  .text--bold .inverted.runningText {
+    font-weight: 600; }
+
+h1, h2, h3, h4, h5, h6, .text--heavy {
+  font-weight: 600; }
+
+/*doc
+---
+title: Color placeholders
+name: colorPlaceholders
+parent: textUtil
+---
+
+Placeholder           | Description
+--------------------- | --------------------------------
+`%text--secondary`    | Secondary gray text color
+`%text--tertiary`     | Tertiary gray text color
+*/
+.text--caption, .text--secondary {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54);
+  color: rgba(0, 0, 0, 0.54); }
+  .inverted .text--caption, .inverted .text--secondary {
+    stroke: transparent;
+    fill: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); }
+
+.text--hint, .text--tertiary {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.26); }
+  .inverted .text--hint, .inverted .text--tertiary {
+    stroke: transparent;
+    fill: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3); }
+
+/*doc
+---
+title: Other text placeholders
+name: otherTextPlaceholders
+parent: textUtil
+---
+
+Placeholder           | Description
+--------------------- | --------------------------------
+`%text--big`          | Sets styles for big text
+`%text--small`        | Sets styles for small text
+`%text--hint`         | "hint" text
+`%text--link`         | Link text color
+`%text--caption`      | Small secondary text for captions
+`%text--attention`    | Small text to draw attention (ie. error text)
+`%text--mono`         | Monospaced text
+`%text--disabled`     | Disabled text
+*/
+big,
+.text--big {
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.02em; }
+
+.text--caption, small,
+.text--small, .toggleButton-label, .token {
+  font-size: 13px;
+  line-height: 1.6; }
+
 a.link, .runningText a {
   stroke: transparent;
-  fill: #3987cb;
-  color: #3987cb; }
+  fill: #1f24cc;
+  color: #1f24cc; }
   a.link:hover, .runningText a:hover, a.link:focus, .runningText a:focus, a.link:active, .runningText a:active {
     text-decoration: underline; }
+  a.link .button, .runningText a .button {
+    text-decoration: none; }
+  .inverted a.link, .inverted .runningText a, .runningText .inverted a {
+    stroke: transparent;
+    fill: #4dd1ed;
+    color: #4dd1ed; }
+
+.text--error,
+.text--attention {
+  stroke: transparent;
+  fill: #ff911a;
+  color: #ff911a; }
+
+code,
+pre,
+.text--mono, .enableDebug .debug {
+  font-family: Monaco, "Andale Mono", "Courier New", monospace; }
 
 /*doc
 ---
 title: Text wrap
 name: textWrapUtil
-parent: text
+parent: textUtil
 ---
 Nice hyphenation and wrapping for running text.
 
 ```
-@extend %link;
+@extend %wrapNice;
 ```
 */
 .runningText p,
@@ -631,7 +853,7 @@ Nice hyphenation and wrapping for running text.
 ---
 title: Text protection shim
 name: textProtection
-parent: text
+parent: textUtil
 ---
 Adds a pseudo-element gradient
 
@@ -717,7 +939,8 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  color: rgba(0, 0, 0, 0.87); }
 
 html, body {
   margin: 0;
@@ -735,7 +958,9 @@ abbr, acronym {
   border-width: 0; }
 
 b, strong {
-  font-weight: 700; }
+  font-weight: 500; }
+  .inverted b, .inverted strong {
+    font-weight: 600; }
 
 sup, sub {
   font-size: 75%;
@@ -792,7 +1017,13 @@ button {
   -webkit-font-smoothing: antialiased; }
 
 body {
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  -moz-font-feature-settings: "liga", "kern";
+  -moz-font-feature-settings: "liga=1, kern=1";
+  -ms-font-feature-settings: "liga", "kern";
+  -o-font-feature-settings: "liga", "kern";
+  -webkit-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern"; }
 
 body {
   word-wrap: normal; }
@@ -820,9 +1051,6 @@ var {
   -ms-hyphens: none;
   hyphens: none; }
 
-code, pre {
-  font-family: Monaco, "Andale Mono", "Courier New", monospace; }
-
 pre {
   white-space: pre;
   word-wrap: normal !important; }
@@ -833,49 +1061,33 @@ title: Headings
 name: headings
 category: Typography
 ---
-TK - notes about UI text vs. body text
+*/
+/*doc
+---
+title: Heading tags
+name: headingTags
+parent: headings
+---
+All heading tags are reset to use
+`text--heavy` styles by default.
+
+Apply a text class to apply additional
+heading styles; for example, `text--display1`.
 
 ```html_example
-<h1 class="text--display">Heading 1 Display</h1>
-<h1>Heading 1 (white by default for use in navbar)</h1>
+<h1>Heading 1</h1>
 <h2>Heading 2</h2>
 <h3>Heading 3</h3>
 <h4>Heading 4</h4>
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>
-<p>Body text</p>
-<p class="text--heading">Fake heading</p>
-<p class="text--hint">Hint text</p>
-<p class="text--small">Small text</p>
-<p class="text--caption">Caption text</p>
 ```
 */
-/*
-  Further Reading:
-  http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
-  http://alistapart.com/article/more-meaningful-typography
-*/
-h1 {
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.25; }
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px; }
 
-h2 {
-  color: #e2373c;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.5; }
-  .lang_en h2 {
-    text-transform: uppercase; }
-
-h3, h4, h5, h6 {
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5; }
-  .inverted h3, .inverted h4, .inverted h5, .inverted h6 {
-    color: white; }
+.view-head h1 {
+  font-size: 16px; }
 
 /*doc
 ---
@@ -883,42 +1095,30 @@ title: Display text
 name: displayText
 parent: headings
 ---
-Display text for header hero elements.
+Display text is useful for styling headings.
+
+*Use the semantically correct heading level tag*,
+then apply a display text class to visually style
+the tag as a heading.
 
 ```html_example
-<h1 class="text--display">The hero gotham deserves</h1>
+<h2 class="text--display1">Display text is for headings</h2>
+<h2 class="text--display2">Display text is for headings</h2>
+<h2 class="text--display3">Display text is for headings</h2>
 ```
 */
-.text--headline,
-.text--graphic,
-.text--display {
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 32px;
-  font-weight: normal;
-  line-height: 1.25; }
-  .inverted .text--headline,
-  .inverted .text--graphic, .inverted
-  .text--display {
-    color: white; }
-
-@media only screen and (min-width: 640px) {
-  .text--display {
-    font-size: 56px; } }
 /*doc
 ---
-title: Headline text
-name: headlineText
+title: Label header
+name: labelHeader
 parent: headings
 ---
-Headline text for when something between display and normal text is needed. Use sparingly and with caution.
 
 ```html_example
-<h2 class="text--headline">If display text is Batman, I'm Robin</h2>
+	<h3 class="text--label">Label for subsection</h3>
+	<h3 class="text--labelSecondary">Secondary label for subsection</h3>
 ```
 */
-.text--headline {
-  text-transform: none !important; }
-
 /*doc
 ---
 title: Body/primary text
@@ -933,10 +1133,10 @@ category: Typography
 */
 body {
   color: rgba(0, 0, 0, 0.87);
-  font-family: "Whitney", helvetica, arial, sans-serif;
+  font-family: "Graphik", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5; }
+  line-height: 1.45; }
 
 /*doc
 ---
@@ -968,16 +1168,6 @@ parent: bodyText
 <p class="text--hint">This is hint text</p>
 ```
 */
-.text--hint {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.26);
-  color: rgba(0, 0, 0, 0.26); }
-  .inverted
-  .text--hint {
-    stroke: transparent;
-    fill: rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.3); }
-
 /*doc
 ---
 title: Secondary text
@@ -988,16 +1178,6 @@ parent: bodyText
 <p class="text--secondary">Secondary text is secondary</p>
 ```
 */
-.text--secondary {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.54);
-  color: rgba(0, 0, 0, 0.54); }
-  .inverted
-  .text--secondary {
-    stroke: transparent;
-    fill: rgba(255, 255, 255, 0.7);
-    color: rgba(255, 255, 255, 0.7); }
-
 /*doc
 ---
 title: Tertiary text
@@ -1008,16 +1188,16 @@ parent: bodyText
 <p class="text--tertiary">Tertiary text is tertiary</p>
 ```
 */
-.text--tertiary {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.26);
-  color: rgba(0, 0, 0, 0.26); }
-  .inverted
-  .text--tertiary {
-    stroke: transparent;
-    fill: rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.3); }
-
+/*doc
+---
+title: Heavy text
+name: heavyText
+parent: bodyText
+---
+```html_example
+<p class="text--heavy">Heavy text is heavy</p>
+```
+*/
 /*doc
 ---
 title: Bold text
@@ -1028,9 +1208,6 @@ parent: bodyText
 <p class="text--bold">Bold text is bold</p>
 ```
 */
-.text--bold {
-  font-weight: 700; }
-
 /*doc
 ---
 title: Small text
@@ -1038,33 +1215,21 @@ name: smallText
 parent: bodyText
 ---
 ```html_example
-<p class="text--small">Small text is small</p>
+<p class="text--small">Small text class is small</p>
+<small>Default styling of "small" tag</small>
 ```
 */
-.text--caption,
-.text--error, .card--group,
-.text--caption h1,
-.text--error h1, .card--group h1,
-.text--caption h2,
-.text--error h2, .card--group h2,
-.text--caption h3,
-.text--error h3, .card--group h3,
-.text--caption h4,
-.text--error h4, .card--group h4,
-.text--caption h5,
-.text--error h5, .card--group h5,
-.text--caption h6,
-.text--error h6, .card--group h6,
-.text--small,
-.text--small h1,
-.text--small h2,
-.text--small h3,
-.text--small h4,
-.text--small h5,
-.text--small h6 {
-  font-size: 13px;
-  line-height: 1.5; }
-
+/*doc
+---
+title: Big text
+name: bigText
+parent: bodyText
+---
+```html_example
+<p class="text--big">Big text class is big</p>
+<big>Default styling of "big" tag</big>
+```
+*/
 /*doc
 ---
 title: Monospaced text
@@ -1081,10 +1246,6 @@ to any other element, use `text--mono`.
 <pre>We can safely assume a pre tag on Meetup is also code</pre>
 ```
 */
-.enableDebug .debug,
-.text--mono {
-  font-family: Monaco, "Andale Mono", "Courier New", monospace; }
-
 /*doc
 ---
 title: Caption text
@@ -1095,16 +1256,6 @@ parent: bodyText
 <p class="text--caption">I'm captioning all the things</p>
 ```
 */
-.text--caption {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.54);
-  color: rgba(0, 0, 0, 0.54); }
-  .inverted
-  .text--caption {
-    stroke: transparent;
-    fill: rgba(255, 255, 255, 0.7);
-    color: rgba(255, 255, 255, 0.7); }
-
 /*doc
 ---
 title: Error text
@@ -1113,42 +1264,9 @@ parent: bodyText
 ---
 ```html_example
 <p class="text--error">I'm erroring all the things</p>
+<p class="text--attention">Attention!</p>
 ```
 */
-.text--error {
-  stroke: transparent;
-  fill: #e2373c;
-  color: #e2373c; }
-
-/*doc
----
-title: Label text
-name: textLabel
-parent: bodyText
----
-Applies form label styling
-
-```html_example
-	<p class="text--label">I share styling with the `label` element</p>
-```
-*/
-/*doc
----
-title: Graphic text
-name: textGraphic
-parent: bodyText
----
-Useful when using large text in a graphical way.
-Cuts line height to give the glyph spacing similar to that of an image or icon.
-
-```html_example
-<p class="text--graphic">102</p>
-<p>Miles per hour</p>
-```
-*/
-.text--graphic {
-  line-height: .9; }
-
 /*doc
 ---
 title: Running text
@@ -1198,8 +1316,6 @@ linky blue color by applying the `.link` class.
 a {
   color: inherit;
   text-decoration: none; }
-  a.link.button, .runningText a.button {
-    text-decoration: none; }
 
 /*doc
 ---
@@ -1222,11 +1338,14 @@ List style bullets are applied when list
 elements are inside a `.runningText` container.
 
 ```html_example
-<div class="runningText">
-	<ul>
-		<li>Eggs</li>
-		<li>More Eggs</li>
-	</ul>
+<div class="bounds">
+	<h3 class="text--big">Shopping list</h3>
+	<div class="runningText">
+		<ul>
+			<li>Eggs</li>
+			<li>More Eggs</li>
+		</ul>
+	</div>
 </div>
 ```
 
@@ -1234,10 +1353,13 @@ You may also use the `.bullets` class to apply
 numbers/bullets to a list.
 
 ```html_example
-<ul class="bullets">
-	<li>Eggs</li>
-	<li>More Eggs</li>
-</ul>
+<div class="bounds">
+	<h3 class="text--big">Shopping list</h3>
+	<ul class="bullets">
+		<li>Eggs</li>
+		<li>More Eggs</li>
+	</ul>
+</div>
 ```
 
 */
@@ -1245,6 +1367,9 @@ ul.bullets, .runningText ul, ol.bullets, .runningText ol {
   list-style-position: outside;
   padding-left: 1.33em;
   /* indent by default */ }
+  @media only screen and (min-width: 1024px) {
+    .runningText ul, .runningText ol {
+      padding-left: inherit; } }
 
 ul.bullets, .runningText ul {
   list-style-type: disc; }
@@ -1297,7 +1422,7 @@ _Setting the `enableDebug` class on `body` for dev only is recommended._
       display: inline;
       content: "DEBUG:";
       color: red;
-      font-weight: 700;
+      font-weight: 600;
       padding-right: 0.25em; }
 
 /*doc
@@ -1321,7 +1446,7 @@ category: Forms
 </div>
 
 <div class="chunk">
-	<label for="test-textarea"l>Here's an area for your text</label>
+	<label for="test-textarea">Here's an area for your text</label>
 	<textarea id="test-textarea"></textarea>
 </div>
 
@@ -1357,14 +1482,15 @@ category: Forms
 ```
 
 */
-.text--label,
+.inputStack > legend,
 label {
-  font-size: 13px; }
-  .required.text--label:after,
+  font-size: 13px;
+  font-weight: 600; }
+  .inputStack > legend.required:after,
   label.required:after {
     content: "*";
-    color: #e2373c;
-    font-size: 18px;
+    color: #ff911a;
+    font-size: 20px;
     line-height: 0;
     margin-left: 4px;
     position: relative;
@@ -1383,13 +1509,13 @@ textarea {
   display: block;
   font-family: inherit;
   font-size: 100%;
-  line-height: 1.5; }
+  line-height: 1.45; }
 
 .launcher,
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input:not([type]), input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 textarea,
 select {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: none;
@@ -1402,40 +1528,81 @@ select {
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input:not([type]):focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   textarea:focus,
   select:focus {
-    border-color: #3987cb;
+    background: white;
+    border-color: #1f24cc;
     box-shadow: none;
     outline: none; }
-  .inverted .launcher, .inverted
-  input[type="email"], .inverted input[type="number"], .inverted input[type="password"], .inverted input[type="search"], .inverted input[type="tel"], .inverted input[type="text"], .inverted input[type="url"], .inverted input:not([type]), .inverted input[type="color"], .inverted input[type="date"], .inverted input[type="datetime"], .inverted input[type="datetime-local"], .inverted input[type="month"], .inverted input[type="time"], .inverted input[type="week"], .inverted
-  textarea, .inverted
-  select {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: white; }
-  .shaded .launcher, .shaded
-  input[type="email"], .shaded input[type="number"], .shaded input[type="password"], .shaded input[type="search"], .shaded input[type="tel"], .shaded input[type="text"], .shaded input[type="url"], .shaded input:not([type]), .shaded input[type="color"], .shaded input[type="date"], .shaded input[type="datetime"], .shaded input[type="datetime-local"], .shaded input[type="month"], .shaded input[type="time"], .shaded input[type="week"], .shaded
-  textarea, .shaded
-  select {
-    background-color: white; }
 
 input,
 select {
-  height: 40px; }
+  height: 39.2px; }
 
 textarea {
-  min-height: 88px; }
+  min-height: 85.6px; }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font-style: normal;
   color: rgba(0, 0, 0, 0.26); }
-  .inverted input::-webkit-input-placeholder, .inverted
-  textarea::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.3); }
 
 .label--switch {
   font-size: 16px;
+  font-weight: 400;
   position: relative; }
+
+/*doc
+---
+title: Input Stack
+name: inputStack
+category: Forms
+---
+Creates a "stack" of inptus grouped together
+
+```html_example
+<fieldset class="inputStack">
+	<legend>Stacked inputs label</legend>
+
+	<div class="inputStack-field">
+		<label for="stackedInput-input1">Just another label</label>
+		<input id="stackedInput-input1" type="text" placeholder="Title" />
+	</div>
+
+	<div class="inputStack-field">
+		<label for="stackedInput-input2">Just another label</label>
+		<input id="stackedInput-input2" type="text" placeholder="Location" />
+	</div>
+
+	<div class="inputStack-field">
+		<label for="stackedInput-textarea">Here's an area for your text</label>
+		<textarea id="stackedInput-textarea" placeholder="Description"></textarea>
+	</div>
+</fieldset>
+```
+*/
+.inputStack-field label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px; }
+.inputStack-field input,
+.inputStack-field textarea {
+  border-bottom-width: 0;
+  border-radius: 0;
+  margin-bottom: 0; }
+  .inputStack-field input:focus,
+  .inputStack-field textarea:focus {
+    border-bottom-width: 1px; }
+.inputStack-field:first-of-type input,
+.inputStack-field:first-of-type textarea {
+  border-radius: 3px 3px 0 0; }
+.inputStack-field:last-child input,
+.inputStack-field:last-child textarea {
+  border-bottom-width: 1px;
+  border-radius: 0 0 3px 3px; }
 
 /*doc
 ---
@@ -1473,7 +1640,7 @@ input elements.
   display: inline-block;
   font-size: 16px;
   height: 16px;
-  line-height: 1.5;
+  line-height: 1.45;
   margin: 0 8px 0 0; }
   .ieRoot_lt_IE10 .checkbox {
     top: 8px; }
@@ -1511,7 +1678,7 @@ elements.
   font-size: 16px;
   height: 16px;
   line-height: 1;
-  line-height: 1.5;
+  line-height: 1.45;
   margin: 0 8px 0 0; }
   .ieRoot_lt_IE10 .radio {
     top: 8px; }
@@ -1571,7 +1738,9 @@ Error text is set explicitly with `text--error`.
 
 */
 .field--error {
-  border-color: #e2373c !important; }
+  border-color: #ff911a !important; }
+  .field--error:focus {
+    border-color: #ff911a !important; }
 
 /*doc
 ---
@@ -1638,7 +1807,7 @@ caption {
 thead th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
-  font-weight: 700; }
+  font-weight: 600; }
   .inverted thead th {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
 
@@ -1804,7 +1973,7 @@ stripe to every other row of the table.
 */
 .stripedTable tbody tr:nth-child(odd) td,
 .stripedTable tbody tr:nth-child(odd) th {
-  background-color: #f3f6f9; }
+  background-color: #fafafa; }
   .inverted .stripedTable tbody tr:nth-child(odd) td, .inverted
   .stripedTable tbody tr:nth-child(odd) th {
     background-color: rgba(0, 0, 0, 0.26); }
@@ -1862,10 +2031,10 @@ Class                | Description
     border-top: 1px solid rgba(255, 255, 255, 0.2); }
 
 .stripe--collection {
-  background-color: #f3f6f9; }
+  background-color: #fafafa; }
 
 .stripe--inverted {
-  background-color: #353e48; }
+  background-color: #0f1721; }
 
 /*doc
 ---
@@ -1909,7 +2078,7 @@ Uses the `stripe--photoHero` variant.
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #e2373c;
+  background-color: #ed1c40;
   background-size: cover;
   background-position: center 20%;
   background-repeat: no-repeat;
@@ -1921,9 +2090,6 @@ Uses the `stripe--photoHero` variant.
     width: 100%; }
 
 .stripe--photoHero:before {
-  background-color: rgba(15, 20, 31, 0);
-  background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 25%, rgba(15, 20, 31, 0.9) 100%);
-  background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 25%, rgba(15, 20, 31, 0.9) 100%);
   content: '';
   display: block;
   height: 100%;
@@ -1931,7 +2097,11 @@ Uses the `stripe--photoHero` variant.
   width: 100%;
   z-index: 0;
   left: 0;
-  top: 0; }
+  mix-blend-mode: hard-light;
+  background-color: rgba(15, 23, 33, 0.15);
+  background-image: -webkit-linear-gradient(-450deg, rgba(15, 23, 33, 0.15) 25%, rgba(15, 23, 33, 0.4) 100%);
+  background-image: linear-gradient(180deg,rgba(15, 23, 33, 0.15) 25%, rgba(15, 23, 33, 0.4) 100%);
+  bottom: 0; }
 
 .stripe-heroContent {
   display: -webkit-box;
@@ -2016,10 +2186,10 @@ Use `stripe--overlap--collection` to overlap onto a collection stripe, and `stri
   border-width: 0 !important; }
 
 .stripe--overlap--collection:before {
-  border-bottom: 24px solid #f3f6f9; }
+  border-bottom: 24px solid #fafafa; }
 
 .stripe--overlap--inverted:before {
-  border-bottom: 24px solid #353e48; }
+  border-bottom: 24px solid #0f1721; }
 
 /*doc
 ---
@@ -2079,7 +2249,7 @@ following classes are optional variants:
 
 Class                   | Description
 ----------------------- | -------------------------------
-`.list-item--active`    | adds a background color to denote selected/active state
+`.list-item--active`    | adds a background color to denote selected/active state (at medium & up only)
 `.list-item--gutters`   | adds left and right padding to list item
 
 
@@ -2124,10 +2294,10 @@ Class                   | Description
   padding-left: 16px;
   padding-right: 16px; }
 
-.list-item--active {
-  background-color: #f3f6f9;
-  font-weight: 700; }
-
+@media only screen and (min-width: 640px) {
+  .list-item--active {
+    background-color: #fafafa;
+    font-weight: 600; } }
 /*doc
 ---
 title: Grid List
@@ -2422,9 +2592,9 @@ Class                        | Description
   margin-right: -8px;
   border: 3px solid white; }
 .stripe--collection .inlineblockList--overlap > li {
-  border-color: #f3f6f9; }
+  border-color: #fafafa; }
 .inverted .inlineblockList--overlap > li {
-  border-color: #353e48; }
+  border-color: #0f1721; }
 
 /*doc
 ---
@@ -2742,17 +2912,17 @@ Class                       | Description
     background-image: -webkit-linear-gradient( right , #fff, rgba(255, 255, 255, 0));
     background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0)); }
   .stripe--collection .hscrollGradientWrap:before {
-    background-image: -webkit-linear-gradient( left , #f3f6f9, rgba(243, 246, 249, 0));
-    background-image: linear-gradient(to right, #f3f6f9, rgba(243, 246, 249, 0)); }
+    background-image: -webkit-linear-gradient( left , #fafafa, rgba(250, 250, 250, 0));
+    background-image: linear-gradient(to right, #fafafa, rgba(250, 250, 250, 0)); }
   .stripe--collection .hscrollGradientWrap:after {
-    background-image: -webkit-linear-gradient( right , #f3f6f9, rgba(243, 246, 249, 0));
-    background-image: linear-gradient(to left, #f3f6f9, rgba(243, 246, 249, 0)); }
+    background-image: -webkit-linear-gradient( right , #fafafa, rgba(250, 250, 250, 0));
+    background-image: linear-gradient(to left, #fafafa, rgba(250, 250, 250, 0)); }
   .hscrollGradientWrap .stripe--inverted:before {
-    background-image: -webkit-linear-gradient( left , #353e48, rgba(53, 62, 72, 0));
-    background-image: linear-gradient(to right, #353e48, rgba(53, 62, 72, 0)); }
+    background-image: -webkit-linear-gradient( left , #0f1721, rgba(15, 23, 33, 0));
+    background-image: linear-gradient(to right, #0f1721, rgba(15, 23, 33, 0)); }
   .hscrollGradientWrap .stripe--inverted:after {
-    background-image: -webkit-linear-gradient( right , #353e48, rgba(53, 62, 72, 0));
-    background-image: linear-gradient(to left, #353e48, rgba(53, 62, 72, 0)); }
+    background-image: -webkit-linear-gradient( right , #0f1721, rgba(15, 23, 33, 0));
+    background-image: linear-gradient(to left, #0f1721, rgba(15, 23, 33, 0)); }
 
 .hscroll {
   -webkit-overflow-scrolling: touch;
@@ -3667,7 +3837,7 @@ Basic example of a single view in a document:
 
 .view--collection,
 .view--collection .view-body {
-  background-color: #f3f6f9; }
+  background-color: #fafafa; }
 
 /*doc
 ---
@@ -3696,7 +3866,7 @@ Basic example of a single view in a document:
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   content: " ";
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   height: 36px;
@@ -3706,7 +3876,7 @@ Basic example of a single view in a document:
   box-sizing: border-box;
   border: solid 3px rgba(0, 0, 0, 0.2);
   border-top-color: black;
-  margin: 0 auto; }
+  margin: -18px auto auto -18px; }
 .view--loading:after {
   content: " ";
   display: block;
@@ -3763,7 +3933,7 @@ fixed top nav bar) within every view.
 
 ```
 <div class="view">
-	<header class="view-head row inverted">
+	<header class="view-head row">
 		<a href="#" class="row-item row-item--shrink valign--middle">[...]</a>
 		<a href="#" class="row-item valign--middle">Page Title</a>
 		<a href="#" class="row-item row-item--shrink valign--middle">[...]</a>
@@ -3793,13 +3963,15 @@ Class                      | Description
   flex-basis: auto;
   -ms-flex-preferred-size: auto;
   width: initial;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
-  background: #e2373c;
-  color: white;
+  background: white;
   width: 100%;
   z-index: 10;
   height: 56px;
   padding: 0 16px; }
+  .inverted .view-head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
   @media only screen and (min-width: 840px) {
     .view-head {
       height: 64px; } }
@@ -3813,8 +3985,8 @@ Class                      | Description
     opacity: 0; }
 
 .view-head--transparent.view-head--photoOverlay {
-  background: -webkit-linear-gradient(rgba(15, 20, 31, 0.8), rgba(15, 20, 31, 0));
-  background: linear-gradient(rgba(15, 20, 31, 0.8), rgba(15, 20, 31, 0)); }
+  background: -webkit-linear-gradient(rgba(15, 23, 33, 0.8), rgba(15, 23, 33, 0));
+  background: linear-gradient(rgba(15, 23, 33, 0.8), rgba(15, 23, 33, 0)); }
 
 /*doc
 ---
@@ -4051,7 +4223,9 @@ lays out as a dialog on background content on larger screens.
       .view--modalSnap.off {
         -webkit-transform: translateY(100vh);
         -ms-transform: translateY(100vh);
-        transform: translateY(100vh); } }
+        transform: translateY(100vh); }
+      .view--modalSnap .view-head {
+        background-color: #fafafa; } }
 
 /*doc
 ---
@@ -4237,7 +4411,9 @@ category: UI Components
 		<a href="#" class="avatar avatar--person avatar--fbFriend" style="background-image: url(http://photos4.meetupstatic.com/photos/member/5/a/2/thumb_109681442.jpeg);">Member Name</a>
 	</li>
 	<li>
-		<a href="#" class="avatar avatar--person avatar--noPhoto">
+		<a href="#" class="avatar avatar--person avatar--noPhoto" style="background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNDhweCIgaGVpZ2h0PSI0OHB4IiB2aWV3Qm94PSIwIDAgNDggNDgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ4IDQ4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIG9wYWNpdHk9IjAuMjYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjQuMTM3LDI2LjA0MmMtNi4xMjEsMC0xMS4xMDEtNC45OC0xMS4xMDEtMTEuMTAxDQoJUzE4LjAxNiwzLjg0LDI0LjEzNywzLjg0YzYuMTIxLDAsMTEuMTAxLDQuOTgsMTEuMTAxLDExLjEwMVMzMC4yNTgsMjYuMDQyLDI0LjEzNywyNi4wNDIgTTQwLjAwNiw0MC42NzcNCgljLTEuNTg5LTYuNTUyLTguNDUzLTExLjQ5My0xNS45NjUtMTEuNDkzUzkuNjY1LDM0LjEyNSw4LjA3Niw0MC42NzdjLTAuMTkzLDAuNzk3LTAuMDEyLDEuNjQzLDAuNDk3LDIuMjkxDQoJYzAuNTE0LDAuNjUzLDEuMjg0LDEuMDQ1LDIuMTEzLDEuMDQ1aDI2LjcxYzAuODMsMCwxLjYtMC4zOTMsMi4xMTMtMS4wNDVDNDAuMDE5LDQyLjMyLDQwLjIsNDEuNDc0LDQwLjAwNiw0MC42NzciLz4NCjwvc3ZnPg0K);
+    background-position-y: 2px;
+    background-size: 48px;">
 			<p>no photo</p> <!-- our person.hbs handlebars template handles this -->
 		</a>
 	</li>
@@ -4269,7 +4445,7 @@ Class                     | Description
     content: "";
     display: inline-block;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 600;
     height: 16px;
     line-height: 16px;
     position: absolute;
@@ -4281,7 +4457,7 @@ Class                     | Description
 .avatar--person,
 .avatar {
   position: relative;
-  background-color: #e6e9ec;
+  background-color: #fafafa;
   background-position: center 42%;
   color: transparent;
   display: inline-block;
@@ -4321,7 +4497,7 @@ Class                     | Description
   content: "f"; }
 
 .avatar--org:after {
-  background-color: #e2373c;
+  background-color: #ed1c40;
   color: white; }
 
 .avatar--icon {
@@ -4344,7 +4520,7 @@ Class                     | Description
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  background: #f3f6f9;
+  background: #fafafa;
   border-radius: 999px;
   box-sizing: border-box;
   height: 36px;
@@ -4378,46 +4554,42 @@ content in the feed attached to a parent item
 
 _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 
-### Event meta info example
-
-```html_example
-<div class="row attachment">
-	<div class="row-item row-item--shrink">
-		<time class="tearsheet" datetime="2017-01-13">13</time>
-	</div>
-	<div class="row-item">
-		<h4 class="text--caption">Monday Jan 13, 6:30 pm</h4>
-		<h4>Backpacking For Beginners</h4>
-	</div>
-</div>
-```
-
 ### Discussion reply example
 
 ```html_example
-<div class="row attachment">
-	<div class="row-item row-item--shrink">
-		<a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+<div class="attachment">
+	<div class="row chunk">
+		<div class="row-item row-item--shrink">
+			<a href="#" class="avatar avatar--person avatar--small" style="background-image: url(http://photos3.meetupstatic.com/photos/member/9/1/8/4/thumb_141217252.jpeg);"></a>
+		</div>
+		<div class="row-item valign--middle">
+			<h4 class="text--bold display--inline">Member Name</h4><p class="display--inline text--secondary"> · 6 mins ago</p>
+		</div>
 	</div>
-	<div class="row-item text--small">
-		<h4 class="text--bold display--inline">Member Name</h4>
-		<p class="display--inline">This is a reply to a post. I'm going to keep writing until the line wraps. Has it wrapped yet? Who cares.</p>
-	</div>
+	<p>This is a reply to a post. I'm going to keep writing a comment in here until the line wraps. Has the line wrapped yet? I think it has, but who cares.</p>
 </div>
 ```
 */
 .attachment .row-item {
   padding-left: 8px; }
+  .attachment .row-item:first-child {
+    padding-left: 0; }
 .attachment .row--noGutters > .row-item {
   padding: 0; }
 @media only screen and (min-width: 640px) {
   .attachment.atMedium_spreadable--spread .spreadable-item,
   .attachment .atMedium_spreadable--spread .spreadable-item {
-    padding-left: 8px; } }
+    padding-left: 8px; }
+    .attachment.atMedium_spreadable--spread .spreadable-item:first-child,
+    .attachment .atMedium_spreadable--spread .spreadable-item:first-child {
+      padding-left: 0; } }
 @media only screen and (min-width: 840px) {
   .attachment.atLarge_spreadable--spread .spreadable-item,
   .attachment .atLarge_spreadable--spread .spreadable-item {
-    padding-left: 8px; } }
+    padding-left: 8px; }
+    .attachment.atLarge_spreadable--spread .spreadable-item:first-child,
+    .attachment .atLarge_spreadable--spread .spreadable-item:first-child {
+      padding-left: 0; } }
 .attachment.chunk,
 .attachment .chunk {
   margin-bottom: 8px !important; }
@@ -4425,39 +4597,85 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
 .attachment .list-item {
   padding-top: 8px; }
 
-/*@import "ui-components/buttons";*/
 /*doc
 ---
-title: Buttons (transitional styles)
+title: Buttons
 name: buttons
 category: UI Components
 ---
-These buttons match the visual styles of the original [Sassquatch](http://meetup.github.io/sassquatch)
-framework, making them suitable for the transition of Meetup from legacy to "foundation" design.
 
 #### Example
 
 ```html_example
-<a class="button" href="#">Button</a>
-<a class="button button--primary" href="#">Primary Button</a>
-<a class="button button--icon" href="#">
-	<span class="button-label">Button with right Icon</span>
-	<span class="button-icon">X</span>
-</a>
-<a class="button button--bordered button--fullWidth" href="#">Full width bordered button</a>
-<a class="button button--bordered" href="#">bordered button</a>
-<a class="button button--icon button--primary" href="#">
-	<span class="button-icon">X</span>
-	<span class="button-label">Primary button with left Icon</span>
-</a>
-<a class="button button--small" href="#">Small Button</a>
-<a class="button button--primary button--icon button--fullWidth" href="#">
-	<span class="button-icon">ヘ(◕。◕ヘ)</span>
-	<span class="button-label">Full width primary button with left Icon</span>
-</a>
-<a class="button button--disabled" href="#">Stop</a>
-<button class="button button--primary" disabled>Can't touch this</button>
-<input type="submit" class="button button--bordered" value="Disabled" disabled />
+<ul class="list">
+	<li class="list-item chunk">
+		<h3>Standard Buttons</h3>
+		<button class="button" href="#">Button</button>
+		<button class="button button--primary" href="#">Primary Button</button>
+	</li>
+	<li class="list-item chunk stripe--inverted inverted padding--all">
+		<h3>Contrast Buttons</h3>
+		<button class="button button--contrast" href="#">Contrast Button</button>
+		<button class="button button--contrast button--primary" href="#">Primary Contrast Button</button>
+	</li>
+	<li class="list-item chunk">
+		<h3>Small buttons</h3>
+		<div class="chunk">
+			<button class="button button--small" href="#">Small Button</button>
+			<button class="button button--primary button--small" href="#">Small Button</button>
+		</div>
+		<div class="chunk">
+			<span class="text--small">Inline text with button</span><button class="button button--primary button--small margin--left" href="#">Inline button with text</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Full width button</h3>
+		<div class="chunk">
+			<button class="button button--fullWidth" href="#">Wide load</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--primary button--fullWidth" href="#">Wide load</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Icon buttons</h3>
+		<div class="chunk">
+			<button class="button button--icon" href="#">
+				<span class="button-label">Button with right Icon</span>
+				<span class="button-icon">X</span>
+			</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--icon button--primary" href="#">
+				<span class="button-icon">X</span>
+				<span class="button-label">Primary button with left Icon</span>
+			</button>
+		</div>
+		<div class="chunk">
+			<button class="button button--primary button--icon button--fullWidth" href="#">
+				<span class="button-icon">ヘ(◕。◕ヘ)</span>
+				<span class="button-label">Full width primary button with left Icon</span>
+			</button>
+		</div>
+	</li>
+	<li class="list-item chunk">
+		<h3>Disabled buttons</h3>
+		<button class="button button--disabled" href="#">Stop</button>
+		<button class="button button--primary" disabled>Can't touch this</button>
+		<input type="submit" class="button" value="Disabled" disabled />
+	</li>
+	<li class="list-item chunk">
+		<h3>Buttons with form fields</h3>
+		<div class="row">
+			<div class="row-item">
+				<input type="text" placeholder="Field by a button" />
+			</div>
+			<div class="row-item row-item--shrink">
+				<button class="button button--primary">Button by a field</button>
+			</div>
+		</div>
+	</li>
+</ul>
 ```
 
 #### Button variants
@@ -4466,146 +4684,13 @@ classes are optional variants:
 
 Class                   | Description
 ----------------------- | ----------------------------------------
-`.button--primary`      | button with $C_red background; for primary actions
+`.button--primary`      | rounded button with dark background; for primary actions
+`.button--contrast`     | bold, dark text; use on dark or colorful backgrounds or on photos
 `.button--small`        | decreases size of button
-`.button--icon`         | button with icon
-`.button--fullWidth`    | increases button width to 100% of its parent container
-`.button--bordered`     | foundation design style rounded bordered buttons
-`.button--disabled`     | disabled button (also works with boolean attribute `.button[disabled]`)
+`.button--fullWidth`    | makes button fill width
+`.button--icon`         | button with icon (see example for markup pattern)
 */
-.button--primary, .button--contrast, .button, .button--borderless {
-  position: relative; }
-  .button--primary:after, .button--contrast:after, .button:after, .button--borderless:after {
-    content: '';
-    background: transparent;
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    bottom: 0; }
-
-.button--primary, .button--contrast, .button, .button--borderless {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.54);
-  color: rgba(0, 0, 0, 0.54);
-  -webkit-appearance: none;
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 10px 16px 8px 16px;
-  border-radius: 3px;
-  font-size: 16px;
-  line-height: 1;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 700;
-  border-width: 0;
-  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.54);
-  margin-bottom: 4px;
-  background: #e6e9ec;
-  height: auto; }
-  .button--primary:active, .button--contrast:active, .button:active, .button--borderless:active {
-    -webkit-transform: translate(0, 2px);
-    -ms-transform: translate(0, 2px);
-    transform: translate(0, 2px);
-    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.54); }
-  .button--primary:hover, .button--contrast:hover, .button:hover, .button--borderless:hover {
-    background: #cfd5da; }
-
-.button--primary {
-  stroke: transparent;
-  fill: #fff !important;
-  color: #fff !important;
-  background: #e2373c !important;
-  box-shadow: 0 3px 0 0 #861317 !important; }
-  .button--primary:active {
-    box-shadow: 0 1px 0 0 #861317 !important; }
-  .button--primary:hover {
-    background: #d21e24 !important; }
-
-.button--contrast {
-  stroke: transparent;
-  fill: #fff !important;
-  color: #fff !important;
-  background: #e2373c !important;
-  box-shadow: 0 3px 0 0 #861317 !important; }
-  .button--contrast:active {
-    box-shadow: 0 1px 0 0 #861317 !important; }
-  .button--contrast:hover {
-    background: #d21e24 !important; }
-
-.toggleButton-label,
-.button--small {
-  font-size: 13px !important;
-  padding: 4px 8px !important; }
-
-.button--fullWidth {
-  display: block;
-  width: 100%; }
-
-.button--bordered {
-  box-sizing: border-box;
-  -webkit-transition: background 0.15s;
-  transition: background 0.15s;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  -webkit-appearance: none;
-  background: transparent;
-  border-radius: 50px;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0;
-  padding: 8px 16px;
-  text-align: center;
-  stroke: transparent;
-  fill: #3987cb;
-  color: #3987cb;
-  border: 1px solid;
-  font-weight: 400;
-  border-radius: 3px;
-  box-shadow: 0 0 0 0 transparent !important;
-  font-weight: 700;
-  padding: 10px 16px 8px 16px; }
-  .inverted .button--bordered {
-    border: 1px solid rgba(255, 255, 255, 0.2); }
-  .button--bordered:focus {
-    outline: 0; }
-  .button--bordered:hover, .button--bordered:active, .button--bordered:focus {
-    background: rgba(57, 135, 203, 0.2) !important; }
-  .inverted .button--bordered {
-    stroke: transparent;
-    fill: white;
-    color: white; }
-  .button--bordered:active {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0); }
-
-.button[disabled],
-.button--disabled {
-  opacity: 0.4;
-  cursor: default; }
-  .button[disabled], .button[disabled]:hover, .button[disabled]:active,
-  .button--disabled,
-  .button--disabled:hover,
-  .button--disabled:active {
-    stroke: transparent;
-    fill: rgba(0, 0, 0, 0.54) !important;
-    color: rgba(0, 0, 0, 0.54) !important;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-    background: #f3f6f9 !important;
-    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.54) !important; }
-    .button[disabled].button--bordered, .button[disabled].button--borderless, .button[disabled]:hover.button--bordered, .button[disabled]:hover.button--borderless, .button[disabled]:active.button--bordered, .button[disabled]:active.button--borderless,
-    .button--disabled.button--bordered,
-    .button--disabled.button--borderless,
-    .button--disabled:hover.button--bordered,
-    .button--disabled:hover.button--borderless,
-    .button--disabled:active.button--bordered,
-    .button--disabled:active.button--borderless {
-      box-shadow: 0 0 0 0 transparent !important; }
-
-.button--icon {
+.button {
   display: -webkit-inline-box;
   display: -moz-inline-box;
   display: inline-box;
@@ -4613,6 +4698,142 @@ Class                   | Description
   display: -moz-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-transition: background 0.15s;
+  transition: background 0.15s;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+  min-height: 36px;
+  outline: 0;
+  padding: 0 16px;
+  vertical-align: middle;
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.87);
+  background: white; }
+  .inverted .button {
+    border: 1px solid rgba(255, 255, 255, 0.2); }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .button {
+      min-height: 0;
+      padding-top: 0.33em;
+      padding-bottom: 0.5em; } }
+  .button:hover, .button:focus {
+    background: rgba(0, 0, 0, 0.07);
+    border-color: transparent; }
+  .button:active {
+    background: rgba(0, 0, 0, 0.12);
+    border-color: transparent; }
+
+.button--primary {
+  stroke: transparent;
+  fill: #fff !important;
+  color: #fff !important;
+  background: #ed1c40;
+  border-color: #ed1c40; }
+  .button--primary:hover,
+  .button--primary:focus {
+    background: #d01031; }
+  .button--primary:active {
+    background: #bd0f2d; }
+  .inverted
+  .button--primary {
+    border: none !important; }
+  .button--primary.button--contrast {
+    stroke: transparent;
+    fill: #000 !important;
+    color: #000 !important;
+    background: white;
+    border-color: white; }
+    .button--primary.button--contrast:hover,
+    .button--primary.button--contrast:focus {
+      background: #ebebeb; }
+    .button--primary.button--contrast:active {
+      background: #e0e0e0; }
+    .button--primary.button--contrast:hover,
+    .button--primary.button--contrast:active,
+    .button--primary.button--contrast:focus {
+      background: rgba(255, 255, 255, 0.7); }
+
+.button--borderless,
+.button--contrast {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.87);
+  background: rgba(0, 0, 0, 0.26);
+  border-color: rgba(255, 255, 255, 0.2); }
+  .inverted .button--borderless, .inverted
+  .button--contrast {
+    stroke: transparent;
+    fill: white;
+    color: white; }
+  .button--borderless:hover, .button--borderless:active, .button--borderless:focus,
+  .button--contrast:hover,
+  .button--contrast:active,
+  .button--contrast:focus {
+    border-color: rgba(255, 255, 255, 0.7); }
+
+.button[disabled],
+.button--disabled {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.54) !important;
+  color: rgba(0, 0, 0, 0.54) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  outline: none;
+  background: rgba(117, 117, 117, 0.12) !important;
+  cursor: default; }
+  .inverted .button[disabled], .inverted
+  .button--disabled {
+    border: 1px solid rgba(255, 255, 255, 0.2); }
+  .button[disabled], .button[disabled]:hover, .button[disabled]:active,
+  .button--disabled,
+  .button--disabled:hover,
+  .button--disabled:active {
+    border: 1px solid rgba(0, 0, 0, 0.12); }
+    .inverted .button[disabled], .inverted .button[disabled]:hover, .inverted .button[disabled]:active, .inverted
+    .button--disabled, .inverted
+    .button--disabled:hover, .inverted
+    .button--disabled:active {
+      border: 1px solid rgba(255, 255, 255, 0.2); }
+
+.button--small {
+  font-size: 13px;
+  min-height: 24px;
+  padding: 0 8px; }
+
+.button--fullWidth,
+.button.span-100 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em; }
+
+.button.button--icon {
+  /* higher specificity to override full width display block fix */
   -webkit-box-lines: single;
   box-lines: single;
   -webkit-flex-wrap: nowrap;
@@ -4631,20 +4852,12 @@ Class                   | Description
   -ms-justify-content: space-between;
   justify-content: space-between;
   -ms-flex-pack: justify; }
-  .ieRoot_lt_IE10 .button--icon {
-    box-sizing: border-box;
-    display: table;
-    table-layout: auto; }
 
 .button-label,
 .button-icon {
   -webkit-align-self: center;
   align-self: center;
   -ms-flex-item-align: center; }
-  .ieRoot_lt_IE10 .button-label, .ieRoot_lt_IE10
-  .button-icon {
-    display: table-cell;
-    width: 100%; }
 
 .button-label {
   -webkit-flex-grow: 1;
@@ -4652,7 +4865,8 @@ Class                   | Description
   -ms-flex-positive: 1;
   -webkit-flex-basis: 0;
   flex-basis: 0;
-  -ms-flex-preferred-size: 0; }
+  -ms-flex-preferred-size: 0;
+  text-align: center; }
 
 .button-icon {
   -webkit-flex-grow: 0;
@@ -4666,19 +4880,11 @@ Class                   | Description
   -ms-flex-preferred-size: auto;
   width: initial;
   line-height: 0; }
-  .button-icon:first-child {
-    margin-right: 8px; }
   .button-icon:last-child {
-    margin-left: 8px; }
-  .button-icon.button--primary svg {
-    stroke: transparent;
-    fill: white;
-    color: white; }
-  .ieRoot_lt_IE10 .button-icon {
-    width: auto; }
+    margin-left: 16px; }
 
 .button--small .button-icon {
-  height: 16px !important; }
+  min-height: 16px; }
 
 /*doc
 ---
@@ -4697,7 +4903,7 @@ Card-like boxes.
 		<ul class="gridList gridList--has1 atMedium_gridList--has3">
 
 			<!-- Base card styles -->
-			<li>
+			<li class="gridList-item">
 				<div class="card">
 					<h4>Look at this card</h4>
 					<p>Just <em>look at it</em></p>
@@ -4705,169 +4911,43 @@ Card-like boxes.
 			</li>
 
 			<!-- Group card -->
-			<li>
+			<li class="gridList-item">
 				<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
-					<div class="card--group-content">
-						<h4 class="text--bold">Some Meetup Group Name</h4>
-						<p>457 [chapter.who]</p>
+					<div class="card--group-content column">
+						<h4 class="column-item text--heavy">Some Meetup Group Name</h4>
+						<p class="column-item column-item--shrink">457 [chapter.who]</p>
 					</div>
 				</div>
 			</li>
 
 			<!-- Group card with long name -->
-			<li>
+			<li class="gridList-item">
 				<div class="card card--group inverted" style="background-image: url(http://photos4.meetupstatic.com/photos/event/7/6/f/8/600_434010456.jpeg);">
-					<div class="card--group-content">
-						<h4 class="text--bold">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
-						<p>457 [chapter.who]</p>
+					<div class="card--group-content column">
+						<h4 class="text--heavy column-item">Béchamel Hell: French Cuisine for Survivalists Meetup</h4>
+						<p class="column-item column-item--shrink">457 [chapter.who]</p>
+					</div>
+				</div>
+			</li>
+
+			<!-- Seeded card -->
+			<li class="gridList-item">
+				<div class="card card--seeded">
+					<div class="card--seeded-content column">
+						<h4 class="column-item text--heavy">The Tupelo JavaScript Meetup</h4>
+						<p class="column-item column-item--shrink text--small">457 members interested</p>
 					</div>
 				</div>
 			</li>
 
 			<!-- Event card -->
-			<li>
+			<li class="gridList-item">
 				<div class="card card--event">
 					<h4>I'm an event card</h4>
 				</div>
 			</li>
 		</ul>
 	</div>
-</section>
-```
-
-### Event card detail
-An example of a full event card recipie using
-`.card` with other existing Sassquatch2 components.
-
-
-_(The inline style on the card element is for documentation purposes only)_
-
-```html_example
-<section class="stripe--collection">
-	<a href="#" class="chunk card card--event" style="margin: 16px; max-width: 250px;">
-
-		<div class="row row--spaceBetween row--wrap">
-
-			<time datetime="20150221" class="row-item row-item--shrink">
-				<h2 class="text--graphic display--inlineBlock">21</h2>
-				<h2>Feb</h2>
-			</time>
-
-			<div class="row-item row-item--shrink align--right">
-				<p class="text--caption">No spots left</p>
-			</div>
-
-		</div>
-
-		<div class="chunk eventInfo-primary">
-			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
-
-			<h3>Backpacking For Beginners</h3>
-
-			<ul class="inlineblockList matchLineHeight">
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="text--caption">+8</li>
-			</ul>
-		</div>
-	</a>
-	<a href="#" class="chunk card card--event card--event--featured" style="margin: 16px; max-width: 250px;">
-
-		<div class="row row--spaceBetween row--wrap">
-
-			<time datetime="20150221" class="row-item row-item--shrink">
-				<h2 class="text--graphic display--inlineBlock">21</h2>
-				<h2>Feb</h2>
-			</time>
-
-			<div class="row-item row-item--shrink align--right">
-				<p class="text--caption">Featured</p>
-			</div>
-
-		</div>
-
-		<div class="chunk eventInfo-primary">
-			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
-
-			<h3>Backpacking For Beginners</h3>
-
-			<ul class="inlineblockList matchLineHeight">
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="text--caption">+8</li>
-			</ul>
-		</div>
-	</a>
-	<a href="#" class="chunk card card--event card--event--cancelled" style="margin: 16px; max-width: 250px;">
-
-		<div class="row row--spaceBetween row--wrap">
-
-			<time datetime="20150221" class="row-item row-item--shrink">
-				<h2 class="text--graphic display--inlineBlock">21</h2>
-				<h2>Feb</h2>
-			</time>
-
-			<div class="row-item row-item--shrink align--right">
-				<p class="text--caption">Cancelled</p>
-			</div>
-
-		</div>
-
-		<div class="chunk eventInfo-primary">
-			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
-
-			<h3 class="text--strikethrough">Backpacking For Beginners</h3>
-
-			<ul class="inlineblockList matchLineHeight">
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="text--caption">+8</li>
-			</ul>
-		</div>
-	</a>
-	<a href="#" class="chunk card card--event card--event--draft" style="margin: 16px; max-width: 250px;">
-
-		<div class="row row--spaceBetween row--wrap">
-
-			<time datetime="20150221" class="row-item row-item--shrink">
-				<h2 class="text--graphic display--inlineBlock">21</h2>
-				<h2>Feb</h2>
-			</time>
-
-			<div class="row-item row-item--shrink align--right">
-				<p class="text--caption">Draft</p>
-			</div>
-
-		</div>
-
-		<div class="chunk eventInfo-primary">
-			<p class="wrap--singleLine--truncate chunk text--secondary">Saturday at 2:00 pm</p>
-
-			<h3>Backpacking For Beginners</h3>
-
-			<ul class="inlineblockList matchLineHeight">
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="avatar avatar--person avatar--small" style="background-image: url(http://photos1.meetupstatic.com/photos/member/e/0/7/e/member_241857470.jpeg);">Member name</li>
-				<li class="text--caption">+8</li>
-			</ul>
-		</div>
-	</a>
 </section>
 ```
 */
@@ -4886,36 +4966,13 @@ _(The inline style on the card element is for documentation purposes only)_
     border: 1px solid rgba(255, 255, 255, 0.2); }
 
 .card--group {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  -webkit-box-direction: normal;
-  box-direction: normal;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-box-pack: end;
-  box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  justify-content: flex-end;
-  -ms-flex-pack: end;
+  -webkit-filter: grayscale(20%) contrast(110%);
+  filter: grayscale(20%) contrast(110%);
   border-radius: 0;
   padding: 16px;
-  height: 160px; }
-  .ieRoot_lt_IE10 .card--group {
-    display: table-cell;
-    vertical-align: bottom; }
+  height: 160px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.26); }
   .card--group:before {
-    background-color: rgba(15, 20, 31, 0);
-    background-image: -webkit-linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 25%, rgba(15, 20, 31, 0.9) 100%);
-    background-image: linear-gradient(rgba(15, 20, 31, 0) 0%, rgba(15, 20, 31, 0.1) 25%, rgba(15, 20, 31, 0.9) 100%);
     content: '';
     display: block;
     height: 100%;
@@ -4923,16 +4980,30 @@ _(The inline style on the card element is for documentation purposes only)_
     width: 100%;
     z-index: 0;
     left: 0;
+    mix-blend-mode: hard-light;
+    background-color: rgba(15, 23, 33, 0.15);
+    background-image: -webkit-linear-gradient(-270deg, rgba(15, 23, 33, 0.15) 25%, rgba(15, 23, 33, 0.4) 100%);
+    background-image: linear-gradient(0deg,rgba(15, 23, 33, 0.15) 25%, rgba(15, 23, 33, 0.4) 100%);
     top: 0; }
+
+.card--seeded {
+  background: transparent;
+  border-style: dotted;
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0.12);
+  padding: 16px; }
+  .card--seeded .card--seeded-content {
+    height: 128px; }
 
 .card--group-content {
   position: relative;
-  white-space: normal; }
+  white-space: normal;
+  text-align: left; }
 
 .card--event {
   position: relative; }
   .card--event:before {
-    background: #e2373c;
+    background: #ed1c40;
     content: '';
     display: block;
     height: 4px;
@@ -4943,16 +5014,16 @@ _(The inline style on the card element is for documentation purposes only)_
     top: -1px; }
 
 .card--event--past:before {
-  background: #e6e9ec; }
+  background: #757575; }
 
 .card--event--canceled:before {
-  background: #e6e9ec; }
+  background: #757575; }
 
 .card--event--featured:before {
-  background: #f0cb4f; }
+  background: #ff911a; }
 
 .card--event--draft:before {
-  background: #62ac75; }
+  background: #0fd9a3; }
 
 /*doc
 ---
@@ -4968,7 +5039,9 @@ To collapse the element, add the `collapsible--close` class.
 __NOTE:__ to hide the collapsible content from screen readers, use `display--none` when the collapsible is closed.
 
 ```html_example
-<a id="cTrigger" class="button button--primary chunk followLink">Toggle</a>
+<div class="chunk">
+	<a id="cTrigger" class="button button--primary followLink">Toggle</a>
+</div>
 
 <section class="stripe collapsible" id="cContainer">
 	<div class="bounds collapsible-content">
@@ -5023,24 +5096,26 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
 ```
 */
 .floatingAction {
+  background-color: white;
   box-sizing: border-box;
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.05), 0 -2px 4px 0 rgba(0, 0, 0, 0.12);
   padding: 16px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
-  background-color: white; }
+  z-index: 1; }
 
 .hasFloatingAction {
-  background-color: #353e48;
+  background-color: #0f1721;
   padding-bottom: 72px; }
 
 @media only screen and (min-width: 640px) {
   .floatingAction {
     padding: initial;
     position: static;
-    background-color: transparent; }
+    background-color: transparent;
+    box-shadow: none; }
 
   .hasFloatingAction {
     background-color: transparent;
@@ -5080,7 +5155,6 @@ Use as a guide for markup.
 .menu-actions {
   z-index: 50; }
   .hasJS .menu-actions {
-    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 3px;
     background-color: white;
     display: none;
@@ -5105,7 +5179,7 @@ Use as a guide for markup.
     padding: 16px;
     color: rgba(0, 0, 0, 0.54) !important; }
     .hasJS .menu-actions-item a:hover, .hasJS .menu-actions-item a:active {
-      background-color: rgba(0, 0, 0, 0.1); }
+      background-color: rgba(0, 0, 255, 0.05); }
 
 .menu-toggle {
   display: none; }
@@ -5285,16 +5359,63 @@ Class                        | Description
   display: flex; }
 
 .page-label {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.54);
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-transition: background 0.15s;
+  transition: background 0.15s;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+  min-height: 36px;
+  outline: 0;
+  padding: 0 16px;
+  vertical-align: middle;
   color: rgba(0, 0, 0, 0.54);
-  display: block;
-  color: rgba(0, 0, 0, 0.54);
-  border-radius: 24px;
-  padding: 8px;
-  min-width: 24px; }
+  padding: 0;
+  min-width: 36px;
+  min-height: 36px;
+  font-weight: 600;
+  border-radius: 160px;
+  border-width: 0; }
+  .inverted .page-label {
+    border: 1px solid rgba(255, 255, 255, 0.2); }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .page-label {
+      min-height: 0;
+      padding-top: 0.33em;
+      padding-bottom: 0.5em; } }
   .page-label:hover, .page-label:active {
-    background: #f3f6f9; }
+    color: rgba(0, 0, 0, 0.87);
+    background: #fafafa; }
   .inverted .page-label {
     stroke: transparent;
     fill: rgba(255, 255, 255, 0.7);
@@ -5302,7 +5423,7 @@ Class                        | Description
   @media only screen and (min-width: 640px) {
     .pagination-page--current .page-label {
       color: white;
-      background: #3987cb; } }
+      background: #0f1721; } }
 
 /*doc
 ---
@@ -5393,22 +5514,26 @@ Class                | Description
 `rsvpTag--waiting`   | indicates waitlist RSVP status
 */
 .rsvpTag {
+  border: 1px solid;
   border-radius: 3px;
-  color: white;
   display: inline-block;
-  padding: 4px; }
-  .lang_en .rsvpTag {
-    text-transform: capitalize; }
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: 0 4px; }
 
 .rsvpTag--yes {
-  background: #62ac75; }
+  background: #0fd9a3;
+  color: #fff; }
 
 .rsvpTag--no {
-  background: #f3f6f9;
+  background: #fafafa;
+  border-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87); }
 
 .rsvpTag--waiting {
-  background: #353e48; }
+  background: #0f1721;
+  color: white; }
 
 /*doc
 ---
@@ -5420,9 +5545,9 @@ category: UI Components
 ```html_example
 <nav>
 	<ul class="tabs">
-		<li class="tabs-tab"><a href="#">Tab One</a></li>
-		<li class="tabs-tab tabs-tab--selected"><a href="#">Tab Two</a></li>
-		<li class="tabs-tab"><a href="#">Tab Three</a></li>
+		<li class="tabs-tab"><a href="#">Tab One</a>
+		<li class="tabs-tab tabs-tab--selected"><a href="#">Tab Two</a>
+		<li class="tabs-tab"><a href="#">Tab Three</a>
 	</ul>
 </nav>
 ```
@@ -5477,16 +5602,49 @@ Class                 | Description
       border-bottom-color: white; }
 
 .tabs-tab--selected {
-  color: #e2373c;
-  border-bottom: 4px solid #e2373c; }
+  color: #1f24cc;
+  font-weight: 500;
+  border-bottom: 4px solid #1f24cc; }
 
 /*doc
 ---
-title: Tearsheet
+title: Date Display
+name: dateDisplay
+category: UI Components
+---
+Display text for dates (replaces `tearsheet`).
+
+#### dateDisplay example
+```html_example
+<time datetime="2016-04-20" class="dateDisplay">
+	<span class="dateDisplay-day">20</span>
+	<span class="dateDisplay-month">Apr</span>
+</time>
+```
+*/
+.dateDisplay {
+  display: inline-block;
+  text-align: center; }
+
+.dateDsiplay-day,
+.dateDisplay-month {
+  display: block; }
+
+.dateDisplay-day {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1; }
+
+/*doc
+---
+title: Tearsheet (deprecated)
 name: tearsheet
 category: UI Components
 ---
-Standard display for dates.
+## _DEPRECATED_
+
+This component is supported for legacy use,
+but should be used in replatform/redesign.
 
 #### Tearsheet example
 ```html_example
@@ -5509,7 +5667,7 @@ Standard display for dates.
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.87);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   height: 24px;
   padding-top: 4px;
   position: relative;
@@ -5517,7 +5675,7 @@ Standard display for dates.
   width: 24px; }
   .dateTime-tearsheet:before,
   .tearsheet:before {
-    background: #e2373c;
+    background: #ed1c40;
     content: '';
     display: block;
     height: 6px;
@@ -5592,19 +5750,102 @@ category: UI Components
 ---
 Checkbox form elements styled as toggle buttons.
 
-## "unchecked" state
+## Token toggle "unchecked" state
 ```html_example
 <div class="toggleButton">
-	<input class="toggleButton-input" type="checkbox" name="topic-dining" id="topic-dining" value="ToggleBtn" />
-	<label class="toggleButton-label" for="topic-dining">Dining Out</label>
+	<input class="toggleButton-input" type="checkbox" name="pick-me" id="pick-me" value="ToggleBtn" />
+	<label class="toggleButton-label" for="pick-me">Pick me</label>
 </div>
 ```
 
-## "checked" state
+## Token toggle "checked" state
 ```html_example
 <div class="toggleButton">
-	<input checked class="toggleButton-input" type="checkbox" name="topic-hiking" id="topic-hiking" value="ToggleBtn" />
-	<label class="toggleButton-label" for="topic-hiking">Hiking</label>
+	<input checked class="toggleButton-input" type="checkbox" name="no-pick-me" id="no-pick-me" value="ToggleBtn" />
+	<label class="toggleButton-label" for="no-pick-me">No pick me</label>
+</div>
+```
+
+## Topic token toggle "unchecked" state
+```html_example
+<div class="toggleButton toggleButton--topic">
+	<input class="toggleButton-input" type="checkbox" name="topic-dining2" id="topic-dining2" value="ToggleBtn" />
+	<label class="toggleButton-label" for="topic-dining2">
+		Dining Out
+		<span class="toggleButton-icon toggleButton-icon--inactive">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+			<path d="M7.999,13.834c-0.368,0-0.719-0.137-0.987-0.385l-3.241-2.791c-0.349-0.344-1.973-1.969-2.302-2.523
+				C1.185,7.715,0.986,7.228,0.894,6.708C0.867,6.591,0.817,6.071,0.84,5.913c0.033-2.038,1.822-3.746,3.982-3.746
+				c1.074,0,2.134,0.478,3.067,1.382l0.11,0.106L8.11,3.548c0.933-0.904,1.993-1.382,3.066-1.382c2.16,0,3.949,1.708,3.988,3.807
+				c0.019,0.103-0.035,0.624-0.062,0.752c-0.089,0.498-0.287,0.985-0.585,1.432c-0.315,0.533-1.94,2.157-2.263,2.477l-3.28,2.827
+				C8.719,13.697,8.368,13.834,7.999,13.834z M4.822,3.167c-1.619,0-2.958,1.267-2.987,2.825c-0.003,0.104,0.023,0.438,0.04,0.522
+				c0.072,0.4,0.218,0.759,0.439,1.086c0.22,0.37,1.424,1.619,2.136,2.325l3.227,2.778c0.127,0.117,0.445,0.188,0.634,0.012L11.576,9.9
+				c0.686-0.683,1.891-1.931,2.096-2.276c0.235-0.354,0.382-0.714,0.449-1.092c0.019-0.092,0.047-0.434,0.046-0.516
+				c-0.031-1.583-1.371-2.851-2.99-2.851c-1.021,0-1.853,0.598-2.371,1.1L8.53,4.532C8.407,4.656,8.226,4.733,8.027,4.744
+				c-0.25-0.011-0.428-0.085-0.558-0.21L7.193,4.268C6.675,3.765,5.843,3.167,4.822,3.167z"/>
+			</svg>
+		</span>
+		<span class="toggleButton-icon toggleButton-icon--active">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve" style="vertical-align: middle;">
+			<path d="M14.665,5.982c-0.034-1.833-1.585-3.316-3.488-3.316c-1.051,0-1.977,0.522-2.719,1.241L8.183,4.173
+				C8.138,4.218,8.069,4.241,7.999,4.245C7.93,4.241,7.862,4.218,7.815,4.173L7.541,3.908C6.799,3.189,5.873,2.667,4.822,2.667
+				c-1.903,0-3.454,1.482-3.487,3.316c-0.01,0.069,0.025,0.52,0.051,0.638c0.082,0.458,0.26,0.884,0.513,1.259
+				c0.313,0.528,2.198,2.399,2.198,2.399l3.252,2.803h0.002c0.169,0.156,0.396,0.252,0.648,0.252l0,0l0,0l0,0l0,0l0,0
+				c0.252,0,0.48-0.096,0.65-0.252l0,0l3.254-2.803c0,0,1.885-1.871,2.198-2.399c0.251-0.375,0.43-0.801,0.512-1.259
+				C14.638,6.502,14.675,6.051,14.665,5.982z"/>
+			</svg>
+		</span>
+	</label>
+</div>
+```
+
+## Topic token toggle "checked" state
+```html_example
+<div class="toggleButton toggleButton--topic">
+	<input checked class="toggleButton-input" type="checkbox" name="topic-hiking2" id="topic-hiking2" value="ToggleBtn" />
+
+	<label class="toggleButton-label" for="topic-hiking2">
+		Hiking
+		<span class="toggleButton-icon toggleButton-icon--inactive">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+			<path d="M7.999,13.834c-0.368,0-0.719-0.137-0.987-0.385l-3.241-2.791c-0.349-0.344-1.973-1.969-2.302-2.523
+				C1.185,7.715,0.986,7.228,0.894,6.708C0.867,6.591,0.817,6.071,0.84,5.913c0.033-2.038,1.822-3.746,3.982-3.746
+				c1.074,0,2.134,0.478,3.067,1.382l0.11,0.106L8.11,3.548c0.933-0.904,1.993-1.382,3.066-1.382c2.16,0,3.949,1.708,3.988,3.807
+				c0.019,0.103-0.035,0.624-0.062,0.752c-0.089,0.498-0.287,0.985-0.585,1.432c-0.315,0.533-1.94,2.157-2.263,2.477l-3.28,2.827
+				C8.719,13.697,8.368,13.834,7.999,13.834z M4.822,3.167c-1.619,0-2.958,1.267-2.987,2.825c-0.003,0.104,0.023,0.438,0.04,0.522
+				c0.072,0.4,0.218,0.759,0.439,1.086c0.22,0.37,1.424,1.619,2.136,2.325l3.227,2.778c0.127,0.117,0.445,0.188,0.634,0.012L11.576,9.9
+				c0.686-0.683,1.891-1.931,2.096-2.276c0.235-0.354,0.382-0.714,0.449-1.092c0.019-0.092,0.047-0.434,0.046-0.516
+				c-0.031-1.583-1.371-2.851-2.99-2.851c-1.021,0-1.853,0.598-2.371,1.1L8.53,4.532C8.407,4.656,8.226,4.733,8.027,4.744
+				c-0.25-0.011-0.428-0.085-0.558-0.21L7.193,4.268C6.675,3.765,5.843,3.167,4.822,3.167z"/>
+			</svg>
+		</span>
+		<span class="toggleButton-icon toggleButton-icon--active">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+			<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve" style="vertical-align: middle;">
+			<path d="M14.665,5.982c-0.034-1.833-1.585-3.316-3.488-3.316c-1.051,0-1.977,0.522-2.719,1.241L8.183,4.173
+				C8.138,4.218,8.069,4.241,7.999,4.245C7.93,4.241,7.862,4.218,7.815,4.173L7.541,3.908C6.799,3.189,5.873,2.667,4.822,2.667
+				c-1.903,0-3.454,1.482-3.487,3.316c-0.01,0.069,0.025,0.52,0.051,0.638c0.082,0.458,0.26,0.884,0.513,1.259
+				c0.313,0.528,2.198,2.399,2.198,2.399l3.252,2.803h0.002c0.169,0.156,0.396,0.252,0.648,0.252l0,0l0,0l0,0l0,0l0,0
+				c0.252,0,0.48-0.096,0.65-0.252l0,0l3.254-2.803c0,0,1.885-1.871,2.198-2.399c0.251-0.375,0.43-0.801,0.512-1.259
+				C14.638,6.502,14.675,6.051,14.665,5.982z"/>
+			</svg>
+		</span>
+	</label>
 </div>
 ```
 */
@@ -5614,17 +5855,174 @@ Checkbox form elements styled as toggle buttons.
   -webkit-tap-highlight-color: transparent; }
 
 .toggleButton-label {
-  margin: 0; }
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-transition: background 0.15s;
+  transition: background 0.15s;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  vertical-align: middle;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  background: transparent;
+  min-height: 24px;
+  outline: 0;
+  padding: 0 8px;
+  margin: 0;
+  font-weight: normal; }
+  .inverted .toggleButton-label {
+    border: 1px solid rgba(255, 255, 255, 0.2); }
+  .toggleButton-label:hover, .toggleButton-label:active, .toggleButton-label:focus {
+    background: rgba(0, 0, 0, 0.05); }
+
+.toggleButton-icon {
+  stroke: transparent;
+  fill: rgba(0, 0, 0, 0.26);
+  color: rgba(0, 0, 0, 0.26);
+  margin-left: 0.5em; }
+
+.toggleButton-icon--inactive {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+
+.toggleButton-icon--active {
+  display: none; }
 
 .toggleButton-input {
   display: none; }
   .toggleButton-input:checked + .toggleButton-label {
     -webkit-animation: bounce-in-subtle 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: bounce-in-subtle 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background: #3987cb !important;
-    border-color: transparent;
-    color: white;
-    font-weight: 700; }
+    stroke: transparent;
+    fill: rgba(0, 0, 0, 0.87);
+    color: rgba(0, 0, 0, 0.87);
+    background: #fafafa;
+    border-color: rgba(0, 0, 0, 0.12);
+    font-weight: 600; }
+    .toggleButton-input:checked + .toggleButton-label:hover, .toggleButton-input:checked + .toggleButton-label:active, .toggleButton-input:checked + .toggleButton-label:focus {
+      background: #ededed; }
+    .toggleButton-input:checked + .toggleButton-label .toggleButton-icon {
+      stroke: transparent;
+      fill: #ed1c40;
+      color: #ed1c40; }
+    .toggleButton-input:checked + .toggleButton-label .toggleButton-icon--active {
+      display: -webkit-inline-box;
+      display: -moz-inline-box;
+      display: inline-box;
+      display: -webkit-inline-flex;
+      display: -moz-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex; }
+    .toggleButton-input:checked + .toggleButton-label .toggleButton-icon--inactive {
+      display: none; }
+
+/*doc
+---
+title: Token
+name: token
+category: UI Components
+---
+Label for a small piece of information. Can be a link or just for display
+
+## Just for display
+```html_example
+<span class="token">Hiking</span>
+```
+
+## Linked
+```html_example
+<a href="#" class="token token--link">Hiking</a>
+```
+*/
+.token {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-transition: background 0.15s;
+  transition: background 0.15s;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  vertical-align: middle;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  background: transparent;
+  min-height: 24px;
+  outline: 0;
+  padding: 0 8px;
+  margin: 0;
+  font-weight: normal;
+  background: #fafafa;
+  color: rgba(0, 0, 0, 0.54);
+  cursor: default;
+  margin: 4px 0;
+  -webkit-tap-highlight-color: transparent; }
+  .inverted .token {
+    border: 1px solid rgba(255, 255, 255, 0.2); }
+  .token:hover, .token:active, .token:focus {
+    background: rgba(0, 0, 0, 0.05); }
+
+.token--link {
+  background: white;
+  color: #1f24cc;
+  cursor: pointer; }
+  .token--link:hover, .token--link:focus {
+    background: rgba(0, 0, 0, 0.07);
+    border-color: transparent; }
+  .token--link:active {
+    background: rgba(0, 0, 0, 0.12);
+    border-color: transparent; }
 
 /*doc
 ---
@@ -5825,6 +6223,7 @@ Class                   | Description
 `.border--left`         | sets a standard left border on the element
 `.border--none`         | removes all borders from element
 `.bordered`             | sets a standard top border AND top padding
+`.focus--none`          | removes user agent focus style
 */
 .bordered,
 .border--top {
@@ -5841,6 +6240,9 @@ Class                   | Description
 
 .border--none {
   border-width: 0 !important; }
+
+.focus--none {
+  outline: 0; }
 
 .bordered {
   padding-top: 16px; }
@@ -5878,8 +6280,10 @@ Class                   | Description
 ----------------------- | --------------------------------
 `.display--none`        | sets `display` to `none`
 `.display--block`       | sets `display` to `block`
+`.display--flex`        | sets `display` to `flex`
 `.display--inline`      | sets `display` to `inline`
-`.display--inlineBlock` | sets `display` to `inlineblock`
+`.display--inlineBlock` | sets `display` to `inline-block`
+`.display--inlineFlex`  | sets `display` to `inline-flex`
 */
 .display--none {
   display: none; }
@@ -5887,11 +6291,17 @@ Class                   | Description
 .display--block {
   display: block; }
 
+.display--flex {
+  display: flex; }
+
 .display--inline {
   display: inline; }
 
 .display--inlineBlock {
   display: inline-block; }
+
+.display--inlineFlex {
+  display: inline-flex; }
 
 /*doc
 ---
@@ -6316,7 +6726,7 @@ Sets background cover and position for photo thumbnails.
 .thumb {
   background-position: center;
   background-size: cover;
-  background-color: #e6e9ec;
+  background-color: #757575;
   display: block;
   position: relative; }
   .thumb:before {
@@ -6428,7 +6838,7 @@ Using this signature: `.at[Breakpoint]_[property]--[variant]`
 Breakpoints        | Property       | Variants
 ------------------ | -------------- | ---------------------------
 `medium`, `large`  | `align`        | `center`, `right`, `left`
-`medium`, `large`  | `display`      | `none`, `block`, `inline`, `inlineBlock`
+`medium`, `large`  | `display`      | `none`, `block`, `flex`, `inline`, `inlineBlock`, `inlineFlex`
 `medium`, `large`  | `padding`      | `none`
 `medium`, `large`  | `margin`       | `center`
 `medium`, `large`  | `border`       | `top`, `none`
@@ -6481,6 +6891,15 @@ Breakpoints        | Property       | Variants
   .atLarge_display--block {
     display: block !important; } }
 @media only screen and (min-width: 440px) {
+  .atSmall_display--flex {
+    display: flex !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--flex {
+    display: flex !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--flex {
+    display: flex !important; } }
+@media only screen and (min-width: 440px) {
   .atSmall_display--inline {
     display: inline !important; } }
 @media only screen and (min-width: 640px) {
@@ -6498,6 +6917,15 @@ Breakpoints        | Property       | Variants
 @media only screen and (min-width: 840px) {
   .atLarge_display--inlineBlock {
     display: inline-block !important; } }
+@media only screen and (min-width: 440px) {
+  .atSmall_display--inlineFlex {
+    display: inline-flex !important; } }
+@media only screen and (min-width: 640px) {
+  .atMedium_display--inlineFlex {
+    display: inline-flex !important; } }
+@media only screen and (min-width: 840px) {
+  .atLarge_display--inlineFlex {
+    display: inline-flex !important; } }
 @media only screen and (min-width: 440px) {
   .atSmall_visibility--a11yHide {
     border: 0;
