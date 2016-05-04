@@ -71,7 +71,7 @@ Class                     | Description
 .avatar {
 	@extend %imgFill;
 	position: relative;
-	background-color: $C_collectionBG;
+	background-color: $C_textHint;
 	background-position: center 42%;
 	color: transparent;
 	display: inline-block;
@@ -81,6 +81,10 @@ Class                     | Description
 	white-space: nowrap;
 	vertical-align: top;
 	width: $media-s;
+
+	.inverted & {
+		background: $C_textHintInverted;
+	}
 
 	@include atMediaUp(small) {
 		height: $media-m;
