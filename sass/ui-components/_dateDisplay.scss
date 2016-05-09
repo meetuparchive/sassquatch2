@@ -20,9 +20,10 @@ Display text for dates (replaces `tearsheet`).
 	text-align: center;
 }
 
-.dateDsiplay-day,
+.dateDisplay-day,
 .dateDisplay-month {
 	display: block;
+	text-align: center;
 }
 
 .dateDisplay-day {
