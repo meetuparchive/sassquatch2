@@ -1133,7 +1133,7 @@ category: Typography
 */
 body {
   color: rgba(0, 0, 0, 0.87);
-  font-family: "Graphik", helvetica, arial, sans-serif;
+  font-family: "Graphik Meetup", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.45; }
@@ -2336,6 +2336,8 @@ For a layout with a fixed number of columns, use `row`.
   vertical-align: top;
   width: 50%;
   box-sizing: border-box; }
+  .gridList-item > a {
+    display: block; }
 
 /*doc
 ---
@@ -4457,7 +4459,7 @@ Class                     | Description
 .avatar--person,
 .avatar {
   position: relative;
-  background-color: #fafafa;
+  background-color: rgba(0, 0, 0, 0.26);
   background-position: center 42%;
   color: transparent;
   display: inline-block;
@@ -4467,6 +4469,9 @@ Class                     | Description
   white-space: nowrap;
   vertical-align: top;
   width: 36px; }
+  .inverted .avatar--person, .inverted
+  .avatar {
+    background: rgba(255, 255, 255, 0.3); }
   @media only screen and (min-width: 440px) {
     .avatar--person,
     .avatar {
@@ -4832,8 +4837,15 @@ Class                   | Description
   text-align: center;
   padding: 0.5em; }
 
-.button.button--icon {
-  /* higher specificity to override full width display block fix */
+.button--icon,
+.button--icon.button--fullWidth {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-lines: single;
   box-lines: single;
   -webkit-flex-wrap: nowrap;
@@ -4880,8 +4892,12 @@ Class                   | Description
   -ms-flex-preferred-size: auto;
   width: initial;
   line-height: 0; }
+  .button-icon:first-child {
+    margin-right: 16px; }
   .button-icon:last-child {
     margin-left: 16px; }
+  .button--fullWidth .button-icon {
+    margin: 0; }
 
 .button--small .button-icon {
   min-height: 16px; }
@@ -5626,9 +5642,10 @@ Display text for dates (replaces `tearsheet`).
   display: inline-block;
   text-align: center; }
 
-.dateDsiplay-day,
+.dateDisplay-day,
 .dateDisplay-month {
-  display: block; }
+  display: block;
+  text-align: center; }
 
 .dateDisplay-day {
   font-size: 24px;
