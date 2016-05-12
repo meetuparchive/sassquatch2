@@ -83,7 +83,7 @@ Class                | Description
 
 .rsvpTag-label {
 	@include transform(translateY(0.1em));
-	font-weight: $W_bold;
+	font-weight: $W_medium;
 	font-size: $font-size-small;
 	padding-right: $space-quarter;
 	display: inline-block;
