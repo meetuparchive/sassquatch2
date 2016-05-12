@@ -91,10 +91,13 @@ Class                | Description
 
 .rsvpTag-icon {
 	@include color-all($C_textPrimaryInverted);
-	@include display(inline-flex);
-	@include justify-content(center);
-	@include align-items(center);
 	height: $space-2;
 	width: $space-2;
 	border-radius: 100px;
+}
+
+.rsvpTag .rsvpTag-icon { // override any default `display` property with specificity
+	@include display(inline-flex);
+	@include justify-content(center);
+	@include align-items(center);
 }
