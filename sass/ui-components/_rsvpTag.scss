@@ -6,10 +6,36 @@ category: UI Components
 ---
 Status tags for RSVP.
 
+_&#x26a0; The icons below are placeholders &#x26a0;_<br />
+Pleas use the appropriate SVG icon for each rsvpTag variant.
+
 ```html_example
-<div class="rsvpTag rsvpTag--yes">Going</div>
-<div class="rsvpTag rsvpTag--no">Not going</div>
-<div class="rsvpTag rsvpTag--waiting">Waiting</div>
+<div class="chunk">
+	<div class="rsvpTag rsvpTag--yes">
+		<span class="rsvpTag-label">Yes</span>
+		<span class="rsvpTag-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+
+<div class="chunk">
+	<div class="rsvpTag rsvpTag--no">
+		<span class="rsvpTag-label">No</span>
+		<span class="rsvpTag-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+
+<div class="chunk">
+	<div class="rsvpTag rsvpTag--waiting">
+		<span class="rsvpTag-label">Waiting</span>
+		<span class="rsvpTag-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
 ```
 
 
@@ -25,27 +51,53 @@ Class                | Description
 */
 
 .rsvpTag {
-	border: 1px solid;
-	border-radius: $defaultRadius;
-	display: inline-block;
-	font-size: $font-size-small;
-	font-weight: $W_bold;
-	line-height: $line-height-smallText;
-	padding: 0 $space-quarter;
+	display: block;
+	text-align: right;
 }
 
 .rsvpTag--yes {
-	background: $C_success;
-	color: getPrimaryTextColor($C_success);
+	color: $C_success;
+	.rsvpTag-icon {
+		background-color: $C_success;
+	}
 }
 
 .rsvpTag--no {
-	background: $C_collectionBG;
-	border-color: $C_border;
-	color: $C_textPrimary;
+	color: $C_textTertiary;
+	.rsvpTag-icon {
+		background-color: $C_textTertiary;
+	}
 }
 
 .rsvpTag--waiting {
-	background: $C_contentBGInverted;
-	color: $C_textPrimaryInverted;
+	color: $C_success;
+	.rsvpTag-icon {
+		background-color: $C_success;
+	}
+}
+
+.rsvpTag-label,
+.rsvpTag-icon {
+	vertical-align: middle;
+}
+
+.rsvpTag-label {
+	@include transform(translateY(0.1em));
+	font-weight: $W_medium;
+	font-size: $font-size-small;
+	padding-right: $space-quarter;
+	display: inline-block;
+}
+
+.rsvpTag-icon {
+	@include color-all($C_textPrimaryInverted);
+	height: $space-2;
+	width: $space-2;
+	border-radius: 100px;
+}
+
+.rsvpTag .rsvpTag-icon { // override any default `display` property with specificity
+	@include display(inline-flex);
+	@include justify-content(center);
+	@include align-items(center);
 }
