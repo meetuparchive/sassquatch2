@@ -203,6 +203,24 @@ parent: bodyText
 	@extend %text--attention;
 }
 
+/*doc
+---
+title: Middot text
+name: middotText
+parent: bodyText
+---
+```html_example
+<p class="text--middotRight">I have a right middot</p>
+<p class="text--middotLeft">I have a left middot</p>
+```
+*/
+.text--middotRight:after,
+.text--middotLeft:before {
+	display: inline-block;
+	content: "\00b7";
+	margin: auto 0.5em;
+	font-weight: $W_bold;
+}
 
 
 /*doc
