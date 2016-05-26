@@ -3503,6 +3503,7 @@ with one of the following classes.
 
 Class                            | Description
 -------------------------------- | ----------------------------------
+`spreadable--noGutters`          | Removes padding from `spreadable-item` children (when spread)
 `atMedium_spreadable--spread`    | Spreads out the spreadable elements horizontally at `medium` breakpoint
 `atLarge_spreadable--spread`     | Spreads out the spreadable elements horizontally at `large` breakpoint
 
@@ -3771,6 +3772,9 @@ Class                   | Description
         width: 1%; }
       .ieRoot_lt_IE10 .atLarge_spreadable--spread .spreadable-item--shrink {
         vertical-align: top; } }
+.spreadable--noGutters .spreadable-item {
+  padding: 0 !important; }
+
 /*doc
 ---
 title: View Base
