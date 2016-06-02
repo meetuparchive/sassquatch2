@@ -103,7 +103,7 @@ select {
 	padding: $space-half;
 	width: 100%;
 	&:focus {
-		background: $C_contentBG;
+		background-color: $C_contentBG;
 		border-color: $C_lightPurple;
 		box-shadow: none;
 		outline: none;
