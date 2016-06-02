@@ -25,14 +25,15 @@ $_buttonHeight: 40px;
 $_containerHeight: $space*2 + $_buttonHeight;
 
 .floatingAction {
+	background-color: $C_contentBG;
 	box-sizing: border-box;
+	box-shadow: 0 -2px 0 $C_selection, 0 -2px 4px 0 $C_border;
 	padding: $space;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 1;
-	background-color: $C_contentBG;
 }
 
 // for `body` tag
@@ -46,6 +47,7 @@ $_containerHeight: $space*2 + $_buttonHeight;
 		padding: initial;
 		position: static;
 		background-color: transparent;
+		box-shadow: none;
 	}
 	.hasFloatingAction {
 		background-color: transparent;

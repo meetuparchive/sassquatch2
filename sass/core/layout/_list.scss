@@ -60,7 +60,7 @@ following classes are optional variants:
 
 Class                   | Description
 ----------------------- | -------------------------------
-`.list-item--active`    | adds a background color to denote selected/active state
+`.list-item--active`    | adds a background color to denote selected/active state (at medium & up only)
 `.list-item--gutters`   | adds left and right padding to list item
 
 
@@ -108,7 +108,9 @@ Class                   | Description
 	padding-right: $space;
 }
 
-.list-item--active {
-	background-color: $C_lightGray;
-	font-weight: $W_bold;
+@include atMediaUp(medium) {
+	.list-item--active {
+		background-color: $C_lightGray;
+		font-weight: $W_bold;
+	}
 }
