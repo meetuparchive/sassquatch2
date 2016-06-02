@@ -69,8 +69,8 @@ Class                     | Description
 	&.avatar--big {
 
 		&:after{
-			background-size: $media-xs;
-			font-size: $media-xs;
+			background-size: $font-size-big;
+			font-size: $font-size-big;
 			height: $media-s;
 			line-height: $media-s;
 			width: $media-s;
