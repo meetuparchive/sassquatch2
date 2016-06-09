@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 		'sass': {
 			options: {
 				precision: 3,
-				sourceMap: false
+				sourceMap: true
 			},
 			dist: {
 				files: {
