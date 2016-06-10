@@ -127,6 +127,7 @@ Class                   | Description
 	&:hover,
 	&:active,
 	&:focus {
+		background: $C_textHint;
 		border-color: $C_borderDarkInverted;
 	}
 }
