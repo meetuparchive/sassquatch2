@@ -1269,6 +1269,24 @@ parent: bodyText
 */
 /*doc
 ---
+title: Middot text
+name: middotText
+parent: bodyText
+---
+```html_example
+<p class="text--middotRight">I have a right middot</p>
+<p class="text--middotLeft">I have a left middot</p>
+```
+*/
+.text--middotRight:after,
+.text--middotLeft:before {
+  display: inline-block;
+  content: "\00b7";
+  margin: auto 0.5em;
+  font-weight: 600; }
+
+/*doc
+---
 title: Running text
 name: runningText
 parent: bodyText
@@ -4487,8 +4505,8 @@ Class                     | Description
   width: 24px; }
 
 .avatar--big {
-  height: 160px;
-  width: 160px; }
+  height: 120px;
+  width: 120px; }
 
 .avatar--noPhoto {
   position: relative;
@@ -5515,44 +5533,110 @@ category: UI Components
 ---
 Status tags for RSVP.
 
+_&#x26a0; The icons below are placeholders &#x26a0;_<br />
+Please use the appropriate SVG icon for each rsvpStatus variant.
+
 ```html_example
-<div class="rsvpTag rsvpTag--yes">Going</div>
-<div class="rsvpTag rsvpTag--no">Not going</div>
-<div class="rsvpTag rsvpTag--waiting">Waiting</div>
+<div class="chunk">
+	<div class="rsvpStatus rsvpStatus--yes">
+		<span class="rsvpStatus-label">Yes</span>
+		<span class="rsvpStatus-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+
+<div class="chunk">
+	<div class="rsvpStatus rsvpStatus--no">
+		<span class="rsvpStatus-label">No</span>
+		<span class="rsvpStatus-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
+
+<div class="chunk">
+	<div class="rsvpStatus rsvpStatus--waiting">
+		<span class="rsvpStatus-label">Waiting</span>
+		<span class="rsvpStatus-icon">
+			&#x2713;
+		</span>
+	</div>
+</div>
 ```
 
 
 ## Variants
-A class of `rsvpTag` is __required__.
+A class of `rsvpStatus` is __required__.
 Variant classes:
 
 Class                | Description
 -------------------- | --------------------------
-`rsvpTag--yes`       | indicates "yes" RSVP status
-`rsvpTag--no`        | indicates "no" RSVP status
-`rsvpTag--waiting`   | indicates waitlist RSVP status
+`rsvpStatus--yes`       | indicates "yes" RSVP status
+`rsvpStatus--no`        | indicates "no" RSVP status
+`rsvpStatus--waiting`   | indicates waitlist RSVP status
 */
-.rsvpTag {
-  border: 1px solid;
-  border-radius: 3px;
-  display: inline-block;
+.rsvpStatus {
+  display: block;
+  text-align: right; }
+
+.rsvpStatus--yes {
+  color: #0fd9a3; }
+  .rsvpStatus--yes .rsvpStatus-icon {
+    background-color: #0fd9a3; }
+
+.rsvpStatus--no {
+  color: rgba(0, 0, 0, 0.26); }
+  .rsvpStatus--no .rsvpStatus-icon {
+    background-color: rgba(0, 0, 0, 0.26); }
+
+.rsvpStatus--waiting {
+  color: #0fd9a3; }
+  .rsvpStatus--waiting .rsvpStatus-icon {
+    background-color: #0fd9a3; }
+
+.rsvpStatus-label,
+.rsvpStatus-icon {
+  vertical-align: middle; }
+
+.rsvpStatus-label {
+  -webkit-transform: translateY(0.1em);
+  -ms-transform: translateY(0.1em);
+  transform: translateY(0.1em);
+  font-weight: 500;
   font-size: 13px;
-  font-weight: 600;
-  line-height: 1.6;
-  padding: 0 4px; }
+  padding-right: 4px;
+  display: inline-block;
+  max-width: 6em; }
 
-.rsvpTag--yes {
-  background: #0fd9a3;
-  color: #fff; }
+.rsvpStatus-icon {
+  stroke: transparent;
+  fill: white;
+  color: white;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px; }
 
-.rsvpTag--no {
-  background: #fafafa;
-  border-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.87); }
-
-.rsvpTag--waiting {
-  background: #0f1721;
-  color: white; }
+.rsvpStatus .rsvpStatus-icon {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -ms-flex-align: center; }
 
 /*doc
 ---
