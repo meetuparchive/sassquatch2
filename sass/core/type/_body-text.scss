@@ -37,7 +37,7 @@ elements to inveted colors.
 */
 %inverted,
 .inverted {
-	color: $C_textPrimaryInverted;
+	@include color-all($C_textPrimaryInverted);
 }
 
 
