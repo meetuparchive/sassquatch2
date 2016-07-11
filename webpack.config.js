@@ -10,7 +10,6 @@ var PATH_DOCS = path.resolve(__dirname, 'build');
 
 
 module.exports = {
-
 	module: {
 		loaders: [
 			{
@@ -23,5 +22,12 @@ module.exports = {
 
 	plugins: [
 		new ExtractPlugin([PATH_CSS_DEST, "sassquatch.css"].join(''))
-	]
+	],
+
+	// webpack requires a js entry point
+	// and bundle location
+	entry: "./webpack.entry.js",
+	output: {
+		path: "/dev/null/file.js"
+	}
 };
