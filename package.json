@@ -17,17 +17,17 @@
 	},
 	"peerDependencies": {
 		"bourbon": "4.2.3",
-		"julep": "1.4.4"
+		"julep": "1.4.4",
+		"meetup-swatches": "3.0.1"
 	},
 	"devDependencies": {
-		"grunt": "~0.4.5",
-		"grunt-cli": "",
-		"grunt-sass": "1.2.0",
-		"grunt-hologram": "0.0.7",
-		"grunt-gh-pages": "0.9.1",
-		"grunt-contrib-clean": "0.6.0",
-		"grunt-preprocess": "4.1.0",
-		"meetup-swatches": "3.0.1"
+		"webpack": "^1.13.1",
+		"css-loader": "^0.23.1",
+		"style-loader": "^0.13.1",
+		"sass-loader": "4.0.0",
+		"hologram-webpack-plugin": "1.0.1",
+		"gh-pages": "0.11.0",
+		"preprocess": "3.1.0"
 	},
 	"bugs": {
 		"url": "https://github.com/meetup/sassquatch2/issues"

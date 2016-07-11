@@ -7,9 +7,11 @@
 // ---------------------------
 // LIB (Bourbon, Swatches)
 // ---------------------------
-@import "../node_modules/meetup-swatches/sass/colors.scss";
-@import "../node_modules/bourbon/app/assets/stylesheets/_bourbon.scss";
-@import "../node_modules/julep/sass/julep.scss";
+// bower:scss
+@import "~meetup-swatches/sass/colors.scss";
+@import "~bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "~julep/sass/julep.scss";
+// endbower
 
 
 // ---------------------------
