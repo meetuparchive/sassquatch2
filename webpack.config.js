@@ -6,7 +6,7 @@ var HologramPlugin = require('hologram-webpack-plugin');
 
 var PATH_SRC = path.resolve(__dirname, 'docs');
 var PATH_CSS_DEST = path.resolve(__dirname, 'docs', 'templates', 'css');
-var PATH_DOCS = path.resolve(__dirname, 'build');
+var PATH_DOCS_DEST = path.resolve(__dirname, 'docs', 'build');
 
 
 module.exports = {
@@ -28,6 +28,7 @@ module.exports = {
 	// and bundle location
 	entry: "./webpack.entry.js",
 	output: {
-		path: "/dev/null/file.js"
+		path: PATH_DOCS_DEST,
+		filename: 'bundle.js'
 	}
 };
