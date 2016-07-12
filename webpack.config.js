@@ -5,8 +5,7 @@ var ExtractPlugin = require('extract-text-webpack-plugin');
 var HologramPlugin = require('hologram-webpack-plugin');
 
 var PATH_SRC = path.resolve(__dirname, 'docs');
-var PATH_CSS_DEST = path.resolve(__dirname, 'docs', 'templates', 'css');
-var PATH_DOCS_DEST = path.resolve(__dirname, 'docs', 'build');
+var PATH_BUNDLE_DEST = path.resolve(__dirname, 'docs', 'templates', 'bundle');
 
 
 module.exports = {
@@ -20,15 +19,17 @@ module.exports = {
 		]
 	},
 
+	debug: true,
+
 	plugins: [
-		new ExtractPlugin([PATH_CSS_DEST, "sassquatch.css"].join(''))
+		new ExtractPlugin([PATH_BUNDLE_DEST, "/sassquatch.css"].join(''))
 	],
 
 	// webpack requires a js entry point
 	// and bundle location
 	entry: "./webpack.entry.js",
 	output: {
-		path: PATH_DOCS_DEST,
+		path: PATH_BUNDLE_DEST,
 		filename: 'bundle.js'
 	}
 };
