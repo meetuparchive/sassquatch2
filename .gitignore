@@ -12,6 +12,6 @@ bower_components/
 node_modules/
 .grunt/
 docs/build/
-docs/templates/css/sassquatch.css
+docs/templates/bundle
 docs/templates/css/font/*.ttf
 !README*
