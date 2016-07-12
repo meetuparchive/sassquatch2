@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-webpack');
 	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -12,11 +12,9 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		package: grunt.file.readJSON('package.json'),
-		'sass': {
-			dist: {
-				files: {
-					"docs/templates/css/sassquatch.css": "sass/sassquatch.scss"
-				}
+		'webpack': {
+			main: {
+				failOnError: true
 			}
 		},
 		'hologram': {
@@ -50,6 +48,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['clean', 'sass', 'hologram', 'preprocess']);
+	grunt.registerTask('default', ['clean', 'webpack', 'hologram', 'preprocess']);
 	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
