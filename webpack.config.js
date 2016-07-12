@@ -2,8 +2,8 @@ var path = require('path');
 var preprocess = require('preprocess');
 
 var ExtractPlugin = require('extract-text-webpack-plugin');
-var HologramPlugin = require('hologram-webpack-plugin');
 
+var PATH_ENTRY = path.resolve(__dirname, 'webpack.entry.js');
 var PATH_SRC = path.resolve(__dirname, 'docs');
 var PATH_BUNDLE_DEST = path.resolve(__dirname, 'docs', 'templates', 'bundle');
 
@@ -13,8 +13,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.scss$/,
-				include: [PATH_SRC],
-				loader: ExtractPlugin.extract("style-loader", "css-loader", "sass-loader")
+				loader: ExtractPlugin.extract( "style", "css!sass")
 			}
 		]
 	},
@@ -22,7 +21,7 @@ module.exports = {
 	debug: true,
 
 	plugins: [
-		new ExtractPlugin([PATH_BUNDLE_DEST, "/sassquatch.css"].join(''))
+		new ExtractPlugin("sassquatch.css")
 	],
 
 	// webpack requires a js entry point
