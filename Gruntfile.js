@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 		},
 		'preprocess': {
 			inline: {
-				src: [ 'docs/build/*.html' ],
+				src: [ 'docs/build/*.html', 'docs/build/pages/*.html' ],
 				options: {
 					inline: true,
 					context: {
