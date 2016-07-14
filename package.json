@@ -27,7 +27,7 @@
 		"grunt-gh-pages": "0.9.1",
 		"grunt-contrib-clean": "0.6.0",
 		"grunt-preprocess": "4.1.0",
-		"grunt-webpack": "1.0.11",
+		"grunt-exec": "1.0.0",
 		"webpack": "^1.13.1",
 		"sass-loader": "4.0.0",
 		"extract-text-webpack-plugin": "1.0.1"

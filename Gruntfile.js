@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-	grunt.loadNpmTasks('grunt-webpack');
+	grunt.loadNpmTasks('grunt-exec');
 	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-clean');
@@ -11,11 +11,15 @@ module.exports = function(grunt) {
 		DIR_BUILD = DIR_DOC_SRC + 'build/';
 
 	grunt.initConfig({
+
+		// config variables -------------------------------------
 		package: grunt.file.readJSON('package.json'),
-		'webpack': {
-			main: {
-				failOnError: true
-			}
+		fontUrl: 'http://static2.meetupstatic.com/fonts/graphik.css',
+		sassquatchCSSPath: 'bundle/sassquatch.css',
+		// ------------------------------------------------------
+
+		'exec': {
+			webpack: 'webpack'
 		},
 		'hologram': {
 			generate: {
@@ -41,13 +45,15 @@ module.exports = function(grunt) {
 					inline: true,
 					context: {
 						DEBUG: false,
-						'VERSION': '<%= package.version %>'
+						'VERSION': '<%= package.version %>',
+						'FONT_URL': '<%= fontUrl %>',
+						'SASSQUATCH_CSS': '<%= sassquatchCSSPath %>',
 					}
 				}
 			}
 		}
 	});
 
-	grunt.registerTask('default', ['clean', 'webpack', 'hologram', 'preprocess']);
+	grunt.registerTask('default', ['clean', 'exec', 'hologram', 'preprocess']);
 	grunt.registerTask('ghpages', ['default', 'gh-pages']);
 };
