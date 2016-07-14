@@ -1,1 +1,1 @@
-var css = require("!css!sass!./sass/sassquatch.scss");
+var css = require("./sass/sassquatch.scss");
