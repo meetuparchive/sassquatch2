@@ -37,6 +37,7 @@ Basic example of a single view in a document:
 	width: 100%;
 	min-height: 100vh;
 	position: relative;
+	overflow-x: hidden;
 }
 
 .view--collection,
