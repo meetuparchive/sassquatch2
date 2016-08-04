@@ -70,9 +70,9 @@ Class                | Description
 
 // color variants
 @each $colorName, $color in (
-	red: $C_red,
-	purple: $C_purple,
-	black: $C_black
+	'red': $C_red,
+	'purple': $C_purple,
+	'black': $C_black
 ) {
 	.stripe--#{$colorName} {
 		background-color: $color;

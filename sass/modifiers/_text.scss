@@ -147,9 +147,9 @@ variants are listed below.
 ```
 */
 @each $colorName, $color in (
-	red: $C_red,
-	pink: $C_pink,
-	yellow: $C_yellow
+	'red': $C_red,
+	'pink': $C_pink,
+	'yellow': $C_yellow
 ) {
 	@include _modifier('text', "#{$colorName}") {
 		color: $color;
