@@ -4,7 +4,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-gh-pages');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-preprocess');
 
 	var DIR_DOC_SRC = 'docs/',
