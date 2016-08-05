@@ -60,7 +60,7 @@ Class                  | Description
 }
 @include _modifier(text, uppercase) {
 	@include i18n-only('en') {
-		text-decoration: uppercase;
+		text-decoration: uppercase !important; // important to override links
 	}
 }
 
