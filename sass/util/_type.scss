@@ -113,14 +113,14 @@ Placeholder             | Description
 `%text--heavy`          | Bolder text (Semibold weight)
 */
 %text--bold {
-	font-weight: $W_medium;
+	font-weight: $W_medium !important;
 	.inverted .runningText,
 	.inverted.runningText {
-		font-weight: $W_bold;
+		font-weight: $W_bold !important;
 	}
 }
 %text--heavy {
-	font-weight: $W_bold;
+	font-weight: $W_bold !important;
 }
 
 
