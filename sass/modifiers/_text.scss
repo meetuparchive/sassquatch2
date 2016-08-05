@@ -44,11 +44,11 @@ Class          | Description
 
 /*doc
 ---
-title: Text decoration
+title: Text decoration/transform
 name: textDecoration
 parent: textMod
 ---
-Basic text decoration
+Basic text decoration and transform
 
 Class                  | Description
 ---------------------- | ----------------------------
@@ -60,7 +60,7 @@ Class                  | Description
 }
 @include _modifier(text, uppercase) {
 	@include i18n-only('en') {
-		text-decoration: uppercase !important; // important to override links
+		text-transform: uppercase;
 	}
 }
 
