@@ -25,7 +25,7 @@ Breakpoints        | Property       | Variants
 ------------------ | -------------- | ---------------------------
 `medium`, `large`  | `align`        | `center`, `right`, `left`
 `medium`, `large`  | `display`      | `none`, `block`, `flex`, `inline`, `inlineBlock`, `inlineFlex`
-`medium`, `large`  | `padding`      | `none`
+`medium`, `large`  | `padding`      | `top`, `right`, `bottom`, `left`, `none`
 `medium`, `large`  | `margin`       | `center`
 `medium`, `large`  | `border`       | `top`, `none`
 `medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
@@ -67,9 +67,15 @@ Breakpoints        | Property       | Variants
 }
 
 // padding
-@include _bpModifier('padding', 'none') {
-	padding: 0 !important;
-};
+@each $alignment in (top, right, bottom, left, none) {
+	@include _bpModifier('padding', $alignment) {
+		@if "#{$alignment}" == "none" {
+			padding: 0 !important;
+		} @else {
+			padding-#{$alignment}: $space;
+		}
+	};
+}
 
 // margin
 @include _bpModifier('margin', 'center') {
