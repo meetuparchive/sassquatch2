@@ -213,6 +213,11 @@ Applies standard text colors. The variant
 is the color name: `text--[color]`. All supported
 variants are listed below.
 
+These classes set both the `color` and `fill` properties
+in order to also set the color of icons inline with text.
+
+**This style is set as `!important`**
+
 ```html_example
 <section class="stripe stripe--inverted inverted">
 	<div class="bounds">
@@ -234,7 +239,7 @@ variants are listed below.
 	'yellow': $C_yellow
 ) {
 	@include _modifier('text', "#{$colorName}") {
-		color: $color;
+		@include color-all($color, true); // `true` sets this property as `!important`
 	}
 }
 
