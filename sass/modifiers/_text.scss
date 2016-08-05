@@ -53,9 +53,15 @@ Basic text decoration
 Class                  | Description
 ---------------------- | ----------------------------
 `.text--strikethrough` | strikethrough/strikeout/line-through
+`.text--uppercase`     | uppercase text (limited to English)
 */
 @include _modifier(text, strikethrough) {
 	text-decoration: line-through;
+}
+@include _modifier(text, uppercase) {
+	@include i18n-only('en') {
+		text-decoration: uppercase;
+	}
 }
 
 /*doc
