@@ -16,15 +16,21 @@ To align content within a stripe, use `.bounds`.
 	</div>
 </section>
 
-<section class="stripe--inverted inverted">
+<section class="stripe stripe--inverted inverted">
 	<div class="bounds">
 		<p>... inverted stripe, using `inverted` class to set text colors  ...</p>
 	</div>
 </section>
 
-<section class="stripe--collection">
+<section class="stripe stripe--collection">
 	<div class="bounds">
 		<p>... collection variant of stripe, used to contain collections of cards </p>
+	</div>
+</section>
+
+<section class="stripe stripe--purple inverted">
+	<div class="bounds">
+		<p>A purple stripe. White text is set by applying the <code>inverted</code> class to the stripe element.</p>
 	</div>
 </section>
 ```
@@ -37,6 +43,10 @@ Class                | Description
 -------------------- | ------------------------------------------------------------
 `.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
 `.stripe--collection`|  applies a light gray background; for use with card collections
+`.stripe--red`       |  applies the standard `$C_red` background color
+`.stripe--purple`    |  applies the standard `$C_purple` background color
+`.stripe--plum`      |  applies the standard `$C_plum` background color
+`.stripe--black`     |  applies the standard `$C_black` background color
 `.stripe--hero`      |  for hero sections without a photo (see below)
 `.stripe--photoHero` |  for hero sections with a photo (see below)
 `.stripe--overlap`   |  for sections that have content that visually overlaps into the next stripe (see below)
@@ -57,6 +67,18 @@ Class                | Description
 .stripe--inverted {
 	@extend %stripe;
 	background-color: $C_contentBGInverted;
+}
+
+// color variants
+@each $colorName, $color in (
+	'red': $C_red,
+	'purple': $C_purple,
+	'black': $C_black,
+	'plum': $C_plum
+) {
+	.stripe--#{$colorName} {
+		background-color: $color;
+	}
 }
 
 

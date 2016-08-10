@@ -205,6 +205,46 @@ parent: bodyText
 
 /*doc
 ---
+title: Text colors
+name: coloredText
+parent: bodyText
+---
+Applies standard text colors. The variant
+is the color name: `text--[color]`. All supported
+variants are listed below.
+
+These classes set both the `color` and `fill` properties
+in order to also set the color of icons inline with text.
+
+**This style is set as `!important`**
+
+```html_example
+<section class="stripe stripe--inverted inverted">
+	<div class="bounds">
+		<ul class="inlineblockList inlineblockList--bulleted chunk text--heavy">
+			<li>Normal heavy text</li>
+			<li class="text--red">Colorful heavy text</li>
+			<li class="text--pink">Colorful heavy text</li>
+			<li class="text--yellow">Colorful heavy text</li>
+			<li class="text--teal">Colorful heavy text</li>
+		</ul>
+	</div>
+</section>
+```
+*/
+@each $colorName, $color in (
+	'red': $C_red,
+	'pink': $C_pink,
+	'teal': $C_teal,
+	'yellow': $C_yellow
+) {
+	@include _modifier('text', "#{$colorName}") {
+		@include color-all($color, true); // `true` sets this property as `!important`
+	}
+}
+
+/*doc
+---
 title: Middot text
 name: middotText
 parent: bodyText

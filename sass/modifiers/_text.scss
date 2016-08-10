@@ -44,18 +44,24 @@ Class          | Description
 
 /*doc
 ---
-title: Text decoration
+title: Text decoration/transform
 name: textDecoration
 parent: textMod
 ---
-Basic text decoration
+Basic text decoration and transform
 
 Class                  | Description
 ---------------------- | ----------------------------
 `.text--strikethrough` | strikethrough/strikeout/line-through
+`.text--uppercase`     | uppercase text (limited to English)
 */
 @include _modifier(text, strikethrough) {
 	text-decoration: line-through;
+}
+@include _modifier(text, uppercase) {
+	@include i18n-only('en') {
+		text-transform: uppercase;
+	}
 }
 
 /*doc
