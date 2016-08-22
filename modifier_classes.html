@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/github.css">
 
 	<!-- CSS to be documented -->
-	<link rel="stylesheet" href="css/sassquatch.css">
+	<link rel="stylesheet" href="bundle/sassquatch.css">
 </head>
 
 <!--[if IE 8]> <body class="lang_en ieRoot_IE8 ieRoot_lt_IE9 ieRoot_lt_IE10"> <![endif]-->
@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v2.1.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v2.4.0</a>
 						</div>
 					</div>
 				</div>
@@ -577,7 +577,7 @@ a modification at a specific breakpoint.</p><p class="styleguide"><em>Uses atMed
 <tr>
 <td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
 <td><code class="styleguide">padding</code></td>
-<td><code class="styleguide">none</code></td>
+<td><code class="styleguide">top</code>, <code class="styleguide">right</code>, <code class="styleguide">bottom</code>, <code class="styleguide">left</code>, <code class="styleguide">none</code></td>
 </tr>
 <tr>
 <td><code class="styleguide">medium</code>, <code class="styleguide">large</code></td>
@@ -695,14 +695,18 @@ to an element.</p>
  </table>
 <h1 id="textMod" class="styleguide">Text Modifiers</h1>
 
-<h2 id="textDecoration" class="styleguide">Text decoration</h2>
-<p class="styleguide">Basic text decoration</p><table class="styleguide"> <tr>
+<h2 id="textDecoration" class="styleguide">Text decoration/transform</h2>
+<p class="styleguide">Basic text decoration and transform</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
 </tr>
  <tr>
 <td><code class="styleguide">.text--strikethrough</code></td>
 <td>strikethrough/strikeout/line-through</td>
+</tr>
+<tr>
+<td><code class="styleguide">.text--uppercase</code></td>
+<td>uppercase text (limited to English)</td>
 </tr>
  </table>
 <h2 id="textHideUtil" class="styleguide">Hiding Text</h2>
@@ -1407,7 +1411,7 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Text decoration",
+					"title": "Text decoration/transform",
 					"name": "textDecoration",
 					"category": "Modifier Classes",
 					"url": "modifier_classes.html#textDecoration"
@@ -1760,6 +1764,17 @@ $(function() {
 					"name": "captionText",
 					"category": "Typography",
 					"url": "typography.html#captionText"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Text colors",
+					"name": "coloredText",
+					"category": "Typography",
+					"url": "typography.html#coloredText"
 				});
 
 			

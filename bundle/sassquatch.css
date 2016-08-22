@@ -16,14 +16,10 @@
 /*
 -----------------------------------------
 
-/\___ \         /\_ \
-\/__/\ \  __  __\//\ \      __   _____
-   _\ \ \/\ \/\ \ \ \ \   /'__`\/\ '__`\
-  /\ \_\ \ \ \_\ \ \_\ \_/\  __/\ \ \L\ \
-  \ \____/\ \____/ /\____\ \____\ \ ,__/
+/\___ \         /\_ \/__/\ \  __  __\//\ \      __   _____
+   _\ \ \/\ \/\ \ \ \ \   /'__`\/\ '__`  /\ \_\ \ \ \_\ \ \_\ \_/\  __/\ \ \L\   \ \____/\ \____/ /\____\ \____\\ \ ,__/
    \/___/  \/___/  \/____/\/____/ \ \ \/
-                                   \ \_\
-
+                                   \ \_
 -----------------------------------------
 
 Meetup Sass utilities
@@ -59,9 +55,9 @@ color: getPrimaryTextColor(#FFF);
 .chunk,
 .bounds {
   /**
-  * For IE 6/7 only
-  * Include this rule to trigger hasLayout and contain floats.
-  */
+	* For IE 6/7 only
+	* Include this rule to trigger hasLayout and contain floats.
+	*/
   *zoom: 1; }
   .pagination:before,
   .chunk:before,
@@ -650,19 +646,33 @@ Placeholder             | Description
 .text--display1,
 .text--display2,
 .text--display3 {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
   font-weight: 600;
   letter-spacing: -0.02em; }
-  .inverted .text--display,
-  .inverted .text--display1, .inverted
-  .text--display2, .inverted
-  .text--display3 {
+  .text--display,
+  .text--display1, .text--display svg,
+  .text--display1 svg,
+  .text--display2, .text--display2 svg,
+  .text--display3, .text--display3 svg {
     stroke: transparent;
-    fill: white;
+    fill: rgba(0, 0, 0, 0.87); }
+  .inverted .text--display, .inverted
+  .text--display1,
+  .inverted .text--display2,
+  .inverted .text--display3 {
     color: white;
     font-weight: 500; }
+    .inverted .text--display, .inverted
+    .text--display1,
+    .inverted .text--display svg,
+    .inverted
+    .text--display1 svg,
+    .inverted .text--display2,
+    .inverted .text--display2 svg,
+    .inverted .text--display3,
+    .inverted .text--display3 svg {
+      stroke: transparent;
+      fill: white; }
 
 .text--display,
 .text--display1 {
@@ -693,30 +703,38 @@ Placeholder          | Description
 `%text--label`       | Styles for list headers and form field labels
 */
 .text--labelSecondary, .text--label, .dateDisplay-month {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
   font-size: 13px;
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: -0.02em;
   word-spacing: 0.1em; }
-  .inverted .text--labelSecondary, .inverted .text--label, .inverted .dateDisplay-month {
+  .text--labelSecondary, .text--label, .dateDisplay-month, .text--labelSecondary svg, .text--label svg, .dateDisplay-month svg {
     stroke: transparent;
-    fill: white;
+    fill: rgba(0, 0, 0, 0.87); }
+  .inverted .text--labelSecondary, .inverted .text--label, .inverted .dateDisplay-month {
     color: white; }
+    .inverted .text--labelSecondary, .inverted .text--label, .inverted .dateDisplay-month,
+    .inverted .text--labelSecondary svg,
+    .inverted .text--label svg,
+    .inverted .dateDisplay-month svg {
+      stroke: transparent;
+      fill: white; }
   .lang_en .text--labelSecondary, .lang_en .text--label, .lang_en .dateDisplay-month {
     text-transform: uppercase; }
 
 .text--labelSecondary {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54);
   font-weight: 500; }
-  .inverted .text--labelSecondary {
+  .text--labelSecondary, .text--labelSecondary svg {
     stroke: transparent;
-    fill: rgba(255, 255, 255, 0.7);
+    fill: rgba(0, 0, 0, 0.54); }
+  .inverted .text--labelSecondary {
     color: rgba(255, 255, 255, 0.7); }
+    .inverted .text--labelSecondary,
+    .inverted .text--labelSecondary svg {
+      stroke: transparent;
+      fill: rgba(255, 255, 255, 0.7); }
 
 /*doc
 ---
@@ -731,13 +749,12 @@ Placeholder             | Description
 `%text--heavy`          | Bolder text (Semibold weight)
 */
 .text--bold {
-  font-weight: 500; }
-  .text--bold .inverted .runningText,
-  .text--bold .inverted.runningText {
-    font-weight: 600; }
+  font-weight: 500 !important; }
+  .text--bold .inverted .runningText, .text--bold .inverted.runningText {
+    font-weight: 600 !important; }
 
 h1, h2, h3, h4, h5, h6, .text--heavy {
-  font-weight: 600; }
+  font-weight: 600 !important; }
 
 /*doc
 ---
@@ -752,22 +769,30 @@ Placeholder           | Description
 `%text--tertiary`     | Tertiary gray text color
 */
 .text--caption, .text--secondary {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.54);
   color: rgba(0, 0, 0, 0.54); }
-  .inverted .text--caption, .inverted .text--secondary {
+  .text--caption, .text--secondary, .text--caption svg, .text--secondary svg {
     stroke: transparent;
-    fill: rgba(255, 255, 255, 0.7);
+    fill: rgba(0, 0, 0, 0.54); }
+  .inverted .text--caption, .inverted .text--secondary {
     color: rgba(255, 255, 255, 0.7); }
+    .inverted .text--caption, .inverted .text--secondary,
+    .inverted .text--caption svg,
+    .inverted .text--secondary svg {
+      stroke: transparent;
+      fill: rgba(255, 255, 255, 0.7); }
 
 .text--hint, .text--tertiary {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26); }
-  .inverted .text--hint, .inverted .text--tertiary {
+  .text--hint, .text--tertiary, .text--hint svg, .text--tertiary svg {
     stroke: transparent;
-    fill: rgba(255, 255, 255, 0.3);
+    fill: rgba(0, 0, 0, 0.26); }
+  .inverted .text--hint, .inverted .text--tertiary {
     color: rgba(255, 255, 255, 0.3); }
+    .inverted .text--hint, .inverted .text--tertiary,
+    .inverted .text--hint svg,
+    .inverted .text--tertiary svg {
+      stroke: transparent;
+      fill: rgba(255, 255, 255, 0.3); }
 
 /*doc
 ---
@@ -799,24 +824,45 @@ big,
   font-size: 13px;
   line-height: 1.6; }
 
-a.link, .runningText a {
-  stroke: transparent;
-  fill: #1f24cc;
+a.link,
+.runningText a {
   color: #1f24cc; }
-  a.link:hover, .runningText a:hover, a.link:focus, .runningText a:focus, a.link:active, .runningText a:active {
-    text-decoration: underline; }
-  a.link .button, .runningText a .button {
-    text-decoration: none; }
-  .inverted a.link, .inverted .runningText a, .runningText .inverted a {
+  a.link,
+  .runningText a, a.link svg,
+  .runningText a svg {
     stroke: transparent;
-    fill: #4dd1ed;
+    fill: #1f24cc; }
+  a.link:hover,
+  .runningText a:hover, a.link:focus,
+  .runningText a:focus, a.link:active,
+  .runningText a:active {
+    text-decoration: underline; }
+  a.link .button,
+  .runningText a .button {
+    text-decoration: none; }
+  .inverted a.link, .inverted
+  .runningText a,
+  .runningText .inverted a {
     color: #4dd1ed; }
+    .inverted a.link, .inverted
+    .runningText a,
+    .runningText .inverted a,
+    .inverted a.link svg,
+    .inverted
+    .runningText a svg,
+    .runningText
+    .inverted a svg {
+      stroke: transparent;
+      fill: #4dd1ed; }
 
 .text--error,
 .text--attention {
-  stroke: transparent;
-  fill: #ff911a;
   color: #ff911a; }
+  .text--error,
+  .text--attention, .text--error svg,
+  .text--attention svg {
+    stroke: transparent;
+    fill: #ff911a; }
 
 code,
 pre,
@@ -895,6 +941,7 @@ _original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
     -webkit-transform: scale(1.15); }
   75% {
     -webkit-transform: scale(1); } }
+
 @keyframes bounce-in-subtle {
   0% {
     -webkit-transform: scale(1);
@@ -908,6 +955,7 @@ _original keyframes generated with [Bounce.js](http://goo.gl/tT4jnp)_
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); } }
+
 /*doc
 ---
 title: Infinite spin
@@ -925,6 +973,7 @@ Infinite 2d rotation; 0-360deg.
     -webkit-transform: rotate(0deg); }
   100% {
     -webkit-transform: rotate(360deg); } }
+
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -934,6 +983,7 @@ Infinite 2d rotation; 0-360deg.
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
 html {
   overflow-y: scroll;
   font-size: 100%;
@@ -1155,8 +1205,14 @@ elements to inveted colors.
 </div>
 ```
 */
+
 .inverted {
   color: white; }
+  
+  .inverted,
+  .inverted svg {
+    stroke: transparent;
+    fill: white; }
 
 /*doc
 ---
@@ -1269,6 +1325,71 @@ parent: bodyText
 */
 /*doc
 ---
+title: Text colors
+name: coloredText
+parent: bodyText
+---
+Applies standard text colors. The variant
+is the color name: `text--[color]`. All supported
+variants are listed below.
+
+These classes set both the `color` and `fill` properties
+in order to also set the color of icons inline with text.
+
+**This style is set as `!important`**
+
+```html_example
+<section class="stripe stripe--inverted inverted">
+	<div class="bounds">
+		<ul class="inlineblockList inlineblockList--bulleted chunk text--heavy">
+			<li>Normal heavy text</li>
+			<li class="text--red">Colorful heavy text</li>
+			<li class="text--pink">Colorful heavy text</li>
+			<li class="text--yellow">Colorful heavy text</li>
+			<li class="text--teal">Colorful heavy text</li>
+		</ul>
+	</div>
+</section>
+```
+*/
+
+.text--red {
+  color: #ed1c40 !important; }
+  
+  .text--red,
+  .text--red svg {
+    stroke: transparent;
+    fill: #ed1c40 !important; }
+
+
+.text--pink {
+  color: #ff65c4 !important; }
+  
+  .text--pink,
+  .text--pink svg {
+    stroke: transparent;
+    fill: #ff65c4 !important; }
+
+
+.text--teal {
+  color: #0fd9a3 !important; }
+  
+  .text--teal,
+  .text--teal svg {
+    stroke: transparent;
+    fill: #0fd9a3 !important; }
+
+
+.text--yellow {
+  color: #ffe600 !important; }
+  
+  .text--yellow,
+  .text--yellow svg {
+    stroke: transparent;
+    fill: #ffe600 !important; }
+
+/*doc
+---
 title: Middot text
 name: middotText
 parent: bodyText
@@ -1281,7 +1402,7 @@ parent: bodyText
 .text--middotRight:after,
 .text--middotLeft:before {
   display: inline-block;
-  content: "\00b7";
+  content: "\B7";
   margin: auto 0.5em;
   font-weight: 600; }
 
@@ -1381,7 +1502,9 @@ numbers/bullets to a list.
 ```
 
 */
-ul.bullets, .runningText ul, ol.bullets, .runningText ol {
+ul.bullets,
+.runningText ul, ol.bullets,
+.runningText ol {
   list-style-position: outside;
   padding-left: 1.33em;
   /* indent by default */ }
@@ -1389,10 +1512,12 @@ ul.bullets, .runningText ul, ol.bullets, .runningText ol {
     .runningText ul, .runningText ol {
       padding-left: inherit; } }
 
-ul.bullets, .runningText ul {
+ul.bullets,
+.runningText ul {
   list-style-type: disc; }
 
-ol.bullets, .runningText ol {
+ol.bullets,
+.runningText ol {
   list-style-type: decimal; }
 
 /*doc
@@ -1546,7 +1671,7 @@ select {
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input:not([type]):focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   textarea:focus,
   select:focus {
-    background: white;
+    background-color: white;
     border-color: #1f24cc;
     box-shadow: none;
     outline: none; }
@@ -1606,6 +1731,7 @@ Creates a "stack" of inptus grouped together
   padding: 0;
   width: 1px;
   height: 1px; }
+
 .inputStack-field input,
 .inputStack-field textarea {
   border-bottom-width: 0;
@@ -1614,9 +1740,11 @@ Creates a "stack" of inptus grouped together
   .inputStack-field input:focus,
   .inputStack-field textarea:focus {
     border-bottom-width: 1px; }
+
 .inputStack-field:first-of-type input,
 .inputStack-field:first-of-type textarea {
   border-radius: 3px 3px 0 0; }
+
 .inputStack-field:last-child input,
 .inputStack-field:last-child textarea {
   border-bottom-width: 1px;
@@ -1938,8 +2066,10 @@ Apply the `borderedTable` class to apply borders to table cells.
     border-right: 1px solid rgba(0, 0, 0, 0.12); }
   .inverted .borderedTable td, .inverted .borderedTable tbody th {
     border-color: rgba(255, 255, 255, 0.2); }
+
 .borderedTable thead th {
   border-width: 0; }
+
 .borderedTable tbody tr:last-child td, .borderedTable tbody tr:last-child th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
   .inverted .borderedTable tbody tr:last-child td, .inverted .borderedTable tbody tr:last-child th {
@@ -2014,15 +2144,21 @@ To align content within a stripe, use `.bounds`.
 	</div>
 </section>
 
-<section class="stripe--inverted inverted">
+<section class="stripe stripe--inverted inverted">
 	<div class="bounds">
 		<p>... inverted stripe, using `inverted` class to set text colors  ...</p>
 	</div>
 </section>
 
-<section class="stripe--collection">
+<section class="stripe stripe--collection">
 	<div class="bounds">
 		<p>... collection variant of stripe, used to contain collections of cards </p>
+	</div>
+</section>
+
+<section class="stripe stripe--purple inverted">
+	<div class="bounds">
+		<p>A purple stripe. White text is set by applying the <code>inverted</code> class to the stripe element.</p>
 	</div>
 </section>
 ```
@@ -2035,6 +2171,10 @@ Class                | Description
 -------------------- | ------------------------------------------------------------
 `.stripe--inverted`  |  applies the standard `$C_contentBGInverted` background color
 `.stripe--collection`|  applies a light gray background; for use with card collections
+`.stripe--red`       |  applies the standard `$C_red` background color
+`.stripe--purple`    |  applies the standard `$C_purple` background color
+`.stripe--plum`      |  applies the standard `$C_plum` background color
+`.stripe--black`     |  applies the standard `$C_black` background color
 `.stripe--hero`      |  for hero sections without a photo (see below)
 `.stripe--photoHero` |  for hero sections with a photo (see below)
 `.stripe--overlap`   |  for sections that have content that visually overlaps into the next stripe (see below)
@@ -2053,6 +2193,18 @@ Class                | Description
 
 .stripe--inverted {
   background-color: #0f1721; }
+
+.stripe--red {
+  background-color: #ed1c40; }
+
+.stripe--purple {
+  background-color: #371eac; }
+
+.stripe--black {
+  background-color: #0f1721; }
+
+.stripe--plum {
+  background-color: #7000b0; }
 
 /*doc
 ---
@@ -2200,6 +2352,7 @@ Use `stripe--overlap--collection` to overlap onto a collection stripe, and `stri
   display: block;
   position: absolute;
   width: 100%; }
+
 .stripe--overlap + .stripe {
   border-width: 0 !important; }
 
@@ -2316,6 +2469,7 @@ Class                   | Description
   .list-item--active {
     background-color: #fafafa;
     font-weight: 600; } }
+
 /*doc
 ---
 title: Grid List
@@ -2417,93 +2571,123 @@ Class                         | Description
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has1 > .gridList-item {
     width: 100%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has1 > .gridList-item {
     width: 100%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has1 > .gridList-item {
     width: 100%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has2 > .gridList-item {
     width: 50%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has2 > .gridList-item {
     width: 50%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has2 > .gridList-item {
     width: 50%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has3 > .gridList-item {
     width: 33.33333%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has3 > .gridList-item {
     width: 33.33333%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has3 > .gridList-item {
     width: 33.33333%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has4 > .gridList-item {
     width: 25%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has4 > .gridList-item {
     width: 25%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has4 > .gridList-item {
     width: 25%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has5 > .gridList-item {
     width: 20%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has5 > .gridList-item {
     width: 20%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has5 > .gridList-item {
     width: 20%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has6 > .gridList-item {
     width: 16.66667%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has6 > .gridList-item {
     width: 16.66667%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has6 > .gridList-item {
     width: 16.66667%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has7 > .gridList-item {
     width: 14.28571%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has7 > .gridList-item {
     width: 14.28571%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has7 > .gridList-item {
     width: 14.28571%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has8 > .gridList-item {
     width: 12.5%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has8 > .gridList-item {
     width: 12.5%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has8 > .gridList-item {
     width: 12.5%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has9 > .gridList-item {
     width: 11.11111%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has9 > .gridList-item {
     width: 11.11111%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has9 > .gridList-item {
     width: 11.11111%; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_gridList--has10 > .gridList-item {
     width: 10%; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_gridList--has10 > .gridList-item {
     width: 10%; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_gridList--has10 > .gridList-item {
     width: 10%; } }
+
 /*doc
 ---
 title: Exact list
@@ -2602,8 +2786,9 @@ Class                        | Description
       padding-right: 0; }
 
 .inlineblockList--bulleted > li:after {
-  content: '·';
+  content: '\B7';
   padding-left: 8px; }
+
 .inlineblockList--bulleted > li:last-child:after {
   display: none; }
 
@@ -2611,8 +2796,10 @@ Class                        | Description
   padding: 0;
   margin-right: -8px;
   border: 3px solid white; }
+
 .stripe--collection .inlineblockList--overlap > li {
   border-color: #fafafa; }
+
 .inverted .inlineblockList--overlap > li {
   border-color: #0f1721; }
 
@@ -2964,6 +3151,7 @@ Class                       | Description
     overflow-x: visible; }
     .atSmall_hscroll--unclip .hscroll-content {
       white-space: normal; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_hscroll--unclip {
     -webkit-overflow-scrolling: auto;
@@ -2971,6 +3159,7 @@ Class                       | Description
     overflow-x: visible; }
     .atMedium_hscroll--unclip .hscroll-content {
       white-space: normal; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_hscroll--unclip {
     -webkit-overflow-scrolling: auto;
@@ -2978,6 +3167,7 @@ Class                       | Description
     overflow-x: visible; }
     .atLarge_hscroll--unclip .hscroll-content {
       white-space: normal; } }
+
 /*doc
 ---
 title: Chunk
@@ -3073,6 +3263,7 @@ of the bounds on wide screens (`large` breakpoint), and linearizes on small scre
 ```
 
 */
+
 .bounds {
   box-sizing: border-box;
   margin-left: auto;
@@ -3091,13 +3282,13 @@ of the bounds on wide screens (`large` breakpoint), and linearizes on small scre
   .bounds--sideHeader {
     padding-left: 276px;
     position: relative; }
-
   .bounds-header {
     position: absolute;
     top: 24px;
     left: 16px;
     width: 236px;
     text-align: right; } }
+
 /*doc
 ---
 title: Row
@@ -3650,6 +3841,7 @@ Class                   | Description
         width: 1%; }
       .ieRoot_lt_IE10 .atSmall_spreadable--spread .spreadable-item--shrink {
         vertical-align: top; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_spreadable--spread {
     display: -webkit-box;
@@ -3720,6 +3912,7 @@ Class                   | Description
         width: 1%; }
       .ieRoot_lt_IE10 .atMedium_spreadable--spread .spreadable-item--shrink {
         vertical-align: top; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_spreadable--spread {
     display: -webkit-box;
@@ -3790,6 +3983,7 @@ Class                   | Description
         width: 1%; }
       .ieRoot_lt_IE10 .atLarge_spreadable--spread .spreadable-item--shrink {
         vertical-align: top; } }
+
 .spreadable--noGutters .spreadable-item {
   padding: 0 !important; }
 
@@ -3857,7 +4051,8 @@ Basic example of a single view in a document:
   background: white;
   width: 100%;
   min-height: 100vh;
-  position: relative; }
+  position: relative;
+  overflow-x: hidden; }
 
 .view--collection,
 .view--collection .view-body {
@@ -3901,6 +4096,7 @@ Basic example of a single view in a document:
   border: solid 3px rgba(0, 0, 0, 0.2);
   border-top-color: black;
   margin: -18px auto auto -18px; }
+
 .view--loading:after {
   content: " ";
   display: block;
@@ -4402,12 +4598,14 @@ docs TK
 .mediaNav-icon {
   -webkit-transition: opacity 50ms ease-in;
   transition: opacity 50ms ease-in;
-  stroke: transparent;
-  fill: #fff;
   color: #fff;
   opacity: .5;
   position: absolute;
   top: 50%; }
+  .mediaNav-icon,
+  .mediaNav-icon svg {
+    stroke: transparent;
+    fill: #fff; }
   .mediaNav--prev .mediaNav-icon {
     left: 16px; }
   .mediaNav--next .mediaNav-icon {
@@ -4601,8 +4799,10 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
   padding-left: 8px; }
   .attachment .row-item:first-child {
     padding-left: 0; }
+
 .attachment .row--noGutters > .row-item {
   padding: 0; }
+
 @media only screen and (min-width: 640px) {
   .attachment.atMedium_spreadable--spread .spreadable-item,
   .attachment .atMedium_spreadable--spread .spreadable-item {
@@ -4610,6 +4810,7 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
     .attachment.atMedium_spreadable--spread .spreadable-item:first-child,
     .attachment .atMedium_spreadable--spread .spreadable-item:first-child {
       padding-left: 0; } }
+
 @media only screen and (min-width: 840px) {
   .attachment.atLarge_spreadable--spread .spreadable-item,
   .attachment .atLarge_spreadable--spread .spreadable-item {
@@ -4617,9 +4818,11 @@ _Ancestry only affects spacing in `attachment`. Text sizing remains explicit._
     .attachment.atLarge_spreadable--spread .spreadable-item:first-child,
     .attachment .atLarge_spreadable--spread .spreadable-item:first-child {
       padding-left: 0; } }
+
 .attachment.chunk,
 .attachment .chunk {
   margin-bottom: 8px !important; }
+
 .attachment.list-item,
 .attachment .list-item {
   padding-top: 8px; }
@@ -4758,8 +4961,6 @@ Class                   | Description
   outline: 0;
   padding: 0 16px;
   vertical-align: middle;
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
   background: white; }
   .inverted .button {
@@ -4775,32 +4976,49 @@ Class                   | Description
   .button:active {
     background: rgba(0, 0, 0, 0.12);
     border-color: transparent; }
+  .button,
+  .button svg {
+    stroke: transparent;
+    fill: rgba(0, 0, 0, 0.87); }
+
 
 .button--primary {
-  stroke: transparent;
-  fill: #fff !important;
   color: #fff !important;
   background: #ed1c40;
   border-color: #ed1c40; }
+  
+  .button--primary,
+  .button--primary svg {
+    stroke: transparent;
+    fill: #fff !important; }
+  
   .button--primary:hover,
   .button--primary:focus {
     background: #d01031; }
+  
   .button--primary:active {
     background: #bd0f2d; }
   .inverted
   .button--primary {
     border: none !important; }
+  
   .button--primary.button--contrast {
-    stroke: transparent;
-    fill: #000 !important;
     color: #000 !important;
     background: white;
     border-color: white; }
+    
+    .button--primary.button--contrast,
+    .button--primary.button--contrast svg {
+      stroke: transparent;
+      fill: #000 !important; }
+    
     .button--primary.button--contrast:hover,
     .button--primary.button--contrast:focus {
       background: #ebebeb; }
+    
     .button--primary.button--contrast:active {
       background: #e0e0e0; }
+    
     .button--primary.button--contrast:hover,
     .button--primary.button--contrast:active,
     .button--primary.button--contrast:focus {
@@ -4808,31 +5026,44 @@ Class                   | Description
 
 .button--borderless,
 .button--contrast {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.87);
   color: rgba(0, 0, 0, 0.87);
   background: rgba(0, 0, 0, 0.26);
   border-color: rgba(255, 255, 255, 0.2); }
+  .button--borderless, .button--borderless svg,
+  .button--contrast,
+  .button--contrast svg {
+    stroke: transparent;
+    fill: rgba(0, 0, 0, 0.87); }
   .inverted .button--borderless, .inverted
   .button--contrast {
-    stroke: transparent;
-    fill: white;
     color: white; }
+    .inverted .button--borderless,
+    .inverted .button--borderless svg, .inverted
+    .button--contrast,
+    .inverted
+    .button--contrast svg {
+      stroke: transparent;
+      fill: white; }
   .button--borderless:hover, .button--borderless:active, .button--borderless:focus,
   .button--contrast:hover,
   .button--contrast:active,
   .button--contrast:focus {
+    background: rgba(0, 0, 0, 0.26);
     border-color: rgba(255, 255, 255, 0.7); }
 
 .button[disabled],
 .button--disabled {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.54) !important;
   color: rgba(0, 0, 0, 0.54) !important;
   border: 1px solid rgba(0, 0, 0, 0.12);
   outline: none;
   background: rgba(117, 117, 117, 0.12) !important;
   cursor: default; }
+  .button[disabled],
+  .button[disabled] svg,
+  .button--disabled,
+  .button--disabled svg {
+    stroke: transparent;
+    fill: rgba(0, 0, 0, 0.54) !important; }
   .inverted .button[disabled], .inverted
   .button--disabled {
     border: 1px solid rgba(255, 255, 255, 0.2); }
@@ -4847,10 +5078,12 @@ Class                   | Description
     .button--disabled:active {
       border: 1px solid rgba(255, 255, 255, 0.2); }
 
+
 .button--small {
   font-size: 13px;
   min-height: 24px;
   padding: 0 8px; }
+
 
 .button--fullWidth,
 .button.span-100 {
@@ -4858,6 +5091,7 @@ Class                   | Description
   width: 100%;
   text-align: center;
   padding: 0.5em; }
+
 
 .button--icon,
 .button--icon.button--fullWidth {
@@ -5097,10 +5331,12 @@ __NOTE:__ to hide the collapsible content from screen readers, use `display--non
   /* override any min-height rules */
   max-height: 4000px;
   /* We have to use an obscenely high number to accommodate our obscenely high character limit on group descriptions */ }
+
 .hasJS .collapsible-content {
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   -moz-transition: -moz-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out; }
+
 .hasJS .collapsible--close {
   border-width: 0;
   max-height: 0;
@@ -5153,10 +5389,10 @@ of a page for the floating action to "land" in. Apply to the `body` tag.
     position: static;
     background-color: transparent;
     box-shadow: none; }
-
   .hasFloatingAction {
     background-color: transparent;
     padding-bottom: 0; } }
+
 /*doc
 ---
 title: Menu
@@ -5454,9 +5690,11 @@ Class                        | Description
     color: rgba(0, 0, 0, 0.87);
     background: #fafafa; }
   .inverted .page-label {
-    stroke: transparent;
-    fill: rgba(255, 255, 255, 0.7);
     color: rgba(255, 255, 255, 0.7); }
+    .inverted .page-label,
+    .inverted .page-label svg {
+      stroke: transparent;
+      fill: rgba(255, 255, 255, 0.7); }
   @media only screen and (min-width: 640px) {
     .pagination-page--current .page-label {
       color: white;
@@ -5610,12 +5848,14 @@ Class                | Description
   max-width: 6em; }
 
 .rsvpStatus-icon {
-  stroke: transparent;
-  fill: white;
   color: white;
   height: 24px;
   width: 24px;
   border-radius: 100px; }
+  .rsvpStatus-icon,
+  .rsvpStatus-icon svg {
+    stroke: transparent;
+    fill: white; }
 
 .rsvpStatus .rsvpStatus-icon {
   display: -webkit-inline-box;
@@ -6004,10 +6244,12 @@ Checkbox form elements styled as toggle buttons.
     background: rgba(0, 0, 0, 0.05); }
 
 .toggleButton-icon {
-  stroke: transparent;
-  fill: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.26);
   margin-left: 0.5em; }
+  .toggleButton-icon,
+  .toggleButton-icon svg {
+    stroke: transparent;
+    fill: rgba(0, 0, 0, 0.26); }
 
 .toggleButton-icon--inactive {
   display: -webkit-inline-box;
@@ -6026,18 +6268,22 @@ Checkbox form elements styled as toggle buttons.
   .toggleButton-input:checked + .toggleButton-label {
     -webkit-animation: bounce-in-subtle 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: bounce-in-subtle 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    stroke: transparent;
-    fill: rgba(0, 0, 0, 0.87);
     color: rgba(0, 0, 0, 0.87);
     background: #fafafa;
     border-color: rgba(0, 0, 0, 0.12);
     font-weight: 600; }
+    .toggleButton-input:checked + .toggleButton-label,
+    .toggleButton-input:checked + .toggleButton-label svg {
+      stroke: transparent;
+      fill: rgba(0, 0, 0, 0.87); }
     .toggleButton-input:checked + .toggleButton-label:hover, .toggleButton-input:checked + .toggleButton-label:active, .toggleButton-input:checked + .toggleButton-label:focus {
       background: #ededed; }
     .toggleButton-input:checked + .toggleButton-label .toggleButton-icon {
-      stroke: transparent;
-      fill: #ed1c40;
       color: #ed1c40; }
+      .toggleButton-input:checked + .toggleButton-label .toggleButton-icon,
+      .toggleButton-input:checked + .toggleButton-label .toggleButton-icon svg {
+        stroke: transparent;
+        fill: #ed1c40; }
     .toggleButton-input:checked + .toggleButton-label .toggleButton-icon--active {
       display: -webkit-inline-box;
       display: -moz-inline-box;
@@ -6142,9 +6388,11 @@ Class							  | Description
 `.animate--spin`          | Applies 360deg rotation keyframes (infinite)
 
 */
+
 .animate--bounceInSubtle {
   -webkit-animation: bounce-in-subtle 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation: bounce-in-subtle 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
 
 .animate--spin {
   -webkit-animation: spin 0.8s linear;
@@ -6189,11 +6437,13 @@ Class                    | Description
 `.valign--top`           | vertically centers element to top
 
 */
+
 .align--left {
   -webkit-align-self: left;
   align-self: left;
   -ms-flex-item-align: left;
   text-align: left !important; }
+
 
 .align--right {
   -webkit-align-self: right;
@@ -6208,11 +6458,13 @@ Class                    | Description
   -ms-flex-item-align: center;
   text-align: center !important; }
 
+
 .valign--baseline {
   -webkit-align-self: baseline;
   align-self: baseline;
   -ms-flex-item-align: baseline;
   vertical-align: baseline !important; }
+
 
 .valign--bottom {
   -webkit-align-self: flex-end;
@@ -6220,11 +6472,13 @@ Class                    | Description
   -ms-flex-item-align: end;
   vertical-align: bottom !important; }
 
+
 .valign--middle {
   -webkit-align-self: center;
   align-self: center;
   -ms-flex-item-align: center;
   vertical-align: middle !important; }
+
 
 .valign--top {
   -webkit-align-self: flex-start;
@@ -6250,43 +6504,55 @@ Class              | Description
 `.keepAspect--3-4` | maintains 3:4 aspect ratio when resized
 
 */
+
 .keepAspect {
   margin-bottom: 0; }
+  
   .keepAspect:before {
     content: '';
     display: block;
     padding-top: 100%; }
 
+
 .keepAspect--16-9 {
   margin-bottom: 0; }
+  
   .keepAspect--16-9:before {
     content: '';
     display: block;
     padding-top: 56.25%; }
 
+
 .keepAspect--2-1 {
   margin-bottom: 0; }
+  
   .keepAspect--2-1:before {
     content: '';
     display: block;
     padding-top: 50%; }
 
+
 .keepAspect--2-3 {
   margin-bottom: 0; }
+  
   .keepAspect--2-3:before {
     content: '';
     display: block;
     padding-top: 150%; }
 
+
 .keepAspect--3-2 {
   margin-bottom: 0; }
+  
   .keepAspect--3-2:before {
     content: '';
     display: block;
     padding-top: 66.66667%; }
 
+
 .keepAspect--4-3 {
   margin-bottom: 0; }
+  
   .keepAspect--4-3:before {
     content: '';
     display: block;
@@ -6329,12 +6595,15 @@ Class                   | Description
 `.bordered`             | sets a standard top border AND top padding
 `.focus--none`          | removes user agent focus style
 */
+
 .bordered,
 .border--top {
   border-top: 1px solid rgba(0, 0, 0, 0.12); }
-  .inverted .bordered, .inverted
+  .inverted
+  .bordered, .inverted
   .border--top {
     border-top: 1px solid rgba(255, 255, 255, 0.2); }
+
 
 .border--left {
   border-left: 1px solid rgba(0, 0, 0, 0.12); }
@@ -6342,11 +6611,13 @@ Class                   | Description
   .border--left {
     border-left: 1px solid rgba(255, 255, 255, 0.2); }
 
+
 .border--none {
   border-width: 0 !important; }
 
 .focus--none {
   outline: 0; }
+
 
 .bordered {
   padding-top: 16px; }
@@ -6389,20 +6660,26 @@ Class                   | Description
 `.display--inlineBlock` | sets `display` to `inline-block`
 `.display--inlineFlex`  | sets `display` to `inline-flex`
 */
+
 .display--none {
   display: none; }
+
 
 .display--block {
   display: block; }
 
+
 .display--flex {
   display: flex; }
+
 
 .display--inline {
   display: inline; }
 
+
 .display--inlineBlock {
   display: inline-block; }
+
 
 .display--inlineFlex {
   display: inline-flex; }
@@ -6421,6 +6698,7 @@ Class                   | Description
 `.flexParent--row`      | sets `display` to `flex` with row orientation for children
 `.flexParent--column`   | sets `display` to `flex` with column orientation for children
 */
+
 .flexParent--row {
   display: -webkit-box;
   display: -moz-box;
@@ -6459,6 +6737,7 @@ Class                   | Description
     display: table;
     table-layout: auto;
     width: 100%; }
+
 
 .flexParent--column {
   display: -webkit-box;
@@ -6539,21 +6818,26 @@ Class               | Description
 `.flush--bottom`    | removes `padding` and `margin` from the bottom side of an element
 `.flush--left`      | removes `padding` and `margin` from the left side of an element
 */
+
 .flush--all {
   padding: 0 !important;
   margin: 0 !important; }
+
 
 .flush--top {
   padding-top: 0 !important;
   margin-top: 0 !important; }
 
+
 .flush--right {
   padding-right: 0 !important;
   margin-right: 0 !important; }
 
+
 .flush--left {
   padding-left: 0 !important;
   margin-left: 0 !important; }
+
 
 .flush--bottom {
   padding-bottom: 0 !important;
@@ -6609,21 +6893,26 @@ Class          | Description
 `.media--l`    | Sets `width` to `$media-l` and height to `auto`
 `.media--xl`   | Sets `width` to `$media-xl` and height to `auto`
 */
+
 .media--xs {
   height: auto;
   width: 24px; }
+
 
 .media--s {
   height: auto;
   width: 36px; }
 
+
 .media--m {
   height: auto;
   width: 48px; }
 
+
 .media--l {
   height: auto;
   width: 72px; }
+
 
 .media--xl {
   height: auto;
@@ -6663,41 +6952,54 @@ Class                    | Description
 `.padding--none`         | Sets `padding` to `0`
 
 */
+
 .margin--top {
   margin-top: 16px; }
+
 
 .margin--right {
   margin-right: 16px; }
 
+
 .margin--left {
   margin-left: 16px; }
+
 
 .margin--bottom {
   margin-bottom: 16px; }
 
+
 .margin--all {
   margin: 16px; }
+
 
 .margin--none {
   margin: 0; }
 
+
 .padding--top {
   padding-top: 16px; }
+
 
 .padding--right {
   padding-right: 16px; }
 
+
 .padding--left {
   padding-left: 16px; }
+
 
 .padding--bottom {
   padding-bottom: 16px; }
 
+
 .padding--all {
   padding: 16px; }
 
+
 .padding--none {
   padding: 0; }
+
 
 .margin--center {
   margin-left: auto;
@@ -6735,6 +7037,7 @@ Class          | Description
 -------------- | ----------------------------
 `.text--hide`  | Visually hides text; removes text from document flow
 */
+
 .text--hide {
   display: block;
   width: 0;
@@ -6746,18 +7049,24 @@ Class          | Description
 
 /*doc
 ---
-title: Text decoration
+title: Text decoration/transform
 name: textDecoration
 parent: textMod
 ---
-Basic text decoration
+Basic text decoration and transform
 
 Class                  | Description
 ---------------------- | ----------------------------
 `.text--strikethrough` | strikethrough/strikeout/line-through
+`.text--uppercase`     | uppercase text (limited to English)
 */
+
 .text--strikethrough {
   text-decoration: line-through; }
+
+.lang_en
+.text--uppercase {
+  text-transform: uppercase; }
 
 /*doc
 ---
@@ -6771,6 +7080,7 @@ Class              | Description
 -------------------| ----------------------------
 `.text--noHyphens` | Don't allow hyphens on line breaks
 */
+
 .text--noHyphens {
   -webkit-hyphens: none;
   -ms-hyphens: none;
@@ -6803,13 +7113,16 @@ Class                         | Description
 `.matchLineHeight`            | adds a small amount of top and bottom margin to a non-text element to match line height of nearby text
 
 */
+
 .wrap--singleLine--truncate,
 .wrap--singleLine {
   white-space: nowrap !important; }
 
+
 .wrap--singleLine--truncate {
   overflow: hidden !important;
   text-overflow: ellipsis !important; }
+
 
 .matchLineHeight {
   margin: 3px 0; }
@@ -6827,12 +7140,14 @@ Sets background cover and position for photo thumbnails.
 ```
 
 */
+
 .thumb {
   background-position: center;
   background-size: cover;
   background-color: #757575;
   display: block;
   position: relative; }
+  
   .thumb:before {
     content: '';
     display: block;
@@ -6853,6 +7168,7 @@ Class                    | Description
 `.visibility--a11yHide`  | takes element out of document flow and hides it (screen readers will NOT ignore the element)
 `.visibility--a11yShow`  | reveals a a11y hidden element for sighted users
 */
+
 .visibility--a11yHide {
   border: 0;
   clip: rect(0 0 0 0);
@@ -6862,6 +7178,7 @@ Class                    | Description
   padding: 0;
   width: 1px;
   height: 1px; }
+
 
 .visibility--a11yShow {
   clip: auto;
@@ -6895,23 +7212,30 @@ input attribute selectors.
 <p class="span--25" style="background: pink;">25% width</p>
 ```
 */
+
 .span--100 {
   width: 100% !important; }
+
 
 .span--80 {
   width: 80% !important; }
 
+
 .span--75 {
   width: 75% !important; }
+
 
 .span--60 {
   width: 60% !important; }
 
+
 .span--50 {
   width: 50% !important; }
 
+
 .span--30 {
   width: 30% !important; }
+
 
 .span--25 {
   width: 25% !important; }
@@ -6943,7 +7267,7 @@ Breakpoints        | Property       | Variants
 ------------------ | -------------- | ---------------------------
 `medium`, `large`  | `align`        | `center`, `right`, `left`
 `medium`, `large`  | `display`      | `none`, `block`, `flex`, `inline`, `inlineBlock`, `inlineFlex`
-`medium`, `large`  | `padding`      | `none`
+`medium`, `large`  | `padding`      | `top`, `right`, `bottom`, `left`, `none`
 `medium`, `large`  | `margin`       | `center`
 `medium`, `large`  | `border`       | `top`, `none`
 `medium`, `large`  | `visibility`   | `a11yHide`, `a11yShow`
@@ -6952,84 +7276,111 @@ Breakpoints        | Property       | Variants
 @media only screen and (min-width: 440px) {
   .atSmall_align--center {
     text-align: center !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_align--center {
     text-align: center !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_align--center {
     text-align: center !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_align--right {
     text-align: right !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_align--right {
     text-align: right !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_align--right {
     text-align: right !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_align--left {
     text-align: left !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_align--left {
     text-align: left !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_align--left {
     text-align: left !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_display--none {
     display: none !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_display--none {
     display: none !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_display--none {
     display: none !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_display--block {
     display: block !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_display--block {
     display: block !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_display--block {
     display: block !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_display--flex {
     display: flex !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_display--flex {
     display: flex !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_display--flex {
     display: flex !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_display--inline {
     display: inline !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_display--inline {
     display: inline !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_display--inline {
     display: inline !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_display--inlineBlock {
     display: inline-block !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_display--inlineBlock {
     display: inline-block !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_display--inlineBlock {
     display: inline-block !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_display--inlineFlex {
     display: inline-flex !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_display--inlineFlex {
     display: inline-flex !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_display--inlineFlex {
     display: inline-flex !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_visibility--a11yHide {
     border: 0;
@@ -7040,6 +7391,7 @@ Breakpoints        | Property       | Variants
     padding: 0;
     width: 1px;
     height: 1px; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_visibility--a11yHide {
     border: 0;
@@ -7050,6 +7402,7 @@ Breakpoints        | Property       | Variants
     padding: 0;
     width: 1px;
     height: 1px; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_visibility--a11yHide {
     border: 0;
@@ -7060,6 +7413,7 @@ Breakpoints        | Property       | Variants
     padding: 0;
     width: 1px;
     height: 1px; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_visibility--a11yShow {
     clip: auto;
@@ -7069,6 +7423,7 @@ Breakpoints        | Property       | Variants
     margin: 0;
     width: auto;
     height: auto; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_visibility--a11yShow {
     clip: auto;
@@ -7078,6 +7433,7 @@ Breakpoints        | Property       | Variants
     margin: 0;
     width: auto;
     height: auto; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_visibility--a11yShow {
     clip: auto;
@@ -7087,68 +7443,132 @@ Breakpoints        | Property       | Variants
     margin: 0;
     width: auto;
     height: auto; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_width--auto {
     width: auto !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_width--auto {
     width: auto !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_width--auto {
     width: auto !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_width--full {
     width: 100% !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_width--full {
     width: 100% !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_width--full {
     width: 100% !important; } }
+
+@media only screen and (min-width: 440px) {
+  .atSmall_padding--top {
+    padding-top: 16px; } }
+
+@media only screen and (min-width: 640px) {
+  .atMedium_padding--top {
+    padding-top: 16px; } }
+
+@media only screen and (min-width: 840px) {
+  .atLarge_padding--top {
+    padding-top: 16px; } }
+
+@media only screen and (min-width: 440px) {
+  .atSmall_padding--right {
+    padding-right: 16px; } }
+
+@media only screen and (min-width: 640px) {
+  .atMedium_padding--right {
+    padding-right: 16px; } }
+
+@media only screen and (min-width: 840px) {
+  .atLarge_padding--right {
+    padding-right: 16px; } }
+
+@media only screen and (min-width: 440px) {
+  .atSmall_padding--bottom {
+    padding-bottom: 16px; } }
+
+@media only screen and (min-width: 640px) {
+  .atMedium_padding--bottom {
+    padding-bottom: 16px; } }
+
+@media only screen and (min-width: 840px) {
+  .atLarge_padding--bottom {
+    padding-bottom: 16px; } }
+
+@media only screen and (min-width: 440px) {
+  .atSmall_padding--left {
+    padding-left: 16px; } }
+
+@media only screen and (min-width: 640px) {
+  .atMedium_padding--left {
+    padding-left: 16px; } }
+
+@media only screen and (min-width: 840px) {
+  .atLarge_padding--left {
+    padding-left: 16px; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_padding--none {
     padding: 0 !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_padding--none {
     padding: 0 !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_padding--none {
     padding: 0 !important; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_margin--center {
     margin-left: auto;
     margin-right: auto; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_margin--center {
     margin-left: auto;
     margin-right: auto; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_margin--center {
     margin-left: auto;
     margin-right: auto; } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_border--top {
     border-top: 1px solid rgba(0, 0, 0, 0.12); }
     .inverted .atSmall_border--top {
       border-top: 1px solid rgba(255, 255, 255, 0.2); } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_border--top {
     border-top: 1px solid rgba(0, 0, 0, 0.12); }
     .inverted .atMedium_border--top {
       border-top: 1px solid rgba(255, 255, 255, 0.2); } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_border--top {
     border-top: 1px solid rgba(0, 0, 0, 0.12); }
     .inverted .atLarge_border--top {
       border-top: 1px solid rgba(255, 255, 255, 0.2); } }
+
 @media only screen and (min-width: 440px) {
   .atSmall_border--none {
     border-width: 0 !important; } }
+
 @media only screen and (min-width: 640px) {
   .atMedium_border--none {
     border-width: 0 !important; } }
+
 @media only screen and (min-width: 840px) {
   .atLarge_border--none {
     border-width: 0 !important; } }
-
-/*# sourceMappingURL=sassquatch.css.map */

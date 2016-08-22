@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/github.css">
 
 	<!-- CSS to be documented -->
-	<link rel="stylesheet" href="css/sassquatch.css">
+	<link rel="stylesheet" href="bundle/sassquatch.css">
 </head>
 
 <!--[if IE 8]> <body class="lang_en ieRoot_IE8 ieRoot_lt_IE9 ieRoot_lt_IE10"> <![endif]-->
@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v2.1.0</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v2.4.0</a>
 						</div>
 					</div>
 				</div>
@@ -1587,15 +1587,21 @@ to visually divide the page with stripes of color.</p><p class="styleguide">To a
     </div>
 </section>
 
-<section class="stripe--inverted inverted">
+<section class="stripe stripe--inverted inverted">
     <div class="bounds">
         <p>... inverted stripe, using `inverted` class to set text colors  ...</p>
     </div>
 </section>
 
-<section class="stripe--collection">
+<section class="stripe stripe--collection">
     <div class="bounds">
         <p>... collection variant of stripe, used to contain collections of cards </p>
+    </div>
+</section>
+
+<section class="stripe stripe--purple inverted">
+    <div class="bounds">
+        <p>A purple stripe. White text is set by applying the <code>inverted</code> class to the stripe element.</p>
     </div>
 </section>
 
@@ -1608,15 +1614,21 @@ to visually divide the page with stripes of color.</p><p class="styleguide">To a
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 
-<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--inverted inverted"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--inverted inverted"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>... inverted stripe, using `inverted` class to set text colors  ...<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 
-<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe--collection"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--collection"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;p&gt;</span>... collection variant of stripe, used to contain collections of cards <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"stripe stripe--purple inverted"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bounds"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>A purple stripe. White text is set by applying the <span class="nt">&lt;code&gt;</span>inverted<span class="nt">&lt;/code&gt;</span> class to the stripe element.<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/section&gt;</span></pre>
     </div>
@@ -1636,6 +1648,22 @@ optional variants:</p><table class="styleguide"> <tr>
 <tr>
 <td><code class="styleguide">.stripe--collection</code></td>
 <td>applies a light gray background; for use with card collections</td>
+</tr>
+<tr>
+<td><code class="styleguide">.stripe--red</code></td>
+<td>applies the standard <code class="styleguide">$C_red</code> background color</td>
+</tr>
+<tr>
+<td><code class="styleguide">.stripe--purple</code></td>
+<td>applies the standard <code class="styleguide">$C_purple</code> background color</td>
+</tr>
+<tr>
+<td><code class="styleguide">.stripe--plum</code></td>
+<td>applies the standard <code class="styleguide">$C_plum</code> background color</td>
+</tr>
+<tr>
+<td><code class="styleguide">.stripe--black</code></td>
+<td>applies the standard <code class="styleguide">$C_black</code> background color</td>
 </tr>
 <tr>
 <td><code class="styleguide">.stripe--hero</code></td>
@@ -2327,7 +2355,7 @@ $(function() {
 				
 
 				fuseIndex.push({
-					"title": "Text decoration",
+					"title": "Text decoration/transform",
 					"name": "textDecoration",
 					"category": "Modifier Classes",
 					"url": "modifier_classes.html#textDecoration"
@@ -2680,6 +2708,17 @@ $(function() {
 					"name": "captionText",
 					"category": "Typography",
 					"url": "typography.html#captionText"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Text colors",
+					"name": "coloredText",
+					"category": "Typography",
+					"url": "typography.html#coloredText"
 				});
 
 			

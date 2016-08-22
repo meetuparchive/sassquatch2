@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<title>Sassquatch 2: Basic view example</title>
+	<title>Sassquatch 2 <%= (isIndex ? "" : ": #{title}") %></title>
 
 	<!-- font -->
-	<link rel="stylesheet" href="http://static2.meetupstatic.com/fonts/graphik.css">
+	<link rel="stylesheet" href="../http://static2.meetupstatic.com/fonts/graphik.css">
 
 	<!-- Styleguide CSS -->
 	<link rel="stylesheet" href="../css/doc.css">
 	<link rel="stylesheet" href="../css/github.css">
 
 	<!-- CSS to be documented -->
-	<link rel="stylesheet" href="../css/sassquatch.css">
+	<link rel="stylesheet" href="../bundle/sassquatch.css">
 </head>
 
-<body style="min-height: 2000px;">
+<!--[if IE 8]> <body class="lang_en ieRoot_IE8 ieRoot_lt_IE9 ieRoot_lt_IE10"> <![endif]-->
+<!--[if IE 9]> <body class="lang_en ieRoot_IE9 ieRoot_lt_IE10"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <body style="min-height: 2000px" class="lang_en ieRoot_modern"> <!--<![endif]-->
+
 	<div class="view view--loading">
 		<header class="view-head">
 			... view-head ...
