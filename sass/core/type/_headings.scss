@@ -29,11 +29,11 @@ heading styles; for example, `text--display1`.
 ```
 */
 h1, h2, h3, h4, h5, h6 {
-	@extend %text--heavy;
 	font-size: $font-size;
 }
 h1 {
 	.view-head & {
+		@extend %text--heavy;
 		font-size: $font-size;
 	}
 }
