@@ -753,7 +753,7 @@ Placeholder             | Description
   .text--bold .inverted .runningText, .text--bold .inverted.runningText {
     font-weight: 600 !important; }
 
-h1, h2, h3, h4, h5, h6, .text--heavy {
+.view-head h1, .text--heavy {
   font-weight: 600 !important; }
 
 /*doc
