@@ -40,16 +40,6 @@ h1,h2,h3,h4,h5,h6,p,label {
 }
 
 
-//
-// Hyphens
-//
-p {
-	// Ala Trent Walton
-	// http://trentwalton.com/2011/09/07/css-hyphenation
-	@include hyphens(auto);
-}
-
-
 input,
 abbr,
 acronym,
