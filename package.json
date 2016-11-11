@@ -1,6 +1,6 @@
 {
 	"name": "sassquatch2",
-	"version": "2.4.2",
+	"version": "2.4.3",
 	"description": "Front end framework for Meetup",
 	"directories": {
 		"doc": "docs/build",
@@ -16,8 +16,11 @@
 		"url": "https://github.com/meetup/sassquatch2/blob/master/LICENSE"
 	},
 	"peerDependencies": {
+		"meetup-swatches": "^3.1.1"
+	},
+	"dependencies": {
 		"bourbon": "4.2.3",
-		"julep": "1.4.5",
+		"julep": "1.4.6",
 		"meetup-swatches": "3.1.1"
 	},
 	"devDependencies": {
@@ -28,6 +31,7 @@
 		"grunt-contrib-clean": "0.6.0",
 		"grunt-preprocess": "4.1.0",
 		"grunt-exec": "1.0.0",
+		"node-sass": "3.11.1",
 		"webpack": "^1.13.1",
 		"css-loader": "0.23.1",
 		"sass-loader": "4.0.0",
