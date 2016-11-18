@@ -1,6 +1,6 @@
 {
 	"name": "sassquatch2",
-	"version": "2.4.3",
+	"version": "2.4.4",
 	"description": "Front end framework for Meetup",
 	"directories": {
 		"doc": "docs/build",
@@ -14,9 +14,6 @@
 	"license": {
 		"type": "MIT",
 		"url": "https://github.com/meetup/sassquatch2/blob/master/LICENSE"
-	},
-	"peerDependencies": {
-		"meetup-swatches": "^3.1.1"
 	},
 	"dependencies": {
 		"bourbon": "4.2.3",
