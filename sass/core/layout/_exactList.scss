@@ -35,7 +35,7 @@ _better docs TK_
 	overflow: hidden;
 	margin-right: -8px;
 	height: $media-s;
-	@include atMediaUp(small) {
+	@include atMediaUp(medium) {
 		height: $media-m;
 	}
 }

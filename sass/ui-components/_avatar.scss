@@ -86,7 +86,7 @@ Class                     | Description
 		background: $C_textHintInverted;
 	}
 
-	@include atMediaUp(small) {
+	@include atMediaUp(medium) {
 		height: $media-m;
 		width: $media-m;
 	}
@@ -157,7 +157,7 @@ Class                     | Description
 		width: 100%;
 	}
 
-	@include atMediaUp(small) {
+	@include atMediaUp(medium) {
 		height: $media-m;
 		line-height: $media-m;
 		padding: 12px;

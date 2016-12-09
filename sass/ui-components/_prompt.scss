@@ -50,7 +50,7 @@ Class                     | Description
 	top: 0;
 	margin-top: 10vh;
 
-	@include atMediaUp(small) {
+	@include atMediaUp(medium) {
 		@include centerAbsolute($block-6);
 		width: $block-6;
 	}
