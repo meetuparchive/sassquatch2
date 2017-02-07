@@ -20,6 +20,13 @@ breakpoint.
 </div>
 ```
 
+```html_example
+<div class="spreadable atLarge_spreadable--spread atLarge_spreadable--rowReverse">
+	<div class="_DOC-SHADE spreadable-item spreadable-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE spreadable-item spreadable-item--shrink">Item 1</div>
+</div>
+```
+
 ## Spreadable variants
 A class of `spreadable` on the parent element is required.
 Collapsing of the spreadable doesn't happen at any viewport
@@ -29,6 +36,8 @@ with one of the following classes.
 Class                            | Description
 -------------------------------- | ----------------------------------
 `spreadable--noGutters`          | Removes padding from `spreadable-item` children (when spread)
+`atMedium_spreadable--reverse`   | Reverses row order at `medium` breakpoint
+`atLarge_spreadable--reverse`    | Reverses row order at `large` breakpoint
 `atMedium_spreadable--spread`    | Spreads out the spreadable elements horizontally at `medium` breakpoint
 `atLarge_spreadable--spread`     | Spreads out the spreadable elements horizontally at `large` breakpoint
 
@@ -79,3 +88,21 @@ Class                   | Description
 .spreadable--noGutters .spreadable-item {
 	padding: 0 !important;
 }
+
+@include _bpModifier(spreadable, reverse) {
+	@include flex-direction(row-reverse);
+
+	> .spreadable-item {
+
+		&:first-child {
+			padding-left: $space;
+		}
+
+		&:last-child {
+			padding-left: 0;
+		}
+
+	}
+
+}
+
