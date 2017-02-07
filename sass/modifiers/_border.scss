@@ -17,12 +17,7 @@ Class                   | Description
 `.focus--none`          | removes user agent focus style
 */
 
-@each $direction in (
-	top,
-	right,
-	bottom,
-	left
-) {
+@each $direction in (top, right, bottom, left) {
 	@include _modifier(border, $direction) {
 		@include standardBorder($direction);
 	}
