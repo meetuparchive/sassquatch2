@@ -38,7 +38,7 @@
 							<ul id="searchResults" class="menu-actions text--mono text--small"></ul>
 						</div>
 						<div class="row-item row-item--shrink align--right">
-							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v2.4.2</a>
+							<a href="https://github.com/meetup/sassquatch2/releases" class="text--bold followLink software-version">v2.4.6</a>
 						</div>
 					</div>
 				</div>
@@ -135,6 +135,11 @@
 										<li class="display--inline--mediumDown">
 											<a class="followLink" href="#floatMod">Float</a>
 										</li>
+									
+
+								
+
+									
 									
 
 								
@@ -371,6 +376,14 @@ and overflow hidden.</p><p class="styleguide">Extends <code class="styleguide">%
 <td>sets a standard top border on the element</td>
 </tr>
 <tr>
+<td><code class="styleguide">.border--right</code></td>
+<td>sets a standard right border on the element</td>
+</tr>
+<tr>
+<td><code class="styleguide">.border--bottom</code></td>
+<td>sets a standard bottom border on the element</td>
+</tr>
+<tr>
 <td><code class="styleguide">.border--left</code></td>
 <td>sets a standard left border on the element</td>
 </tr>
@@ -451,6 +464,20 @@ orientation rules for <code class="styleguide">row</code> or <code class="styleg
 </tr>
  </table>
 <h1 id="floatMod" class="styleguide">Float</h1>
+<p class="styleguide">Left and right <code class="styleguide">float</code></p><table class="styleguide"> <tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+ <tr>
+<td><code class="styleguide">.float--left</code></td>
+<td>floats selected element left</td>
+</tr>
+<tr>
+<td><code class="styleguide">.float--right</code></td>
+<td>floats selected element right</td>
+</tr>
+ </table>
+<h2 id="clearFix" class="styleguide">Float</h2>
 <p class="styleguide">Float clearing.</p><table class="styleguide"> <tr>
 <th>Class</th>
 <th>Description</th>
@@ -1327,6 +1354,17 @@ $(function() {
 					"name": "floatMod",
 					"category": "Modifier Classes",
 					"url": "modifier_classes.html#floatMod"
+				});
+
+			
+				
+				
+
+				fuseIndex.push({
+					"title": "Float",
+					"name": "clearFix",
+					"category": "Modifier Classes",
+					"url": "modifier_classes.html#clearFix"
 				});
 
 			

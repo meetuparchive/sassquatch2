@@ -3699,6 +3699,13 @@ breakpoint.
 </div>
 ```
 
+```html_example
+<div class="spreadable atLarge_spreadable--spread atLarge_spreadable--rowReverse">
+	<div class="_DOC-SHADE spreadable-item spreadable-item--shrink">Item 2</div>
+	<div class="_DOC-SHADE spreadable-item spreadable-item--shrink">Item 1</div>
+</div>
+```
+
 ## Spreadable variants
 A class of `spreadable` on the parent element is required.
 Collapsing of the spreadable doesn't happen at any viewport
@@ -3708,6 +3715,8 @@ with one of the following classes.
 Class                            | Description
 -------------------------------- | ----------------------------------
 `spreadable--noGutters`          | Removes padding from `spreadable-item` children (when spread)
+`atMedium_spreadable--reverse`   | Reverses row order at `medium` breakpoint
+`atLarge_spreadable--reverse`    | Reverses row order at `large` breakpoint
 `atMedium_spreadable--spread`    | Spreads out the spreadable elements horizontally at `medium` breakpoint
 `atLarge_spreadable--spread`     | Spreads out the spreadable elements horizontally at `large` breakpoint
 
@@ -3981,6 +3990,48 @@ Class                   | Description
 
 .spreadable--noGutters .spreadable-item {
   padding: 0 !important; }
+
+@media only screen and (min-width: 440px) {
+  .atSmall_spreadable--reverse {
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse; }
+    .atSmall_spreadable--reverse > .spreadable-item:first-child {
+      padding-left: 16px; }
+    .atSmall_spreadable--reverse > .spreadable-item:last-child {
+      padding-left: 0; } }
+
+@media only screen and (min-width: 640px) {
+  .atMedium_spreadable--reverse {
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse; }
+    .atMedium_spreadable--reverse > .spreadable-item:first-child {
+      padding-left: 16px; }
+    .atMedium_spreadable--reverse > .spreadable-item:last-child {
+      padding-left: 0; } }
+
+@media only screen and (min-width: 840px) {
+  .atLarge_spreadable--reverse {
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse; }
+    .atLarge_spreadable--reverse > .spreadable-item:first-child {
+      padding-left: 16px; }
+    .atLarge_spreadable--reverse > .spreadable-item:last-child {
+      padding-left: 0; } }
 
 /*doc
 ---
@@ -6585,6 +6636,8 @@ Sets border properties on element
 Class                   | Description
 ----------------------- | --------------------------------
 `.border--top`          | sets a standard top border on the element
+`.border--right`        | sets a standard right border on the element
+`.border--bottom`       | sets a standard bottom border on the element
 `.border--left`         | sets a standard left border on the element
 `.border--none`         | removes all borders from element
 `.bordered`             | sets a standard top border AND top padding
@@ -6598,6 +6651,20 @@ Class                   | Description
   .bordered, .inverted
   .border--top {
     border-top: 1px solid rgba(255, 255, 255, 0.2); }
+
+
+.border--right {
+  border-right: 1px solid rgba(0, 0, 0, 0.12); }
+  .inverted
+  .border--right {
+    border-right: 1px solid rgba(255, 255, 255, 0.2); }
+
+
+.border--bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+  .inverted
+  .border--bottom {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
 
 
 .border--left {
@@ -6776,6 +6843,27 @@ Class                   | Description
 title: Float
 name: floatMod
 category: Modifier Classes
+---
+Left and right `float`
+
+Class             | Description
+----------------- | -----------------------------------------
+`.float--left`    | floats selected element left
+`.float--right`   | floats selected element right
+*/
+
+.float--left {
+  float: left; }
+
+
+.float--right {
+  float: right; }
+
+/*doc
+---
+title: Float
+name: clearFix
+parent: floatMod
 ---
 Float clearing.
 
@@ -7176,8 +7264,7 @@ Class                    | Description
 
 
 .visibility--a11yShow {
-  clip: auto;
-  clip: rect(auto auto auto auto);
+  clip: initial;
   position: static;
   overflow: visible;
   margin: 0;
@@ -7411,8 +7498,7 @@ Breakpoints        | Property       | Variants
 
 @media only screen and (min-width: 440px) {
   .atSmall_visibility--a11yShow {
-    clip: auto;
-    clip: rect(auto auto auto auto);
+    clip: initial;
     position: static;
     overflow: visible;
     margin: 0;
@@ -7421,8 +7507,7 @@ Breakpoints        | Property       | Variants
 
 @media only screen and (min-width: 640px) {
   .atMedium_visibility--a11yShow {
-    clip: auto;
-    clip: rect(auto auto auto auto);
+    clip: initial;
     position: static;
     overflow: visible;
     margin: 0;
@@ -7431,8 +7516,7 @@ Breakpoints        | Property       | Variants
 
 @media only screen and (min-width: 840px) {
   .atLarge_visibility--a11yShow {
-    clip: auto;
-    clip: rect(auto auto auto auto);
+    clip: initial;
     position: static;
     overflow: visible;
     margin: 0;
