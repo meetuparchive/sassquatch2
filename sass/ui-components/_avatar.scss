@@ -65,6 +65,33 @@ Class                     | Description
 		text-indent: 0%;
 		width: $space;
 	}
+
+	&.avatar--big {
+
+		&:after{
+			background-size: $font-size-big;
+			font-size: $font-size-big;
+			height: $media-s;
+			line-height: $media-s;
+			width: $media-s;
+		}
+
+	}
+
+	&.avatar--small {
+
+		&:after{
+			bottom: -2px;
+			background-size: $space-half;
+			font-size: $space-half;
+			height: $font-size-small;
+			line-height: $font-size-small;
+			right: -2px;
+			width: $font-size-small;
+		}
+
+	}
+
 }
 
 %avatar,
