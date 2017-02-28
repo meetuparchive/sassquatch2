@@ -1,3 +1,12 @@
+
+## ⚠️ _Sassquatch2 is no longer in active development_ ⚠️
+See [swarm-sasstools](github.com/meetup/swarm-sasstools) for the latest styling tools for our new web platform.
+
+We will not update Sassquatch2 with new features; only bug fixes when absolutely necessary.
+
+-----------------------------------------------------------------------------------------------
+
+
 Sassquatch 2
 =============
 
